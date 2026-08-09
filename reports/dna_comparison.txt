@@ -1,0 +1,248 @@
+================================================
+QUANTFORGE DNA COMPARATOR v1.1
+================================================
+Profiles Loaded      : 5
+Most Volatile        : BTCUSD
+Strongest Trends     : BTCUSD
+Deepest Pullbacks    : BTCUSD
+Most Balanced Market : BTCUSD
+
+INSTRUMENT FINGERPRINTS
+------------------------------------------------
+BTCUSD:
+  - High trend persistence
+  - Deep extreme pullbacks
+  - Highly balanced direction
+  - Tick-driven / Synthetic liquidity
+  - High volatility clustering
+
+EURUSD:
+  - Low trend persistence
+  - Highly balanced direction
+  - High liquidity (Volume verified)
+  - Session concentrated volume
+  - Low volatility clustering
+
+USATECHIDXUSD:
+  - High trend persistence
+  - Deep extreme pullbacks
+  - Tick-driven / Synthetic liquidity
+  - High volatility clustering
+
+XAGUSD:
+  - Low trend persistence
+  - High liquidity (Volume verified)
+  - Session concentrated volume
+  - Low volatility clustering
+
+XAUUSD:
+  - Highly balanced direction
+  - Tick-driven / Synthetic liquidity
+
+STRONGEST FEATURE CORRELATIONS (Across Markets)
+------------------------------------------------
+Positive Correlations:
+  Peak_Volume_Val <--> Avg_Volume : 1.000
+  Med_Volume <--> Avg_Volume : 1.000
+  Peak_Volume_Val <--> Med_Volume : 1.000
+  Med_Expansion <--> Med_Pullback : 1.000
+  P95_Expansion <--> Avg_Bull_Body : 1.000
+
+Negative Correlations:
+  Doji_% <--> Bear_% : -0.978
+  Doji_% <--> Bull_% : -0.949
+  Avg_Trend_Length <--> Doji_% : -0.931
+
+FULL METRIC RANKINGS
+------------------------------------------------
+
+Metric: Bull_%
+  1. XAUUSD
+  2. BTCUSD
+  3. USATECHIDXUSD
+  4. XAGUSD
+  5. EURUSD
+
+Metric: Bear_%
+  1. USATECHIDXUSD
+  2. BTCUSD
+  3. XAUUSD
+  4. EURUSD
+  5. XAGUSD
+
+Metric: Doji_%
+  1. XAGUSD
+  2. EURUSD
+  3. XAUUSD
+  4. BTCUSD
+  5. USATECHIDXUSD
+
+Metric: Avg_Bull_Body
+  1. BTCUSD
+  2. USATECHIDXUSD
+  3. XAUUSD
+  4. XAGUSD
+  5. EURUSD
+
+Metric: Avg_Bear_Body
+  1. BTCUSD
+  2. USATECHIDXUSD
+  3. XAUUSD
+  4. XAGUSD
+  5. EURUSD
+
+Metric: Avg_Range
+  1. BTCUSD
+  2. USATECHIDXUSD
+  3. XAUUSD
+  4. XAGUSD
+  5. EURUSD
+
+Metric: Med_Range
+  1. BTCUSD
+  2. USATECHIDXUSD
+  3. XAUUSD
+  4. XAGUSD
+  5. EURUSD
+
+Metric: P95_Range
+  1. BTCUSD
+  2. USATECHIDXUSD
+  3. XAUUSD
+  4. XAGUSD
+  5. EURUSD
+
+Metric: Avg_ATR
+  1. BTCUSD
+  2. USATECHIDXUSD
+  3. XAUUSD
+  4. XAGUSD
+  5. EURUSD
+
+Metric: ATR_Std
+  1. BTCUSD
+  2. USATECHIDXUSD
+  3. XAUUSD
+  4. XAGUSD
+  5. EURUSD
+
+Metric: Avg_Trend_Length
+  1. BTCUSD
+  2. USATECHIDXUSD
+  3. XAUUSD
+  4. EURUSD
+  5. XAGUSD
+
+Metric: Med_Trend_Length
+  1. BTCUSD
+  2. EURUSD
+  3. USATECHIDXUSD
+  4. XAGUSD
+  5. XAUUSD
+
+Metric: Max_Trend_Length
+  1. XAUUSD
+  2. BTCUSD
+  3. EURUSD
+  4. USATECHIDXUSD
+  5. XAGUSD
+
+Metric: Avg_Pullback
+  1. BTCUSD
+  2. USATECHIDXUSD
+  3. XAUUSD
+  4. XAGUSD
+  5. EURUSD
+
+Metric: Med_Pullback
+  1. BTCUSD
+  2. USATECHIDXUSD
+  3. XAUUSD
+  4. XAGUSD
+  5. EURUSD
+
+Metric: P95_Pullback
+  1. BTCUSD
+  2. USATECHIDXUSD
+  3. XAUUSD
+  4. XAGUSD
+  5. EURUSD
+
+Metric: Avg_Expansion
+  1. BTCUSD
+  2. USATECHIDXUSD
+  3. XAUUSD
+  4. XAGUSD
+  5. EURUSD
+
+Metric: Med_Expansion
+  1. BTCUSD
+  2. USATECHIDXUSD
+  3. XAUUSD
+  4. XAGUSD
+  5. EURUSD
+
+Metric: P95_Expansion
+  1. BTCUSD
+  2. USATECHIDXUSD
+  3. XAUUSD
+  4. XAGUSD
+  5. EURUSD
+
+Metric: Avg_Volume
+  1. EURUSD
+  2. XAGUSD
+  3. BTCUSD
+  4. USATECHIDXUSD
+  5. XAUUSD
+
+Metric: Med_Volume
+  1. EURUSD
+  2. BTCUSD
+  3. USATECHIDXUSD
+  4. XAGUSD
+  5. XAUUSD
+
+Metric: Max_Volume
+  1. EURUSD
+  2. XAGUSD
+  3. BTCUSD
+  4. USATECHIDXUSD
+  5. XAUUSD
+
+Metric: Peak_Volume_Val
+  1. EURUSD
+  2. XAGUSD
+  3. BTCUSD
+  4. USATECHIDXUSD
+  5. XAUUSD
+
+Metric: Peak_Range_Val
+  1. BTCUSD
+  2. USATECHIDXUSD
+  3. XAUUSD
+  4. XAGUSD
+  5. EURUSD
+
+Metric: Largest_Candle
+  1. BTCUSD
+  2. USATECHIDXUSD
+  3. XAUUSD
+  4. XAGUSD
+  5. EURUSD
+
+Metric: Largest_ATR
+  1. BTCUSD
+  2. USATECHIDXUSD
+  3. XAUUSD
+  4. XAGUSD
+  5. EURUSD
+
+================================================
+Data saved to /reports/:
+ - dna_comparison.txt
+ - dna_comparison.json
+ - dna_metrics_compiled.csv
+ - dna_similarity_matrix.csv
+ - dna_feature_correlations.csv
+================================================

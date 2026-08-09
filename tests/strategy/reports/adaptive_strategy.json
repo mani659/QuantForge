@@ -1,0 +1,15 @@
+{
+    "instrument": "EURUSD",
+    "recommended_strategy": "Mean Reversion",
+    "holding_style": "Scalping",
+    "risk_profile": "Low",
+    "preferred_exit": "Hybrid Exit",
+    "confidence": 83,
+    "reasoning": [
+        "Low average trend persistence",
+        "Pullback exceeds expansion",
+        "Moderate ATR",
+        "Stable volatility profile"
+    ],
+    "schema_version": "1.0.0"
+}

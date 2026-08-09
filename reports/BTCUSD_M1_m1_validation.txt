@@ -1,0 +1,40 @@
+============================================================
+QUANTFORGE M1 VALIDATION REPORT
+============================================================
+
+file_name: BTCUSD_M1.csv
+file_size_mb: 134.38696766
+volume_column: volume
+total_candles: 2539807
+first_candle: 2021-05-23 00:00:00
+last_candle: 2026-05-22 23:59:00
+coverage_days: 1825
+backward_timestamps: 0
+duplicate_candles: 0
+missing_candles: 38343
+missing_candle_preview:
+  2021-06-04 21:06:00
+  2021-06-04 21:07:00
+  2021-06-04 21:08:00
+  2021-06-04 21:09:00
+  2021-06-04 21:10:00
+  2021-06-04 21:11:00
+  2021-08-06 06:26:00
+  2021-08-06 20:59:00
+  2021-08-06 21:00:00
+  2021-08-06 21:01:00
+invalid_timestamps: 0
+invalid_numeric_rows: 0
+negative_price_rows: 0
+zero_price_rows: 0
+ohlc_violations: 0
+average_volume: 0.0
+median_volume: 0.0
+maximum_volume: 0.0
+zero_volume_candles: 2539807
+average_range: 43.48242032
+median_range: 29.1
+range_95: 130.1
+range_99: 224.4
+maximum_range: 4370.1
+pass_validation: True

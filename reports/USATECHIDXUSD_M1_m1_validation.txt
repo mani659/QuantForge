@@ -1,0 +1,40 @@
+============================================================
+QUANTFORGE M1 VALIDATION REPORT
+============================================================
+
+file_name: USATECHIDXUSD_M1.csv
+file_size_mb: 48.46473885
+volume_column: volume
+total_candles: 806669
+first_candle: 2021-05-24 00:00:00
+last_candle: 2023-09-27 17:59:00
+coverage_days: 856
+backward_timestamps: 0
+duplicate_candles: 0
+missing_candles: 88002
+missing_candle_preview:
+  2021-05-24 20:15:00
+  2021-05-24 20:16:00
+  2021-05-24 20:17:00
+  2021-05-24 20:18:00
+  2021-05-24 20:19:00
+  2021-05-24 20:20:00
+  2021-05-24 20:21:00
+  2021-05-24 20:22:00
+  2021-05-24 20:23:00
+  2021-05-24 20:24:00
+invalid_timestamps: 0
+invalid_numeric_rows: 0
+negative_price_rows: 0
+zero_price_rows: 0
+ohlc_violations: 0
+average_volume: 0.0
+median_volume: 0.0
+maximum_volume: 0.0
+zero_volume_candles: 806669
+average_range: 6.09438468
+median_range: 4.28
+range_95: 16.92
+range_99: 28.75
+maximum_range: 375.45
+pass_validation: True

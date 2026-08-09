@@ -1,0 +1,12 @@
+{
+  "base_risk_percent": 1.0,
+  "low_risk_multiplier": 0.5,
+  "medium_risk_multiplier": 1.0,
+  "high_risk_multiplier": 1.5,
+  "minimum_signal_confidence": 0.6,
+  "minimum_strategy_confidence": 0.6,
+  "maximum_daily_loss_percent": 5.0,
+  "maximum_drawdown_percent": 20.0,
+  "maximum_open_positions": 5,
+  "maximum_consecutive_losses": 5
+}

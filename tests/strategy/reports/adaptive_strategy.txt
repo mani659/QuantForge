@@ -1,0 +1,21 @@
+================================================
+QUANTFORGE ADAPTIVE STRATEGY
+================================================
+Instrument
+EURUSD
+Recommended Strategy
+Mean Reversion
+Holding Style
+Scalping
+Risk
+Low
+Preferred Exit
+Hybrid Exit
+Confidence
+83%
+Reasoning
+• Low average trend persistence
+• Pullback exceeds expansion
+• Moderate ATR
+• Stable volatility profile
+================================================

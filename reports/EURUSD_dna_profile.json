@@ -1,0 +1,516 @@
+{
+  "module": "QuantForge Market DNA Profiler",
+  "version": "1.0.0",
+  "dataset_information": {
+    "instrument": "EURUSD",
+    "total_candles": 462799,
+    "first_candle": "2025-01-01 22:00:00",
+    "last_candle": "2026-04-01 00:59:00",
+    "coverage_days": 454
+  },
+  "candle_structure": {
+    "body_size": {
+      "mean": 9.388892370121818e-05,
+      "median": 5.999999999994898e-05,
+      "std": 0.00011812598024048973,
+      "p95": 0.00028999999999990145,
+      "p99": 0.0005100000000000104,
+      "maximum": 0.008970000000000145
+    },
+    "upper_wick": {
+      "mean": 3.68700234875183e-05,
+      "median": 1.999999999990898e-05,
+      "std": 5.4724397234944055e-05,
+      "p95": 0.00012999999999996348,
+      "p99": 0.00024000000000001798,
+      "maximum": 0.0039199999999999235
+    },
+    "lower_wick": {
+      "mean": 3.711323922480387e-05,
+      "median": 1.999999999990898e-05,
+      "std": 5.3497386394093404e-05,
+      "p95": 0.00012999999999996348,
+      "p99": 0.00024000000000001798,
+      "maximum": 0.0022499999999998632
+    },
+    "full_range": {
+      "mean": 0.00016787218641354035,
+      "median": 0.00012999999999996348,
+      "std": 0.00015430697767205643,
+      "p95": 0.00041000000000002146,
+      "p99": 0.0007099999999999884,
+      "maximum": 0.009579999999999922
+    }
+  },
+  "bull_bear_statistics": {
+    "bullish_candles": 215711,
+    "bearish_candles": 217641,
+    "doji_candles": 29447,
+    "bull_percent": 46.610083427146556,
+    "bear_percent": 47.02711112167485,
+    "average_bullish_body": 9.990487272322715e-05,
+    "average_bearish_body": 0.00010062956887718772,
+    "longest_bullish_streak": 15,
+    "longest_bearish_streak": 18
+  },
+  "volatility_profile": {
+    "average_range": 0.00016787218641354035,
+    "median_range": 0.00012999999999996348,
+    "maximum_range": 0.009579999999999922,
+    "range_95": 0.00041000000000002146,
+    "range_99": 0.0007099999999999884,
+    "range_std": 0.00015430697767205643,
+    "coefficient_of_variation": 0.9191932324746932
+  },
+  "atr_profile": {
+    "period": 14,
+    "mean": 0.000170796413578324,
+    "median": 0.00014616909184791168,
+    "std": 0.00010871361670576733,
+    "p95": 0.000362873055627549,
+    "p99": 0.0005824138930528947,
+    "maximum": 0.0018749324194524124
+  },
+  "trend_persistence": {
+    "average_trend_length": 1.8694778771697886,
+    "median_trend_length": 1.0,
+    "maximum_trend_length": 19,
+    "distribution": {
+      "1": 125081,
+      "2": 57454,
+      "3": 26988,
+      "4": 12503,
+      "5": 5805,
+      "6": 2689,
+      "7": 1283,
+      "8": 580,
+      "9": 314,
+      "10": 170,
+      "11": 50,
+      "12": 26,
+      "13": 16,
+      "14": 7,
+      "15": 4,
+      "18": 1,
+      "19": 1
+    },
+    "methodology": "A trend is a consecutive run of non-zero close-to-close moves in one direction; length is measured in close-to-close steps."
+  },
+  "pullback_statistics": {
+    "mean": 0.0003062373828406634,
+    "median": 0.00021999999999988695,
+    "std": 0.00032680938161537467,
+    "p95": 0.0008399999999999519,
+    "p99": 0.001469999999999898,
+    "maximum": 0.012699999999999934
+  },
+  "expansion_statistics": {
+    "size": {
+      "mean": 0.00030156925919250243,
+      "median": 0.00021999999999988695,
+      "std": 0.0003096548637884384,
+      "p95": 0.0008200000000000429,
+      "p99": 0.0014499999999999513,
+      "maximum": 0.012699999999999934
+    },
+    "duration_steps": {
+      "mean": 2.8794610670511895,
+      "median": 2.0,
+      "std": 1.288564421202995,
+      "p95": 5.0,
+      "p99": 8.0,
+      "maximum": 18.0
+    },
+    "methodology": "A pullback is the opposite directional leg following a trend leg of at least two close-to-close steps. Expansion is the next leg when it resumes the original trend direction."
+  },
+  "intraday_activity": [
+    {
+      "hour": 0,
+      "average_range": 0.00014779,
+      "average_body": 8.291e-05,
+      "average_atr": 0.0001405,
+      "bull_percent": 46.75980822,
+      "bear_percent": 47.16708769,
+      "average_volume": 82.58576068
+    },
+    {
+      "hour": 1,
+      "average_range": 0.0001531,
+      "average_body": 8.549e-05,
+      "average_atr": 0.0001559,
+      "bull_percent": 46.51607567,
+      "bear_percent": 48.10296702,
+      "average_volume": 93.01038974
+    },
+    {
+      "hour": 2,
+      "average_range": 0.00012454,
+      "average_body": 7.066e-05,
+      "average_atr": 0.00013372,
+      "bull_percent": 46.82215442,
+      "bear_percent": 46.87904018,
+      "average_volume": 74.98040027
+    },
+    {
+      "hour": 3,
+      "average_range": 0.00010576,
+      "average_body": 6.089e-05,
+      "average_atr": 0.00011189,
+      "bull_percent": 45.42630843,
+      "bear_percent": 46.96381426,
+      "average_volume": 60.10420873
+    },
+    {
+      "hour": 4,
+      "average_range": 9.456e-05,
+      "average_body": 5.495e-05,
+      "average_atr": 9.941e-05,
+      "bull_percent": 45.2637579,
+      "bear_percent": 46.05658617,
+      "average_volume": 51.3424189
+    },
+    {
+      "hour": 5,
+      "average_range": 0.00011513,
+      "average_body": 6.634e-05,
+      "average_atr": 0.00011105,
+      "bull_percent": 46.19886069,
+      "bear_percent": 46.61315381,
+      "average_volume": 65.38928017
+    },
+    {
+      "hour": 6,
+      "average_range": 0.00016928,
+      "average_body": 9.43e-05,
+      "average_atr": 0.00016163,
+      "bull_percent": 47.60107538,
+      "bear_percent": 47.67345673,
+      "average_volume": 98.12470272
+    },
+    {
+      "hour": 7,
+      "average_range": 0.00021566,
+      "average_body": 0.00012008,
+      "average_atr": 0.00020867,
+      "bull_percent": 48.35743802,
+      "bear_percent": 48.15599174,
+      "average_volume": 132.56957645
+    },
+    {
+      "hour": 8,
+      "average_range": 0.00021631,
+      "average_body": 0.00011947,
+      "average_atr": 0.00022025,
+      "bull_percent": 48.43167702,
+      "bear_percent": 47.95548654,
+      "average_volume": 139.90957557
+    },
+    {
+      "hour": 9,
+      "average_range": 0.00019158,
+      "average_body": 0.00010594,
+      "average_atr": 0.00019795,
+      "bull_percent": 47.74327122,
+      "bear_percent": 48.38509317,
+      "average_volume": 120.43680124
+    },
+    {
+      "hour": 10,
+      "average_range": 0.00017591,
+      "average_body": 9.775e-05,
+      "average_atr": 0.00018095,
+      "bull_percent": 47.61387164,
+      "bear_percent": 48.04865424,
+      "average_volume": 105.72753623
+    },
+    {
+      "hour": 11,
+      "average_range": 0.00018308,
+      "average_body": 0.00010322,
+      "average_atr": 0.00018159,
+      "bull_percent": 47.18944099,
+      "bear_percent": 48.42132505,
+      "average_volume": 110.82220497
+    },
+    {
+      "hour": 12,
+      "average_range": 0.0002324,
+      "average_body": 0.00012731,
+      "average_atr": 0.00022294,
+      "bull_percent": 47.89855072,
+      "bear_percent": 48.29710145,
+      "average_volume": 147.98597308
+    },
+    {
+      "hour": 13,
+      "average_range": 0.000272,
+      "average_body": 0.00014866,
+      "average_atr": 0.00026594,
+      "bull_percent": 48.56610415,
+      "bear_percent": 48.66963454,
+      "average_volume": 187.18055699
+    },
+    {
+      "hour": 14,
+      "average_range": 0.00028217,
+      "average_body": 0.00015218,
+      "average_atr": 0.00028498,
+      "bull_percent": 49.37357631,
+      "bear_percent": 48.0430731,
+      "average_volume": 207.01822323
+    },
+    {
+      "hour": 15,
+      "average_range": 0.00026279,
+      "average_body": 0.00014418,
+      "average_atr": 0.00026865,
+      "bull_percent": 47.73762684,
+      "bear_percent": 49.19755643,
+      "average_volume": 196.26092359
+    },
+    {
+      "hour": 16,
+      "average_range": 0.00020726,
+      "average_body": 0.00011441,
+      "average_atr": 0.00022232,
+      "bull_percent": 47.89337474,
+      "bear_percent": 48.54037267,
+      "average_volume": 141.12401656
+    },
+    {
+      "hour": 17,
+      "average_range": 0.00017525,
+      "average_body": 9.855e-05,
+      "average_atr": 0.00018308,
+      "bull_percent": 46.89312345,
+      "bear_percent": 48.14623032,
+      "average_volume": 106.74673778
+    },
+    {
+      "hour": 18,
+      "average_range": 0.00015854,
+      "average_body": 8.86e-05,
+      "average_atr": 0.00016355,
+      "bull_percent": 47.03139571,
+      "bear_percent": 47.26971298,
+      "average_volume": 91.9264843
+    },
+    {
+      "hour": 19,
+      "average_range": 0.00013624,
+      "average_body": 7.718e-05,
+      "average_atr": 0.00014242,
+      "bull_percent": 46.63832875,
+      "bear_percent": 46.72645275,
+      "average_volume": 80.81250324
+    },
+    {
+      "hour": 20,
+      "average_range": 0.00011475,
+      "average_body": 6.754e-05,
+      "average_atr": 0.00012041,
+      "bull_percent": 45.39969834,
+      "bear_percent": 46.01861965,
+      "average_volume": 61.23180943
+    },
+    {
+      "hour": 21,
+      "average_range": 8.741e-05,
+      "average_body": 5.113e-05,
+      "average_atr": 0.00010367,
+      "bull_percent": 41.95804196,
+      "bear_percent": 40.20449248,
+      "average_volume": 34.19681076
+    },
+    {
+      "hour": 22,
+      "average_range": 0.00010058,
+      "average_body": 5.853e-05,
+      "average_atr": 0.00010974,
+      "bull_percent": 41.44684884,
+      "bear_percent": 41.80487548,
+      "average_volume": 37.99589322
+    },
+    {
+      "hour": 23,
+      "average_range": 0.0001032,
+      "average_body": 6.115e-05,
+      "average_atr": 0.00010469,
+      "bull_percent": 43.66057957,
+      "bear_percent": 45.0444826,
+      "average_volume": 41.70657094
+    }
+  ],
+  "day_of_week_profile": [
+    {
+      "day": "Monday",
+      "average_range": 0.00016481,
+      "bull_percent": 46.68610135,
+      "bear_percent": 46.76648375,
+      "average_volume": 98.94604733
+    },
+    {
+      "day": "Tuesday",
+      "average_range": 0.00016349,
+      "bull_percent": 46.53093137,
+      "bear_percent": 47.21639105,
+      "average_volume": 100.49543741
+    },
+    {
+      "day": "Wednesday",
+      "average_range": 0.00016955,
+      "bull_percent": 46.62865103,
+      "bear_percent": 47.02585644,
+      "average_volume": 105.36195752
+    },
+    {
+      "day": "Thursday",
+      "average_range": 0.000168,
+      "bull_percent": 46.58939559,
+      "bear_percent": 46.83265639,
+      "average_volume": 101.94921243
+    },
+    {
+      "day": "Friday",
+      "average_range": 0.00017691,
+      "bull_percent": 46.84585453,
+      "bear_percent": 47.8371745,
+      "average_volume": 115.01090691
+    }
+  ],
+  "volume_profile": {
+    "average_volume": 103.01668110778114,
+    "median_volume": 72.0,
+    "maximum_volume": 3278.0,
+    "volume_95": 296.0,
+    "zero_volume_candles": 1425
+  },
+  "extreme_events": {
+    "largest_candles": [
+      {
+        "timestamp": "2026-03-23 11:05:00",
+        "range": 0.009579999999999922
+      },
+      {
+        "timestamp": "2025-04-11 00:32:00",
+        "range": 0.008709999999999996
+      },
+      {
+        "timestamp": "2025-04-11 00:33:00",
+        "range": 0.007160000000000055
+      },
+      {
+        "timestamp": "2025-08-22 14:00:00",
+        "range": 0.006509999999999794
+      },
+      {
+        "timestamp": "2025-01-10 13:30:00",
+        "range": 0.006319999999999881
+      },
+      {
+        "timestamp": "2026-02-11 13:30:00",
+        "range": 0.006179999999999852
+      },
+      {
+        "timestamp": "2025-07-03 12:30:00",
+        "range": 0.006109999999999838
+      },
+      {
+        "timestamp": "2025-04-02 20:26:00",
+        "range": 0.006049999999999889
+      },
+      {
+        "timestamp": "2025-08-01 12:30:00",
+        "range": 0.00598999999999994
+      },
+      {
+        "timestamp": "2025-07-16 15:55:00",
+        "range": 0.005849999999999911
+      }
+    ],
+    "largest_atr": [
+      {
+        "timestamp": "2025-04-02 20:31:00",
+        "atr": 0.0018749324194524124
+      },
+      {
+        "timestamp": "2025-04-02 20:30:00",
+        "atr": 0.0018645426055641312
+      },
+      {
+        "timestamp": "2025-04-02 20:32:00",
+        "atr": 0.0018502943894915282
+      },
+      {
+        "timestamp": "2025-04-02 20:29:00",
+        "atr": 0.0018295074213767661
+      },
+      {
+        "timestamp": "2025-04-02 20:28:00",
+        "atr": 0.0017856233768672896
+      },
+      {
+        "timestamp": "2025-04-02 20:33:00",
+        "atr": 0.0017681305045278422
+      },
+      {
+        "timestamp": "2026-03-23 11:21:00",
+        "atr": 0.0017294138885657591
+      },
+      {
+        "timestamp": "2026-03-23 11:22:00",
+        "atr": 0.0017165986108110738
+      },
+      {
+        "timestamp": "2025-04-02 20:27:00",
+        "atr": 0.0017014405597032354
+      },
+      {
+        "timestamp": "2025-04-02 20:34:00",
+        "atr": 0.0016932640399187145
+      }
+    ],
+    "largest_volumes": [
+      {
+        "timestamp": "2025-01-20 13:42:00",
+        "volume": 3278
+      },
+      {
+        "timestamp": "2025-01-20 14:00:00",
+        "volume": 3092
+      },
+      {
+        "timestamp": "2025-01-10 13:31:00",
+        "volume": 2839
+      },
+      {
+        "timestamp": "2025-01-30 20:44:00",
+        "volume": 2616
+      },
+      {
+        "timestamp": "2025-01-15 13:34:00",
+        "volume": 2569
+      },
+      {
+        "timestamp": "2025-01-30 20:43:00",
+        "volume": 2492
+      },
+      {
+        "timestamp": "2025-03-25 16:00:00",
+        "volume": 2427
+      },
+      {
+        "timestamp": "2025-08-14 12:36:00",
+        "volume": 2411
+      },
+      {
+        "timestamp": "2025-01-30 20:42:00",
+        "volume": 2364
+      },
+      {
+        "timestamp": "2025-04-18 11:07:00",
+        "volume": 2327
+      }
+    ]
+  }
+}

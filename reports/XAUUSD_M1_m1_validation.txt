@@ -1,0 +1,40 @@
+============================================================
+QUANTFORGE M1 VALIDATION REPORT
+============================================================
+
+file_name: XAUUSD_M1.csv
+file_size_mb: 99.46686268
+volume_column: volume
+total_candles: 1768123
+first_candle: 2021-04-12 11:00:00
+last_candle: 2026-04-10 20:59:00
+coverage_days: 1824
+backward_timestamps: 0
+duplicate_candles: 0
+missing_candles: 135712
+missing_candle_preview:
+  2021-04-12 21:00:00
+  2021-04-12 21:01:00
+  2021-04-12 21:02:00
+  2021-04-12 21:03:00
+  2021-04-12 21:04:00
+  2021-04-12 21:05:00
+  2021-04-12 21:06:00
+  2021-04-12 21:07:00
+  2021-04-12 21:08:00
+  2021-04-12 21:09:00
+invalid_timestamps: 0
+invalid_numeric_rows: 0
+negative_price_rows: 0
+zero_price_rows: 0
+ohlc_violations: 0
+average_volume: 0.0
+median_volume: 0.0
+maximum_volume: 0.0
+zero_volume_candles: 1768123
+average_range: 0.89262081
+median_range: 0.534
+range_95: 2.737
+range_99: 6.07
+maximum_range: 134.12
+pass_validation: True

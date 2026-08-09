@@ -1,0 +1,42 @@
+{
+  "module": "QuantForge Adaptive Rule Thresholds",
+  "version": "1.0.1",
+  "global_thresholds": {
+    "trend_persistence_high": 1.90,
+    "volatility_cv_stable": 0.95,
+    "volatility_cv_unstable": 1.25,
+    "expansion_duration_short": 3.0
+  },
+  "asset_specific": {
+    "EURUSD": {
+      "low_atr": 0.00012,
+      "high_atr": 0.00025,
+      "pullback_min": 0.00015
+    },
+    "BTCUSD": {
+      "low_atr": 15.0,
+      "high_atr": 150.0,
+      "pullback_min": 10.0
+    },
+    "XAUUSD": {
+      "low_atr": 0.40,
+      "high_atr": 1.50,
+      "pullback_min": 0.50
+    },
+    "XAGUSD": {
+      "low_atr": 0.005,
+      "high_atr": 0.02,
+      "pullback_min": 0.008
+    },
+    "USATECHIDXUSD": {
+      "low_atr": 2.5,
+      "high_atr": 10.0,
+      "pullback_min": 3.0
+    },
+    "default": {
+      "low_atr": 0.001,
+      "high_atr": 0.01,
+      "pullback_min": 0.001
+    }
+  }
+}

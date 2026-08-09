@@ -1,0 +1,31 @@
+{
+    "module": "QuantForge Market DNA Profiler",
+    "version": "1.0.0",
+    "dataset_information": {
+        "instrument": "EURUSD",
+        "total_candles": 462799,
+        "first_candle": "2025-01-01 22:00:00",
+        "last_candle": "2026-04-01 00:59:00",
+        "coverage_days": 454
+    },
+    "trend_persistence": {
+        "average_trend_length": 1.8694778771697886
+    },
+    "pullback_statistics": {
+        "mean": 0.0003062373828406634
+    },
+    "expansion_statistics": {
+        "size": {
+            "mean": 0.00030156925919250243
+        },
+        "duration_steps": {
+            "mean": 2.8794610670511895
+        }
+    },
+    "volatility_profile": {
+        "coefficient_of_variation": 0.9191932324746932
+    },
+    "atr_profile": {
+        "mean": 0.000170796413578324
+    }
+}

@@ -1,0 +1,48 @@
+============================================================
+QUANTFORGE TICK VALIDATION REPORT
+============================================================
+
+file_name                     : XAGUSD_mt5_ticks.csv
+file_size_mb                  : 5821.612208366394
+total_rows                    : 146389821
+first_tick                    : 2021-07-13 00:00:03
+last_tick                     : 2026-07-12 23:59:59
+coverage_days                 : 1825
+backward_timestamps           : 0
+duplicate_rows                : 20774568
+invalid_timestamps            : 0
+invalid_numeric_rows          : 0
+largest_gap_seconds           : 324301.0
+weekend_gap                   : True
+missing_trading_days
+   2021-12-24
+   2022-04-15
+   2023-04-07
+   2024-03-29
+   2025-04-18
+   2025-10-17
+   2025-12-03
+   2025-12-25
+   2026-01-16
+   2026-01-30
+   2026-03-18
+   2026-04-03
+negative_prices               : 0
+zero_prices                   : 0
+ask_less_than_bid             : 0
+average_spread                : 0.04074183812274758
+median_spread                 : 0.030000000000001137
+spread_95                     : 0.08499999999999375
+spread_99                     : 0.1670000000000016
+maximum_spread                : 2.0
+average_ticks_per_minute      : 84.66067504233328
+median_ticks_per_minute       : 51.0
+min_ticks_per_minute          : 1
+max_ticks_per_minute          : 893
+tick95                        : 288.0
+quantile_sample_size          : 250000
+quantiles_are_estimated       : True
+multi_tick_seconds            : 33865121
+average_ticks_per_second      : 2.9813383347811007
+maximum_ticks_per_second      : 20
+pass_validation               : True
