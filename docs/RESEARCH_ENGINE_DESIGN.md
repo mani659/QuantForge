@@ -51,12 +51,17 @@ The boundary between raw historical data and the QuantForge pipeline is defined 
 
 Historical market data will be supplied to the Historical Data Adapter (HDA) as a standard iterable of raw data mappings (e.g., dictionaries containing OHLC bars, ticks, or bid/ask data). This iterable represents the chronological stream of market events.
 
+Each `HistoricalMarketAdapter` instance is **adapter-scoped** to a single
+dataset/instrument/timeframe combination. `dataset_id`, `instrument`, and
+`timeframe` are supplied once when constructing `HistoricalMarketAdapter` and are
+**not** dynamically extracted from every raw record. If a historical dataset
+contains multiple instrument/timeframe combinations, the research orchestration
+layer must use separate appropriately configured adapter instances, or otherwise
+partition the dataset before translation.
+
 Required fields per raw data record (illustrative):
-*   `id`: Unique identifier for the record.
-*   `instrument`: Symbol (e.g., "XAUUSD").
-*   `timeframe`: Timeframe string (e.g., "M1", "H1").
 *   `timestamp`: `datetime` instance representing the close (or observation) time of the bar/tick.
-*   `state`: A mapping containing the market state details (e.g., `open`, `high`, `low`, `close`, `volume`).
+*   `state`: A mapping containing the market state details (e.g., `open`, `high`, `low`, `close`, `volume`). If absent, the remaining non-identity raw fields are preserved as the market state.
 
 ### 4.2 Output
 
@@ -64,8 +69,9 @@ The HDA will output an iterable of immutable `EnvironmentSnapshot` objects. This
 
 *   `timestamp`: Derived from the raw record.
 *   `market_state`: An opaque mapping containing the OHLC/volume data from the raw record. No interpretation or indicator calculation is performed at this boundary.
-*   `instrument`: Copied from the raw record.
-*   `timeframe`: Copied from the raw record.
+*   `instrument`: Adapter-scoped, supplied to the `HistoricalMarketAdapter` constructor; copied to each constructed snapshot.
+*   `timeframe`: Adapter-scoped, supplied to the `HistoricalMarketAdapter` constructor; copied to each constructed snapshot.
+*   `dataset_id`: Adapter-scoped, supplied to the `HistoricalMarketAdapter` constructor and used to scope `snapshot_id`.
 *   Determinism: Identical raw input must produce an identical sequence of `EnvironmentSnapshot` objects.
 
 ---
@@ -74,10 +80,10 @@ The HDA will output an iterable of immutable `EnvironmentSnapshot` objects. This
 
 Deterministic replay is guaranteed by strict immutability and the acyclic nature of the pipeline.
 
-*   **Dataset Identity**: Provided by the operator or derived from the file path/content hash.
+*   **Dataset Identity**: Provided by the operator or derived from the file path/content hash. It is required by the `HistoricalMarketAdapter` constructor and used to scope `snapshot_id`.
 *   **Source Provenance**: The `source` field in `EnvironmentSnapshot` will be set to "historical_feed".
 *   **Ordering**: The Historical Data Adapter preserves the strict chronological order of the input data. No internal reordering occurs.
-*   **Timezone Handling**: All timestamps are treated as timezone-aware UTC `datetime` objects as required by the existing temporal domain.
+*   **Timezone Handling**: Timezone-awareness is a **HistoricalMarketAdapter-specific invariant**, not an inherited requirement of `EnvironmentSnapshot` or `GenericMarketDataAdapter`. Timezone-naive timestamps are rejected because silently assuming an offset can change the represented market instant and therefore compromise ordering and reproducibility.
 *   **Randomness**: No random seeds are required or used. The system operates deterministically by design.
 
 ---
@@ -145,9 +151,9 @@ This invariant is structurally enforced by the sequential nature of the `run()` 
 
 The Historical Data Adapter is responsible for deterministic data quality handling.
 
-*   **Missing Timestamps**: Records missing timestamps are rejected. The adapter raises a `HistoricalDataError`.
+*   **Missing Timestamps**: Records missing timestamps are rejected. The adapter raises a `HistoricalAdapterError`.
 *   **Invalid Timestamps**: Non-datetime timestamps are rejected.
-*   **Out-of-Order Records**: Records with timestamps earlier than the previous record are logged and skipped to maintain determinism.
+*   **Out-of-Order Records**: The adapter fails fast. A timestamp regression raises `HistoricalAdapterError`; no record is silently discarded. The comparison is against the timestamp of the last **successfully translated** record, so a failed record never advances the adapter's chronological state.
 *   **Invalid Prices**: Negative or zero prices are rejected.
 *   **Missing Prices**: Missing required OHLC fields result in the record being skipped.
 *   **Duplicate Timestamps**: Processed sequentially as valid market updates for that specific time.
@@ -169,7 +175,10 @@ capture chain** — identical to how paper outcomes are recorded:
     the automated system exactly as Phase 8 defines.
 
 Each `RunnerResult` additionally carries per-snapshot provenance:
-*   `snapshot_id`: The historical record identifier.
+*   `snapshot_id`: A dataset-relative record identity derived from a deterministic SHA-256 hash of the canonical record content
+    (`snapshot_id = f"{dataset_id}:{sha256(canonical(record))[:16]}"`). It is **not** a wall-clock identity and **not** a
+    runtime sequence identity; it is reproducible outside the original process. Identical records within the same dataset
+    intentionally share the same identifier, while records with different content (same or different timestamps) differ.
 *   `processed`: Boolean indicating pipeline success.
 *   `execution_result`: The immutable `ExecutionResult` (if a trade was executed), including metadata with realized PnL and leg details.
 *   `error`: String containing pipeline failure details (if any).
@@ -196,7 +205,7 @@ Advanced performance analytics (win rate, max drawdown, Sharpe ratio) are explic
 
 The current architecture handles a single timeframe per `EnvironmentSnapshot`. Historical multi-timeframe aggregation is out of scope for this milestone.
 
-The Historical Data Adapter will process the timeframe specified in the raw data. If a dataset contains M1 data, it produces M1 snapshots. If a dataset contains H1 data, it produces H1 snapshots. Multi-timeframe intelligence requires architectural extension and is deferred.
+The `timeframe` is **adapter-scoped**: it is supplied to the `HistoricalMarketAdapter` constructor, not read from the raw records. An adapter configured with "M1" produces M1 snapshots; a separate adapter configured with "H1" produces H1 snapshots. Multi-timeframe intelligence requires architectural extension and is deferred. A dataset containing multiple timeframes must therefore be partitioned so each adapter instance receives records for a single timeframe.
 
 ---
 
@@ -204,7 +213,7 @@ The Historical Data Adapter will process the timeframe specified in the raw data
 
 The primary research instrument is XAUUSD.
 
-The Historical Data Adapter does not hardcode XAUUSD. It reads the `instrument` field dynamically from the raw data records. The adapter will support XAUUSD as the first dataset naturally because it simply passes the `instrument` string into the `EnvironmentSnapshot`.
+The Historical Data Adapter does not hardcode XAUUSD. The `instrument` is **adapter-scoped**: it is supplied to the `HistoricalMarketAdapter` constructor and copied into each `EnvironmentSnapshot`, rather than being read dynamically from every raw record. A separate adapter instance is required per instrument, so XAUUSD is supported as the first dataset by constructing the adapter with `instrument="XAUUSD"`.
 
 The research framework itself remains completely market-agnostic.
 
