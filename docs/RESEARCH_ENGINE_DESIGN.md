@@ -257,14 +257,14 @@ This does NOT implement optimization, ML, parameter sweeps, walk-forward testing
 
 ## 17. Explicit Non-Goals
 
-*   Strategy optimization or parameter tuning.
-*   Machine learning integration.
-*   Walk-forward analysis.
+*   Strategy optimization or parameter tuning (Machine Learning, Genetic Algorithms).
+*   Automatic parameter selection / model recommendation.
 *   Live trading integration.
 *   Spread or slippage modeling.
 *   Multi-timeframe aggregation.
-*   Advanced performance analytics (Sharpe, Sortino, Drawdown).
 *   GUI or dashboard development.
+
+*Note: Parameter sweeps and structural Walk-Forward / Out-of-Sample boundaries are now implemented via Experiment Orchestration V1 (see EXPERIMENT_ORCHESTRATION_V1_ADR.md).*
 
 ## 18. Required Tests for Implementation Phase
 
