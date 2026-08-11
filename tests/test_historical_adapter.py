@@ -13,6 +13,8 @@ from boe.execution.paper_adapter import PaperTradingAdapter, PaperTradingAdapter
 from boe.execution.contract import ExecutionConfig
 from boe.deployment.orchestrator import DeploymentOrchestrator
 from boe.risk.specification import PositionSpecification
+from boe.observation.observation_policy import DefaultObservationPolicy
+from boe.observation.observation_config import ObservationConfig
 
 DATASET_ID = "dataset_eurusd_m1"
 ALT_DATASET_ID = "dataset_eurusd_m1_v2"
@@ -394,7 +396,8 @@ def test_historical_adapter_integration_with_paper_runner(base_time):
         observers=(mock_observer,),
         profile_engine=mock_profile_engine,
         risk_model=mock_risk_model,
-        position_sizer=mock_position_sizer
+        position_sizer=mock_position_sizer,
+        observation_policy=DefaultObservationPolicy(ObservationConfig("1.0.0", 1, 3600.0))
     )
 
     # 3. Real Adapter and Engine
@@ -404,16 +407,23 @@ def test_historical_adapter_integration_with_paper_runner(base_time):
     # 4. Real Runner
     runner = PaperTradingRunner(orchestrator, engine)
 
+    snapshot2 = hist_adapter.translate({
+        "timestamp": base_time + timedelta(minutes=1),
+        "close": distinctive_price + 0.001
+    })
+    
     # Feed to runner
-    results = runner.run([snapshot])
+    results = runner.run([snapshot, snapshot2])
 
-    assert len(results) == 1
+    assert len(results) == 2
     assert results[0].processed is True
+    assert results[1].processed is True
     assert results[0].error is None
+    assert results[1].error is None
 
-    # The runner injected the snapshot market state into the paper adapter
-    exec_result = results[0].execution_result
+    # The first result (trigger) will have no execution. The second result (freeze) will have execution.
+    exec_result = results[1].execution_result
     assert exec_result is not None
 
     # Proof that the historical snapshot successfully traversed the pipeline
-    assert exec_result.metadata["leg_0_price"] == distinctive_price
+    assert exec_result.metadata["leg_0_price"] == distinctive_price + 0.001

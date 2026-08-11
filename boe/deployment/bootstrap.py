@@ -12,6 +12,7 @@ from boe.decision.registry import DecisionRegistry
 from boe.risk.registry import RiskPolicyRegistry
 from boe.behavior_detector_contract import BehaviorDetectorContract
 from boe.evidence.observer_contract import ObserverContract
+from boe.observation.observation_contract import ObservationPolicyContract
 from boe.profile.engine import BehaviourProfileEngine
 from boe.risk.models import RiskModelContract
 from boe.risk.position_sizer import PositionSizerContract
@@ -53,6 +54,7 @@ class DeploymentDependencies:
     risk_model: RiskModelContract
     position_sizer: PositionSizerContract
     execution_engine: ExecutionEngineContract
+    observation_policy: ObservationPolicyContract
 
 
 @dataclass(frozen=True)
@@ -120,7 +122,8 @@ class DeploymentBootstrap:
                 observers=dependencies.observers,
                 profile_engine=dependencies.profile_engine,
                 risk_model=dependencies.risk_model,
-                position_sizer=dependencies.position_sizer
+                position_sizer=dependencies.position_sizer,
+                observation_policy=dependencies.observation_policy
             )
 
             # 3. Construct Market Data Adapter

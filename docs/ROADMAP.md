@@ -777,9 +777,10 @@ PHASE 8 INDUSTRIALIZATION UPDATE
 
 - **Phase 8.1 Strategy Manifest:** COMPLETE | FROZEN
 - **Validated Strategy Packaging Integration V1:** COMPLETE / FROZEN
+- **Deployment Admission V1:** BLOCKED BY MISSING RUNTIME CONTRACTS (Admission controller built, but BOE lacks genuine BehaviorDetector implementations).
 
 **Next Engineering Objective:**
-- **Strategy Assembly / Validated Strategy -> Deployment Artifact Integration V1**
+- **Implement Genuine BOE BehaviorDetectorContract and ObserverContract Implementations**
 
 =========================================================
 PHASE 6 COMPLETION UPDATE

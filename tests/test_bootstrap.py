@@ -22,6 +22,8 @@ from boe.profile.engine import BehaviourProfileEngine
 from boe.risk.models import RiskModelContract
 from boe.risk.position_sizer import PositionSizerContract
 from boe.execution.contract import ExecutionEngineContract
+from boe.observation.observation_policy import DefaultObservationPolicy
+from boe.observation.observation_config import ObservationConfig
 
 
 @pytest.fixture
@@ -67,7 +69,8 @@ def dependencies():
         profile_engine=MagicMock(spec=BehaviourProfileEngine),
         risk_model=MagicMock(spec=RiskModelContract),
         position_sizer=MagicMock(spec=PositionSizerContract),
-        execution_engine=MagicMock(spec=ExecutionEngineContract)
+        execution_engine=MagicMock(spec=ExecutionEngineContract),
+        observation_policy=DefaultObservationPolicy(ObservationConfig("1.0.0", 5, 3600.0))
     )
 
 
