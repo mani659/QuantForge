@@ -178,7 +178,7 @@ pytest tests/ -q
 * Phase 9: Operational Governance (Sprint 9.1 Frozen)
 
 ### Current / In Progress
-* Dataset Foundation integration (NEXT MILESTONE)
+* Dataset Foundation integration
 * Research Analytics Reconciliation
 
 ### Deliberately Deferred
