@@ -16,7 +16,7 @@ from research.engine.configuration import ExperimentConfiguration
 from research.orchestration.matrix import HypothesisRecord, ExperimentMatrix, generate_experiment_id
 from research.orchestration.engine import OrchestrationEngine
 from research.orchestration.reporter import AggregationReporter
-from research.engine.synchronization import AdapterMarketStateSynchronizer, SynchronizedExecutionEngine
+from research.engine.synchronization import AdapterMarketStateSynchronizer
 
 
 def test_experiment_id_determinism():
@@ -398,10 +398,13 @@ def test_partial_snapshot_failure():
                 })
             )
     def research_context_factory():
+        from research.engine.synchronization import MarketStateSynchronizerContract
+        class DummySynchronizer(MarketStateSynchronizerContract):
+            def sync_market_state(self, snapshot): pass
         engine = DummyExecutionEngine()
         return __import__('research.engine.run_engine', fromlist=['ResearchExecutionContext']).ResearchExecutionContext(
             execution_engine=engine,
-            market_state_synchronizer=__import__('research.engine.synchronization', fromlist=['NullMarketStateSynchronizer']).NullMarketStateSynchronizer()
+            market_state_synchronizer=DummySynchronizer()
         )
             
     engine = OrchestrationEngine(snapshot_factory, strategy_factory, research_context_factory)
@@ -464,3 +467,55 @@ def test_timezone_aware_determinism():
     )
     
     assert generate_experiment_id(config1) == generate_experiment_id(config2)
+
+
+def test_experiment_factory_isolation():
+    hypothesis = HypothesisRecord(
+        hypothesis_id="test_hyp",
+        description="Testing factory isolation",
+        dataset_id="test",
+        dataset_partition="TRAIN",
+        instrument="EURUSD",
+        timeframe="M1",
+        date_range_start=datetime(2026, 1, 1, tzinfo=timezone.utc),
+        date_range_end=datetime(2026, 1, 2, tzinfo=timezone.utc),
+        strategy_id="dummy",
+        strategy_version="1.0"
+    )
+    # 2 configs in matrix
+    matrix = ExperimentMatrix({"param": [1, 2]})
+    
+    contexts = []
+    
+    def snapshot_factory(c): return []
+    def strategy_factory(s): return DummyNoOpStrategy()
+    def research_context_factory():
+        config = PaperTradingAdapterConfig(broker_name="paper", metadata=MappingProxyType({}))
+        adapter = PaperTradingAdapter(config)
+        engine = DefaultExecutionEngine(config=ExecutionConfig(engine_name="default", metadata=MappingProxyType({})), adapter=adapter)
+        
+        from research.engine.synchronization import AdapterMarketStateSynchronizer
+        from research.engine.run_engine import ResearchExecutionContext
+        
+        ctx = ResearchExecutionContext(
+            execution_engine=engine,
+            market_state_synchronizer=AdapterMarketStateSynchronizer(adapter)
+        )
+        contexts.append(ctx)
+        return ctx
+        
+    engine = OrchestrationEngine(snapshot_factory, strategy_factory, research_context_factory)
+    engine.run_hypothesis(hypothesis, matrix)
+    
+    assert len(contexts) == 2
+    ctx1, ctx2 = contexts[0], contexts[1]
+    
+    # Assert completely distinct memory identities
+    assert id(ctx1) != id(ctx2)
+    assert id(ctx1.execution_engine) != id(ctx2.execution_engine)
+    assert id(ctx1.market_state_synchronizer) != id(ctx2.market_state_synchronizer)
+    
+    # Assert internal adapters are distinct
+    adapter1 = ctx1.execution_engine._adapter
+    adapter2 = ctx2.execution_engine._adapter
+    assert id(adapter1) != id(adapter2)

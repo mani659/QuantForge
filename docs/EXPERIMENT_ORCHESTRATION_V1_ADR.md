@@ -24,8 +24,24 @@ Experiment identity is derived exclusively from a content hash of the configurat
 The `ExperimentMatrix` will generate configurations via a Cartesian product. It guarantees deterministic ordering and provides a `filter_func` mechanism to explicitly reject logically invalid parameter combinations before execution.
 
 ### 3. Strict Orchestration & Isolation (`OrchestrationEngine`)
-The orchestration loop guarantees memory isolation by injecting factory functions for the `MarketDataAdapter`, `ResearchStrategyContract`, and `ExecutionEngine`. For every iteration, a completely fresh strategy and execution engine are instantiated. State is never shared between configurations.
+The orchestration loop guarantees memory isolation by injecting factory functions for the `MarketDataAdapter`, `ResearchStrategyContract`, and `ResearchExecutionContext` (via `research_context_factory`). For every iteration, completely fresh instances of these components are created. State is never shared between configurations.
 
+**Research Execution Context Principle**: A research simulation requires an execution engine plus an explicit market-state synchronization capability. The synchronization capability belongs to the research domain and must not be added to the generic frozen execution contract. 
+- `ExecutionEngineContract` is strictly responsible for execution and order dispatch.
+- `MarketStateSynchronizerContract` is strictly responsible for deterministic simulation market-state injection.
+
+The research execution follows a strict causal sequence:
+```text
+EnvironmentSnapshot
+        ↓
+Market State Synchronization
+        ↓
+Strategy Evaluation
+        ↓
+Execution
+        ↓
+Evidence Collection
+```
 ### 4. Walk-Forward / Out-of-Sample Barrier
 The configuration natively includes a `dataset_partition` field (`TRAIN`, `VALIDATION`, `TEST`). The system enforces an API-level partition boundary. `run_hypothesis()` permits only `TRAIN`. `run_out_of_sample()` permits only `VALIDATION` / `TEST`. `_run_single_config()` is an internal execution primitive and is not the public OOS policy boundary.
 

@@ -8,7 +8,7 @@ from boe.execution.result import ExecutionResult
 
 from research.engine.strategy_contract import ResearchStrategyContract
 from research.engine.configuration import ExperimentConfiguration
-from research.engine.synchronization import MarketStateSynchronizerContract, NullMarketStateSynchronizer
+from research.engine.synchronization import MarketStateSynchronizerContract
 
 
 class ResearchRunEngineError(Exception):
@@ -31,6 +31,12 @@ class ResearchRunResult:
 class ResearchExecutionContext:
     execution_engine: ExecutionEngineContract
     market_state_synchronizer: MarketStateSynchronizerContract
+    
+    def __post_init__(self):
+        if not isinstance(self.execution_engine, ExecutionEngineContract):
+            raise TypeError("execution_engine must be an ExecutionEngineContract")
+        if not isinstance(self.market_state_synchronizer, MarketStateSynchronizerContract):
+            raise TypeError("market_state_synchronizer must be a MarketStateSynchronizerContract")
 
 class ResearchRunEngine:
     """

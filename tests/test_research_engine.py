@@ -6,19 +6,18 @@ from types import MappingProxyType
 
 from boe.deployment.historical_adapter import HistoricalMarketAdapter
 from boe.execution.engine import DefaultExecutionEngine
-from boe.execution.contract import ExecutionConfig
+from boe.execution.contract import ExecutionConfig, ExecutionEngineContract
 from boe.execution.paper_adapter import PaperTradingAdapter, PaperTradingAdapterConfig
 from boe.execution.result import ExecutionStatus
 
 from research.engine.configuration import ExperimentConfiguration
 from research.engine.stub_strategy import MovingAverageCrossoverStrategy
-from research.engine.synchronization import AdapterMarketStateSynchronizer, SynchronizedExecutionEngine
+from research.engine.strategy_contract import ResearchStrategyContract
+from research.engine.synchronization import AdapterMarketStateSynchronizer, MarketStateSynchronizerContract
 from research.engine.run_engine import ResearchRunEngine, ResearchExecutionContext, ResearchRunEngineError
 from research.engine.outcome_appender import ResearchOutcomeAppender
 from research.experiment_recorder import ExperimentRecorder
-from research.engine.synchronization import NullMarketStateSynchronizer, MarketStateSynchronizerContract
-
-def test_research_run_pipeline_end_to_end():
+def test_research_run_pipeline_end_to_end(tmp_path):
     # 1. Config
     config = ExperimentConfiguration(
         dataset_id="test_dataset",
@@ -82,25 +81,20 @@ def test_research_run_pipeline_end_to_end():
     assert all(e.execution_result.status == ExecutionStatus.SUCCESS for e in executions)
     
     # 6. Save Outcomes
-    temp_dir = "./test_research_outcomes"
-    os.makedirs(temp_dir, exist_ok=True)
-    try:
-        recorder = ExperimentRecorder(temp_dir)
-        appender = ResearchOutcomeAppender(recorder)
+    temp_dir = str(tmp_path)
+    recorder = ExperimentRecorder(temp_dir)
+    appender = ResearchOutcomeAppender(recorder)
+    
+    outcome_ids = []
+    for res in executions:
+        outcome_id = appender.append(res.execution_result, strategy, config, "test_exp_id")
+        outcome_ids.append(outcome_id)
         
-        outcome_ids = []
-        for res in executions:
-            outcome_id = appender.append(res.execution_result, strategy, config, "test_exp_id")
-            outcome_ids.append(outcome_id)
-            
-        assert len(outcome_ids) == len(executions)
-        
-        # Verify ExperimentRecorder wrote files
-        recorded_runs = recorder.list_deployment_outcomes()
-        assert len(recorded_runs) == len(executions)
-        
-    finally:
-        shutil.rmtree(temp_dir)
+    assert len(outcome_ids) == len(executions)
+    
+    # Verify ExperimentRecorder wrote files
+    recorded_runs = recorder.list_deployment_outcomes()
+    assert len(recorded_runs) == len(executions)
 
 def test_explicit_synchronization():
     """Test 1: Explicit synchronization verification."""
@@ -224,3 +218,119 @@ def test_standard_execution_engine_remains_valid():
     assert not hasattr(exec_engine, "sync_market_state")
     assert not hasattr(exec_engine, "_market_synchronizer")
 
+def test_research_execution_ordering():
+    """Test: Prove strict sequence: sync -> strategy -> execute."""
+    config = ExperimentConfiguration(
+        dataset_id="t", dataset_partition="TRAIN", instrument="EURUSD", timeframe="M1",
+        date_range_start=datetime(2026, 1, 1, tzinfo=timezone.utc), date_range_end=datetime(2026, 1, 2, tzinfo=timezone.utc),
+        strategy_id="stub", strategy_version="1.0.0", strategy_parameters={}
+    )
+    
+    events = []
+    
+    class SpySynchronizer(MarketStateSynchronizerContract):
+        def sync_market_state(self, snapshot):
+            events.append("sync")
+            
+    class SpyStrategy(ResearchStrategyContract):
+        @property
+        def strategy_id(self): return "spy"
+        @property
+        def version(self): return "1.0"
+        def reset(self): pass
+        def initialize(self, params): pass
+        def on_snapshot(self, snapshot):
+            events.append("strategy")
+            from boe.risk.specification import PositionSpecification
+            return PositionSpecification(
+                candidate_id="c1", timeline_id="t1", observation_id="o1", schema_version="1.0",
+                position_size_multiplier=1.0, exposure_fraction=0.1, risk_units=1.0,
+                metadata=MappingProxyType({}), timestamp=snapshot.timestamp
+            )
+
+    class SpyExecutionEngine(ExecutionEngineContract):
+        @property
+        def config(self) -> ExecutionConfig:
+            return ExecutionConfig(engine_name="spy", metadata=MappingProxyType({}))
+        def execute(self, specification):
+            events.append("execute")
+            from boe.execution.result import ExecutionResult, ExecutionStatus
+            return ExecutionResult(
+                candidate_id=specification.candidate_id,
+                timeline_id=specification.timeline_id,
+                observation_id=specification.observation_id,
+                schema_version=specification.schema_version,
+                status=ExecutionStatus.SUCCESS,
+                metadata=MappingProxyType({}),
+                timestamp=specification.timestamp
+            )
+
+    context = ResearchExecutionContext(execution_engine=SpyExecutionEngine(), market_state_synchronizer=SpySynchronizer())
+    run_engine = ResearchRunEngine(strategy=SpyStrategy(), execution_context=context, config=config)
+    
+    historical_adapter = HistoricalMarketAdapter(dataset_id="test", instrument="EURUSD", timeframe="M1")
+    snapshot = historical_adapter.translate({"timestamp": datetime(2026, 1, 1, 10, 0, tzinfo=timezone.utc), "close": 1.1000})
+    
+    results = run_engine.run([snapshot])
+    
+    # Assert exact causal ordering
+    assert events == ["sync", "strategy", "execute"]
+    
+    # Assert successful execution processing
+    assert len(results) == 1
+    assert results[0].processed is True
+    assert results[0].execution_result is not None
+    assert results[0].error is None
+
+
+def test_adapter_market_state_synchronizer_fail_fast():
+    """Test: AdapterMarketStateSynchronizer fails if adapter lacks update_market_state."""
+    class InvalidAdapter:
+        pass
+        
+    with pytest.raises(ValueError, match="Adapter does not support market-state synchronization"):
+        AdapterMarketStateSynchronizer(InvalidAdapter())
+
+
+def test_adapter_market_state_synchronizer_valid():
+    """Test: AdapterMarketStateSynchronizer successfully syncs valid adapter."""
+    class ValidAdapter:
+        def __init__(self):
+            self.synced = False
+        def update_market_state(self, snapshot):
+            self.synced = True
+            
+    adapter = ValidAdapter()
+    sync = AdapterMarketStateSynchronizer(adapter)
+    
+    historical_adapter = HistoricalMarketAdapter(dataset_id="test", instrument="EURUSD", timeframe="M1")
+    snapshot = historical_adapter.translate({"timestamp": datetime(2026, 1, 1, 10, 0, tzinfo=timezone.utc), "close": 1.1000})
+    
+    sync.sync_market_state(snapshot)
+    assert adapter.synced is True
+
+
+def test_research_execution_context_validation():
+    """Test: ResearchExecutionContext rejects invalid dependencies."""
+    from boe.execution.contract import ExecutionEngineContract
+    
+    class DummySynchronizer(MarketStateSynchronizerContract):
+        def sync_market_state(self, snapshot): pass
+        
+    class DummyExecutionEngine(ExecutionEngineContract):
+        @property
+        def config(self) -> ExecutionConfig:
+            return ExecutionConfig(engine_name="dummy", metadata=MappingProxyType({}))
+        def execute(self, spec): pass
+
+    # Invalid engine
+    with pytest.raises(TypeError, match="execution_engine must be an ExecutionEngineContract"):
+        ResearchExecutionContext(execution_engine="not_an_engine", market_state_synchronizer=DummySynchronizer())
+        
+    # Invalid synchronizer
+    with pytest.raises(TypeError, match="market_state_synchronizer must be a MarketStateSynchronizerContract"):
+        ResearchExecutionContext(execution_engine=DummyExecutionEngine(), market_state_synchronizer="not_a_sync")
+        
+    # Valid
+    ctx = ResearchExecutionContext(execution_engine=DummyExecutionEngine(), market_state_synchronizer=DummySynchronizer())
+    assert ctx.execution_engine is not None

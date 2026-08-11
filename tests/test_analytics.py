@@ -150,107 +150,99 @@ def test_deterministic_repeated_calculation():
     
     assert res1 == res2
     
-def test_persistence_round_trip():
-    temp_dir = "./test_analytics_outcomes"
-    os.makedirs(temp_dir, exist_ok=True)
-    try:
-        # Create fake run directory to mimic ExperimentRecorder
-        run_id = "run_000001"
-        run_folder = os.path.join(temp_dir, "research", "experiments", run_id)
-        os.makedirs(run_folder, exist_ok=True)
+def test_persistence_round_trip(tmp_path):
+    temp_dir = str(tmp_path)
+    
+    # Create fake run directory to mimic ExperimentRecorder
+    run_id = "run_000001"
+    run_folder = os.path.join(temp_dir, "research", "experiments", run_id)
+    os.makedirs(run_folder, exist_ok=True)
+    
+    # Write dummy manifest
+    with open(os.path.join(run_folder, "manifest.json"), "w") as f:
+        json.dump({"run_id": run_id, "files": []}, f)
         
-        # Write dummy manifest
-        with open(os.path.join(run_folder, "manifest.json"), "w") as f:
-            json.dump({"run_id": run_id, "files": []}, f)
-            
-        recorder = ExperimentRecorder(temp_dir)
-        persister = AnalyticsPersister(recorder)
-        
-        config = ExperimentConfiguration(
-            dataset_id="test_data",
-            dataset_partition="TRAIN",
-            instrument="EURUSD",
-            timeframe="M1",
-            date_range_start=datetime(2026, 1, 1, tzinfo=timezone.utc),
-            date_range_end=datetime(2026, 1, 2, tzinfo=timezone.utc),
-            strategy_id="strat_1",
-            strategy_version="1.0"
-        )
-        
-        executions = [
-            _mock_execution(datetime(2026, 1, 1, tzinfo=timezone.utc), {"leg_count": 1, "leg_0_action": "BUY", "leg_0_direction": "BUY", "leg_0_volume": 1.0, "account_balance": 100000.0}),
-            _mock_execution(datetime(2026, 1, 2, tzinfo=timezone.utc), {"leg_count": 1, "leg_0_action": "CLOSE", "leg_0_direction": "BUY", "leg_0_volume": 1.0, "leg_0_realized_pnl": 10.0, "account_balance": 100010.0})
-        ]
-        res = MetricsCalculator.calculate(executions)
-        
-        # Original ExecutionResult must remain unchanged
-        assert executions[0].metadata["account_balance"] == 100000.0
-        
-        report = ValidationReport(
-            experiment_id="test_exp_id", dataset_id=config.dataset_id, dataset_partition=config.dataset_partition,
-            instrument=config.instrument, timeframe=config.timeframe, date_range_start=config.date_range_start.isoformat(),
-            date_range_end=config.date_range_end.isoformat(), strategy_id=config.strategy_id, strategy_version=config.strategy_version,
-            strategy_parameters=config.strategy_parameters, execution_assumptions={}, results=res
-        )
-        report_file = persister.save_report(run_id, report)
-        assert os.path.exists(report_file)
-        
-        # Verify deterministic reconstruction
-        with open(report_file, "r") as f:
-            data = json.load(f)
-            assert data["experiment_id"] == "test_exp_id"
-            assert data["results"]["net_pnl"] == 10.0
-            assert data["strategy_id"] == "strat_1"
-            
-    finally:
-        shutil.rmtree(temp_dir)
+    recorder = ExperimentRecorder(temp_dir)
+    persister = AnalyticsPersister(recorder)
+    
+    config = ExperimentConfiguration(
+        dataset_id="test_data",
+        dataset_partition="TRAIN",
+        instrument="EURUSD",
+        timeframe="M1",
+        date_range_start=datetime(2026, 1, 1, tzinfo=timezone.utc),
+        date_range_end=datetime(2026, 1, 2, tzinfo=timezone.utc),
+        strategy_id="strat_1",
+        strategy_version="1.0"
+    )
+    
+    executions = [
+        _mock_execution(datetime(2026, 1, 1, tzinfo=timezone.utc), {"leg_count": 1, "leg_0_action": "BUY", "leg_0_direction": "BUY", "leg_0_volume": 1.0, "account_balance": 100000.0}),
+        _mock_execution(datetime(2026, 1, 2, tzinfo=timezone.utc), {"leg_count": 1, "leg_0_action": "CLOSE", "leg_0_direction": "BUY", "leg_0_volume": 1.0, "leg_0_realized_pnl": 10.0, "account_balance": 100010.0})
+    ]
+    res = MetricsCalculator.calculate(executions)
+    
+    # Original ExecutionResult must remain unchanged
+    assert executions[0].metadata["account_balance"] == 100000.0
+    
+    report = ValidationReport(
+        experiment_id="test_exp_id", dataset_id=config.dataset_id, dataset_partition=config.dataset_partition,
+        instrument=config.instrument, timeframe=config.timeframe, date_range_start=config.date_range_start.isoformat(),
+        date_range_end=config.date_range_end.isoformat(), strategy_id=config.strategy_id, strategy_version=config.strategy_version,
+        strategy_parameters=config.strategy_parameters, execution_assumptions={}, results=res
+    )
+    report_file = persister.save_report(run_id, report)
+    assert os.path.exists(report_file)
+    
+    # Verify deterministic reconstruction
+    with open(report_file, "r") as f:
+        data = json.load(f)
+        assert data["experiment_id"] == "test_exp_id"
+        assert data["results"]["net_pnl"] == 10.0
+        assert data["strategy_id"] == "strat_1"
 
 
-def test_persistence_infinity_and_overwrite():
-    temp_dir = "./test_analytics_outcomes2"
-    os.makedirs(temp_dir, exist_ok=True)
-    try:
-        run_id = "run_000002"
-        run_folder = os.path.join(temp_dir, "research", "experiments", run_id)
-        os.makedirs(run_folder, exist_ok=True)
+def test_persistence_infinity_and_overwrite(tmp_path):
+    temp_dir = str(tmp_path)
+    
+    run_id = "run_000002"
+    run_folder = os.path.join(temp_dir, "research", "experiments", run_id)
+    os.makedirs(run_folder, exist_ok=True)
+    
+    with open(os.path.join(run_folder, "manifest.json"), "w") as f:
+        json.dump({"run_id": run_id, "files": []}, f)
         
-        with open(os.path.join(run_folder, "manifest.json"), "w") as f:
-            json.dump({"run_id": run_id, "files": []}, f)
-            
-        recorder = ExperimentRecorder(temp_dir)
-        persister = AnalyticsPersister(recorder)
+    recorder = ExperimentRecorder(temp_dir)
+    persister = AnalyticsPersister(recorder)
+    
+    config = ExperimentConfiguration(
+        dataset_id="test_data", dataset_partition="TRAIN", instrument="EURUSD", timeframe="M1",
+        date_range_start=datetime(2026, 1, 1, tzinfo=timezone.utc),
+        date_range_end=datetime(2026, 1, 2, tzinfo=timezone.utc),
+        strategy_id="strat_2", strategy_version="1.0"
+    )
+    
+    # Win with 0 gross loss -> infinite profit factor
+    executions = [
+        _mock_execution(datetime(2026, 1, 1, tzinfo=timezone.utc), {"leg_count": 1, "leg_0_action": "BUY", "leg_0_direction": "BUY", "leg_0_volume": 1.0, "account_balance": 100000.0}),
+        _mock_execution(datetime(2026, 1, 2, tzinfo=timezone.utc), {"leg_count": 1, "leg_0_action": "CLOSE", "leg_0_direction": "BUY", "leg_0_volume": 1.0, "leg_0_realized_pnl": 10.0, "account_balance": 100010.0})
+    ]
+    res = MetricsCalculator.calculate(executions)
+    assert res.profit_factor == float('inf')
+    
+    report = ValidationReport(
+        experiment_id="test_exp_id2", dataset_id=config.dataset_id, dataset_partition=config.dataset_partition,
+        instrument=config.instrument, timeframe=config.timeframe, date_range_start=config.date_range_start.isoformat(),
+        date_range_end=config.date_range_end.isoformat(), strategy_id=config.strategy_id, strategy_version=config.strategy_version,
+        strategy_parameters=config.strategy_parameters, execution_assumptions={}, results=res
+    )
+    report_file = persister.save_report(run_id, report)
+    assert os.path.exists(report_file)
+    
+    with open(report_file, "r") as f:
+        data = json.load(f)
+        assert data["results"]["profit_factor"] == "Infinity"
         
-        config = ExperimentConfiguration(
-            dataset_id="test_data", dataset_partition="TRAIN", instrument="EURUSD", timeframe="M1",
-            date_range_start=datetime(2026, 1, 1, tzinfo=timezone.utc),
-            date_range_end=datetime(2026, 1, 2, tzinfo=timezone.utc),
-            strategy_id="strat_2", strategy_version="1.0"
-        )
-        
-        # Win with 0 gross loss -> infinite profit factor
-        executions = [
-            _mock_execution(datetime(2026, 1, 1, tzinfo=timezone.utc), {"leg_count": 1, "leg_0_action": "BUY", "leg_0_direction": "BUY", "leg_0_volume": 1.0, "account_balance": 100000.0}),
-            _mock_execution(datetime(2026, 1, 2, tzinfo=timezone.utc), {"leg_count": 1, "leg_0_action": "CLOSE", "leg_0_direction": "BUY", "leg_0_volume": 1.0, "leg_0_realized_pnl": 10.0, "account_balance": 100010.0})
-        ]
-        res = MetricsCalculator.calculate(executions)
-        assert res.profit_factor == float('inf')
-        
-        report = ValidationReport(
-            experiment_id="test_exp_id2", dataset_id=config.dataset_id, dataset_partition=config.dataset_partition,
-            instrument=config.instrument, timeframe=config.timeframe, date_range_start=config.date_range_start.isoformat(),
-            date_range_end=config.date_range_end.isoformat(), strategy_id=config.strategy_id, strategy_version=config.strategy_version,
-            strategy_parameters=config.strategy_parameters, execution_assumptions={}, results=res
-        )
-        report_file = persister.save_report(run_id, report)
-        assert os.path.exists(report_file)
-        
-        with open(report_file, "r") as f:
-            data = json.load(f)
-            assert data["results"]["profit_factor"] == "Infinity"
-            
-        # Overwrite should raise FileExistsError
-        with pytest.raises(FileExistsError, match="Overwrite rejected to preserve reproducibility"):
-            persister.save_report(run_id, report)
-            
-    finally:
-        shutil.rmtree(temp_dir)
+    # Overwrite should raise FileExistsError
+    with pytest.raises(FileExistsError, match="Overwrite rejected to preserve reproducibility"):
+        persister.save_report(run_id, report)
