@@ -28,10 +28,10 @@ The following diagram illustrates the structural pipeline and flow of data from 
                      Scientific Hypothesis Evaluator V1
                                  │
                                  ▼
-                    Validated Strategy Packaging   ← NEXT
+                    Validated Strategy Packaging V1
                                  │
                                  ▼
-                         Strategy Assembly
+                         Strategy Assembly   ← NEXT
                                  │
                                  ▼
                          Paper / Live Trading
@@ -84,3 +84,30 @@ The V1 implementation passed 32 strict behavioral tests, verifying cryptographic
 
 **Frozen Boundaries:**
 The evaluator sits as a pure mathematical layer atop the outputs. No modifications were made to `boe/`, `research/lifecycle/`, `research/engine/`, or `research/dataset/`.
+
+## Validated Strategy Packaging V1
+
+**Status: COMPLETE | FROZEN**
+
+**Purpose:**
+Provides the cryptographic gatekeeper that transitions a scientifically accepted research outcome into an immutable, deployment-ready operational package.
+
+**Cryptographic Provenance Chain:**
+The `StrategyPackager` constructs a `ValidatedStrategyPackage` that structurally bonds the deployment-focused `StrategyManifest` (frozen in Phase 8.1) with the exact `ExperimentConfiguration` that achieved the successful out-of-sample validation.
+
+1. **Acceptance Gate:** Any attempt to package a `REJECTED` scientific verdict raises a `RejectedHypothesisError`.
+2. **Configuration Identity Validation:** The supplied configuration is deterministically normalized to the VALIDATION dataset partition. If the resulting SHA-256 identity does not match the `validation_experiment_id` strictly proven by the `ScientificVerdict`, the packager raises a `ProvenanceMismatchError`.
+3. **Deep Immutability:** The validated configuration's parameters are recursively frozen (e.g., converted to immutable dictionaries and tuples) to mathematically prevent silent alteration by human operators or subsequent deployment layers.
+4. **Package Fingerprint:** The final artifact receives a canonical SHA-256 `package_fingerprint` that mathematically covers the manifest payload, the configuration identity, and the scientific verdict provenance, guaranteeing tamper evidence for the lifetime of the deployment.
+
+
+**Fingerprint scope:** The \package_fingerprint\ cryptographically binds the validated strategy identity, validated configuration, candidate/provenance identity, and operational manifest identity required to establish that the packaged artifact corresponds to the accepted experiment. Certain descriptive/evidentiary fields currently recorded in \ScientificVerdict\ and \StrategyManifest\, including evaluator evidence metrics and selected descriptive metadata, are not part of the current fingerprint payload. This is an intentional V1 scope limitation and is a post-freeze hardening candidate. It does not permit substitution of a different validated experiment.
+
+**Deployment Status:** Validated Strategy Packaging V1 produces the immutable, provenance-bound research artifact required for the deployment handoff. Direct deployment consumption is intentionally deferred to the Strategy Assembly / Deployment Artifact Integration milestone.
+
+## Post-Freeze Hardening
+* Expand package fingerprint coverage to additional manifest/evidence fields.
+* Normalize partition handling inside fingerprint canonicalization if required by future package identity semantics.
+* Decide/document whether provenance timestamps should participate in package identity.
+* Add package serialization/round-trip support during deployment integration.
+
