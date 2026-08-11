@@ -912,7 +912,7 @@ CURRENT PROJECT STATUS & ROADMAP ALIGNMENT
 - **Phases 1-9:** The core architecture, scientific observation, execution, deployment, research industrialization, and operational governance are completely implemented, audited, and permanently frozen.
 
 ### NEXT ENGINEERING OBJECTIVE
-- **End-to-End Paper-Trading Orchestration:** Connect the frozen components into a live, orchestrated runtime (automated paper trading execution pipeline) without modifying the frozen dependencies.
+- **Dataset Foundation Integration V1:** Bridge between raw historical data files (e.g. XAUUSD CSVs) and the deterministic `EnvironmentSnapshot` required by the orchestration engine. This is the immediate prerequisite before End-to-End Paper-Trading Orchestration.
 
 ### DEFERRED / FUTURE
 - Production user interfaces
