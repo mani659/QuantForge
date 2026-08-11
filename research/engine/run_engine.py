@@ -8,6 +8,7 @@ from boe.execution.result import ExecutionResult
 
 from research.engine.strategy_contract import ResearchStrategyContract
 from research.engine.configuration import ExperimentConfiguration
+from research.engine.synchronization import MarketStateSynchronizerContract, NullMarketStateSynchronizer
 
 
 class ResearchRunEngineError(Exception):
@@ -26,6 +27,11 @@ class ResearchRunResult:
     error: Optional[str] = None
 
 
+@dataclass(frozen=True)
+class ResearchExecutionContext:
+    execution_engine: ExecutionEngineContract
+    market_state_synchronizer: MarketStateSynchronizerContract
+
 class ResearchRunEngine:
     """
     Coordinates the deterministic execution of a ResearchStrategy over a stream
@@ -38,18 +44,19 @@ class ResearchRunEngine:
     def __init__(
         self,
         strategy: ResearchStrategyContract,
-        execution_engine: ExecutionEngineContract,
+        execution_context: ResearchExecutionContext,
         config: ExperimentConfiguration
     ):
         if not isinstance(strategy, ResearchStrategyContract):
             raise ResearchRunEngineError("strategy must be a ResearchStrategyContract")
-        if not isinstance(execution_engine, ExecutionEngineContract):
-            raise ResearchRunEngineError("execution_engine must be an ExecutionEngineContract")
+        if not isinstance(execution_context, ResearchExecutionContext):
+            raise ResearchRunEngineError("execution_context must be a ResearchExecutionContext")
         if not isinstance(config, ExperimentConfiguration):
             raise ResearchRunEngineError("config must be an ExperimentConfiguration")
 
         self._strategy = strategy
-        self._execution_engine = execution_engine
+        self._execution_engine = execution_context.execution_engine
+        self._market_synchronizer = execution_context.market_state_synchronizer
         self._config = config
 
     def run(self, snapshots: Iterable[EnvironmentSnapshot]) -> List[ResearchRunResult]:
@@ -81,9 +88,7 @@ class ResearchRunEngine:
             try:
                 # 2. Sync Market State to Simulation Execution Adapter
                 # This ensures the paper broker knows the current price for MTM valuation.
-                adapter = getattr(self._execution_engine, "_adapter", None)
-                if adapter and hasattr(adapter, "update_market_state"):
-                    adapter.update_market_state(snapshot)
+                self._market_synchronizer.sync_market_state(snapshot)
 
                 # 3. Strategy Execution (No look-ahead, pure causal evaluation)
                 spec = self._strategy.on_snapshot(snapshot)

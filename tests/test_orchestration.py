@@ -16,6 +16,7 @@ from research.engine.configuration import ExperimentConfiguration
 from research.orchestration.matrix import HypothesisRecord, ExperimentMatrix, generate_experiment_id
 from research.orchestration.engine import OrchestrationEngine
 from research.orchestration.reporter import AggregationReporter
+from research.engine.synchronization import AdapterMarketStateSynchronizer, SynchronizedExecutionEngine
 
 
 def test_experiment_id_determinism():
@@ -132,11 +133,16 @@ def test_orchestration_failure_isolation():
     def strategy_factory(strat_id):
         return DummyExceptionStrategy() # Always fails
         
-    def exec_engine_factory():
+    def research_context_factory():
         config = PaperTradingAdapterConfig(broker_name="paper", metadata=MappingProxyType({}))
-        return DefaultExecutionEngine(config=ExecutionConfig(engine_name="default", metadata=MappingProxyType({})), adapter=PaperTradingAdapter(config))
+        adapter = PaperTradingAdapter(config)
+        engine = DefaultExecutionEngine(config=ExecutionConfig(engine_name="default", metadata=MappingProxyType({})), adapter=adapter)
+        return __import__('research.engine.run_engine', fromlist=['ResearchExecutionContext']).ResearchExecutionContext(
+            execution_engine=engine,
+            market_state_synchronizer=AdapterMarketStateSynchronizer(adapter)
+        )
 
-    engine = OrchestrationEngine(snapshot_factory, strategy_factory, exec_engine_factory)
+    engine = OrchestrationEngine(snapshot_factory, strategy_factory, research_context_factory)
     
     reports = engine.run_hypothesis(hypothesis, matrix)
     
@@ -163,11 +169,16 @@ def test_aggregation_reporter():
     
     def snapshot_factory(c): return []
     def strategy_factory(s): return DummyNoOpStrategy()
-    def exec_engine_factory():
+    def research_context_factory():
         config = PaperTradingAdapterConfig(broker_name="paper", metadata=MappingProxyType({}))
-        return DefaultExecutionEngine(config=ExecutionConfig(engine_name="default", metadata=MappingProxyType({})), adapter=PaperTradingAdapter(config))
+        adapter = PaperTradingAdapter(config)
+        engine = DefaultExecutionEngine(config=ExecutionConfig(engine_name="default", metadata=MappingProxyType({})), adapter=adapter)
+        return __import__('research.engine.run_engine', fromlist=['ResearchExecutionContext']).ResearchExecutionContext(
+            execution_engine=engine,
+            market_state_synchronizer=AdapterMarketStateSynchronizer(adapter)
+        )
         
-    engine = OrchestrationEngine(snapshot_factory, strategy_factory, exec_engine_factory)
+    engine = OrchestrationEngine(snapshot_factory, strategy_factory, research_context_factory)
     reports = engine.run_hypothesis(hypothesis, matrix)
     
     df = AggregationReporter.aggregate_to_dataframe(reports)
@@ -195,11 +206,16 @@ def test_identity_survives_persistence_and_aggregation(tmp_path):
     
     def snapshot_factory(c): return []
     def strategy_factory(s): return DummyNoOpStrategy()
-    def exec_engine_factory():
+    def research_context_factory():
         config = PaperTradingAdapterConfig(broker_name="paper", metadata=MappingProxyType({}))
-        return DefaultExecutionEngine(config=ExecutionConfig(engine_name="default", metadata=MappingProxyType({})), adapter=PaperTradingAdapter(config))
+        adapter = PaperTradingAdapter(config)
+        engine = DefaultExecutionEngine(config=ExecutionConfig(engine_name="default", metadata=MappingProxyType({})), adapter=adapter)
+        return __import__('research.engine.run_engine', fromlist=['ResearchExecutionContext']).ResearchExecutionContext(
+            execution_engine=engine,
+            market_state_synchronizer=AdapterMarketStateSynchronizer(adapter)
+        )
         
-    engine = OrchestrationEngine(snapshot_factory, strategy_factory, exec_engine_factory)
+    engine = OrchestrationEngine(snapshot_factory, strategy_factory, research_context_factory)
     reports = engine.run_hypothesis(hypothesis, matrix)
     
     from research.experiment_recorder import ExperimentRecorder
@@ -255,11 +271,16 @@ def test_oos_enforcement():
     config = list(matrix.generate(hypothesis))[0]
     
     # We need a proper exec engine for run_out_of_sample since it calls run_single_config
-    def exec_engine_factory():
-        c = PaperTradingAdapterConfig(broker_name="paper", metadata=MappingProxyType({}))
-        return DefaultExecutionEngine(config=ExecutionConfig(engine_name="default", metadata=MappingProxyType({})), adapter=PaperTradingAdapter(c))
+    def research_context_factory():
+        config = PaperTradingAdapterConfig(broker_name="paper", metadata=MappingProxyType({}))
+        adapter = PaperTradingAdapter(config)
+        engine = DefaultExecutionEngine(config=ExecutionConfig(engine_name="default", metadata=MappingProxyType({})), adapter=adapter)
+        return __import__('research.engine.run_engine', fromlist=['ResearchExecutionContext']).ResearchExecutionContext(
+            execution_engine=engine,
+            market_state_synchronizer=AdapterMarketStateSynchronizer(adapter)
+        )
         
-    engine = OrchestrationEngine(lambda c: [], lambda s: DummyNoOpStrategy(), exec_engine_factory)
+    engine = OrchestrationEngine(lambda c: [], lambda s: DummyNoOpStrategy(), research_context_factory)
     report = engine.run_out_of_sample(config)
     assert report.execution_assumptions["orchestration_status"] == "SUCCESS"
 
@@ -376,8 +397,14 @@ def test_partial_snapshot_failure():
                     "account_balance": 100010.0
                 })
             )
+    def research_context_factory():
+        engine = DummyExecutionEngine()
+        return __import__('research.engine.run_engine', fromlist=['ResearchExecutionContext']).ResearchExecutionContext(
+            execution_engine=engine,
+            market_state_synchronizer=__import__('research.engine.synchronization', fromlist=['NullMarketStateSynchronizer']).NullMarketStateSynchronizer()
+        )
             
-    engine = OrchestrationEngine(snapshot_factory, strategy_factory, lambda: DummyExecutionEngine())
+    engine = OrchestrationEngine(snapshot_factory, strategy_factory, research_context_factory)
     reports = engine.run_hypothesis(hypothesis, matrix)
     
     report = reports[0]

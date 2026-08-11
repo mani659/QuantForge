@@ -22,7 +22,7 @@ class OrchestrationEngine:
         self,
         market_adapter_factory: Callable[[ExperimentConfiguration], Iterable[EnvironmentSnapshot]],
         strategy_factory: Callable[[str], ResearchStrategyContract],
-        execution_engine_factory: Callable[[], ExecutionEngineContract]
+        research_context_factory: Callable[[], "ResearchExecutionContext"]
     ):
         """
         Factories are required because every run MUST have completely fresh instances
@@ -30,7 +30,7 @@ class OrchestrationEngine:
         """
         self.market_adapter_factory = market_adapter_factory
         self.strategy_factory = strategy_factory
-        self.execution_engine_factory = execution_engine_factory
+        self.research_context_factory = research_context_factory
 
     def run_hypothesis(self, hypothesis: HypothesisRecord, matrix: ExperimentMatrix) -> List[ValidationReport]:
         """
@@ -65,12 +65,12 @@ class OrchestrationEngine:
             # 1. Fresh instantiation for strict isolation
             snapshots = self.market_adapter_factory(config)
             strategy = self.strategy_factory(config.strategy_id)
-            exec_engine = self.execution_engine_factory()
+            context = self.research_context_factory()
             
             # 2. Run Engine
             run_engine = ResearchRunEngine(
                 strategy=strategy,
-                execution_engine=exec_engine,
+                execution_context=context,
                 config=config
             )
             
