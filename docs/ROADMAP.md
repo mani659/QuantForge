@@ -910,9 +910,13 @@ CURRENT PROJECT STATUS & ROADMAP ALIGNMENT
 
 ### COMPLETE / FROZEN
 - **Phases 1-9:** The core architecture, scientific observation, execution, deployment, research industrialization, and operational governance are completely implemented, audited, and permanently frozen.
+- **Dataset Foundation Integration V1:** FROZEN. Bridge between raw historical data files (e.g. XAUUSD CSVs) and the deterministic `EnvironmentSnapshot` required by the orchestration engine.
+- **Experiment Orchestration V1:** FROZEN.
+- **Research Execution Context V1:** FROZEN.
+- **Scientific Hypothesis Evaluator V1:** COMPLETE, FROZEN. Evaluates TRAIN metrics against VALIDATION execution deterministically. 
 
 ### NEXT ENGINEERING OBJECTIVE
-- **Dataset Foundation Integration V1:** Bridge between raw historical data files (e.g. XAUUSD CSVs) and the deterministic `EnvironmentSnapshot` required by the orchestration engine. This is the immediate prerequisite before End-to-End Paper-Trading Orchestration.
+- **Validated Strategy Packaging Integration:** Bridge between a successful scientific validation verdict and the final deployable strategy format, preparing the research for handoff to the frozen Deployment Layer.
 
 ### DEFERRED / FUTURE
 - Production user interfaces
