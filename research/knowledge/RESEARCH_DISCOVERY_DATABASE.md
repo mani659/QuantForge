@@ -410,6 +410,83 @@ Scope: `C:\Users\User10\Documents\MRV\yuvi` and `C:\Users\User10\Documents\MRV\y
 
 ---
 
+## DISC-021 — Canonical event studies: XAGUSD asymmetry is statistically observable but economically non-viable
+
+**Source files:** `output/event_study_v1/`, `output/event_study_v2/`, `output/event_study_v3/` (protocols, run scripts, event datasets, final reports); `output/xagusd_cost_viability_v1/` (protocol, `final_cost_viability_report.md`, `event_cost_matched.csv`); `data/tick/XAGUSD_mt5_ticks.csv`; `data/m1/XAGUSD_M1.csv`.
+
+**Research question:** Does the extreme short-term displacement → recoil → persistence behavioral hypothesis, retained from the original corpus, constitute a deployable and economically viable mean-reversion edge?
+
+**Finding:** The hypothesis is **statistically observable in a narrow, direction-specific sense** — XAGUSD downward displacement is followed by positive direction-adjusted return under pre-registered, dependence-aware definitions — but it is **economically non-viable**: observed tick-level bid/ask transaction costs consume essentially the entire gross effect, leaving no defensible margin for commission, slippage, or broker variation. Statistical detectability does not establish economic viability. The Mean-Reversion research line is formally **CLOSED for deployment promotion** under the current evidence.
+
+**Classification: RESEARCH FINDING / ECONOMICALLY NON-VIABLE.** The XAGUSD effect is NOT retained as a validated trading strategy, a production detector, a production threshold, a BOE runtime semantic, or a deployable edge.
+
+**Evidence (QuantForge-internal canonical studies, 2026-08, all pre-registered before outcome inspection):**
+
+- **V1** (`output/event_study_v1/`, 27,297 events, 5 markets): the initial operationalization (rolling price z-score) found no robust out-of-sample cross-market reversion — only 2/30 partition-level cells distinguishable from chance; no stable threshold region; GATE 1 FAILED.
+- **V2** (`output/event_study_v2/`, 83,307 events): alternative normalizations (N1 price-z, N2 ATR-relative, N3 return-based), regime/walk-forward, pre-registered persistence, Holm multiplicity control — one coherent lead emerged: XAGUSD (N1 pooled Holm survivor p_holm=0.0135; matched-quantile significant in both directions under N1/N2). Single-market; persistence effect later found mechanically confounded; GATE 1 PARTIALLY PASSED — NOT PROMOTABLE.
+- **V3** (`output/event_study_v3/`, 34,348 events): adversarial confirmation of the XAGUSD lead only — F1 (N1 DOWN) +0.00109, p_holm=0.006, the single Holm survivor of a 12-test family with a clean EURUSD negative control; stable monotone threshold region 2.5–3.5 (not a spike); positive in all walk-forward folds and all chronological thirds; direction/magnitude consistent on the reused TEST holdout but narrow-CI insignificant (p=0.167; no fresh holdout exists); leakage-free entry-at-confirmation persistence added no discrimination; directionally asymmetric (UP only at matched rarity); single-market with no mechanistic justification. GATE 1 FAILED — EVIDENCE INSUFFICIENT. Break-even round-trip cost ≈ 10.9 bp was the decisive unknown.
+- **Cost Viability V1** (`output/xagusd_cost_viability_v1/`): **data correction — the repository DOES contain observed XAGUSD bid/ask tick data covering the research period** (`data/tick/XAGUSD_mt5_ticks.csv`, 146.4M ticks, 2021-07-13 → 2026-07-12), overturning the earlier assumption that no observed spread data existed. Primary cell (N1 DOWN, VALIDATION): gross +10.66 bp/2h (full population +10.86 bp, matching V3); observed round-trip spread cost median 9.09 bp, mean 9.89 bp, P90 11.42 bp, P99 36.15 bp; net +0.77 bp with dependence-aware cluster-bootstrap 95% CI [−3.78, +5.40] spanning zero; net success rate 52.6%; conservative full-spread-per-side model net −9.1 bp; a minimal 2+2 bp unobserved commission/slippage band already flips even the median case negative. **NON-VIABLE** under the pre-registered decision rule (net CI spans zero at median cost; P90 cost exceeds break-even).
+
+**Relationship:** Behavioral mean reversion; economic viability; execution costs; negative-result record.
+
+**Confidence:** High that the negative economic conclusion is correct for this operationalization (observed costs, not assumptions); high that the XAGUSD DOWN asymmetry is statistically real in the narrow pre-registered sense. Cross-market portability is absent and the market-specificity mechanism is unresolved — both moot for promotion.
+
+**Framework status:** Research finding only. The line did NOT establish production values for: detector trigger; production threshold; detector parameter schema; detector lifecycle; production recoil semantics; production persistence semantics. No V1/V2/V3 parameter is promoted into BOE configuration.
+
+**Future importance:** Critical as a boundary-setting negative result. It prevents future sessions from reinterpreting the XAGUSD lead as an unresolved opportunity and restarting curve-fitting, documents the observed bid/ask dataset as a foundation asset, and establishes that future hypotheses must demonstrate margin against observed execution costs before promotion.
+
+---
+
+## DISC-022 — Fixed 12/1 TSMOM candidate fails cross-era incremental replication
+
+**Source files:** `output/tsmom_v1/` (protocol v1.0.3, `run_tsmom_v1.py`, `results_TSMOM_V1.json`, `SCIENTIFIC_REPORT_TSMOM_V1.md`); `output/tsmom_v2/` (protocol v2.0.0, `run_tsmom_v2.py`, `experiment_metadata_TSMOM_V2.json`, `assessment_events_TSMOM_V2.csv`, `incremental_monthly_TSMOM_V2.csv`, `bootstrap_TSMOM_V2.csv`, `negative_controls_TSMOM_V2.csv`, `cost_analysis_TSMOM_V2.csv`, `results_TSMOM_V2.json`); historical panel acquisition/fingerprint records (`HPD_MANIFEST.csv`, `HPD_CONTRACT_HASHES.csv`, `FINAL_CLASSIFICATION.csv`, `PER_MARKET_VALIDATION.csv`); `data/m1/{XAUUSD,EURUSD,BTCUSD,XAGUSD,USATECHIDXUSD}_M1.csv`; `docs/SESSION_HANDOFF.md`.
+
+**Research question (V2, drift-controlled):** Does the fixed 12-month-lookback / 1-month-skip / 1-month-hold TSMOM signal add incremental predictive value above a same-universe, same-weight all-long drift benchmark, across the validated historical and contemporary panels?
+
+**Finding:** The historical panel shows a real **incremental** effect: F1 (TRAIN+VALIDATION, 148 months) `ΔΠ = Π_tsmom − Π_long` ≈ **+0.67% per month**, 95% CI lower bound positive, Holm-adjusted one-sided p ≈ **0.038** (family {F1, Layer-B}); the effect is broad (21/28 markets positive; all leave-one-market-out and leave-one-class-out values positive) and all three pre-registered negative controls (NC1 paired direction rotation, NC3 24-month long-lag shift, NC4 calendar-block null) are clean. **However, the contemporary replication (2021–2026, 5 markets, T = 54) contradicts the historical direction**: `ΔΠ` ≈ **−1.10% per month** (CI upper bound +0.09%), with the all-long benchmark strongly positive (≈ +3.02%/month, p ≈ 0.001) and TSMOM failing to beat it. The frozen promotion gate requires cross-era directional consistency (Condition 8); **Condition 8 FAILS**, so the candidate is **NOT PROMOTABLE / TSMOM REMAINS UNRESOLVED**. Scientific classification: **PARTIALLY REPRODUCED**. The line is formally **CLOSED** as a QuantForge-promotable candidate.
+
+**Classification: RESEARCH FINDING / CLOSED — NOT PROMOTABLE.** This is a boundary-setting negative result for the *fixed 12/1 TSMOM operationalization within QuantForge*. It does NOT claim that trend following or momentum in general does not work; the external AQR/MOP and HOP literature remains historical context and is not disproven.
+
+**Evidence (QuantForge-internal pre-registered studies, 2026-08):**
+
+- **TSMOM V1** (`output/tsmom_v1/`, 5-market contemporary-only panel, 219 assessments): Scientific **INCONCLUSIVE** / Economic **NOT CONFIRMED**. F1 absolute-return mean ≈ +1.51%/month with 95% CI **[−2.53%, +4.54%]** including zero (p ≈ 0.2375); the formal NC2 (6-month time-shifted signal) produced a *stronger* association (mean ≈ +3.93%/month, CI excluding zero), showing the positive point estimates could not be separated from unconditional drift / long-biased composition; long-biased XAUUSD and USATECHIDXUSD dominated; only 21 pooled flips.
+- **TSMOM V2 — historical Layer A** (`output/tsmom_v2/`, 28-market validated HPD panel, common window 1987-01-13 → 2002-08-30, 175 position months, 4,900 market-months, 552 pooled flips): F1 `ΔΠ` ≈ +0.67%/month, 95% CI ≈ [+0.03%, +1.54%], one-sided p ≈ 0.019, Holm ≈ 0.038; all-long drift book itself ≈ +0.71%/month (drift is a material component of absolute TSMOM ≈ +1.39%/month). Long exposure ≈ 53%; mean |cross-market corr| ≈ 0.07–0.11 (inference used month-vector calendar block bootstrap, not independent-row counts). NC1 fraction-null-≥-observed ≈ 0.0001; NC3 lagged-signal effect negative (no persistence beyond the construction horizon); NC4 ≈ 0.037.
+- **TSMOM V2 — historical F2 (TEST, 27 months, consumed once):** `ΔΠ` ≈ +0.34%/month, positive direction, 95% CI includes zero, p ≈ 0.120 — corroborative only, never re-used.
+- **TSMOM V2 — contemporary Layer B** (5 markets, T = 54): `ΔΠ` ≈ **−1.10%/month** (net-of-observed-MT5-cost ≈ −1.11%/month), one-sided p ≈ 0.971; all-long ≈ +3.02%/month with CI excluding zero — the drift benchmark dominates and the incremental signal is directionally **opposite** the historical panel.
+- **Promotion gate (frozen, all 8 conditions):** conditions 1–7 pass (F1 mean > 0; F1 CI LB > 0; Holm-adjusted p < 0.05; positive vs all-long; not single-market; not single-class; clean negative controls). **Condition 8 (contemporary directional consistency) FAILS.** Final: NOT PROMOTABLE.
+
+**Relationship:** Drift-controlled incremental identification; cross-era / cross-dataset transfer; dependence-aware inference; negative-result record. Extends the V1 identification-failure register (drift confounding) into a fully controlled historical + contemporary adjudication. Distinct from but complementary to DISC-021 (economic non-viability): here the decisive problem is **lack of stable incremental signal across eras**, not transaction costs.
+
+**Confidence:** High that the historical incremental effect is real within its historical sample (dependence-aware CI, clean controls, broad market breadth). High that the contemporary result contradicts the required cross-era consistency (direction, not just noise; all-long strongly positive). High that the closure decision is correct for the tested candidate. The economics are NOT the reason for closure (historical costs unobserved by design; contemporary economics NOT CONFIRMED but secondary).
+
+**Framework status:** Research finding only. No TSMOM detector, no runtime parameter, no BOE semantic, no Assembly/Deployment/StrategyManifest value, and no lookback/horizon/weighting/market-selection regime was ever promoted. TEST consumed exactly once. The research-to-runtime firewall held throughout V1 and V2.
+
+**Future importance:** Decisive boundary-setting record. Prevents future sessions from restarting the *fixed 12/1* TSMOM candidate merely because the historical result was statistically positive. Any future trend/momentum work is a **new independent hypothesis** and must enter through Research Hypothesis Selection from zero — it cannot be a V3 of this line. Preserves the distinction between "this candidate did not establish a stable edge" and "trend following does not work."
+
+---
+
+## DISC-023 — H01 Equity V1: US-tech cross-era replication established; broad-US historical evidence gap remains
+
+**Source files:** `output/research_discovery/H01_EQUITY_VOLATILITY_ASYMMETRY/` (protocol v1.1.0 `H01_EQUITY_VOLATILITY_ASYMMETRY_PROTOCOL_V1.md` SHA-256 `a97cd0e2…`; `run_h01_equity_v1.py`; `experiment_metadata_H01_EQ_V1.json`; `results_H01_EQ_V1.json`; `class_stats_H01_EQ_V1.csv`; `per_market_stats_H01_EQ_V1.csv`; `matched_pairs_H01_EQ_V1.csv`; `bootstrap_replicates_H01_EQ_V1.csv`; `daily_series/`; `SCIENTIFIC_REPORT_H01_EQ_V1.md`); `output/research_discovery/H01_EQUITY_V1_SCIENTIFIC_ADJUDICATION.md`; the Track-A chain (screening, scope decision, data-source audit, data-acquisition report, definition lock); H01 v1.2 protocol/report/adjudication; frozen HPD validation records (`FINAL_CLASSIFICATION.csv`, `PER_MARKET_VALIDATION.csv`, `HPD_MANIFEST.csv`).
+
+**Research question:** Does the classic negative-shock volatility-response asymmetry (forward ΔlnRV response conditioned on pre-shock volatility state, magnitude-matched negative vs positive daily shocks) generalize beyond the two single-market equity observations seen in H01 v1.2 — across a validated multi-market US equity universe?
+
+**Finding:** The US-anchored replication is **strongly supported within its registered scope**: 3 of 4 cells SUPPORT at the family-level significance floor (all p_raw = 0.00010 = 1/10001, count = 0/10,000 null draws ≥ |D_obs|; all p_Holm = 0.0004), 1 cell EVIDENCE-LIMITED, 0 CONTRADICTION, 0 INCONCLUSIVE. The **US-tech exposure (NASDAQ100 + NASDAQCOM) replicates across two eras** (historical 1986-2002 and contemporary 2016-2026, both two-market SUPPORT) — the registered strong cross-era replication condition is met. The **broad-US exposure** is SUPPORT contemporarily (SP500 + DJIA, D = +0.316) but EVIDENCE-LIMITED historically (`sp` only, D = +0.150 descriptive; the frozen ≥2-market rule withholds a primary verdict from a single-market cell). **Not established:** generalization across US equity-index markets broadly, and any international claim (outside the US-anchored scope by decision).
+
+**Classification: RESEARCH FINDING — TRACK A OPEN (narrowed US-equity program).** The experiment earned the claim that classic asymmetry is strongly supported in the tested US-tech exposure and replicates across eras; it did not earn a broad US-market or international generalization claim. The historical broad-US multi-market replication is a registered evidence-completion gap, not a failed hypothesis.
+
+**Evidence (pre-registered, outcome-blind; executed exactly once):** EQBROAD_L1 D = +0.150 CI [0.079, 0.193]; EQBROAD_L2 D = +0.316 CI [0.234, 0.389]; EQTECH_L1 D = +0.208 CI [0.154, 0.264]; EQTECH_L2 D = +0.330 CI [0.236, 0.392]. All 7 market-level d_m positive (classic direction; within-cell consistency 1.0). Frozen null construction (data-level ±c_(m,s)/2 transformation before rebuilt matching; `(1+count)/(B+1)`, inclusive ≥); percentile sampling CIs separate; 4-cell Holm family; seed 20260816, B = 10,000, L = 11, single serial invocation (peak RSS 78 MB). All p-values, CIs, Holm values, D_obs, and verdicts independently recomputed from persisted draws — exact to 1e-12. Secondaries non-rescuing (1-day positive; 21-day historical `sp` descriptively negative; GJR/EGARCH boundary-clamped non-confirmatory per protocol).
+
+**Relationship:** Volatility-response asymmetry (leverage-effect literature prior: Black 1976; GJR 1993; Engle–Ng 1993; Aït-Sahalia–Fan–Li 2013); asset-class-specific replication; cross-era replication discipline (mirrors the TSMOM Condition-8 standard); dependence-aware inference.
+
+**Confidence:** High that the US-tech cross-era replication is real within the registered design (corrected null inference, family-level significance, two eras, two markets per era). High that the broader US-market and international generalization claims are not established by this experiment (exposure count = 2; broad-US historical leg single-market).
+
+**Framework status:** Research finding only. No detector, no runtime parameter, no BOE semantic, no trading signal, no Assembly/Deployment/StrategyManifest value, and no regime/TSMOM filter use. H01 v1.1 remains CONFIRMATORY INFERENCE INVALID / UNADJUDICATED; nothing merged.
+
+**Future importance:** Establishes the strongest equity-specific result in the H01 program and defines its exact boundary (US-anchored, two exposures, tech replicated). Prevents future sessions from (a) overclaiming a broad US-market or international generalization, (b) promoting the single-market EQBROAD_L1 observation, or (c) skipping the registered amendment chain if a second historical broad-US series is later added. The next legitimate step is **historical broad-US equity data acquisition / source verification**, then (if data arrives) a registered universe amendment through definition → pre-registration → independent audit → execution.
+
+---
+
 ## File-level coverage and duplicate grouping
 
 | Research group | Supporting files | Preserved conclusion/status |
@@ -423,9 +500,9 @@ Scope: `C:\Users\User10\Documents\MRV\yuvi` and `C:\Users\User10\Documents\MRV\y
 
 ## Final summary
 
-### Top 20 permanent discoveries
+### Top 23 permanent discoveries
 
-DISC-001 through DISC-020 are the permanent discoveries, including negative and contradictory evidence rather than only positive claims.
+DISC-001 through DISC-023 are the permanent discoveries, including negative and contradictory evidence rather than only positive claims.
 
 ### Ten discoveries already embedded in QuantForge (conceptual/partial)
 
