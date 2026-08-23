@@ -12,13 +12,17 @@
 >
 > Then perform:
 >
-> **HISTORICAL BROAD-US EQUITY DATA ACQUISITION / SOURCE VERIFICATION**
+> **TRADEABLE EDGE DISCOVERY SCREENING**
 >
-> The active research line is **H01 Equity Track A — OPEN as a narrowed US-equity research program** (DISC-023). The H01 Equity V1 experiment is **complete and independently adjudicated**: EQBROAD_L2 / EQTECH_L1 / EQTECH_L2 = SUPPORT; EQBROAD_L1 = EVIDENCE-LIMITED; EQTECH strong cross-era replication established; broader US-market and international generalization NOT established.
+> **CURRENT MILESTONE:** Tradeable Edge Discovery Screening.
 >
-> The next legitimate task is the **historical broad-US equity data acquisition / source verification** task (evidence-completion for the single-market EQBROAD_L1 cell). It is **NOT an experiment**; it must be outcome-blind and must not use the successful H01 Equity results to select favorable markets. Any newly acquired historical broad-US market must eventually enter only through `source verification → definition/universe amendment → pre-registration → independent audit → execution` — no silent addition to the frozen protocol (GATE 2).
+> **H01 Equity Track A (DISC-023): CLOSED — ECONOMIC FAILURE.**
+> The H01 Equity V1 experiment is **complete and independently adjudicated**. The scientific finding is **SUPPORTED** (EQTECH strong cross-era replication established). The economic translation (Q1 / 11-day) failed the mandatory dual-era gate (Historical FAIL, Contemporary PASS) and is an **ECONOMIC FAILURE**. Economic failure does not invalidate the H01 scientific finding.
 >
-> Do NOT rerun H01 Equity V1; do NOT add markets to the frozen universe without an amendment chain; do NOT use secondary analyses to rescue or upgrade the primary; do NOT merge H01 v1.1/v1.2 results; do NOT claim a broad US-market or international generalization; do NOT create a trading strategy or runtime transfer; do NOT reopen commodities or the universal H01 claim; do NOT continue/reopen the closed TSMOM (DISC-022) or Mean-Reversion (DISC-021) lines.
+> **Strongest surviving claim:** classic volatility-response asymmetry is strongly supported in the tested US-tech exposure and replicates across two eras.
+> **Economic conclusion:** The registered Q1/11-day translation is not a stable cross-era economic edge.
+>
+> Do NOT reopen H01 Equity Track A; do NOT reinterpret the 3 SUPPORT results; do NOT rescue the economic translation; do NOT create a trading strategy from H01; do NOT reopen closed research lines (DISC-021/022/024/025).
 
 ---
 
@@ -158,14 +162,13 @@ All under `output/tsmom_v2/`: protocol, `run_tsmom_v2.py`, `experiment_metadata_
 
 ## 11. Current Research Status
 
-**Research Factory: ACTIVE — H01 EQUITY TRACK A OPEN (narrowed US-equity program).**
+**Research Factory: ACTIVE — TRADEABLE EDGE DISCOVERY SCREENING.**
 
 - Mean Reversion: **CLOSED — ECONOMICALLY NON-VIABLE** (DISC-021).
-- Fixed 12/1 TSMOM candidate: **CLOSED — NOT PROMOTABLE** (DISC-022). V1 = INCONCLUSIVE; V2 historical = positive incremental; V2 contemporary = negative incremental; final classification PARTIALLY REPRODUCED; promotion FAILED.
+- Fixed 12/1 TSMOM candidate: **CLOSED — NOT PROMOTABLE** (DISC-022). V1 = Scientific INCONCLUSIVE / Economic NOT CONFIRMED; V2 historical = positive incremental (F1 ΔΠ ≈ +0.67%/mo, Holm p ≈ 0.038); V2 contemporary = negative incremental (ΔΠ ≈ −1.10%/mo); final classification = PARTIALLY REPRODUCED; promotion = FAILED (7/8, Condition 8 cross-era consistency failed); candidate CLOSED. No detector promoted; no runtime semantics created; TEST consumed once.
 - H01 broad universal formulation: **NOT ESTABLISHED / closed in that form** (v1.1 invalid inference; v1.2 corrected + adjudicated; universal claim not supported). H01 v1.1 remains CONFIRMATORY INFERENCE INVALID / UNADJUDICATED.
-- **H01 Equity V1 (DISC-023): EXECUTED + ADJUDICATED — 3 SUPPORT / 1 EVIDENCE-LIMITED / 0 CONTRADICTION / 0 INCONCLUSIVE.** EQTECH strong cross-era replication established; broad-US historical evidence gap remains (EQBROAD_L1 single-market).
-- The next task is **HISTORICAL BROAD-US EQUITY DATA ACQUISITION / SOURCE VERIFICATION** — not a new experiment, not a universe change, not TSMOM/MR continuation.
-- No rerun of H01 Equity V1; no universe addition without amendment; no V3; no parameter tuning; no lookback search; no market selection from results; no regime filtering; no TEST reuse; no detector.
+- **H01 Equity Track A (DISC-023): CLOSED — ECONOMIC FAILURE.** Scientific result: SUPPORTED (US-tech strong cross-era replication = TRUE). Economic translation: CLOSED (Failed the dual-era gate; Historical FAIL, Contemporary PASS). The registered translation is not a stable cross-era economic edge. This closure does not invalidate the scientific finding. No runtime semantics created.
+- The next task is **TRADEABLE EDGE DISCOVERY SCREENING** — return to screening for a new candidate with a plausible path from behavior → economics → executable strategy.
 
 ## 12. Current Blockers
 
@@ -208,23 +211,22 @@ Still **DESIGN BLOCKED** — no runtime detector implementation is authorized. T
 
 Recorded: V2 computation completed and wrote all result artifacts before the terminal print crash (reporting state incomplete); the read-only adjudication audit verified protocol integrity, source/inverse fingerprints, internal consistency, TEST consumed exactly once, and no methodology change after results. The scientific report was reconstructed after the audit from persisted numbers only.
 
-## 13a. H01 Volatility-Response Line → H01 Equity V1 (executed & adjudicated, 2026-08-16)
+## 13a. H01 Volatility-Response Line → H01 Equity V1 (executed & adjudicated)
 
 ### Broad H01 formulation — NOT ESTABLISHED / closed in that form
 
 - H01 v1.1 registered inference was invalid (D_obs-centered bootstrap p ≈ 1 by construction); H01 v1.2 corrected the null construction (null-imposing recentered bootstrap, protocol v1.2.0) and was executed + independently adjudicated: the universal cross-asset claim was **not supported**; COMMODITIES_OTHER produced a formal contradiction of its registered inverse prior; equity observations (`sp`, `USATECHIDXUSD`) were classic-direction but **EVIDENCE-LIMITED** (one evaluable market per layer).
 - **H01 v1.1 remains CONFIRMATORY INFERENCE INVALID / SCIENTIFIC RESULT UNADJUDICATED.** No v1.1 p-value is used anywhere; no v1.2 result is merged with the Equity V1 result.
 
-### H01 Equity V1 — EXECUTED exactly once, adjudicated
+### H01 Equity V1 — EXECUTED and ADJUDICATED (Scientific + Economic)
 
-- **Protocol:** `output/research_discovery/H01_EQUITY_VOLATILITY_ASYMMETRY_PROTOCOL_V1.md` v1.1.0 (SHA-256 `a97cd0e2…`); final clearance PASS after three precision corrections (frozen snapshot/reacquisition; bootstrap missing-market aggregation + NaN/Holm; `sp = adj_close`).
-- **Execution:** seed 20260816, B = 10,000, L = 11, single invocation, serial (1 worker), below-normal priority, peak RSS 78 MB, no resource-pressure events; all five input fingerprints matched; all gates passed. Post-execution verification: p-values/CIs/Holm/D_obs/verdicts recomputed from persisted draws — exact.
-- **Adjudicated result:** EQBROAD_L1 = **EVIDENCE-LIMITED** (D +0.150, single market by frozen rule); EQBROAD_L2 = **SUPPORT** (D +0.316); EQTECH_L1 = **SUPPORT** (D +0.208); EQTECH_L2 = **SUPPORT** (D +0.330). 3 SUPPORT / 1 EVIDENCE-LIMITED / 0 CONTRADICTION / 0 INCONCLUSIVE. All p_Holm = 0.0004; all 7 market-level d_m classic-direction.
-- **Strongest surviving claim:** classic volatility-response asymmetry is strongly supported in the tested **US-tech exposure and replicates across two eras** (strong cross-era replication = TRUE). **Not established:** generalization across US equity-index markets broadly; international generalization (outside scope).
-- **Track A status: OPEN as a narrowed US-equity research program.** Remaining evidence gap: **historical broad-US multi-market replication incomplete** (only `sp`; EQBROAD_L1 evidence-limited). This is an evidence-completion problem, not a failed hypothesis.
-- **Next legitimate task:** **historical broad-US equity data acquisition / source verification** (outcome-blind; not an experiment; no market selected from the successful result).
-- **Governance firewall:** no rerun; no universe change without a registered amendment chain; no secondary rescue; no trading strategy; no BOE/runtime transfer; no merging with H01 v1.1/v1.2; commodities not reopened; universal H01 not revived.
-- **Key artifacts:** `output/research_discovery/H01_EQUITY_V1_SCIENTIFIC_ADJUDICATION.md`; `H01_EQUITY_VOLATILITY_ASYMMETRY/` (scientific report, results/metadata JSON, class/per-market/matched-pair/bootstrap CSVs, daily_series/, execution script, log); the Track-A chain (screening, scope decision, data-source audit, data acquisition, definition lock); DISC-023.
+- **Scientific Result:** Strongly SUPPORTED in the tested US-tech exposure. Replicates across two eras (strong cross-era replication = TRUE). 
+- **Economic Translation (Q1 / 11-day):** Executed exactly once (`H01_ECONOMIC_V1_EXEC_04`). The translation failed the mandatory dual-era stability gate. It produced negative returns across all market segments in the Historical era (FAIL: Δ = -0.00143921) and uniformly positive returns in the Contemporary era (PASS: Δ = +0.00077702). Overall: **ECONOMIC FAILURE**.
+- **Track A status: CLOSED — ECONOMIC FAILURE (2026-08-23).** The historical/contemporary divergence must be preserved exactly as evidence. The failure of the economic translation does not invalidate the H01 scientific finding. 
+- **Strongest surviving claim:** classic volatility-response asymmetry is strongly supported in the tested US-tech exposure and replicates across two eras.
+- **Economic conclusion:** The registered Q1/11-day translation is not a stable cross-era economic edge.
+- **Governance firewall:** no reopening of H01 Equity Track A; no reinterpretation of the scientific SUPPORT results; no rescue translation; no contemporary-only strategy; no threshold search; no horizon search; no trading strategy from H01; no BOE semantics; no reopening of any closed line.
+- **Key artifacts:** `output/research_discovery/H01_EQUITY_V1_SCIENTIFIC_ADJUDICATION.md`, `output/research_discovery/H01_ECONOMIC_V1_EXEC_04`, scientific artifacts under `H01_EQUITY_VOLATILITY_ASYMMETRY/`, the Track-A chain; DISC-023.
 
 ## 14. Governance / Architecture Position
 
@@ -242,11 +244,10 @@ Recorded: V2 computation completed and wrote all result artifacts before the ter
 - **Mean-Reversion research line:** CLOSED — ECONOMICALLY NON-VIABLE (DISC-021). No detector promoted; no BOE runtime semantics created.
 - **Fixed 12/1 TSMOM research line:** CLOSED — NOT PROMOTABLE (DISC-022). V1 = Scientific INCONCLUSIVE / Economic NOT CONFIRMED; V2 historical = positive incremental (F1 ΔΠ ≈ +0.67%/mo, Holm p ≈ 0.038); V2 contemporary = negative incremental (ΔΠ ≈ −1.10%/mo); final classification = PARTIALLY REPRODUCED; promotion = FAILED (7/8, Condition 8 cross-era consistency failed); candidate CLOSED. No detector promoted; no runtime semantics created; TEST consumed once.
 - **H01 broad universal formulation:** NOT ESTABLISHED / closed in that form (v1.1 invalid inference; v1.2 corrected and adjudicated; universal claim not supported). H01 v1.1 remains CONFIRMATORY INFERENCE INVALID / UNADJUDICATED.
-- **H01 Equity Track A (DISC-023):** OPEN — narrowed US-equity research program. H01 Equity V1 executed + adjudicated: 3 SUPPORT / 1 EVIDENCE-LIMITED / 0 CONTRADICTION / 0 INCONCLUSIVE; US-tech cross-era replication established; broad-US historical replication = evidence gap. No runtime semantics created.
-- **CURRENT MILESTONE:** Research — H01 Equity Track A (US-anchored), open.
+- **H01 Equity Track A (DISC-023):** CLOSED — ECONOMIC FAILURE. Scientific result: SUPPORTED. Economic translation: CLOSED (Economic Failure). The economic failure does not invalidate the H01 scientific finding. No runtime semantics created.
+- **CURRENT MILESTONE:** Tradeable Edge Discovery Screening.
 - **CRITICAL PATH / BLOCKER:** Genuine `BehaviorDetectorContract` / Observer implementation — **DESIGN BLOCKED**; no scientific specification exists in the repository; the detector is a prerequisite to end-to-end deployment. Do not derive or invent detector semantics from research notes. Unrelated to TSMOM/H01.
-- **NEXT LEGITIMATE TASK:** **HISTORICAL BROAD-US EQUITY DATA ACQUISITION / SOURCE VERIFICATION** (evidence-completion for EQBROAD_L1; outcome-blind; not an experiment; any new market enters via source verification → definition/universe amendment → pre-registration → independent audit → execution).
-- **NEXT LEGITIMATE TASK (governance/housekeeping, deferred):** commit the research knowledge updates (DISC-023, timeline, handoff) and governance/freeze documentation.
+- **NEXT LEGITIMATE TASK:** **TRADEABLE EDGE DISCOVERY SCREENING** — screen for a new candidate with a plausible path from behavior → economics → executable strategy.
 
 ## 16. Explicitly Forbidden Work
 
@@ -261,6 +262,15 @@ TSMOM (permanently, line closed):
 - claiming the closed candidate is promotable.
 
 Also still forbidden (from the freeze): detector implementation; observer implementation; recoil/persistence/z-score/momentum/ATR threshold invention; modification of detector/observation/evidence/temporal/lifecycle contracts; observer registry expansion; fingerprint expansion; serialization; broker/live integration; portfolio logic; Research Factory automation; reopening frozen milestones; speculative refactoring; any Strategy Assembly expansion; reopening Mean Reversion.
+
+H01 Equity Track A (permanently, line closed — ECONOMIC FAILURE):
+
+- reopening H01 Equity Track A;
+- modifying H01 methodology to rescue the translation;
+- parameter tuning, threshold searching, or post-hoc market selection;
+- creating a trading strategy from H01 results;
+- creating BOE semantics from H01;
+- merging H01 with other research lines.
 
 ## 17. Read-Only / Integrity Statement
 

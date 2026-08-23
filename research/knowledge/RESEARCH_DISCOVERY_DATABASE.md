@@ -1,4 +1,4 @@
-﻿# QuantForge Research Discovery Database
+# QuantForge Research Discovery Database
 
 Scope: `C:\Users\User10\Documents\MRV\yuvi` and `C:\Users\User10\Documents\MRV\yuvi\Research` only. The `QuantForge` directory and raw/M1/tick/OHLC datasets were excluded. This record is evidence-led: a claim is marked limited where samples are small or only a script (not its output) survives.
 
@@ -473,17 +473,21 @@ Scope: `C:\Users\User10\Documents\MRV\yuvi` and `C:\Users\User10\Documents\MRV\y
 
 **Finding:** The US-anchored replication is **strongly supported within its registered scope**: 3 of 4 cells SUPPORT at the family-level significance floor (all p_raw = 0.00010 = 1/10001, count = 0/10,000 null draws ≥ |D_obs|; all p_Holm = 0.0004), 1 cell EVIDENCE-LIMITED, 0 CONTRADICTION, 0 INCONCLUSIVE. The **US-tech exposure (NASDAQ100 + NASDAQCOM) replicates across two eras** (historical 1986-2002 and contemporary 2016-2026, both two-market SUPPORT) — the registered strong cross-era replication condition is met. The **broad-US exposure** is SUPPORT contemporarily (SP500 + DJIA, D = +0.316) but EVIDENCE-LIMITED historically (`sp` only, D = +0.150 descriptive; the frozen ≥2-market rule withholds a primary verdict from a single-market cell). **Not established:** generalization across US equity-index markets broadly, and any international claim (outside the US-anchored scope by decision).
 
-**Classification: RESEARCH FINDING — TRACK A OPEN (narrowed US-equity program).** The experiment earned the claim that classic asymmetry is strongly supported in the tested US-tech exposure and replicates across eras; it did not earn a broad US-market or international generalization claim. The historical broad-US multi-market replication is a registered evidence-completion gap, not a failed hypothesis.
+**Classification: SCIENTIFICALLY CONFIRMED / ECONOMIC TRANSLATION CLOSED — ECONOMIC FAILURE (DISC-023).** The experiment earned the claim that classic asymmetry is strongly supported in the tested US-tech exposure and replicates across eras. However, the registered Q1 / 11-day economic translation failed the mandatory dual-era gate. Economic failure does not invalidate the H01 scientific finding.
 
-**Evidence (pre-registered, outcome-blind; executed exactly once):** EQBROAD_L1 D = +0.150 CI [0.079, 0.193]; EQBROAD_L2 D = +0.316 CI [0.234, 0.389]; EQTECH_L1 D = +0.208 CI [0.154, 0.264]; EQTECH_L2 D = +0.330 CI [0.236, 0.392]. All 7 market-level d_m positive (classic direction; within-cell consistency 1.0). Frozen null construction (data-level ±c_(m,s)/2 transformation before rebuilt matching; `(1+count)/(B+1)`, inclusive ≥); percentile sampling CIs separate; 4-cell Holm family; seed 20260816, B = 10,000, L = 11, single serial invocation (peak RSS 78 MB). All p-values, CIs, Holm values, D_obs, and verdicts independently recomputed from persisted draws — exact to 1e-12. Secondaries non-rescuing (1-day positive; 21-day historical `sp` descriptively negative; GJR/EGARCH boundary-clamped non-confirmatory per protocol).
+**Evidence (pre-registered, outcome-blind; executed exactly once):** 
+- Scientific: EQBROAD_L1 D = +0.150 CI [0.079, 0.193]; EQBROAD_L2 D = +0.316 CI [0.234, 0.389]; EQTECH_L1 D = +0.208 CI [0.154, 0.264]; EQTECH_L2 D = +0.330 CI [0.236, 0.392]. 
+- Economic: The registered Q1 / 11-day economic translation failed the mandatory dual-era gate. Historical: FAIL — Δ = -0.00143921, 95% CI entirely below zero. Contemporary: PASS — Δ = +0.00077702, 95% CI entirely above zero. Overall: ECONOMIC FAILURE. The historical/contemporary divergence must be preserved exactly as evidence.
 
-**Relationship:** Volatility-response asymmetry (leverage-effect literature prior: Black 1976; GJR 1993; Engle–Ng 1993; Aït-Sahalia–Fan–Li 2013); asset-class-specific replication; cross-era replication discipline (mirrors the TSMOM Condition-8 standard); dependence-aware inference.
+**Relationship:** Volatility-response asymmetry (leverage-effect literature prior: Black 1976; GJR 1993; Engle–Ng 1993; Aït-Sahalia–Fan–Li 2013); asset-class-specific replication; cross-era replication discipline (mirrors the TSMOM Condition-8 standard); dependence-aware inference; negative economic translation record.
 
-**Confidence:** High that the US-tech cross-era replication is real within the registered design (corrected null inference, family-level significance, two eras, two markets per era). High that the broader US-market and international generalization claims are not established by this experiment (exposure count = 2; broad-US historical leg single-market).
+**Confidence:** High that the US-tech cross-era scientific replication is real within the registered design. High that the economic translation is an ECONOMIC FAILURE due to a clear fail on the historical leg under frozen execution (EXEC_04).
 
-**Framework status:** Research finding only. No detector, no runtime parameter, no BOE semantic, no trading signal, no Assembly/Deployment/StrategyManifest value, and no regime/TSMOM filter use. H01 v1.1 remains CONFIRMATORY INFERENCE INVALID / UNADJUDICATED; nothing merged.
+**Framework status:** Scientific finding only. No detector, no runtime parameter, no BOE semantic, no trading strategy, and no regime filter use is authorized. 
 
-**Future importance:** Establishes the strongest equity-specific result in the H01 program and defines its exact boundary (US-anchored, two exposures, tech replicated). Prevents future sessions from (a) overclaiming a broad US-market or international generalization, (b) promoting the single-market EQBROAD_L1 observation, or (c) skipping the registered amendment chain if a second historical broad-US series is later added. The next legitimate step is **historical broad-US equity data acquisition / source verification**, then (if data arrives) a registered universe amendment through definition → pre-registration → independent audit → execution.
+**Closure basis (2026-08-23):** The registered Q1/11-day economic translation yielded negative returns across all market segments in the Historical era (1982–2002) but yielded uniformly positive returns in the Contemporary era (2016–2026). It categorically failed the dual-era stability gate. **This closure does not falsify the H01 phenomenon.** The classic volatility-response asymmetry remains scientifically supported. The economic translation track is closed because the registered rule failed to produce a stable cross-era edge.
+
+**Future importance:** Establishes the strongest equity-specific result in the H01 program and defines its exact boundary (US-anchored, two exposures, tech replicated) while serving as a boundary-setting negative economic result. Prevents future sessions from (a) overclaiming economic viability, (b) rescuing the translation via contemporary-only markets, parameter tuning, or post-hoc threshold searching, (c) reopening H01 Equity Track A without a new explicit research proposal, or (d) interpreting the economic failure as a scientific contradiction. The scientific and economic findings are frozen. H01 Equity Track A is CLOSED.
 
 ---
 
@@ -498,11 +502,53 @@ Scope: `C:\Users\User10\Documents\MRV\yuvi` and `C:\Users\User10\Documents\MRV\y
 | Regime research | `regime_classifier.py`, `regime_edge_matrix.py`, `meta_regime_results.csv` | DISC-002/014; partial and sample-limited. |
 | Robustness and validation | `robustness_expansion_results.csv`, `randomized_stress_test_results.csv`, `walk_forward_results.csv`, `yearly_robustness_results.csv`, `real_trade_monte_carlo.csv`, `monte_carlo_distribution.csv` | DISC-009/010/011/012; partial. |
 
+## DISC-024 - Session-Anchored Range Expansion (USATECHIDXUSD): Contradicted
+
+**Relationship:** Behavioral edge screening candidate; independent test of volatility state transition.
+
+**Candidate Name:** Session-Anchored Range Expansion
+
+**Why screened:** To evaluate if extreme pre-session range compression (overnight/European session) reliably precedes increased cash-session range expansion.
+
+**Execution Artifacts:**
+- Definition Lock: `output/research_discovery/SESSION_RANGE_EXPANSION_DEFINITION_LOCK_V1.md`
+- Protocol: `output/research_discovery/SESSION_RANGE_EXPANSION_EVENT_STUDY_PROTOCOL_V1.md`
+- Execution: `output/research_discovery/SESSION_RANGE_EXPANSION/EXECUTION_REPORT_V1.md`
+- Adjudication: `output/research_discovery/SESSION_RANGE_EXPANSION_SCIENTIFIC_ADJUDICATION_V1.md`
+
+**Final Verdict:** CONTRADICTED. Extreme pre-session compression (<= trailing 63-day 25th percentile) was associated with significantly *lower* subsequent normalized cash-session range than the control group. 
+
+**Exact Next Disposition:** CLOSED.
+- The hypothesis is falsified for this asset and definition.
+- **PROHIBITION:** Do not tune parameters, test K-means, or invent a replacement hypothesis to rescue this candidate.
+
+---
+
+## DISC-025 — Liquidity Sweep / Reversal: behavioral discovery supported, minimal executable translation economically non-viable, line CLOSED
+
+**Source files:** `output/research_discovery/XAUUSD_LIQUIDITY_SWEEP_REVERSAL/` (v1.2.0 event study; event CSVs for XAUUSD/XAGUSD/USATECHIDXUSD/BTCUSD; `SCIENTIFIC_REPORT_V1.md`); `XAUUSD_LIQUIDITY_SWEEP_REVERSAL_EVENT_STUDY_PROTOCOL_V1.md` (v1.2.0, SHA-256 `c6b8fbd4…`); `XAUUSD_LIQUIDITY_SWEEP_REVERSAL_FINAL_CLEARANCE_AUDIT_V1.md`/`_V2.md`; `XAUUSD_LIQUIDITY_SWEEP_REVERSAL_SCIENTIFIC_ADJUDICATION_V1.md`; `LIQUIDITY_SWEEP_STRATEGY_ECONOMIC_TRANSLATION_V1.md`; `LIQUIDITY_SWEEP_POST_ECONOMIC_GOVERNANCE_ADJUDICATION_V1.md`; `LIQUIDITY_SWEEP_RESEARCH_LINE_CLOSURE_GOVERNANCE_RECORD_V1.md`; `data/m1/*_M1.csv`; observed MT5 bid/ask `data/tick/{XAUUSD,XAGUSD,USATECHIDXUSD,BTCUSD}_mt5_ticks.csv`; `output/xagusd_cost_viability_v1/xagusd_minute_aggregates.csv` (XAGUSD).
+
+**Research question:** Does a deterministic sweep of a prior Asian-session extreme, followed by wick rejection and micro-structural reversal confirmation, produce a statistically larger subsequent 120-minute directional excursion than the registered rejected-sweep control group — and, if so, does the minimal executable translation survive the economics of actually trading it?
+
+**Finding:** The behavioral phenomenon is **statistically supported in all four evaluable markets** — XAUUSD, XAGUSD, USATECHIDXUSD, BTCUSD (all Holm-adjusted p = 3.9996e-04 < 0.05, ΔM_obs > 0, CIs far from zero; event counts 984–1,960 treatment / 39–117 control; three economically distinct mechanisms: precious metals, equity-index CFD, crypto). EURUSD is **DATA-LIMITED / NOT ADJUDICATED** (16.96% invalid-day fraction > 10% gate, halt before inference). The minimal executable translation — **confirmation-close entry, reversal-direction trade, structural sweep-extreme stop, 120-minute-close exit, fixed notional** — is **ECONOMICALLY NON-VIABLE in all four markets and gross-negative BEFORE transaction costs** (median gross per trade: XAUUSD −5.3 bp, XAGUSD −11.6 bp, USATECHIDXUSD −5.0 bp, BTCUSD −11.8 bp; win rates 19–26%; stop-out rates 70–80%; negative in every year and both chronological halves of every market; observed MT5 spreads exact-minute ≥ 98.3%). Failure mechanism: **TRANSLATION FAILURE** (the validated excursion is anchored at the swept Asian level; the confirmation-close entry sits 4.7–13.2 bp beyond the level, the structural stop converts the intra-window reversion into losses, and the horizon-close exit misses the MFE extreme) — not a cost failure, and behavioral failure is not established.
+
+**Classification: RESEARCH FINDING — BEHAVIORALLY SUPPORTED / ECONOMICALLY NON-VIABLE (registered minimal translation) / LINE CLOSED.** The behavioral discovery is preserved as real; the candidate is closed for trading purposes. Under the strict alternative-selection rule, no alternative translation (limit entry at the Asian level, next-bar-open entry, Asian opposite-boundary target, trailing exit) has a justification that predates the economic result and derives from the frozen behavioral object, so **no alternative economic protocol is authorized**.
+
+**Evidence (pre-registered, outcome-blind; 2026-08):** behavioral ΔM_obs / 95% CI: XAUUSD 4.057 [3.477, 4.582]; XAGUSD 0.101 [0.086, 0.114]; USATECHIDXUSD 39.787 [32.805, 47.219]; BTCUSD 229.100 [188.699, 263.300]; all p_raw = 1/10001 (floor, count = 0 of 10,000 null draws), all p_Holm = 3.9996e-04; B = 10,000, L = 10, seed = 20260817; stationary day-cluster block bootstrap; null-imposing recentered construction ΔM*_null = ΔM* − ΔM_obs; percentile sampling CI separate from null p. Economic translation: baseline registered before computation, zero tuning, manually validated trade-by-trade; observed cost model RT(A) median 1.05–16.77 bp across markets; net A+0 median −7.2 to −27.5 bp; cumulative net (A+4) −5,929 to −39,553 bp; max drawdown ≈ full cumulative loss. Reproducibility caveats on record: the behavioral execution's bootstrap/null draw files, metadata JSON, and execution script were not persisted (observed statistics, counts, and input hashes verified from persisted artifacts; inference layer internally consistent but not recomputable from draws); the EURUSD halt's exact invalid-day operationalization (≈600-bar/day minimum coverage; 291/1,716 days) is not uniquely pinned by the registered §17 text.
+
+**Relationship:** Behavioral edge screening candidate (auction-mechanics stop-run/reversal hypothesis); cross-market validation; economic viability; negative-result record. Distinct from but complementary to DISC-021 (economic non-viability under observed costs — here the failure is the entry/stop/exit mapping, gross before costs), DISC-022 (cross-era replication failure), DISC-023 (H01 Equity), and DISC-024 (session range, contradicted).
+
+**Confidence:** High that the behavioral phenomenon is statistically real within the registered design (Holm-corrected, four markets, three mechanisms, directionally consistent). High that the minimal executable translation is economically non-viable (gross-negative before costs, uniform across markets/years/halves, observed-spread-confirmed). Not established: whether any other executable mapping could capture the excursion (untested; not authorized), and any FX statement (EURUSD data-limited).
+
+**Framework status:** Research finding only. No detector, no runtime parameter, no BOE semantic, no Assembly/Deployment/StrategyManifest value, no trading signal, no EA. The behavioral protocol, event CSVs, adjudications, and economic artifacts are the permanent record; nothing crossed into runtime.
+
+**Future importance:** Boundary-setting negative result. Prevents future sessions from (a) reviving the sweep/reversal candidate by retesting entry/exit/stop variants, (b) inverting or rescuing the hypothesis, (c) building an EA from the closed translation, or (d) reinterpreting the EURUSD data-limit as a hypothesis result. Preserves the distinction between "the behavior is real" and "the behavior is tradable." The next legitimate step is **Tradeable Edge Discovery Screening** for a new, independently screened candidate.
+
 ## Final summary
 
-### Top 23 permanent discoveries
+### Top 25 permanent discoveries
 
-DISC-001 through DISC-023 are the permanent discoveries, including negative and contradictory evidence rather than only positive claims.
+DISC-001 through DISC-025 are the permanent discoveries, including negative and contradictory evidence rather than only positive claims. **DISC-023 is CLOSED — EVIDENCE-LIMITED / DATA-ACCESS TERMINATION.**
 
 ### Ten discoveries already embedded in QuantForge (conceptual/partial)
 
