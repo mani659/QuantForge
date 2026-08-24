@@ -142,4 +142,11 @@ The surviving corpus records **two closed research lines** — Mean Reversion (e
 
 ## Timeline conclusion (updated)
 
-The surviving corpus now records **five closed research lines** — Mean Reversion (DISC-021, economically non-viable), fixed 12/1 TSMOM (DISC-022, cross-era replication failure), Session-Anchored Range Expansion (DISC-024, contradicted), Liquidity Sweep / Reversal (DISC-025, translation non-viable), and **H01 Equity Track A (DISC-023, evidence-limited / data-access termination)**. The H01 broad universal formulation is closed in that form. The active objective returns to **Tradeable Edge Discovery Screening**: a behavioral discovery is valuable only insofar as it can feed the edge-discovery pipeline, and failed candidates are closed quickly. No closed line may be reopened or rescued.
+The surviving corpus now records **five closed research lines** — Mean Reversion (DISC-021), fixed 12/1 TSMOM (DISC-022), Session-Anchored Range Expansion (DISC-024), Liquidity Sweep / Reversal (DISC-025), and **H01 Equity Track A (DISC-023, economic failure)**. The H01 broad universal formulation is closed in that form.
+
+## 20. Opening Range Breakout (ORD / DISC-026): Active Research
+
+- **Scientific Execution and Adjudication:** Executed successfully. 3/3 evaluable registered markets passed the Holm-adjusted threshold. Classification: SCIENTIFICALLY SUPPORTED.
+- **Economic Protocol and Staged Work:** The economic translation architecture was redesigned into a staged execution model to safely isolate and validate dependencies.
+- **Stage-0 Completion:** Stage-0 Preflight completed and passed.
+- **Current Milestone:** **M-ORD-ECO-01 — Finalize + audit tick-data Parquet specification**. The project is currently focused on fulfilling Stage 1 preparation for ORD economic translation.

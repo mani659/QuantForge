@@ -542,13 +542,33 @@ Scope: `C:\Users\User10\Documents\MRV\yuvi` and `C:\Users\User10\Documents\MRV\y
 
 **Framework status:** Research finding only. No detector, no runtime parameter, no BOE semantic, no Assembly/Deployment/StrategyManifest value, no trading signal, no EA. The behavioral protocol, event CSVs, adjudications, and economic artifacts are the permanent record; nothing crossed into runtime.
 
-**Future importance:** Boundary-setting negative result. Prevents future sessions from (a) reviving the sweep/reversal candidate by retesting entry/exit/stop variants, (b) inverting or rescuing the hypothesis, (c) building an EA from the closed translation, or (d) reinterpreting the EURUSD data-limit as a hypothesis result. Preserves the distinction between "the behavior is real" and "the behavior is tradable." The next legitimate step is **Tradeable Edge Discovery Screening** for a new, independently screened candidate.
+**Future importance:** Boundary-setting negative result. Prevents future sessions from (a) reviving the sweep/reversal candidate by retesting entry/exit/stop variants, (b) inverting or rescuing the hypothesis, (c) building an EA from the closed translation, or (d) reinterpreting the EURUSD data-limit as a hypothesis result. Preserves the distinction between "the behavior is real" and "the behavior is tradable."
+
+---
+
+## DISC-026 — Opening Range Breakout (ORD): Scientifically Supported, Economic Stage In Progress
+
+**Source files:** `output/research_discovery/ORD_OPENING_RANGE_DEFINITION_LOCK_V1.md`, `ORD_OPENING_RANGE_EVENT_STUDY_PROTOCOL_V1_AMENDED.md`, `ORD_V1_1_0_GOVERNANCE_APPROVAL_FREEZE.md`, `ORD_SCIENTIFIC_RESULTS_ADJUDICATION_V1.md`, `ORD_ECONOMIC_TRANSLATION_PROTOCOL_V2_1_AMENDED.md`, `ORD_ECONOMIC_EXECUTION_STAGING_DESIGN_V1.md`, `ORD_ECONOMIC_STAGE0_PREFLIGHT_20260822T113645Z.md`.
+
+**Research question:** Does an Opening Range Breakout (ORD) strategy produce statistically significant scientific edge, and can it be translated into an economically viable staged execution model?
+
+**Finding:** The scientific hypothesis is **SUPPORTED**. The adjudication artifact confirms 3/3 evaluable registered markets (XAUUSD, XAGUSD, USATECHIDXUSD) passed the Holm-adjusted threshold. The economic translation is currently in **PREPARATION (STAGE 0 COMPLETE)**, having redesigned the economic architecture into a staged execution model that passed Stage-0 Preflight.
+
+**Classification: RESEARCH FINDING — SCIENTIFICALLY SUPPORTED / ECONOMIC STAGE IN PROGRESS.**
+
+**Framework status:** Active research candidate.
+
+**Future importance:** Serves as the current active milestone (`M-ORD-ECO-01`).
 
 ## Final summary
 
-### Top 25 permanent discoveries
+### Top 26 permanent discoveries
 
-DISC-001 through DISC-025 are the permanent discoveries, including negative and contradictory evidence rather than only positive claims. **DISC-023 is CLOSED — EVIDENCE-LIMITED / DATA-ACCESS TERMINATION.**
+DISC-001 through DISC-026 are the permanent discoveries, including negative and contradictory evidence rather than only positive claims.
+- **DISC-023:** SCIENTIFICALLY CONFIRMED / ECONOMIC TRANSLATION CLOSED — ECONOMIC FAILURE.
+- **DISC-024:** CONTRADICTED / CLOSED.
+- **DISC-025:** BEHAVIORALLY SUPPORTED / ECONOMIC TRANSLATION NON-VIABLE / CLOSED.
+- **DISC-026:** SCIENTIFICALLY SUPPORTED / ECONOMIC STAGE IN PROGRESS.
 
 ### Ten discoveries already embedded in QuantForge (conceptual/partial)
 

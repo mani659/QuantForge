@@ -10,19 +10,23 @@
 >
 > Read `docs/SESSION_HANDOFF.md` first.
 >
-> Then perform:
+> **CURRENT MILESTONE:**
+> ORD Economic Translation — Tick Data Representation / Staged Execution
 >
-> **TRADEABLE EDGE DISCOVERY SCREENING**
+> **CURRENT SUB-MILESTONE:**
+> M-ORD-ECO-01 — Finalize + audit tick-data Parquet specification
 >
-> **CURRENT MILESTONE:** Tradeable Edge Discovery Screening.
+> ### HISTORICAL / CLOSED
 >
-> **H01 Equity Track A (DISC-023): CLOSED — ECONOMIC FAILURE.**
-> The H01 Equity V1 experiment is **complete and independently adjudicated**. The scientific finding is **SUPPORTED** (EQTECH strong cross-era replication established). The economic translation (Q1 / 11-day) failed the mandatory dual-era gate (Historical FAIL, Contemporary PASS) and is an **ECONOMIC FAILURE**. Economic failure does not invalidate the H01 scientific finding.
+> - DISC-021
+> - DISC-022
+> - DISC-023
+> - DISC-024
+> - DISC-025
 >
-> **Strongest surviving claim:** classic volatility-response asymmetry is strongly supported in the tested US-tech exposure and replicates across two eras.
-> **Economic conclusion:** The registered Q1/11-day translation is not a stable cross-era economic edge.
+> ### ACTIVE
 >
-> Do NOT reopen H01 Equity Track A; do NOT reinterpret the 3 SUPPORT results; do NOT rescue the economic translation; do NOT create a trading strategy from H01; do NOT reopen closed research lines (DISC-021/022/024/025).
+> - DISC-026 / ORD
 
 ---
 
@@ -162,13 +166,21 @@ All under `output/tsmom_v2/`: protocol, `run_tsmom_v2.py`, `experiment_metadata_
 
 ## 11. Current Research Status
 
-**Research Factory: ACTIVE — TRADEABLE EDGE DISCOVERY SCREENING.**
+**Research Factory: ACTIVE — ORD ECONOMIC TRANSLATION.**
 
 - Mean Reversion: **CLOSED — ECONOMICALLY NON-VIABLE** (DISC-021).
-- Fixed 12/1 TSMOM candidate: **CLOSED — NOT PROMOTABLE** (DISC-022). V1 = Scientific INCONCLUSIVE / Economic NOT CONFIRMED; V2 historical = positive incremental (F1 ΔΠ ≈ +0.67%/mo, Holm p ≈ 0.038); V2 contemporary = negative incremental (ΔΠ ≈ −1.10%/mo); final classification = PARTIALLY REPRODUCED; promotion = FAILED (7/8, Condition 8 cross-era consistency failed); candidate CLOSED. No detector promoted; no runtime semantics created; TEST consumed once.
+- Fixed 12/1 TSMOM candidate: **CLOSED — NOT PROMOTABLE** (DISC-022).
 - H01 broad universal formulation: **NOT ESTABLISHED / closed in that form** (v1.1 invalid inference; v1.2 corrected + adjudicated; universal claim not supported). H01 v1.1 remains CONFIRMATORY INFERENCE INVALID / UNADJUDICATED.
-- **H01 Equity Track A (DISC-023): CLOSED — ECONOMIC FAILURE.** Scientific result: SUPPORTED (US-tech strong cross-era replication = TRUE). Economic translation: CLOSED (Failed the dual-era gate; Historical FAIL, Contemporary PASS). The registered translation is not a stable cross-era economic edge. This closure does not invalidate the scientific finding. No runtime semantics created.
-- The next task is **TRADEABLE EDGE DISCOVERY SCREENING** — return to screening for a new candidate with a plausible path from behavior → economics → executable strategy.
+- **H01 Equity Track A (DISC-023): CLOSED — ECONOMIC FAILURE.**
+- **Session-Anchored Range Expansion (DISC-024): CLOSED — CONTRADICTED.**
+- **Liquidity Sweep / Reversal (DISC-025): CLOSED — ECONOMIC TRANSLATION NON-VIABLE.**
+- **Opening Range Breakout (ORD / DISC-026): SCIENTIFICALLY SUPPORTED / ECONOMIC STAGE IN PROGRESS.**
+  - Stage 0 — COMPLETE
+  - Stage 1 — AUTHORIZED, NOT PRODUCTION-COMPLETED
+  - Stage 2 — NOT EXECUTED
+  - Stage 3 — NOT EXECUTED
+  - Economic adjudication — NOT PERFORMED
+- The next task is **M-ORD-ECO-01 — Finalize + audit tick-data Parquet specification**.
 
 ## 12. Current Blockers
 
@@ -244,10 +256,13 @@ Recorded: V2 computation completed and wrote all result artifacts before the ter
 - **Mean-Reversion research line:** CLOSED — ECONOMICALLY NON-VIABLE (DISC-021). No detector promoted; no BOE runtime semantics created.
 - **Fixed 12/1 TSMOM research line:** CLOSED — NOT PROMOTABLE (DISC-022). V1 = Scientific INCONCLUSIVE / Economic NOT CONFIRMED; V2 historical = positive incremental (F1 ΔΠ ≈ +0.67%/mo, Holm p ≈ 0.038); V2 contemporary = negative incremental (ΔΠ ≈ −1.10%/mo); final classification = PARTIALLY REPRODUCED; promotion = FAILED (7/8, Condition 8 cross-era consistency failed); candidate CLOSED. No detector promoted; no runtime semantics created; TEST consumed once.
 - **H01 broad universal formulation:** NOT ESTABLISHED / closed in that form (v1.1 invalid inference; v1.2 corrected and adjudicated; universal claim not supported). H01 v1.1 remains CONFIRMATORY INFERENCE INVALID / UNADJUDICATED.
-- **H01 Equity Track A (DISC-023):** CLOSED — ECONOMIC FAILURE. Scientific result: SUPPORTED. Economic translation: CLOSED (Economic Failure). The economic failure does not invalidate the H01 scientific finding. No runtime semantics created.
-- **CURRENT MILESTONE:** Tradeable Edge Discovery Screening.
-- **CRITICAL PATH / BLOCKER:** Genuine `BehaviorDetectorContract` / Observer implementation — **DESIGN BLOCKED**; no scientific specification exists in the repository; the detector is a prerequisite to end-to-end deployment. Do not derive or invent detector semantics from research notes. Unrelated to TSMOM/H01.
-- **NEXT LEGITIMATE TASK:** **TRADEABLE EDGE DISCOVERY SCREENING** — screen for a new candidate with a plausible path from behavior → economics → executable strategy.
+- **H01 Equity Track A (DISC-023):** CLOSED — ECONOMIC FAILURE.
+- **Session-Anchored Range Expansion (DISC-024):** CLOSED — CONTRADICTED.
+- **Liquidity Sweep / Reversal (DISC-025):** CLOSED — ECONOMIC TRANSLATION NON-VIABLE.
+- **Opening Range Breakout (ORD / DISC-026):** SCIENTIFICALLY SUPPORTED / ECONOMIC STAGE IN PROGRESS.
+- **CURRENT MILESTONE:** ORD Economic Translation — Tick Data Representation / Staged Execution.
+- **CRITICAL PATH / BLOCKER:** Stage 1 tick-data Parquet specification finalization and audit.
+- **NEXT LEGITIMATE TASK:** **M-ORD-ECO-01 — Finalize + audit tick-data Parquet specification.**
 
 ## 16. Explicitly Forbidden Work
 
