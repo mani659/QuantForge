@@ -8,13 +8,17 @@
 
 > **START HERE NEXT SESSION**
 >
-> Read `docs/SESSION_HANDOFF.md` first.
+> 1. read `docs/SESSION_HANDOFF.md`;
+> 2. read `output/research_discovery/QUANTFORGE_RESEARCH_FACTORY_V2.md`;
+> 3. read the current screening doctrine;
+> 4. screen candidates through G0 → G1 → G2 before expensive escalation;
+> 5. do NOT reopen any closed research line;
+> 6. do NOT jump directly to production tick infrastructure.
 >
 > **CURRENT MILESTONE:**
-> TRADEABLE EDGE DISCOVERY SCREENING
+> **TRADEABLE EDGE DISCOVERY SCREENING**
 >
-> **CURRENT SUB-MILESTONE:**
-> Next research direction
+> **The research factory now operates under the Economic-First Discovery Pipeline.**
 >
 > ### HISTORICAL / CLOSED
 >

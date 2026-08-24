@@ -585,6 +585,23 @@ DISC-001 through DISC-026 are the permanent discoveries, including negative and 
 9. Execution-layer separation from intelligence.
 10. Deterministic research recording/validation intent.
 
+## DISC-027 — Program-Level Research Architecture Audit (Economic-First Factory V2)
+
+**Date:** 2026-08-24
+**Source files:** `output/research_discovery/QUANTFORGE_PROGRAM_LEVEL_RESEARCH_ARCHITECTURE_AUDIT_V1.md`, `output/research_discovery/QUANTFORGE_RESEARCH_FACTORY_V2.md`.
+
+**Research condition:** After six research lines (DISC-021 through DISC-026) were closed, yielding zero positive economic results despite strong scientific governance and significant infrastructure investment.
+
+**Finding:** The project demonstrated excellent scientific laboratory practices (provenance, pre-registration, negative-result integrity) but was inefficient as a discovery machine. Specifically, it applied expensive engineering infrastructure (Parquet, tick processing, staged execution) to candidates whose gross signals (1-10 bps) were structurally incapable of surviving realistic retail CFD execution friction.
+
+**Outcome:** The research factory formally transitioned to an **Economic-First Discovery Pipeline** (Research Factory V2).
+1. Candidates must pass a mandatory **Economic Plausibility Gate (G1)** before scientific definition lock.
+2. Candidates must pass a **Cheap Empirical Pilot (G2)** before expensive infrastructure is allocated.
+3. Candidate generation must systematically diversify beyond the "event -> direction -> fixed horizon" template.
+4. The closure of ORD (DISC-026) serves as the primary learning milestone for identifying when economic headroom screening should preempt infrastructure buildup.
+
+---
+
 ### Ten discoveries still missing or only partially represented
 
 1. Explicit virtual-signal → real-entry lifecycle.

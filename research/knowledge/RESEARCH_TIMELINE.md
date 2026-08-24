@@ -162,3 +162,14 @@ The surviving corpus now records **six closed research lines** — Mean Reversio
 - **Economic Adjudication:** The execution (ORD_STAGE2_XAGUSD_EXEC_01) was strictly negative. Median net -12.404 bp, Win Rate 9.1%. Protocol gates uniformly failed.
 - **Candidate CLOSED:** The registered XAGUSD economic translation is ECONOMICALLY NON-VIABLE and CLOSED. The scientific finding remains SUPPORTED. No rerun or rescue is authorized.
 - **Next Stage:** Project returned to **TRADEABLE EDGE DISCOVERY SCREENING**.
+
+## 21. Research Factory V2: Economic-First Discovery Pipeline
+
+- **Program-Level Audit:** After the closure of six research lines yielding zero positive economic results despite strong scientific governance, an independent read-only program-level audit (`QUANTFORGE_PROGRAM_LEVEL_RESEARCH_ARCHITECTURE_AUDIT_V1.md`) was conducted.
+- **Key Finding:** The project was operating as an excellent scientific laboratory but an inefficient discovery machine, repeatedly applying expensive engineering infrastructure to candidates whose gross signals were structurally incapable of surviving retail friction.
+- **Governance Amendment:** The project formally adopted the **Economic-First Discovery Pipeline** (`QUANTFORGE_RESEARCH_FACTORY_V2.md`).
+- **Core Changes:** 
+  1. Mandatory **Economic Plausibility Gate (G1)** before scientific definition lock.
+  2. Mandatory **Cheap Empirical Pilot (G2)** before expensive infrastructure allocation.
+  3. Strict diversification requirement across mechanism families during candidate generation.
+- **Status:** QuantForge now operates as an Economic-First Tradeable-Edge Discovery Factory. Future candidate screening resumes under this doctrine.
