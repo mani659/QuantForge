@@ -8,28 +8,33 @@
 
 > **START HERE NEXT SESSION**
 >
-> 1. Read `docs/SESSION_HANDOFF.md`.
-> 2. Read `output/research_discovery/QUANTFORGE_RESEARCH_FACTORY_V2.md`.
-> 3. Read the first G0/G1/G2 screening artifact (`RESEARCH_FACTORY_V2_SCREEN_G0_G1_G2_20260824.md`).
-> 4. Return to G0 candidate generation.
-> 5. Do NOT rescue CAND-001/002/003.
-> 6. Do NOT begin G3 until a future candidate passes G2.
-> 7. Do NOT escalate to production tick infrastructure before the required gates.
+> ## Required next-session reading
+> 1. `docs/SESSION_HANDOFF.md`
+> 2. `output/research_discovery/QUANTFORGE_RESEARCH_FACTORY_V2.md`
+> 3. `output/research_discovery/TRADEABLE_EDGE_DISCOVERY_SCREENING_V3.md`
+> 4. `output/research_discovery/RESEARCH_FACTORY_V2_SCREEN_G0_G1_G2_20260824.md`
 >
-> **CURRENT MILESTONE:**
+> ## Explicit prohibitions
+> Next session must NOT:
+> * rescue CAND-001;
+> * rescue CAND-002;
+> * rescue CAND-003;
+> * reopen DISC-021–DISC-026;
+> * jump directly to G3;
+> * jump directly to production tick infrastructure.
+>
+> ## Current Milestone
 > **TRADEABLE EDGE DISCOVERY SCREENING**
 >
-> **OPERATING DOCTRINE:**
+> ## Operating Doctrine
 > **ECONOMIC-FIRST TRADEABLE-EDGE DISCOVERY FACTORY**
 >
-> **LAST SCREEN:**
-> 2026-08-24 G0→G1→G2 — 3 candidates, 0 promoted.
-> Research Factory V2 first screening cycle completed successfully.
-> CAND-001, CAND-002, CAND-003 all closed at G2.
-> No candidate promoted to G3.
+> ## Last Screening
+> 2026-08-24 G0→G1→G2 screening:
+> 3 candidates screened, 0 promoted.
 >
-> **NEXT ACTION:**
-> **RETURN TO G0 CANDIDATE GENERATION.**
+> ## Next Action
+> **RETURN TO G0 CANDIDATE GENERATION**
 >
 > ### HISTORICAL / CLOSED
 >
