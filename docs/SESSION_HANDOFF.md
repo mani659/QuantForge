@@ -8,17 +8,28 @@
 
 > **START HERE NEXT SESSION**
 >
-> 1. read `docs/SESSION_HANDOFF.md`;
-> 2. read `output/research_discovery/QUANTFORGE_RESEARCH_FACTORY_V2.md`;
-> 3. read the current screening doctrine;
-> 4. screen candidates through G0 → G1 → G2 before expensive escalation;
-> 5. do NOT reopen any closed research line;
-> 6. do NOT jump directly to production tick infrastructure.
+> 1. Read `docs/SESSION_HANDOFF.md`.
+> 2. Read `output/research_discovery/QUANTFORGE_RESEARCH_FACTORY_V2.md`.
+> 3. Read the first G0/G1/G2 screening artifact (`RESEARCH_FACTORY_V2_SCREEN_G0_G1_G2_20260824.md`).
+> 4. Return to G0 candidate generation.
+> 5. Do NOT rescue CAND-001/002/003.
+> 6. Do NOT begin G3 until a future candidate passes G2.
+> 7. Do NOT escalate to production tick infrastructure before the required gates.
 >
 > **CURRENT MILESTONE:**
 > **TRADEABLE EDGE DISCOVERY SCREENING**
 >
-> **The research factory now operates under the Economic-First Discovery Pipeline.**
+> **OPERATING DOCTRINE:**
+> **ECONOMIC-FIRST TRADEABLE-EDGE DISCOVERY FACTORY**
+>
+> **LAST SCREEN:**
+> 2026-08-24 G0→G1→G2 — 3 candidates, 0 promoted.
+> Research Factory V2 first screening cycle completed successfully.
+> CAND-001, CAND-002, CAND-003 all closed at G2.
+> No candidate promoted to G3.
+>
+> **NEXT ACTION:**
+> **RETURN TO G0 CANDIDATE GENERATION.**
 >
 > ### HISTORICAL / CLOSED
 >
