@@ -142,11 +142,23 @@ The surviving corpus records **two closed research lines** — Mean Reversion (e
 
 ## Timeline conclusion (updated)
 
-The surviving corpus now records **five closed research lines** — Mean Reversion (DISC-021), fixed 12/1 TSMOM (DISC-022), Session-Anchored Range Expansion (DISC-024), Liquidity Sweep / Reversal (DISC-025), and **H01 Equity Track A (DISC-023, economic failure)**. The H01 broad universal formulation is closed in that form.
+The surviving corpus now records **six closed research lines** — Mean Reversion (DISC-021), fixed 12/1 TSMOM (DISC-022), Session-Anchored Range Expansion (DISC-024), Liquidity Sweep / Reversal (DISC-025), **H01 Equity Track A (DISC-023, economic failure)**, and **Opening Range Breakout (ORD / DISC-026) XAGUSD economic translation (economic failure)**. The H01 broad universal formulation is closed in that form.
 
-## 20. Opening Range Breakout (ORD / DISC-026): Active Research
+## 20. Opening Range Breakout (ORD / DISC-026): Scientifically Supported / Economic Translation Closed
 
 - **Scientific Execution and Adjudication:** Executed successfully. 3/3 evaluable registered markets passed the Holm-adjusted threshold. Classification: SCIENTIFICALLY SUPPORTED.
-- **Economic Protocol and Staged Work:** The economic translation architecture was redesigned into a staged execution model to safely isolate and validate dependencies.
-- **Stage-0 Completion:** Stage-0 Preflight completed and passed.
-- **Current Milestone:** **M-ORD-ECO-01 — Finalize + audit tick-data Parquet specification**. The project is currently focused on fulfilling Stage 1 preparation for ORD economic translation.
+- **Economic Protocol and Chronological Sequence:**
+  - M-ORD-ECO-01 specification PASS;
+  - M-ORD-ECO-02 converter implementation;
+  - M-ORD-ECO-03 converter audit;
+  - M-ORD-ECO-04 production Parquet conversion;
+  - post-conversion integrity PASS;
+  - M-ORD-ECO-05 Stage-1 adapter/preparation;
+  - M-ORD-ECO-06 Stage-1 production execution;
+  - M-ORD-ECO-07 Stage-1 output audit;
+  - M-ORD-ECO-08 Stage-2 economic execution;
+  - M-ORD-ECO-09 independent economic adjudication;
+  - final XAGUSD economic closure.
+- **Economic Adjudication:** The execution (ORD_STAGE2_XAGUSD_EXEC_01) was strictly negative. Median net -12.404 bp, Win Rate 9.1%. Protocol gates uniformly failed.
+- **Candidate CLOSED:** The registered XAGUSD economic translation is ECONOMICALLY NON-VIABLE and CLOSED. The scientific finding remains SUPPORTED. No rerun or rescue is authorized.
+- **Next Stage:** Project returned to **TRADEABLE EDGE DISCOVERY SCREENING**.

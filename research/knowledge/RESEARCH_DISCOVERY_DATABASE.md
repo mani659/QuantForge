@@ -546,19 +546,21 @@ Scope: `C:\Users\User10\Documents\MRV\yuvi` and `C:\Users\User10\Documents\MRV\y
 
 ---
 
-## DISC-026 — Opening Range Breakout (ORD): Scientifically Supported, Economic Stage In Progress
+## DISC-026 — Opening Range Breakout (ORD): Scientifically Supported / Economic Translation Closed
 
-**Source files:** `output/research_discovery/ORD_OPENING_RANGE_DEFINITION_LOCK_V1.md`, `ORD_OPENING_RANGE_EVENT_STUDY_PROTOCOL_V1_AMENDED.md`, `ORD_V1_1_0_GOVERNANCE_APPROVAL_FREEZE.md`, `ORD_SCIENTIFIC_RESULTS_ADJUDICATION_V1.md`, `ORD_ECONOMIC_TRANSLATION_PROTOCOL_V2_1_AMENDED.md`, `ORD_ECONOMIC_EXECUTION_STAGING_DESIGN_V1.md`, `ORD_ECONOMIC_STAGE0_PREFLIGHT_20260822T113645Z.md`.
+**Source files:** `output/research_discovery/ORD_OPENING_RANGE_DEFINITION_LOCK_V1.md`, `ORD_OPENING_RANGE_EVENT_STUDY_PROTOCOL_V1_AMENDED.md`, `ORD_V1_1_0_GOVERNANCE_APPROVAL_FREEZE.md`, `ORD_SCIENTIFIC_RESULTS_ADJUDICATION_V1.md`, `ORD_ECONOMIC_TRANSLATION_PROTOCOL_V2_1_AMENDED.md`, `ORD_ECONOMIC_EXECUTION_STAGING_DESIGN_V1.md`, `ORD_ECONOMIC_STAGE0_PREFLIGHT_20260822T113645Z.md`, `output/research_discovery/ORD_STAGE2_XAGUSD_EXEC_01`.
 
 **Research question:** Does an Opening Range Breakout (ORD) strategy produce statistically significant scientific edge, and can it be translated into an economically viable staged execution model?
 
-**Finding:** The scientific hypothesis is **SUPPORTED**. The adjudication artifact confirms 3/3 evaluable registered markets (XAUUSD, XAGUSD, USATECHIDXUSD) passed the Holm-adjusted threshold. The economic translation is currently in **PREPARATION (STAGE 0 COMPLETE)**, having redesigned the economic architecture into a staged execution model that passed Stage-0 Preflight.
+**Finding:** The scientific hypothesis is **SCIENTIFICALLY SUPPORTED**. The adjudication artifact confirms 3/3 evaluable registered markets (XAUUSD, XAGUSD, USATECHIDXUSD) passed the Holm-adjusted threshold. However, the exact **XAGUSD REGISTERED ECONOMIC TRANSLATION — ECONOMICALLY NON-VIABLE / CLOSED**.
+Execution `ORD_STAGE2_XAGUSD_EXEC_01` (EXECUTION_20260824T130709Z_0c18d950-aa99-4e90-af55-6847f8134542) generated 2,176 trades across the exact frozen Stage-1 preparation (source SHA: `edccad88ed5b74caf16a14203f3cf743306c65f2ebc5004cf566ed61deeb6e17`). The result is strictly negative: median net -12.404 bp, mean net -9.064 bp, cumulative -19,723.0 bp, Win Rate 9.1%, PF 0.356, Dev median -14.162 bp, OOS median -10.355 bp. Protocol gates for economic viability uniformly failed. Yearly results were unequivocally negative from 2021-2025.
 
-**Classification: RESEARCH FINDING — SCIENTIFICALLY SUPPORTED / ECONOMIC STAGE IN PROGRESS.**
+**Classification: RESEARCH FINDING — SCIENTIFICALLY SUPPORTED / ECONOMICALLY NON-VIABLE (registered XAGUSD object) / LINE CLOSED.**
+The negative economic result applies to the registered XAGUSD economic object and does not invalidate the underlying scientific finding. This does not claim universal non-viability, that all markets fail, that ORD can never produce an economic edge, or that the scientific mechanism is false.
 
-**Framework status:** Active research candidate.
+**Framework status:** Research finding only. No rerun / no rescue under the same registered economic object.
 
-**Future importance:** Serves as the current active milestone (`M-ORD-ECO-01`).
+**Future importance:** Behavioral/scientific support should not automatically trigger expensive full economic infrastructure where an earlier plausibility screen can eliminate obviously weak economic translations. This is a boundary-setting negative result closing the XAGUSD translation.
 
 ## Final summary
 
@@ -568,7 +570,7 @@ DISC-001 through DISC-026 are the permanent discoveries, including negative and 
 - **DISC-023:** SCIENTIFICALLY CONFIRMED / ECONOMIC TRANSLATION CLOSED — ECONOMIC FAILURE.
 - **DISC-024:** CONTRADICTED / CLOSED.
 - **DISC-025:** BEHAVIORALLY SUPPORTED / ECONOMIC TRANSLATION NON-VIABLE / CLOSED.
-- **DISC-026:** SCIENTIFICALLY SUPPORTED / ECONOMIC STAGE IN PROGRESS.
+- **DISC-026:** SCIENTIFICALLY SUPPORTED / XAGUSD ECONOMIC TRANSLATION ECONOMICALLY NON-VIABLE AND CLOSED.
 
 ### Ten discoveries already embedded in QuantForge (conceptual/partial)
 

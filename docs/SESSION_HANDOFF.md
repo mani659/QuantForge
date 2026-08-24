@@ -11,10 +11,10 @@
 > Read `docs/SESSION_HANDOFF.md` first.
 >
 > **CURRENT MILESTONE:**
-> ORD Economic Translation — Tick Data Representation / Staged Execution
+> TRADEABLE EDGE DISCOVERY SCREENING
 >
 > **CURRENT SUB-MILESTONE:**
-> M-ORD-ECO-01 — Finalize + audit tick-data Parquet specification
+> Next research direction
 >
 > ### HISTORICAL / CLOSED
 >
@@ -23,10 +23,11 @@
 > - DISC-023
 > - DISC-024
 > - DISC-025
+> - DISC-026 XAGUSD economic translation — CLOSED
 >
 > ### ACTIVE
 >
-> - DISC-026 / ORD
+> - None
 
 ---
 
@@ -174,13 +175,9 @@ All under `output/tsmom_v2/`: protocol, `run_tsmom_v2.py`, `experiment_metadata_
 - **H01 Equity Track A (DISC-023): CLOSED — ECONOMIC FAILURE.**
 - **Session-Anchored Range Expansion (DISC-024): CLOSED — CONTRADICTED.**
 - **Liquidity Sweep / Reversal (DISC-025): CLOSED — ECONOMIC TRANSLATION NON-VIABLE.**
-- **Opening Range Breakout (ORD / DISC-026): SCIENTIFICALLY SUPPORTED / ECONOMIC STAGE IN PROGRESS.**
-  - Stage 0 — COMPLETE
-  - Stage 1 — AUTHORIZED, NOT PRODUCTION-COMPLETED
-  - Stage 2 — NOT EXECUTED
-  - Stage 3 — NOT EXECUTED
-  - Economic adjudication — NOT PERFORMED
-- The next task is **M-ORD-ECO-01 — Finalize + audit tick-data Parquet specification**.
+- **Opening Range Breakout (ORD / DISC-026):** SCIENTIFICALLY SUPPORTED — ECONOMIC TRANSLATION CLOSED AS NON-VIABLE FOR REGISTERED XAGUSD OBJECT.
+  - ORD economic stage: CLOSED FOR XAGUSD.
+- The next task is **TRADEABLE EDGE DISCOVERY SCREENING**. A new candidate may be screened under the Research Factory governance.
 
 ## 12. Current Blockers
 
@@ -259,10 +256,10 @@ Recorded: V2 computation completed and wrote all result artifacts before the ter
 - **H01 Equity Track A (DISC-023):** CLOSED — ECONOMIC FAILURE.
 - **Session-Anchored Range Expansion (DISC-024):** CLOSED — CONTRADICTED.
 - **Liquidity Sweep / Reversal (DISC-025):** CLOSED — ECONOMIC TRANSLATION NON-VIABLE.
-- **Opening Range Breakout (ORD / DISC-026):** SCIENTIFICALLY SUPPORTED / ECONOMIC STAGE IN PROGRESS.
-- **CURRENT MILESTONE:** ORD Economic Translation — Tick Data Representation / Staged Execution.
-- **CRITICAL PATH / BLOCKER:** Stage 1 tick-data Parquet specification finalization and audit.
-- **NEXT LEGITIMATE TASK:** **M-ORD-ECO-01 — Finalize + audit tick-data Parquet specification.**
+- **Opening Range Breakout (ORD / DISC-026):** SCIENTIFICALLY SUPPORTED — ECONOMIC TRANSLATION CLOSED AS NON-VIABLE FOR REGISTERED XAGUSD OBJECT.
+- **CURRENT MILESTONE:** TRADEABLE EDGE DISCOVERY SCREENING.
+- **CRITICAL PATH / BLOCKER:** None.
+- **NEXT LEGITIMATE TASK:** A new candidate may be screened under the Research Factory governance.
 
 ## 16. Explicitly Forbidden Work
 
