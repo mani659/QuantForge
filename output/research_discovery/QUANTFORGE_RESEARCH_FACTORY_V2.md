@@ -72,6 +72,71 @@ The goal is to determine whether it is rational to spend more research/infrastru
 
 *Note: Phase 1 must remain outcome-blind. Do not tune thresholds, select favorable markets, change cost assumptions, or drop bad regimes after seeing results.*
 
+### G1 EXECUTABLE-CAPTURE CONTRACT
+
+Every G1 economic-plausibility screen MUST explicitly specify:
+
+**1. Trigger:** What observable event/state causes the signal.
+**2. Executable Entry:** The earliest realistic entry point available from the allowed data. Entry price MUST be explicitly defined. The screen MUST NOT assume entry at a future extreme or at an unobservable price.
+**3. Post-Entry Measurement Window:** The measurement window begins strictly AFTER executable entry. No price movement occurring before entry may contribute to the reported gross opportunity.
+**4. Deterministic Exit:** The exit rule MUST be explicitly frozen before evaluation. Permitted G1 exits may include:
+- fixed horizon;
+- deterministic stop;
+- deterministic target;
+- deterministic session boundary;
+- deterministic state reversal.
+Maximum Favorable Excursion MUST NOT be used as the primary economic endpoint unless MFE itself is the registered scientific/economic object.
+**5. Gross Opportunity:** Gross opportunity MUST be calculated from: `executable entry → deterministic exit`, not `signal/reference point → best future price`.
+**6. Friction:** Friction must be explicitly stated and applied to the executable transaction.
+**7. Turnover/Frequency:** Event count, expected trades, and overlapping exposures must be recorded.
+**8. No Free Breakout Capture:** A breakout screen MUST NOT enter at the pre-breakout close and then count the breakout movement as captured. If the strategy requires confirmation, the entry must occur at or after the confirmation event.
+
+### G1 DEFINITION-LOCK RULE
+
+G1 MUST consume the candidate definition exactly as frozen at G0. The G1 implementation MUST NOT: substitute proxy indicators; replace mathematical definitions; change thresholds; add undocumented filters; down-sample event streams; remove observations; alter market scope; alter timing; alter entry/exit logic. Any discrepancy results in: **G1 INVALID** and execution stops.
+
+### NO UNDOCUMENTED PROXIES
+
+A G1 implementation may not substitute an alternative statistical or technical construct for a registered candidate definition. Example: `R-squared` cannot become `Efficiency Ratio`. Any such substitution invalidates the G1 screen.
+
+### NO UNDOCUMENTED DOWNSAMPLING
+
+Explicitly prohibit constructs such as `events[::10]` or any equivalent event thinning unless it is part of the registered object, documented before execution, or justified independently of the result. Otherwise: **G1 INVALID**.
+
+### G1 PRE-RUN STATIC ASSERTION CONTRACT
+
+A mandatory pre-run inspection requires the G1 implementation to assert: candidate definition identity; trigger identity; entry identity; exit identity; holding period; market universe; friction assumption; no proxy substitution; no undocumented down-sampling; no MFE endpoint; no future data dependency. This is a STATIC CONTRACT CHECK. It must occur before G1 data evaluation.
+
+### G1 OUTPUT CONTRACT
+
+Require each G1 output to contain: Candidate, Trigger, Entry price rule, Entry timestamp rule, Exit rule, Measurement window, Gross post-entry return, Friction, Net headroom, Event count, Holding period, Turnover estimate, Data source, Frozen definition identity. This prevents a generic "gross opportunity" number from obscuring how the number was created.
+
+### G1 VALIDITY CHECK
+
+- **VALID:** All executable-capture and definition-lock requirements pass.
+- **CONDITIONAL:** Only minor documentation ambiguity exists, with no effect on economic measurement.
+- **INVALID:** Any of the following occurs: pre-entry movement included; non-deterministic exit; MFE used as a proxy for tradeable outcome; parameter substitution; undocumented proxy; undocumented down-sampling; market/period alteration; future-data leakage. INVALID means: Do not interpret the result.
+
+### NEW G1 IMPLEMENTATION AUDIT CHECKLIST
+
+Before execution:
+- [ ] Trigger frozen
+- [ ] Entry executable
+- [ ] Entry price frozen
+- [ ] Exit deterministic
+- [ ] Post-entry window only
+- [ ] Friction declared
+- [ ] Frequency declared
+- [ ] No MFE endpoint substitution
+- [ ] No proxy substitution
+- [ ] No undocumented down-sampling
+- [ ] No hidden filters
+- [ ] Candidate definition hash/identity matches
+- [ ] Market scope matches
+- [ ] Time window matches
+
+Any failed checkbox: **G1 INVALID — STOP**
+
 ## 6. Cheap Pilot (PHASE 2)
 
 Before building production tick infrastructure or staging complex environments, require a low-cost pilot where feasible. 

@@ -173,3 +173,11 @@ The surviving corpus now records **six closed research lines** — Mean Reversio
   2. Mandatory **Cheap Empirical Pilot (G2)** before expensive infrastructure allocation.
   3. Strict diversification requirement across mechanism families during candidate generation.
 - **Status:** QuantForge now operates as an Economic-First Tradeable-Edge Discovery Factory. Future candidate screening resumes under this doctrine.
+
+## 22. First G1 Screening Cycle: Invalidated / Contract Hardened (2026-08-25)
+
+- **Execution:** The first formal G1 Economic Plausibility Screen (`RESEARCH_FACTORY_V2_G1_SCREEN_20260825.md`) was executed on four candidates (CAND-G0-001 to CAND-G0-004).
+- **Audit & Invalidation:** An independent integrity audit found systemic methodological failures across all four candidates. The implementation calculated Maximum Favorable Excursion (MFE) instead of deterministic executable exit, falsely captured pre-entry breakout excursion, and employed undocumented proxy substitution and down-sampling. The execution was formally invalidated (`RESEARCH_FACTORY_V2_G1_INVALIDITY_20260825.md`).
+- **Doctrine Update:** The Research Factory V2 doctrine was hardened. The G1 executable-capture contract now requires explicit deterministic exit, post-entry-only measurement, exact candidate-definition adherence, and explicit prohibition of MFE/proxy/down-sampling substitutions.
+- **Candidate Status:** CAND-G0-001 through CAND-G0-004 are CLOSED for this screening cycle (G1 INVALID). No G2 execution occurred.
+- **Next Stage:** Project returned to **G0 CANDIDATE GENERATION**.

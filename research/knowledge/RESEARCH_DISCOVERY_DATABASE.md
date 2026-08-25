@@ -558,9 +558,23 @@ Execution `ORD_STAGE2_XAGUSD_EXEC_01` (EXECUTION_20260824T130709Z_0c18d950-aa99-
 **Classification: RESEARCH FINDING — SCIENTIFICALLY SUPPORTED / ECONOMICALLY NON-VIABLE (registered XAGUSD object) / LINE CLOSED.**
 The negative economic result applies to the registered XAGUSD economic object and does not invalidate the underlying scientific finding. This does not claim universal non-viability, that all markets fail, that ORD can never produce an economic edge, or that the scientific mechanism is false.
 
-**Framework status:** Research finding only. No rerun / no rescue under the same registered economic object.
+**Framework status:** Research finding only. The scientific finding is positive; the economic execution is uniformly negative. No runtime implementation is authorized.
 
-**Future importance:** Behavioral/scientific support should not automatically trigger expensive full economic infrastructure where an earlier plausibility screen can eliminate obviously weak economic translations. This is a boundary-setting negative result closing the XAGUSD translation.
+**Future importance:** Prohibits reviving the XAGUSD ORD strategy without a fundamentally different execution model. Protects the scientific finding while cleanly closing the economic branch.
+
+---
+
+## DISC-027 — Research Factory V2 G1 Cycle (2026-08-25): Invalid / Non-Adjudicable
+
+**Source files:** `RESEARCH_FACTORY_V2_G1_SCREEN_20260825.md`, `RESEARCH_FACTORY_V2_G1_INTEGRITY_AUDIT_20260825.md`, `RESEARCH_FACTORY_V2_G1_INVALIDITY_20260825.md`.
+
+**Research question:** Do candidates CAND-G0-001 through CAND-G0-004 possess sufficient observed economic headroom to justify a G2 pilot?
+
+**Finding:** **INVALID / NON-ADJUDICABLE**. The G1 implementation failed the integrity audit due to systematic calculation of Maximum Favorable Excursion (MFE) instead of deterministic executable exit, inclusion of pre-entry (breakout) excursion, silent parameter proxy substitution, and undocumented event downsampling. 
+
+**Classification: RESEARCH-FACTORY GOVERNANCE FINDING / NON-ADJUDICABLE.** Do NOT give the four candidate mechanisms a negative scientific verdict. The execution itself was invalid.
+
+**Program-level lesson:** G1 executable-capture contract strengthened after discovery of systematic MFE/pre-entry and definition-proxy errors. G1 cannot be outcome-driven or approximate; it must adhere exactly to the defined trigger, entry, and exit.
 
 ## Final summary
 

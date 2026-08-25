@@ -36,6 +36,8 @@
 > ## Next Action
 > **RETURN TO G0 CANDIDATE GENERATION**
 >
+> The first 2026-08-25 G1 attempt was invalidated due to executable-capture, deterministic-exit, proxy-substitution, and undocumented-downsampling defects. No G2 execution occurred. The G1 contract has now been hardened to require executable entry, deterministic exit, post-entry-only measurement, exact candidate-definition adherence, and explicit prohibition of MFE/proxy/down-sampling substitutions. Do NOT automatically rerun the four invalid candidates.
+>
 > ### HISTORICAL / CLOSED
 >
 > - DISC-021
@@ -279,7 +281,7 @@ Recorded: V2 computation completed and wrote all result artifacts before the ter
 - **Opening Range Breakout (ORD / DISC-026):** SCIENTIFICALLY SUPPORTED — ECONOMIC TRANSLATION CLOSED AS NON-VIABLE FOR REGISTERED XAGUSD OBJECT.
 - **CURRENT MILESTONE:** TRADEABLE EDGE DISCOVERY SCREENING.
 - **CRITICAL PATH / BLOCKER:** None.
-- **NEXT LEGITIMATE TASK:** A new candidate may be screened under the Research Factory governance.
+- **NEXT LEGITIMATE TASK:** **RETURN TO G0 CANDIDATE GENERATION**. The first 2026-08-25 G1 attempt was invalidated due to executable-capture, deterministic-exit, proxy-substitution, and undocumented-downsampling defects. No G2 execution occurred. G1 contract has now been hardened to require executable entry, deterministic exit, post-entry-only measurement, exact candidate-definition adherence, and explicit prohibition of MFE/proxy/down-sampling substitutions. Do NOT automatically rerun the four invalid candidates.
 
 ## 16. Explicitly Forbidden Work
 
