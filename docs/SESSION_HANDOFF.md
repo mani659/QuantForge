@@ -27,14 +27,16 @@
 > **TRADEABLE EDGE DISCOVERY SCREENING**
 >
 > ## Operating Doctrine
-> **ECONOMIC-FIRST TRADEABLE-EDGE DISCOVERY FACTORY**
+> **Economic-First Discovery + Conditional Market Behavior**
 >
 > ## Last Screening
 > 2026-08-24 G0→G1→G2 screening:
 > 3 candidates screened, 0 promoted.
 >
 > ## Next Action
-> **RETURN TO G0 CANDIDATE GENERATION**
+> **G0 CANDIDATE GENERATION**
+>
+> Future candidates should focus on repeatable market events/states and the conditional directional response following executable entry, including investigation of the market-state/KPI conditions that influence that response.
 >
 > The first 2026-08-25 G1 attempt was invalidated due to executable-capture, deterministic-exit, proxy-substitution, and undocumented-downsampling defects. No G2 execution occurred. The G1 contract has now been hardened to require executable entry, deterministic exit, post-entry-only measurement, exact candidate-definition adherence, and explicit prohibition of MFE/proxy/down-sampling substitutions. Do NOT automatically rerun the four invalid candidates.
 >

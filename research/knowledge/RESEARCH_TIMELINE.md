@@ -181,3 +181,7 @@ The surviving corpus now records **six closed research lines** — Mean Reversio
 - **Doctrine Update:** The Research Factory V2 doctrine was hardened. The G1 executable-capture contract now requires explicit deterministic exit, post-entry-only measurement, exact candidate-definition adherence, and explicit prohibition of MFE/proxy/down-sampling substitutions.
 - **Candidate Status:** CAND-G0-001 through CAND-G0-004 are CLOSED for this screening cycle (G1 INVALID). No G2 execution occurred.
 - **Next Stage:** Project returned to **G0 CANDIDATE GENERATION**.
+
+## 23. Research Factory refined (2026-08-25)
+
+- **Methodological Refinement:** Research Factory refined around conditional market behavior, mathematical expectancy, and opportunity-integrity protection after CAND-010 event-state duplication failure. The primary research objective is to estimate conditional post-event behavior and determine whether that conditional distribution produces positive mathematical expectancy after executable costs.

@@ -636,3 +636,11 @@ DISC-001 through DISC-026 are the permanent discoveries, including negative and 
 ### Architecture fidelity
 
 The current architecture remains faithful to the research at a high level: validation → market characterization → adaptive decision → signal → risk → execution. It does not yet fully embody the research’s virtual-signal, quantified recoil/persistence, regime, and live-validation knowledge. Those omissions are implementation gaps, not evidence that the architecture contradicts the research.
+
+---
+
+## METHODOLOGICAL LESSON: Opportunity Integrity and Conditional Behavior
+
+**Source events:** CAND-G0-010 event-state duplication failure (2026-08-25).
+
+**Methodological finding:** Repeated event occurrence is not itself the edge. The research objective is to estimate conditional post-event behavior and determine whether that conditional distribution produces positive mathematical expectancy after executable costs. Event persistence must not be counted as repeated independent opportunities. Any state-based event machine must explicitly enforce Opportunity Integrity (event onset, completion, re-arm, duplicate suppression) before execution.

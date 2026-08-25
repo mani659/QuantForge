@@ -19,7 +19,28 @@ We retain our world-class scientific governance, strict provenance, reproducibil
 * Moderate evidence → moderate validation.
 * Strong evidence → expensive production infrastructure.
 
-## 3. Pipeline
+## 3. Primary Research Object — Conditional Market Behavior
+
+The core objective of QuantForge is not to find patterns that win 100% of the time, nor to conflate geometric shapes with economic edge. The primary scientific aim is:
+> **Pattern/Event → Conditional Behavior → Executable Expectancy → Economic Edge**
+
+Research must identify repeatable observable market events, determine the conditional post-event behavior of price, identify which side of the market has a mathematical advantage, and discover which observable market conditions (KPIs) influence the probability, direction, magnitude, or persistence of that response.
+
+QuantForge evaluates mathematical expectancy, not accuracy alone. A candidate is measured by: `E[R] = P(win) × average win − P(loss) × average loss − friction`.
+
+## 4. Opportunity Integrity
+
+A mandatory, lightweight structural check applied to all event-based candidates before execution. It prevents single market episodes from creating overlapping, duplicated artificial trades. Every candidate definition MUST explicitly define:
+- **Event onset:** When the event becomes true.
+- **Event completion:** When the event is considered complete.
+- **Re-arm condition:** What must happen before another opportunity can be generated.
+- **Duplicate suppression:** How repeated/persistent bars representing the exact same ongoing event are ignored.
+- **Overlap rule:** How simultaneous/overlapping opportunities are handled.
+- **Executable entry:** When the actual trade decision becomes available.
+
+This requires no new heavy infrastructure—only strict logical candidate definitions.
+
+## 5. Pipeline
 
 The canonical decision table for future candidates is as follows:
 

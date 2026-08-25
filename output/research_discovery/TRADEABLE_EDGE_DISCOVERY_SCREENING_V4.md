@@ -183,3 +183,204 @@ Before any G1 execution, the implementation must adhere to the following strict 
 8. **No Free Breakout Capture:** Must pay the breakout confirmation threshold.
 
 Additionally, the **G1 Definition-Lock Rule** explicitly prohibits proxy substitution (e.g., swapping R-squared for Efficiency Ratio) and undocumented event downsampling. All screens must pass the pre-run static assertion checklist.
+
+## 16. G0 Candidate Generation Cycle V5 (2026-08-25)
+
+This cycle operates under the hardened Research Factory V2 contract, strictly avoiding any MFE endpoints, pre-entry assumptions, or undocumented proxies.
+
+### 16.1. Candidate Cards
+
+#### CAND-G0-006
+**Name:** Crypto-to-Equity Risk-On Impulse Lead
+**Mechanism Family:** Multi-timescale lead/lag (Family B)
+**Market Mechanism:** Bitcoin trades 24/7 and absorbs overnight/weekend liquidity shocks and macroeconomic risk repricing before traditional markets open. An extreme, directional impulse in BTCUSD immediately prior to the US equity open reliably predicts the opening momentum and subsequent cash-session trend of US technology equities.
+**Scientific Object:** The directional correlation between pre-market (07:30–09:30 ET) BTCUSD extreme return and the USATECHIDXUSD cash-session return.
+**Trigger:** BTCUSD directional return in the 2 hours preceding 09:30 ET > 3x its 14-day ATR.
+**Executable Entry:** Market order on USATECHIDXUSD exactly at the close of the 09:30 ET M1 bar, in the direction of the BTCUSD impulse. Entry is fully observable and executable immediately after the trigger.
+**Deterministic Exit:** Fixed horizon exit at the 16:00 ET cash session close.
+**Expected Post-Entry Response:** USATECHIDXUSD trends in the direction of the BTC overnight impulse throughout the cash session.
+**Expected Frequency:** 15-25 times per year.
+**Economic Headroom:** CLEAR. A full cash-session trend typically dwarfs a single entry spread.
+**Friction Relationship:** Single entry, multi-hour hold, massive expected movement vs spread.
+**Cheapest Data Needed:** M1 USATECHIDXUSD and M1 BTCUSD.
+**Cheap G1 Screen:** Filter days with > 3 ATR BTC pre-market move. Compute USATECHIDXUSD return from 09:31 open to 16:00 close. Compare median return to expected spread.
+**Cheap G2 Pilot:** Script across 10 years of M1 data for this specific time window.
+**Falsification Condition:** Gross return of the USATECH session is negative or zero net of drift.
+**Cross-Market Scope:** Specific cross-asset pair (Crypto to Equity Index).
+**Closed-Line Independence:** NEW.
+**G0 Verdict:** PROMOTE TO G1.
+
+---
+
+#### CAND-G0-007
+**Name:** Weekend Gap Regime Continuation
+**Mechanism Family:** Regime transition / state persistence (Family F)
+**Market Mechanism:** Weekend gaps represent discontinuous price discovery. When a gap fails to mean-revert (fill) during the initial liquidity influx of the Monday session, it indicates a structural regime shift rather than transient imbalance, leading to a multi-day continuation trend.
+**Scientific Object:** The conditional probability of a Friday-to-Friday directional trend given an unfilled Monday open gap.
+**Trigger:** Market opens Sunday/Monday with a gap > 1.5x the 14-day ATR. At the end of the first 2 hours of trading, the price has NOT crossed the Friday closing price.
+**Executable Entry:** Market order in the direction of the gap exactly at the open of the M1 bar immediately following the 2-hour confirmation window.
+**Deterministic Exit:** Fixed horizon exit at the Friday session close.
+**Expected Post-Entry Response:** Multi-day drift/trend in the direction of the gap.
+**Expected Frequency:** 5-10 times per year per market.
+**Economic Headroom:** CLEAR.
+**Friction Relationship:** Very low turnover, massive holding period (nearly 5 days), easily outscaling spread.
+**Cheapest Data Needed:** Hourly / M1.
+**Cheap G1 Screen:** Identify > 1.5 ATR gaps. Filter for non-filled after 2 hours. Compute return from hour 2 to Friday close.
+**Cheap G2 Pilot:** Script over 15 years of hourly data.
+**Falsification Condition:** Post-gap drift is zero or immediately mean-reverts after the 2-hour mark.
+**Cross-Market Scope:** EURUSD, XAUUSD, XAGUSD.
+**Closed-Line Independence:** NEW.
+**G0 Verdict:** PROMOTE TO G1.
+
+---
+
+#### CAND-G0-008
+**Name:** Safe-Haven Metal Divergence
+**Mechanism Family:** Relative-value / cross-market state discrepancy (Family A)
+**Market Mechanism:** Gold (safe-haven/monetary) and Silver (industrial) normally move together. A sharp divergence (Gold up, Silver down) flags an acute macro risk-off regime (flight to safety + industrial collapse). This state persists structurally as institutions rebalance over several days.
+**Scientific Object:** The forward 5-day return of the XAU/XAG relative value portfolio following an acute 1-day divergence.
+**Trigger:** Daily return of XAUUSD > +1.5% AND daily return of XAGUSD < -1.0%.
+**Executable Entry:** Buy XAUUSD and Sell XAGUSD exactly at the daily close (or next day open) where the trigger is met.
+**Deterministic Exit:** Fixed horizon exit exactly 5 trading days later at the daily close.
+**Expected Post-Entry Response:** Divergence expands further as the risk-off regime persists.
+**Expected Frequency:** 1-3 times per year.
+**Economic Headroom:** MARGINAL (rare event, requires two spreads, but structural move is large).
+**Friction Relationship:** 5-day holding period provides substantial time for divergence to exceed the combined XAU and XAG spreads.
+**Cheapest Data Needed:** Daily.
+**Cheap G1 Screen:** Find days meeting trigger. Compute 5-day forward return of long XAU / short XAG.
+**Cheap G2 Pilot:** Simple script over 20 years of daily close data.
+**Falsification Condition:** Divergence immediately reverts to historical mean correlation.
+**Cross-Market Scope:** XAU/XAG specific.
+**Closed-Line Independence:** NEW.
+**G0 Verdict:** PROMOTE TO G1.
+
+---
+
+#### CAND-G0-009
+**Name:** Extreme Displacement ML Rescue
+**Mechanism Family:** Mean Reversion (Family F)
+**Market Mechanism:** Same as DISC-021 (extreme short-term displacement reversing), but applying a K-means volatility regime filter to avoid trend-continuation days.
+**Scientific Object:** Short-term mean reversion conditioned on low volatility regime.
+**Trigger:** Price drops > 4 ATR in 2 hours AND K-means regime = "Low Volatility".
+**Executable Entry:** Entry on the next M1 bar open.
+**Deterministic Exit:** 4-hour fixed horizon.
+**Expected Post-Entry Response:** Asymmetric mean-reversion recovery.
+**Expected Frequency:** 50 times per year.
+**Economic Headroom:** INSUFFICIENT.
+**Friction Relationship:** Marginal moves consumed by spread (already established in DISC-021).
+**Cheapest Data Needed:** M1.
+**Cheap G1 Screen:** N/A.
+**Cheap G2 Pilot:** N/A.
+**Falsification Condition:** Same as DISC-021.
+**Cross-Market Scope:** Universal.
+**Closed-Line Independence:** RESCUE (Attempting to revive DISC-021 using a different filter threshold).
+**G0 Verdict:** KILL AT G0.
+
+### 16.2. Closed-Line Firewall Review
+
+- **DISC-021 (Mean Reversion):** CAND-G0-009 directly attempted to rescue this mechanism via K-means filtering and was rightfully killed. CAND-G0-006, 007, and 008 use entirely different mechanics (lead/lag, continuation, divergence).
+- **DISC-022 (TSMOM):** No trend-following/momentum candidates proposed.
+- **DISC-023 (H01 Equity):** No volatility-asymmetry candidates proposed.
+- **DISC-024 (Session Range Expansion):** No session compression/expansion mechanics.
+- **DISC-025 (Liquidity Sweep):** No Asian extreme reversals.
+- **DISC-026 (ORD):** No opening range breakouts.
+
+### 16.3. Candidate Ranking
+
+1. **CAND-G0-006 (Crypto-to-Equity Risk-On Impulse Lead):** Highest executable clarity, highly observable trigger, completely uncorrelated to prior closed mechanisms.
+2. **CAND-G0-007 (Weekend Gap Regime Continuation):** Extremely simple, massive holding period guarantees friction overhead is negligible, universal across non-24/7 markets.
+3. **CAND-G0-008 (Safe-Haven Metal Divergence):** Novel cross-market regime state, but low frequency and double-spread friction pushes it lower.
+
+### 16.4. Proposed G1 Screens (Hardened Contract Aware)
+
+- **CAND-G0-006:** Filter days where BTC moved > 3 ATR pre-market (07:30-09:30 ET). Enter USATECH at 09:30 close. Exit 16:00 close. Calculate gross return vs 1x spread.
+- **CAND-G0-007:** Identify > 1.5 ATR weekend gaps. Check if filled by hour 2. If not, enter at hour 2 close, exit Friday close. Calculate gross return vs 1x spread.
+- **CAND-G0-008:** Find days with XAU > +1.5% and XAG < -1.0%. Enter XAU long / XAG short at close. Exit 5 days later. Calculate gross return vs 2x spread.
+
+*All proposed G1 screens strictly respect executable entry (no pre-entry capture) and deterministic exits (no MFE).*
+
+### 16.5. G0 Decisions
+
+- CAND-G0-006: PROMOTE TO G1
+- CAND-G0-007: PROMOTE TO G1
+- CAND-G0-008: PROMOTE TO G1
+- CAND-G0-009: KILL AT G0
+
+### 16.6. Exact Next Milestone
+
+**G1 — ECONOMIC PLAUSIBILITY SCREEN** (For CAND-G0-006, 007, 008)
+
+*G1 AUTHORIZATION REQUIRED IN A SEPARATE TASK. DO NOT EXECUTE NOW.*
+
+---
+
+## 17. OWNER-SUPPLIED SMC HYPOTHESIS SOURCE
+
+Reference:
+[`output/research_discovery/SMC_HYPOTHESIS_REGISTER_V1.md`](file:///c:/Users/User10/Documents/MRV/yuvi/QuantForge/output/research_discovery/SMC_HYPOTHESIS_REGISTER_V1.md)
+
+Six owner-supplied Smart Money Concepts (SMC) hypotheses have been ingested for formalization assessment. Only hypotheses judged genuinely formalizable and economically coherent (e.g., H2, H5, H6) may be considered for future G0 candidate selection. Discretionary mechanisms (H3, H4) remain permanently blocked.
+
+## 18. SMC-DERIVED G0 CANDIDATE SELECTION
+
+The following hypotheses from the SMC register (H2, H5, H6) have been evaluated for translation into deterministic G0 candidates.
+
+### H2 Disposition: PROMOTE TO G0 (CAND-G0-010)
+
+**Name:** HTF POI + M1/M5 CHOCH Reversal
+**Mechanism Family:** Structural Reversals at Liquidity Extremes (Family 1)
+**Closed-Line Independence:** Distinct from DISC-025 (Liquidity Sweep). DISC-025 relied purely on a localized wick-sweep and rejection close. CAND-G0-010 strictly requires a multi-bar structural break (CHOCH), demanding a sustained shift in order flow rather than a transient stop-run.
+**POI Definition:** Previous day's high or low.
+**Trigger:** 
+1. Price crosses the POI.
+2. An M5 structural swing is formed (a fractal extreme where the central bar is higher/lower than 3 bars before and after).
+3. The M5 close breaks (closes beyond) the immediately preceding M5 opposing swing.
+**Executable Entry:** Market order on the open of the M5 bar immediately following the CHOCH confirming close.
+**Deterministic Exit:** Fixed 2-hour horizon.
+**Expected Frequency:** 30-50 times per year per market.
+**Friction Relationship:** Moderate. The M5 entry ensures tight proximity to the extreme, but the 2-hour hold must produce enough excursion to clear the round-trip spread.
+**Cheap G1 Screen Concept:** Scan EURUSD M5 data for previous daily high/low sweeps followed by a 3-bar swing break. Measure the median 2-hour gross excursion.
+**Cheap G2 Pilot Concept:** Backtest on M5 EURUSD over 5 years.
+**Explicit Falsification Condition:** The M5 CHOCH is a lagging artifact of the sweep rather than a leading indicator of reversal, yielding zero net drift after entry.
+
+### H5 Disposition: HOLD FOR DEFINITION / DATA
+
+**Name:** Two-Bar Reversal + Low Volume
+**Reason for Hold:** A formal audit of the `data/m1/` repository confirms that the M1 CSV files (e.g., BTCUSD, USATECHIDXUSD) contain NO volume data (`volume = 0` for all records). Furthermore, tick volume in decentralized FX/CFD markets is fundamentally unreliable for proving institutional participation ("low volume"). This hypothesis is mathematically formalizable but practically blocked until high-quality, centralized exchange volume data (e.g., CME Futures or direct equity feeds) is ingested and validated.
+**Status:** HOLD.
+
+### H6 Disposition: PROMOTE TO G0 (CAND-G0-011)
+
+**Name:** Double Top/Bottom + RSI Divergence
+**Mechanism Family:** Structural Reversals at Liquidity Extremes (Family 1)
+**Closed-Line Independence:** Distinct from DISC-021 (Mean Reversion). DISC-021 traded extreme standard-deviation displacements (z-score shocks) aiming for immediate elastic snapback. CAND-G0-011 requires a complex, dual-swing spatial structure (double top/bottom) over an extended timeframe, explicitly confirmed by a momentum failure (RSI divergence).
+**Trigger:**
+1. Two 20-bar rolling extrema (Swing 1 and Swing 2) occur separated by 20 to 100 bars.
+2. The price of Swing 2 is within 0.1% of Swing 1 (or penetrates it).
+3. The 14-period RSI at Swing 2 is at least 5 points less extreme than the RSI at Swing 1 (Divergence).
+4. Confirmation occurs when price crosses the 10-period moving average.
+**Executable Entry:** Market order on the close of the confirming bar.
+**Deterministic Exit:** Fixed 4-hour horizon.
+**Expected Frequency:** 10-20 times per year per market.
+**Friction Relationship:** Highly favorable. A confirmed double-top reversal held for 4 hours typically yields excursions well beyond 1-3 bps spreads.
+**Cheap G1 Screen Concept:** Scan EURUSD and XAUUSD M1/M5 for the dual-swing structural matching and RSI difference. Measure the 4-hour gross excursion.
+**Cheap G2 Pilot Concept:** Simple parameterized backtest on XAUUSD.
+**Explicit Falsification Condition:** Double tops with RSI divergence are indistinguishable from normal ranging price action, and the 4-hour drift is essentially zero.
+
+### Formal G0 Candidates Promoted:
+- **CAND-G0-010** (Derived from H2)
+- **CAND-G0-011** (Derived from H6)
+
+---
+
+## 19. CONDITIONAL BEHAVIOR & OPPORTUNITY INTEGRITY
+
+**Conditional Behavior / Mathematical Expectancy Research Principle:**
+Future G0 candidates must prioritize investigating conditional post-event behaviors rather than searching for 100% win-rate patterns. A candidate must define an event, an executable entry, a forward measurement window, and explicitly hypothesize which observable market KPIs (e.g., volatility, session, trend) condition the return distribution to achieve positive mathematical expectancy. 
+
+**Opportunity Integrity:**
+All future event-based candidates must explicitly define event onset, event completion, duplicate suppression, and re-arm conditions to prevent single market episodes from creating overlapping duplicate opportunities in the state machine.
+
+### Recent Candidate Dispositions
+- **CAND-G0-010 (HTF POI + CHOCH):** INVALID / NON-ADJUDICABLE. The G1 implementation suffered a severe event-count anomaly due to a state-machine duplication error, violating Opportunity Integrity. Closed for this cycle without an economic conclusion.
+- **CAND-G0-011 (Double Top + RSI Div):** ECONOMICALLY INSUFFICIENT. The G1 implementation successfully isolated valid structures, but the median gross edge (+0.16 bps) was entirely consumed by realistic friction (3.0 bps). Closed for this cycle.
