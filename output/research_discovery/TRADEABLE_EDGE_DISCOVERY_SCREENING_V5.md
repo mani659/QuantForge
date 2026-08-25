@@ -48,6 +48,7 @@ The objective of this screening is to identify candidates focused on repeatable 
 **G1 Screen:** Compute the median 8-hour forward directional excursion, conditioned on the H1 ATR state, against a 3.0 bps friction barrier.
 **Closed-Line Independence:** NEW.
 **G0 Verdict:** PROMOTE TO G1 (Definitions frozen).
+**FINAL STATUS:** CLOSED / G1 INSUFFICIENT
 
 ---
 
@@ -71,3 +72,4 @@ The objective of this screening is to identify candidates focused on repeatable 
 **G1 Screen:** Measure the median 12-hour return following the reset, separated by the session in which the entry occurs, tested against realistic spread.
 **Closed-Line Independence:** NEW (Diverges from mean reversion by hypothesizing continuation after shock).
 **G0 Verdict:** PROMOTE TO G1 (Definitions frozen).
+**FINAL STATUS:** CLOSED / G1 INSUFFICIENT

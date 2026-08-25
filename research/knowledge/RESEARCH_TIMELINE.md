@@ -200,3 +200,7 @@ The surviving corpus now records **six closed research lines** — Mean Reversio
 - **Result (CAND-G0-012):** INSUFFICIENT. The conditional post-event behavior produced negative expectancy across both low-volatility and high-volatility states.
 - **Result (CAND-G0-013):** INSUFFICIENT. The shock-reset condition proved extremely rare (67 valid opportunities in 5 years). The most populated liquidity session state (NY) generated strictly negative expectancy.
 - **Next Stage:** **G0 CANDIDATE GENERATION** (Return to discovery).
+
+## 26. Closure of V5 G1 Screening Cycle (2026-08-25)
+
+- **Record:** Research Factory V2 V5 G1 screening completed; CAND-012 and CAND-013 failed economic plausibility; no G2 execution; factory returned to G0.

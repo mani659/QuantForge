@@ -26,18 +26,20 @@
 > ## Current Milestone
 > **TRADEABLE EDGE DISCOVERY SCREENING**
 >
-> ## Operating Doctrine
-> **Economic-First Discovery + Conditional Market Behavior**
->
 > ## Last Screening
-> 2026-08-25 G1 Economic Plausibility Screen V5:
-> CAND-G0-012: INSUFFICIENT (Negative Expectancy).
-> CAND-G0-013: INSUFFICIENT (Negative Expectancy / Insufficient Frequency).
+> Latest V5 G1 cycle:
+> CAND-012 and CAND-013 both closed at G1.
+> No G2 execution occurred.
 >
 > ## Next Action
 > **G0 CANDIDATE GENERATION**
 >
-> Both V5 candidates failed the G1 screen. Return to G0 candidate generation to find new structurally distinct hypotheses under the Conditional Market Behavior doctrine. Do not attempt to rescue or filter CAND-012 or CAND-013.
+> Both V5 candidates failed the G1 screen. Return to G0 candidate generation to find new structurally distinct hypotheses under the Conditional Market Behavior doctrine.
+> - do not rescue 012;
+> - do not rescue 013;
+> - do not reopen prior closed lines;
+> - do not jump to G2;
+> - do not deploy expensive infrastructure.
 >
 > The first 2026-08-25 G1 attempt was invalidated due to executable-capture, deterministic-exit, proxy-substitution, and undocumented-downsampling defects. No G2 execution occurred. The G1 contract has now been hardened to require executable entry, deterministic exit, post-entry-only measurement, exact candidate-definition adherence, and explicit prohibition of MFE/proxy/down-sampling substitutions. Do NOT automatically rerun the four invalid candidates.
 >

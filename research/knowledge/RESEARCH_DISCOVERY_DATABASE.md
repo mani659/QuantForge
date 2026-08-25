@@ -644,3 +644,18 @@ The current architecture remains faithful to the research at a high level: valid
 **Source events:** CAND-G0-010 event-state duplication failure (2026-08-25).
 
 **Methodological finding:** Repeated event occurrence is not itself the edge. The research objective is to estimate conditional post-event behavior and determine whether that conditional distribution produces positive mathematical expectancy after executable costs. Event persistence must not be counted as repeated independent opportunities. Any state-based event machine must explicitly enforce Opportunity Integrity (event onset, completion, re-arm, duplicate suppression) before execution.
+
+---
+
+## METHODOLOGICAL LESSON: V5 G1 Screening and Conditional Edge
+
+**Source events:** V5 G1 Screening Cycle (2026-08-25).
+
+**Findings:**
+- **CAND-012 (Trend-Pullback Re-Acceleration):** G1 ECONOMICALLY INSUFFICIENT / CLOSED.
+- **CAND-013 (Macro-Shock Volatility Reset Continuation):** G1 ECONOMICALLY INSUFFICIENT / CLOSED.
+
+**Methodological Lessons:**
+1. **Opportunity Integrity Confirmed:** The V5 implementations correctly enforced event identity: duplicate 20-EMA touches and overlapping volatility resets were suppressed. This demonstrates that the Opportunity Integrity correction introduced after CAND-010 is functioning.
+2. **Conditionalization Limits:** Conditionalization does not create an edge by itself. A candidate may define a plausible state variable, yet the conditional return distribution can remain economically negative. Therefore, Event → KPI state → conditional return must be evaluated empirically rather than assumed.
+3. **Frequency Considerations:** A structurally interesting event is not necessarily a tradeable discovery object if its valid occurrence frequency is too low. Frequency must be judged relative to holding period, turnover, target deployment, and expected opportunity rate.
