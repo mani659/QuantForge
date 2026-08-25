@@ -204,3 +204,7 @@ The surviving corpus now records **six closed research lines** — Mean Reversio
 ## 26. Closure of V5 G1 Screening Cycle (2026-08-25)
 
 - **Record:** Research Factory V2 V5 G1 screening completed; CAND-012 and CAND-013 failed economic plausibility; no G2 execution; factory returned to G0.
+
+## 27. CAND-015 V6 G1-G5 Validation (2026-08-25)
+
+- **Record:** CAND-015 completed G5 historical production-style replay; G6 forward validation blocked by missing real-time execution infrastructure.

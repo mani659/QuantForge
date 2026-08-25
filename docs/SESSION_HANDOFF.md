@@ -32,14 +32,13 @@
 > No G2 execution occurred.
 >
 > ## Next Action
-> **G0 CANDIDATE GENERATION**
+> **G6 FORWARD-VALIDATION INFRASTRUCTURE READINESS**
 >
-> Both V5 candidates failed the G1 screen. Return to G0 candidate generation to find new structurally distinct hypotheses under the Conditional Market Behavior doctrine.
-> - do not rescue 012;
-> - do not rescue 013;
-> - do not reopen prior closed lines;
-> - do not jump to G2;
-> - do not deploy expensive infrastructure.
+> CAND-015 completed G5 historical production-style replay successfully.
+> This does NOT constitute measured live execution.
+> The G5 replay used historical M1 data as an execution proxy.
+> Actual slippage and latency remain unmeasured.
+> G6 — Controlled Forward / Demo Validation is BLOCKED pending forward execution infrastructure.
 >
 > The first 2026-08-25 G1 attempt was invalidated due to executable-capture, deterministic-exit, proxy-substitution, and undocumented-downsampling defects. No G2 execution occurred. The G1 contract has now been hardened to require executable entry, deterministic exit, post-entry-only measurement, exact candidate-definition adherence, and explicit prohibition of MFE/proxy/down-sampling substitutions. Do NOT automatically rerun the four invalid candidates.
 >
@@ -54,7 +53,11 @@
 >
 > ### ACTIVE
 >
-> - None
+> - CAND-015
+>   - SCIENTIFICALLY SUPPORTED
+>   - ECONOMICALLY VIABLE
+>   - G5 HISTORICAL REPLAY VALIDATED
+>   - G6 BLOCKED
 
 ---
 

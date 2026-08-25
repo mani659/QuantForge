@@ -659,3 +659,11 @@ The current architecture remains faithful to the research at a high level: valid
 1. **Opportunity Integrity Confirmed:** The V5 implementations correctly enforced event identity: duplicate 20-EMA touches and overlapping volatility resets were suppressed. This demonstrates that the Opportunity Integrity correction introduced after CAND-010 is functioning.
 2. **Conditionalization Limits:** Conditionalization does not create an edge by itself. A candidate may define a plausible state variable, yet the conditional return distribution can remain economically negative. Therefore, Event → KPI state → conditional return must be evaluated empirically rather than assumed.
 3. **Frequency Considerations:** A structurally interesting event is not necessarily a tradeable discovery object if its valid occurrence frequency is too low. Frequency must be judged relative to holding period, turnover, target deployment, and expected opportunity rate.
+
+## DISC-027 — CAND-015: Nasdaq-Crypto Information Absorption Lag
+
+**Classification: RESEARCH FINDING — SCIENTIFICALLY SUPPORTED / ECONOMICALLY VIABLE / G5 HISTORICAL REPLAY VALIDATED.**
+
+CAND-015 = scientifically supported + economically viable + historical production-style replay validated.
+
+Forward/live execution not yet validated.
