@@ -662,8 +662,10 @@ The current architecture remains faithful to the research at a high level: valid
 
 ## DISC-027 — CAND-015: Nasdaq-Crypto Information Absorption Lag
 
-**Classification: RESEARCH FINDING — SCIENTIFICALLY SUPPORTED / ECONOMICALLY VIABLE / G5 HISTORICAL REPLAY VALIDATED.**
+**Classification: RESEARCH FINDING — SCIENTIFICALLY SUPPORTED / ECONOMICALLY VIABLE / G5 HISTORICAL REPLAY VALIDATED / G6 REPLAY HARNESS VALIDATED.**
 
-CAND-015 = scientifically supported + economically viable + historical production-style replay validated.
+CAND-015 = scientifically supported + economically viable + historical production-style replay validated + G6 replay harness validated.
 
-Forward/live execution not yet validated.
+True forward validation blocked by absent real-time/demo data feed.
+
+No CAND-015 strategy changes occurred.

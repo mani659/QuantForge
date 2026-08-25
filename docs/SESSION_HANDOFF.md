@@ -32,13 +32,27 @@
 > No G2 execution occurred.
 >
 > ## Next Action
-> **G6 FORWARD-VALIDATION INFRASTRUCTURE READINESS**
+> **REAL-TIME / DEMO DATA-SOURCE EVALUATION FOR CAND-015**
 >
-> CAND-015 completed G5 historical production-style replay successfully.
-> This does NOT constitute measured live execution.
-> The G5 replay used historical M1 data as an execution proxy.
-> Actual slippage and latency remain unmeasured.
-> G6 — Controlled Forward / Demo Validation is BLOCKED pending forward execution infrastructure.
+> CAND-015 G6 replay harness implementation and independent audit are complete and VALIDATED.
+> Tests A–J = 10/10 PASS.
+> Historical signal parity = PASS.
+> Replay execution semantics explicitly distinguish synthetic replay prices from real execution.
+>
+> TRUE G6 FORWARD VALIDATION remains BLOCKED because the project does not yet possess an approved real-time/demo market-data source. It is an operational capability blocker, NOT a scientific or economic failure.
+>
+> The next task is NOT to modify CAND-015.
+> The next task is to evaluate and authorize ONE suitable real-time/demo data source capable of supplying the markets required by CAND-015 (USATECHIDXUSD, BTCUSD). The source must support deterministic timestamps and sufficient pricing information for the G6 observation harness.
+>
+> Minimum data-source requirements:
+> - Market availability: Must provide both required CAND-015 instruments, or a documented architecture for obtaining both without changing the research object.
+> - Real-time timestamps: Must provide deterministic event/quote timestamps.
+> - Executable pricing: Prefer bid/ask or equivalent executable pricing where available.
+> - Historical/forward consistency: The data source should permit clear separation between historical reference, real-time feed, and forward observation.
+> - Reliability: Must support continuous observation and reconnection/error reporting.
+> - Access: Must be technically usable from the current QuantForge environment without requiring an enterprise-grade infrastructure stack.
+>
+> Existing ORD tick/Parquet infrastructure is historical research infrastructure and is NOT automatically resumed for CAND-015 G6. G6 should use the smallest appropriate real-time feed.
 >
 > The first 2026-08-25 G1 attempt was invalidated due to executable-capture, deterministic-exit, proxy-substitution, and undocumented-downsampling defects. No G2 execution occurred. The G1 contract has now been hardened to require executable entry, deterministic exit, post-entry-only measurement, exact candidate-definition adherence, and explicit prohibition of MFE/proxy/down-sampling substitutions. Do NOT automatically rerun the four invalid candidates.
 >
@@ -57,7 +71,8 @@
 >   - SCIENTIFICALLY SUPPORTED
 >   - ECONOMICALLY VIABLE
 >   - G5 HISTORICAL REPLAY VALIDATED
->   - G6 BLOCKED
+>   - G6 REPLAY HARNESS VALIDATED
+>   - TRUE G6 FORWARD VALIDATION BLOCKED
 
 ---
 
