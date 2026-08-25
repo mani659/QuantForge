@@ -30,13 +30,14 @@
 > **Economic-First Discovery + Conditional Market Behavior**
 >
 > ## Last Screening
-> 2026-08-25 G0 Candidate Generation V5:
-> 2 candidates promoted (CAND-G0-012, CAND-G0-013), 1 killed (CAND-G0-014).
+> 2026-08-25 G1 Economic Plausibility Screen V5:
+> CAND-G0-012: INSUFFICIENT (Negative Expectancy).
+> CAND-G0-013: INSUFFICIENT (Negative Expectancy / Insufficient Frequency).
 >
 > ## Next Action
-> **G1 ECONOMIC PLAUSIBILITY SCREEN**
+> **G0 CANDIDATE GENERATION**
 >
-> Execute the G1 Economic Plausibility Screen for CAND-G0-012 and CAND-G0-013 under the hardened Research Factory V2 contract. Ensure all implementations strictly adhere to the frozen definitions and Opportunity Integrity principles (no proxy substitutions, explicit re-arms, post-entry measurement only).
+> Both V5 candidates failed the G1 screen. Return to G0 candidate generation to find new structurally distinct hypotheses under the Conditional Market Behavior doctrine. Do not attempt to rescue or filter CAND-012 or CAND-013.
 >
 > The first 2026-08-25 G1 attempt was invalidated due to executable-capture, deterministic-exit, proxy-substitution, and undocumented-downsampling defects. No G2 execution occurred. The G1 contract has now been hardened to require executable entry, deterministic exit, post-entry-only measurement, exact candidate-definition adherence, and explicit prohibition of MFE/proxy/down-sampling substitutions. Do NOT automatically rerun the four invalid candidates.
 >

@@ -192,3 +192,11 @@ The surviving corpus now records **six closed research lines** — Mean Reversio
 - **Promoted Candidates:** CAND-G0-012 (Trend-Pullback Re-Acceleration) and CAND-G0-013 (Macro-Shock Volatility Reset Continuation). Both explicitly define re-arm mechanisms and conditional KPIs.
 - **Rejected Candidates:** CAND-G0-014 killed as a closed-line rescue attempt.
 - **Next Stage:** **G1 ECONOMIC PLAUSIBILITY SCREEN** for CAND-012 and CAND-013.
+
+## 25. G1 Economic Plausibility Screen V5 (2026-08-25)
+
+- **Execution:** Executed deterministic G1 extraction for CAND-G0-012 and CAND-G0-013 (`RESEARCH_FACTORY_V2_G1_SCREEN_20260825_V5.md`).
+- **Opportunity Integrity Confirmed:** Sequential state machine and 24-hour lockouts successfully prevented overlapping event cascades (suppressing 4,820 duplicate touches for CAND-012 and 212 overlapping lockouts for CAND-013).
+- **Result (CAND-G0-012):** INSUFFICIENT. The conditional post-event behavior produced negative expectancy across both low-volatility and high-volatility states.
+- **Result (CAND-G0-013):** INSUFFICIENT. The shock-reset condition proved extremely rare (67 valid opportunities in 5 years). The most populated liquidity session state (NY) generated strictly negative expectancy.
+- **Next Stage:** **G0 CANDIDATE GENERATION** (Return to discovery).
