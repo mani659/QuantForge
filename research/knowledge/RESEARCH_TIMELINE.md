@@ -185,3 +185,10 @@ The surviving corpus now records **six closed research lines** — Mean Reversio
 ## 23. Research Factory refined (2026-08-25)
 
 - **Methodological Refinement:** Research Factory refined around conditional market behavior, mathematical expectancy, and opportunity-integrity protection after CAND-010 event-state duplication failure. The primary research objective is to estimate conditional post-event behavior and determine whether that conditional distribution produces positive mathematical expectancy after executable costs.
+
+## 24. G0 Candidate Generation V5 (2026-08-25)
+
+- **Execution:** Executed the fifth G0 candidate generation cycle under the new Conditional Market Behavior and Opportunity Integrity principles (`TRADEABLE_EDGE_DISCOVERY_SCREENING_V5.md`).
+- **Promoted Candidates:** CAND-G0-012 (Trend-Pullback Re-Acceleration) and CAND-G0-013 (Macro-Shock Volatility Reset Continuation). Both explicitly define re-arm mechanisms and conditional KPIs.
+- **Rejected Candidates:** CAND-G0-014 killed as a closed-line rescue attempt.
+- **Next Stage:** **G1 ECONOMIC PLAUSIBILITY SCREEN** for CAND-012 and CAND-013.
