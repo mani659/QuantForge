@@ -325,3 +325,7 @@ The surviving corpus now records **six closed research lines** — Mean Reversio
 ## 56. G1 Economic Plausibility Screen V14 (2026-08-26)
 
 - **Record:** V14 G1 completed. CAND-041 (Post-OPEX Drift) is INSUFFICIENT due to extreme outlier dependence (+35 mean / -10 median). CAND-042 (Correlated Shock Reversion) produced massive structural economics (+63 mean / +228 median) but extremely low sample (N=5), earning COMPONENT-CANDIDATE (Event Opportunist) status rather than standalone G2 promotion. CAND-043 (Liquidity Vacuum) is INSUFFICIENT as it directly contradicted the expected mechanism. Zero standalone G2 promotions.
+
+## 57. V14 G1 Closure & Component Governance Update (2026-08-26)
+
+- **Record:** V14 G1 formally closed. Updated System Assembly governance to explicitly separate COMPONENT-CANDIDATE (interesting descriptive behavior, retained for future study) from QUALIFIED SYSTEM COMPONENT (scientifically validated). Retained CAND-042 under this new Component-Candidate doctrine. Established the lesson that a profitable treatment does not prove a mechanism if the counterfactual is also highly profitable. Next phase: G0 Candidate Generation (V15) focusing on mechanisms with economically constrained counterfactuals.

@@ -87,20 +87,20 @@ System Assembly will follow a governed sequence:
 
 ## 12. Current Component Register
 
-| Field | Description | CAND-024 |
-|---|---|---|
-| Component ID | Original research object | CAND-024 (Friday De-Risking) |
-| Mechanism | Mechanism family | Friday Afternoon Positional De-Risking |
-| Scientific Status | Current scientific state | Credible historical evidence |
-| Economic Status | Current economic state | Strong positive per-event economics |
-| Frequency | Standalone frequency | ~4.55 opportunities/year |
-| Intended Role | Core/event/session/etc. | EVENT OPPORTUNIST / SESSION COMPONENT |
-| Markets | Applicable instruments | USATECHIDXUSD |
-| Holding Period | Typical lifecycle | Session |
-| Overlap Risk | Potential interaction | Time-constrained |
-| Cost Profile | Transaction cost characteristics | High expectancy relative to friction |
-| Qualification Basis | Why retained | Strong per-event economics, failed G1 solely on standalone frequency |
-| Governance Status | Retained / Qualified / Closed | **COMPONENT-CANDIDATE / RETAINED** |
+| Field | Description | CAND-024 | CAND-035 | CAND-042 |
+|---|---|---|---|---|
+| Component ID | Original research object | CAND-024 (Friday De-Risking) | CAND-035 (Month-End Imbalance) | CAND-042 (Correlated Shock Reversion) |
+| Mechanism | Mechanism family | Friday Afternoon Positional De-Risking | Month-End Window Dressing / Imbalance | Forced Liquidation Correlation Break |
+| Scientific Status | Current scientific state | Credible historical evidence | Mechanistically constrained | UNTESTABLE (Missing data) |
+| Economic Status | Current economic state | Strong positive per-event economics | Massive per-event economics | Massive per-event economics |
+| Frequency | Standalone frequency | ~4.55 opportunities/year | ~11.85 opportunities/year | ~3.02 opportunities/year |
+| Intended Role | Core/event/session/etc. | EVENT OPPORTUNIST / SESSION COMPONENT | EVENT OPPORTUNIST | EVENT OPPORTUNIST / REGIME SPECIALIST |
+| Markets | Applicable instruments | USATECHIDXUSD | USATECHIDXUSD | USATECHIDXUSD, XAUUSD |
+| Holding Period | Typical lifecycle | Session | Session | Session |
+| Overlap Risk | Potential interaction | Time-constrained | Calendar-constrained | Correlation-constrained |
+| Cost Profile | Transaction cost characteristics | High expectancy relative to friction | High expectancy relative to friction | High expectancy relative to friction |
+| Qualification Basis | Why retained | Strong per-event economics | Flawless counterfactual, low N | Massive per-event economics, low N |
+| Governance Status | Retained / Qualified / Closed | **COMPONENT-CANDIDATE / RETAINED** | **COMPONENT-CANDIDATE / RETAINED** | **COMPONENT-CANDIDATE / NOT SCIENTIFICALLY QUALIFIED** |
 
 ### Additional Artifact Status
 - **CAND-025:** RETAINED BUT UNQUALIFIED — THIN ECONOMICS / HIGH FRAGILITY. Not included as an approved component.

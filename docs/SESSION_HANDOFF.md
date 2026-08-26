@@ -27,18 +27,18 @@
 > **PARALLEL FORWARD VALIDATION AND TRADEABLE EDGE DISCOVERY**
 >
 > ## Last Screening
-> V14 G1 completed.
+> V14 G1 formally closed.
 > CAND-041 (Post-OPEX Unpinning Drift): INSUFFICIENT
-> CAND-042 (Correlated Liquidity-Shock Reversion): COMPONENT-CANDIDATE (Event Opportunist)
+> CAND-042 (Correlated Liquidity-Shock Reversion): COMPONENT-CANDIDATE (Event Opportunist) / NOT SCIENTIFICALLY QUALIFIED
 > CAND-043 (European-Close Liquidity Vacuum): INSUFFICIENT
-> G2 NOT EXECUTED. Zero standalone G2 promotions.
+> V14 closed with no G2 candidate.
 >
 > ## Next Action
 > ### ACTIVE FORWARD TRACK
 > > CAND-015 — 7-day paper observation in progress
 >
 > ### ACTIVE RESEARCH TRACK
-> > COMPONENT REGISTER UPDATE / RETURN TO G0
+> > G0 CANDIDATE GENERATION — V15
 >
 > ### PROTECTED
 > > CAND-015 frozen definition and running observation

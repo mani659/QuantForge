@@ -968,3 +968,17 @@ G1/G2 showed positive descriptive economics in the registered FAVORABLE subset, 
 - CAND-042 (Correlated Shock Reversion): COMPONENT-CANDIDATE (Event Opportunist). Produced massive +63 mean / +228 median points. N=5 is too small for chronological G2 holdout testing, but the strong per-event structural dislocation earns it a place on the Component Register.
 - CAND-043 (Liquidity Vacuum): INSUFFICIENT. Continuation after a dominant morning trend yielded worse performance (-3.80) than the vacuum after a flat morning, explicitly contradicting the hypothesis.
 - Causal mechanisms (gamma pinning, forced liquidations, order book depth) were isolated from observed price behavior due to missing proxy data. Zero standalone G2 promotions.
+
+## DISC-056 — V14 G1 Closure & Component Governance Update
+
+**Relationship:** Tradeable Edge Discovery Screening.
+
+**Status:** Formal closure of the V14 G1 cycle and update of Component Register governance.
+
+**Outcome:** 
+- V14 cycle CLOSED. No candidates produced high-frequency, robust economics suitable for standalone G2 promotion.
+- Component Governance Updated: Delineated `COMPONENT-CANDIDATE` (retained for interesting descriptive economics, not scientifically validated) from `QUALIFIED SYSTEM COMPONENT` (passed independent rigorous scientific gating).
+- Retained CAND-042 as COMPONENT-CANDIDATE — EVENT OPPORTUNIST, but explicitly NOT scientifically qualified.
+- Lesson recorded: Component retention may occur before mechanism validation, but System Assembly qualification requires stronger independent evidence.
+- Lesson recorded: A highly profitable event is not sufficient evidence for a proposed causal mechanism when the registered counterfactual is also highly profitable.
+- Next action: Return to G0 Candidate Generation (V15) focusing on mechanisms with economically constrained counterfactuals.
