@@ -763,3 +763,24 @@ G1/G2 showed positive descriptive economics in the registered FAVORABLE subset, 
 **Status:** Formal distinction created between 'Research Artifacts' (individual scientific edge components) and 'Strategy Systems' (deployable trading architectures). 
 
 **Outcome:** Candidates with strong per-event economics but low standalone frequency (such as CAND-024 and CAND-025) are no longer automatically killed. They are classified as COMPONENT-CANDIDATES and retained for future SYSTEM ASSEMBLY, where the union of multiple artifacts produces sufficient system-level frequency.
+
+## DISC-038 — Historical Artifact Reintroduction Audit V1
+
+**Relationship:** Tradeable Edge Discovery Screening.
+
+**Status:** Retrospective audit of historical lines (DISC-021-026, CAND-018-027) completed under the Artifact vs System Governance V1.
+
+**Outcome:** 
+- CAND-024 is designated COMPONENT-ELIGIBLE / RETAINED FOR SYSTEM ASSEMBLY REVIEW (A).
+- CAND-025 is designated COMPONENT-CANDIDATE (CONDITIONAL) / RETAINED FOR SYSTEM ASSEMBLY REVIEW (B).
+- No failed artifacts were rescued. All contradicted or economically non-viable strategies (DISC-021, DISC-022, DISC-023, DISC-024, DISC-025, DISC-026, CAND-018, CAND-020, CAND-021, CAND-023, CAND-026, CAND-027) remain permanently closed (C/D/E).
+
+## DISC-039 — System Assembly Candidate Register
+
+**Relationship:** Tradeable Edge Discovery Screening.
+
+**Status:** SYSTEM ASSEMBLY CANDIDATE REGISTER ESTABLISHED.
+
+**Outcome:** 
+- CAND-024 retained as a COMPONENT-CANDIDATE / EVENT OPPORTUNIST. Its standalone status remains CLOSED.
+- CAND-025 retained but UNQUALIFIED. Its standalone status remains CLOSED.

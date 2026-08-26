@@ -253,3 +253,11 @@ The surviving corpus now records **six closed research lines** — Mean Reversio
 ## 38. Governance Amendment — Artifacts vs Systems (2026-08-26)
 
 - **Record:** Formally distinguished between Research Artifacts and Strategy Systems. Low frequency is no longer an automatic kill condition for scientifically valid artifacts. Created COMPONENT-CANDIDATE classification for artifacts banked for future SYSTEM ASSEMBLY. CAND-024 and CAND-025 are considered COMPONENT-CANDIDATES.
+
+## 39. Historical Artifact Reintroduction Audit (2026-08-26)
+
+- **Record:** Retrospective audit of historical lines (DISC-021-026, CAND-018-027) completed. CAND-024 was designated COMPONENT-ELIGIBLE and retained for future SYSTEM ASSEMBLY. CAND-025 was designated COMPONENT-CANDIDATE (CONDITIONAL). No failed or scientifically contradicted artifacts were rescued. All economically non-viable and scientifically invalid lines remain permanently closed.
+
+## 40. System Assembly Candidate Register (2026-08-26)
+
+- **Record:** Established the System Assembly Candidate Register to govern the formal integration of independently qualified artifacts into deployable architectures. CAND-024 is formally retained as a COMPONENT-CANDIDATE / EVENT OPPORTUNIST. Its standalone status remains CLOSED. CAND-025 is retained but UNQUALIFIED.

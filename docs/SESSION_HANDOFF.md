@@ -27,16 +27,17 @@
 > **PARALLEL FORWARD VALIDATION AND TRADEABLE EDGE DISCOVERY**
 >
 > ## Last Screening
-> Governance Updated: Artifact vs System classification added.
-> CAND-025 Status: HOLD (Component-Candidate).
-> CAND-024 Status: HOLD (Component-Candidate).
+> SYSTEM ASSEMBLY CANDIDATE REGISTER ESTABLISHED.
+> CAND-024 retained as a COMPONENT-CANDIDATE / EVENT OPPORTUNIST.
+> CAND-024 standalone status remains CLOSED.
+> CAND-025 retained but UNQUALIFIED.
 >
 > ## Next Action
 > ### ACTIVE FORWARD TRACK
 > > CAND-015 — 7-day paper observation in progress
 >
 > ### ACTIVE RESEARCH TRACK
-> > Tradeable Edge Discovery Screening — RETURN TO G0 (Generate V10).
+> > RETURN TO G0 CANDIDATE GENERATION
 >
 > ### PROTECTED
 > > CAND-015 frozen definition and running observation
