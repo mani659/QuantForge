@@ -982,3 +982,39 @@ G1/G2 showed positive descriptive economics in the registered FAVORABLE subset, 
 - Lesson recorded: Component retention may occur before mechanism validation, but System Assembly qualification requires stronger independent evidence.
 - Lesson recorded: A highly profitable event is not sufficient evidence for a proposed causal mechanism when the registered counterfactual is also highly profitable.
 - Next action: Return to G0 Candidate Generation (V15) focusing on mechanisms with economically constrained counterfactuals.
+
+## DISC-057 — V15 G0 Candidate Generation
+
+**Relationship:** Tradeable Edge Discovery Screening.
+
+**Status:** V15 G0 candidate generation completed.
+
+**Outcome:** 
+- Promoted CAND-G0-044 (Initial Balance Trap Liquidation).
+- Promoted CAND-G0-045 (Safe-Haven Confirmed Risk-Off).
+- Promoted CAND-G0-046 (Opening Print Capitulation Pivot).
+- V15 shifted focus to counterfactual-discriminating mechanisms, generating hypotheses based on trapped institutional flow, cross-market structural confirmation, and cost-basis capitulation. G1 pending.
+
+## DISC-058 — V15 G1 Economic Plausibility Screen
+
+**Relationship:** Tradeable Edge Discovery Screening.
+
+**Status:** V15 G1 screening completed.
+
+**Outcome:** 
+- CAND-044 (Initial Balance Trap Liquidation): INSUFFICIENT. Negative expectancy. Breaking a massive morning trend yielded worse results (-40.20 mean) than breaking a tight chop range (-7.68 mean), explicitly contradicting the forced liquidation hypothesis.
+- CAND-045 (Safe-Haven Confirmed Risk-Off): INSUFFICIENT. High win rate but constrained upside. Crucially, the counterfactual (unconfirmed equity crashes) proved MORE profitable than the treatment (confirmed crashes), directly contradicting the thesis that safe-haven confirmation filters out mean-reversion.
+- CAND-046 (Opening Print Capitulation Pivot): INSUFFICIENT. Negative expectancy. Crossing the Open after a massive excursion yielded negative returns, while the counterfactual chop crosses yielded positive returns.
+- Lesson recorded: Hypotheses that sound mechanistically perfect often fail completely when confronted with empirical price action and explicit counterfactuals. Zero standalone G2 promotions.
+
+## DISC-059 — V15 G1 Closure & Counterfactual Superiority Doctrine
+
+**Relationship:** Tradeable Edge Discovery Screening.
+
+**Status:** Formal closure of the V15 G1 cycle and update of G1 doctrine.
+
+**Outcome:** 
+- V15 cycle CLOSED. No candidates produced valid, counterfactual-discriminating economics.
+- Doctrine Updated: Added the "Counterfactual Superiority Rule" to G1. A treatment that is profitable in absolute terms does NOT qualify as a mechanism artifact if its pre-registered counterfactual is materially more profitable.
+- Lesson recorded: Event economics must be strictly separated from mechanism value. A condition must explicitly add information relative to its counterfactual; simply producing profitable events is insufficient if the base event without the condition is superior.
+- Next action: Return to G0 Candidate Generation (V16) focusing on mechanisms where the condition is expected to actively add value relative to a very close counterfactual.

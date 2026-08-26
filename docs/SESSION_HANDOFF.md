@@ -27,18 +27,18 @@
 > **PARALLEL FORWARD VALIDATION AND TRADEABLE EDGE DISCOVERY**
 >
 > ## Last Screening
-> V14 G1 formally closed.
-> CAND-041 (Post-OPEX Unpinning Drift): INSUFFICIENT
-> CAND-042 (Correlated Liquidity-Shock Reversion): COMPONENT-CANDIDATE (Event Opportunist) / NOT SCIENTIFICALLY QUALIFIED
-> CAND-043 (European-Close Liquidity Vacuum): INSUFFICIENT
-> V14 closed with no G2 candidate.
+> V15 G1 closed with no G2 candidate.
+> CAND-044 (Initial Balance Trap Liquidation): INSUFFICIENT
+> CAND-045 (Safe-Haven Confirmed Risk-Off): INSUFFICIENT (Counterfactual Superior)
+> CAND-046 (Opening Print Capitulation Pivot): INSUFFICIENT
+> V15 closed with zero components added. Counterfactual superiority rule added to G1 doctrine.
 >
 > ## Next Action
 > ### ACTIVE FORWARD TRACK
 > > CAND-015 — 7-day paper observation in progress
 >
 > ### ACTIVE RESEARCH TRACK
-> > G0 CANDIDATE GENERATION — V15
+> > G0 CANDIDATE GENERATION — V16
 >
 > ### PROTECTED
 > > CAND-015 frozen definition and running observation

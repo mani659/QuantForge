@@ -329,3 +329,15 @@ The surviving corpus now records **six closed research lines** — Mean Reversio
 ## 57. V14 G1 Closure & Component Governance Update (2026-08-26)
 
 - **Record:** V14 G1 formally closed. Updated System Assembly governance to explicitly separate COMPONENT-CANDIDATE (interesting descriptive behavior, retained for future study) from QUALIFIED SYSTEM COMPONENT (scientifically validated). Retained CAND-042 under this new Component-Candidate doctrine. Established the lesson that a profitable treatment does not prove a mechanism if the counterfactual is also highly profitable. Next phase: G0 Candidate Generation (V15) focusing on mechanisms with economically constrained counterfactuals.
+
+## 58. G0 Candidate Generation V15 (2026-08-26)
+
+- **Record:** V15 G0 candidate-generation cycle completed. Focused strictly on counterfactual-discriminating mechanisms. Promoted 3 new candidates: CAND-G0-044 (Initial Balance Trap Liquidation), CAND-G0-045 (Safe-Haven Confirmed Risk-Off), and CAND-G0-046 (Opening Print Capitulation Pivot). G1 pending.
+
+## 59. G1 Economic Plausibility Screen V15 (2026-08-26)
+
+- **Record:** V15 G1 completed. All three candidates failed. CAND-044 (Trap Liquidation) and CAND-046 (Capitulation Pivot) produced explicitly negative expectancy. CAND-045 (Confirmed Risk-Off) produced positive expectancy but was severely outperformed by its unconfirmed counterfactual, contradicting the mechanism hypothesis. Validated the new research standard requiring explicit counterfactual benchmarking. Zero standalone G2 promotions.
+
+## 60. V15 G1 Closure & Counterfactual Superiority Doctrine (2026-08-26)
+
+- **Record:** V15 G1 formally closed. Zero new components retained. Established the "Counterfactual Superiority Rule": a highly profitable treatment does not qualify as a valid mechanism artifact if its registered counterfactual is materially more profitable. Mechanism value must be explicitly separated from absolute event economics. Next phase: G0 Candidate Generation (V16) focusing on mechanisms where the condition explicitly adds value relative to a very close counterfactual.
