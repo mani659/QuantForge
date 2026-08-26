@@ -27,17 +27,18 @@
 > **PARALLEL FORWARD VALIDATION AND TRADEABLE EDGE DISCOVERY**
 >
 > ## Last Screening
-> CAND-032 G3 INCONCLUSIVE; line closed; no G4.
-> CAND-032 (NY Open Structural Momentum): INCONCLUSIVE
-> The mechanism failed to statistically separate from chance (p=0.1133) due to extreme left-tail variance paralyzing inference.
-> G4 NOT EXECUTED.
+> V13 closed with no G2 candidates.
+> CAND-038 (Mid-Day Counter-Trend Reload): INSUFFICIENT
+> CAND-039 (Structural Gap-Fill Rejection): INSUFFICIENT (Zero Events)
+> CAND-040 (Volatility Compression Expansion): INSUFFICIENT
+> G2 NOT EXECUTED. Zero standalone G2 promotions.
 >
 > ## Next Action
 > ### ACTIVE FORWARD TRACK
 > > CAND-015 — 7-day paper observation in progress
 >
 > ### ACTIVE RESEARCH TRACK
-> > TRADEABLE EDGE DISCOVERY SCREENING — G0
+> > G0 CANDIDATE GENERATION — V14
 >
 > ### PROTECTED
 > > CAND-015 frozen definition and running observation

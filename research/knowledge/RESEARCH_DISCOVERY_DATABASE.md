@@ -883,3 +883,64 @@ G1/G2 showed positive descriptive economics in the registered FAVORABLE subset, 
 - No G4 executed. No rescue authorized.
 - Lesson recorded: A strong out-of-sample economic result (G2) can remain scientifically non-adjudicable (G3) if the registered mechanism cannot be distinguished from a suitable null due to severe unhedged variance.
 - Next action: Return to G0 Candidate Generation.
+
+## DISC-049 — V12 G0 Candidate Generation
+
+**Relationship:** Tradeable Edge Discovery Screening.
+
+**Status:** V12 G0 candidate generation completed.
+
+**Outcome:** 
+- Promoted CAND-G0-035 (Month-End Imbalance Acceleration).
+- Promoted CAND-G0-036 (Structural PDH Pre-Market Acceptance).
+- Promoted CAND-G0-037 (Cross-Index Tech Leadership Divergence).
+- V12 strictly prioritizes mechanisms with pre-declared, falsifiable counterfactuals to ensure scientific adjudicability (solving the CAND-032 variance trap). G1 pending.
+
+## DISC-050 — V12 G1 Economic Plausibility Screen
+
+**Relationship:** Tradeable Edge Discovery Screening.
+
+**Status:** V12 G1 screening completed.
+
+**Outcome:** 
+- CAND-035 (Month-End Imbalance): COMPONENT-CANDIDATE (Retain). Massive per-event economics (+62.36 mean net) and a flawless counterfactual validation, but low opportunity frequency (4 events/year).
+- CAND-036 (Structural PDH Acceptance): INSUFFICIENT. The strictly verified acceptance produced negative expectancy (-16.15), fundamentally contradicted by the unverified gap-up counterfactual (+13.95).
+- CAND-037 (Cross-Index Divergence): BLOCKED. Required missing USA500IDXUSD_M1.csv data.
+- Zero standalone G2 promotions.
+
+## DISC-051 — V13 G0 Candidate Generation
+
+**Relationship:** Tradeable Edge Discovery Screening.
+
+**Status:** V13 G0 candidate generation completed.
+
+**Outcome:** 
+- Promoted CAND-G0-038 (Mid-Day Counter-Trend Reload).
+- Promoted CAND-G0-039 (Structural Gap-Fill Rejection).
+- Promoted CAND-G0-040 (Volatility Compression Expansion).
+- V13 prioritized finding specialized, low-frequency component artifacts with strong structural positive-expectancy hypotheses and strict falsifiable counterfactuals. G1 pending.
+
+## DISC-052 — V13 G1 Economic Plausibility Screen
+
+**Relationship:** Tradeable Edge Discovery Screening.
+
+**Status:** V13 G1 screening completed.
+
+**Outcome:** 
+- CAND-038 (Mid-Day Reload): INSUFFICIENT. Validated counterfactual outperformance but the absolute net economics relied entirely on a single positive outlier, with a structurally negative median (-18.88).
+- CAND-039 (Gap-Fill Rejection): INSUFFICIENT. The strictly bounded confirmation criteria (testing the YC precisely without exceeding it) yielded 0 historical events.
+- CAND-040 (Volatility Expansion): INSUFFICIENT. The expansion from compression yielded negative expectancy (-18.99), completely contradicted by its counterfactual (which yielded +92.21).
+- Zero standalone G2 promotions. Zero new Component-Candidates retained.
+
+## DISC-053 — V13 G1 Closure
+
+**Relationship:** Tradeable Edge Discovery Screening.
+
+**Status:** Formal closure of the V13 G1 cycle.
+
+**Outcome:** 
+- V13 cycle CLOSED. No candidates produced a sustainable positive-expectancy profile.
+- Lesson recorded: A positive mean created by a single extreme observation (CAND-038) does not establish an economically healthy artifact.
+- Lesson recorded: Zero event frequency (CAND-039) is evidence of insufficient empirical opportunity, not necessarily evidence that the underlying mechanism is false.
+- Lesson recorded: A proposed causal explanation (CAND-040 dealer gamma) cannot be claimed when required observational data is unavailable.
+- Next action: Return to G0 Candidate Generation (V14).

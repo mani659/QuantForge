@@ -297,3 +297,23 @@ The surviving corpus now records **six closed research lines** — Mean Reversio
 ## 49. CAND-032 G3 Closure (2026-08-26)
 
 - **Record:** CAND-032 research line formally closed (G3 INCONCLUSIVE). G4 blocked. No rescue authorized. This establishes the critical distinction between out-of-sample descriptive economics (G2) and scientific mechanism isolation (G3). Return to G0 Candidate Generation.
+
+## 50. G0 Candidate Generation V12 (2026-08-26)
+
+- **Record:** V12 G0 candidate-generation cycle completed. Focused exclusively on mechanisms with pre-declared, testable counterfactuals to ensure scientific adjudicability. Promoted 3 new candidates: CAND-G0-035 (Month-End Imbalance Acceleration), CAND-G0-036 (Structural PDH Pre-Market Acceptance), and CAND-G0-037 (Cross-Index Tech Leadership Divergence). G1 pending.
+
+## 51. G1 Economic Plausibility Screen V12 (2026-08-26)
+
+- **Record:** V12 G1 completed. CAND-035 (Month-End Imbalance) showed massive per-event economics (+62.36 mean net) and a flawless counterfactual validation, but low opportunity frequency limits it to COMPONENT-CANDIDATE (Event Opportunist). CAND-036 (Structural PDH) yielded negative expectancy (-16.15), contradicted by its unverified gap-up counterfactual (+13.95), and is INSUFFICIENT. CAND-037 (Tech Divergence) was BLOCKED due to missing USA500 data. Zero standalone G2 promotions.
+
+## 52. G0 Candidate Generation V13 (2026-08-26)
+
+- **Record:** V13 G0 candidate-generation cycle completed. Focused on diversifying the Component Register with low-frequency, structurally robust, positive-expectancy hypotheses. Promoted 3 new candidates: CAND-G0-038 (Mid-Day Counter-Trend Reload), CAND-G0-039 (Structural Gap-Fill Rejection), and CAND-G0-040 (Volatility Compression Expansion). G1 pending.
+
+## 53. G1 Economic Plausibility Screen V13 (2026-08-26)
+
+- **Record:** V13 G1 completed. CAND-038 (Mid-Day Reload) validated its counterfactual but had weak absolute economics (+4.69 mean net, -18.88 median net) entirely dependent on a single outlier, rendering it INSUFFICIENT. CAND-039 (Gap-Fill Rejection) yielded 0 events due to over-constrained parameters and is INSUFFICIENT. CAND-040 (Volatility Expansion) yielded negative expectancy (-18.99 mean net), contradicting the compression hypothesis, and is INSUFFICIENT. Zero standalone G2 promotions. Zero new Component-Candidates retained.
+
+## 54. V13 G1 Closure (2026-08-26)
+
+- **Record:** V13 G1 formally closed. Established key lessons: an outlier-dependent positive mean (CAND-038) is not evidence of a healthy artifact; zero-event frequency (CAND-039) indicates lack of opportunity, not necessarily a false mechanism; and causal mechanisms (CAND-040 dealer gamma) cannot be claimed without the observational data to test them. Returned to G0 Candidate Generation (V14) with a mandate to search for objective economic constraints.
