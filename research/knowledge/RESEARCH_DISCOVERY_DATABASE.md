@@ -669,3 +669,11 @@ CAND-015 = scientifically supported + economically viable + historical productio
 True forward validation blocked by absent real-time/demo data feed.
 
 No CAND-015 strategy changes occurred.
+
+## DISC-028 — Governance: Parallel Forward Validation and Discovery
+
+**Relationship:** Parallelization of forward validation and discovery research.
+
+**Status:** The CAND-015 forward observation is a protected validation track. The running observation must remain untouched until its complete log is available. No scientific or economic conclusion may be drawn from the partial 7-day forward observation before the session is complete and independently audited.
+
+**Parallel Track:** In parallel, the Research Factory V2 is ACTIVE at G0 — Candidate Generation. New research must not influence the CAND-015 forward observation, and partial CAND-015 forward results must not be used to select new candidates.

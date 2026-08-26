@@ -24,7 +24,7 @@
 > * jump directly to production tick infrastructure.
 >
 > ## Current Milestone
-> **TRADEABLE EDGE DISCOVERY SCREENING**
+> **PARALLEL FORWARD VALIDATION AND TRADEABLE EDGE DISCOVERY**
 >
 > ## Last Screening
 > Latest V5 G1 cycle:
@@ -32,29 +32,24 @@
 > No G2 execution occurred.
 >
 > ## Next Action
-> **REAL-TIME / DEMO DATA-SOURCE EVALUATION FOR CAND-015**
+> ### ACTIVE FORWARD TRACK
+> > CAND-015 — 7-day paper observation in progress
 >
-> CAND-015 G6 replay harness implementation and independent audit are complete and VALIDATED.
-> Tests A–J = 10/10 PASS.
-> Historical signal parity = PASS.
-> Replay execution semantics explicitly distinguish synthetic replay prices from real execution.
+> ### ACTIVE RESEARCH TRACK
+> > Tradeable Edge Discovery Screening — G0 Candidate Generation
 >
-> TRUE G6 FORWARD VALIDATION remains BLOCKED because the project does not yet possess an approved real-time/demo market-data source. It is an operational capability blocker, NOT a scientific or economic failure.
+> ### PROTECTED
+> > CAND-015 frozen definition and running observation
 >
-> The next task is NOT to modify CAND-015.
-> The next task is to evaluate and authorize ONE suitable real-time/demo data source capable of supplying the markets required by CAND-015 (USATECHIDXUSD, BTCUSD). The source must support deterministic timestamps and sufficient pricing information for the G6 observation harness.
+> ### NOT AUTHORIZED
+> - G6 adjudication before completion;
+> - strategy changes;
+> - bot construction;
+> - expensive infrastructure for new candidates.
 >
-> Minimum data-source requirements:
-> - Market availability: Must provide both required CAND-015 instruments, or a documented architecture for obtaining both without changing the research object.
-> - Real-time timestamps: Must provide deterministic event/quote timestamps.
-> - Executable pricing: Prefer bid/ask or equivalent executable pricing where available.
-> - Historical/forward consistency: The data source should permit clear separation between historical reference, real-time feed, and forward observation.
-> - Reliability: Must support continuous observation and reconnection/error reporting.
-> - Access: Must be technically usable from the current QuantForge environment without requiring an enterprise-grade infrastructure stack.
+> CAND-015 forward observation is a PROTECTED VALIDATION TRACK. During the observation: no strategy changes, no parameter changes, no threshold changes, no entry/exit changes, no filtering, no execution-cost changes, and no interpretation-driven modifications are authorized. The running observation must remain untouched until its complete log is available. No scientific or economic conclusion may be drawn from the partial 7-day forward observation before the session is complete and independently audited.
 >
-> Existing ORD tick/Parquet infrastructure is historical research infrastructure and is NOT automatically resumed for CAND-015 G6. G6 should use the smallest appropriate real-time feed.
->
-> The first 2026-08-25 G1 attempt was invalidated due to executable-capture, deterministic-exit, proxy-substitution, and undocumented-downsampling defects. No G2 execution occurred. The G1 contract has now been hardened to require executable entry, deterministic exit, post-entry-only measurement, exact candidate-definition adherence, and explicit prohibition of MFE/proxy/down-sampling substitutions. Do NOT automatically rerun the four invalid candidates.
+> In parallel, the Research Factory V2 is ACTIVE at G0 — Candidate Generation. New research must not modify, tune, reinterpret, or otherwise influence the CAND-015 forward observation. Partial CAND-015 forward results must not be used to select, filter, or formulate new candidates. Future candidates must remain mechanism-diverse (do not create multiple superficial variations of CAND-015). New candidates must earn G1 -> G2 -> deeper infrastructure. The running CAND-015 forward observation does NOT authorize expensive infrastructure for unrelated research.
 >
 > ### HISTORICAL / CLOSED
 >
@@ -72,7 +67,8 @@
 >   - ECONOMICALLY VIABLE
 >   - G5 HISTORICAL REPLAY VALIDATED
 >   - G6 REPLAY HARNESS VALIDATED
->   - TRUE G6 FORWARD VALIDATION BLOCKED
+>   - MT5 INTEGRATION VALIDATED
+>   - FORWARD OBSERVATION ACTIVE / IN PROGRESS (7-day paper observation)
 
 ---
 

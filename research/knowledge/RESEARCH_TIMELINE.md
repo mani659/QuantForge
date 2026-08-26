@@ -209,3 +209,7 @@ The surviving corpus now records **six closed research lines** — Mean Reversio
 
 - **Record:** CAND-015 completed G5 historical production-style replay.
 - **Record:** 2026-08-25 — CAND-015 G6 replay harness independently validated; 10/10 behavioral tests passed; historical signal parity passed; true forward validation remains blocked pending data-source authorization.
+
+## 28. Parallel Forward Validation and Discovery
+
+- **Record:** CAND-015 7-day forward validation continues as a protected track while the Research Factory V2 simultaneously resumes G0 candidate discovery.
