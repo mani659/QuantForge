@@ -317,3 +317,11 @@ The surviving corpus now records **six closed research lines** — Mean Reversio
 ## 54. V13 G1 Closure (2026-08-26)
 
 - **Record:** V13 G1 formally closed. Established key lessons: an outlier-dependent positive mean (CAND-038) is not evidence of a healthy artifact; zero-event frequency (CAND-039) indicates lack of opportunity, not necessarily a false mechanism; and causal mechanisms (CAND-040 dealer gamma) cannot be claimed without the observational data to test them. Returned to G0 Candidate Generation (V14) with a mandate to search for objective economic constraints.
+
+## 55. G0 Candidate Generation V14 (2026-08-26)
+
+- **Record:** V14 G0 candidate-generation cycle completed. Focused on Objective Economic Constraints instead of generic price patterns. Promoted 3 new candidates: CAND-G0-041 (Post-OPEX Unpinning Drift), CAND-G0-042 (Correlated Liquidity-Shock Reversion), and CAND-G0-043 (European-Close Liquidity Vacuum). G1 pending.
+
+## 56. G1 Economic Plausibility Screen V14 (2026-08-26)
+
+- **Record:** V14 G1 completed. CAND-041 (Post-OPEX Drift) is INSUFFICIENT due to extreme outlier dependence (+35 mean / -10 median). CAND-042 (Correlated Shock Reversion) produced massive structural economics (+63 mean / +228 median) but extremely low sample (N=5), earning COMPONENT-CANDIDATE (Event Opportunist) status rather than standalone G2 promotion. CAND-043 (Liquidity Vacuum) is INSUFFICIENT as it directly contradicted the expected mechanism. Zero standalone G2 promotions.

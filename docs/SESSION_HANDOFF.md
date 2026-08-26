@@ -27,10 +27,10 @@
 > **PARALLEL FORWARD VALIDATION AND TRADEABLE EDGE DISCOVERY**
 >
 > ## Last Screening
-> V13 closed with no G2 candidates.
-> CAND-038 (Mid-Day Counter-Trend Reload): INSUFFICIENT
-> CAND-039 (Structural Gap-Fill Rejection): INSUFFICIENT (Zero Events)
-> CAND-040 (Volatility Compression Expansion): INSUFFICIENT
+> V14 G1 completed.
+> CAND-041 (Post-OPEX Unpinning Drift): INSUFFICIENT
+> CAND-042 (Correlated Liquidity-Shock Reversion): COMPONENT-CANDIDATE (Event Opportunist)
+> CAND-043 (European-Close Liquidity Vacuum): INSUFFICIENT
 > G2 NOT EXECUTED. Zero standalone G2 promotions.
 >
 > ## Next Action
@@ -38,7 +38,7 @@
 > > CAND-015 — 7-day paper observation in progress
 >
 > ### ACTIVE RESEARCH TRACK
-> > G0 CANDIDATE GENERATION — V14
+> > COMPONENT REGISTER UPDATE / RETURN TO G0
 >
 > ### PROTECTED
 > > CAND-015 frozen definition and running observation

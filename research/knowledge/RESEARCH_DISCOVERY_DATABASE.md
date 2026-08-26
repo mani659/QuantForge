@@ -944,3 +944,27 @@ G1/G2 showed positive descriptive economics in the registered FAVORABLE subset, 
 - Lesson recorded: Zero event frequency (CAND-039) is evidence of insufficient empirical opportunity, not necessarily evidence that the underlying mechanism is false.
 - Lesson recorded: A proposed causal explanation (CAND-040 dealer gamma) cannot be claimed when required observational data is unavailable.
 - Next action: Return to G0 Candidate Generation (V14).
+
+## DISC-054 — V14 G0 Candidate Generation
+
+**Relationship:** Tradeable Edge Discovery Screening.
+
+**Status:** V14 G0 candidate generation completed.
+
+**Outcome:** 
+- Promoted CAND-G0-041 (Post-OPEX Unpinning Drift).
+- Promoted CAND-G0-042 (Correlated Liquidity-Shock Reversion).
+- Promoted CAND-G0-043 (European-Close Liquidity Vacuum).
+- V14 shifted focus to Objective Economic Constraints, generating hypotheses derived from calendar mechanics (options expiration), structural parity breaks (margin/liquidity shocks), and institutional market structure (European session handoff). G1 pending.
+
+## DISC-055 — V14 G1 Economic Plausibility Screen
+
+**Relationship:** Tradeable Edge Discovery Screening.
+
+**Status:** V14 G1 screening completed.
+
+**Outcome:** 
+- CAND-041 (Post-OPEX Drift): INSUFFICIENT. Post-OPEX gaps resisted mean-reversion better than generic Mondays, but the absolute median was negative (-10.06), driven entirely by a single outlier.
+- CAND-042 (Correlated Shock Reversion): COMPONENT-CANDIDATE (Event Opportunist). Produced massive +63 mean / +228 median points. N=5 is too small for chronological G2 holdout testing, but the strong per-event structural dislocation earns it a place on the Component Register.
+- CAND-043 (Liquidity Vacuum): INSUFFICIENT. Continuation after a dominant morning trend yielded worse performance (-3.80) than the vacuum after a flat morning, explicitly contradicting the hypothesis.
+- Causal mechanisms (gamma pinning, forced liquidations, order book depth) were isolated from observed price behavior due to missing proxy data. Zero standalone G2 promotions.
