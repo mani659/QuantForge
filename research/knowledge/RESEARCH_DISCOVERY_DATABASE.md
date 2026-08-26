@@ -784,3 +784,102 @@ G1/G2 showed positive descriptive economics in the registered FAVORABLE subset, 
 **Outcome:** 
 - CAND-024 retained as a COMPONENT-CANDIDATE / EVENT OPPORTUNIST. Its standalone status remains CLOSED.
 - CAND-025 retained but UNQUALIFIED. Its standalone status remains CLOSED.
+
+## DISC-040 — Research Factory V2 G0 Cycle V10
+
+**Relationship:** Tradeable Edge Discovery Screening.
+
+**Status:** V10 G0 candidate generation cycle completed. Focused on component-oriented discovery (Event Opportunist, Session Component, Cross-Market, Diversifier).
+
+**Outcome:** Promoted to G1: CAND-G0-028, CAND-G0-029, CAND-G0-030, CAND-G0-031.
+
+## DISC-041 — Research Factory V2 G1 Screen V10
+
+**Relationship:** Tradeable Edge Discovery Screening.
+
+**Status:** V10 G1 Economic Plausibility Screen completed.
+
+**Outcome:** All V10 candidates killed/blocked. 
+- CAND-028: BLOCKED (Data Quality - True volume unavailable)
+- CAND-029: BLOCKED (Data Availability - Missing USDJPY/TLT)
+- CAND-030: INSUFFICIENT (Killed) - Evaluated EURUSD Asian Value Area Rejection. 374 events, +7.18 pip median gross, but severe left tail resulted in -1.25 pip negative mean expectancy.
+- CAND-031: BLOCKED (Data Availability - Missing VIX)
+- G2 NOT EXECUTED.
+
+## DISC-042 — Research Factory V2 G1 Closure V10
+
+**Relationship:** Tradeable Edge Discovery Screening.
+
+**Status:** V10 G1 cycle formally closed.
+
+**Outcome:** 
+- No G2 candidates.
+- CAND-030 permanently CLOSED due to negative expectancy (left tail) despite high win rate.
+- CAND-028, CAND-029, CAND-031 permanently CLOSED due to data availability/quality blockers.
+- Next G0 cycle must prioritize mechanisms with naturally asymmetric positive payoffs and positive expectancy, diversifying away from "high hit rate but negative expectancy" patterns.
+
+## DISC-043 — Research Factory V2 G0 Cycle V11
+
+**Relationship:** Tradeable Edge Discovery Screening.
+
+**Status:** V11 G0 candidate generation cycle completed. Focused on positive-expectancy mechanism discovery (Breakout Continuation, Forced Flow, Cross-Market Repricing).
+
+**Outcome:** Promoted to G1: CAND-G0-032 (Session Component), CAND-G0-033 (Session/Event Opportunist), CAND-G0-034 (Cross-Market/Event Opportunist).
+
+## DISC-044 — Research Factory V2 G1 Screen V11
+
+**Relationship:** Tradeable Edge Discovery Screening.
+
+**Status:** V11 G1 Economic Plausibility Screen completed.
+
+**Outcome:** 
+- CAND-032: PASS — CLEAR. NY Open Structural Momentum Ignition (USATECHIDXUSD) demonstrated broad-based positive expectancy (+12.02 points mean net, N=257). Promoted to G2.
+- CAND-033: INSUFFICIENT. WMR Pre-Fixing Flow Acceleration (EURUSD) captured the observable momentum but was mathematically insufficient to overcome friction.
+- CAND-034: INSUFFICIENT. Metals Macro Confirmation Ignition (XAUUSD/XAGUSD) failed due to a severe unhedged left tail (positive median but negative mean).
+- G2 NOT EXECUTED.
+
+## DISC-045 — CAND-032 Final G1 Adjudication
+
+**Relationship:** Tradeable Edge Discovery Screening.
+
+**Status:** Final independent adjudication of CAND-032 G1 results completed.
+
+**Outcome:** 
+- G1 Verdict confirmed: G2 READY.
+- The NY Open Structural Momentum mechanism (USATECHIDXUSD) was verified free of look-ahead bias with rigorous event integrity.
+- Expected value (+12.02 points net) was determined to be broad-based, not reliant on a handful of extraordinary outliers, thus fulfilling the positive-expectancy mandate.
+
+## DISC-046 — CAND-032 G2 Cheap Empirical Pilot
+
+**Relationship:** Tradeable Edge Discovery Screening.
+
+**Status:** G2 completed for CAND-G0-032 (NY Open Structural Momentum).
+
+**Outcome:** 
+- G2 Verdict: PROMOTE TO G3.
+- The mechanism reproduced robustly outside the aggregate sample. The chronological holdout maintained strong positive expectancy (+10.61 points mean net, median +42.60) despite absorbing the worst outlier of the entire dataset (-1134 points).
+- The mechanism proved highly resistant to friction stress (surviving 2x / 4.0 point round-trip assumptions) and maintained broad-based structural stability without reliance on tail winners.
+
+## DISC-047 — CAND-032 G3 Scientific Validation
+
+**Relationship:** Tradeable Edge Discovery Screening.
+
+**Status:** G3 completed for CAND-G0-032 (NY Open Structural Momentum).
+
+**Outcome:** 
+- G3 Verdict: INCONCLUSIVE.
+- Despite strong G1/G2 economics (+12.02 points mean net), the unhedged left-tail variance (worst trade -1134 points) paralyzed scientific inference.
+- A direction-sign permutation placebo test yielded a null 95% CI of [-24.79, +20.94]. The observed +12.02 effect falls entirely within this noise band (p=0.1133), meaning the mechanism cannot be mathematically distinguished from a random coin flip on highly volatile days.
+- G4 NOT EXECUTED. Pipeline blocked by scientific insufficiency.
+
+## DISC-048 — CAND-032 G3 Closure
+
+**Relationship:** Tradeable Edge Discovery Screening.
+
+**Status:** Formal closure of the CAND-032 research line.
+
+**Outcome:** 
+- CAND-032 line is CLOSED (G3 INCONCLUSIVE).
+- No G4 executed. No rescue authorized.
+- Lesson recorded: A strong out-of-sample economic result (G2) can remain scientifically non-adjudicable (G3) if the registered mechanism cannot be distinguished from a suitable null due to severe unhedged variance.
+- Next action: Return to G0 Candidate Generation.

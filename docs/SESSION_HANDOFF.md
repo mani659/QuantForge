@@ -27,17 +27,17 @@
 > **PARALLEL FORWARD VALIDATION AND TRADEABLE EDGE DISCOVERY**
 >
 > ## Last Screening
-> SYSTEM ASSEMBLY CANDIDATE REGISTER ESTABLISHED.
-> CAND-024 retained as a COMPONENT-CANDIDATE / EVENT OPPORTUNIST.
-> CAND-024 standalone status remains CLOSED.
-> CAND-025 retained but UNQUALIFIED.
+> CAND-032 G3 INCONCLUSIVE; line closed; no G4.
+> CAND-032 (NY Open Structural Momentum): INCONCLUSIVE
+> The mechanism failed to statistically separate from chance (p=0.1133) due to extreme left-tail variance paralyzing inference.
+> G4 NOT EXECUTED.
 >
 > ## Next Action
 > ### ACTIVE FORWARD TRACK
 > > CAND-015 — 7-day paper observation in progress
 >
 > ### ACTIVE RESEARCH TRACK
-> > RETURN TO G0 CANDIDATE GENERATION
+> > TRADEABLE EDGE DISCOVERY SCREENING — G0
 >
 > ### PROTECTED
 > > CAND-015 frozen definition and running observation

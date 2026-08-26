@@ -261,3 +261,39 @@ The surviving corpus now records **six closed research lines** — Mean Reversio
 ## 40. System Assembly Candidate Register (2026-08-26)
 
 - **Record:** Established the System Assembly Candidate Register to govern the formal integration of independently qualified artifacts into deployable architectures. CAND-024 is formally retained as a COMPONENT-CANDIDATE / EVENT OPPORTUNIST. Its standalone status remains CLOSED. CAND-025 is retained but UNQUALIFIED.
+
+## 41. G0 Candidate Generation V10 (2026-08-26)
+
+- **Record:** V10 G0 candidate-generation cycle completed. The cycle focused on discovering independent behavioral artifacts across distinct mechanistic families (Liquidity, Dispersion, Value Area Structure, Cross-Market Volatility) for potential future system assembly. Promoted candidates: CAND-G0-028, CAND-G0-029, CAND-G0-030, CAND-G0-031.
+
+## 42. G1 Economic Plausibility Screen V10 (2026-08-26)
+
+- **Record:** V10 G1 completed. CAND-028, CAND-029, and CAND-031 were blocked due to unavailable data or proxy requirements violating V2 doctrine. CAND-030 was evaluable but exhibited a structurally fatal left tail (positive median gross but negative mean net). Verdict for all V10 candidates: INSUFFICIENT / BLOCKED. G2 NOT EXECUTED.
+
+## 43. G1 Closure V10 (2026-08-26)
+
+- **Record:** V10 G1 cycle formally closed. Zero candidates promoted to G2. Emphasized two strict governance lessons: 1) High win rate and positive median do NOT establish positive economic expectancy; 2) Missing data must produce BLOCKED, not proxy substitution. Next G0 cycle must prioritize mechanisms with naturally asymmetric positive payoffs.
+
+## 44. G0 Candidate Generation V11 (2026-08-26)
+
+- **Record:** V11 G0 candidate-generation cycle completed. Focused exclusively on discovering mechanisms whose economic structure naturally supports positive expectancy (asymmetric payoff, bounded risk) rather than mere high win rates. Promoted 3 new candidates spanning Breakout Continuation, Forced Flow, and Cross-Market Repricing families: CAND-G0-032, CAND-G0-033, CAND-G0-034.
+
+## 45. G1 Economic Plausibility Screen V11 (2026-08-26)
+
+- **Record:** V11 G1 completed. CAND-032 (NY Open Structural Momentum) passed clearly with broad-based positive expectancy (+12.02 points mean net, N=257). CAND-033 captured the flow phenomenon but lacked magnitude to beat friction. CAND-034 failed due to a severe unhedged left tail (positive median but negative mean net). CAND-032 promoted to G2.
+
+## 46. CAND-032 Final G1 Adjudication (2026-08-26)
+
+- **Record:** Final independent adjudication of CAND-032 G1 results completed. Validated strict absence of look-ahead bias and verified that the strong expected value (+12.02 points net) was broad-based across the mid-distribution, not dependent on outliers. G1 verdict confirmed: G2 READY.
+
+## 47. G2 Cheap Empirical Pilot CAND-032 (2026-08-26)
+
+- **Record:** G2 executed for CAND-032 (NY Open Structural Momentum). The mechanism reproduced strongly in the chronological holdout (+10.61 points mean net, median +42.60) and proved robust against 2x friction stress (+8.61 points mean net). It demonstrated stable temporal behavior across multiple years (2023-2026) without reliance on exceptional tail winners. Verdict: PROMOTE TO G3.
+
+## 48. G3 Scientific Validation CAND-032 (2026-08-26)
+
+- **Record:** G3 executed for CAND-032. Despite strong economic performance in G1/G2, the mechanism failed the scientific standard. The massive unhedged left-tail variance (worst trade -1134 points) caused a direction-sign permutation placebo test to yield an extremely wide null 95% CI ([-24.79, +20.94]). The observed effect (+12.02) was statistically indistinguishable from chance (p=0.1133). Verdict: INCONCLUSIVE. Pipeline blocked. Return to G0.
+
+## 49. CAND-032 G3 Closure (2026-08-26)
+
+- **Record:** CAND-032 research line formally closed (G3 INCONCLUSIVE). G4 blocked. No rescue authorized. This establishes the critical distinction between out-of-sample descriptive economics (G2) and scientific mechanism isolation (G3). Return to G0 Candidate Generation.
