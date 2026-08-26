@@ -1,0 +1,14 @@
+{
+  "stage_name": "STAGE0",
+  "execution_id": "PREFLIGHT_XAUUSD_20260822T082916Z_88c9b989",
+  "protocol_sha256": "",
+  "git_head": "a6c62edf9666f59eb8a044da2d0497f9a366e0a0",
+  "git_dirty_state": "True",
+  "python_version": "3.11.9",
+  "entry_script_path": "C:\\Users\\User10\\Documents\\MRV\\yuvi\\QuantForge\\research\\staged_execution\\stage0.py",
+  "entry_script_sha256": "87417f8f347e39734b7fdca4a909417abe8e9c2bcde923734e1a96878f2c68a6",
+  "imported_stage_helper_hashes": {},
+  "start_timestamp_utc": "2026-08-22T08:29:16.852069+00:00",
+  "market": "XAUUSD",
+  "output_layout": "PREFLIGHT_<market>_<runid>"
+}

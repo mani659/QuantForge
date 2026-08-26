@@ -123,6 +123,7 @@ The following documents are constitutional references for QuantForge:
 - `TRACEABILITY.md`
 - `CHANGELOG.md`
 - `ROADMAP.md`
+- `CONSTITUTIONAL_AMENDMENT_AMEND-1.md` (amendment record)
 - This document — `CONSTITUTION_v1.0.md`
 
 This section does not duplicate their content. It identifies them as the
@@ -158,6 +159,16 @@ requires:
    reflect the amendment.
 
 No implementation may occur before constitutional approval.
+
+---
+
+## 8.1 Constitutional Amendment Register
+
+| Amendment | Subject | Approval | Date | Status |
+| --------- | ------- | -------- | ---- | ------ |
+| AMEND-1 | Stateful multi-snapshot `DeploymentOrchestrator` (Amendment A) and `DeploymentDependencies.observation_policy` (Amendment B), per the ratified Phase 7 boundary restatement | Owner | 2026-08-12 | RATIFIED |
+
+Record: `docs/CONSTITUTIONAL_AMENDMENT_AMEND-1.md`.
 
 ---
 

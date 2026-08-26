@@ -7,13 +7,14 @@ class EventLedger:
         self.mode = mode
         
         self.headers = [
-            "execution_id", "candidate_id", "event_id", "timestamp", "market", 
-            "event_type", "state", "signal_direction", "intended_entry_price", 
-            "observed_bid", "observed_ask", "paper_entry", "paper_exit", 
-            "gross_result", "transaction_cost", "net_result", "latency_ms", 
-            "implementation_sha", "data_source_identity",
-            "mode", "price_source", "execution_price_type", 
-            "slippage_status", "latency_status"
+            "execution_id", "candidate_id", "event_id", 
+            "research_symbol", "broker_symbol", "broker", "platform", "mode",
+            "market_timestamp", "local_receipt_timestamp", "signal_timestamp", "decision_timestamp",
+            "bid", "ask", "theoretical_reference_price", "paper_execution_price",
+            "quote_execution_difference", "transaction_cost", "net_paper_result",
+            "feed_observation_latency", "signal_processing_latency",
+            "state", "implementation_sha", "feed_implementation_sha", "symbol_mapping_version",
+            "signal_direction", "event_type", "price_source", "execution_price_type", "slippage_status"
         ]
         
         # Create file with headers if it doesn't exist

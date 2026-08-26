@@ -1,0 +1,14 @@
+{
+    "session_id": "CAND015_G6_FORWARD_002",
+    "candidate_id": "CAND-G0-015",
+    "start_utc": "2026-08-25 13:55:15.442710+00:00",
+    "implementation_sha": "simulated_sha_1234",
+    "broker": "Exness",
+    "platform": "MT5",
+    "symbol_mappings": {
+        "USATECHIDXUSD": "USTECm",
+        "BTCUSD": "BTCUSDm"
+    },
+    "end_utc": "2026-08-25 15:55:15.641338+00:00",
+    "duration_seconds": 7200.189076185226
+}

@@ -51,9 +51,20 @@ The canonical decision table for future candidates is as follows:
 | **G2** | **PHASE 2: Cheap Empirical Pilot** | Does cheap pilot reproduce the behavior? | Low | reject / proceed |
 | **G3** | **PHASE 3: Scientific Validation** | Does scientific validation support it? | Medium | close / proceed |
 | **G4** | **PHASE 4: Economic Validation** | Does economic validation survive costs? | Medium-high | close / proceed |
-| **G5** | **PHASE 5: Production Execution Gate** | Does realistic execution survive? | High | close / proceed |
-| **G6** | **PHASE 6: Strategy Construction** | Can it become a deterministic strategy? | High | close / proceed |
-| **G7** | **PHASE 7: Bot Validation** | Can bot validation survive OOS/demo/live? | Very high | close / deploy |
+| **G5** | **PHASE 5: Execution Validation** | Does realistic execution survive? | High | close / proceed |
+| **G6** | **PHASE 6: Forward Validation** | Can it survive live paper-observation? | High | close / proceed |
+
+Then, after multiple qualified artifacts exist:
+
+> **SYSTEM ASSEMBLY**
+> →
+> **SYSTEM-LEVEL ECONOMIC VALIDATION**
+> →
+> **SYSTEM FORWARD VALIDATION**
+> →
+> **BOT CONSTRUCTION**
+
+Note: Individual artifacts do not necessarily need to independently reach G6 before being usable as a component in System Assembly, unless specific governance dictates otherwise. QuantForge is searching for a TRADEABLE SYSTEM, not just a single universally active strategy. Component quality and system frequency are separate questions.
 
 ## 4. Candidate Generation (PHASE 0)
 

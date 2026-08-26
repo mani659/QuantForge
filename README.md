@@ -17,7 +17,9 @@ QuantForge is not designed to be a generic trading bot or indicator collection. 
 | Experiment Orchestration   | Implemented (V1)                                    |
 | Research Execution         | Implemented                                         |
 | Operational Governance     | Frozen                                              |
-| Dataset Foundation         | Not yet integrated                                  |
+| Dataset Foundation         | Frozen (V1)                                         |
+| Strategy Assembly V1        | Frozen (admission boundary, 2026-08-12)             |
+| Genuine BOE Detector        | DESIGN BLOCKED (scientific specification missing)   |
 | Walk-forward               | Not ready                                           |
 | Optimization               | Deliberately deferred                               |
 | Live Integration           | Separate operational boundary                       |
@@ -147,7 +149,7 @@ Research infrastructure cannot implicitly invoke live broker connectivity. The `
 
 QuantForge maintains a robust regression testing suite guaranteeing temporal, scientific, and execution correctness.
 
-**Current Test Count**: ~539 deterministic unit/integration tests.  
+**Current Test Count**: 614 deterministic unit/integration tests.  
 **Framework**: `pytest`
 
 ### Running the tests:
@@ -178,8 +180,8 @@ pytest tests/ -q
 * Phase 9: Operational Governance (Sprint 9.1 Frozen)
 
 ### Current / In Progress
-* Dataset Foundation integration
-* Research Analytics Reconciliation
+* Research — **NEW HYPOTHESIS DISCOVERY & SELECTION** (independent hypothesis through Research Hypothesis Selection; earns readiness before experimentation). The TSMOM 12/1 line is CLOSED — NOT PROMOTABLE (DISC-022); Mean Reversion is CLOSED — ECONOMICALLY NON-VIABLE (DISC-021).
+* Strategy Assembly V1 — FROZEN (2026-08-12, admission boundary). End-to-end deployment remains DESIGN BLOCKED by the genuine BOE Detector / Observer scientific prerequisite: the detector specification is not established in the repository and must not be invented from research notes.
 
 ### Deliberately Deferred
 * Automatic parameter optimization

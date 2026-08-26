@@ -1,0 +1,49 @@
+{
+  "protocol_version": "V3.0.0",
+  "normalization_definitions": {
+    "N1": "z=(close-SMA120)/std120(close)",
+    "N2": "z=(close-SMA120)/ATR120(mean true range)",
+    "N3": "z=(close/close[-120]-1)/(std120(1b returns)*sqrt(120))"
+  },
+  "seeds": {
+    "cluster_bootstrap": 20260814
+  },
+  "parameters": {
+    "W": 120,
+    "H": 120,
+    "K": 60,
+    "S_sep": 240,
+    "threshold_primary": 3.0,
+    "threshold_neighborhood": [
+      2.5,
+      3.0,
+      3.5
+    ],
+    "persist_q": 0.6,
+    "matched_quantile": 0.005,
+    "partitions": {
+      "TRAIN": 0.7,
+      "VALIDATION": 0.85
+    },
+    "b_boot": 2000,
+    "alpha": 0.05,
+    "family_size": 12,
+    "cost_bands_bp": [
+      0,
+      5,
+      10,
+      20,
+      30
+    ]
+  },
+  "dataset_fingerprints_sha256": {
+    "XAGUSD": "69444be954a869ebc831cd1253849222d8babc7a02940b2bb908a5179bcf5999",
+    "EURUSD": "5106a518e65a9d3f4c8bfc74c14fad81240a9de278bd1c4577799a6f1b79813f"
+  },
+  "library_versions": {
+    "pandas": "3.0.2",
+    "numpy": "2.4.4"
+  },
+  "event_dataset_rows": 34348,
+  "event_dataset_sha256": "e80bd1d700c9009aa1976c93512ae1a16e3b4fb36d5c8044db9d34cf588c5ed7"
+}

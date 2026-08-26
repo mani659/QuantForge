@@ -1,9 +1,11 @@
+import os
 import sys
 import tempfile
 import unittest
 from dataclasses import FrozenInstanceError
 from pathlib import Path
 from types import SimpleNamespace
+from unittest import mock
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 if str(PROJECT_ROOT) not in sys.path:
@@ -70,10 +72,36 @@ class TestMT5Connection(unittest.TestCase):
 
     def test_account_mismatch_is_rejected_and_shutdown(self) -> None:
         mt5 = FakeMT5(account=123456)
-        connection = MT5Connection(self.terminal_path, mt5_module=mt5)
+        connection = MT5Connection(
+            self.terminal_path, expected_account=10000001, mt5_module=mt5
+        )
         with self.assertRaisesRegex(MT5ConnectionError, "account mismatch"):
             connection.connect()
         self.assertEqual(mt5.shutdown_calls, 1)
+
+    def test_missing_configuration_is_rejected(self) -> None:
+        with mock.patch.dict(
+            os.environ,
+            {"QF_MT5_TERMINAL_PATH": "", "QF_MT5_EXPECTED_ACCOUNT": ""},
+        ):
+            connection = MT5Connection(mt5_module=FakeMT5())
+            with self.assertRaisesRegex(MT5ConnectionError, "No MT5 terminal path"):
+                connection.connect()
+
+    def test_environment_configuration_is_honored(self) -> None:
+        with mock.patch.dict(
+            os.environ,
+            {
+                "QF_MT5_TERMINAL_PATH": str(self.terminal_path),
+                "QF_MT5_EXPECTED_ACCOUNT": "10000001",
+            },
+        ):
+            mt5 = FakeMT5()
+            connection = MT5Connection(mt5_module=mt5)
+            status = connection.connect()
+            self.assertTrue(status.connected)
+            self.assertEqual(status.account, 10000001)
+            self.assertEqual(status.terminal_path, str(self.terminal_path))
 
     def test_connection_status_is_immutable(self) -> None:
         status = ConnectionStatus(

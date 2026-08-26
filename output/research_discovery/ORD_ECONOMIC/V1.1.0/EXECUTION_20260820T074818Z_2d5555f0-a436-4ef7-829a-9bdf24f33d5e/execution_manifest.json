@@ -1,0 +1,33 @@
+{
+  "execution_identity": "EXECUTION_20260820T074818Z_2d5555f0-a436-4ef7-829a-9bdf24f33d5e",
+  "execution_dir": "C:\\Users\\User10\\Documents\\MRV\\yuvi\\QuantForge\\output\\research_discovery\\ORD_ECONOMIC\\V1.1.0\\EXECUTION_20260820T074818Z_2d5555f0-a436-4ef7-829a-9bdf24f33d5e",
+  "original_state": "RUNNING",
+  "final_state": "CRASHED",
+  "pid": 18348,
+  "recorded_process_start_time": 1787211947.2297685,
+  "observed_process_state": "DEAD",
+  "reconciliation_timestamp": "2026-08-20T07:52:30.658277+00:00",
+  "protocol_sha256": "8f45d7f82c80b7131c958c158f448520fef6927d49f9eb844fbbd55e35395663",
+  "implementation_identity": "b33eee492210a008ff30c544f7490d3823c4517bcacbecdc6dd6e82f2b6b6aca",
+  "git_head": "a6c62edf9666f59eb8a044da2d0497f9a366e0a0",
+  "expected_artifacts": [],
+  "observed_artifacts": [
+    "execution_heartbeat.json",
+    "execution_journal.json",
+    "implementation_manifest.json",
+    "process_identity.json"
+  ],
+  "missing_artifacts": [
+    "UNKNOWN_DUE_TO_CRASH"
+  ],
+  "unexpected_artifacts": [],
+  "artifact_hashes": {
+    "execution_heartbeat.json": "1d74ec2d7c2ce659aacfa56bcb4b82cb1bfcdcb43ba6cefca3970b6fef223b75",
+    "execution_journal.json": "c40686b21aec7ea379d18eca0fc768af1acad5675eda41e6ea056313f7503b67",
+    "implementation_manifest.json": "93ebac5e2e95b02f6a3ee7f90c4e00679671483020c14ee5f9e7aef62bd18412",
+    "process_identity.json": "04c6098e3f0af5636adffcfe807b21d4c655563f78f27152c39b6e861009e7a2"
+  },
+  "scientific_validity": false,
+  "scientific_adjudication": "NOT_ADJUDICABLE",
+  "reconciliation_reason": "Process died outside Python lifecycle without finalization."
+}

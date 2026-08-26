@@ -1,12 +1,26 @@
 """Local MT5 terminal connectivity verification for QuantForge v1.1."""
 
+import os
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Optional
 
 
-DEFAULT_TERMINAL_PATH = Path(r"C:\Program Files\MetaTrader 5\terminal64.exe")
-EXPECTED_ACCOUNT = 10000001
+def _terminal_path_from_env() -> Optional[Path]:
+    """Returns the MT5 terminal path from QF_MT5_TERMINAL_PATH, or None."""
+    raw = os.getenv("QF_MT5_TERMINAL_PATH")
+    return Path(raw) if raw else None
+
+
+def _expected_account_from_env() -> Optional[int]:
+    """Returns the expected MT5 account login from QF_MT5_EXPECTED_ACCOUNT, or None."""
+    raw = os.getenv("QF_MT5_EXPECTED_ACCOUNT")
+    if not raw:
+        return None
+    try:
+        return int(raw)
+    except ValueError:
+        return None
 
 
 class MT5ConnectionError(RuntimeError):
@@ -47,21 +61,38 @@ class ConnectionStatus:
 
 
 class MT5Connection:
-    """Initializes and verifies one locally configured MT5 terminal session."""
+    """Initializes and verifies one locally configured MT5 terminal session.
+
+    The terminal path and expected account login are sourced from the
+    environment variables ``QF_MT5_TERMINAL_PATH`` and
+    ``QF_MT5_EXPECTED_ACCOUNT``, or passed explicitly to the constructor.
+    No account identifier, broker name, or local path is hardcoded.
+    """
 
     def __init__(
         self,
-        terminal_path: Path | str = DEFAULT_TERMINAL_PATH,
-        expected_account: int = EXPECTED_ACCOUNT,
+        terminal_path: Path | str | None = None,
+        expected_account: int | None = None,
         mt5_module: Optional[Any] = None,
     ) -> None:
-        self.terminal_path = Path(terminal_path)
-        self.expected_account = expected_account
+        self.terminal_path = (
+            Path(terminal_path) if terminal_path is not None else _terminal_path_from_env()
+        )
+        self.expected_account = (
+            expected_account
+            if expected_account is not None
+            else _expected_account_from_env()
+        )
         self._mt5_module = mt5_module
         self._initialized = False
 
     def connect(self) -> ConnectionStatus:
         """Initializes the terminal and returns a verified immutable status object."""
+        if self.terminal_path is None:
+            raise MT5ConnectionError(
+                "No MT5 terminal path configured. "
+                "Set QF_MT5_TERMINAL_PATH or pass terminal_path explicitly."
+            )
         if not self.terminal_path.is_file():
             raise MT5ConnectionError(
                 f"MT5 terminal executable was not found: {self.terminal_path}"
@@ -80,7 +111,10 @@ class MT5Connection:
             account_info = mt5.account_info()
             if account_info is None:
                 raise MT5ConnectionError("MT5 account information is unavailable.")
-            if account_info.login != self.expected_account:
+            if (
+                self.expected_account is not None
+                and account_info.login != self.expected_account
+            ):
                 raise MT5ConnectionError(
                     f"MT5 account mismatch: expected {self.expected_account}, "
                     f"received {account_info.login}."

@@ -1,0 +1,24 @@
+{
+  "execution_id": "EXECUTION_20260818T125713Z_a79f58f8-2c9b-4cdd-81f7-cc08ef69119d",
+  "original_state": "RUNNING",
+  "final_state": "CRASHED",
+  "protocol_sha256": "85263b848e49e718a099cafe8fa7fe6f8ae0c74ec04c46477a0fcd1d9e759c06",
+  "implementation_identity": "e297070d4c7970c168237d1669d2212ca6b31cdda904d140d42b209b679b65d7",
+  "git_head": "a6c62edf9666f59eb8a044da2d0497f9a366e0a0",
+  "original_execution_timestamp": "2026-08-18T12:57:13.606011+00:00",
+  "reconciliation_timestamp": "2026-08-18T13:25:00.444942+00:00",
+  "governance_exception_identifier": "LEGACY_PRE_PROCESS_IDENTITY_GOVERNANCE_EXCEPTION",
+  "observed_artifacts": [
+    "bootstrap_XAUUSD.npy",
+    "execution_journal.json",
+    "implementation_manifest.json",
+    "null_XAUUSD.npy"
+  ],
+  "missing_expected_artifacts": [
+    "UNKNOWN_DUE_TO_CRASH"
+  ],
+  "unexpected_artifacts": [],
+  "scientific_validity": false,
+  "scientific_adjudication": "NOT_ADJUDICABLE",
+  "reconciliation_reason": "LEGACY_PRE_PROCESS_IDENTITY_GOVERNANCE_EXCEPTION"
+}

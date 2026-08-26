@@ -59,3 +59,24 @@ venv.bak/
 .idea/
 Thumbs.db
 desktop.ini
+
+# Tool / IDE state (privacy)
+.freebuff/
+.vs/
+
+# Databases & binary caches
+*.db
+*.db-wal
+*.db-shm
+*.npy
+
+# Generated research outputs
+test_outputs/
+.build_cache/
+
+# Raw / large vendor data
+data/
+
+# Scratch tooling (keep the legitimate tracked scratch/audit.py)
+scratch/*
+!scratch/audit.py

@@ -31,7 +31,7 @@ The following diagram illustrates the structural pipeline and flow of data from 
                     Validated Strategy Packaging V1
                                  │
                                  ▼
-                         Strategy Assembly   ← NEXT
+                         Strategy Assembly   (FROZEN)
                                  │
                                  ▼
                          Paper / Live Trading

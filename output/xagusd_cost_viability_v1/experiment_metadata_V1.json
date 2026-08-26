@@ -1,0 +1,33 @@
+{
+  "protocol_version": "V1.0.0",
+  "tick_source": "data/tick/XAGUSD_mt5_ticks.csv",
+  "tick_sha256": "edccad88ed5b74caf16a14203f3cf743306c65f2ebc5004cf566ed61deeb6e17",
+  "m1_sha256": "69444be954a869ebc831cd1253849222d8babc7a02940b2bb908a5179bcf5999",
+  "events_sha256": "e80bd1d700c9009aa1976c93512ae1a16e3b4fb36d5c8044db9d34cf588c5ed7",
+  "matching_rule": "per-minute median spread; exact minute, fallback +/-5min; exit at t+120",
+  "cost_models": {
+    "A_standard_half_spread_per_side": "RT_A=(entry+exit)/2",
+    "B_conservative_full_spread_per_side": "RT_B=entry+exit"
+  },
+  "commission_bp_band_assumption": [
+    0,
+    2,
+    5,
+    10
+  ],
+  "slippage_bp_band_assumption": [
+    0,
+    2,
+    5
+  ],
+  "bootstrap": {
+    "method": "cluster bootstrap (overlap |dt|<120, all events)",
+    "B": 2000,
+    "seed": 20260814
+  },
+  "library_versions": {
+    "pandas": "3.0.2",
+    "numpy": "2.4.4"
+  },
+  "note": "UNOBSERVED components (commission, slippage) are assumption bands only; spread is observed tick-level bid/ask."
+}

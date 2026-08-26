@@ -1,0 +1,39 @@
+{
+  "execution_identity": "PREP_XAGUSD_07BACB1E396BBA517E0F46F461C3CB48B94E5E9ABB2F30D67A025B810A67C736_IN_PROGRESS_64c77de3",
+  "stage_name": "STAGE1",
+  "final_state": "COMPLETED",
+  "observed_artifacts": [
+    "event_inputs.csv",
+    "event_paths.csv",
+    "execution_heartbeat.json",
+    "execution_journal.json",
+    "implementation_manifest.json",
+    "minute_index.bin",
+    "minute_quotes.csv.gz",
+    "prep_manifest.json",
+    "process_identity.json"
+  ],
+  "infrastructure_artifacts": [
+    "execution_journal.json",
+    "implementation_manifest.json",
+    "execution_manifest.json",
+    "execution_heartbeat.json",
+    "process_identity.json"
+  ],
+  "artifact_hashes": {
+    "event_inputs.csv": "fdbeec587a6482981204033da6e006c9339f510edc35db76b435afc4e9f23f0f",
+    "event_paths.csv": "aa6369b240dca7f32e5c3a9ae2c46cd2df74e80464d5bf7dcee1b48a8c6ac5c1",
+    "execution_heartbeat.json": "fbe25f13c2d4eb9990b2103f5208ff42b01e557c06b0f4606a5c085f367c5037",
+    "execution_journal.json": "3245399e6b30d86696ac9a4672961131ce617abdbac62f68a9ad19fe165a05f8",
+    "implementation_manifest.json": "7b9760fb09a4cc17456e1095c4059f4910aaab904ba03fa298d865411fd610d6",
+    "minute_index.bin": "2196142f449f1438a6b48c8ef2ff6e21f8f72f25e8f8a7950b9b0c0338f02f50",
+    "minute_quotes.csv.gz": "4e06f6653e92f6b13057a82ae2232d4536a4a11a46d940f8acb44fe53e61f21f",
+    "prep_manifest.json": "e344aee16ccc209ece840687bc02a8b9e7210b21039ce92dea1a646421dcb185",
+    "process_identity.json": "cc9bbfcc022dfc1029cf878e98bd5e30ea354df4bb7cda112394c57a07ae7113"
+  },
+  "scientific_validity": false,
+  "economic_evidence": false,
+  "preparation_identity": "PREP_XAGUSD_07BACB1E396BBA517E0F46F461C3CB48B94E5E9ABB2F30D67A025B810A67C736",
+  "preparation_hash": "07BACB1E396BBA517E0F46F461C3CB48B94E5E9ABB2F30D67A025B810A67C736",
+  "mode": "built"
+}

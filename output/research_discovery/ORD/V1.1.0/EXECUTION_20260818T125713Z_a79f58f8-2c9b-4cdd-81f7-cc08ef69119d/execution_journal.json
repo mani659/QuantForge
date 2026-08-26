@@ -1,0 +1,9 @@
+{
+  "execution_id": "EXECUTION_20260818T125713Z_a79f58f8-2c9b-4cdd-81f7-cc08ef69119d",
+  "state": "CRASHED",
+  "timestamp": "2026-08-18T12:57:13.700191+00:00",
+  "reconciliation_reason": "LEGACY_PRE_PROCESS_IDENTITY_GOVERNANCE_EXCEPTION",
+  "governance_exception_identifier": "LEGACY_PRE_PROCESS_IDENTITY_GOVERNANCE_EXCEPTION",
+  "reconciliation_timestamp": "2026-08-18T13:25:00.444942+00:00",
+  "legacy_no_process_identity": true
+}

@@ -778,9 +778,11 @@ PHASE 8 INDUSTRIALIZATION UPDATE
 - **Phase 8.1 Strategy Manifest:** COMPLETE | FROZEN
 - **Validated Strategy Packaging Integration V1:** COMPLETE / FROZEN
 - **Deployment Admission V1:** BLOCKED BY MISSING RUNTIME CONTRACTS (Admission controller built, but BOE lacks genuine BehaviorDetector implementations).
+- **Constitutional Amendment AMEND-1:** RATIFIED (owner, 2026-08-12) — authorizes stateful multi-snapshot `DeploymentOrchestrator` coordination and `DeploymentDependencies.observation_policy`; the Phase 7 Deployment boundary is restated accordingly (see `docs/PHASE7_FREEZE_APPROVED.md` §13).
+- **Strategy Assembly V1:** FROZEN (2026-08-12) — admission boundary, package-consumption boundary, research-semantics firewall, fail-closed dependency boundary, and deployment-artifact construction boundary frozen.
 
 **Next Engineering Objective:**
-- **Implement Genuine BOE BehaviorDetectorContract and ObserverContract Implementations**
+- **Implement Genuine BOE BehaviorDetectorContract and ObserverContract Implementations** — **DESIGN BLOCKED**: the scientific specification (trigger, thresholds, parameter lineage) is not established in the repository and must not be invented from research notes. The detector is a prerequisite to end-to-end deployment, NOT a missing component that Strategy Assembly is expected to invent.
 
 =========================================================
 PHASE 6 COMPLETION UPDATE
@@ -842,7 +844,7 @@ August 2026
 
 This layer is considered complete.
 Future work shall extend the platform only.
-No modification of Deployment contracts is permitted without a formal Constitutional Review.
+No modification of Deployment contracts is permitted without a formal Constitutional Review. (AMEND-1, ratified 2026-08-12, is the review authorizing the stateful-orchestrator coordination and `observation_policy` dependency changes.)
 --------------------------------------------------
 
 **Next Active Milestone:**
@@ -926,9 +928,16 @@ CURRENT PROJECT STATUS & ROADMAP ALIGNMENT
 - **Experiment Orchestration V1:** FROZEN.
 - **Research Execution Context V1:** FROZEN.
 - **Scientific Hypothesis Evaluator V1:** COMPLETE, FROZEN. Evaluates TRAIN metrics against VALIDATION execution deterministically. 
+- **Validated Strategy Packaging V1:** COMPLETE, FROZEN. Bonds the accepted ScientificVerdict, the validated ExperimentConfiguration, and the StrategyManifest into an immutable, cryptographically fingerprinted deployment package.
+- **Constitutional Amendment AMEND-1:** RATIFIED (2026-08-12). Phase 7 Deployment boundary restated: Deployment coordinates Behavioural-Reality-owned observation windows across calls and stores no behavioural history.
+- **Strategy Assembly V1:** FROZEN (2026-08-12). Admission boundary implemented and fail-closed (see PHASE 8 INDUSTRIALIZATION UPDATE above).
 
-### NEXT ENGINEERING OBJECTIVE
-- **Validated Strategy Packaging Integration:** Bridge between a successful scientific validation verdict and the final deployable strategy format, preparing the research for handoff to the frozen Deployment Layer.
+### CURRENT / NEXT
+- **CURRENT MILESTONE: Research — NEW HYPOTHESIS DISCOVERY & SELECTION** (independent hypothesis through Research Hypothesis Selection; earns readiness before experimentation). The TSMOM 12/1 research line is CLOSED — NOT PROMOTABLE (DISC-022); the Mean-Reversion line is CLOSED — ECONOMICALLY NON-VIABLE (DISC-021).
+- **Strategy Assembly V1: FROZEN** (2026-08-12) — no longer the active milestone. End-to-end deployment remains blocked by the genuine BOE Detector / Observer scientific prerequisite.
+
+### CRITICAL PATH / BLOCKED
+- **Genuine BOE BehaviorDetectorContract / ObserverContract implementations:** DESIGN BLOCKED — the scientific specification is not sufficiently established in the repository to implement safely. The detector is a prerequisite to end-to-end deployment, NOT a missing component that Strategy Assembly is expected to invent. Do not derive or invent detector semantics from existing research notes.
 
 ### DEFERRED / FUTURE
 - Production user interfaces

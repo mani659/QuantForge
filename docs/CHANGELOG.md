@@ -7,6 +7,39 @@ CHANGELOG
 ===========================================================
 
 ===========================================================
+STRATEGY ASSEMBLY V1 FROZEN
+===========================================================
+
+• Strategy Assembly / Validated Strategy → Deployment Artifact Integration V1 FROZEN (2026-08-12).
+• Admission boundary, package-consumption boundary, research-semantics firewall,
+  fail-closed dependency boundary, and deployment-artifact construction boundary frozen.
+• Precondition: Constitutional Amendment AMEND-1 ratified (owner, 2026-08-12).
+• End-to-end deployment remains DESIGN BLOCKED by the genuine BOE Detector / Observer
+  scientific prerequisite (specification not established; do not invent detector semantics).
+• Test baseline: 614 passed (including -W error).
+• Date: August 2026
+
+===========================================================
+CONSTITUTIONAL AMENDMENT AMEND-1
+STATUS: APPROVED — RATIFIED (owner, 2026-08-12)
+===========================================================
+
+• Constitutional Amendment AMEND-1 approved by the project owner 2026-08-12 per Constitution v1.0 §8.
+• Authorizes exactly two changes from commit b67a3cc:
+  (A) stateful multi-snapshot DeploymentOrchestrator coordination; (B) DeploymentDependencies.observation_policy.
+• Restated boundary: Behavioural Reality owns behavioural history; Deployment
+  coordinates Behavioural-Reality-owned observation windows across calls and
+  stores no behavioural history of its own; no scientific semantics introduced.
+• Amendment record: docs/CONSTITUTIONAL_AMENDMENT_AMEND-1.md.
+• Procedural irregularity acknowledged: implementation in b67a3cc preceded
+  constitutional approval; the amendment regularizes the architecture prospectively.
+• NOT AUTHORIZED by this amendment: detector implementation, observer implementation,
+  recoil/persistence/threshold semantics, modification of any other frozen contract.
+• §8 documentation and permanent freeze update steps complete.
+• Test baseline: 614 passed (including -W error).
+• Date: August 2026
+
+===========================================================
 SPRINT 8.3 COMPLETE
 DEPLOYMENT EVIDENCE CONSUMPTION
 ===========================================================

@@ -36,7 +36,7 @@ Phase 7 owns exactly the following responsibilities:
 
 **Deployment Bootstrap** — The application entry point performing deterministic structural assembly, producing a fully initialized pipeline from configuration, registries, and injected engines.
 
-**Deployment Orchestrator** — The stateless coordinator that routes each market observation sequentially through the complete scientific pipeline — Observation → Evidence → Behaviour → Interpretation → Decision → Risk — terminating at the position specification boundary.
+**Deployment Orchestrator** — The coordinator that routes each market observation sequentially through the complete scientific pipeline — Observation → Evidence → Behaviour → Interpretation → Decision → Risk — terminating at the position specification boundary. It may retain coordination references to Behavioural-Reality-owned observation windows and their lifecycle decisions across calls (Constitutional Amendment AMEND-1, ratified 2026-08-12); it holds no behavioural history of its own.
 
 **Market Data Adapter** — The exclusive ingress boundary translating raw external market feeds into structured market observations. Contains no trading logic, no scientific reasoning, no execution logic.
 
@@ -107,11 +107,11 @@ No broker communication, order routing, fill simulation, or position tracking ex
 **Deployment never owns market interpretation.**  
 The Market Data Adapter translates structure only. It assigns no meaning to price, volume, or time.
 
-**Deployment remains stateless.**  
-All deployment components hold no mutable state between calls. State resides exclusively in the Execution Domain.
+**Deployment remains stateless with respect to behavioural history.**  
+All deployment components hold no behavioural history, no accumulated frames, and no scientific state between calls. State resides in the Behavioural Reality and Execution domains. Under Constitutional Amendment AMEND-1 (ratified 2026-08-12), the DeploymentOrchestrator may retain coordination references to — and lifecycle decisions for — active Behavioural-Reality-owned observation windows across calls; it does not thereby own behavioural history, and arbitrary mutable deployment state unrelated to coordination remains prohibited.
 
 **Deployment never stores behavioural history.**  
-No timeline, window, or historical accumulation exists in the Deployment Layer. Behavioural history remains exclusively in the Behavioural Reality domain.
+No timeline, window, or historical accumulation exists in the Deployment Layer. Behavioural history remains exclusively in the Behavioural Reality domain. (AMEND-1: Deployment may coordinate references to such Behavioural-Reality-owned windows; it never stores or accumulates the behavioural history itself.)
 
 **Deployment never modifies frozen objects.**  
 All domain objects flowing through the pipeline are immutable. Deployment components treat them as read-only inputs.
@@ -268,7 +268,7 @@ Defined the immutable Strategy composition layer binding Validation, Interpretat
 Introduced DeploymentContext, DeploymentRuntime, and DeploymentAssembler — the structural primitives for wiring scientific registries into an executable runtime.
 
 **Sprint 7.3 — Deployment Orchestrator**  
-Implemented the stateless pipeline coordinator that routes EnvironmentSnapshots through the complete BOE pipeline (Observation → Evidence → Behaviour Profile → Interpretation → Decision → Risk) terminating at PositionSpecification.
+Implemented the pipeline coordinator that routes EnvironmentSnapshots through the complete BOE pipeline (Observation → Evidence → Behaviour Profile → Interpretation → Decision → Risk) terminating at PositionSpecification. *(Historical description as of the Phase 7 freeze — the stateless characterization is superseded by Constitutional Amendment AMEND-1, which ratified multi-snapshot coordination of Behavioural-Reality-owned observation windows; see §13.)*
 
 **Sprint 7.3.1 — Audit Remediation**  
 Resolved independent audit findings: removed dead code (execution_profile), eliminated phantom ExecutionRegistry dependency, clarified orchestrator docstring. Zero functional changes.
@@ -305,7 +305,26 @@ August 4, 2026
 
 ---
 
-## 13. Post-Fix Stable Baseline (Execution Metadata & Market Synchronization)
+## 13. Constitutional Amendment AMEND-1 (Ratified)
+
+**Ratified:** 2026-08-12 by the project owner, pursuant to Constitution v1.0 §8.
+
+**Scope:** exactly two changes introduced by commit `b67a3cc`:
+
+- **Amendment A** — `DeploymentOrchestrator` may retain coordination references to, and lifecycle decisions for, active Behavioural-Reality-owned observation windows across calls. Deployment does not own behavioural history, does not accumulate behavioural frames, and does not embed behavioural/scientific semantics.
+- **Amendment B** — `DeploymentDependencies.observation_policy: ObservationPolicyContract` is an authorized required dependency, injected through `DeploymentBootstrap` and consumed only at the Behavioural-Reality observation-window boundary. Deployment performs no policy semantics of its own.
+
+**Restated boundary:** Behavioural Reality owns behavioural history. Deployment may coordinate the lifecycle of Behavioural-Reality-owned observation state across multiple snapshots. Deployment does not become the owner of behavioural history and does not define behavioural science.
+
+**Procedural note:** the implementation in `b67a3cc` preceded formal approval, contrary to Constitution §8's "No implementation may occur before constitutional approval" rule. AMEND-1 ratifies and regularizes the two specifically identified changes prospectively. Historical statements in this document describing the orchestrator as stateless (e.g., §2, §4, §11) are superseded by this amendment to the extent they conflict.
+
+**Still prohibited:** Deployment owning behavioural history; accumulating `BehaviorFrame`s; implementing detector science; implementing recoil/persistence semantics; inventing thresholds; reconstructing research semantics; arbitrary mutable deployment state unrelated to coordination; modification of any other frozen contract without a constitutional amendment.
+
+**Record:** `docs/CONSTITUTIONAL_AMENDMENT_AMEND-1.md`.
+
+---
+
+## 14. Post-Fix Stable Baseline (Execution Metadata & Market Synchronization)
 
 This section formally records the validated baseline of the Phase 7 Deployment Layer following the resolution of the Execution Metadata defect and the implementation of Market-State Synchronization regression protection.
 

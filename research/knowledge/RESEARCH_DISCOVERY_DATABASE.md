@@ -733,3 +733,33 @@ No CAND-015 strategy changes occurred.
 
 **Outcome:** The hypothesis that the pre-entry D1 volatility state isolates a more profitable regime is completely contradicted by statistical evidence. The descriptive reproduction in G2 was statistically identical to chance. The object is rejected and returned to G0.
 G1/G2 showed positive descriptive economics in the registered FAVORABLE subset, but G3 demonstrated that the pre-entry D1 volatility-state label did not produce a statistically distinguishable conditional return difference. The apparent economic separation was not supported as a genuine conditional scientific effect.
+
+## DISC-035 — Research Factory V2 G0 Cycle V9
+
+**Relationship:** Tradeable Edge Discovery Screening.
+
+**Status:** V9 G0 candidate generation completed. Designed to find independent mechanistic edges instead of adding arbitrary filters. Promoted Candidates:
+- CAND-G0-025 (Macro Shock Liquidity Void Reversal - Family A)
+- CAND-G0-026 (US Open Initial Balance Trap - Family C)
+- CAND-G0-027 (Intraday Trend Inventory Unwind - Family D)
+
+**Outcome:** Candidates promoted to G1 for Economic Plausibility Screening.
+
+## DISC-036 — Research Factory V2 G1 Screen V9
+
+**Relationship:** Tradeable Edge Discovery Screening.
+
+**Status:** V9 G1 Economic Plausibility Screen completed.
+- CAND-G0-025: PASS — MARGINAL.
+- CAND-G0-026: INSUFFICIENT.
+- CAND-G0-027: INSUFFICIENT.
+
+**Outcome:** CAND-G0-025 was independently adjudicated. The underlying mechanism is observable without look-ahead, but the massive ~50-point standard deviation renders the +1.25 mean net too fragile for unhedged empirical piloting. Final Decision: HOLD. Line closed; returned to G0.
+
+## DISC-037 — Research Factory V2 Governance Amendment (Artifact vs System)
+
+**Relationship:** Tradeable Edge Discovery Screening.
+
+**Status:** Formal distinction created between 'Research Artifacts' (individual scientific edge components) and 'Strategy Systems' (deployable trading architectures). 
+
+**Outcome:** Candidates with strong per-event economics but low standalone frequency (such as CAND-024 and CAND-025) are no longer automatically killed. They are classified as COMPONENT-CANDIDATES and retained for future SYSTEM ASSEMBLY, where the union of multiple artifacts produces sufficient system-level frequency.

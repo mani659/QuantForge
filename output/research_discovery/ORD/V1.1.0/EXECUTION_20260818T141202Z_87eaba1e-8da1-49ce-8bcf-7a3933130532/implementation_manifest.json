@@ -1,0 +1,23 @@
+{
+  "execution_id": "EXECUTION_20260818T141202Z_87eaba1e-8da1-49ce-8bcf-7a3933130532",
+  "protocol_version": "V1.1.0",
+  "protocol_sha256": "85263b848e49e718a099cafe8fa7fe6f8ae0c74ec04c46477a0fcd1d9e759c06",
+  "definition_lock_identity": "b58105404d277560eec31a8b08c5b1997b86a03904fc4a804e87beaac448ab30",
+  "git_head": "a6c62edf9666f59eb8a044da2d0497f9a366e0a0",
+  "git_dirty_state": "True",
+  "python_version": "3.11.9",
+  "package_versions": {
+    "pandas": "3.0.2",
+    "numpy": "2.4.4"
+  },
+  "entry_script_path": "C:\\Users\\User10\\Documents\\MRV\\yuvi\\QuantForge\\scripts\\run_ord_v1.py",
+  "entry_script_sha256": "ab145252afa8645213b02a6ba4e22d3a185bf37adff3294f34b47e1f75e3baac",
+  "imported_execution_helper_hashes": {},
+  "input_manifest_hash": {
+    "XAUUSD_M1.csv": "54cf61559673adc7f6917f086bd4ef8d71808c3834f2faa82cd9323ee119311c",
+    "XAGUSD_M1.csv": "69444be954a869ebc831cd1253849222d8babc7a02940b2bb908a5179bcf5999",
+    "USATECHIDXUSD_M1.csv": "39f25619bd26d72f4fdaa300a5c40002e4f4d46805050526ba98ec1c0a54bfc6",
+    "BTCUSD_M1.csv": "97b853854d8f650d80e3972f159deab0b15911e19dd437e1dd10b3bab098409b"
+  },
+  "start_timestamp": "2026-08-18T14:12:02.045543+00:00"
+}

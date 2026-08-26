@@ -27,16 +27,16 @@
 > **PARALLEL FORWARD VALIDATION AND TRADEABLE EDGE DISCOVERY**
 >
 > ## Last Screening
-> CAND-021 completed G3 and was SCIENTIFICALLY CONTRADICTED.
-> No G4 economic validation was performed.
-> No rescue or continuation is authorized.
+> Governance Updated: Artifact vs System classification added.
+> CAND-025 Status: HOLD (Component-Candidate).
+> CAND-024 Status: HOLD (Component-Candidate).
 >
 > ## Next Action
 > ### ACTIVE FORWARD TRACK
 > > CAND-015 — 7-day paper observation in progress
 >
 > ### ACTIVE RESEARCH TRACK
-> > Tradeable Edge Discovery Screening — RETURN TO G0.
+> > Tradeable Edge Discovery Screening — RETURN TO G0 (Generate V10).
 >
 > ### PROTECTED
 > > CAND-015 frozen definition and running observation

@@ -1,0 +1,36 @@
+{
+  "protocol_sha256": "1d3ee7a6a9fd747cb57a716b43c5eb80bb7d6016011d2c4df9f0814cc196968d",
+  "markets": {
+    "XAGUSD": {
+      "metrics": {
+        "trades": 2176,
+        "trades_per_month": 35.67213114754098,
+        "median_net_bp": -12.40385265631817,
+        "mean_net_bp": -9.063862155000399,
+        "win_rate": 0.09099264705882353,
+        "median_win_bp": 30.103950713014548,
+        "median_loss_bp": -13.10718445887459,
+        "profit_factor": 0.3560359392465996,
+        "cumulative_net_bp": -19722.964049280872,
+        "max_drawdown_bp": 20721.283129786352,
+        "invalidation_rate": 0.9085477941176471,
+        "horizon_exit_rate": 0.09145220588235294
+      },
+      "gates": {
+        "gate1_median_net_gt_0": false,
+        "gate2_cumulative_net_gt_0": false,
+        "gate3_pf_gt_1": false,
+        "gate4_year_concentration_le_60pct": true,
+        "gate5_oos_independently_positive": false
+      },
+      "classification": "ECONOMICALLY NON-VIABLE",
+      "trade_count": 2176,
+      "excluded": {
+        "EXCLUDED_HORIZON_INCOMPLETE": 18,
+        "HORIZON": 199,
+        "STRUCTURAL_INVALIDATION": 1977
+      },
+      "year_concentration": 0.25820110027246906
+    }
+  }
+}

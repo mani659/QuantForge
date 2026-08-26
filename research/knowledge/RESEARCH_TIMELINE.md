@@ -237,3 +237,19 @@ The surviving corpus now records **six closed research lines** — Mean Reversio
 ## 34. G3 Scientific Validation (2026-08-26)
 
 - **Record:** CAND-021 G3 Scientific Validation completed. Formal permutation test yielded p=0.90. Scientific Classification: CONTRADICTED. CAND-021 G3 CONTRADICTED; line closed; no G4.
+
+## 35. G0 Candidate Generation V9 (2026-08-26)
+
+- **Record:** V9 G0 candidate generation completed. V9 focuses on mechanistic market-structure events without arbitrary condition filters. Promoted: CAND-G0-025, CAND-G0-026, CAND-G0-027.
+
+## 36. G1 Economic Plausibility Screen V9 (2026-08-26)
+
+- **Record:** V9 G1 Economic Plausibility Screen completed. CAND-025: PASS — MARGINAL. CAND-026: INSUFFICIENT. CAND-027: INSUFFICIENT.
+
+## 37. G1 Final Adjudication (2026-08-26)
+
+- **Record:** CAND-025 G1 independently adjudicated. Verdict: HOLD. The mechanism is observable, but the unhedged left tail creates a standard deviation (~50 pts) too massive to pilot the thin +1.25 mean net expectancy. Line closed; returned to G0.
+
+## 38. Governance Amendment — Artifacts vs Systems (2026-08-26)
+
+- **Record:** Formally distinguished between Research Artifacts and Strategy Systems. Low frequency is no longer an automatic kill condition for scientifically valid artifacts. Created COMPONENT-CANDIDATE classification for artifacts banked for future SYSTEM ASSEMBLY. CAND-024 and CAND-025 are considered COMPONENT-CANDIDATES.

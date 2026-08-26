@@ -1,0 +1,31 @@
+{
+  "execution_id": "EXECUTION_20260824T130709Z_0c18d950-aa99-4e90-af55-6847f8134542",
+  "started": "2026-08-24T13:07:09.661278+00:00",
+  "protocol_sha256": "1D3EE7A6A9FD747CB57A716B43C5EB80BB7D6016011D2C4DF9F0814CC196968D",
+  "economic_protocol_sha256": "1d3ee7a6a9fd747cb57a716b43c5eb80bb7d6016011d2c4df9f0814cc196968d",
+  "scientific_protocol_sha256": "85263B848E49E718A099CAFE8FA7FE6F8AE0C74EC04C46477A0FCD1D9E759C06",
+  "definition_lock_sha256": "b58105404d277560eec31a8b08c5b1997b86a03904fc4a804e87beaac448ab30",
+  "stage1_preparation_hashes": {
+    "XAGUSD": "07BACB1E396BBA517E0F46F461C3CB48B94E5E9ABB2F30D67A025B810A67C736"
+  },
+  "stage1_preparation_identities": {
+    "XAGUSD": "PREP_XAGUSD_07BACB1E396BBA517E0F46F461C3CB48B94E5E9ABB2F30D67A025B810A67C736"
+  },
+  "m1_hashes": {
+    "XAGUSD": "69444be954a869ebc831cd1253849222d8babc7a02940b2bb908a5179bcf5999"
+  },
+  "tick_hashes": {
+    "XAGUSD": "edccad88ed5b74caf16a14203f3cf743306c65f2ebc5004cf566ed61deeb6e17"
+  },
+  "git_head": "3921cf1f778c36c351b8b9662672afd1514188fe",
+  "git_dirty": "True",
+  "python_version": "3.11.9",
+  "pandas_version": "3.0.2",
+  "numpy_version": "2.4.4",
+  "runner_sha256": "974184bc26c973d4e485662bdc5e48a97be3b429f7bbc5ad0b71dbe8347f1aae",
+  "cost_model_identity": "Model A PRIMARY; Model B DESCRIPTIVE",
+  "market_duration_sec": {
+    "XAGUSD": 23.87014651298523
+  },
+  "total_wall_sec": 25.23800754547119
+}

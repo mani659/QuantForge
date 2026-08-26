@@ -1,0 +1,111 @@
+{
+  "model_a": "RT(A)=(s_entry+s_exit)/2; Net_A=Gross-RT(A)",
+  "model_b": "Net_B=Gross-(s_entry+s_exit); bands additive for sensitivity only",
+  "bands": {
+    "commission_bp": [
+      0.0,
+      2.0,
+      5.0,
+      10.0
+    ],
+    "slippage_bp": [
+      0.0,
+      2.0,
+      5.0
+    ]
+  },
+  "per_market": {
+    "XAGUSD": {
+      "observed_minutes": 1729136,
+      "spread_median_bp": 12.158054711246661,
+      "spread_p25_bp": 9.55231484429763,
+      "spread_p75_bp": 13.18739285243201,
+      "spread_p90_bp": 14.438000818153926,
+      "median_cost_bp_modelA": 12.0791222032407,
+      "model_b_sensitivity": [
+        {
+          "commission_bp": 0.0,
+          "slippage_bp": 0.0,
+          "median_net_bp": -12.40385265631817,
+          "cumulative_net_bp": -19722.96404928087
+        },
+        {
+          "commission_bp": 0.0,
+          "slippage_bp": 2.0,
+          "median_net_bp": -14.40385265631817,
+          "cumulative_net_bp": -24074.964049280876
+        },
+        {
+          "commission_bp": 0.0,
+          "slippage_bp": 5.0,
+          "median_net_bp": -17.40385265631817,
+          "cumulative_net_bp": -30602.96404928087
+        },
+        {
+          "commission_bp": 2.0,
+          "slippage_bp": 0.0,
+          "median_net_bp": -14.40385265631817,
+          "cumulative_net_bp": -24074.964049280876
+        },
+        {
+          "commission_bp": 2.0,
+          "slippage_bp": 2.0,
+          "median_net_bp": -16.40385265631817,
+          "cumulative_net_bp": -28426.96404928087
+        },
+        {
+          "commission_bp": 2.0,
+          "slippage_bp": 5.0,
+          "median_net_bp": -19.40385265631817,
+          "cumulative_net_bp": -34954.96404928087
+        },
+        {
+          "commission_bp": 5.0,
+          "slippage_bp": 0.0,
+          "median_net_bp": -17.40385265631817,
+          "cumulative_net_bp": -30602.96404928087
+        },
+        {
+          "commission_bp": 5.0,
+          "slippage_bp": 2.0,
+          "median_net_bp": -19.40385265631817,
+          "cumulative_net_bp": -34954.96404928087
+        },
+        {
+          "commission_bp": 5.0,
+          "slippage_bp": 5.0,
+          "median_net_bp": -22.40385265631817,
+          "cumulative_net_bp": -41482.96404928087
+        },
+        {
+          "commission_bp": 10.0,
+          "slippage_bp": 0.0,
+          "median_net_bp": -22.40385265631817,
+          "cumulative_net_bp": -41482.96404928087
+        },
+        {
+          "commission_bp": 10.0,
+          "slippage_bp": 2.0,
+          "median_net_bp": -24.40385265631817,
+          "cumulative_net_bp": -45834.96404928087
+        },
+        {
+          "commission_bp": 10.0,
+          "slippage_bp": 5.0,
+          "median_net_bp": -27.40385265631817,
+          "cumulative_net_bp": -52362.96404928087
+        }
+      ],
+      "invalid_tick_rows": null,
+      "streamed_rows": null,
+      "quote_lookup_counts": {
+        "entry_exact": 2174,
+        "entry_fallback": 1,
+        "entry_market_median": 1,
+        "exit_exact": 2176,
+        "exit_fallback": 0,
+        "exit_market_median": 0
+      }
+    }
+  }
+}

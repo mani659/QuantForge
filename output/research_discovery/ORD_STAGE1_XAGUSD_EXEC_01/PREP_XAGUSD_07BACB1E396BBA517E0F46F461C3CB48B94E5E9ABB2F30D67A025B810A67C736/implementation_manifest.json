@@ -1,0 +1,15 @@
+{
+  "stage_name": "STAGE1",
+  "execution_id": "PREP_XAGUSD_07BACB1E396BBA517E0F46F461C3CB48B94E5E9ABB2F30D67A025B810A67C736_IN_PROGRESS_64c77de3",
+  "protocol_sha256": "1d3ee7a6a9fd747cb57a716b43c5eb80bb7d6016011d2c4df9f0814cc196968d",
+  "git_head": "3921cf1f778c36c351b8b9662672afd1514188fe",
+  "git_dirty_state": "True",
+  "python_version": "3.11.9",
+  "entry_script_path": "C:\\Users\\User10\\Documents\\MRV\\yuvi\\QuantForge\\research\\staged_execution\\stage1.py",
+  "entry_script_sha256": "8c6f7aad288414c68d4017fe5c7f60101b297459f81abc67d43390517d1786c6",
+  "imported_stage_helper_hashes": {},
+  "start_timestamp_utc": "2026-08-24T09:23:13.537701+00:00",
+  "market": "XAGUSD",
+  "preparation_identity": "PREP_XAGUSD_07BACB1E396BBA517E0F46F461C3CB48B94E5E9ABB2F30D67A025B810A67C736",
+  "preparation_hash": "07BACB1E396BBA517E0F46F461C3CB48B94E5E9ABB2F30D67A025B810A67C736"
+}

@@ -1861,7 +1861,7 @@ The Deployment Layer officially initiates the Deployment Era. It wires validated
 - **DeploymentContext**: An immutable dataclass storing strictly validated references to the pipeline's exact components (`StrategyContract`, `InterpretationModelContract`, `DecisionPolicyContract`, `RiskPolicyContract`). Contains NO market data, runtime state, or execution profile.
 - **DeploymentAssembler**: Safely resolves the abstract `StrategyManifest` against domain registries and deterministically produces the `DeploymentRuntime`.
 - **DeploymentRuntime**: A read-only shell wrapping the `DeploymentContext`. It exposes the assembled scientific pipeline but explicitly owns NO broker integrations, event loops, execution orchestration, or portfolio state.
-- **DeploymentOrchestrator**: Coordinates the full BOE pipeline per EnvironmentSnapshot. It maintains no internal state. It routes data perfectly sequentially from observation through to risk calculation.
+- **DeploymentOrchestrator**: Coordinates the full BOE pipeline per EnvironmentSnapshot. It may retain coordination references across calls for active Behavioral-Reality-owned observation windows (Constitutional Amendment AMEND-1, ratified 2026-08-12), while behavioural history remains exclusively owned by the Behavioral Reality domain. It routes data perfectly sequentially from observation through to risk calculation.
 
 ### Architectural Constraint
 DeploymentOrchestrator coordinates the BOE pipeline.
