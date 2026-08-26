@@ -213,3 +213,27 @@ The surviving corpus now records **six closed research lines** — Mean Reversio
 ## 28. Parallel Forward Validation and Discovery
 
 - **Record:** CAND-015 7-day forward validation continues as a protected track while the Research Factory V2 simultaneously resumes G0 candidate discovery.
+
+## 29. G0 Candidate Generation V7 (2026-08-26)
+
+- **Record:** V7 G0 candidate generation completed in parallel with protected CAND-015 forward observation.
+
+## 30. G1 Economic Plausibility Screen V7 (2026-08-26)
+
+- **Record:** V7 G1 Economic Plausibility Screen completed. Original CAND-018 invalidated (leakage); Corrected CAND-018 Final Adjudication: RETURN TO G0 (Structurally negative expectancy). CAND-019 blocked. CAND-020 killed.
+
+## 31. G0 Candidate Generation V8 (2026-08-26)
+
+- **Record:** V8 G0 candidate generation completed. V8 focuses on pre-entry state conditioning. Promoted: CAND-G0-021, CAND-G0-022, CAND-G0-023, CAND-G0-024.
+
+## 32. G1 Economic Plausibility Screen V8 (2026-08-26)
+
+- **Record:** V8 G1 Economic Plausibility Screen completed. CAND-021 Final Adjudication: G2 READY. CAND-022: BLOCKED. CAND-023: INSUFFICIENT. CAND-024: INSUFFICIENT.
+
+## 33. G2 Cheap Empirical Pilot (2026-08-26)
+
+- **Record:** CAND-021 G2 Cheap Empirical Pilot completed. Effect validated in chronological holdout. Final Adjudication: G3 READY (Scientific effect empirically validated).
+
+## 34. G3 Scientific Validation (2026-08-26)
+
+- **Record:** CAND-021 G3 Scientific Validation completed. Formal permutation test yielded p=0.90. Scientific Classification: CONTRADICTED. CAND-021 G3 CONTRADICTED; line closed; no G4.

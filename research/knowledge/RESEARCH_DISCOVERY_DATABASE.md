@@ -677,3 +677,59 @@ No CAND-015 strategy changes occurred.
 **Status:** The CAND-015 forward observation is a protected validation track. The running observation must remain untouched until its complete log is available. No scientific or economic conclusion may be drawn from the partial 7-day forward observation before the session is complete and independently audited.
 
 **Parallel Track:** In parallel, the Research Factory V2 is ACTIVE at G0 — Candidate Generation. New research must not influence the CAND-015 forward observation, and partial CAND-015 forward results must not be used to select new candidates.
+
+## DISC-029 — Research Factory V2 G0 Cycle (V7)
+
+**Relationship:** Tradeable Edge Discovery Screening.
+
+**Status:** The V7 G0 candidate generation cycle was completed, promoting candidates CAND-G0-018, CAND-G0-019, and CAND-G0-020 to G1. 
+
+**Outcome:** Recorded as a research-screening milestone. Do NOT create a scientific finding from G0 alone. Do NOT claim economic support. Do NOT claim strategy viability.
+
+## DISC-030 — Research Factory V2 G1 Cycle (V7)
+
+**Relationship:** Tradeable Edge Discovery Screening.
+
+**Status:** The V7 G1 Economic Plausibility Screen was completed for CAND-018, CAND-019, and CAND-020. The original CAND-018 result was INVALIDATED due to future-data leakage in the trend filter. A fresh, corrected G1 was executed for CAND-018.
+- CAND-018 (Final Adjudication): RETURN TO G0 (Structurally negative expectancy due to left tail. Risk-controlled variant requires new G0 candidate).
+- CAND-019: BLOCKED (Missing local data for Fixed Income benchmark).
+- CAND-020: INSUFFICIENT (Killed).
+
+**Outcome:** Recorded as a research-screening milestone. Do NOT call any candidate scientifically supported. Do NOT call any candidate economically viable.
+
+## DISC-031 — Research Factory V2 G0 Cycle (V8)
+
+**Relationship:** Tradeable Edge Discovery Screening.
+
+**Status:** The V8 G0 candidate generation cycle was completed (post-CAND-018 lesson), explicitly incorporating pre-entry state conditioning. Promoted candidates: CAND-G0-021, CAND-G0-022, CAND-G0-023, CAND-G0-024.
+
+**Outcome:** Recorded as a research-screening milestone. Do NOT create a scientific finding from G0 alone. Do NOT claim economic support. Do NOT claim strategy viability.
+
+## DISC-032 — Research Factory V2 G1 Cycle (V8)
+
+**Relationship:** Tradeable Edge Discovery Screening.
+
+**Status:** The V8 G1 Economic Plausibility Screen was completed for candidates CAND-021, CAND-022, CAND-023, and CAND-024.
+- CAND-021 (Final Adjudication): G2 READY.
+- CAND-022: BLOCKED (Missing GBPUSD M1 data).
+- CAND-023: INSUFFICIENT (Killed).
+- CAND-024: INSUFFICIENT (Killed).
+
+**Outcome:** Recorded as a research-screening milestone. Do NOT call any candidate scientifically supported. Do NOT call any candidate economically viable.
+
+## DISC-033 — Research Factory V2 G2 Cycle (CAND-021)
+
+**Relationship:** Tradeable Edge Discovery Screening.
+
+**Status:** The G2 Cheap Empirical Pilot was completed for CAND-021. The chronological holdout reproduced the positive expected value and the effect survived 4.0-point friction stress. Final Adjudication: G3 READY (Scientific effect empirically validated, descriptive reproduction successful).
+
+**Outcome:** The core phenomenon is empirically validated out-of-sample. Recorded as a milestone. Do NOT claim the overall strategy is viable without formal risk controls.
+
+## DISC-034 — Research Factory V2 G3 Cycle (CAND-021)
+
+**Relationship:** Tradeable Edge Discovery Screening.
+
+**Status:** The G3 Scientific Validation was completed for CAND-021. The formal permutation test on the primary endpoint (Difference in mean net returns between FAVORABLE and ADVERSE states) yielded a negative difference (-2.09) with a p-value of 0.90. Scientific Classification: CONTRADICTED.
+
+**Outcome:** The hypothesis that the pre-entry D1 volatility state isolates a more profitable regime is completely contradicted by statistical evidence. The descriptive reproduction in G2 was statistically identical to chance. The object is rejected and returned to G0.
+G1/G2 showed positive descriptive economics in the registered FAVORABLE subset, but G3 demonstrated that the pre-entry D1 volatility-state label did not produce a statistically distinguishable conditional return difference. The apparent economic separation was not supported as a genuine conditional scientific effect.

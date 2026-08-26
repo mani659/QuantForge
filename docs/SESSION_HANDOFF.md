@@ -27,16 +27,16 @@
 > **PARALLEL FORWARD VALIDATION AND TRADEABLE EDGE DISCOVERY**
 >
 > ## Last Screening
-> Latest V5 G1 cycle:
-> CAND-012 and CAND-013 both closed at G1.
-> No G2 execution occurred.
+> CAND-021 completed G3 and was SCIENTIFICALLY CONTRADICTED.
+> No G4 economic validation was performed.
+> No rescue or continuation is authorized.
 >
 > ## Next Action
 > ### ACTIVE FORWARD TRACK
 > > CAND-015 — 7-day paper observation in progress
 >
 > ### ACTIVE RESEARCH TRACK
-> > Tradeable Edge Discovery Screening — G0 Candidate Generation
+> > Tradeable Edge Discovery Screening — RETURN TO G0.
 >
 > ### PROTECTED
 > > CAND-015 frozen definition and running observation
