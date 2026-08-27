@@ -421,3 +421,7 @@ The surviving corpus now records **six closed research lines** — Mean Reversio
 ## 80. G0 Candidate Generation V22 (2026-08-27)
 
 - **Record:** V22 G0 completed. Focused on constructing completely new hypotheses investigating structural sweeps, rather than just inverting CAND-064. Promoted CAND-G0-065 (Structural Sweep Depth Rejection State - State), CAND-G0-066 (Fresh Sweep vs Mitigated Sweep - Alpha), and CAND-G0-067 (Cross-Session Reference Sweep State - State). G1 NOT EXECUTED.
+
+## 81. G1 Economic Plausibility Screen V22 (2026-08-27)
+
+- **Record:** V22 G1 completed. Evaluated separated Alpha and State candidates. CAND-065 (Sweep Depth State) demonstrated the hypothesized right-tail effect for Deep Sweeps (+10.81 bps) vs Shallow Sweeps (-0.65 bps) but failed on extreme evidence limitation (N=27). CAND-066 (Fresh vs Mitigated Sweep) failed absolute expectancy and counterfactual tests, providing the valuable inverse finding to CAND-059: fresh levels are better to retest (bounce), but mitigated levels are slightly better to fade (sweep). CAND-067 (Cross-Session Sweep State) yielded exactly zero events. All candidates failed G1. Zero standalone G2 promotions. Zero components added. Next Action: Return to G0.
