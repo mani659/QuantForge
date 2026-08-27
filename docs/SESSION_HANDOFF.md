@@ -39,6 +39,9 @@
 >
 > ### ACTIVE RESEARCH TRACK
 > > RARE-EVENT FORWARD TRACK — INTEGRITY HOLD (CAND-024, CAND-035)
+> > CANONICAL CONTRACTS RATIFIED: CAND-024:CANONICAL:925495a8, CAND-035:CANONICAL:ddc5d0e9
+> > Historical phantom identifiers c49c5bb0 / a7c2132d retained as non-reproducible governance artifacts only
+> > Forward qualification NOT YET RESUMED — awaiting supervisor resume task
 >
 > ### PROTECTED
 > > CAND-015 frozen definition and running observation
@@ -301,9 +304,9 @@ Recorded: V2 computation completed and wrote all result artifacts before the ter
 - **Session-Anchored Range Expansion (DISC-024):** CLOSED — CONTRADICTED.
 - **Liquidity Sweep / Reversal (DISC-025):** CLOSED — ECONOMIC TRANSLATION NON-VIABLE.
 - **Opening Range Breakout (ORD / DISC-026):** SCIENTIFICALLY SUPPORTED — ECONOMIC TRANSLATION CLOSED AS NON-VIABLE FOR REGISTERED XAGUSD OBJECT.
-- **CURRENT MILESTONE:** UNIFIED FORWARD SUPERVISOR IMPLEMENTATION
-- **CRITICAL PATH / BLOCKER:** NONE. A unified persistent forward supervisor was successfully deployed. CAND-024 and CAND-035 are now actively executing paper-only observations from a shared MT5 market-data connection with independent module ledgers. CAND-015 remains PROTECTED / EXTERNAL.
-- **NEXT LEGITIMATE TASK:** **OBSERVE ONLY**. Await event qualification thresholds (3 minimum, 5 target per candidate). Do not modify logic. Research discovery (G0-G3) and System Assembly remain PAUSED/SUSPENDED. The forward supervisor is intended to run autonomously via Windows Task Scheduler. Operator controls are `status_quantforge_forward.bat`, `stop_quantforge_forward.bat`, and `run_quantforge_forward.bat`.
+- **CURRENT MILESTONE:** CANONICAL CONTRACT RATIFICATION COMPLETE
+- **CRITICAL PATH / BLOCKER:** Forward qualification on INTEGRITY HOLD pending supervisor resume. Canonical contracts ratified: CAND-024:CANONICAL:925495a8, CAND-035:CANONICAL:ddc5d0e9. Historical phantom hashes c49c5bb0 / a7c2132d retained as non-reproducible governance artifacts. 78 contract tests pass. Engines verified consistent. CAND-015 remains PROTECTED / EXTERNAL.
+- **NEXT LEGITIMATE TASK:** **SUPERVISOR RESUME + PERSISTENCE VALIDATION**. A separate task must start the supervisor, verify MT5 connection, confirm canonical hashes in runtime, and validate event detection. Do not modify logic. Research discovery (G0-G3) and System Assembly remain PAUSED/SUSPENDED.
 
 ## 16. Explicitly Forbidden Work
 
