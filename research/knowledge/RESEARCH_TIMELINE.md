@@ -377,3 +377,7 @@ The surviving corpus now records **six closed research lines** — Mean Reversio
 ## 69. V18 G1 Closure & Component Register Review (2026-08-27)
 
 - **Record:** V18 G1 formally closed. Zero new components retained. Documented the crucial distinction between Event Economics (overall profitability) and Condition Value (incremental improvement over the counterfactual). Reviewed the component register (CAND-024, 035, 042) and determined it lacks sufficient independent, scientifically-qualified mechanisms for System Assembly. Recommended Path A (Return to G0) for V19 to discover new, structurally independent mechanisms.
+
+## 70. Dual-Path Strategy & System Governance Amendment (2026-08-27)
+
+- **Record:** Amended the Research Factory V2 doctrine to explicitly support two paths: Path A (Single Killer Strategy) and Path B (Modular Multi-Artifact System). Established that standalone insufficiency does not automatically disqualify a valid component. However, explicitly firewalled System Assembly from being used to rescue scientifically or economically failed research. Defined explicit qualification levels (Component-Candidate, Scientifically Qualified Component, Economically Qualified Component, System-Qualified Component).

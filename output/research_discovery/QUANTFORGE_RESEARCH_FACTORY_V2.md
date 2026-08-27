@@ -54,17 +54,32 @@ The canonical decision table for future candidates is as follows:
 | **G5** | **PHASE 5: Execution Validation** | Does realistic execution survive? | High | close / proceed |
 | **G6** | **PHASE 6: Forward Validation** | Can it survive live paper-observation? | High | close / proceed |
 
-Then, after multiple qualified artifacts exist:
+## 7. Artifacts
 
-> **SYSTEM ASSEMBLY**
-> →
-> **SYSTEM-LEVEL ECONOMIC VALIDATION**
-> →
-> **SYSTEM FORWARD VALIDATION**
-> →
-> **BOT CONSTRUCTION**
+The Factory outputs specific markdown artifacts at each stage:
+- **`TRADEABLE_EDGE_DISCOVERY_SCREENING_V[X].md`**: G0 candidate output.
+- **`RESEARCH_FACTORY_V2_G1_SCREEN_[DATE].md`**: G1 screening results.
+- **`RESEARCH_FACTORY_V2_G2_[CAND_ID]_FINAL_ADJUDICATION_[DATE].md`**: Final G2 decision matrix.
 
-Note: Individual artifacts do not necessarily need to independently reach G6 before being usable as a component in System Assembly, unless specific governance dictates otherwise. QuantForge is searching for a TRADEABLE SYSTEM, not just a single universally active strategy. Component quality and system frequency are separate questions.
+## 8. Dual-Path Strategy and System Governance
+
+QuantForge strategy formation follows two valid paths:
+
+**PATH A: SINGLE KILLER STRATEGY**
+One research artifact independently demonstrates sufficient scientific support, economic expectancy, robustness, and forward validation to become the primary strategy architecture.
+
+**PATH B: MODULAR MULTI-ARTIFACT SYSTEM**
+Multiple independently meaningful research artifacts are assembled into a single system whose combined properties provide diversified opportunity flow, positive expectancy, and improved drawdown behavior.
+
+### Component Qualification and Assembly Rules:
+1. **Standalone Insufficiency ≠ Automatic System Irrelevance:** A candidate that fails as a standalone strategy may remain eligible for Component-Candidate consideration ONLY if its underlying mechanism is scientifically/economically valid and it provides independent expected value.
+2. **Rescue Firewall:** System Assembly may diversify qualified research; it may NOT resuscitate failed research. A negative-expectancy artifact or a condition that degrades its counterfactual cannot be rescued by combination.
+3. **Component Qualification Levels:**
+   - *Component-Candidate:* Retained for future system investigation.
+   - *Scientifically Qualified Component:* Mechanism/effect has survived scientific validation.
+   - *Economically Qualified Component:* Economic viability has survived economic validation.
+   - *System-Qualified Component:* Independently qualified and survived the System Assembly selection gate.
+4. **Assembly Metrics:** Assembly is evaluated on Opportunity Union, Overlap, Return Correlation, Conditional Dependence, Cost Scaling, Expectancy Contribution, Drawdown Contribution, Concentration, Regime Coverage, and Failure Cascades.
 
 ## 4. Candidate Generation (PHASE 0)
 

@@ -300,9 +300,9 @@ Recorded: V2 computation completed and wrote all result artifacts before the ter
 - **Session-Anchored Range Expansion (DISC-024):** CLOSED — CONTRADICTED.
 - **Liquidity Sweep / Reversal (DISC-025):** CLOSED — ECONOMIC TRANSLATION NON-VIABLE.
 - **Opening Range Breakout (ORD / DISC-026):** SCIENTIFICALLY SUPPORTED — ECONOMIC TRANSLATION CLOSED AS NON-VIABLE FOR REGISTERED XAGUSD OBJECT.
-- **CURRENT MILESTONE:** V18 G1 CLOSURE / COMPONENT REGISTER REVIEW.
+- **CURRENT MILESTONE:** GOVERNANCE AMENDMENT (DUAL-PATH STRATEGY/SYSTEM).
 - **CRITICAL PATH / BLOCKER:** None.
-- **NEXT LEGITIMATE TASK:** **G0 CANDIDATE GENERATION** (V19). V18 G1 is formally closed with no candidates promoted. The component register review confirmed only three isolated/unqualified opportunists exist (CAND-024, 035, 042). This is insufficient for component qualification or System Assembly. Return to G0 to discover new independent mechanisms.
+- **NEXT LEGITIMATE TASK:** **G0 CANDIDATE GENERATION** (V19). The Dual-Path Strategy and System Governance doctrine has been established. Standalone insufficiency does not automatically disqualify a valid component, but scientifically or economically failed research cannot be rescued by combination. Return to G0 to discover new independent mechanisms.
 
 ## 16. Explicitly Forbidden Work
 
