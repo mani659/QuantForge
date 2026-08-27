@@ -38,10 +38,15 @@
 > > CAND-015 — 7-day paper observation in progress
 >
 > ### ACTIVE RESEARCH TRACK
-> > RARE-EVENT FORWARD TRACK — INTEGRITY HOLD (CAND-024, CAND-035)
-> > CANONICAL CONTRACTS RATIFIED: CAND-024:CANONICAL:925495a8, CAND-035:CANONICAL:ddc5d0e9
-> > Historical phantom identifiers c49c5bb0 / a7c2132d retained as non-reproducible governance artifacts only
-> > Forward qualification NOT YET RESUMED — awaiting supervisor resume task
+> > RARE-EVENT FORWARD TRACK — CANONICAL QUALIFICATION RESUMED (CAND-024, CAND-035)
+> > CAND-024 = `CAND-024:CANONICAL:925495a8`
+> > CAND-035 = `CAND-035:CANONICAL:ddc5d0e9`
+> > Original intended start preserved: `2026-08-27T09:44:58Z`
+> > Valid canonical qualification resume: `2026-08-27T12:05:15Z`
+> > Pre-ratification period classified as INTEGRITY GAP
+> > Supervisor RUNNING (PID 6924), MT5 CONNECTED, both modules ACTIVE
+> > Task Scheduler: NOT INSTALLED (requires Administrator)
+> > Forward qualification now collecting valid evidence
 >
 > ### PROTECTED
 > > CAND-015 frozen definition and running observation
@@ -304,9 +309,9 @@ Recorded: V2 computation completed and wrote all result artifacts before the ter
 - **Session-Anchored Range Expansion (DISC-024):** CLOSED — CONTRADICTED.
 - **Liquidity Sweep / Reversal (DISC-025):** CLOSED — ECONOMIC TRANSLATION NON-VIABLE.
 - **Opening Range Breakout (ORD / DISC-026):** SCIENTIFICALLY SUPPORTED — ECONOMIC TRANSLATION CLOSED AS NON-VIABLE FOR REGISTERED XAGUSD OBJECT.
-- **CURRENT MILESTONE:** CANONICAL CONTRACT RATIFICATION COMPLETE
-- **CRITICAL PATH / BLOCKER:** Forward qualification on INTEGRITY HOLD pending supervisor resume. Canonical contracts ratified: CAND-024:CANONICAL:925495a8, CAND-035:CANONICAL:ddc5d0e9. Historical phantom hashes c49c5bb0 / a7c2132d retained as non-reproducible governance artifacts. 78 contract tests pass. Engines verified consistent. CAND-015 remains PROTECTED / EXTERNAL.
-- **NEXT LEGITIMATE TASK:** **SUPERVISOR RESUME + PERSISTENCE VALIDATION**. A separate task must start the supervisor, verify MT5 connection, confirm canonical hashes in runtime, and validate event detection. Do not modify logic. Research discovery (G0-G3) and System Assembly remain PAUSED/SUSPENDED.
+- **CURRENT MILESTONE:** CANONICAL RARE-EVENT QUALIFICATION RESUMED
+- **CRITICAL PATH / BLOCKER:** Supervisor RUNNING (PID 6924), MT5 CONNECTED, both modules ACTIVE. Canonical contracts verified in runtime. Task Scheduler requires Administrator to install. Research discovery (G0-G3) and System Assembly remain PAUSED/SUSPENDED. CAND-015 remains PROTECTED / EXTERNAL.
+- **NEXT LEGITIMATE TASK:** **OBSERVE ONLY**. Await event qualification thresholds (3 minimum, 5 target per candidate). Do not modify logic. Research discovery may resume separately. Forward qualification is now collecting valid evidence on canonical contracts.
 
 ## 16. Explicitly Forbidden Work
 

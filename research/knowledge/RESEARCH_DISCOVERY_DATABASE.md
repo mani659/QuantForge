@@ -1146,3 +1146,26 @@ G1/G2 showed positive descriptive economics in the registered FAVORABLE subset, 
 - Implemented a registry pattern to isolate independent module ledgers, executing candidates in parallel over ONE shared MT5 market data connection.
 - Preserved exact qualification clock start (`2026-08-27T09:44:58Z`) by migrating legacy logs to `runtime/forward/history/` and logging explicit transition timestamps.
 - Set up Windows Scheduled Task bindings for persistence across IDE/shell terminations. CAND-015 remains PROTECTED and strictly external.
+
+## DISC-095 — Canonical Contract Ratification and Qualification Resume
+
+**Relationship:** Governance Architecture & Forward Validation.
+
+**Status:** CANONICAL RARE-EVENT QUALIFICATION RESUMED — PROTECTED.
+
+**Outcome:** 
+- Discovered phantom hash problem: CAND-024 (`c49c5bb0`) and CAND-035 (`a7c2132d`) were not reproducible from any stored definition.
+- Discovered mixed-field hash problem: repair attempt produced hashes (`5638ffc1`, `3715d51a`) that included historical evidence fields not in the contract hash input.
+- Established canonical architecture: `FrozenStrategyContract` (executable semantics only, hash input) / `HistoricalEvidence` (research results, NOT in hash) / `EnvironmentMapping` (broker/runtime, NOT in hash).
+- Canonical hashes: CAND-024 = `925495a8`, CAND-035 = `ddc5d0e9`.
+- 78/78 contract tests pass (identity, mutation, evidence exclusion, environment exclusion, field completeness, serialization, engine consistency, negative tests, phantom separation, content verification).
+- Engine consistency verified: both engines import and use canonical contracts.
+- Supervisor contract firewall verified: top-down import chain, no reconstruction.
+- Pre-ratification period classified as INTEGRITY GAP (2026-08-27T09:44:58Z → 2026-08-27T10:10:08Z).
+- Zero qualifying events accepted during pre-ratification period.
+- Valid canonical qualification resume: 2026-08-27T12:05:15Z.
+- Original intended start preserved: 2026-08-27T09:44:58Z.
+- Task Scheduler requires Administrator to install (bat script ready).
+- Forward qualification now collecting valid evidence on canonical contracts.
+- CAND-015 remains PROTECTED / EXTERNAL / UNTOUCHED.
+- System Assembly remains NOT EXECUTED.
