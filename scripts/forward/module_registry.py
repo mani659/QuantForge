@@ -128,6 +128,14 @@ class Cand015ModuleWrapper:
     def __init__(self, adapter, base_runtime_dir):
         self.candidate_id = "CAND-015"
         self.adapter = adapter
+        self.engine = adapter
+        self.config = {
+            "logical_symbol": "USATECHIDXUSD",
+            "broker_symbol": "USTECm",
+            "mapping_id": "MAPPING:USATECHIDXUSD->EXNESS:USTECM:1.0",
+            "minimum": 3,
+            "target": 5
+        }
         self.module_dir = os.path.join(base_runtime_dir, "cand_015")
         os.makedirs(self.module_dir, exist_ok=True)
 

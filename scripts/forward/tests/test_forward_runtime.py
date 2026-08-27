@@ -185,6 +185,39 @@ class TestModuleRegistry:
         except ImportError:
             pass
 
+    def test_cand015_wrapper_has_config_attribute(self, tmp_path):
+        """Regression: Cand015ModuleWrapper must expose config for supervisor."""
+        from module_registry import Cand015ModuleWrapper
+        try:
+            from cand015_adapter import Cand015Adapter, CAND015_AVAILABLE
+            if not CAND015_AVAILABLE:
+                return
+            class FakeFeed:
+                def latest_completed_bar(self, sym, tf):
+                    return {"status": "DATA_FRESH", "time": 1000, "open": 100, "high": 101, "low": 99, "close": 100.5}
+            adapter = Cand015Adapter(FakeFeed())
+            adapter.initialize()
+            wrapper = Cand015ModuleWrapper(adapter, str(tmp_path))
+            assert hasattr(wrapper, 'config'), "Cand015ModuleWrapper missing config attribute"
+            assert wrapper.config['logical_symbol'] == 'USATECHIDXUSD'
+            assert wrapper.config['mapping_id'] == 'MAPPING:USATECHIDXUSD->EXNESS:USTECM:1.0'
+            assert wrapper.config['broker_symbol'] == 'USTECm'
+            assert wrapper.config['minimum'] == 3
+            assert wrapper.config['target'] == 5
+        except ImportError:
+            pass
+
+    def test_all_modules_satisfy_supervisor_interface(self, tmp_path):
+        """All modules in registry must expose config and process_quote."""
+        from module_registry import get_registry
+        modules = get_registry(str(tmp_path))
+        for m in modules:
+            assert hasattr(m, 'config'), f"{m.candidate_id} missing config"
+            assert hasattr(m, 'process_quote'), f"{m.candidate_id} missing process_quote"
+            assert hasattr(m, 'candidate_id'), f"{m.candidate_id} missing candidate_id"
+            assert 'logical_symbol' in m.config, f"{m.candidate_id} config missing logical_symbol"
+            assert 'mapping_id' in m.config, f"{m.candidate_id} config missing mapping_id"
+
 
 # ---------------------------------------------------------------------------
 # PAPER EXECUTION TESTS
