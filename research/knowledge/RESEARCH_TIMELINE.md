@@ -433,3 +433,7 @@ The surviving corpus now records **six closed research lines** — Mean Reversio
 ## 83. G0 Candidate Generation V23 (2026-08-27)
 
 - **Record:** V23 G0 completed. Executed a strict reset directive: ALPHA EVENT FIRST. Exclusively searched for intrinsically profitable, independently observable events before applying specialized state filters. Promoted CAND-G0-068 (Post-Shock Absorption Reversal - Alpha), CAND-G0-069 (NY Mid-Session Reversal Anchor - Alpha), and CAND-G0-070 (Sustained Momentum Micro-Structure Failure - Alpha). Generated zero State candidates. G1 NOT EXECUTED.
+
+## 84. G1 Economic Plausibility Screen V23 (2026-08-27)
+
+- **Record:** V23 G1 completed. Evaluated three Alpha candidates for absolute expectancy and counterfactual superiority. CAND-068 (Post-Shock Absorption Reversal) failed due to extreme evidence limitation (N=7). CAND-069 (NY Mid-Session Reversal Anchor) generated a virtually flat net expectancy (+0.75 bps), failing to clear the >5 bps friction hurdle, despite slightly outperforming morning anchors. CAND-070 (Momentum Micro-Structure Failure) failed absolute expectancy and falsified its hypothesis: fading the first structure break in an overheated trend performs significantly worse than fading chop. All candidates failed G1. Zero standalone G2 promotions. Zero components added. Next Action: Return to G0.

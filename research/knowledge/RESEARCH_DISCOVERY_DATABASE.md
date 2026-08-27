@@ -989,3 +989,15 @@ G1/G2 showed positive descriptive economics in the registered FAVORABLE subset, 
 - Lesson recorded: Overly strict definitions designed to ensure structural purity (CAND-048, CAND-049) can completely extinguish opportunity frequency, rendering the artifact untestable.
 - Lesson recorded: Price behaviors attributed to "institutional necessity" (CAND-047) are just as susceptible to negative expectancy as generic technical patterns when subjected to strict friction and counterfactual comparison.
 - Next action: Return to G0 Candidate Generation (V17).
+
+## DISC-083 — V23 G1 Economic Plausibility Screen
+
+**Relationship:** Tradeable Edge Discovery Screening.
+
+**Status:** V23 G1 screening completed.
+
+**Outcome:** 
+- CAND-068 (Post-Shock Absorption Reversal) [ALPHA]: INSUFFICIENT. Failed due to extreme evidence limitation (N=7). Fading the 7 recorded shock-absorption patterns performed worse than fading the shock immediately.
+- CAND-069 (NY Mid-Session Reversal Anchor) [ALPHA]: INSUFFICIENT. Generated a virtually flat net expectancy (+0.75 bps), failing to clear the >5 bps friction hurdle, despite slightly outperforming morning anchors.
+- CAND-070 (Sustained Momentum Micro-Structure Failure) [ALPHA]: INSUFFICIENT. Failed absolute expectancy and falsified its hypothesis: fading the first structure break in an overheated trend performs significantly worse than fading identical structure breaks in chop. The trend overwhelmingly resumes and stops out the mean-reversion trade.
+- All candidates failed G1. Zero standalone G2 promotions. Zero components added. Next action: Return to G0 Candidate Generation.
