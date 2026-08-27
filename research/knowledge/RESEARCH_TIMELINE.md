@@ -425,3 +425,11 @@ The surviving corpus now records **six closed research lines** — Mean Reversio
 ## 81. G1 Economic Plausibility Screen V22 (2026-08-27)
 
 - **Record:** V22 G1 completed. Evaluated separated Alpha and State candidates. CAND-065 (Sweep Depth State) demonstrated the hypothesized right-tail effect for Deep Sweeps (+10.81 bps) vs Shallow Sweeps (-0.65 bps) but failed on extreme evidence limitation (N=27). CAND-066 (Fresh vs Mitigated Sweep) failed absolute expectancy and counterfactual tests, providing the valuable inverse finding to CAND-059: fresh levels are better to retest (bounce), but mitigated levels are slightly better to fade (sweep). CAND-067 (Cross-Session Sweep State) yielded exactly zero events. All candidates failed G1. Zero standalone G2 promotions. Zero components added. Next Action: Return to G0.
+
+## 82. V22 Closure (2026-08-27)
+
+- **Record:** V22 formally closed. Established the critical "State-vs-Alpha Dependency" lesson: State Information is not universally monotonic. Freshness is a powerful positive filter for retests (CAND-059) but a negative filter for fading sweeps (CAND-066). State artifacts cannot be declared "good filters" in isolation; their interaction with specific Alphas must be validated independently. CAND-065 is preserved strictly as an evidence-limited observation.
+
+## 83. G0 Candidate Generation V23 (2026-08-27)
+
+- **Record:** V23 G0 completed. Executed a strict reset directive: ALPHA EVENT FIRST. Exclusively searched for intrinsically profitable, independently observable events before applying specialized state filters. Promoted CAND-G0-068 (Post-Shock Absorption Reversal - Alpha), CAND-G0-069 (NY Mid-Session Reversal Anchor - Alpha), and CAND-G0-070 (Sustained Momentum Micro-Structure Failure - Alpha). Generated zero State candidates. G1 NOT EXECUTED.
