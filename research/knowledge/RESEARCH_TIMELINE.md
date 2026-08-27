@@ -401,3 +401,11 @@ The surviving corpus now records **six closed research lines** — Mean Reversio
 ## 75. G1 Economic Plausibility Screen V20 (2026-08-27)
 
 - **Record:** V20 G1 completed. CAND-059 (First Retest) proved massively superior to its counterfactual (Second Retest), confirming the informational value of SMC Freshness, but failed absolute economics (negative net expectancy). CAND-060 (NY Close) and CAND-061 (Rejection Sequence) both failed due to extremely low evidence availability (N=5 and N=2) and negative expectancy. Zero standalone G2 promotions. Zero component candidates added. Next Action: Return to G0.
+
+## 76. V20 Closure (2026-08-27)
+
+- **Record:** V20 formally closed. Established the new governance distinction between ALPHA/EVENT ARTIFACTS (must possess standalone expectancy) and STATE/CONDITION ARTIFACTS (informational value without standalone profitability). CAND-059 was preserved as the factory's first State Artifact (RESEARCH-VALIDATED STATE INFORMATION).
+
+## 77. G0 Candidate Generation V21 (2026-08-27)
+
+- **Record:** V21 G0 completed. Generated explicitly separated Alpha and State candidates. Promoted CAND-G0-062 (Late-Session Trend Exhaustion Fade - Alpha), CAND-G0-063 (Asian Session Volatility Compression - State), and CAND-G0-064 (Structural Acceptance Time-State - State). G1 NOT EXECUTED.

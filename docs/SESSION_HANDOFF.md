@@ -38,7 +38,7 @@
 > > CAND-015 — 7-day paper observation in progress
 >
 > ### ACTIVE RESEARCH TRACK
-> > COMPONENT REGISTER UPDATE / RETURN TO G0
+> > G1 ECONOMIC PLAUSIBILITY SCREEN — V21 (Pending: CAND-062, 063, 064)
 >
 > ### PROTECTED
 > > CAND-015 frozen definition and running observation
@@ -289,6 +289,7 @@ Recorded: V2 computation completed and wrote all result artifacts before the ter
 - Research remains separated from runtime.
 
 ## 15. Current Project Position
+## 17. Current Project Position
 
 - **COMPLETED / FROZEN:** BOE Core Phases 1–6; Phase 7 Deployment Layer (incl. AMEND-1-ratified temporal orchestration); Phase 8 Research Industrialization; Phase 9 Operational Governance; Experiment Orchestration V1; Research Execution Context V1; Dataset Foundation V1; Scientific Hypothesis Evaluator V1; Validated Strategy Packaging V1; **Strategy Assembly V1**.
 - **QuantForge engine:** COMPLETE / FROZEN.
@@ -300,9 +301,9 @@ Recorded: V2 computation completed and wrote all result artifacts before the ter
 - **Session-Anchored Range Expansion (DISC-024):** CLOSED — CONTRADICTED.
 - **Liquidity Sweep / Reversal (DISC-025):** CLOSED — ECONOMIC TRANSLATION NON-VIABLE.
 - **Opening Range Breakout (ORD / DISC-026):** SCIENTIFICALLY SUPPORTED — ECONOMIC TRANSLATION CLOSED AS NON-VIABLE FOR REGISTERED XAGUSD OBJECT.
-- **CURRENT MILESTONE:** V20 G1 CLOSURE / COMPONENT REGISTER UPDATE.
+- **CURRENT MILESTONE:** G1 ECONOMIC PLAUSIBILITY SCREEN (V21).
 - **CRITICAL PATH / BLOCKER:** None.
-- **NEXT LEGITIMATE TASK:** **COMPONENT REGISTER UPDATE / RETURN TO G0**. V20 G1 completed. All candidates (CAND-059, CAND-060, CAND-061) failed. Zero components added. G2 NOT EXECUTED. Return to G0 Candidate Generation for V21.
+- **NEXT LEGITIMATE TASK:** **G1 ECONOMIC PLAUSIBILITY SCREEN** for V21 candidates (CAND-062, CAND-063, CAND-064). V20 is closed. V21 G0 candidate-generation cycle completed. G1 NOT EXECUTED.
 
 ## 16. Explicitly Forbidden Work
 
