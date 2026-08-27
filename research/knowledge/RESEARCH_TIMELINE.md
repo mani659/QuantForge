@@ -460,4 +460,24 @@ The surviving corpus now records **six closed research lines** — Mean Reversio
 
 ## 90. Rare-Event Market Feed Remediation (2026-08-27)
 
-- **Record:** Refactored the rare-event runner to consume a clean `MarketDataFeed` interface and implemented a read-only MT5 adapter (`mt5_market_feed.py`). Enforced explicit `--mode forward` and blocked synthetic data from triggering forward mode. Tests verify strict isolation of `PaperExecutionFirewall` and proper handling of `DATA_STALE` states to avoid fabricating `NO_EVENT` records. The MT5 verification smoke test was executed but live ticks were unavailable for USATECHIDXUSD in the terminal. **Status:** REAL MARKET FEED NOT VERIFIED — QUALIFICATION BLOCKED. Observation is fully provisioned but awaits a live MT5 terminal environment.
+- **Record:** Refactored the rare-event runner to consume a clean `MarketDataFeed` interface and implemented a read-only MT5 adapter (`mt5_market_feed.py`). Enforced explicit `--mode forward` and blocked synthetic data from triggering forward mode. Tests verify strict isolation of `PaperExecutionFirewall` and proper handling of `DATA_STALE` states to avoid fabricating `NO_EVENT` records. The MT5 verification smoke test was executed but live ticks were unavailable for `USATECHIDXUSD`. **Status:** REAL MARKET FEED NOT VERIFIED — QUALIFICATION BLOCKED. Observation is fully provisioned but awaits a live MT5 terminal environment.
+
+## 91. Rare-Event MT5 Read-Only Market Data Environment Diagnostic (2026-08-27)
+
+- **Record:** Diagnosed the root cause of the missing `USATECHIDXUSD` feed data. Verified that MT5 and Python IPC are functioning correctly. Confirmed the local MT5 terminal is connected to an Exness trial server that does not provide `USATECHIDXUSD`. It offers alias instruments (e.g., `USTECm`), but the frozen contracts enforce strict instrument identity matching. **Status:** REAL MARKET FEED NOT VERIFIED — QUALIFICATION BLOCKED. The environment requires explicit architectural authorization to implement a symbol alias map or provision the correct broker environment before qualification can proceed.
+
+## 92. Frozen Instrument Identity / MT5 Symbol Mapping Audit (2026-08-27)
+
+- **Record:** Conducted an evidence-based audit of candidate mapping aliases (`USTECm`, `USTEC_x100m`) for the missing `USATECHIDXUSD` symbol. Determined that while price translation is deterministic, the exact Friday closing behavior and Month-End 16:00 ET closing imbalance mechanics of Exness CFDs cannot be guaranteed to perfectly match the frozen research dataset without historical verification. **Status:** MAPPING NOT SAFE — QUALIFICATION BLOCKED.
+
+## 93. Explicit Frozen-Instrument Normalization Review (2026-08-27)
+
+- **Record:** Conducted a formal governance review to re-evaluate the previous mapping rejection. Confirmed through direct MT5 M1 bar extraction that Exness `USTECm` provides dense, continuous quoting at the critical event thresholds (Fridays through 15:45 ET and month-ends through 16:00 ET). Established that all CAND-024 and CAND-035 event logic is structurally invariant under deterministic 1:1 price scaling. **Status:** APPROVED WITH NORMALIZATION. Explicit USTECm environment mapping approved for future CAND-024/CAND-035 forward qualification (Mapping ID: `MAPPING:USATECHIDXUSD->EXNESS:USTECM:1.0`). Historical candidate identities and contract hashes remain frozen; `USTECm` is declared strictly as an authorized execution environment representation.
+
+## 94. Rare-Event Forward Qualification Launch & Integrity Check (2026-08-27)
+
+- **Record:** Explicitly launched the CAND-024 and CAND-035 rare-event qualification daemon leveraging the approved `MAPPING:USATECHIDXUSD->EXNESS:USTECM:1.0`. Following the launch, conducted a read-only post-launch integrity check. Verified exactly one running process, correct telemetry logging (broker_symbol, logical_symbol, mapping_id), unchanged candidate/engine logic, synthetic paper-only isolation, and absence of data failures recorded as NO_EVENT. **Status:** POST-LAUNCH INTEGRITY CHECK PASSED. Qualification track officially frozen and moved into protected forward observation status.
+
+## 95. Unified Forward Supervisor Implementation (2026-08-27)
+
+- **Record:** Successfully migrated the ad-hoc rare event runner into a persistent, unified Windows Forward Supervisor (`quantforge_forward_supervisor.py`). Implemented a shared MT5 read-only connection supporting isolated module registries, independent event/outcome ledgers per candidate, graceful shutdown signaling, singleton `msvcrt` locking, and a Windows Scheduled Task configuration. Legacy ledgers were migrated seamlessly into `runtime/forward/history/` to preserve historical provenance, and the qualification clock continuity was strictly preserved. **Status:** UNIFIED FORWARD SUPERVISOR ACTIVE. CAND-024 and CAND-035 are in active protected observation. CAND-015 remains PROTECTED / EXTERNAL.

@@ -38,7 +38,8 @@
 > > CAND-015 — 7-day paper observation in progress
 >
 > ### ACTIVE RESEARCH TRACK
-> > RARE-EVENT MARKET FEED REMEDIATION COMPLETE / QUALIFICATION BLOCKED
+> > UNIFIED FORWARD SUPERVISOR ACTIVE
+> > CAND-024 + CAND-035 FORWARD OBSERVATION ACTIVE
 >
 > ### PROTECTED
 > > CAND-015 frozen definition and running observation
@@ -301,9 +302,9 @@ Recorded: V2 computation completed and wrote all result artifacts before the ter
 - **Session-Anchored Range Expansion (DISC-024):** CLOSED — CONTRADICTED.
 - **Liquidity Sweep / Reversal (DISC-025):** CLOSED — ECONOMIC TRANSLATION NON-VIABLE.
 - **Opening Range Breakout (ORD / DISC-026):** SCIENTIFICALLY SUPPORTED — ECONOMIC TRANSLATION CLOSED AS NON-VIABLE FOR REGISTERED XAGUSD OBJECT.
-- **CURRENT MILESTONE:** RARE-EVENT MARKET FEED REMEDIATION.
-- **CRITICAL PATH / BLOCKER:** Real market feed infrastructure is built and tested, but live tick verification failed (Terminal returned no ticks for USATECHIDXUSD). Observation remains BLOCKED.
-- **NEXT LEGITIMATE TASK:** **MANUAL MT5 FEED VERIFICATION**. Ensure MT5 terminal is properly configured and market is open for USATECHIDXUSD, then rerun feed verification. G0, G1, G2, and System Assembly remain SUSPENDED.
+- **CURRENT MILESTONE:** UNIFIED FORWARD SUPERVISOR IMPLEMENTATION
+- **CRITICAL PATH / BLOCKER:** NONE. A unified persistent forward supervisor was successfully deployed. CAND-024 and CAND-035 are now actively executing paper-only observations from a shared MT5 market-data connection with independent module ledgers. CAND-015 remains PROTECTED / EXTERNAL.
+- **NEXT LEGITIMATE TASK:** **OBSERVE ONLY**. Await event qualification thresholds (3 minimum, 5 target per candidate). Do not modify logic. Research discovery (G0-G3) and System Assembly remain PAUSED/SUSPENDED. The forward supervisor is intended to run autonomously via Windows Task Scheduler. Operator controls are `status_quantforge_forward.bat`, `stop_quantforge_forward.bat`, and `run_quantforge_forward.bat`.
 
 ## 16. Explicitly Forbidden Work
 
