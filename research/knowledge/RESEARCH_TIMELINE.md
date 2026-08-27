@@ -413,3 +413,11 @@ The surviving corpus now records **six closed research lines** — Mean Reversio
 ## 78. G1 Economic Plausibility Screen V21 (2026-08-27)
 
 - **Record:** V21 G1 completed. Evaluated separated Alpha and State candidates. CAND-062 (Late-Session Fade) failed absolute expectancy and counterfactual tests. CAND-063 (Asian Compression State) was non-adjudicable (N=2) for the specific target event combo. CAND-064 (Structural Acceptance Time-State) showed massive separation (Treatment N=2302, Counterfactual N=1564) but strongly falsified the hypothesis: a brief 'Sweep' makes a level dramatically safer to retest than a sustained 'Acceptance'. All candidates failed G1. Zero standalone G2 promotions. Zero components added. Next Action: Return to G0.
+
+## 79. V21 Closure (2026-08-27)
+
+- **Record:** V21 formally closed. CAND-064's falsification of the "Acceptance > Sweep" hypothesis was accepted. The inverse observation ("Sweep > Acceptance") was correctly quarantined as a research observation, enforcing the governance rule that Falsified Hypothesis ≠ Validated Inverse Hypothesis.
+
+## 80. G0 Candidate Generation V22 (2026-08-27)
+
+- **Record:** V22 G0 completed. Focused on constructing completely new hypotheses investigating structural sweeps, rather than just inverting CAND-064. Promoted CAND-G0-065 (Structural Sweep Depth Rejection State - State), CAND-G0-066 (Fresh Sweep vs Mitigated Sweep - Alpha), and CAND-G0-067 (Cross-Session Reference Sweep State - State). G1 NOT EXECUTED.
