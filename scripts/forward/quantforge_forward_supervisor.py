@@ -71,9 +71,14 @@ class Supervisor:
             try:
                 with open(self.lock_file_path, "r") as f:
                     data = json.load(f)
-                    print(f"SUPERVISOR ALREADY RUNNING — PID {data.get('pid', 'UNKNOWN')}")
+                    print(f"QUANTFORGE FORWARD RUNNER ALREADY RUNNING")
+                    print(f"PID: {data.get('pid', 'UNKNOWN')}")
+                    print(f"Started: {data.get('startup_utc', 'UNKNOWN')}")
+                    print()
+                    print("Use status_quantforge_forward.bat to check status.")
+                    print("Use stop_quantforge_forward.bat to stop.")
             except:
-                print("SUPERVISOR ALREADY RUNNING — UNABLE TO READ PID")
+                print("QUANTFORGE FORWARD RUNNER ALREADY RUNNING — UNABLE TO READ PID")
             if self.lock_fd:
                 self.lock_fd.close()
             return False
@@ -137,15 +142,30 @@ class Supervisor:
         if not self.acquire_lock():
             sys.exit(1)
             
-        print(f"QuantForge Unified Forward Supervisor v{self.version} started.")
+        print(f"QuantForge Forward Runner v{self.version}")
+        print(f"PID: {os.getpid()}")
         self.running = True
         self.save_status("STARTING")
 
         if self.mode == "forward" or self.mode == "verify-feed":
             if not self.feed.initialize():
                 print("STARTUP BLOCKED: MT5 initialization failed.")
+                print("Ensure MetaTrader 5 is installed and configured.")
                 self.release_lock()
                 sys.exit(1)
+            
+            term_info = self.feed.terminal_info()
+            print(f"MT5: CONNECTED")
+            print(f"Broker: {term_info.get('broker', 'UNKNOWN')}")
+            print(f"Server: {term_info.get('server', 'UNKNOWN')}")
+            print(f"Symbol: USTECm (USATECHIDXUSD)")
+            print(f"Modules: {len(self.modules)}")
+            for m in self.modules:
+                print(f"  - {m.candidate_id}: ACTIVE")
+            print()
+            print("Runner: RUNNING")
+            print("Press Ctrl+C or use stop_quantforge_forward.bat to stop")
+            print()
 
         if self.mode == "verify-feed":
             self.run_verify_feed()

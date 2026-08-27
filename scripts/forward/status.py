@@ -29,7 +29,7 @@ def print_status():
     if sup_status.get('supervisor_state') == 'RUNNING':
         print(f"PID: {sup_status.get('pid', 'N/A')}")
         
-    print(f"\nMT5:")
+    print(f"\nMT5 (from supervisor telemetry):")
     print(f"{sup_status.get('mt5_connection', 'N/A')}")
     
     print(f"\nBroker:")
