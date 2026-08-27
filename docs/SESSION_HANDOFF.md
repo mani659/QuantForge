@@ -38,10 +38,12 @@
 > > ONE UNIFIED MANUAL LAUNCHER — `run_quantforge_forward.bat`
 > > ONE RUNNER — `quantforge_forward_supervisor.py`
 > > ONE MT5 READ-ONLY FEED — Exness-MT5Trial15 / USTECm
-> > CAND-015 + CAND-024 + CAND-035 under unified runner
+> > CAND-015 + CAND-024 + CAND-035 under unified runner (independent modules)
 > > CAND-015: INTEGRATED via adapter (external engine, semantic unchanged)
 > > Task Scheduler: NOT REQUIRED (manual BAT is canonical entry point)
+> > Event console notifications: DETECTED/CAPTURED/COMPLETED only (quiet otherwise)
 > > Project cleanup completed: obsolete infrastructure pruned (2026-08-27)
+> > End-of-day freeze: runtime stable for overnight observation (2026-08-27)
 >
 > ### ACTIVE RESEARCH TRACK
 > > RARE-EVENT FORWARD TRACK — CANONICAL QUALIFICATION RESUMED (CAND-024, CAND-035)
@@ -50,8 +52,9 @@
 > > Original intended start preserved: `2026-08-27T09:44:58Z`
 > > Valid canonical qualification resume: `2026-08-27T12:05:15Z`
 > > Pre-ratification period classified as INTEGRITY GAP
-> > Supervisor RUNNING (PID 6924), MT5 CONNECTED, both modules ACTIVE
+> > Supervisor RUNNING, MT5 CONNECTED, all 3 modules ACTIVE
 > > Forward qualification now collecting valid evidence
+> > Next research milestone: V24 G0 candidate generation
 >
 > ### PROTECTED / INTEGRATED
 > > CAND-015: adapter-based integration via `cand015_adapter.py`

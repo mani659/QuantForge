@@ -27,6 +27,7 @@ class ForwardModuleWrapper:
         self.outcome_ledger = OutcomeLedger(os.path.join(self.module_dir, "outcome_ledger.jsonl"))
         self.paper = PaperExecutionFirewall(friction=2.0)
         
+        self._last_notified_event_id = None
         self.status_file = os.path.join(self.module_dir, "status.json")
         self.stats = {
             "captured_count": 0,
@@ -65,6 +66,23 @@ class ForwardModuleWrapper:
             json.dump(data, f, indent=2)
         os.replace(temp_file, self.status_file)
         
+    def _notify_event(self, event_type, event_id, detail=""):
+        if self._last_notified_event_id == f"{event_id}:{event_type}":
+            return
+        self._last_notified_event_id = f"{event_id}:{event_type}"
+        contract = self.engine.contract
+        print()
+        print("=" * 60)
+        print(f" QUANTFORGE EVENT {event_type}")
+        print("=" * 60)
+        print(f"Candidate: {self.candidate_id}")
+        print(f"Contract: {contract.candidate_id}:CANONICAL:{contract.hash[:8]}")
+        print(f"Event ID: {event_id}")
+        if detail:
+            print(f"{detail}")
+        print("=" * 60)
+        print()
+
     def process_quote(self, quote, instance_id):
         self.stats["last_evaluation_timestamp"] = quote["utc_timestamp"]
         try:
@@ -74,6 +92,8 @@ class ForwardModuleWrapper:
                 contract = self.engine.contract
                 
                 if event['action'] == "TRIGGER":
+                    self._notify_event("DETECTED", event['event_id'],
+                        f"Time UTC: {quote['utc_timestamp']}")
                     self.event_ledger.record_event({
                         "candidate_id": contract.candidate_id,
                         "contract_version": contract.version,
@@ -92,6 +112,8 @@ class ForwardModuleWrapper:
                     if paper_res['status'] == "PAPER_ENTRY_RECORDED":
                         self.engine.state = "IN_POSITION"
                         self.stats["captured_count"] += 1
+                        self._notify_event("CAPTURED", event['event_id'],
+                            f"Paper Entry: {paper_res['paper_entry_price']}")
                         self.event_ledger.record_event({
                             "candidate_id": contract.candidate_id,
                             "event_id": event['event_id'],
@@ -104,6 +126,8 @@ class ForwardModuleWrapper:
                     paper_res = self.paper.execute_exit(event, quote)
                     if paper_res['status'] == "PAPER_EXIT_RECORDED":
                         self.stats["completed_count"] += 1
+                        self._notify_event("COMPLETED", event['event_id'],
+                            f"Net Result: {paper_res['net_result']}")
                         self.outcome_ledger.record_outcome({
                             "candidate_id": contract.candidate_id,
                             "contract_version": contract.version,
@@ -142,6 +166,7 @@ class Cand015ModuleWrapper:
         self.event_ledger = EventLedger(os.path.join(self.module_dir, "event_ledger.jsonl"))
         self.outcome_ledger = OutcomeLedger(os.path.join(self.module_dir, "outcome_ledger.jsonl"))
         self.paper = PaperExecutionFirewall(friction=2.0)
+        self._last_notified_event_id = None
 
         self.status_file = os.path.join(self.module_dir, "status.json")
         self.stats = {
@@ -179,16 +204,35 @@ class Cand015ModuleWrapper:
             json.dump(data, f, indent=2)
         os.replace(temp_file, self.status_file)
 
+    def _notify_event(self, event_type, event_id, detail=""):
+        if self._last_notified_event_id == f"{event_id}:{event_type}":
+            return
+        self._last_notified_event_id = f"{event_id}:{event_type}"
+        print()
+        print("=" * 60)
+        print(f" QUANTFORGE EVENT {event_type}")
+        print("=" * 60)
+        print(f"Candidate: {self.candidate_id}")
+        print(f"Architectural Note: EXTERNAL_PROTECTED")
+        print(f"Event ID: {event_id}")
+        if detail:
+            print(f"{detail}")
+        print("=" * 60)
+        print()
+
     def process_quote(self, quote, instance_id):
         self.stats["last_evaluation_timestamp"] = quote["utc_timestamp"]
         try:
             signal = self.adapter.process_market_data(quote)
             if signal:
                 self.stats["last_event_timestamp"] = quote["utc_timestamp"]
+                event_id = f"SHOCK_{int(quote['utc_timestamp'])}"
+                self._notify_event("DETECTED", event_id,
+                    f"Time UTC: {quote['utc_timestamp']}")
                 self.event_ledger.record_event({
                     "candidate_id": self.candidate_id,
                     "architectural_note": "EXTERNAL_PROTECTED",
-                    "event_id": f"SHOCK_{int(quote['utc_timestamp'])}",
+                    "event_id": event_id,
                     "instrument": quote['symbol'],
                     "utc_timestamp": quote['utc_timestamp'],
                     "event_state": "EVENT_DETECTED",

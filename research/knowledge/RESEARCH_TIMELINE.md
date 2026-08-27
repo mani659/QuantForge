@@ -497,3 +497,7 @@ The surviving corpus now records **six closed research lines** — Mean Reversio
 ## 99. Project Cleanup and Obsolete Infrastructure Pruning (2026-08-27)
 
 - **Record:** Comprehensive cleanup of QuantForge repository. Removed root scratch .py (4 files), root .txt dumps (3 files), diagnostic scripts (2), stale logs (2), research/scratch/ (11 files), empty directories (4), __pycache__ (50 dirs, ~4 MB), .pytest_cache (2 dirs). Removed superseded infrastructure: run_cand015_forward.bat, install_quantforge_forward_task.bat, rare_event_runner.py, run_long_observation.py. Task Scheduler removal deferred (requires Administrator). ALL authoritative research preserved (271+ entries). ALL active forward runtime preserved. Tests: 130/130 pass. Supervisor RUNNING throughout. V24 readiness: READY. **Status:** PROJECT CLEANUP COMPLETED. OBSOLETE INFRASTRUCTURE PRUNED. UNIFIED MANUAL FORWARD RUNNER REMAINS CANONICAL.
+
+## 100. End-of-Day Forward Runtime Freeze (2026-08-27)
+
+- **Record:** Forward runtime stabilized for overnight observation. Added minimal event console notifications (DETECTED/CAPTURED/COMPLETED) with deduplication. CAND-015 adapter interface repaired (config + engine.state). 3 modules running under unified observer. One shared MT5 read-only connection. Qualification timeline preserved. Event counters: CAND-024 0/3/5, CAND-035 0/3/5. Next milestone: V24 G0 candidate generation. **Status:** FORWARD RUNTIME FROZEN FOR OVERNIGHT OBSERVATION. ONE RUNNER, ONE MT5 FEED, THREE INDEPENDENT MODULES.
