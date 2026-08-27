@@ -1207,3 +1207,21 @@ G1/G2 showed positive descriptive economics in the registered FAVORABLE subset, 
 - 52/52 forward runtime tests pass (including 3 new CAND-015 adapter tests).
 - Architecture: ONE BAT → ONE RUNNER → ONE MT5 FEED → THREE INDEPENDENT OBSERVERS.
 - No signal combination. No portfolio logic. No inter-module state.
+
+## DISC-098 — Project Cleanup and Obsolete Infrastructure Pruning
+
+**Relationship:** Repository Maintenance & Project Hygiene.
+
+**Status:** CLEANUP COMPLETED — OBSOLETE INFRASTRUCTURE PRUNED.
+
+**Outcome:**
+- Comprehensive cleanup of QuantForge repository before V24 research cycle.
+- Removed: root scratch .py (4 files), root .txt dumps (3 files), diagnostic scripts (2), stale logs (2), research/scratch/ (11 files), empty directories (4), __pycache__ (50 dirs, ~4 MB), .pytest_cache (2 dirs).
+- Removed superseded infrastructure: run_cand015_forward.bat, install_quantforge_forward_task.bat, rare_event_runner.py, run_long_observation.py.
+- Task Scheduler removal deferred (requires Administrator). Task is Ready but never ran. Supervisor is manually started.
+- ALL authoritative research preserved (271+ entries in output/research_discovery/).
+- ALL active forward runtime preserved (supervisor, engines, ledgers, status).
+- ALL governance preserved (SESSION_HANDOFF, discovery database, timeline).
+- Tests: 130/130 pass (52 forward + 78 contract).
+- Supervisor RUNNING (PID 6924) throughout cleanup. No interruption.
+- V24 readiness: READY.

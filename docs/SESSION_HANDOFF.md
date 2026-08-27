@@ -41,6 +41,7 @@
 > > CAND-015 + CAND-024 + CAND-035 under unified runner
 > > CAND-015: INTEGRATED via adapter (external engine, semantic unchanged)
 > > Task Scheduler: NOT REQUIRED (manual BAT is canonical entry point)
+> > Project cleanup completed: obsolete infrastructure pruned (2026-08-27)
 >
 > ### ACTIVE RESEARCH TRACK
 > > RARE-EVENT FORWARD TRACK — CANONICAL QUALIFICATION RESUMED (CAND-024, CAND-035)
