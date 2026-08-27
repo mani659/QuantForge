@@ -1015,3 +1015,17 @@ G1/G2 showed positive descriptive economics in the registered FAVORABLE subset, 
 - Defined the "Rare-Event Validation Doctrine" (event-counts vs calendar duration). 
 - Decided to suspend G0 and G1 to pursue RARE-EVENT COMPONENT QUALIFICATION for CAND-024 and CAND-035.
 - System Assembly (S0) remains NOT YET EXECUTABLE.
+
+## DISC-085 — Rare-Event Component Forward Qualification Protocol
+
+**Relationship:** Governance Architecture & Forward Validation.
+
+**Status:** Protocol defined and authorized.
+
+**Outcome:** 
+- Formalized the event-count-based forward qualification protocol for CAND-024 (Friday De-Risking) and CAND-035 (Month-End Imbalance).
+- Reconstructed their exact frozen historical identities to prevent semantic drift during forward observation.
+- Established a minimum threshold of 3 independent forward events and a target of 5 forward events. 
+- Defined strict paper execution metrics, identity matching rules, and failure conditions. 
+- Verified that CAND-042, CAND-059, and System Assembly remain expressly excluded from this track. 
+- Authorized the explicit launch of the qualification track, pending the provisioning of dedicated forward-runner infrastructure.

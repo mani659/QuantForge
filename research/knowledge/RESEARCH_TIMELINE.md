@@ -441,3 +441,7 @@ The surviving corpus now records **six closed research lines** — Mean Reversio
 ## 85. V23 Closure & Component/State Qualification Readiness Review (2026-08-27)
 
 - **Record:** V23 formally closed. Conducted a repository-wide evidence audit to determine if QuantForge should return to G0 or begin formally qualifying existing components. Determined that CAND-024 and CAND-035 possess massive historical expectancy and have passed scientific counterfactual validation, failing G2 promotion exclusively on calendar frequency. Defined the "Rare-Event Validation Doctrine" (event-counts vs calendar duration). Decided to suspend G0 and G1 to pursue RARE-EVENT COMPONENT QUALIFICATION for CAND-024 and CAND-035. System Assembly (S0) remains NOT YET EXECUTABLE.
+
+## 86. Rare-Event Component Forward Qualification Protocol (2026-08-27)
+
+- **Record:** Formalized the event-count-based forward qualification protocol for CAND-024 (Friday De-Risking) and CAND-035 (Month-End Imbalance). Reconstructed their exact frozen identities to prevent semantic drift. Established a minimum threshold of 3 independent forward events and a target of 5 forward events. Defined strict paper execution metrics, identity matching rules, and failure conditions. Verified that CAND-042, CAND-059, and System Assembly remain expressly excluded. Authorized the explicit launch of the qualification track, pending dedicated infrastructure provision.
