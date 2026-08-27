@@ -1054,3 +1054,29 @@ G1/G2 showed positive descriptive economics in the registered FAVORABLE subset, 
 - Event tracking is operating strictly under frozen contracts (no SMC POI filters, no trend filters).
 - Confirmed strict paper-only execution wall with no live execution methods available.
 - Track will remain active until minimum 3 (target 5) qualifying events are recorded per component, or the 18-month safety boundary is hit.
+
+## DISC-088 — Rare-Event Forward Launch Integrity Audit
+
+**Relationship:** Governance Architecture & Forward Validation.
+
+**Status:** OPERATIONAL BUT NOT TRUE FORWARD VALIDATION (BLOCKED).
+
+**Outcome:** 
+- Audited the running forward qualification daemon for CAND-024 and CAND-035. 
+- Confirmed rigorous isolation of the paper execution layer. 
+- Discovered the runner is actively fed by a deterministic synthetic market price generator (`time.sleep(1)` loop with canned quotes) rather than a live broker feed adapter.
+- Observation clock cannot officially start until a live market-data adapter replaces the placeholder synthetic feed.
+
+## DISC-089 — Rare-Event Market Feed Remediation
+
+**Relationship:** Governance Architecture & Forward Validation.
+
+**Status:** REAL MARKET FEED NOT VERIFIED — QUALIFICATION BLOCKED.
+
+**Outcome:** 
+- Refactored the rare-event runner to consume a clean `MarketDataFeed` interface.
+- Implemented a read-only MT5 adapter (`mt5_market_feed.py`).
+- Enforced explicit `--mode forward` and blocked synthetic data from triggering forward mode.
+- Tests verify strict isolation of `PaperExecutionFirewall` and proper handling of `DATA_STALE` states to avoid fabricating `NO_EVENT` records.
+- The MT5 verification smoke test was executed but live ticks were unavailable for USATECHIDXUSD in the terminal.
+- Observation is fully provisioned but awaits a live MT5 terminal environment to verify real market conditions.

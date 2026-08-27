@@ -12,8 +12,10 @@ from cand_035_engine import Cand035Engine
 from paper_execution import PaperExecutionFirewall
 
 class RareEventRunner:
-    def __init__(self):
+    def __init__(self, feed, mode):
         self.running = False
+        self.mode = mode
+        self.feed = feed
         self.instance_id = f"runner_{int(time.time())}"
         
         # Isolation directory
@@ -34,38 +36,52 @@ class RareEventRunner:
         print("SIGINT received. Safely shutting down.")
         self.running = False
 
-    def run(self, mock_feed=None):
+    def run(self):
         self.running = True
         signal.signal(signal.SIGINT, self.handle_sigint)
         
         # State Reconcile stub
-        print(f"[{self.instance_id}] Reconciling state from ledgers...")
+        print(f"[{self.instance_id}] Reconciling state from ledgers in mode {self.mode}...")
         
         while self.running:
             try:
-                if mock_feed:
-                    quote = mock_feed.get_next_quote()
-                    if quote is None:
-                        break # End of mock feed
-                else:
-                    # Fake sleep for live placeholder
-                    time.sleep(1)
-                    quote = {
-                        "utc_timestamp": time.time(),
-                        "symbol": "USATECHIDXUSD",
-                        "bid": 15000.0,
-                        "ask": 15002.0
-                    }
+                conn_state = self.feed.connection_state()
+                if conn_state != "CONNECTED":
+                    self.health.mark_disconnect()
+                    print(f"Feed disconnected/invalid. Backing off {self.reconnect_delay}s")
+                    time.sleep(self.reconnect_delay)
+                    self.reconnect_delay = min(self.reconnect_delay * 2, self.max_reconnect_delay)
+                    continue
+                    
+                quote_res = self.feed.latest_quote("USATECHIDXUSD")
+                
+                if quote_res.get("status") != "DATA_FRESH":
+                    status = quote_res.get("status", "FEED_UNAVAILABLE")
+                    # Do NOT treat stale/disconnected as NO_EVENT. Just skip evaluation.
+                    print(f"Data not fresh ({status}). Skipping evaluation.")
+                    time.sleep(self.reconnect_delay)
+                    self.health.mark_disconnect()
+                    self.reconnect_delay = min(self.reconnect_delay * 2, self.max_reconnect_delay)
+                    continue
+                    
+                # Format to match existing quote dict expectation downstream
+                quote = {
+                    "utc_timestamp": quote_res['source_timestamp'],
+                    "symbol": quote_res['symbol'],
+                    "bid": quote_res['bid'],
+                    "ask": quote_res['ask']
+                }
                     
                 self.reconnect_delay = 1 # Reset on successful data
+                self.health.mark_reconnect()
                 self._process_quote(quote)
+                time.sleep(1) # Base polling rate
                 
             except Exception as e:
                 self.health.mark_disconnect()
                 print(f"Data error: {e}. Backing off {self.reconnect_delay}s")
                 time.sleep(self.reconnect_delay)
                 self.reconnect_delay = min(self.reconnect_delay * 2, self.max_reconnect_delay)
-                self.health.mark_reconnect()
                 
         print(f"[{self.instance_id}] Runner shut down cleanly.")
 
@@ -140,31 +156,57 @@ class RareEventRunner:
 
 if __name__ == "__main__":
     import argparse
+    from mt5_market_feed import MT5MarketFeed
+    
     parser = argparse.ArgumentParser()
-    parser.add_argument("--smoke-test", action="store_true")
+    parser.add_argument("--mode", choices=["test", "smoke", "forward", "verify-feed"], required=True)
     args = parser.parse_args()
     
-    if args.smoke_test:
-        print("Running smoke test...")
-        runner = RareEventRunner()
-        # Mock feed for 3 ticks
+    if args.mode == "smoke" or args.mode == "test":
+        print(f"Running {args.mode} mode with synthetic feed...")
+        # Mock feed for testing
         class MockFeed:
             def __init__(self):
                 self.ticks = [
-                    {"utc_timestamp": 1700000000, "symbol": "USATECHIDXUSD", "bid": 15000, "ask": 15002},
-                    {"utc_timestamp": 1700000060, "symbol": "USATECHIDXUSD", "bid": 15010, "ask": 15012},
-                    {"utc_timestamp": 1700000120, "symbol": "USATECHIDXUSD", "bid": 15020, "ask": 15022}
+                    {"status": "DATA_FRESH", "source_timestamp": 1700000000, "symbol": "USATECHIDXUSD", "bid": 15000, "ask": 15002},
+                    {"status": "DATA_FRESH", "source_timestamp": 1700000060, "symbol": "USATECHIDXUSD", "bid": 15010, "ask": 15012},
+                    {"status": "DATA_FRESH", "source_timestamp": 1700000120, "symbol": "USATECHIDXUSD", "bid": 15020, "ask": 15022}
                 ]
                 self.idx = 0
-            def get_next_quote(self):
+            def connection_state(self):
                 if self.idx < len(self.ticks):
-                    t = self.ticks[self.idx]
-                    self.idx += 1
-                    return t
-                return None
+                    return "CONNECTED"
+                return "DISCONNECTED"
+            def latest_quote(self, symbol):
+                t = self.ticks[self.idx]
+                self.idx += 1
+                return t
                 
-        runner.run(mock_feed=MockFeed())
-    else:
+        runner = RareEventRunner(feed=MockFeed(), mode=args.mode)
+        runner.run()
+        
+    elif args.mode == "verify-feed":
+        print("Running read-only MT5 feed verification...")
+        feed = MT5MarketFeed()
+        if not feed.initialize():
+            print("MARKET FEED REMEDIATION BLOCKED: Could not initialize MT5.")
+            sys.exit(1)
+            
+        print(f"Connection State: {feed.connection_state()}")
+        quote = feed.latest_quote("USATECHIDXUSD")
+        print(f"Latest Quote: {quote}")
+        bar = feed.latest_completed_bar("USATECHIDXUSD", "M1")
+        print(f"Completed M1 Bar: {bar}")
+        feed.shutdown()
+        print("Read-only verification completed safely. No observation launched.")
+        
+    elif args.mode == "forward":
+        # Forward strictly requires real feed
         print("Launching Rare-Event Forward Observation Mode...")
-        runner = RareEventRunner()
+        feed = MT5MarketFeed()
+        if not feed.initialize():
+            print("STARTUP FAILURE - INVALID FEED MODE / DISCONNECTED")
+            sys.exit(1)
+            
+        runner = RareEventRunner(feed=feed, mode="forward")
         runner.run()

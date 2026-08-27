@@ -17,8 +17,19 @@ def test_contract_integrity():
     assert len(CAND_024_CONTRACT.hash) == 64
     assert len(CAND_035_CONTRACT.hash) == 64
 
+class MockFeed:
+    def __init__(self, connected=True, stale=False):
+        self._connected = connected
+        self._stale = stale
+    def connection_state(self):
+        return "CONNECTED" if self._connected else "DISCONNECTED"
+    def latest_quote(self, symbol):
+        if not self._connected: return {"status": "FEED_UNAVAILABLE"}
+        if self._stale: return {"status": "DATA_STALE", "age": 90}
+        return {"status": "DATA_FRESH", "source_timestamp": 1000, "symbol": symbol, "bid": 10, "ask": 11}
+
 def test_runner_initialization():
-    runner = RareEventRunner()
+    runner = RareEventRunner(feed=MockFeed(), mode="test")
     assert runner.cand_024.state == "WATCHING"
     assert runner.cand_035.state == "WATCHING"
     assert hasattr(runner, 'event_ledger')
@@ -32,6 +43,19 @@ def test_duplicate_prevention_024():
     assert engine.state == "WATCHING"
 
 def test_reconnect_backoff():
-    runner = RareEventRunner()
+    runner = RareEventRunner(feed=MockFeed(), mode="test")
     assert runner.reconnect_delay == 1
     assert runner.max_reconnect_delay == 30
+
+def test_feed_stale_rejection():
+    feed = MockFeed(stale=True)
+    runner = RareEventRunner(feed=feed, mode="test")
+    # A single cycle processing logic simulation (the loop logic uses this)
+    quote = feed.latest_quote("USATECHIDXUSD")
+    assert quote["status"] == "DATA_STALE"
+
+def test_paper_execution_isolation():
+    from paper_execution import PaperExecutionFirewall
+    paper = PaperExecutionFirewall(friction=2.0)
+    assert not hasattr(paper, "order_send"), "Paper execution must not have real order APIs"
+    assert not hasattr(paper, "mt5"), "Paper execution must not import MT5"

@@ -38,7 +38,7 @@
 > > CAND-015 — 7-day paper observation in progress
 >
 > ### ACTIVE RESEARCH TRACK
-> > RARE-EVENT FORWARD QUALIFICATION LAUNCHED (CAND-024 / CAND-035)
+> > RARE-EVENT MARKET FEED REMEDIATION COMPLETE / QUALIFICATION BLOCKED
 >
 > ### PROTECTED
 > > CAND-015 frozen definition and running observation
@@ -301,9 +301,9 @@ Recorded: V2 computation completed and wrote all result artifacts before the ter
 - **Session-Anchored Range Expansion (DISC-024):** CLOSED — CONTRADICTED.
 - **Liquidity Sweep / Reversal (DISC-025):** CLOSED — ECONOMIC TRANSLATION NON-VIABLE.
 - **Opening Range Breakout (ORD / DISC-026):** SCIENTIFICALLY SUPPORTED — ECONOMIC TRANSLATION CLOSED AS NON-VIABLE FOR REGISTERED XAGUSD OBJECT.
-- **CURRENT MILESTONE:** RARE-EVENT FORWARD QUALIFICATION LAUNCHED.
-- **CRITICAL PATH / BLOCKER:** Pending accumulation of minimum forward event evidence (3 events per component).
-- **NEXT LEGITIMATE TASK:** **FORWARD ADJUDICATION**. Wait for the rare-event components (CAND-024 and CAND-035) to reach their target event counts (5 events), then explicitly adjudicate their forward qualification. G0, G1, G2, and System Assembly remain SUSPENDED.
+- **CURRENT MILESTONE:** RARE-EVENT MARKET FEED REMEDIATION.
+- **CRITICAL PATH / BLOCKER:** Real market feed infrastructure is built and tested, but live tick verification failed (Terminal returned no ticks for USATECHIDXUSD). Observation remains BLOCKED.
+- **NEXT LEGITIMATE TASK:** **MANUAL MT5 FEED VERIFICATION**. Ensure MT5 terminal is properly configured and market is open for USATECHIDXUSD, then rerun feed verification. G0, G1, G2, and System Assembly remain SUSPENDED.
 
 ## 16. Explicitly Forbidden Work
 

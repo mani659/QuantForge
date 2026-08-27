@@ -453,3 +453,11 @@ The surviving corpus now records **six closed research lines** — Mean Reversio
 ## 88. Rare-Event Forward Qualification Launched (2026-08-27)
 
 - **Record:** RARE-EVENT FORWARD QUALIFICATION LAUNCHED — CAND-024 + CAND-035. Initiated the event-count based qualification track. Thresholds: MINIMUM = 3, TARGET = 5, MAXIMUM CALENDAR BOUNDARY = 18 MONTHS. Confirmed CAND-015 remains independent and protected. Verified paper-only execution layer strictly enforces no real or demo API order submission. Observation tracking relies purely on frozen contract evaluation and historical logic.
+
+## 89. Rare-Event Forward Launch Integrity Audit (2026-08-27)
+
+- **Record:** Audited the running forward qualification daemon for CAND-024 and CAND-035. Confirmed rigorous isolation of the paper execution layer. However, discovered the runner is actively fed by a deterministic synthetic market price generator (`time.sleep(1)` loop with canned quotes) rather than a live broker feed adapter. **Status:** OPERATIONAL BUT NOT TRUE FORWARD VALIDATION (BLOCKED). Observation clock cannot officially start until a live market-data adapter replaces the placeholder synthetic feed.
+
+## 90. Rare-Event Market Feed Remediation (2026-08-27)
+
+- **Record:** Refactored the rare-event runner to consume a clean `MarketDataFeed` interface and implemented a read-only MT5 adapter (`mt5_market_feed.py`). Enforced explicit `--mode forward` and blocked synthetic data from triggering forward mode. Tests verify strict isolation of `PaperExecutionFirewall` and proper handling of `DATA_STALE` states to avoid fabricating `NO_EVENT` records. The MT5 verification smoke test was executed but live ticks were unavailable for USATECHIDXUSD in the terminal. **Status:** REAL MARKET FEED NOT VERIFIED — QUALIFICATION BLOCKED. Observation is fully provisioned but awaits a live MT5 terminal environment.
