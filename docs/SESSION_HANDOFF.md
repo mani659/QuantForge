@@ -38,7 +38,7 @@
 > > CAND-015 — 7-day paper observation in progress
 >
 > ### ACTIVE RESEARCH TRACK
-> > COMPONENT REGISTER UPDATE / RETURN TO G0
+> > G1 ECONOMIC PLAUSIBILITY SCREEN — V19 (Pending: CAND-056, 057, 058)
 >
 > ### PROTECTED
 > > CAND-015 frozen definition and running observation
@@ -300,9 +300,9 @@ Recorded: V2 computation completed and wrote all result artifacts before the ter
 - **Session-Anchored Range Expansion (DISC-024):** CLOSED — CONTRADICTED.
 - **Liquidity Sweep / Reversal (DISC-025):** CLOSED — ECONOMIC TRANSLATION NON-VIABLE.
 - **Opening Range Breakout (ORD / DISC-026):** SCIENTIFICALLY SUPPORTED — ECONOMIC TRANSLATION CLOSED AS NON-VIABLE FOR REGISTERED XAGUSD OBJECT.
-- **CURRENT MILESTONE:** GOVERNANCE AMENDMENT (DUAL-PATH STRATEGY/SYSTEM).
+- **CURRENT MILESTONE:** G1 ECONOMIC PLAUSIBILITY SCREEN (V19).
 - **CRITICAL PATH / BLOCKER:** None.
-- **NEXT LEGITIMATE TASK:** **G0 CANDIDATE GENERATION** (V19). The Dual-Path Strategy and System Governance doctrine has been established. Standalone insufficiency does not automatically disqualify a valid component, but scientifically or economically failed research cannot be rescued by combination. Return to G0 to discover new independent mechanisms.
+- **NEXT LEGITIMATE TASK:** **G1 ECONOMIC PLAUSIBILITY SCREEN** for V19 candidates (CAND-056, CAND-057, CAND-058). V19 G0 candidate-generation cycle completed. G1 NOT EXECUTED. Do NOT automatically assume they are component-qualified.
 
 ## 16. Explicitly Forbidden Work
 

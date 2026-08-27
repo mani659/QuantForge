@@ -381,3 +381,11 @@ The surviving corpus now records **six closed research lines** — Mean Reversio
 ## 70. Dual-Path Strategy & System Governance Amendment (2026-08-27)
 
 - **Record:** Amended the Research Factory V2 doctrine to explicitly support two paths: Path A (Single Killer Strategy) and Path B (Modular Multi-Artifact System). Established that standalone insufficiency does not automatically disqualify a valid component. However, explicitly firewalled System Assembly from being used to rescue scientifically or economically failed research. Defined explicit qualification levels (Component-Candidate, Scientifically Qualified Component, Economically Qualified Component, System-Qualified Component).
+
+## 71. G0 Candidate Generation V19 (2026-08-27)
+
+- **Record:** V19 G0 candidate-generation cycle completed. Deliberately translated SMC concepts into explicitly observable, strictly falsifiable mathematical state transitions. Evaluated candidates on both standalone and component potential. Promoted 3 new candidates: CAND-G0-056 (Post-Sweep Structural Shift Confirmation), CAND-G0-057 (Weekly Opening Gap Fade Exhaustion), and CAND-G0-058 (Large-Range Expansion First Pullback Trap). G1 NOT EXECUTED.
+
+## 72. G1 Economic Plausibility Screen V19 (2026-08-27)
+
+- **Record:** V19 G1 completed. CAND-056 (Structural Shift) demonstrated a Type 1 counterfactual failure; demanding a market structure shift actively degraded the simple sweep mechanism. CAND-057 (Gap Fade Exhaustion) yielded zero frequency due to strict anchor requirement. CAND-058 (First Pullback Trap) was evidence-limited (N=2) due to strict continuous expansion requirement. Zero candidates promoted to G2 or added to Component Register. Next Action: Return to G0.
