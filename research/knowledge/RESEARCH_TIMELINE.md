@@ -397,3 +397,7 @@ The surviving corpus now records **six closed research lines** — Mean Reversio
 ## 74. G0 Candidate Generation V20 (2026-08-27)
 
 - **Record:** V20 G0 completed. Focused on discovering simple, observable economic mechanisms whose intrinsic condition adds information without requiring stacked confirmation filters. Promoted 3 new candidates: CAND-G0-059 (Fresh Structural Break First Retest), CAND-G0-060 (NY Equity Close Imbalance Expansion), and CAND-G0-061 (Consecutive 15-Minute Rejection Sequence). G1 NOT EXECUTED.
+
+## 75. G1 Economic Plausibility Screen V20 (2026-08-27)
+
+- **Record:** V20 G1 completed. CAND-059 (First Retest) proved massively superior to its counterfactual (Second Retest), confirming the informational value of SMC Freshness, but failed absolute economics (negative net expectancy). CAND-060 (NY Close) and CAND-061 (Rejection Sequence) both failed due to extremely low evidence availability (N=5 and N=2) and negative expectancy. Zero standalone G2 promotions. Zero component candidates added. Next Action: Return to G0.
