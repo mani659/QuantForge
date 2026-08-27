@@ -341,3 +341,39 @@ The surviving corpus now records **six closed research lines** — Mean Reversio
 ## 60. V15 G1 Closure & Counterfactual Superiority Doctrine (2026-08-26)
 
 - **Record:** V15 G1 formally closed. Zero new components retained. Established the "Counterfactual Superiority Rule": a highly profitable treatment does not qualify as a valid mechanism artifact if its registered counterfactual is materially more profitable. Mechanism value must be explicitly separated from absolute event economics. Next phase: G0 Candidate Generation (V16) focusing on mechanisms where the condition explicitly adds value relative to a very close counterfactual.
+
+## 61. G0 Candidate Generation V16 (2026-08-27)
+
+- **Record:** V16 G0 candidate-generation cycle completed. Focused strictly on objective economic constraints that change the economic distribution in a predictable way. Promoted 3 new candidates spanning Fixing-Window Liquidity Transfer, Sequential Macro-Release Dislocation, and Cross-Market Lead-Lag Asymmetry families: CAND-G0-047, CAND-G0-048, CAND-G0-049. G1 NOT EXECUTED.
+
+## 62. G1 Economic Plausibility Screen V16 (2026-08-27)
+
+- **Record:** V16 G1 completed. CAND-047 (Fixing-Window Liquidity Transfer) yielded negative expectancy (-43.62 bps mean net) and was outperformed by its counterfactual (-7.04 bps), rendering it INSUFFICIENT. CAND-048 (Sequential Macro-Release Dislocation) and CAND-049 (Cross-Market Lead-Lag Asymmetry) were both INSUFFICIENT due to their strictly defined mechanisms yielding zero events. Zero standalone G2 promotions.
+
+## 63. V16 G1 Closure (2026-08-27)
+
+- **Record:** V16 G1 formally closed. Zero new components retained. Demonstrated that overconstrained mechanism definitions (CAND-048, CAND-049) fail to provide sufficient opportunity frequency for empirical validation, while mechanisms claiming institutional necessity (CAND-047) can easily underperform simple unconstrained chop. Next action: Return to G0 Candidate Generation (V17).
+
+## 64. G0 Candidate Generation V17 (2026-08-27)
+
+- **Record:** V17 G0 candidate-generation cycle completed. Focused strictly on highly observable, mechanism-specific market behaviors where the causal variable itself is directly measurable. Promoted 3 new candidates: CAND-G0-050 (Cash-Session PDH Liquidity Sweep), CAND-G0-051 (Precious Metals Ratio Dislocation), and CAND-G0-052 (Lunch-Window Volatility Contraction Breakout). G1 NOT EXECUTED.
+
+## 65. G1 Economic Plausibility Screen V17 (2026-08-27)
+
+- **Record:** V17 G1 completed. CAND-050 (PDH Liquidity Sweep) produced +26.15 bps mean net but was outperformed by its counterfactual (+39.86 bps), meaning the mechanism actively degrades opportunity. CAND-051 (Ratio Dislocation) yielded zero frequency (N=1). CAND-052 (Lunch Contraction Breakout) passed the counterfactual gate but absolute economics were completely flat (+0.01 bps mean net). Zero standalone G2 promotions. Next action: Return to G0 Candidate Generation.
+
+## 66. V17 G1 Closure (2026-08-27)
+
+- **Record:** V17 G1 formally closed. Zero new components retained. Demonstrated that informational value (filtering chop) does not equal tradeable economic value (sufficient headroom). Next action: V18 G0 Candidate Generation.
+
+## 67. G0 Candidate Generation V18 (2026-08-27)
+
+- **Record:** V18 G0 candidate-generation cycle completed. Focused strictly on candidates demonstrating Counterfactual Superiority AND Economic Headroom AND Sufficient Frequency. Promoted 3 new candidates: CAND-G0-053 (Friday Cash-Close Settlement Reversion), CAND-G0-054 (Post-Shock Volatility Absorption), and CAND-G0-055 (Initial Balance False Breakout). G1 NOT EXECUTED.
+
+## 68. G1 Economic Plausibility Screen V18 (2026-08-27)
+
+- **Record:** V18 G1 completed. CAND-053 (Friday Settlement) was evidence-limited (N=3) with negative absolute economics. CAND-054 (Volatility Absorption) yielded zero frequency. CAND-055 (IB False Breakout) produced strong absolute economics (+17.93 bps) but was materially outperformed by its counterfactual (+23.65 bps), resulting in a Type 1 failure. Zero standalone G2 promotions. Next action: Return to G0 Candidate Generation.
+
+## 69. V18 G1 Closure & Component Register Review (2026-08-27)
+
+- **Record:** V18 G1 formally closed. Zero new components retained. Documented the crucial distinction between Event Economics (overall profitability) and Condition Value (incremental improvement over the counterfactual). Reviewed the component register (CAND-024, 035, 042) and determined it lacks sufficient independent, scientifically-qualified mechanisms for System Assembly. Recommended Path A (Return to G0) for V19 to discover new, structurally independent mechanisms.

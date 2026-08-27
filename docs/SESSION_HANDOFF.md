@@ -38,7 +38,7 @@
 > > CAND-015 — 7-day paper observation in progress
 >
 > ### ACTIVE RESEARCH TRACK
-> > G0 CANDIDATE GENERATION — V16
+> > COMPONENT REGISTER UPDATE / RETURN TO G0
 >
 > ### PROTECTED
 > > CAND-015 frozen definition and running observation
@@ -300,9 +300,9 @@ Recorded: V2 computation completed and wrote all result artifacts before the ter
 - **Session-Anchored Range Expansion (DISC-024):** CLOSED — CONTRADICTED.
 - **Liquidity Sweep / Reversal (DISC-025):** CLOSED — ECONOMIC TRANSLATION NON-VIABLE.
 - **Opening Range Breakout (ORD / DISC-026):** SCIENTIFICALLY SUPPORTED — ECONOMIC TRANSLATION CLOSED AS NON-VIABLE FOR REGISTERED XAGUSD OBJECT.
-- **CURRENT MILESTONE:** TRADEABLE EDGE DISCOVERY SCREENING.
+- **CURRENT MILESTONE:** V18 G1 CLOSURE / COMPONENT REGISTER REVIEW.
 - **CRITICAL PATH / BLOCKER:** None.
-- **NEXT LEGITIMATE TASK:** **RETURN TO G0 CANDIDATE GENERATION**. The first 2026-08-25 G1 attempt was invalidated due to executable-capture, deterministic-exit, proxy-substitution, and undocumented-downsampling defects. No G2 execution occurred. G1 contract has now been hardened to require executable entry, deterministic exit, post-entry-only measurement, exact candidate-definition adherence, and explicit prohibition of MFE/proxy/down-sampling substitutions. Do NOT automatically rerun the four invalid candidates.
+- **NEXT LEGITIMATE TASK:** **G0 CANDIDATE GENERATION** (V19). V18 G1 is formally closed with no candidates promoted. The component register review confirmed only three isolated/unqualified opportunists exist (CAND-024, 035, 042). This is insufficient for component qualification or System Assembly. Return to G0 to discover new independent mechanisms.
 
 ## 16. Explicitly Forbidden Work
 

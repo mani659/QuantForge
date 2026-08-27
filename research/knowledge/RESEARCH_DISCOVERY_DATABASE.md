@@ -669,7 +669,6 @@ CAND-015 = scientifically supported + economically viable + historical productio
 True forward validation blocked by absent real-time/demo data feed.
 
 No CAND-015 strategy changes occurred.
-
 ## DISC-028 — Governance: Parallel Forward Validation and Discovery
 
 **Relationship:** Parallelization of forward validation and discovery research.
@@ -1018,3 +1017,39 @@ G1/G2 showed positive descriptive economics in the registered FAVORABLE subset, 
 - Doctrine Updated: Added the "Counterfactual Superiority Rule" to G1. A treatment that is profitable in absolute terms does NOT qualify as a mechanism artifact if its pre-registered counterfactual is materially more profitable.
 - Lesson recorded: Event economics must be strictly separated from mechanism value. A condition must explicitly add information relative to its counterfactual; simply producing profitable events is insufficient if the base event without the condition is superior.
 - Next action: Return to G0 Candidate Generation (V16) focusing on mechanisms where the condition is expected to actively add value relative to a very close counterfactual.
+
+## DISC-060 — V16 G0 Candidate Generation
+
+**Relationship:** Tradeable Edge Discovery Screening.
+
+**Status:** V16 G0 candidate generation completed.
+
+**Outcome:** 
+- Promoted CAND-G0-047 (Fixing-Window Liquidity Transfer).
+- Promoted CAND-G0-048 (Sequential Macro-Release Dislocation).
+- Promoted CAND-G0-049 (Cross-Market Lead-Lag Asymmetry).
+- V16 shifted focus to objective economic constraints where the condition explicitly adds value relative to a very close counterfactual. Mechanisms span Settlement/Reference Price Constraints (A), Information Arrival/Sequential Repricing (G), and Cross-Market Constraints (D). G1 NOT EXECUTED.
+
+## DISC-061 — V16 G1 Economic Plausibility Screen
+
+**Relationship:** Tradeable Edge Discovery Screening.
+
+**Status:** V16 G1 screening completed.
+
+**Outcome:** 
+- CAND-047 (Fixing-Window Liquidity Transfer): INSUFFICIENT. The treatment produced negative expectancy (-43.62 bps mean net, 0% win rate) and was materially outperformed by the counterfactual (-7.04 bps mean net, 57% win rate), directly contradicting the value of the constraint.
+- CAND-048 (Sequential Macro-Release Dislocation): INSUFFICIENT. The exact registered condition (a 1% move between 08:30 and 09:30, followed by an exact touch of the 08:30 level) yielded zero historical events.
+- CAND-049 (Cross-Market Lead-Lag Asymmetry): INSUFFICIENT. The exact registered condition (a 1% Gold shock between 09:30 and 10:30 while Silver remained <0.2% flat) yielded zero historical events.
+- Zero standalone G2 promotions.
+
+## DISC-062 — V16 G1 Closure
+
+**Relationship:** Tradeable Edge Discovery Screening.
+
+**Status:** Formal closure of the V16 G1 cycle.
+
+**Outcome:** 
+- V16 cycle CLOSED. No candidates produced valid economics.
+- Lesson recorded: Overly strict definitions designed to ensure structural purity (CAND-048, CAND-049) can completely extinguish opportunity frequency, rendering the artifact untestable.
+- Lesson recorded: Price behaviors attributed to "institutional necessity" (CAND-047) are just as susceptible to negative expectancy as generic technical patterns when subjected to strict friction and counterfactual comparison.
+- Next action: Return to G0 Candidate Generation (V17).
