@@ -1169,3 +1169,22 @@ G1/G2 showed positive descriptive economics in the registered FAVORABLE subset, 
 - Forward qualification now collecting valid evidence on canonical contracts.
 - CAND-015 remains PROTECTED / EXTERNAL / UNTOUCHED.
 - System Assembly remains NOT EXECUTED.
+
+## DISC-096 — Forward Runtime Simplified to One Manual Unified Launcher
+
+**Relationship:** Systems Architecture & Runtime Persistence.
+
+**Status:** FORWARD RUNTIME SIMPLIFIED — ONE BAT, ONE SUPERVISOR, ONE MT5 FEED.
+
+**Outcome:** 
+- Simplified the forward-observation architecture to one manual BAT launcher, one supervisor, one MT5 read-only connection, and all currently authorized forward modules.
+- CAND-015 integration assessed: CANNOT be safely integrated without semantic changes. Different contract architecture (dictionary-based identity, dual-market data, pandas/ATR engine). Decision: EXTERNAL / PROTECTED.
+- BAT launcher modified for detached process launch via `start /b`. Returns control to operator immediately.
+- Singleton lock prevents duplicate supervisors.
+- Task Scheduler declared NOT REQUIRED. Manual BAT is canonical operator entry point.
+- Status display updated with canonical hashes, mapping, and CAND-015 explanation.
+- 49/49 forward runtime tests pass (contracts, engines, registry, paper execution, module processing, supervisor, ledgers, market data, status, shutdown, BAT files, canonical identity, CAND-015 external).
+- CAND-024 + CAND-035 under unified supervisor. CAND-015 remains PROTECTED / EXTERNAL.
+- Operator workflow: `run_quantforge_forward.bat` → `status_quantforge_forward.bat` → `stop_quantforge_forward.bat`.
+- After PC restart: operator manually runs `run_quantforge_forward.bat`. No automatic startup required.
+- Qualification timeline preserved: original `2026-08-27T09:44:58Z`, valid resume `2026-08-27T12:05:15Z`.

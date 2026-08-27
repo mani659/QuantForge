@@ -35,7 +35,12 @@
 >
 > ## Next Action
 > ### ACTIVE FORWARD TRACK
-> > CAND-015 — 7-day paper observation in progress
+> > ONE UNIFIED MANUAL LAUNCHER — `run_quantforge_forward.bat`
+> > ONE SUPERVISOR — `quantforge_forward_supervisor.py`
+> > ONE MT5 READ-ONLY FEED — Exness-MT5Trial15 / USTECm
+> > CAND-024 + CAND-035 under unified supervisor
+> > CAND-015: PROTECTED / EXTERNAL (different contract architecture)
+> > Task Scheduler: NOT REQUIRED (manual BAT is canonical entry point)
 >
 > ### ACTIVE RESEARCH TRACK
 > > RARE-EVENT FORWARD TRACK — CANONICAL QUALIFICATION RESUMED (CAND-024, CAND-035)
@@ -45,7 +50,6 @@
 > > Valid canonical qualification resume: `2026-08-27T12:05:15Z`
 > > Pre-ratification period classified as INTEGRITY GAP
 > > Supervisor RUNNING (PID 6924), MT5 CONNECTED, both modules ACTIVE
-> > Task Scheduler: NOT INSTALLED (requires Administrator)
 > > Forward qualification now collecting valid evidence
 >
 > ### PROTECTED
@@ -309,8 +313,8 @@ Recorded: V2 computation completed and wrote all result artifacts before the ter
 - **Session-Anchored Range Expansion (DISC-024):** CLOSED — CONTRADICTED.
 - **Liquidity Sweep / Reversal (DISC-025):** CLOSED — ECONOMIC TRANSLATION NON-VIABLE.
 - **Opening Range Breakout (ORD / DISC-026):** SCIENTIFICALLY SUPPORTED — ECONOMIC TRANSLATION CLOSED AS NON-VIABLE FOR REGISTERED XAGUSD OBJECT.
-- **CURRENT MILESTONE:** CANONICAL RARE-EVENT QUALIFICATION RESUMED
-- **CRITICAL PATH / BLOCKER:** Supervisor RUNNING (PID 6924), MT5 CONNECTED, both modules ACTIVE. Canonical contracts verified in runtime. Task Scheduler requires Administrator to install. Research discovery (G0-G3) and System Assembly remain PAUSED/SUSPENDED. CAND-015 remains PROTECTED / EXTERNAL.
+- **CURRENT MILESTONE:** FORWARD RUNTIME SIMPLIFIED TO ONE MANUAL UNIFIED LAUNCHER
+- **CRITICAL PATH / BLOCKER:** NONE. One manual BAT launcher, one supervisor, one MT5 feed, independent modules. CAND-024 + CAND-035 under unified supervisor. CAND-015 remains PROTECTED / EXTERNAL (different contract architecture). Task Scheduler NOT REQUIRED. Research discovery (G0-G3) and System Assembly remain PAUSED/SUSPENDED.
 - **NEXT LEGITIMATE TASK:** **OBSERVE ONLY**. Await event qualification thresholds (3 minimum, 5 target per candidate). Do not modify logic. Research discovery may resume separately. Forward qualification is now collecting valid evidence on canonical contracts.
 
 ## 16. Explicitly Forbidden Work

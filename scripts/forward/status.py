@@ -38,6 +38,15 @@ def print_status():
     print(f"\nServer:")
     print(f"{sup_status.get('server', 'N/A')}")
     
+    print(f"\nLogical Market:")
+    print(f"USATECHIDXUSD")
+    
+    print(f"\nBroker Symbol:")
+    print(f"USTECm")
+    
+    print(f"\nMapping:")
+    print(f"MAPPING:USATECHIDXUSD->EXNESS:USTECM:1.0")
+    
     uptime = sup_status.get("uptime_seconds", 0)
     print(f"\nUptime:")
     print(f"{uptime:.1f} seconds")
@@ -63,24 +72,26 @@ def print_status():
         print("Status:")
         print("ACTIVE" if sup_status.get("supervisor_state") == "RUNNING" else "OFFLINE")
         
+        contract_hash = c_status.get("contract_hash", "N/A")
+        if len(contract_hash) > 8:
+            contract_hash = contract_hash[:8]
+        print(f"\nCanonical Hash:\n{contract_hash}")
+        
         stats = c_status.get("stats", {})
         count = stats.get("captured_count", 0)
         minimum = c_status.get("minimum", 3)
         target = c_status.get("target", 5)
         
         print(f"\nEvents:\n{count} / {minimum} / {target}")
-        print(f"\nDetected:\n{stats.get('detected_count', count)}")
-        print(f"\nCaptured:\n{count}")
-        print(f"\nCompleted:\n{stats.get('completed_count', 0)}")
-        print(f"\nMissed:\n{stats.get('missed_count', 0)}")
-        
-        print(f"\nLogical Symbol:\nUSATECHIDXUSD")
-        print(f"Mapping ID:\n{c_status.get('mapping_id', 'N/A')}")
+        print(f"\nState:\n{c_status.get('current_state', 'N/A')}")
 
     print("\nCAND-015")
     print("--------")
     print("Status:\nPROTECTED / EXTERNAL")
-    print("\n")
+    print("Note:\nDifferent contract architecture (dictionary-based,")
+    print("      dual-market, pandas/ATR engine).")
+    print("      Not safe to migrate without semantic changes.")
+    print("")
     
 if __name__ == "__main__":
     print_status()
