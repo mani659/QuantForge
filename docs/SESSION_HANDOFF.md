@@ -38,7 +38,7 @@
 > > CAND-015 — 7-day paper observation in progress
 >
 > ### ACTIVE RESEARCH TRACK
-> > CRITICAL RUNTIME FAILURE — QUALIFICATION INTEGRITY COMPROMISED
+> > RARE-EVENT FORWARD TRACK — INTEGRITY HOLD (CAND-024, CAND-035)
 >
 > ### PROTECTED
 > > CAND-015 frozen definition and running observation
