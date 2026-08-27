@@ -165,4 +165,6 @@ if __name__ == "__main__":
                 
         runner.run(mock_feed=MockFeed())
     else:
-        print("OBSERVATION NOT LAUNCHED. Start with real feed setup required.")
+        print("Launching Rare-Event Forward Observation Mode...")
+        runner = RareEventRunner()
+        runner.run()

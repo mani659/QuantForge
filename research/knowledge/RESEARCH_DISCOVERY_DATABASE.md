@@ -1042,3 +1042,15 @@ G1/G2 showed positive descriptive economics in the registered FAVORABLE subset, 
 - Implemented strict event/outcome ledgers, a paper execution firewall, exponential backoff reconnect logic, and timezone-aware session mechanics. 
 - Verified infrastructure readiness via pytest and a synthetic smoke test. 
 - Observation launch is formally authorized but pending broker feed configuration.
+
+## DISC-087 — Rare-Event Forward Qualification Launched
+
+**Relationship:** Governance Architecture & Forward Validation.
+
+**Status:** FORWARD OBSERVATION ACTIVE (CAND-024 / CAND-035).
+
+**Outcome:** 
+- Launched the background daemon tracking the event-count based forward qualification for CAND-024 and CAND-035.
+- Event tracking is operating strictly under frozen contracts (no SMC POI filters, no trend filters).
+- Confirmed strict paper-only execution wall with no live execution methods available.
+- Track will remain active until minimum 3 (target 5) qualifying events are recorded per component, or the 18-month safety boundary is hit.

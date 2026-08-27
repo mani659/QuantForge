@@ -38,7 +38,7 @@
 > > CAND-015 — 7-day paper observation in progress
 >
 > ### ACTIVE RESEARCH TRACK
-> > RARE-EVENT FORWARD INFRASTRUCTURE READY — OBSERVATION NOT LAUNCHED (CAND-024 / CAND-035)
+> > RARE-EVENT FORWARD QUALIFICATION LAUNCHED (CAND-024 / CAND-035)
 >
 > ### PROTECTED
 > > CAND-015 frozen definition and running observation
@@ -301,9 +301,9 @@ Recorded: V2 computation completed and wrote all result artifacts before the ter
 - **Session-Anchored Range Expansion (DISC-024):** CLOSED — CONTRADICTED.
 - **Liquidity Sweep / Reversal (DISC-025):** CLOSED — ECONOMIC TRANSLATION NON-VIABLE.
 - **Opening Range Breakout (ORD / DISC-026):** SCIENTIFICALLY SUPPORTED — ECONOMIC TRANSLATION CLOSED AS NON-VIABLE FOR REGISTERED XAGUSD OBJECT.
-- **CURRENT MILESTONE:** RARE-EVENT FORWARD INFRASTRUCTURE READY — OBSERVATION NOT LAUNCHED.
-- **CRITICAL PATH / BLOCKER:** Pending explicit authorization and connection to live/demo feed for the rare-event runner.
-- **NEXT LEGITIMATE TASK:** **EXPLICIT LAUNCH OF RARE-EVENT FORWARD QUALIFICATION**. Dedicated infrastructure has been provisioned and tested. CAND-024 and CAND-035 are ready to begin event-count qualification. G0, G1, G2, and System Assembly remain SUSPENDED.
+- **CURRENT MILESTONE:** RARE-EVENT FORWARD QUALIFICATION LAUNCHED.
+- **CRITICAL PATH / BLOCKER:** Pending accumulation of minimum forward event evidence (3 events per component).
+- **NEXT LEGITIMATE TASK:** **FORWARD ADJUDICATION**. Wait for the rare-event components (CAND-024 and CAND-035) to reach their target event counts (5 events), then explicitly adjudicate their forward qualification. G0, G1, G2, and System Assembly remain SUSPENDED.
 
 ## 16. Explicitly Forbidden Work
 

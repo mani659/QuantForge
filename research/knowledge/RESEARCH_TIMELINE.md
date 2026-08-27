@@ -449,3 +449,7 @@ The surviving corpus now records **six closed research lines** — Mean Reversio
 ## 87. Rare-Event Forward Infrastructure Provisioning (2026-08-27)
 
 - **Record:** Provisioned the dedicated, isolated forward-observation infrastructure for CAND-024 and CAND-035. Enforced frozen contracts via deterministic hashing to prevent semantic drift. Implemented strict event/outcome ledgers, a paper execution firewall, exponential backoff reconnect logic, and timezone-aware session mechanics. Verified infrastructure readiness via pytest and a synthetic smoke test. Observation launch is formally authorized but pending broker feed configuration.
+
+## 88. Rare-Event Forward Qualification Launched (2026-08-27)
+
+- **Record:** RARE-EVENT FORWARD QUALIFICATION LAUNCHED — CAND-024 + CAND-035. Initiated the event-count based qualification track. Thresholds: MINIMUM = 3, TARGET = 5, MAXIMUM CALENDAR BOUNDARY = 18 MONTHS. Confirmed CAND-015 remains independent and protected. Verified paper-only execution layer strictly enforces no real or demo API order submission. Observation tracking relies purely on frozen contract evaluation and historical logic.
