@@ -36,10 +36,10 @@
 > ## Next Action
 > ### ACTIVE FORWARD TRACK
 > > ONE UNIFIED MANUAL LAUNCHER — `run_quantforge_forward.bat`
-> > ONE SUPERVISOR — `quantforge_forward_supervisor.py`
+> > ONE RUNNER — `quantforge_forward_supervisor.py`
 > > ONE MT5 READ-ONLY FEED — Exness-MT5Trial15 / USTECm
-> > CAND-024 + CAND-035 under unified supervisor
-> > CAND-015: PROTECTED / EXTERNAL (different contract architecture)
+> > CAND-015 + CAND-024 + CAND-035 under unified runner
+> > CAND-015: INTEGRATED via adapter (external engine, semantic unchanged)
 > > Task Scheduler: NOT REQUIRED (manual BAT is canonical entry point)
 >
 > ### ACTIVE RESEARCH TRACK
@@ -52,8 +52,11 @@
 > > Supervisor RUNNING (PID 6924), MT5 CONNECTED, both modules ACTIVE
 > > Forward qualification now collecting valid evidence
 >
-> ### PROTECTED
-> > CAND-015 frozen definition and running observation
+> ### PROTECTED / INTEGRATED
+> > CAND-015: adapter-based integration via `cand015_adapter.py`
+> > External engine preserved (dictionary-based identity, pandas/ATR, process_tick)
+> > BTCUSD data buffered but not used in current signal evaluation
+> > Cold start: accumulates M1 bars over time (30-day ATR warmup)
 >
 > ### NOT AUTHORIZED
 > - G6 adjudication before completion;

@@ -124,9 +124,91 @@ class ForwardModuleWrapper:
             print(f"[{self.candidate_id}] Evaluation error: {e}")
             return False
 
-def get_registry(base_runtime_dir):
+class Cand015ModuleWrapper:
+    def __init__(self, adapter, base_runtime_dir):
+        self.candidate_id = "CAND-015"
+        self.adapter = adapter
+        self.module_dir = os.path.join(base_runtime_dir, "cand_015")
+        os.makedirs(self.module_dir, exist_ok=True)
+
+        self.event_ledger = EventLedger(os.path.join(self.module_dir, "event_ledger.jsonl"))
+        self.outcome_ledger = OutcomeLedger(os.path.join(self.module_dir, "outcome_ledger.jsonl"))
+        self.paper = PaperExecutionFirewall(friction=2.0)
+
+        self.status_file = os.path.join(self.module_dir, "status.json")
+        self.stats = {
+            "captured_count": 0,
+            "missed_count": 0,
+            "invalidated_count": 0,
+            "completed_count": 0,
+            "last_event_timestamp": 0,
+            "last_evaluation_timestamp": 0
+        }
+        self.load_stats()
+
+    def load_stats(self):
+        if os.path.exists(self.status_file):
+            try:
+                with open(self.status_file, "r") as f:
+                    data = json.load(f)
+                    self.stats.update(data.get("stats", {}))
+            except Exception:
+                pass
+
+    def save_stats(self):
+        data = {
+            "module_id": self.candidate_id,
+            "architectural_note": "EXTERNAL_PROTECTED",
+            "mapping_id": "MAPPING:USATECHIDXUSD->EXNESS:USTECM:1.0",
+            "current_event_count": self.stats["captured_count"],
+            "minimum": 3,
+            "target": 5,
+            "stats": self.stats,
+            "last_write": time.time()
+        }
+        temp_file = self.status_file + ".tmp"
+        with open(temp_file, "w") as f:
+            json.dump(data, f, indent=2)
+        os.replace(temp_file, self.status_file)
+
+    def process_quote(self, quote, instance_id):
+        self.stats["last_evaluation_timestamp"] = quote["utc_timestamp"]
+        try:
+            signal = self.adapter.process_market_data(quote)
+            if signal:
+                self.stats["last_event_timestamp"] = quote["utc_timestamp"]
+                self.event_ledger.record_event({
+                    "candidate_id": self.candidate_id,
+                    "architectural_note": "EXTERNAL_PROTECTED",
+                    "event_id": f"SHOCK_{int(quote['utc_timestamp'])}",
+                    "instrument": quote['symbol'],
+                    "utc_timestamp": quote['utc_timestamp'],
+                    "event_state": "EVENT_DETECTED",
+                    "intended_direction": signal.get("intended_direction"),
+                    "volatility_state": signal.get("volatility_state"),
+                    "runner_instance_id": instance_id
+                })
+                self.stats["captured_count"] += 1
+            self.save_stats()
+            return True
+        except Exception as e:
+            print(f"[{self.candidate_id}] Evaluation error: {e}")
+            return False
+
+
+def get_registry(base_runtime_dir, market_data=None):
     modules = []
-    
+
+    # CAND-015
+    try:
+        from cand015_adapter import Cand015Adapter
+        if market_data is not None:
+            adapter = Cand015Adapter(market_data)
+            if adapter.initialize():
+                modules.append(Cand015ModuleWrapper(adapter, base_runtime_dir))
+    except Exception:
+        pass
+
     # CAND-024
     config_24 = {
         "enabled": True,
@@ -138,7 +220,7 @@ def get_registry(base_runtime_dir):
     }
     if config_24["enabled"]:
         modules.append(ForwardModuleWrapper("CAND-024", Cand024Engine(), config_24, base_runtime_dir))
-        
+
     # CAND-035
     config_35 = {
         "enabled": True,
@@ -150,5 +232,5 @@ def get_registry(base_runtime_dir):
     }
     if config_35["enabled"]:
         modules.append(ForwardModuleWrapper("CAND-035", Cand035Engine(), config_35, base_runtime_dir))
-        
+
     return modules

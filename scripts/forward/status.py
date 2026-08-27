@@ -85,12 +85,28 @@ def print_status():
         print(f"\nEvents:\n{count} / {minimum} / {target}")
         print(f"\nState:\n{c_status.get('current_state', 'N/A')}")
 
-    print("\nCAND-015")
+    cand015_status_path = os.path.join(runtime_dir, "cand_015", "status.json")
+    print(f"\nCAND-015")
     print("--------")
-    print("Status:\nPROTECTED / EXTERNAL")
-    print("Note:\nDifferent contract architecture (dictionary-based,")
-    print("      dual-market, pandas/ATR engine).")
-    print("      Not safe to migrate without semantic changes.")
+
+    c015_status = {}
+    if os.path.exists(cand015_status_path):
+        try:
+            with open(cand015_status_path, "r") as f:
+                c015_status = json.load(f)
+        except:
+            pass
+
+    if not c015_status:
+        print("Status:\nEXTERNAL / PROTECTED")
+        print("Note:\nAdapter-based integration. Different contract architecture.")
+    else:
+        print("Status:")
+        print("ACTIVE (ADAPTER)" if sup_status.get("supervisor_state") == "RUNNING" else "OFFLINE")
+        print(f"\nArchitectural Note:\n{c015_status.get('architectural_note', 'N/A')}")
+        stats = c015_status.get("stats", {})
+        count = stats.get("captured_count", 0)
+        print(f"\nEvents:\n{count} / 3 / 5")
     print("")
     
 if __name__ == "__main__":

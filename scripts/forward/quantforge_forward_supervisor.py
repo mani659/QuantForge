@@ -34,8 +34,8 @@ class Supervisor:
         self.status_file = os.path.join(self.supervisor_dir, "status.json")
         self.health_ledger = SupervisorHealthMonitor(os.path.join(self.supervisor_dir, "supervisor_health.jsonl"))
         
-        self.modules = get_registry(base_runtime_dir)
         self.feed = MT5MarketFeed()
+        self.modules = get_registry(base_runtime_dir, self.feed)
         self.startup_time = time.time()
         self.uptime_seconds = 0
         self.reconnect_count = 0

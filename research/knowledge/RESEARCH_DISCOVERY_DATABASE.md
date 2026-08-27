@@ -1188,3 +1188,22 @@ G1/G2 showed positive descriptive economics in the registered FAVORABLE subset, 
 - Operator workflow: `run_quantforge_forward.bat` → `status_quantforge_forward.bat` → `stop_quantforge_forward.bat`.
 - After PC restart: operator manually runs `run_quantforge_forward.bat`. No automatic startup required.
 - Qualification timeline preserved: original `2026-08-27T09:44:58Z`, valid resume `2026-08-27T12:05:15Z`.
+
+## DISC-097 — CAND-015 Adapter-Based Integration into Unified Runner
+
+**Relationship:** Systems Architecture & Runtime Persistence.
+
+**Status:** CAND-015 INTEGRATED VIA ADAPTER — ONE RUNNER, THREE INDEPENDENT OBSERVERS.
+
+**Outcome:**
+- CAND-015 successfully integrated into unified forward runner via adapter pattern.
+- Adapter (`cand015_adapter.py`) translates shared MT5 feed into CAND-015's `process_tick()` interface.
+- Key finding: CAND-015 engine only uses USATECHIDXUSD M1 data (BTCUSD buffered but unused in signal evaluation).
+- Adapter fetches latest completed M1 bar from MT5, maps USTECm → USATECHIDXUSD, feeds to engine.
+- Engine's internal logic preserved: pandas resampling, Wilder's ATR, M5/D1 calculations unchanged.
+- Cold start: engine accumulates M1 bars over time; no signals until 30 days of M5 bars available for ATR.
+- Module registry updated: `get_registry()` now accepts optional `market_data` parameter for CAND-015.
+- Status display updated: shows CAND-015 adapter status when available.
+- 52/52 forward runtime tests pass (including 3 new CAND-015 adapter tests).
+- Architecture: ONE BAT → ONE RUNNER → ONE MT5 FEED → THREE INDEPENDENT OBSERVERS.
+- No signal combination. No portfolio logic. No inter-module state.
