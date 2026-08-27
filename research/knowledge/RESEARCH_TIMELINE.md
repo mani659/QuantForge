@@ -445,3 +445,7 @@ The surviving corpus now records **six closed research lines** — Mean Reversio
 ## 86. Rare-Event Component Forward Qualification Protocol (2026-08-27)
 
 - **Record:** Formalized the event-count-based forward qualification protocol for CAND-024 (Friday De-Risking) and CAND-035 (Month-End Imbalance). Reconstructed their exact frozen identities to prevent semantic drift. Established a minimum threshold of 3 independent forward events and a target of 5 forward events. Defined strict paper execution metrics, identity matching rules, and failure conditions. Verified that CAND-042, CAND-059, and System Assembly remain expressly excluded. Authorized the explicit launch of the qualification track, pending dedicated infrastructure provision.
+
+## 87. Rare-Event Forward Infrastructure Provisioning (2026-08-27)
+
+- **Record:** Provisioned the dedicated, isolated forward-observation infrastructure for CAND-024 and CAND-035. Enforced frozen contracts via deterministic hashing to prevent semantic drift. Implemented strict event/outcome ledgers, a paper execution firewall, exponential backoff reconnect logic, and timezone-aware session mechanics. Verified infrastructure readiness via pytest and a synthetic smoke test. Observation launch is formally authorized but pending broker feed configuration.

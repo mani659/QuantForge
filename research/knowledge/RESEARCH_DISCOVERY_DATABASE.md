@@ -1029,3 +1029,16 @@ G1/G2 showed positive descriptive economics in the registered FAVORABLE subset, 
 - Defined strict paper execution metrics, identity matching rules, and failure conditions. 
 - Verified that CAND-042, CAND-059, and System Assembly remain expressly excluded from this track. 
 - Authorized the explicit launch of the qualification track, pending the provisioning of dedicated forward-runner infrastructure.
+
+## DISC-086 — Rare-Event Forward Infrastructure Provisioning
+
+**Relationship:** Governance Architecture & Forward Validation.
+
+**Status:** Infrastructure Ready — Observation Not Launched.
+
+**Outcome:** 
+- Provisioned the dedicated, isolated forward-observation infrastructure for CAND-024 and CAND-035. 
+- Enforced frozen contracts via deterministic hashing to prevent semantic drift. 
+- Implemented strict event/outcome ledgers, a paper execution firewall, exponential backoff reconnect logic, and timezone-aware session mechanics. 
+- Verified infrastructure readiness via pytest and a synthetic smoke test. 
+- Observation launch is formally authorized but pending broker feed configuration.
