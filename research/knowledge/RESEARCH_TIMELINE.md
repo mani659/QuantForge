@@ -389,3 +389,11 @@ The surviving corpus now records **six closed research lines** — Mean Reversio
 ## 72. G1 Economic Plausibility Screen V19 (2026-08-27)
 
 - **Record:** V19 G1 completed. CAND-056 (Structural Shift) demonstrated a Type 1 counterfactual failure; demanding a market structure shift actively degraded the simple sweep mechanism. CAND-057 (Gap Fade Exhaustion) yielded zero frequency due to strict anchor requirement. CAND-058 (First Pullback Trap) was evidence-limited (N=2) due to strict continuous expansion requirement. Zero candidates promoted to G2 or added to Component Register. Next Action: Return to G0.
+
+## 73. V19 Closure (2026-08-27)
+
+- **Record:** V19 formally closed with zero component candidates retained. Established permanent governance lessons: A structurally observable confirmation condition can actively reduce predictive value (CAND-056). Removing a failed condition constitutes a new hypothesis, not a rescue.
+
+## 74. G0 Candidate Generation V20 (2026-08-27)
+
+- **Record:** V20 G0 completed. Focused on discovering simple, observable economic mechanisms whose intrinsic condition adds information without requiring stacked confirmation filters. Promoted 3 new candidates: CAND-G0-059 (Fresh Structural Break First Retest), CAND-G0-060 (NY Equity Close Imbalance Expansion), and CAND-G0-061 (Consecutive 15-Minute Rejection Sequence). G1 NOT EXECUTED.
