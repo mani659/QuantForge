@@ -409,3 +409,7 @@ The surviving corpus now records **six closed research lines** — Mean Reversio
 ## 77. G0 Candidate Generation V21 (2026-08-27)
 
 - **Record:** V21 G0 completed. Generated explicitly separated Alpha and State candidates. Promoted CAND-G0-062 (Late-Session Trend Exhaustion Fade - Alpha), CAND-G0-063 (Asian Session Volatility Compression - State), and CAND-G0-064 (Structural Acceptance Time-State - State). G1 NOT EXECUTED.
+
+## 78. G1 Economic Plausibility Screen V21 (2026-08-27)
+
+- **Record:** V21 G1 completed. Evaluated separated Alpha and State candidates. CAND-062 (Late-Session Fade) failed absolute expectancy and counterfactual tests. CAND-063 (Asian Compression State) was non-adjudicable (N=2) for the specific target event combo. CAND-064 (Structural Acceptance Time-State) showed massive separation (Treatment N=2302, Counterfactual N=1564) but strongly falsified the hypothesis: a brief 'Sweep' makes a level dramatically safer to retest than a sustained 'Acceptance'. All candidates failed G1. Zero standalone G2 promotions. Zero components added. Next Action: Return to G0.

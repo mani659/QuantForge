@@ -38,7 +38,7 @@
 > > CAND-015 — 7-day paper observation in progress
 >
 > ### ACTIVE RESEARCH TRACK
-> > G1 ECONOMIC PLAUSIBILITY SCREEN — V21 (Pending: CAND-062, 063, 064)
+> > COMPONENT / STATE REGISTER UPDATE / RETURN TO G0
 >
 > ### PROTECTED
 > > CAND-015 frozen definition and running observation
@@ -301,9 +301,9 @@ Recorded: V2 computation completed and wrote all result artifacts before the ter
 - **Session-Anchored Range Expansion (DISC-024):** CLOSED — CONTRADICTED.
 - **Liquidity Sweep / Reversal (DISC-025):** CLOSED — ECONOMIC TRANSLATION NON-VIABLE.
 - **Opening Range Breakout (ORD / DISC-026):** SCIENTIFICALLY SUPPORTED — ECONOMIC TRANSLATION CLOSED AS NON-VIABLE FOR REGISTERED XAGUSD OBJECT.
-- **CURRENT MILESTONE:** G1 ECONOMIC PLAUSIBILITY SCREEN (V21).
+- **CURRENT MILESTONE:** V21 G1 CLOSURE / REGISTER UPDATE.
 - **CRITICAL PATH / BLOCKER:** None.
-- **NEXT LEGITIMATE TASK:** **G1 ECONOMIC PLAUSIBILITY SCREEN** for V21 candidates (CAND-062, CAND-063, CAND-064). V20 is closed. V21 G0 candidate-generation cycle completed. G1 NOT EXECUTED.
+- **NEXT LEGITIMATE TASK:** **COMPONENT / STATE REGISTER UPDATE / RETURN TO G0**. V21 G1 completed. All candidates (CAND-062, CAND-063, CAND-064) failed. Zero components added. G2 NOT EXECUTED. Return to G0 Candidate Generation for V22.
 
 ## 16. Explicitly Forbidden Work
 
