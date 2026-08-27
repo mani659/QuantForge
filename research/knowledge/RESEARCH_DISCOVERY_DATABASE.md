@@ -1001,3 +1001,17 @@ G1/G2 showed positive descriptive economics in the registered FAVORABLE subset, 
 - CAND-069 (NY Mid-Session Reversal Anchor) [ALPHA]: INSUFFICIENT. Generated a virtually flat net expectancy (+0.75 bps), failing to clear the >5 bps friction hurdle, despite slightly outperforming morning anchors.
 - CAND-070 (Sustained Momentum Micro-Structure Failure) [ALPHA]: INSUFFICIENT. Failed absolute expectancy and falsified its hypothesis: fading the first structure break in an overheated trend performs significantly worse than fading identical structure breaks in chop. The trend overwhelmingly resumes and stops out the mean-reversion trade.
 - All candidates failed G1. Zero standalone G2 promotions. Zero components added. Next action: Return to G0 Candidate Generation.
+
+## DISC-084 — V23 Closure & Component/State Qualification Readiness Review
+
+**Relationship:** Governance Architecture.
+
+**Status:** V23 formally closed. Repository review completed.
+
+**Outcome:** 
+- V23 closed.
+- Conducted a repository-wide evidence audit to determine if QuantForge should return to G0 or begin formally qualifying existing components.
+- Determined that CAND-024 and CAND-035 possess massive historical expectancy and have passed scientific counterfactual validation, failing G2 promotion exclusively on calendar frequency. 
+- Defined the "Rare-Event Validation Doctrine" (event-counts vs calendar duration). 
+- Decided to suspend G0 and G1 to pursue RARE-EVENT COMPONENT QUALIFICATION for CAND-024 and CAND-035.
+- System Assembly (S0) remains NOT YET EXECUTABLE.

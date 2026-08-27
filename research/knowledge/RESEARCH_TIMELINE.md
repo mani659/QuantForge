@@ -437,3 +437,7 @@ The surviving corpus now records **six closed research lines** — Mean Reversio
 ## 84. G1 Economic Plausibility Screen V23 (2026-08-27)
 
 - **Record:** V23 G1 completed. Evaluated three Alpha candidates for absolute expectancy and counterfactual superiority. CAND-068 (Post-Shock Absorption Reversal) failed due to extreme evidence limitation (N=7). CAND-069 (NY Mid-Session Reversal Anchor) generated a virtually flat net expectancy (+0.75 bps), failing to clear the >5 bps friction hurdle, despite slightly outperforming morning anchors. CAND-070 (Momentum Micro-Structure Failure) failed absolute expectancy and falsified its hypothesis: fading the first structure break in an overheated trend performs significantly worse than fading chop. All candidates failed G1. Zero standalone G2 promotions. Zero components added. Next Action: Return to G0.
+
+## 85. V23 Closure & Component/State Qualification Readiness Review (2026-08-27)
+
+- **Record:** V23 formally closed. Conducted a repository-wide evidence audit to determine if QuantForge should return to G0 or begin formally qualifying existing components. Determined that CAND-024 and CAND-035 possess massive historical expectancy and have passed scientific counterfactual validation, failing G2 promotion exclusively on calendar frequency. Defined the "Rare-Event Validation Doctrine" (event-counts vs calendar duration). Decided to suspend G0 and G1 to pursue RARE-EVENT COMPONENT QUALIFICATION for CAND-024 and CAND-035. System Assembly (S0) remains NOT YET EXECUTABLE.
