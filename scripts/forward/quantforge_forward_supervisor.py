@@ -5,7 +5,7 @@ import json
 import socket
 import argparse
 import subprocess
-from datetime import datetime
+from datetime import datetime, timezone
 
 # Windows-specific locking
 try:
@@ -19,8 +19,6 @@ from supervisor_health import SupervisorHealthMonitor
 
 HISTORICAL_START = "2026-08-27T09:44:58Z"
 MIGRATION_TIME = datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ")
-
-# ── Process validation helpers ──
 
 SUPERVISOR_SCRIPT = "quantforge_forward_supervisor.py"
 
@@ -69,39 +67,25 @@ def _is_pid_alive(pid):
 
 
 def _is_lock_stale(lock_path, current_pid):
-    """
-    Check if a lock file is stale.
-    A lock is stale if:
-    - it exists but the PID in it is not the current process AND
-    - that PID is not alive or is not a supervisor process
-    """
+    """Check if a lock file is stale."""
     if not os.path.exists(lock_path):
-        return True  # No lock = not stale, just absent
-
+        return True
     try:
         with open(lock_path, "r") as f:
             lock_data = json.load(f)
         lock_pid = lock_data.get("pid")
     except Exception:
-        return True  # Corrupt lock = stale
-
+        return True
     if lock_pid is None:
         return True
-
-    # If the lock PID is us, it's not stale (we hold it)
     if lock_pid == current_pid:
         return False
-
-    # If the lock PID is alive and is a supervisor, someone else holds it
     if _is_pid_alive(lock_pid):
-        # Check if it's actually our supervisor
         our_pids = _find_supervisor_pids()
         if lock_pid in our_pids:
-            return False  # Another supervisor holds this lock
+            return False
         else:
-            return True  # Some other process holds the PID, stale
-
-    # Lock PID is not alive = stale
+            return True
     return True
 
 
@@ -131,17 +115,18 @@ class Supervisor:
         self.lock_fd = None
         self.running = False
 
-        # Event deduplication: track notified (event_id, event_state) pairs
-        self._notified_events = set()
+        # Event deduplication
+        self._printed_events = set()
+
+        # Live display tracking
+        self._last_live_display = 0
+        self._live_display_interval = 10  # seconds between live status refreshes
+        self._last_scan_count = 0
 
     def _clean_stale_lock(self):
-        """Remove stale lock file if the owning process is dead."""
         if _is_lock_stale(self.lock_file_path, os.getpid()):
             try:
-                # Try to remove the file-level lock first
                 if os.path.exists(self.lock_file_path):
-                    # On Windows, if the file was locked by a dead process,
-                    # the OS should have released it. We can just delete.
                     os.remove(self.lock_file_path)
                     print("  STALE LOCK DETECTED AND REMOVED")
             except Exception as e:
@@ -149,15 +134,12 @@ class Supervisor:
 
     def acquire_lock(self):
         self._clean_stale_lock()
-
         if not msvcrt:
             print("Warning: msvcrt not available. Singleton lock is best-effort.")
             return True
-
         try:
             self.lock_fd = open(self.lock_file_path, "w")
             msvcrt.locking(self.lock_fd.fileno(), msvcrt.LK_NBLCK, 1)
-
             lock_data = {
                 "pid": os.getpid(),
                 "startup_utc": MIGRATION_TIME,
@@ -168,12 +150,10 @@ class Supervisor:
             self.lock_fd.flush()
             return True
         except Exception:
-            # Lock is held by another LIVE process
             try:
                 with open(self.lock_file_path, "r") as f:
                     data = json.load(f)
                 lock_pid = data.get("pid", "UNKNOWN")
-                # Double-check: is that PID actually alive?
                 if _is_pid_alive(lock_pid):
                     print("QUANTFORGE FORWARD RUNNER ALREADY RUNNING")
                     print(f"PID: {lock_pid}")
@@ -182,7 +162,6 @@ class Supervisor:
                     print("STALE LOCK DETECTED — LOCK PID IS DEAD")
                     print(f"Stale PID: {lock_pid}")
                     print("Attempting to recover...")
-                    # Try to clean up and re-acquire
                     try:
                         if self.lock_fd:
                             self.lock_fd.close()
@@ -203,7 +182,6 @@ class Supervisor:
                         return False
             except Exception:
                 print("QUANTFORGE FORWARD RUNNER — UNABLE TO READ LOCK")
-
             print()
             print("Use status_quantforge_forward.bat to check status.")
             print("Use stop_quantforge_forward.bat to stop.")
@@ -240,7 +218,6 @@ class Supervisor:
     def save_status(self, state="RUNNING"):
         self.uptime_seconds = time.time() - self.startup_time
         term_info = self.feed.terminal_info() if self.feed else {"broker": "UNKNOWN", "server": "UNKNOWN"}
-
         status = {
             "supervisor_state": state,
             "mode": self.mode,
@@ -257,7 +234,6 @@ class Supervisor:
             "version": self.version,
             "modules_loaded": len(self.modules)
         }
-
         temp_file = self.status_file + ".tmp"
         try:
             with open(temp_file, "w") as f:
@@ -313,11 +289,96 @@ class Supervisor:
         print("or use stop_quantforge_forward.bat")
         print()
 
-    def _check_mt5_startup(self):
-        """Check MT5 terminal and connection at startup. Returns (ok, error_msg)."""
-        mt5_path = os.getenv("QF_MT5_TERMINAL_PATH", "")
+    def _print_live_status(self):
+        """Print the compact live scanning display."""
+        now = datetime.now(timezone.utc)
+        ts = now.strftime("%H:%M:%S UTC")
 
-        # Check if MT5 terminal process is running
+        conn_state = self.feed.connection_state() if self.feed else "DISCONNECTED"
+        feed_status = "OK" if conn_state == "CONNECTED" else conn_state
+
+        print()
+        print("============================================================")
+        print(" QUANTFORGE FORWARD RUNNER — LIVE")
+        print("============================================================")
+        print()
+        print("MT5:")
+        print(f"{conn_state}")
+        print()
+        print("Broker Symbol:")
+        print("USTECm")
+        print()
+        print("------------------------------------------------------------")
+        print(" CANDIDATE MONITOR")
+        print("------------------------------------------------------------")
+        print()
+
+        for m in self.modules:
+            if m.candidate_id == "CAND-015":
+                print("CAND-015:")
+                print("ACTIVE / PROTECTED")
+            else:
+                state = m.engine.state
+                contract_hash = m.engine.contract.hash[:8]
+                stats = m.stats
+                count = stats.get("captured_count", 0)
+                minimum = m.config.get("minimum", 3)
+                target = m.config.get("target", 5)
+                print(f"{m.candidate_id}:")
+                print(f"ACTIVE")
+                print(f"Contract: {contract_hash}")
+                print(f"Events: {count} / {minimum} / {target}")
+                print(f"State: {state}")
+            print()
+
+        print("------------------------------------------------------------")
+        print(" SCANNER")
+        print("------------------------------------------------------------")
+        print()
+        print(f"Feed: {feed_status}")
+        print(f"Last Scan: {ts}")
+        print(f"Runner: LIVE")
+        print("============================================================")
+        print()
+        print("System is LIVE — scanning for authorized candidate events.")
+        print("STOP: stop_quantforge_forward.bat")
+        print("STATUS: status_quantforge_forward.bat")
+        print()
+
+    def _print_event_banner(self, event_state, candidate_id, event_id, contract_hash, ts_utc):
+        """Print a major event banner."""
+        print()
+        print("============================================================")
+        print(f" !!! QUANTFORGE EVENT {event_state.upper()} !!!")
+        print("============================================================")
+        print()
+        print("Candidate:")
+        print(f"{candidate_id}")
+        print()
+        print("Canonical:")
+        print(f"{contract_hash[:8]}")
+        print()
+        print("Event ID:")
+        print(f"{event_id}")
+        print()
+        print("State:")
+        print(f"{event_state}")
+        print()
+        print("Event Time UTC:")
+        print(f"{ts_utc}")
+        print()
+        print("Logical Market:")
+        print("USATECHIDXUSD")
+        print()
+        print("Broker Symbol:")
+        print("USTECm")
+        print()
+        print("============================================================")
+        print()
+
+    def _check_mt5_startup(self):
+        """Check MT5 terminal and connection at startup."""
+        mt5_path = os.getenv("QF_MT5_TERMINAL_PATH", "")
         mt5_running = False
         try:
             result = subprocess.run(
@@ -329,12 +390,10 @@ class Supervisor:
             pass
 
         if not mt5_running:
-            # Try to launch MT5
             if mt5_path and os.path.exists(mt5_path):
                 print("Launching MT5 terminal...")
                 subprocess.Popen([mt5_path])
                 time.sleep(8)
-                # Re-check
                 try:
                     result = subprocess.run(
                         ["tasklist", "/FI", "IMAGENAME eq terminal64.exe", "/NH"],
@@ -346,15 +405,12 @@ class Supervisor:
             if not mt5_running:
                 return False, "FORWARD START BLOCKED\nReason: MT5 feed unavailable"
 
-        # Initialize Python MT5 connection
         if not self.feed.initialize():
             return False, "FORWARD START BLOCKED\nReason: MT5 initialization failed"
 
-        # Verify broker/server
         term_info = self.feed.terminal_info()
         expected_server = "Exness-MT5Trial15"
         actual_server = term_info.get("server", "UNKNOWN")
-
         if actual_server != expected_server:
             return False, (
                 f"FORWARD START BLOCKED\n"
@@ -362,7 +418,6 @@ class Supervisor:
                 f"Actual: {actual_server}"
             )
 
-        # Verify symbol
         mt5 = self.feed._get_mt5()
         if mt5:
             mt5.symbol_select("USTECm", True)
@@ -404,11 +459,14 @@ class Supervisor:
         if self.mode == "smoke":
             print("SMOKE TEST MODE ENABLED - Modules running with synthetic feed.")
 
-        # Ensure initial state is clean
         if self.check_shutdown():
             os.remove(self.shutdown_req_path)
 
         self.save_status("RUNNING")
+
+        # Print initial live status
+        self._print_live_status()
+        self._last_live_display = time.time()
 
         while self.running:
             if self.check_shutdown():
@@ -416,21 +474,32 @@ class Supervisor:
                 break
 
             current_time = time.time()
+            feed_ok = True
+
             if self.mode == "forward":
                 conn_state = self.feed.connection_state()
                 if conn_state != "CONNECTED":
+                    feed_ok = False
                     time.sleep(self.reconnect_delay)
                     self.reconnect_delay = min(self.reconnect_delay * 2, self.max_reconnect_delay)
                     self.reconnect_count += 1
                     self.save_status("RUNNING")
+                    # Show live status even during reconnect
+                    if current_time - self._last_live_display >= self._live_display_interval:
+                        self._print_live_status()
+                        self._last_live_display = current_time
                     continue
 
                 broker_symbol = "USTECm"
                 quote_res = self.feed.latest_quote(broker_symbol)
 
                 if quote_res.get("status") != "DATA_FRESH":
+                    feed_ok = False
                     time.sleep(self.reconnect_delay)
                     self.reconnect_delay = min(self.reconnect_delay * 2, self.max_reconnect_delay)
+                    if current_time - self._last_live_display >= self._live_display_interval:
+                        self._print_live_status()
+                        self._last_live_display = current_time
                     continue
                 else:
                     self.reconnect_delay = 1
@@ -470,6 +539,11 @@ class Supervisor:
                     "modules": {m.candidate_id: m.engine.state for m in self.modules}
                 }
                 self.health_ledger.record_heartbeat(hb_data)
+
+            # Periodic live status refresh
+            if current_time - self._last_live_display >= self._live_display_interval:
+                self._print_live_status()
+                self._last_live_display = current_time
 
             if self.mode == "forward":
                 time.sleep(1)

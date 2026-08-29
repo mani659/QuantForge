@@ -668,3 +668,130 @@ class TestContractFirewall:
         for m in modules:
             assert m.config["minimum"] == 3
             assert m.config["target"] == 5
+
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# LIVE CONSOLE MONITORING TESTS
+# ═══════════════════════════════════════════════════════════════════════════════
+
+
+class TestLiveConsoleDisplay:
+    """Test the live console monitoring display."""
+
+    def test_live_status_prints_modules(self, tmp_path, capsys):
+        from quantforge_forward_supervisor import Supervisor
+        supervisor = Supervisor(mode="smoke", base_runtime_dir=str(tmp_path))
+        supervisor.feed = MagicMock()
+        supervisor.feed.connection_state.return_value = "CONNECTED"
+        supervisor.feed.terminal_info.return_value = {
+            "broker": "Exness Technologies Ltd",
+            "server": "Exness-MT5Trial15"
+        }
+        supervisor._print_live_status()
+        captured = capsys.readouterr()
+        assert "QUANTFORGE FORWARD RUNNER — LIVE" in captured.out
+        assert "CAND-015" in captured.out
+        assert "CAND-024" in captured.out
+        assert "CAND-035" in captured.out
+        assert "PROTECTED" in captured.out
+
+    def test_live_status_shows_feed_ok(self, tmp_path, capsys):
+        from quantforge_forward_supervisor import Supervisor
+        supervisor = Supervisor(mode="smoke", base_runtime_dir=str(tmp_path))
+        supervisor.feed = MagicMock()
+        supervisor.feed.connection_state.return_value = "CONNECTED"
+        supervisor.feed.terminal_info.return_value = {
+            "broker": "Exness", "server": "Exness-MT5Trial15"
+        }
+        supervisor._print_live_status()
+        captured = capsys.readouterr()
+        assert "Feed: OK" in captured.out
+
+    def test_live_status_shows_feed_stale(self, tmp_path, capsys):
+        from quantforge_forward_supervisor import Supervisor
+        supervisor = Supervisor(mode="smoke", base_runtime_dir=str(tmp_path))
+        supervisor.feed = MagicMock()
+        supervisor.feed.connection_state.return_value = "DISCONNECTED"
+        supervisor.feed.terminal_info.return_value = {
+            "broker": "UNKNOWN", "server": "UNKNOWN"
+        }
+        supervisor._print_live_status()
+        captured = capsys.readouterr()
+        assert "DISCONNECTED" in captured.out
+
+    def test_live_status_shows_runner_live(self, tmp_path, capsys):
+        from quantforge_forward_supervisor import Supervisor
+        supervisor = Supervisor(mode="smoke", base_runtime_dir=str(tmp_path))
+        supervisor.feed = MagicMock()
+        supervisor.feed.connection_state.return_value = "CONNECTED"
+        supervisor.feed.terminal_info.return_value = {
+            "broker": "Exness", "server": "Exness-MT5Trial15"
+        }
+        supervisor._print_live_status()
+        captured = capsys.readouterr()
+        assert "Runner: LIVE" in captured.out
+
+    def test_live_status_shows_last_scan(self, tmp_path, capsys):
+        from quantforge_forward_supervisor import Supervisor
+        supervisor = Supervisor(mode="smoke", base_runtime_dir=str(tmp_path))
+        supervisor.feed = MagicMock()
+        supervisor.feed.connection_state.return_value = "CONNECTED"
+        supervisor.feed.terminal_info.return_value = {
+            "broker": "Exness", "server": "Exness-MT5Trial15"
+        }
+        supervisor._print_live_status()
+        captured = capsys.readouterr()
+        assert "Last Scan:" in captured.out
+
+    def test_live_status_shows_event_controls(self, tmp_path, capsys):
+        from quantforge_forward_supervisor import Supervisor
+        supervisor = Supervisor(mode="smoke", base_runtime_dir=str(tmp_path))
+        supervisor.feed = MagicMock()
+        supervisor.feed.connection_state.return_value = "CONNECTED"
+        supervisor.feed.terminal_info.return_value = {
+            "broker": "Exness", "server": "Exness-MT5Trial15"
+        }
+        supervisor._print_live_status()
+        captured = capsys.readouterr()
+        assert "stop_quantforge_forward.bat" in captured.out
+        assert "status_quantforge_forward.bat" in captured.out
+
+    def test_event_banner_prints_once(self, capsys):
+        from module_registry import ForwardModuleWrapper
+        wrapper = ForwardModuleWrapper.__new__(ForwardModuleWrapper)
+        wrapper.candidate_id = "CAND-024"
+        wrapper._printed_events = set()
+        wrapper.engine = MagicMock()
+        wrapper.engine.contract = MagicMock()
+        wrapper.engine.contract.hash = "925495a86b35e6266b3dd04e27474dc94f19e86f0c0649cb0b976443f71cb13e"
+        wrapper._print_event("DETECTED", "SHOCK_1234567890")
+        wrapper._print_event("DETECTED", "SHOCK_1234567890")
+        captured = capsys.readouterr()
+        assert captured.out.count("QUANTFORGE EVENT") == 1
+
+    def test_event_banner_shows_enhanced_format(self, capsys):
+        from module_registry import ForwardModuleWrapper
+        wrapper = ForwardModuleWrapper.__new__(ForwardModuleWrapper)
+        wrapper.candidate_id = "CAND-024"
+        wrapper._printed_events = set()
+        wrapper.engine = MagicMock()
+        wrapper.engine.contract = MagicMock()
+        wrapper.engine.contract.hash = "925495a86b35e6266b3dd04e27474dc94f19e86f0c0649cb0b976443f71cb13e"
+        wrapper._print_event("DETECTED", "SHOCK_1234567890")
+        captured = capsys.readouterr()
+        assert "!!! QUANTFORGE EVENT DETECTED !!!" in captured.out
+        assert "Candidate:" in captured.out
+        assert "Canonical:" in captured.out
+        assert "Event ID:" in captured.out
+        assert "State:" in captured.out
+
+    def test_module_error_isolation(self, tmp_path, capsys):
+        from module_registry import get_registry
+        modules = get_registry(str(tmp_path))
+        cand_024 = next(m for m in modules if m.candidate_id == "CAND-024")
+        bad_quote = {"utc_timestamp": time.time()}
+        result = cand_024.process_quote(bad_quote, "test_instance")
+        assert result is False
+        # Other modules should not be affected
+        cand_035 = next(m for m in modules if m.candidate_id == "CAND-035")
+        assert cand_035.engine.state == "WATCHING"
