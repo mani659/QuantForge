@@ -15,6 +15,7 @@ from event_ledger import EventLedger
 from outcome_ledger import OutcomeLedger
 from paper_execution import PaperExecutionFirewall
 
+
 class ForwardModuleWrapper:
     def __init__(self, candidate_id, engine, config, base_runtime_dir):
         self.candidate_id = candidate_id
@@ -22,12 +23,14 @@ class ForwardModuleWrapper:
         self.config = config
         self.module_dir = os.path.join(base_runtime_dir, f"cand_{candidate_id.split('-')[1].lower()}")
         os.makedirs(self.module_dir, exist_ok=True)
-        
+
         self.event_ledger = EventLedger(os.path.join(self.module_dir, "event_ledger.jsonl"))
         self.outcome_ledger = OutcomeLedger(os.path.join(self.module_dir, "outcome_ledger.jsonl"))
         self.paper = PaperExecutionFirewall(friction=2.0)
-        
-        self._last_notified_event_id = None
+
+        # Deduplication: set of (event_id, event_state) already printed
+        self._printed_events = set()
+
         self.status_file = os.path.join(self.module_dir, "status.json")
         self.stats = {
             "captured_count": 0,
@@ -38,7 +41,7 @@ class ForwardModuleWrapper:
             "last_evaluation_timestamp": 0
         }
         self.load_stats()
-        
+
     def load_stats(self):
         if os.path.exists(self.status_file):
             try:
@@ -47,7 +50,7 @@ class ForwardModuleWrapper:
                     self.stats.update(data.get("stats", {}))
             except Exception:
                 pass
-                
+
     def save_stats(self):
         contract = self.engine.contract
         data = {
@@ -65,21 +68,44 @@ class ForwardModuleWrapper:
         with open(temp_file, "w") as f:
             json.dump(data, f, indent=2)
         os.replace(temp_file, self.status_file)
-        
-    def _notify_event(self, event_type, event_id, detail=""):
-        if self._last_notified_event_id == f"{event_id}:{event_type}":
-            return
-        self._last_notified_event_id = f"{event_id}:{event_type}"
+
+    def _print_event(self, event_state, event_id, detail=""):
+        """
+        Print a major event to console.
+        Uses (event_id, event_state) as dedup key.
+        Only prints once per unique transition.
+        """
+        dedup_key = (event_id, event_state)
+        if dedup_key in self._printed_events:
+            return  # Already printed — deduplicated
+        self._printed_events.add(dedup_key)
+
         contract = self.engine.contract
+        from datetime import datetime
+        try:
+            # Try to format the event_id timestamp nicely
+            ts_parts = event_id.split("_")
+            if len(ts_parts) >= 2 and ts_parts[0] == "SHOCK":
+                ts_val = int(ts_parts[1])
+                event_time_utc = datetime.utcfromtimestamp(ts_val).strftime("%Y-%m-%dT%H:%M:%SZ")
+            else:
+                event_time_utc = "N/A"
+        except Exception:
+            event_time_utc = "N/A"
+
         print()
         print("=" * 60)
-        print(f" QUANTFORGE EVENT {event_type}")
+        print(" QUANTFORGE EVENT")
         print("=" * 60)
         print(f"Candidate: {self.candidate_id}")
-        print(f"Contract: {contract.candidate_id}:CANONICAL:{contract.hash[:8]}")
+        print(f"State: {event_state}")
         print(f"Event ID: {event_id}")
+        print(f"Event Time UTC: {event_time_utc}")
+        print("Logical Market: USATECHIDXUSD")
+        print("Broker Symbol: USTECm")
+        print(f"Canonical: {contract.hash[:8]}")
         if detail:
-            print(f"{detail}")
+            print(f"Detail: {detail}")
         print("=" * 60)
         print()
 
@@ -90,10 +116,9 @@ class ForwardModuleWrapper:
             if event:
                 self.stats["last_event_timestamp"] = quote["utc_timestamp"]
                 contract = self.engine.contract
-                
+
                 if event['action'] == "TRIGGER":
-                    self._notify_event("DETECTED", event['event_id'],
-                        f"Time UTC: {quote['utc_timestamp']}")
+                    # Ledger: record DETECTED (authoritative evidence)
                     self.event_ledger.record_event({
                         "candidate_id": contract.candidate_id,
                         "contract_version": contract.version,
@@ -106,14 +131,18 @@ class ForwardModuleWrapper:
                         "theoretical_entry": event['theoretical_entry'],
                         "runner_instance_id": instance_id
                     })
-                    
+                    # Console: notify once
+                    self._print_event("DETECTED", event['event_id'],
+                        f"Logical Market: USATECHIDXUSD")
+
+                    # Paper execution
                     paper_res = self.paper.execute_entry(event, quote)
-                    
+
                     if paper_res['status'] == "PAPER_ENTRY_RECORDED":
                         self.engine.state = "IN_POSITION"
                         self.stats["captured_count"] += 1
-                        self._notify_event("CAPTURED", event['event_id'],
-                            f"Paper Entry: {paper_res['paper_entry_price']}")
+
+                        # Ledger: record CAPTURED
                         self.event_ledger.record_event({
                             "candidate_id": contract.candidate_id,
                             "event_id": event['event_id'],
@@ -121,13 +150,15 @@ class ForwardModuleWrapper:
                             "modeled_paper_entry": paper_res['paper_entry_price'],
                             "utc_timestamp": quote['utc_timestamp']
                         })
-                        
+                        # Console: notify CAPTURED once
+                        self._print_event("CAPTURED", event['event_id'],
+                            f"Paper Entry: {paper_res['paper_entry_price']}")
+
                 elif event['action'] == "EXIT":
                     paper_res = self.paper.execute_exit(event, quote)
                     if paper_res['status'] == "PAPER_EXIT_RECORDED":
                         self.stats["completed_count"] += 1
-                        self._notify_event("COMPLETED", event['event_id'],
-                            f"Net Result: {paper_res['net_result']}")
+                        # Ledger: record COMPLETED
                         self.outcome_ledger.record_outcome({
                             "candidate_id": contract.candidate_id,
                             "contract_version": contract.version,
@@ -140,13 +171,16 @@ class ForwardModuleWrapper:
                             "modeled_friction": paper_res['modeled_friction'],
                             "outcome_status": "COMPLETED"
                         })
-                        
+                        # Console: notify COMPLETED once
+                        self._print_event("COMPLETED", event['event_id'],
+                            f"Net Result: {paper_res['net_result']}")
+
             self.save_stats()
             return True
         except Exception as e:
-            # Module isolation: an error here won't crash the supervisor
             print(f"[{self.candidate_id}] Evaluation error: {e}")
             return False
+
 
 class Cand015ModuleWrapper:
     def __init__(self, adapter, base_runtime_dir):
@@ -166,7 +200,9 @@ class Cand015ModuleWrapper:
         self.event_ledger = EventLedger(os.path.join(self.module_dir, "event_ledger.jsonl"))
         self.outcome_ledger = OutcomeLedger(os.path.join(self.module_dir, "outcome_ledger.jsonl"))
         self.paper = PaperExecutionFirewall(friction=2.0)
-        self._last_notified_event_id = None
+
+        # Deduplication: set of (event_id, event_state) already printed
+        self._printed_events = set()
 
         self.status_file = os.path.join(self.module_dir, "status.json")
         self.stats = {
@@ -204,19 +240,40 @@ class Cand015ModuleWrapper:
             json.dump(data, f, indent=2)
         os.replace(temp_file, self.status_file)
 
-    def _notify_event(self, event_type, event_id, detail=""):
-        if self._last_notified_event_id == f"{event_id}:{event_type}":
+    def _print_event(self, event_state, event_id, detail=""):
+        """
+        Print a major event to console for CAND-015.
+        Uses (event_id, event_state) as dedup key.
+        """
+        dedup_key = (event_id, event_state)
+        if dedup_key in self._printed_events:
             return
-        self._last_notified_event_id = f"{event_id}:{event_type}"
+        self._printed_events.add(dedup_key)
+
+        from datetime import datetime
+        try:
+            ts_parts = event_id.split("_")
+            if len(ts_parts) >= 2 and ts_parts[0] == "SHOCK":
+                ts_val = int(ts_parts[1])
+                event_time_utc = datetime.utcfromtimestamp(ts_val).strftime("%Y-%m-%dT%H:%M:%SZ")
+            else:
+                event_time_utc = "N/A"
+        except Exception:
+            event_time_utc = "N/A"
+
         print()
         print("=" * 60)
-        print(f" QUANTFORGE EVENT {event_type}")
+        print(" QUANTFORGE EVENT")
         print("=" * 60)
         print(f"Candidate: {self.candidate_id}")
-        print(f"Architectural Note: EXTERNAL_PROTECTED")
+        print(f"State: {event_state}")
         print(f"Event ID: {event_id}")
+        print(f"Event Time UTC: {event_time_utc}")
+        print("Logical Market: USATECHIDXUSD")
+        print("Broker Symbol: USTECm")
+        print("Architectural Note: EXTERNAL_PROTECTED")
         if detail:
-            print(f"{detail}")
+            print(f"Detail: {detail}")
         print("=" * 60)
         print()
 
@@ -227,8 +284,8 @@ class Cand015ModuleWrapper:
             if signal:
                 self.stats["last_event_timestamp"] = quote["utc_timestamp"]
                 event_id = f"SHOCK_{int(quote['utc_timestamp'])}"
-                self._notify_event("DETECTED", event_id,
-                    f"Time UTC: {quote['utc_timestamp']}")
+
+                # Ledger: record DETECTED
                 self.event_ledger.record_event({
                     "candidate_id": self.candidate_id,
                     "architectural_note": "EXTERNAL_PROTECTED",
@@ -240,6 +297,9 @@ class Cand015ModuleWrapper:
                     "volatility_state": signal.get("volatility_state"),
                     "runner_instance_id": instance_id
                 })
+                # Console: notify once
+                self._print_event("DETECTED", event_id)
+
                 self.stats["captured_count"] += 1
             self.save_stats()
             return True

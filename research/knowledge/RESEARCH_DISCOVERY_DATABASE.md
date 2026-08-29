@@ -1225,3 +1225,47 @@ G1/G2 showed positive descriptive economics in the registered FAVORABLE subset, 
 - Tests: 130/130 pass (52 forward + 78 contract).
 - Supervisor RUNNING (PID 6924) throughout cleanup. No interruption.
 - V24 readiness: READY.
+
+## DISC-101 — Operator Workflow Correction — Stale Status / Process Authority
+
+**Relationship:** Runtime Architecture Correction.
+
+**Status:** CORRECTION COMPLETE — PROCESS AUTHORITY ESTABLISHED.
+
+**Incident:** After PC reboot on 2026-08-29, `status_quantforge_forward.bat` reported RUNNING for dead PID 5080. `tasklist /FI "PID eq 5080"` returned no tasks. `wmic process` showed no supervisor process. The persisted `status.json` was stale and was incorrectly treated as authoritative runtime state.
+
+**Root Cause:** Status script and launcher used file existence (status.json, supervisor.lock) as proof of process liveness. Neither verified the actual Windows process.
+
+**Correction:**
+- Created `scripts/forward/process_validation.py` — robust PID/process verification via `wmic` command-line scanning.
+- Fixed `status.py` — verifies actual process before reporting RUNNING; shows STALE warning when status.json is stale.
+- Fixed `run_quantforge_forward.bat` — scans for real supervisor process (not just lock file); cleans stale locks.
+- Fixed `stop_quantforge_forward.bat` — verifies process exists before sending shutdown request.
+- Fixed `quantforge_forward_supervisor.py` — stale lock detection/cleanup on startup; proper LIVE banner with actual PID.
+- Fixed `module_registry.py` — event console deduplication via (event_id, event_state) pairs.
+- Created `scripts/forward/tests/test_process_validation.py` — 63 regression tests.
+- Created `output/research_discovery/QUANTFORGE_OPERATOR_RUNTIME_CORRECTION_V1.md` — comprehensive artifact.
+
+**Test Results:**
+- 63 new tests: ALL PASS
+- 54 existing forward runtime tests: ALL PASS
+- Combined: 117/117 PASS
+
+**Hard Rule Established:** A persisted status file is NOT proof that the process is alive. The actual Windows process is authoritative for RUNNING/NOT RUNNING.
+
+**Operator Workflow:**
+1. `run_quantforge_forward.bat` — starts experiment (one visible CMD window)
+2. `status_quantforge_forward.bat` — shows real process state
+3. `stop_quantforge_forward.bat` — stops the actual process
+4. After PC restart: manually run BAT again. No Task Scheduler. No auto-start.
+
+**Preserved:**
+- CAND-015: ACTIVE / PROTECTED (adapter-based, semantic unchanged)
+- CAND-024: ACTIVE — 0/3/5 (canonical: 925495a8)
+- CAND-035: ACTIVE — 0/3/5 (canonical: ddc5d0e9)
+- MT5: Exness-MT5Trial15 / USTECm (read-only)
+- No live/demo/real orders (paper-only)
+- No signal combination across candidates
+- No Task Scheduler required
+
+**Artifact:** `output/research_discovery/QUANTFORGE_OPERATOR_RUNTIME_CORRECTION_V1.md`

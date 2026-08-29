@@ -354,6 +354,30 @@ H01 Equity Track A (permanently, line closed — ECONOMIC FAILURE):
 - The missing V2 scientific report was reconstructed during the final TSMOM closure task from persisted artifacts only (no recomputation, no new inference), and is recorded with an explicit reconstruction notice; this is a documentation completion, not a protocol change.
 - This handoff update is a state snapshot reflecting the closure of both research lines, not a replacement for historical records.
 
+## 18. Operator Workflow Correction (2026-08-29)
+
+> **MANUAL UNIFIED FORWARD RUNNER OPERATOR WORKFLOW CORRECTED**
+> **ACTUAL PROCESS STATE IS AUTHORITATIVE**
+> **STALE STATUS CANNOT REPORT RUNNING**
+> **TASK SCHEDULER NOT REQUIRED**
+> **ONE BAT LAUNCHER**
+> **ONE VISIBLE COMMAND PROMPT**
+> **ONE SHARED READ-ONLY MT5 CONNECTION**
+> **CAND-015 / CAND-024 / CAND-035 INDEPENDENT**
+
+After the PC reboot on 2026-08-29, `status_quantforge_forward.bat` reported RUNNING for a dead PID. The incident was caused by stale `status.json` being treated as authoritative runtime state. The correction establishes that the actual Windows process is the authoritative source of truth for RUNNING/NOT RUNNING status.
+
+**Files changed:**
+- `scripts/forward/process_validation.py` (new) — robust PID/process verification
+- `scripts/forward/quantforge_forward_supervisor.py` — stale lock cleanup, startup banner
+- `scripts/forward/status.py` — process verification before reporting RUNNING
+- `scripts/forward/module_registry.py` — event console deduplication
+- `run_quantforge_forward.bat` — verify actual process before claiming running
+- `stop_quantforge_forward.bat` — verify process exists before shutdown
+- `scripts/forward/tests/test_process_validation.py` (new) — 63 regression tests
+
+**Artifact:** `output/research_discovery/QUANTFORGE_OPERATOR_RUNTIME_CORRECTION_V1.md`
+
 ---
 
-*Authoritative for the next session. Headers: Start Here · Repository State · Milestone Frozen · Governance · Boundary · Frozen Boundaries · Test Baseline · Firewall · TSMOM V1 Result · NC2 Finding · Market Composition · TSMOM V2 Result · Research Status · Blockers · TSMOM Artifacts · H01 Equity V1 · Governance Position · Project Position · Forbidden · Integrity.*
+*Authoritative for the next session. Headers: Start Here · Repository State · Milestone Frozen · Governance · Boundary · Frozen Boundaries · Test Baseline · Firewall · TSMOM V1 Result · NC2 Finding · Market Composition · TSMOM V2 Result · Research Status · Blockers · TSMOM Artifacts · H01 Equity V1 · Governance Position · Project Position · Forbidden · Integrity · Operator Workflow Correction.*
