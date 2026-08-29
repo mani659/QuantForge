@@ -502,6 +502,30 @@ The surviving corpus now records **six closed research lines** — Mean Reversio
 
 - **Record:** Forward runtime stabilized for overnight observation. Added minimal event console notifications (DETECTED/CAPTURED/COMPLETED) with deduplication. CAND-015 adapter interface repaired (config + engine.state). 3 modules running under unified observer. One shared MT5 read-only connection. Qualification timeline preserved. Event counters: CAND-024 0/3/5, CAND-035 0/3/5. Next milestone: V24 G0 candidate generation. **Status:** FORWARD RUNTIME FROZEN FOR OVERNIGHT OBSERVATION. ONE RUNNER, ONE MT5 FEED, THREE INDEPENDENT MODULES.
 
+## 102. G1 Economic Qualification Framework V3 Ratification (2026-08-29)
+
+- **Record:** Ratified the G1 Economic Qualification Framework V3 as the prospective governing framework for future Research Factory cycles (V25+). The framework was refined through three iterations: (1) original V3 proposal with four artifact classes and numeric thresholds; (2) design review separating hard validity gates from economic evidence; (3) formal owner ratification. Key changes from prior G1: two-layer architecture (9 hard validity gates + holistic economic evidence adjudication), four artifact-specific classes (Standalone Alpha, Rare-Event, State/Condition, Regime/Specialist), five-level evidence classification replacing binary PASS/FAIL, economic metrics treated as evidence not thresholds. 5 bps and 20 bps downgraded to reference points. N=3 and N=10 downgraded to evidence-quality markers. 2 bps State delta removed as universal rule. Median is evidence not a gate. All historical candidates (V19-V24) remain closed. **Status:** G1 FRAMEWORK V3 RATIFIED. EFFECTIVE FOR FUTURE RESEARCH CYCLES ONLY.
+
+## 103. Manual Unified Forward Launcher Finalized (2026-08-29)
+
+- **Record:** Replaced WMIC-based process detection with PowerShell `Get-CimInstance Win32_Process` for reliable supervisor detection. Added pause-on-failure for double-click safety. BAT now checks Python availability before starting supervisor. Verified from both CMD and double-click scenarios. All 116 tests pass. **Status:** MANUAL LAUNCHER FINALIZED. DOUBLE-CLICK SAFE. POWERSHELL-BASED DETECTION.
+
+## 104. Live Console Monitoring Added (2026-08-29)
+
+- **Record:** Added periodic live console display to forward runner showing MT5 connection, candidate states (ACTIVE/WATCHING), feed status, and last scan time. Display refreshes every ~10 seconds. Major event transitions (DETECTED/CAPTURED/COMPLETED) print as prominent banners and deduplicate via event_id+event_state pairs. Normal scanning remains low-noise. All 125 tests pass. **Status:** LIVE CONSOLE MONITORING ADDED. OPERATOR CAN VISUALLY MONITOR FORWARD OBSERVATION WITHOUT OPENING LEDGERS.
+
+## 105. V24 G0 Candidate Generation (2026-08-29)
+
+- **Record:** Generated 3 V24 G0 candidates with mechanism diversity: CAND-071 (Cross-Market Gold→Tech Information Transmission), CAND-072 (Friday Range Compression Monday Breakout), CAND-073 (Mid-Day Reversal Continuation). All three classified as Alpha/Event. All three are genuinely new mechanism families not explored in V19-V23. **Status:** V24 G0 COMPLETE. 3 CANDIDATES GENERATED.
+
+## 106. V24 G1 Economic Plausibility Screen (2026-08-29)
+
+- **Record:** All three V24 candidates failed the absolute economic gate (mean net < 0 after 2 bps friction). CAND-071: -1.99 bps, CAND-072: -5.15 bps, CAND-073: -1.98 bps. All three treatments outperformed their registered counterfactuals (real informational value). **Status:** V24 G1 COMPLETE. NO G2 PROMOTIONS. ALL TREATMENTS SHOW CONDITIONAL INFORMATION VALUE BUT FAILED ABSOLUTE ECONOMICS.
+
+## 107. V24 Closure and Factory Meta-Review (2026-08-29)
+
+- **Record:** V24 formally closed with no G2 candidate. Meta-review of V19-V24 reveals 18 candidates, 0 G2 promotions. Dominant pattern: informationally interesting conditions with insufficient absolute displacement to survive retail friction. Identified possible candidate-generation bias (testing price patterns instead of displacement mechanisms). Recommended future G0 shift toward direct economic displacement. **Status:** V24 CLOSED. METHODOLOGY REFINEMENT RECOMMENDED BEFORE NEXT G0.
+
 ## 101. Operator Workflow Correction — Stale Status / Process Authority (2026-08-29)
 
 - **Record:** After PC reboot, `status_quantforge_forward.bat` reported RUNNING for a dead PID (5080). The persisted `status.json` was stale and was incorrectly treated as authoritative runtime state. Root cause: status script and launcher used file existence as proof of process liveness without verifying the actual Windows process. **Correction:** Created `process_validation.py` with robust PID verification via `wmic` command-line scanning. Fixed `status.py` to verify actual process before reporting RUNNING. Fixed `run_quantforge_forward.bat` to scan for real supervisor process (not just lock file). Fixed `stop_quantforge_forward.bat` to verify process exists before sending shutdown. Fixed supervisor to clean stale locks on startup. Added 63 regression tests covering process validation, stale status, stale lock, event console, BAT content, startup banner, uptime, paper safety, candidate independence, and contract firewall. All 117 tests pass (63 new + 54 existing). **Status:** MANUAL UNIFIED FORWARD RUNNER OPERATOR WORKFLOW CORRECTED. ACTUAL PROCESS STATE IS AUTHORITATIVE. STALE STATUS CANNOT REPORT RUNNING. TASK SCHEDULER NOT REQUIRED. ONE BAT LAUNCHER. ONE VISIBLE COMMAND PROMPT. ONE SHARED READ-ONLY MT5 CONNECTION. CAND-015 / CAND-024 / CAND-035 INDEPENDENT.

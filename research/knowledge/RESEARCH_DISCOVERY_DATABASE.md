@@ -1269,3 +1269,41 @@ G1/G2 showed positive descriptive economics in the registered FAVORABLE subset, 
 - No Task Scheduler required
 
 **Artifact:** `output/research_discovery/QUANTFORGE_OPERATOR_RUNTIME_CORRECTION_V1.md`
+
+## DISC-102 — G1 Economic Qualification Framework V3 Ratification
+
+**Relationship:** Governance Framework Ratification.
+
+**Status:** RATIFIED — EFFECTIVE FOR FUTURE RESEARCH CYCLES ONLY (V25+).
+
+**Context:** The original G1 framework applied a single-gate design (Mean Net > 5 bps + Counterfactual Treatment Superior) uniformly to all artifact classes. The V19-V24 meta-review revealed that this design is inappropriate for State/Condition artifacts (which don't generate standalone trades), rare-event Alpha (which can't accumulate N in standard G2 holdouts), and regime specialists (which intentionally suppress activity outside their regime).
+
+**Framework Change:**
+- Two-layer architecture: 9 hard validity gates + holistic economic evidence adjudication
+- Four artifact-specific classes: Standalone Alpha, Rare-Event Alpha, State/Condition, Regime/Specialist
+- Five-level evidence classification replacing binary PASS/FAIL
+- Economic metrics treated as evidence inputs, not hard thresholds
+- 5 bps and 20 bps downgraded to reference points
+- N=3 and N=10 downgraded to evidence-quality markers
+- 2 bps State delta removed as universal rule
+- Median is evidence, not a gate
+- G1 decision based on total evidence profile, not numeric score
+
+**Hard Validity Gates (9):** Deterministic definition, executable entry, no hindsight contamination, correct cost normalization, data integrity, legitimate counterfactual, causal claims limited to observables, no future-bar dependency, reproducibility.
+
+**Adjudication Classes:**
+1. Economically Negative
+2. Informationally Interesting
+3. Economically Promising
+4. Qualification-Worthy
+5. Rare-Event Qualification-Worthy
+
+**G1 Decisions:** CONTINUE TO G2 / HOLD / RARE-EVENT FORWARD QUALIFICATION / STATE INTERACTION ELIGIBLE / REJECT
+
+**Rescue Firewall:** V19-V24 remain closed. Framework applies prospectively only. No historical reclassification without explicit owner authorization.
+
+**Artifacts:**
+- `output/research_discovery/QUANTFORGE_G1_ECONOMIC_QUALIFICATION_CRITERIA_AUDIT_V1.md`
+- `output/research_discovery/QUANTFORGE_G1_ECONOMIC_QUALIFICATION_FRAMEWORK_V3_PROPOSAL.md`
+- `output/research_discovery/QUANTFORGE_G1_HARD_GATES_VS_EVIDENCE_ADJUDICATION_V1.md`
+- `output/research_discovery/QUANTFORGE_G1_ECONOMIC_QUALIFICATION_FRAMEWORK_V3_RATIFICATION_V1.md`

@@ -378,6 +378,51 @@ After the PC reboot on 2026-08-29, `status_quantforge_forward.bat` reported RUNN
 
 **Artifact:** `output/research_discovery/QUANTFORGE_OPERATOR_RUNTIME_CORRECTION_V1.md`
 
+## 19. G1 Economic Qualification Framework V3 Ratification (2026-08-29)
+
+> **G1 ECONOMIC QUALIFICATION FRAMEWORK V3 RATIFIED**
+> **EFFECTIVE FOR FUTURE RESEARCH CYCLES ONLY (V25+)**
+> **ECONOMIC METRICS ARE EVIDENCE, NOT UNIVERSAL HARD THRESHOLDS**
+> **HARD GATES LIMITED TO VALIDITY / INTEGRITY**
+> **FOUR ARTIFACT CLASSES RECEIVE ARTIFACT-APPROPRIATE ADJUDICATION**
+> **V19–V24 REMAIN CLOSED**
+
+The G1 framework was refined from a single-gate design (Mean Net > 5 bps applied uniformly) into a two-layer architecture:
+
+**Layer 1 — Hard Validity Gates (9 binary checks):**
+- Deterministic definition
+- Executable entry
+- No hindsight contamination
+- Correct cost normalization
+- Data integrity
+- Legitimate counterfactual
+- Causal claims limited to observables
+- No future-bar dependency
+- Reproducibility
+
+**Layer 2 — Economic Evidence Adjudication:**
+- All economic statistics are evidence inputs, not thresholds
+- Five-level evidence classification: Economically Negative → Informationally Interesting → Economically Promising → Qualification-Worthy → Rare-Event Qualification-Worthy
+- G1 decision based on total evidence profile, not numeric score
+
+**Four Artifact Classes:**
+- Standalone Alpha: absolute economic value is central
+- Rare-Event Alpha: per-event economics and event integrity are central
+- State/Condition: incremental value to legitimate downstream Alpha
+- Regime/Specialist: in-regime economics and regime definition quality
+
+**Numeric Thresholds — Revised Status:**
+- 5 bps → REFERENCE POINT (not universal law)
+- 20 bps → REFERENCE POINT (not universal law)
+- 2 bps State delta → REMOVED as universal rule
+- N=3 → EVIDENCE-QUALITY MARKER (not automatic gate)
+- N=10 → EVIDENCE-QUALITY MARKER (not automatic gate)
+**Artifacts:**
+- `output/research_discovery/QUANTFORGE_G1_ECONOMIC_QUALIFICATION_CRITERIA_AUDIT_V1.md`
+- `output/research_discovery/QUANTFORGE_G1_ECONOMIC_QUALIFICATION_FRAMEWORK_V3_PROPOSAL.md`
+- `output/research_discovery/QUANTFORGE_G1_HARD_GATES_VS_EVIDENCE_ADJUDICATION_V1.md`
+- `output/research_discovery/QUANTFORGE_G1_ECONOMIC_QUALIFICATION_FRAMEWORK_V3_RATIFICATION_V1.md`
+
 ---
 
 *Authoritative for the next session. Headers: Start Here · Repository State · Milestone Frozen · Governance · Boundary · Frozen Boundaries · Test Baseline · Firewall · TSMOM V1 Result · NC2 Finding · Market Composition · TSMOM V2 Result · Research Status · Blockers · TSMOM Artifacts · H01 Equity V1 · Governance Position · Project Position · Forbidden · Integrity · Operator Workflow Correction.*
