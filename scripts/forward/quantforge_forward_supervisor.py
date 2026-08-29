@@ -26,22 +26,24 @@ SUPERVISOR_SCRIPT = "quantforge_forward_supervisor.py"
 
 
 def _find_supervisor_pids():
-    """Find all PIDs that are running quantforge_forward_supervisor.py."""
+    """Find all PIDs that are running quantforge_forward_supervisor.py via PowerShell."""
     pids = []
     try:
+        ps_cmd = (
+            "Get-CimInstance Win32_Process | "
+            "Where-Object { $_.CommandLine -like '*quantforge_forward_supervisor.py*' -and "
+            "$_.Name -like 'python*' } | "
+            "Select-Object -ExpandProperty ProcessId"
+        )
         result = subprocess.run(
-            [
-                "wmic", "process", "where",
-                f"CommandLine like '%{SUPERVISOR_SCRIPT}%'",
-                "get", "ProcessId", "/FORMAT:LIST"
-            ],
+            ["powershell", "-NoProfile", "-Command", ps_cmd],
             capture_output=True, text=True, timeout=5
         )
         for line in result.stdout.strip().splitlines():
             line = line.strip()
-            if line.startswith("ProcessId="):
+            if line:
                 try:
-                    pid = int(line[len("ProcessId="):])
+                    pid = int(line)
                     if pid > 0:
                         pids.append(pid)
                 except ValueError:
@@ -52,7 +54,7 @@ def _find_supervisor_pids():
 
 
 def _is_pid_alive(pid):
-    """Check if a PID exists on the system."""
+    """Check if a PID exists on the system via tasklist."""
     try:
         result = subprocess.run(
             ["tasklist", "/FI", f"PID eq {pid}", "/NH"],

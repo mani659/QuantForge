@@ -11,7 +11,6 @@ if forward_dir not in sys.path:
 
 from process_validation import (
     find_supervisor_pid,
-    is_quantforge_supervisor,
     validate_lock_file,
 )
 

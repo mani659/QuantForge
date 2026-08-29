@@ -13,22 +13,31 @@ echo  QUANTFORGE FORWARD RUNNER
 echo ========================================
 echo.
 
-:: ── Step 1: Verify whether supervisor is ACTUALLY running ──
-:: Do NOT trust stale lock file or status.json.
-:: Scan for the real process first.
-set "ACTUAL_PID="
+:: ── Step 0: Verify Python is available ──
+python --version >nul 2>&1
+if %ERRORLEVEL% NEQ 0 (
+    echo.
+    echo ========================================
+    echo  FORWARD START BLOCKED
+    echo  Reason: Python not found
+    echo ========================================
+    echo.
+    echo Python is required to run the supervisor.
+    echo Please install Python 3.11+ and re-run this BAT.
+    echo.
+    pause >nul
+    exit /b 1
+)
 
-:: Use wmic to find the real supervisor process
-for /f "tokens=2 delims==" %%i in ('wmic process where "CommandLine like '%%quantforge_forward_supervisor.py%%'" get ProcessId /FORMAT:LIST 2^>nul ^| find "ProcessId="') do (
+:: ── Step 1: Detect actual supervisor via PowerShell ──
+:: Queries Win32_Process for command lines containing our supervisor script.
+:: Excludes the PowerShell process itself by filtering on Name='python*'.
+set "ACTUAL_PID="
+for /f "usebackq delims=" %%i in (`powershell -NoProfile -Command "Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -like '*quantforge_forward_supervisor.py*' -and $_.Name -like 'python*' } | Select-Object -First 1 -ExpandProperty ProcessId" 2^>nul`) do (
     set "ACTUAL_PID=%%i"
 )
 
-:: Trim whitespace from ACTUAL_PID
-if defined ACTUAL_PID (
-    for /f "tokens=*" %%a in ("%ACTUAL_PID%") do set "ACTUAL_PID=%%a"
-)
-
-:: Verify the PID is actually alive and belongs to our supervisor
+:: Verify the PID is actually alive
 set "SUPERVISOR_CONFIRMED=0"
 if defined ACTUAL_PID (
     tasklist /FI "PID eq %ACTUAL_PID%" 2>nul | find /I "python" >nul
@@ -38,29 +47,47 @@ if defined ACTUAL_PID (
 )
 
 if "%SUPERVISOR_CONFIRMED%"=="1" (
-    echo Supervisor already running.
-    echo PID: %ACTUAL_PID%
     echo.
-    echo Use status_quantforge_forward.bat to check status.
-    echo Use stop_quantforge_forward.bat to stop.
+    echo ========================================
+    echo  QUANTFORGE FORWARD RUNNER
+    echo ========================================
+    echo.
+    echo  SUPERVISOR ALREADY RUNNING
+    echo.
+    echo  PID: %ACTUAL_PID%
+    echo.
+    echo  Use status_quantforge_forward.bat
+    echo  to inspect the live system.
+    echo.
+    echo  Use stop_quantforge_forward.bat
+    echo  to stop it.
+    echo.
+    pause >nul
     exit /b 0
 )
 
 :: ── Step 2: No real supervisor found ──
 :: Clean up stale lock if present
 if exist "%LOCK_FILE%" (
-    echo STALE LOCK DETECTED — cleaning up...
+    echo STALE SUPERVISOR LOCK DETECTED
+    echo Removing stale lock...
     del "%LOCK_FILE%" 2>nul
+    echo.
 )
 
 :: Clean up stale shutdown request if present
-if exist "%LOG_DIR%\shutdown.req" del "%LOG_DIR%\shutdown.req" 2>nul
+if exist "%LOG_DIR%\shutdown.req" (
+    echo Removing stale shutdown request...
+    del "%LOG_DIR%\shutdown.req" 2>nul
+    echo.
+)
 
 :: ── Step 3: Ensure MT5 terminal is running ──
 echo Checking MT5 terminal...
 tasklist /FI "IMAGENAME eq terminal64.exe" 2>nul | find /I "terminal64.exe" >nul
 if %ERRORLEVEL% NEQ 0 (
-    echo MT5 terminal not running. Starting Exness MT5...
+    echo MT5 terminal not running.
+    echo Starting Exness MT5...
     if exist "%MT5_PATH%" (
         start "" "%MT5_PATH%"
         echo Waiting for MT5 to initialize...
@@ -70,10 +97,14 @@ if %ERRORLEVEL% NEQ 0 (
         echo ========================================
         echo  FORWARD START BLOCKED
         echo  Reason: MT5 terminal not found
-        echo  Expected: %MT5_PATH%
+        echo.
+        echo  Expected:
+        echo  %MT5_PATH%
         echo ========================================
         echo.
         echo Please install MetaTrader 5 Exness and re-run this BAT.
+        echo.
+        pause >nul
         exit /b 1
     )
 ) else (
@@ -88,9 +119,16 @@ if not exist "%LOG_DIR%" mkdir "%LOG_DIR%"
 
 echo.
 echo Starting QuantForge Forward Supervisor...
+echo CAND-015 + CAND-024 + CAND-035
 echo.
 echo Press Ctrl+C to stop, or use stop_quantforge_forward.bat
 echo.
 
 :: Run Python supervisor in foreground (command window stays open)
+:: No start /b, no hidden window, no detached process.
 python -u scripts\forward\quantforge_forward_supervisor.py --mode forward
+
+:: If Python exits, keep window visible
+echo.
+echo Supervisor process has exited.
+pause

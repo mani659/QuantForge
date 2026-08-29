@@ -5,15 +5,10 @@ cd /d "%~dp0"
 set REQ_DIR=runtime\forward\supervisor
 if not exist "%REQ_DIR%" mkdir "%REQ_DIR%"
 
-:: ── Check if supervisor is ACTUALLY running ──
+:: ── Detect actual supervisor via PowerShell ──
 set "ACTUAL_PID="
-
-for /f "tokens=2 delims==" %%i in ('wmic process where "CommandLine like '%%quantforge_forward_supervisor.py%%'" get ProcessId /FORMAT:LIST 2^>nul ^| find "ProcessId="') do (
+for /f "usebackq delims=" %%i in (`powershell -NoProfile -Command "Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -like '*quantforge_forward_supervisor.py*' -and $_.Name -like 'python*' } | Select-Object -First 1 -ExpandProperty ProcessId" 2^>nul`) do (
     set "ACTUAL_PID=%%i"
-)
-
-if defined ACTUAL_PID (
-    for /f "tokens=*" %%a in ("%ACTUAL_PID%") do set "ACTUAL_PID=%%a"
 )
 
 :: Verify the PID is actually alive
@@ -30,6 +25,8 @@ if "%SUPERVISOR_CONFIRMED%"=="0" (
     echo.
     echo If status.json shows RUNNING, that record is stale.
     echo The actual process is not alive.
+    echo.
+    pause >nul
     exit /b 0
 )
 
@@ -64,9 +61,13 @@ if "%STILL_RUNNING%"=="1" (
         echo.
         echo WARNING: Supervisor did not exit within 30 seconds.
         echo You may need to forcefully terminate PID %ACTUAL_PID%.
+        echo.
+        pause >nul
         exit /b 1
     )
 )
 
 echo Supervisor stopped successfully.
+echo.
+pause >nul
 exit /b 0
