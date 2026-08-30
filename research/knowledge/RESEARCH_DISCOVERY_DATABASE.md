@@ -1527,3 +1527,13 @@ Artifact: `output/research_discovery/RESEARCH_FACTORY_V2_G1_SCREEN_20260830_V29.
 Artifact: `output/research_discovery/QUANTFORGE_RELATIONAL_RESEARCH_FRAMEWORK_GOVERNANCE_V1.md`
 
 **Status:** RELATIONAL RESEARCH FRAMEWORK ESTABLISHED. V30 G0 READY.
+
+---
+
+## DISC-039 — Unified Research Knowledge Ledger V1 Established (2026-08-30)
+
+- Comprehensive unified knowledge ledger covering V19-V29 constructed and reconciled. 33 candidates (CAND-056 through CAND-088) documented with full provenance. 6 behavioural knowledge records created. 7 State objects registered. 26 closed candidates preserved as negative knowledge. 4 exploratory observations documented. 3 untested relational hypothesis seeds recorded. Completeness audit passed: all candidates accounted for, all economic numbers sourced, no thresholds ratified, no closed candidates promoted, no relational experiments performed, no new Alphas created.
+
+Artifact: `output/research_discovery/QUANTFORGE_UNIFIED_RESEARCH_KNOWLEDGE_LEDGER_V1.md`
+
+**Status:** UNIFIED KNOWLEDGE LEDGER V1 RECONCILED. V30 G0 READY.

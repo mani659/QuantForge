@@ -2,7 +2,7 @@
 
 **Purpose:** Authoritative restart point for the next QuantForge session. Do not reconstruct project history from conversational memory; start from this document and the referenced artifacts.
 
-**Last consolidated:** 2026-08-30 (Relational Research Framework established — V30 G0 READY)
+**Last consolidated:** 2026-08-30 (Unified Research Knowledge Ledger V1 established — V30 G0 READY)
 
 ---
 
@@ -569,4 +569,4 @@ Volume data unavailable / zero for both USATECHIDXUSD and XAUUSD M1 data. Do not
 
 ---
 
-*Authoritative for next session. Updated 2026-08-30 after Relational Research Framework establishment. V30 G0 READY. Relational research GOVERNED. State library preserved. Forward runtime protected.*
+*Authoritative for next session. Updated 2026-08-30 after Unified Research Knowledge Ledger V1. V30 G0 READY. Relational research GOVERNED. Knowledge ledger RECONCILED. State library preserved. Forward runtime protected.*
