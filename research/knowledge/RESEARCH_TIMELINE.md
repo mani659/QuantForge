@@ -526,6 +526,18 @@ The surviving corpus now records **six closed research lines** — Mean Reversio
 
 - **Record:** V24 formally closed with no G2 candidate. Meta-review of V19-V24 reveals 18 candidates, 0 G2 promotions. Dominant pattern: informationally interesting conditions with insufficient absolute displacement to survive retail friction. Identified possible candidate-generation bias (testing price patterns instead of displacement mechanisms). Recommended future G0 shift toward direct economic displacement. **Status:** V24 CLOSED. METHODOLOGY REFINEMENT RECOMMENDED BEFORE NEXT G0.
 
+## 108. V25 G0 Economic Displacement Candidate Generation (2026-08-29)
+
+- **Record:** Generated 3 V25 G0 candidates focused on economic displacement mechanisms (not price patterns): CAND-074 (London Gold Fix — settlement/benchmark), CAND-075 (US Equity Closing Auction — settlement/benchmark), CAND-076 (Gold→Tech overnight — cross-market transmission, EXTENSION of CAND-071). First cycle under ratified G1 V3 framework. **Status:** V25 G0 COMPLETE. 3 CANDIDATES GENERATED.
+
+## 109. V25 G1 Economic Plausibility Screen (2026-08-29)
+
+- **Record:** All three V25 candidates evaluated under G1 V3 evidence-based adjudication framework. All three are valid measurement objects (all 9 hard gates pass). All three are ECONOMICALLY NEGATIVE: CAND-074: -1.72 bps mean net (fix window adds no directional value); CAND-075: -2.15 bps mean net (closing auction adds no directional value); CAND-076: -2.14 bps mean net (Gold direction signal is inversely related to Tech, counterfactual superior by +2.20 bps). No conditional information value observed — all counterfactuals are superior. First cycle under V3 framework: settlement/benchmark mechanism family also failed G1, extending the pattern from V24. **Status:** V25 G1 COMPLETE. NO G2 PROMOTIONS.
+
+## 110. V25 Closure (2026-08-29)
+
+- **Record:** V25 closed with no G2 candidate. Settlement/benchmark mechanism families (CAND-074, CAND-075) failed alongside cross-market transmission (CAND-076). The pattern extends from V24: mechanism diversity did not rescue economic failure. The V19-V25 total is now 21 candidates, 0 G2 promotions. **Status:** V25 CLOSED.
+
 ## 101. Operator Workflow Correction — Stale Status / Process Authority (2026-08-29)
 
 - **Record:** After PC reboot, `status_quantforge_forward.bat` reported RUNNING for a dead PID (5080). The persisted `status.json` was stale and was incorrectly treated as authoritative runtime state. Root cause: status script and launcher used file existence as proof of process liveness without verifying the actual Windows process. **Correction:** Created `process_validation.py` with robust PID verification via `wmic` command-line scanning. Fixed `status.py` to verify actual process before reporting RUNNING. Fixed `run_quantforge_forward.bat` to scan for real supervisor process (not just lock file). Fixed `stop_quantforge_forward.bat` to verify process exists before sending shutdown. Fixed supervisor to clean stale locks on startup. Added 63 regression tests covering process validation, stale status, stale lock, event console, BAT content, startup banner, uptime, paper safety, candidate independence, and contract firewall. All 117 tests pass (63 new + 54 existing). **Status:** MANUAL UNIFIED FORWARD RUNNER OPERATOR WORKFLOW CORRECTED. ACTUAL PROCESS STATE IS AUTHORITATIVE. STALE STATUS CANNOT REPORT RUNNING. TASK SCHEDULER NOT REQUIRED. ONE BAT LAUNCHER. ONE VISIBLE COMMAND PROMPT. ONE SHARED READ-ONLY MT5 CONNECTION. CAND-015 / CAND-024 / CAND-035 INDEPENDENT.

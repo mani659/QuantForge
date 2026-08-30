@@ -1307,3 +1307,37 @@ G1/G2 showed positive descriptive economics in the registered FAVORABLE subset, 
 - `output/research_discovery/QUANTFORGE_G1_ECONOMIC_QUALIFICATION_FRAMEWORK_V3_PROPOSAL.md`
 - `output/research_discovery/QUANTFORGE_G1_HARD_GATES_VS_EVIDENCE_ADJUDICATION_V1.md`
 - `output/research_discovery/QUANTFORGE_G1_ECONOMIC_QUALIFICATION_FRAMEWORK_V3_RATIFICATION_V1.md`
+
+---
+
+## V25 G0 — Economic Displacement Candidate Generation (2026-08-29)
+
+Generated 3 V25 G0 candidates focused on economic displacement mechanisms (not price patterns):
+
+- **CAND-074** (London Gold Fix Benchmark Execution Pressure) — Settlement/Benchmark family. Enter XAUUSD at London AM Fix in direction of pre-fix move. Exit 30 min later.
+- **CAND-075** (US Equity Closing Auction Concentrated Order Flow) — Settlement/Benchmark family. Enter USATECHIDXUSD at 3:59 PM ET in direction of late-session move. Exit at close.
+- **CAND-076** (Gold Overnight Repricing -> Tech Opening Direction) — Cross-Market Transmission family (EXTENSION of CAND-071). Enter USATECHIDXUSD at 9:30 AM ET in direction of overnight Gold move. Exit at 10:00 AM ET.
+
+**Status:** V25 G0 COMPLETE. 3 candidates generated.
+
+---
+
+## V25 G1 — Economic Plausibility Screen (2026-08-29)
+
+All three V25 candidates evaluated under G1 V3 evidence-based adjudication framework:
+
+- **CAND-074:** N=1285, Mean Net=-1.72 bps, Median Net=-2.32 bps, Counterfactual Superior. Fix window adds no directional value. **ECONOMICALLY NEGATIVE.**
+- **CAND-075:** N=623, Mean Net=-2.15 bps, Median Net=-2.28 bps, Counterfactual Superior. Closing auction adds no directional value. **ECONOMICALLY NEGATIVE.**
+- **CAND-076:** N=466, Mean Net=-2.14 bps, Median Net=-2.83 bps, Counterfactual Superior (+2.20 bps). Gold direction inversely related to Tech. **ECONOMICALLY NEGATIVE.**
+
+All three candidates pass all 9 hard validity gates. Economic failure is not validity failure. No conditional information value observed — all counterfactuals are superior.
+
+**Status:** V25 G1 COMPLETE. NO G2 PROMOTIONS.
+
+---
+
+## V25 Closure (2026-08-29)
+
+V25 closed with no G2 candidate. Settlement/benchmark mechanism families (CAND-074, CAND-075) failed alongside cross-market transmission (CAND-076). The V19-V25 total is now 21 candidates, 0 G2 promotions.
+
+**Status:** V25 CLOSED.

@@ -54,7 +54,9 @@
 > > Pre-ratification period classified as INTEGRITY GAP
 > > Supervisor RUNNING, MT5 CONNECTED, all 3 modules ACTIVE
 > > Forward qualification now collecting valid evidence
-> > Next research milestone: V24 G0 candidate generation
+> > V25 G1 COMPLETE — NO G2 PROMOTIONS (CAND-074/075/076 all NEGATIVE)
+> > V25 CLOSED — 21 candidates, 0 G2 promotions total
+> > Next research milestone: V26 G0 (methodology review recommended)
 >
 > ### PROTECTED / INTEGRATED
 > > CAND-015: adapter-based integration via `cand015_adapter.py`
