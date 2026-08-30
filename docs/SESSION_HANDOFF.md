@@ -2,7 +2,23 @@
 
 **Purpose:** Authoritative restart point for the next QuantForge session. Do not reconstruct project history from conversational memory; start from this document and the referenced artifacts.
 
-**Last consolidated:** 2026-08-30 (Unified Research Knowledge Ledger V1 established — V30 G0 READY)
+**Last consolidated:** 2026-08-30 (End-of-day session close — 10 commits today, V30 G0 READY)
+
+**Today's commits (2026-08-30):**
+1. `615552a` — V26 G0 dynamic state transition discovery
+2. `2faa099` — V26 G1 economic plausibility screen
+3. `9323bb8` — V26 closure and dynamic-state knowledge
+4. `d57bd1c` — CAND-077 state governance review
+5. `7a8ee5f` — V27 G0 dynamic transition discovery
+6. `a9c9625` — V27 G1 economic plausibility screen
+7. `aa43691` — CAND-077 + CAND-081 state governance review
+8. `8e87a01` — V28 G0 new discovery
+9. `818d6d5` — V28 G1 economic plausibility screen
+10. `9306767` — CAND-083 state governance review
+11. `a705c32` — V29 G0 new discovery
+12. `02f312e` — V29 G1 economic plausibility screen
+13. `74933bb` — Relational research governance framework
+14. `2ea4884` — Unified research knowledge ledger v1
 
 ---
 
@@ -37,12 +53,12 @@ Next session must NOT:
 
 ### Current milestone
 
-> **RELATIONAL RESEARCH FRAMEWORK ESTABLISHED**
+> **UNIFIED RESEARCH KNOWLEDGE LEDGER V1 ESTABLISHED**
 > **3 STATE REVIEW ELIGIBLE objects: CAND-077, CAND-081, CAND-083**
 > **Relational research GOVERNED but not yet EXECUTING**
 > **V30 G0 READY**
 
-Relational research framework established with admission rules, counterfactual framework, multiple testing controls, and promotion pathway. V30 G0 is the next permitted milestone. Relational execution authorized after governance questions resolved.
+Today's session completed: V26 G0/G1, V27 G0/G1, V28 G0/G1, V29 G0/G1, CAND-077/CAND-081/CAND-083 governance reviews, relational research framework, unified knowledge ledger. 14 commits total. 33 candidates reconciled. 6 behavioural knowledge records. 7 State objects. No G2 promotions. Forward runtime untouched.
 
 ---
 
@@ -566,7 +582,17 @@ Volume data unavailable / zero for both USATECHIDXUSD and XAUUSD M1 data. Do not
 | Research Timeline | `research/knowledge/RESEARCH_TIMELINE.md` |
 | V26 G1 Summary (HTML) | `output/research_discovery/V26_G1_SUMMARY.html` |
 | Operator Runtime Correction | `output/research_discovery/QUANTFORGE_OPERATOR_RUNTIME_CORRECTION_V1.md` |
+| V27 G0 Screening | `output/research_discovery/TRADEABLE_EDGE_DISCOVERY_SCREENING_V27.md` |
+| V27 G1 Screen | `output/research_discovery/RESEARCH_FACTORY_V2_G1_SCREEN_20260830_V27.md` |
+| CAND-077+081 State Governance | `output/research_discovery/QUANTFORGE_CAND077_CAND081_STATE_GOVERNANCE_REVIEW_V1.md` |
+| V28 G0 Screening | `output/research_discovery/TRADEABLE_EDGE_DISCOVERY_SCREENING_V28.md` |
+| V28 G1 Screen | `output/research_discovery/RESEARCH_FACTORY_V2_G1_SCREEN_20260830_V28.md` |
+| CAND-083 State Governance | `output/research_discovery/QUANTFORGE_CAND083_STATE_GOVERNANCE_REVIEW_V1.md` |
+| V29 G0 Screening | `output/research_discovery/TRADEABLE_EDGE_DISCOVERY_SCREENING_V29.md` |
+| V29 G1 Screen | `output/research_discovery/RESEARCH_FACTORY_V2_G1_SCREEN_20260830_V29.md` |
+| Relational Research Framework | `output/research_discovery/QUANTFORGE_RELATIONAL_RESEARCH_FRAMEWORK_GOVERNANCE_V1.md` |
+| Unified Knowledge Ledger V1 | `output/research_discovery/QUANTFORGE_UNIFIED_RESEARCH_KNOWLEDGE_LEDGER_V1.md` |
 
 ---
 
-*Authoritative for next session. Updated 2026-08-30 after Unified Research Knowledge Ledger V1. V30 G0 READY. Relational research GOVERNED. Knowledge ledger RECONCILED. State library preserved. Forward runtime protected.*
+*Authoritative for next session. Updated 2026-08-30 at session close. 14 commits today. V30 G0 READY. Relational research GOVERNED. Knowledge ledger RECONCILED. State library preserved. Forward runtime protected.*
