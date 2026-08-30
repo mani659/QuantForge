@@ -1395,3 +1395,19 @@ Formal governance review of CAND-077 post-closure exploratory filter findings. O
 Artifact: `output/research_discovery/QUANTFORGE_CAND077_STATE_GOVERNANCE_REVIEW_V1.md`
 
 **Status:** CAND-077 STATE GOVERNANCE REVIEW COMPLETE. STATE REVIEW ELIGIBLE PRESERVED. V27 G0 READY.
+
+---
+
+## V27 G0 Dynamic State Transition Discovery (2026-08-30)
+
+Generated 3 V27 G0 candidates focused on genuinely distinct dynamic state transitions:
+
+- **CAND-080** (Volatility Regime Quality Transition) — Smooth-to-choppy character change. Fade-the-trend entry after regime quality deterioration. Mechanism: Volatility Development — Regime Character Transition.
+- **CAND-081** (Structural Level Failure Trap) — Breakout failure trapping participants. Counter-breakout fade after failed breakout. Mechanism: Post-Event State Transition — Failed Breakout Trap.
+- **CAND-082** (Post-Expansion Retracement Quality State) — Retracement quality as State/Condition. Continuation entry after quality retracement. Mechanism: State Transition + Event Interaction — Volatility Development Quality.
+
+All three are NEW (no overlap with V19-V26 or historical candidates). All three use USATECHIDXUSD M1 data. No volume required. CAND-077 remains STATE REVIEW ELIGIBLE — not reopened.
+
+Artifact: `output/research_discovery/TRADEABLE_EDGE_DISCOVERY_SCREENING_V27.md`
+
+**Status:** V27 G0 COMPLETE. 3 CANDIDATES GENERATED. G1 PENDING.

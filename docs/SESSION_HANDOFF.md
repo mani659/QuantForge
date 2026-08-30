@@ -2,7 +2,7 @@
 
 **Purpose:** Authoritative restart point for the next QuantForge session. Do not reconstruct project history from conversational memory; start from this document and the referenced artifacts.
 
-**Last consolidated:** 2026-08-30 (CAND-077 state governance review complete)
+**Last consolidated:** 2026-08-30 (V27 G0 complete — 3 candidates generated)
 
 ---
 
@@ -37,10 +37,10 @@ Next session must NOT:
 
 ### Current milestone
 
-> **CAND-077 STATE GOVERNANCE REVIEW COMPLETE**
-> **V27 G0 READY**
+> **V27 G0 COMPLETE — 3 CANDIDATES GENERATED**
+> **G1 PENDING**
 
-CAND-077 remains STATE REVIEW ELIGIBLE. V27 G0 may proceed independently.
+CAND-077 remains STATE REVIEW ELIGIBLE. V27 G0 complete with 3 distinct dynamic state-transition candidates.
 
 ---
 
@@ -144,6 +144,15 @@ Result: 0 G2 promotions. Two of three showed positive conditional deltas — fir
 Lesson: Dynamic state transitions produce more conditional information than static conditions. CAND-077 showed +1.67 bps delta (largest in RF history).
 
 V26 closure: `output/research_discovery/QUANTFORGE_V26_CLOSURE_DYNAMIC_STATE_KNOWLEDGE_V1.md`
+
+### V27
+
+Candidates: CAND-080 (Vol Regime Quality Transition), CAND-081 (Structural Level Failure Trap), CAND-082 (Post-Expansion Retracement Quality State)
+Result: G0 complete. G1 pending.
+
+All three are genuinely distinct from V26 candidates and from each other. Three different mechanism families: Volatility Development, Post-Event State Transition, State Transition + Event Interaction.
+
+V27 G0: `output/research_discovery/TRADEABLE_EDGE_DISCOVERY_SCREENING_V27.md`
 
 ---
 
@@ -442,7 +451,7 @@ CAND-077 state review status is clarified. It does not block V27 G0. The two pat
 
 ## 19. PERMITTED NEXT TASKS
 
-- V27 G0 candidate generation
+- V27 G1 economic plausibility screen for CAND-080, CAND-081, CAND-082
 - CAND-024/CAND-035 forward observation (continue, do not inspect)
 - CAND-015 forward observation (continue, do not inspect)
 - Formal State hypothesis registration for CAND-077 (if owner authorizes)
@@ -462,6 +471,7 @@ CAND-077 state review status is clarified. It does not block V27 G0. The two pat
 - Perform System Assembly
 - Rescue closed candidates
 - Treat exploratory filter observations as validated
+- Reopen CAND-077, CAND-078, or CAND-079
 
 ---
 
