@@ -57,7 +57,9 @@
 > > V25 G1 COMPLETE — NO G2 PROMOTIONS (CAND-074/075/076 all NEGATIVE)
 > > V25 CLOSED — 21 candidates, 0 G2 promotions total
 > > V26 G0 COMPLETE — 3 dynamic state-transition candidates (CAND-077/078/079)
-> > Next research milestone: V26 G1
+> > V26 G1 COMPLETE — NO G2 PROMOTIONS (CAND-077 INFO INTERESTING, CAND-078 NEGATIVE, CAND-079 INFO INTERESTING)
+> > CAND-077 shows +1.67 bps delta (largest informational signal in Research Factory history)
+> > Next research milestone: V27 G0
 >
 > ### PROTECTED / INTEGRATED
 > > CAND-015: adapter-based integration via `cand015_adapter.py`

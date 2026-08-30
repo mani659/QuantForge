@@ -1355,3 +1355,17 @@ Generated 3 V26 G0 candidates focused on dynamic state transitions (not static c
 External custom-bot statistical findings used only as provisional research priors (not imported thresholds). First cycle to explicitly require state-transition mechanisms.
 
 **Status:** V26 G0 COMPLETE. 3 candidates generated.
+
+---
+
+## V26 G1 — Economic Plausibility Screen (2026-08-30)
+
+All three V26 candidates evaluated under G1 V3 evidence-based adjudication:
+
+- **CAND-077:** N=2084, Net=-0.85 bps, CF delta=+1.67 bps TREATMENT SUPERIOR. **INFORMATIONALLY INTERESTING** — largest informational signal in Research Factory history. Compression-to-expansion transition adds real value but absolute economics remain negative.
+- **CAND-078:** N=2946, Net=-2.21 bps, CF delta=-0.25 bps COUNTERFACTUAL SUPERIOR. **ECONOMICALLY NEGATIVE** — exhaustion transition adds no value.
+- **CAND-079:** N=35920, Net=-1.79 bps, CF delta=+0.78 bps TREATMENT SUPERIOR. **INFORMATIONALLY INTERESTING** — Gold volatility transition adds weak value.
+
+All three have negative absolute economics. Volume data unavailable (all zeros) for both instruments — noted as data limitation. Dynamic state-transition approach shows more promise than static conditions.
+
+**Status:** V26 G1 COMPLETE. NO G2 PROMOTIONS.
