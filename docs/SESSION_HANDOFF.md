@@ -56,7 +56,8 @@
 > > Forward qualification now collecting valid evidence
 > > V25 G1 COMPLETE — NO G2 PROMOTIONS (CAND-074/075/076 all NEGATIVE)
 > > V25 CLOSED — 21 candidates, 0 G2 promotions total
-> > Next research milestone: V26 G0 (methodology review recommended)
+> > V26 G0 COMPLETE — 3 dynamic state-transition candidates (CAND-077/078/079)
+> > Next research milestone: V26 G1
 >
 > ### PROTECTED / INTEGRATED
 > > CAND-015: adapter-based integration via `cand015_adapter.py`

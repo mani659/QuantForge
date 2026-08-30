@@ -1341,3 +1341,17 @@ All three candidates pass all 9 hard validity gates. Economic failure is not val
 V25 closed with no G2 candidate. Settlement/benchmark mechanism families (CAND-074, CAND-075) failed alongside cross-market transmission (CAND-076). The V19-V25 total is now 21 candidates, 0 G2 promotions.
 
 **Status:** V25 CLOSED.
+
+---
+
+## V26 G0 — Dynamic State Transition Discovery (2026-08-29)
+
+Generated 3 V26 G0 candidates focused on dynamic state transitions (not static conditions):
+
+- **CAND-077** (Volatility Compression-to-Expansion Transition Event) — Volatility Development family. Trade breakout direction when ATR percentile transitions from compressed (<25th) to expanding (>50th). Counterfactual: same breakout in already-expanded state.
+- **CAND-078** (Trend Exhaustion Transition -> Mean-Reversion Event) — Trend Exhaustion family. Fade trend direction when 8+ consecutive same-direction closes are followed by a reversal bar. Counterfactual: same counter-trend signal after only 2-4 consecutive closes.
+- **CAND-079** (Cross-Market Gold Volatility Regime Transition -> Tech Direction) — Cross-Market State Transition family. Trade Tech direction when Gold ATR percentile transitions rapidly from compressed to expanded. Counterfactual: same Tech window during already-expanded Gold volatility.
+
+External custom-bot statistical findings used only as provisional research priors (not imported thresholds). First cycle to explicitly require state-transition mechanisms.
+
+**Status:** V26 G0 COMPLETE. 3 candidates generated.
