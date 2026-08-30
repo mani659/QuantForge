@@ -1,434 +1,482 @@
-# QuantForge — Session Handoff (Authoritative)
+# QUANTFORGE — SESSION HANDOFF (AUTHORITATIVE)
 
-**Purpose:** authoritative snapshot for the next session. Originally established at the point **Strategy Assembly V1 was declared FROZEN** (2026-08-12); updated 2026-08-13 after TSMOM V2 execution/adjudication and closure; **updated 2026-08-16 after the H01 volatility-response program and the H01 Equity V1 execution + independent adjudication**. Do not reconstruct project state from conversational memory; start from this document and the referenced records.
+**Purpose:** Authoritative restart point for the next QuantForge session. Do not reconstruct project history from conversational memory; start from this document and the referenced artifacts.
 
----
-
-## 0. Start Here Next Session
-
-> **START HERE NEXT SESSION**
->
-> ## Required next-session reading
-> 1. `docs/SESSION_HANDOFF.md`
-> 2. `output/research_discovery/QUANTFORGE_RESEARCH_FACTORY_V2.md`
-> 3. `output/research_discovery/TRADEABLE_EDGE_DISCOVERY_SCREENING_V3.md`
-> 4. `output/research_discovery/RESEARCH_FACTORY_V2_SCREEN_G0_G1_G2_20260824.md`
->
-> ## Explicit prohibitions
-> Next session must NOT:
-> * rescue CAND-001;
-> * rescue CAND-002;
-> * rescue CAND-003;
-> * reopen DISC-021–DISC-026;
-> * jump directly to G3;
-> * jump directly to production tick infrastructure.
->
-> ## Current Milestone
-> **PARALLEL FORWARD VALIDATION AND TRADEABLE EDGE DISCOVERY**
->
-> ## Last Screening
-> V15 G1 closed with no G2 candidate.
-> CAND-044 (Initial Balance Trap Liquidation): INSUFFICIENT
-> CAND-045 (Safe-Haven Confirmed Risk-Off): INSUFFICIENT (Counterfactual Superior)
-> CAND-046 (Opening Print Capitulation Pivot): INSUFFICIENT
-> V15 closed with zero components added. Counterfactual superiority rule added to G1 doctrine.
->
-> ## Next Action
-> ### ACTIVE FORWARD TRACK
-> > ONE UNIFIED MANUAL LAUNCHER — `run_quantforge_forward.bat`
-> > ONE RUNNER — `quantforge_forward_supervisor.py`
-> > ONE MT5 READ-ONLY FEED — Exness-MT5Trial15 / USTECm
-> > CAND-015 + CAND-024 + CAND-035 under unified runner (independent modules)
-> > CAND-015: INTEGRATED via adapter (external engine, semantic unchanged)
-> > Task Scheduler: NOT REQUIRED (manual BAT is canonical entry point)
-> > Event console notifications: DETECTED/CAPTURED/COMPLETED only (quiet otherwise)
-> > Project cleanup completed: obsolete infrastructure pruned (2026-08-27)
-> > End-of-day freeze: runtime stable for overnight observation (2026-08-27)
->
-> ### ACTIVE RESEARCH TRACK
-> > RARE-EVENT FORWARD TRACK — CANONICAL QUALIFICATION RESUMED (CAND-024, CAND-035)
-> > CAND-024 = `CAND-024:CANONICAL:925495a8`
-> > CAND-035 = `CAND-035:CANONICAL:ddc5d0e9`
-> > Original intended start preserved: `2026-08-27T09:44:58Z`
-> > Valid canonical qualification resume: `2026-08-27T12:05:15Z`
-> > Pre-ratification period classified as INTEGRITY GAP
-> > Supervisor RUNNING, MT5 CONNECTED, all 3 modules ACTIVE
-> > Forward qualification now collecting valid evidence
-> > V25 G1 COMPLETE — NO G2 PROMOTIONS (CAND-074/075/076 all NEGATIVE)
-> > V25 CLOSED — 21 candidates, 0 G2 promotions total
-> > V26 G0 COMPLETE — 3 dynamic state-transition candidates (CAND-077/078/079)
-> > V26 G1 COMPLETE — NO G2 PROMOTIONS (CAND-077 INFO INTERESTING, CAND-078 NEGATIVE, CAND-079 INFO INTERESTING)
-> > V26 CLOSED — CAND-077 STATE REVIEW ELIGIBLE, CAND-078 CLOSED, CAND-079 STATE OBSERVATION
-> > CAND-077 shows +1.67 bps delta (largest informational signal in RF history)
-> > Next research milestone: STATE GOVERNANCE REVIEW REQUIRED (CAND-077 state status)
->
-> ### PROTECTED / INTEGRATED
-> > CAND-015: adapter-based integration via `cand015_adapter.py`
-> > External engine preserved (dictionary-based identity, pandas/ATR, process_tick)
-> > BTCUSD data buffered but not used in current signal evaluation
-> > Cold start: accumulates M1 bars over time (30-day ATR warmup)
->
-> ### NOT AUTHORIZED
-> - G6 adjudication before completion;
-> - strategy changes;
-> - bot construction;
-> - expensive infrastructure for new candidates.
->
-> CAND-015 forward observation is a PROTECTED VALIDATION TRACK. During the observation: no strategy changes, no parameter changes, no threshold changes, no entry/exit changes, no filtering, no execution-cost changes, and no interpretation-driven modifications are authorized. The running observation must remain untouched until its complete log is available. No scientific or economic conclusion may be drawn from the partial 7-day forward observation before the session is complete and independently audited.
->
-> In parallel, the Research Factory V2 is ACTIVE at G0 — Candidate Generation. New research must not modify, tune, reinterpret, or otherwise influence the CAND-015 forward observation. Partial CAND-015 forward results must not be used to select, filter, or formulate new candidates. Future candidates must remain mechanism-diverse (do not create multiple superficial variations of CAND-015). New candidates must earn G1 -> G2 -> deeper infrastructure. The running CAND-015 forward observation does NOT authorize expensive infrastructure for unrelated research.
->
-> ### HISTORICAL / CLOSED
->
-> - DISC-021
-> - DISC-022
-> - DISC-023
-> - DISC-024
-> - DISC-025
-> - DISC-026 XAGUSD economic translation — CLOSED
->
-> ### ACTIVE
->
-> - CAND-015
->   - SCIENTIFICALLY SUPPORTED
->   - ECONOMICALLY VIABLE
->   - G5 HISTORICAL REPLAY VALIDATED
->   - G6 REPLAY HARNESS VALIDATED
->   - MT5 INTEGRATION VALIDATED
->   - FORWARD OBSERVATION ACTIVE / IN PROGRESS (7-day paper observation)
+**Last consolidated:** 2026-08-30 (V26 closure + post-closure filter observations)
 
 ---
 
-## 1. Repository State
+## 0. START HERE NEXT SESSION
 
-- **HEAD / freeze commit:** `b67a3cc` — `feat: implement strategy packaging, admission controller, and deployment updates`
-- **Branch:** `main` (linear history, no tags)
-- **Freeze date:** 2026-08-12 (unchanged — no new freeze commit since)
-- **Worktree (uncommitted additions since freeze):**
-  - Modified (pre-existing, agent state): `.freebuff/desktop-v2.db{-shm,-wal}`
-  - Modified (governance/docs, uncommitted): `docs/CHANGELOG.md`, `docs/PHASE7_FREEZE_APPROVED.md`, `docs/ARCHITECTURE.md`, `docs/CONSTITUTION_v1.0.md`, `docs/ROADMAP.md`, `README.md`, `research/knowledge/RESEARCH_DISCOVERY_DATABASE.md`, `research/knowledge/RESEARCH_TIMELINE.md`
-  - Created (uncommitted): `docs/CONSTITUTIONAL_AMENDMENT_AMEND-1.md`, `docs/SESSION_HANDOFF.md`, `output/` (all research artifacts: `event_study_v1..v3/`, `xagusd_cost_viability_v1/`, `tsmom_v1/` — see §13)
-  - No source code, tests, or contracts modified by any research task since the freeze.
+> **READ THIS DOCUMENT. THEN READ ONLY THE REFERENCED ARTIFACTS NECESSARY FOR YOUR SPECIFIC TASK.**
+>
+> **DO NOT ASK THE OWNER TO REPEAT PROJECT HISTORY.**
+>
+> **DO NOT RECONSTRUCT STATE FROM CONVERSATIONAL MEMORY.**
 
-## 2. Milestone Frozen
+### Required next-session reading
 
-**STRATEGY ASSEMBLY V1 — FROZEN** (2026-08-12).
+1. `docs/SESSION_HANDOFF.md` (this document)
+2. `output/research_discovery/QUANTFORGE_G1_ECONOMIC_QUALIFICATION_FRAMEWORK_V3_RATIFICATION_V1.md` (G1 V3 framework)
+3. `output/research_discovery/QUANTFORGE_V26_CLOSURE_DYNAMIC_STATE_KNOWLEDGE_V1.md` (latest closure)
+4. `research/knowledge/RESEARCH_DISCOVERY_DATABASE.md` (candidate register)
 
-Frozen boundaries of this milestone:
-- Admission boundary (`assembly/admission/AdmissionController`)
-- Package-consumption boundary (`ValidatedStrategyPackage` consumption)
-- Research-semantics firewall
-- Fail-closed dependency boundary (`DependencyFactory` → `DependencyAdmissionError`)
-- Deployment-artifact construction boundary
-- AMEND-1 governance incorporated
+### Explicit prohibitions
 
-No further Assembly expansion without a new architectural decision.
+Next session must NOT:
 
-## 3. Governance — Constitutional Amendment AMEND-1
+- Rescue CAND-074 through CAND-079;
+- Rescue V19–V25 closed candidates;
+- Reopen V24, V25, or V26;
+- Rerun G1 screens;
+- Optimize CAND-077 filters;
+- Inspect CAND-015/024/035 forward performance;
+- Modify forward runner;
+- Perform System Assembly;
+- Treat exploratory filter observations as validated strategies.
 
-- **Status:** APPROVED — RATIFIED (owner approval, 2026-08-12), per Constitution v1.0 §8.
-- **Record:** `docs/CONSTITUTIONAL_AMENDMENT_AMEND-1.md`.
-- **Scope (exactly two items):**
-  - **A — DeploymentOrchestrator:** may retain coordination references to, and lifecycle decisions for, Behavioural-Reality-owned observation windows across calls.
-  - **B — DeploymentDependencies:** `observation_policy: ObservationPolicyContract` authorized as a required injected dependency, threaded through `DeploymentBootstrap`, consumed only at the observation-window boundary.
-- **Procedural irregularity (preserved):** implementation in `b67a3cc` preceded approval; AMEND-1 regularizes prospectively.
+### Current milestone
 
-## 4. Amended Deployment Boundary
+> **STATE GOVERNANCE REVIEW REQUIRED (CAND-077 state status)**
+> **OR**
+> **V27 G0 DISCOVERY**
 
-> **Behavioural Reality owns behavioural history.** Deployment may coordinate the lifecycle of Behavioural-Reality-owned observation state across multiple snapshots. Deployment does not become the owner of behavioural history and does not define behavioural science.
+Both paths are possible. Owner decision required.
 
-Still prohibited: Deployment owning behavioural history; accumulating `BehaviorFrame`s; detector science; recoil/persistence semantics; inventing thresholds; reconstructing research semantics; arbitrary mutable deployment state unrelated to coordination; modification of any other frozen contract without a constitutional amendment.
+---
 
-## 5. Frozen Architectural Boundaries
+## 1. PROJECT MISSION
 
-`boe/execution/**`, `boe/deployment/**` (as amended by AMEND-1), `boe/temporal/**`, `boe/evidence/**`, `boe/observation/**` contracts, `boe/behavior_detector_contract.py`, `boe/behavior_observation.py`, `boe/observation_environment.py`, `research/lifecycle/**`, `research/engine/run_engine.py`, `research/experiment_recorder.py`, `research/dataset/**`, `research/analytics/**`, `research/packaging/**`. Verified untouched by the `b67a3cc` milestone, by the freeze task, and by all subsequent research tasks (TSMOM V1 included).
+QuantForge's overriding goal:
 
-## 6. Test Baseline (last known verified baseline)
+> Build a robust, defensible trading system capable of surviving live/demo conditions over months/years.
 
-- `python -m pytest tests/ -q` → **614 passed** (verified at freeze point)
-- `python -m pytest tests/ -q -W error` → **614 passed** (verified at freeze point)
-- Admission/assembly/packager subset → **29 passed** (verified at freeze point)
+Research is valuable only when it has a governed path toward:
 
-No test suite was run or modified by the TSMOM V1 execution; the freeze-point baseline remains the last known regression state. Do not claim additional test results from TSMOM execution unless explicitly recorded in the experiment artifacts.
+> TRADEABLE EDGE → VALIDATION → QUALIFICATION → FORWARD EVIDENCE → SYSTEM VALUE
 
-## 7. Research-Semantics Firewall
+The system may ultimately consist of one exceptional strategy or multiple independent specialized modules. Rare high-expectancy events remain legitimate.
 
-PASS. No z-score, momentum, recoil, persistence, ATR, threshold, detector-scoring, or signal-definition semantics exist in `assembly/**` or `boe/deployment/**`. `config/recoil_rules.json` is not referenced by the runtime path. `behavior_strength` remains the categorical token defined by the frozen `BehaviorFrame` contract. TSMOM V1 and V2 produced research evidence only; nothing crossed into runtime.
+---
 
-## 8. TSMOM V1 — Executed Result (historical record)
+## 2. CURRENT REPOSITORY STATE
 
-**Time-Series Momentum / Trend-Following V1: EXECUTED — Scientific INCONCLUSIVE / Economic NOT CONFIRMED.**
+- **HEAD:** `9323bb8` — `docs: close V26 and record dynamic-state research knowledge`
+- **Branch:** `main` (linear history)
+- **Uncommitted:** runtime/forward data (CAND-015 health, event ledgers), research scripts — correctly excluded from governance commits
+- **No source code, tests, or contracts modified by research tasks**
 
-- Protocol: `output/tsmom_v1/EVENT_STUDY_PROTOCOL_TSMOM_V1.md` **v1.0.3** (frozen, unchanged during execution; SHA-256 `2d60cb71…292c5`).
-- Execution authorized by the final v1.0.2 pre-execution audit (PASS) and the v1.0.3 economic accounting audit (PASS).
-- **Adjudicated by V2 (see §10a).** The continuation question is now RESOLVED: the line is CLOSED (DISC-022).
+---
 
-### Primary F1 (TRAIN+VALIDATION, T = 50, 39 blocks, B = 10,000, L = 12)
-- Gross mean ≈ **+1.51% / month**; 95% CI ≈ **[−2.53%, +4.54%]**; one-sided p ≈ **0.2375** — CI includes zero.
-- Net mean ≈ +1.48% / month; 95% CI ≈ [−2.58%, +4.52%]; p ≈ 0.2436.
+## 3. CURRENT GOVERNANCE
 
-### F2 TEST (2025-09..2026-07, T = 11, single pre-authorized use)
-- Gross ≈ **+6.70% / month**, positive sign; exact sign-flip one-sided p ≈ **0.1274**; Holm-adjusted p ≈ **0.2549**.
-- Net ≈ +6.68% / month, p ≈ 0.1274. TEST is corroborative only.
+### G1 V3 Framework — RATIFIED
 
-### Economic layer
-- Economic classification: **NOT CONFIRMED** (registered gate: F1 gross CI includes 0).
-- Pooled break-even one-way cost ≈ **140 bp**; observed pooled median one-way half-spread ≈ **3.24 bp** (bid/ask cost-match coverage 100%, 166/166 legs).
-- **Cost is therefore NOT the limiting factor** — this is the opposite failure mode from the Mean-Reversion closure.
+Effective: FUTURE RESEARCH ONLY (V25+)
 
-### Scientific classification
-**INCONCLUSIVE** — F1 confirmatory CI includes zero; F2 not significant after Holm; effective independent signal count is low (per-market signal runs 1–7; pooled flips 21); the formal NC2 control produced a stronger significant association (see §9). No UNRESOLVED trigger fires (flips 21 ≥ 15, coverage 100%, pooled N 219 ≥ 30).
+Architecture:
+- **Layer 1:** 9 binary hard validity gates (measurement integrity)
+- **Layer 2:** Economic evidence adjudication (holistic, not scorecard)
 
-## 9. NC2 Critical Finding (V1 — resolved by V2)
+Four artifact classes:
+1. Standalone Alpha
+2. Rare-Event Alpha
+3. State/Condition
+4. Regime/Specialist
 
-The **NC2 formal negative control** (6-month time-shifted signal) produced:
+Numeric thresholds are REFERENCE POINTS, not universal laws:
+- 5 bps → reference
+- 20 bps → reference
+- 2 bps State delta → removed as universal rule
+- N=3 → evidence-quality marker
+- N=10 → evidence-quality marker
 
-- mean ≈ **+3.93% / month**
-- 95% CI ≈ **[+0.69%, +7.45%]** (excludes zero)
-- one-sided p ≈ **0.0079**
+Economic adjudication classes:
+1. ECONOMICALLY NEGATIVE
+2. INFORMATIONALLY INTERESTING
+3. ECONOMICALLY PROMISING
+4. QUALIFICATION-WORTHY
+5. RARE-EVENT QUALIFICATION-WORTHY
 
-**This was stronger than the V1 primary confirmatory result**, so V1 could not cleanly attribute its positive point estimates to the registered "12-month signal → next-month continuation" mechanism. The leading alternative — **persistent market drift / long-biased regime composition** — motivated the V2 drift-controlled design. **Resolution:** V2 replaced the contaminated NC2 with the same-universe all-long drift benchmark and three clean negative controls (NC1 paired direction rotation, NC3 24-month lag, NC4 calendar-block null); see §10a.
+### Ratification artifacts
 
-## 10. Market Composition Finding
-
-- XAUUSD strongly positive (mean ≈ +6.1%/month, Sharpe ≈ 1.17, 40 long / 8 short).
-- USATECHIDXUSD = **22/22 long-biased observations** (Sharpe ≈ 1.40).
-- EURUSD negative (mean ≈ −2.0%/month, Sharpe ≈ −0.57).
-- Positive pooled performance is **heterogeneous**; the sample may contain strong persistent upward market regimes (gold, tech index).
-
-> This is a scientific interpretation question for the next audit, not a conclusion that the strategy is invalid.
-
-No market may be removed, reweighted, or selectively excluded.
-
-## 10a. TSMOM V2 — Executed Result (drift-controlled; adjudicated)
-
-**TSMOM V2: EXECUTED — Scientific PARTIALLY REPRODUCED / NOT PROMOTABLE / line CLOSED (DISC-022).**
-
-- Protocol: `output/tsmom_v2/EVENT_STUDY_PROTOCOL_TSMOM_V2_DRIFT_CONTROL.md` **v2.0.0** (frozen, unchanged during execution; SHA-256 `e9aa9465…c493d`).
-- Question: does the fixed 12/1 TSMOM signal add incremental value **above a same-universe, same-weight all-long drift benchmark**?
-- Scientific object: `ΔΠ(m) = Π_tsmom(m) − Π_long(m)` — NOT absolute TSMOM return.
-
-### Historical Layer A (28-market HPD panel, common window 1987-01-13 → 2002-08-30, 175 position months, 4,900 market-months, 552 pooled flips)
-- **F1** (TRAIN+VALIDATION, T = 148, L = 12, B = 10,000, seed 20260813): incremental `ΔΠ` mean ≈ **+0.67% / month**; 95% CI ≈ **[+0.03%, +1.54%]** (lower bound positive); one-sided p ≈ **0.019**; **Holm-adjusted p ≈ 0.038** (family {F1, Layer-B}, α = 0.05) — passes.
-  - Π_tsmom ≈ +1.39%/month; Π_long (drift benchmark) ≈ +0.71%/month; long exposure ≈ 53%.
-- **Breadth:** 21/28 markets positive by mean incremental; all leave-one-market-out values positive; all leave-one-class-out values positive (only Rates and Equity index negative by class mean).
-- **Negative controls (all clean):** NC1 (paired direction rotation) fraction-null-≥-observed ≈ 0.0001; NC3 (24-month lag shift) effect negative, no persistence beyond construction horizon; NC4 (calendar-block null) ≈ 0.037.
-- **F2** (historical TEST, T = 27, single authorized use, seed = F1 seed): `ΔΠ` ≈ +0.34%/month, positive direction, CI includes zero, p ≈ 0.120 — corroborative only.
-
-### Contemporary Layer B (5 markets, 2021–2026, T = 54, 219 assessments, seed 20260814)
-- Incremental `ΔΠ` mean ≈ **−1.10% / month** (net of observed MT5 costs ≈ −1.11%); 95% CI ≈ [−5.70%, +0.09%]; one-sided p ≈ 0.971.
-- All-long benchmark ≈ **+3.02%/month** (CI excluding zero, p ≈ 0.001) — the drift book dominates; TSMOM underperforms the all-long book.
-- **Direction is OPPOSITE the historical Layer A.**
-
-### Promotion gate (frozen §19, all 8 conditions)
-- Conditions 1–7 **PASS** (F1 mean ΔΠ > 0; F1 CI LB > 0; Holm p < 0.05; positive vs all-long; not single-market; not single-class; survives controls).
-- **Condition 8 — contemporary directional consistency — FAILS** (historical +0.67% vs contemporary −1.10%).
-- **Final: NOT PROMOTABLE / TSMOM REMAINS UNRESOLVED; scientific classification = PARTIALLY REPRODUCED.**
-
-### Economics
-- Historical HPD cost: **UNOBSERVED** (no fabricated spreads; sensitivity bands {0,5,10,20,50} bp labelled ASSUMPTION; net stays positive at 50 bp). Historical economics **UNRESOLVED by design**.
-- Contemporary: observed MT5 half-spreads (Option-A accounting); net CI LB < 0 → **NOT CONFIRMED**.
-- Economics are NOT the primary closure reason — the decisive problem is **no stable incremental signal across eras**.
-
-### Artifacts
-All under `output/tsmom_v2/`: protocol, `run_tsmom_v2.py`, `experiment_metadata_TSMOM_V2.json`, `assessment_events_TSMOM_V2.csv`, `incremental_monthly_TSMOM_V2.csv`, `bootstrap_TSMOM_V2.csv`, `negative_controls_TSMOM_V2.csv`, `cost_analysis_TSMOM_V2.csv`, `results_TSMOM_V2.json` (+ `.build_cache/`). `SCIENTIFIC_REPORT_TSMOM_V2.md` was not produced at execution (terminal print crash after artifacts were written); the audit confirmed computation state complete and reporting state incomplete, and the closure documentation preserves the result. During the final TSMOM closure task the V2 scientific report was reconstructed from persisted artifacts only (no recomputation, no new inference; see the report's reconstruction notice). TEST consumed exactly once; no rerun; no methodology changed after results.
-
-## 11. Current Research Status
-
-**Research Factory: ACTIVE — ORD ECONOMIC TRANSLATION.**
-
-- Mean Reversion: **CLOSED — ECONOMICALLY NON-VIABLE** (DISC-021).
-- Fixed 12/1 TSMOM candidate: **CLOSED — NOT PROMOTABLE** (DISC-022).
-- H01 broad universal formulation: **NOT ESTABLISHED / closed in that form** (v1.1 invalid inference; v1.2 corrected + adjudicated; universal claim not supported). H01 v1.1 remains CONFIRMATORY INFERENCE INVALID / UNADJUDICATED.
-- **H01 Equity Track A (DISC-023): CLOSED — ECONOMIC FAILURE.**
-- **Session-Anchored Range Expansion (DISC-024): CLOSED — CONTRADICTED.**
-- **Liquidity Sweep / Reversal (DISC-025): CLOSED — ECONOMIC TRANSLATION NON-VIABLE.**
-- **Opening Range Breakout (ORD / DISC-026):** SCIENTIFICALLY SUPPORTED — ECONOMIC TRANSLATION CLOSED AS NON-VIABLE FOR REGISTERED XAGUSD OBJECT.
-  - ORD economic stage: CLOSED FOR XAGUSD.
-- The next task is **TRADEABLE EDGE DISCOVERY SCREENING**. A new candidate may be screened under the Research Factory governance.
-
-## 12. Current Blockers
-
-### BOE / Detector
-Still **DESIGN BLOCKED** — no runtime detector implementation is authorized. The scientific specification for the previously considered Mean-Reversion detector was never established, and that research line is closed. Do NOT revive Mean Reversion through another experiment.
-
-### TSMOM
-**CLOSED** — not a runtime candidate. No TSMOM detector, runtime configuration, or V3 continuation may be created. The line is preserved as a negative/boundary result (DISC-022).
-
-## 13. TSMOM Artifacts
-
-### V1 — all under `output/tsmom_v1/` (do not delete or alter)
-
-- `EVENT_STUDY_PROTOCOL_TSMOM_V1.md` — approved protocol **v1.0.3**, byte-for-byte unchanged during execution
-- `run_tsmom_v1.py` — deterministic execution script (replayable)
-- `experiment_metadata_TSMOM_V1.json` — fingerprints, versions, seeds, row counts
-- `daily_series_TSMOM_V1.csv` — M1 → daily aggregation
-- `assessment_events_TSMOM_V1.csv` — 219 monthly assessments, signals, weights, costs, partitions
-- `cost_match_TSMOM_V1.csv` — quote matches (166/166 legs, 100% coverage)
-- `bootstrap_TSMOM_V1.csv` — 20,000 F1 replicate means (gross + net)
-- `spread_distributions_TSMOM_V1.csv` — rebalance-timestamp half-spread percentiles (4 bid/ask markets)
-- `net_sensitivity_TSMOM_V1.csv` — E8/E10 cost bands
-- `results_TSMOM_V1.json` — full machine-readable results
-- `SCIENTIFIC_REPORT_TSMOM_V1.md` — the experiment report
-- `.build_cache/` — intermediate deterministic caches
-
-### V2 — all under `output/tsmom_v2/` (do not delete or alter)
-
-- `EVENT_STUDY_PROTOCOL_TSMOM_V2_DRIFT_CONTROL.md` — frozen protocol **v2.0.0**, unchanged
-- `run_tsmom_v2.py` — deterministic execution script (replayable)
-- `experiment_metadata_TSMOM_V2.json` — fingerprints, versions, seeds, hashes
-- `assessment_events_TSMOM_V2.csv` — 5,119 events (Layer A 4,900 + Layer B 219)
-- `incremental_monthly_TSMOM_V2.csv` — monthly Π_tsmom / Π_long / ΔΠ (229 rows)
-- `bootstrap_TSMOM_V2.csv` — 60,000 replicate means (F1/F2/Layer-B gross + Layer-B net)
-- `negative_controls_TSMOM_V2.csv` — NC1/NC3/NC4 results
-- `cost_analysis_TSMOM_V2.csv` — historical assumption bands + contemporary EURUSD sensitivity
-- `results_TSMOM_V2.json` — full machine-readable results
-- `SCIENTIFIC_REPORT_TSMOM_V2.md` — V2 scientific report (reconstructed during the final TSMOM closure task from persisted artifacts only; no recomputation)
-- `.build_cache/` — execution cache
-
-Recorded: V2 computation completed and wrote all result artifacts before the terminal print crash (reporting state incomplete); the read-only adjudication audit verified protocol integrity, source/inverse fingerprints, internal consistency, TEST consumed exactly once, and no methodology change after results. The scientific report was reconstructed after the audit from persisted numbers only.
-
-## 13a. H01 Volatility-Response Line → H01 Equity V1 (executed & adjudicated)
-
-### Broad H01 formulation — NOT ESTABLISHED / closed in that form
-
-- H01 v1.1 registered inference was invalid (D_obs-centered bootstrap p ≈ 1 by construction); H01 v1.2 corrected the null construction (null-imposing recentered bootstrap, protocol v1.2.0) and was executed + independently adjudicated: the universal cross-asset claim was **not supported**; COMMODITIES_OTHER produced a formal contradiction of its registered inverse prior; equity observations (`sp`, `USATECHIDXUSD`) were classic-direction but **EVIDENCE-LIMITED** (one evaluable market per layer).
-- **H01 v1.1 remains CONFIRMATORY INFERENCE INVALID / SCIENTIFIC RESULT UNADJUDICATED.** No v1.1 p-value is used anywhere; no v1.2 result is merged with the Equity V1 result.
-
-### H01 Equity V1 — EXECUTED and ADJUDICATED (Scientific + Economic)
-
-- **Scientific Result:** Strongly SUPPORTED in the tested US-tech exposure. Replicates across two eras (strong cross-era replication = TRUE). 
-- **Economic Translation (Q1 / 11-day):** Executed exactly once (`H01_ECONOMIC_V1_EXEC_04`). The translation failed the mandatory dual-era stability gate. It produced negative returns across all market segments in the Historical era (FAIL: Δ = -0.00143921) and uniformly positive returns in the Contemporary era (PASS: Δ = +0.00077702). Overall: **ECONOMIC FAILURE**.
-- **Track A status: CLOSED — ECONOMIC FAILURE (2026-08-23).** The historical/contemporary divergence must be preserved exactly as evidence. The failure of the economic translation does not invalidate the H01 scientific finding. 
-- **Strongest surviving claim:** classic volatility-response asymmetry is strongly supported in the tested US-tech exposure and replicates across two eras.
-- **Economic conclusion:** The registered Q1/11-day translation is not a stable cross-era economic edge.
-- **Governance firewall:** no reopening of H01 Equity Track A; no reinterpretation of the scientific SUPPORT results; no rescue translation; no contemporary-only strategy; no threshold search; no horizon search; no trading strategy from H01; no BOE semantics; no reopening of any closed line.
-- **Key artifacts:** `output/research_discovery/H01_EQUITY_V1_SCIENTIFIC_ADJUDICATION.md`, `output/research_discovery/H01_ECONOMIC_V1_EXEC_04`, scientific artifacts under `H01_EQUITY_VOLATILITY_ASYMMETRY/`, the Track-A chain; DISC-023.
-
-## 14. Governance / Architecture Position
-
-- AMEND-1 ratified 2026-08-12.
-- Strategy Assembly V1 frozen.
-- Deployment boundary as amended by AMEND-1.
-- **No constitutional amendment is pending from TSMOM research.** Both TSMOM lines closed as research findings only; nothing crossed into runtime.
-- Research remains separated from runtime.
-
-## 15. Current Project Position
-## 17. Current Project Position
-
-- **COMPLETED / FROZEN:** BOE Core Phases 1–6; Phase 7 Deployment Layer (incl. AMEND-1-ratified temporal orchestration); Phase 8 Research Industrialization; Phase 9 Operational Governance; Experiment Orchestration V1; Research Execution Context V1; Dataset Foundation V1; Scientific Hypothesis Evaluator V1; Validated Strategy Packaging V1; **Strategy Assembly V1**.
-- **QuantForge engine:** COMPLETE / FROZEN.
-- **Strategy Assembly V1:** FROZEN (AMEND-1 ratified 2026-08-12); must not be expanded without a new architectural decision.
-- **Mean-Reversion research line:** CLOSED — ECONOMICALLY NON-VIABLE (DISC-021). No detector promoted; no BOE runtime semantics created.
-- **Fixed 12/1 TSMOM research line:** CLOSED — NOT PROMOTABLE (DISC-022). V1 = Scientific INCONCLUSIVE / Economic NOT CONFIRMED; V2 historical = positive incremental (F1 ΔΠ ≈ +0.67%/mo, Holm p ≈ 0.038); V2 contemporary = negative incremental (ΔΠ ≈ −1.10%/mo); final classification = PARTIALLY REPRODUCED; promotion = FAILED (7/8, Condition 8 cross-era consistency failed); candidate CLOSED. No detector promoted; no runtime semantics created; TEST consumed once.
-- **H01 broad universal formulation:** NOT ESTABLISHED / closed in that form (v1.1 invalid inference; v1.2 corrected and adjudicated; universal claim not supported). H01 v1.1 remains CONFIRMATORY INFERENCE INVALID / UNADJUDICATED.
-- **H01 Equity Track A (DISC-023):** CLOSED — ECONOMIC FAILURE.
-- **Session-Anchored Range Expansion (DISC-024):** CLOSED — CONTRADICTED.
-- **Liquidity Sweep / Reversal (DISC-025):** CLOSED — ECONOMIC TRANSLATION NON-VIABLE.
-- **Opening Range Breakout (ORD / DISC-026):** SCIENTIFICALLY SUPPORTED — ECONOMIC TRANSLATION CLOSED AS NON-VIABLE FOR REGISTERED XAGUSD OBJECT.
-- **CURRENT MILESTONE:** FORWARD RUNTIME SIMPLIFIED TO ONE MANUAL UNIFIED LAUNCHER
-- **CRITICAL PATH / BLOCKER:** NONE. One manual BAT launcher, one supervisor, one MT5 feed, independent modules. CAND-024 + CAND-035 under unified supervisor. CAND-015 remains PROTECTED / EXTERNAL (different contract architecture). Task Scheduler NOT REQUIRED. Research discovery (G0-G3) and System Assembly remain PAUSED/SUSPENDED.
-- **NEXT LEGITIMATE TASK:** **OBSERVE ONLY**. Await event qualification thresholds (3 minimum, 5 target per candidate). Do not modify logic. Research discovery may resume separately. Forward qualification is now collecting valid evidence on canonical contracts.
-
-## 16. Explicitly Forbidden Work
-
-TSMOM (permanently, line closed):
-
-- TSMOM V3 or any further 12/1 variant;
-- changing lookback, horizon, volatility rules, weighting, or market universe for 12/1;
-- parameter tuning / lookback search on the closed candidate;
-- market selection or regime filtering on the closed candidate;
-- using the consumed TEST again;
-- creating a BOE TSMOM detector;
-- claiming the closed candidate is promotable.
-
-Also still forbidden (from the freeze): detector implementation; observer implementation; recoil/persistence/z-score/momentum/ATR threshold invention; modification of detector/observation/evidence/temporal/lifecycle contracts; observer registry expansion; fingerprint expansion; serialization; broker/live integration; portfolio logic; Research Factory automation; reopening frozen milestones; speculative refactoring; any Strategy Assembly expansion; reopening Mean Reversion.
-
-H01 Equity Track A (permanently, line closed — ECONOMIC FAILURE):
-
-- reopening H01 Equity Track A;
-- modifying H01 methodology to rescue the translation;
-- parameter tuning, threshold searching, or post-hoc market selection;
-- creating a trading strategy from H01 results;
-- creating BOE semantics from H01;
-- merging H01 with other research lines.
-
-## 17. Read-Only / Integrity Statement
-
-- TSMOM V1 and V2 executions were research-output-only: all changes are additions under `output/tsmom_v1/` and `output/tsmom_v2/`; both frozen protocols were never modified; TEST was consumed exactly once (V2) with no rerun and no post-result method change; no source, test, contract, configuration, or governance file was changed by any research task.
-- The V2 result was adjudicated by a strict read-only audit and is recorded here and as DISC-022; historical records (DISC-001..021, V1 report, both protocols) were not rewritten. Historical documents retain their original claims; V1's NC2 anomaly is recorded as historically true and resolved by V2's drift-controlled design.
-- The missing V2 scientific report was reconstructed during the final TSMOM closure task from persisted artifacts only (no recomputation, no new inference), and is recorded with an explicit reconstruction notice; this is a documentation completion, not a protocol change.
-- This handoff update is a state snapshot reflecting the closure of both research lines, not a replacement for historical records.
-
-## 18. Operator Workflow Correction (2026-08-29)
-
-> **MANUAL UNIFIED FORWARD RUNNER OPERATOR WORKFLOW CORRECTED**
-> **ACTUAL PROCESS STATE IS AUTHORITATIVE**
-> **STALE STATUS CANNOT REPORT RUNNING**
-> **TASK SCHEDULER NOT REQUIRED**
-> **ONE BAT LAUNCHER**
-> **ONE VISIBLE COMMAND PROMPT**
-> **ONE SHARED READ-ONLY MT5 CONNECTION**
-> **CAND-015 / CAND-024 / CAND-035 INDEPENDENT**
-
-After the PC reboot on 2026-08-29, `status_quantforge_forward.bat` reported RUNNING for a dead PID. The incident was caused by stale `status.json` being treated as authoritative runtime state. The correction establishes that the actual Windows process is the authoritative source of truth for RUNNING/NOT RUNNING status.
-
-**Files changed:**
-- `scripts/forward/process_validation.py` (new) — robust PID/process verification
-- `scripts/forward/quantforge_forward_supervisor.py` — stale lock cleanup, startup banner
-- `scripts/forward/status.py` — process verification before reporting RUNNING
-- `scripts/forward/module_registry.py` — event console deduplication
-- `run_quantforge_forward.bat` — verify actual process before claiming running
-- `stop_quantforge_forward.bat` — verify process exists before shutdown
-- `scripts/forward/tests/test_process_validation.py` (new) — 63 regression tests
-
-**Artifact:** `output/research_discovery/QUANTFORGE_OPERATOR_RUNTIME_CORRECTION_V1.md`
-
-## 19. G1 Economic Qualification Framework V3 Ratification (2026-08-29)
-
-> **G1 ECONOMIC QUALIFICATION FRAMEWORK V3 RATIFIED**
-> **EFFECTIVE FOR FUTURE RESEARCH CYCLES ONLY (V25+)**
-> **ECONOMIC METRICS ARE EVIDENCE, NOT UNIVERSAL HARD THRESHOLDS**
-> **HARD GATES LIMITED TO VALIDITY / INTEGRITY**
-> **FOUR ARTIFACT CLASSES RECEIVE ARTIFACT-APPROPRIATE ADJUDICATION**
-> **V19–V24 REMAIN CLOSED**
-
-The G1 framework was refined from a single-gate design (Mean Net > 5 bps applied uniformly) into a two-layer architecture:
-
-**Layer 1 — Hard Validity Gates (9 binary checks):**
-- Deterministic definition
-- Executable entry
-- No hindsight contamination
-- Correct cost normalization
-- Data integrity
-- Legitimate counterfactual
-- Causal claims limited to observables
-- No future-bar dependency
-- Reproducibility
-
-**Layer 2 — Economic Evidence Adjudication:**
-- All economic statistics are evidence inputs, not thresholds
-- Five-level evidence classification: Economically Negative → Informationally Interesting → Economically Promising → Qualification-Worthy → Rare-Event Qualification-Worthy
-- G1 decision based on total evidence profile, not numeric score
-
-**Four Artifact Classes:**
-- Standalone Alpha: absolute economic value is central
-- Rare-Event Alpha: per-event economics and event integrity are central
-- State/Condition: incremental value to legitimate downstream Alpha
-- Regime/Specialist: in-regime economics and regime definition quality
-
-**Numeric Thresholds — Revised Status:**
-- 5 bps → REFERENCE POINT (not universal law)
-- 20 bps → REFERENCE POINT (not universal law)
-- 2 bps State delta → REMOVED as universal rule
-- N=3 → EVIDENCE-QUALITY MARKER (not automatic gate)
-- N=10 → EVIDENCE-QUALITY MARKER (not automatic gate)
-**Artifacts:**
-- `output/research_discovery/QUANTFORGE_G1_ECONOMIC_QUALIFICATION_CRITERIA_AUDIT_V1.md`
-- `output/research_discovery/QUANTFORGE_G1_ECONOMIC_QUALIFICATION_FRAMEWORK_V3_PROPOSAL.md`
-- `output/research_discovery/QUANTFORGE_G1_HARD_GATES_VS_EVIDENCE_ADJUDICATION_V1.md`
 - `output/research_discovery/QUANTFORGE_G1_ECONOMIC_QUALIFICATION_FRAMEWORK_V3_RATIFICATION_V1.md`
+- `output/research_discovery/QUANTFORGE_G1_HARD_GATES_VS_EVIDENCE_ADJUDICATION_V1.md`
+- `output/research_discovery/QUANTFORGE_G1_ECONOMIC_QUALIFICATION_FRAMEWORK_V3_PROPOSAL.md`
+- `output/research_discovery/QUANTFORGE_G1_ECONOMIC_QUALIFICATION_CRITERIA_AUDIT_V1.md`
 
 ---
 
-*Authoritative for the next session. Headers: Start Here · Repository State · Milestone Frozen · Governance · Boundary · Frozen Boundaries · Test Baseline · Firewall · TSMOM V1 Result · NC2 Finding · Market Composition · TSMOM V2 Result · Research Status · Blockers · TSMOM Artifacts · H01 Equity V1 · Governance Position · Project Position · Forbidden · Integrity · Operator Workflow Correction.*
+## 4. HISTORICAL RECLASSIFICATION AUDIT
+
+68 historical candidates audited:
+- 63 V3-compatible closures (93%)
+- 3 potential State/Condition classification mismatches
+
+State review pool (OWNER REVIEW REQUIRED — no interaction testing authorized):
+- CAND-059: First Touch > Subsequent Touch — STATE-ARTIFACT
+- CAND-065: Deep Sweep > Shallow Sweep — STATE OBSERVATION
+- CAND-069: Mid-session > Morning — STATE OBSERVATION
+
+Artifact: `output/research_discovery/QUANTFORGE_HISTORICAL_CANDIDATE_V3_RECLASSIFICATION_AUDIT_V1.md`
+
+---
+
+## 5. RESEARCH FACTORY HISTORY V19–V26
+
+### V19–V24
+
+18 candidates. 0 G2 promotions. Dominant pattern: conditionally informative but economically flat. Meta-review identified possible conditional-value bias and recommended greater emphasis on direct economic displacement.
+
+Artifact: `output/research_discovery/QUANTFORGE_V24_CLOSURE_AND_FACTORY_META_REVIEW_V1.md`
+
+### V25
+
+Candidates: CAND-074 (London Gold Fix), CAND-075 (Closing Auction), CAND-076 (Gold→Tech Overnight)
+Result: 0 G2 promotions. All three economically negative. Settlement/benchmark and simple cross-market directional formulations failed.
+
+Lesson: Even theoretically compelling settlement/benchmark mechanisms did not produce measurable directional displacement in M1 data.
+
+### V26
+
+Candidates: CAND-077 (Vol Compression→Expansion), CAND-078 (Trend Exhaustion), CAND-079 (Gold Vol Transition→Tech)
+Result: 0 G2 promotions. Two of three showed positive conditional deltas — first time in RF history.
+
+Lesson: Dynamic state transitions produce more conditional information than static conditions. CAND-077 showed +1.67 bps delta (largest in RF history).
+
+V26 closure: `output/research_discovery/QUANTFORGE_V26_CLOSURE_DYNAMIC_STATE_KNOWLEDGE_V1.md`
+
+---
+
+## 6. CURRENT CANDIDATE REGISTER
+
+### Active Forward (PROTECTED)
+
+| Candidate | Status | Canonical |
+|---|---|---|
+| CAND-015 | ACTIVE / PROTECTED / EXTERNAL | adapter-based |
+| CAND-024 | RARE-EVENT QUALIFICATION ACTIVE | `CAND-024:CANONICAL:925495a8` |
+| CAND-035 | RARE-EVENT QUALIFICATION ACTIVE | `CAND-035:CANONICAL:ddc5d0e9` |
+
+### State Library
+
+| Candidate | Mechanism | Classification |
+|---|---|---|
+| CAND-059 | First Touch > Subsequent Touch | STATE-ARTIFACT |
+| CAND-065 | Deep Sweep > Shallow Sweep | STATE OBSERVATION |
+| CAND-069 | Mid-session > Morning | STATE OBSERVATION |
+| **CAND-077** | **Vol compression → expansion** | **STATE REVIEW ELIGIBLE — OWNER REVIEW REQUIRED** |
+| CAND-079 | Gold vol transition → Tech | STATE OBSERVATION |
+
+### Registered Components
+
+| Candidate | Status |
+|---|---|
+| CAND-042 | COMPONENT-CANDIDATE — EVENT OPPORTUNIST / NOT SCIENTIFICALLY QUALIFIED |
+
+---
+
+## 7. CAND-077 — DETAILED STATUS
+
+### Original V26 Frozen Hypothesis
+
+> Compressed volatility → expanding volatility transition produces economically useful downstream behavior.
+
+### G1 V3 Result
+
+| Metric | Value |
+|---|---|
+| N | 2,084 |
+| Frequency | ~700/year |
+| Gross Mean | +1.15 bps |
+| Gross Median | +0.86 bps |
+| Net Mean | -0.85 bps |
+| Net Median | -1.14 bps |
+| Win Rate | 54.5% |
+| Counterfactual N | 387 |
+| Counterfactual Mean | -2.52 bps |
+| Counterfactual Median | -1.90 bps |
+| Conditional Delta | **+1.67 bps** (TREATMENT SUPERIOR) |
+| Hard Validity Gates | ALL 9 PASS |
+| Transition Integrity | PASS |
+
+### Classification
+
+> INFORMATIONALLY INTERESTING — STATE REVIEW ELIGIBLE — OWNER REVIEW REQUIRED
+
+### Post-Closure Filter Observation (EXPLORATORY / NOT VALIDATED)
+
+After V26 closure, an exploratory analysis examined whether selectivity filters could improve win rate. Results:
+
+| Filter | N | Win Rate | Gross Mean | Gross Median |
+|---|---|---|---|---|
+| Baseline | 2,084 | 54.5% | +1.15 | +0.86 |
+| Breakout > 2 bps | 1,454 | 54.7% | +1.42 | +1.07 |
+| Breakout > 5 bps | 846 | 55.0% | +1.48 | +1.50 |
+| Breakout > 10 bps | 415 | 57.8% | +2.74 | +3.30 |
+| **Breakout > 15 bps** | **219** | **64.8%** | **+8.41** | **+6.97** |
+| Breakout > 20 bps | 133 | 64.7% | +8.45 | +10.14 |
+
+Estimated frequency at >15 bps: ~77 events/year.
+
+**These are NOT validated filters.** Filter selected AFTER observing baseline outcome = selection bias.
+
+### Time-of-Day Observations (EXPLORATORY)
+
+- Hour 17: 69.8% WR, +10.93 bps (N=63)
+- Hour 18: 70.6% WR, +14.19 bps (N=17, small sample)
+- Hour 20: 72.0% WR, +7.16 bps (N=25)
+- Hour 15: 64.9% WR, +3.11 bps (N=205)
+
+### Day-of-Week Observations (EXPLORATORY)
+
+- Tuesday: 62.2% WR, +3.96 bps (N=410)
+- Monday: 57.7% WR, +2.24 bps (N=444)
+
+### Critical Filter Governance
+
+> FILTER DISCOVERY ≠ VALIDATED STRATEGY
+
+The observed breakout-size relationship must not be treated as validation. If pursued, requires a separately governed future hypothesis with:
+- Pre-registered threshold (BEFORE confirmatory test)
+- Exact treatment definition
+- Exact counterfactual
+- No post-outcome selection
+- Proper holdout/prospective testing
+
+---
+
+## 8. CAND-079 — DETAILED STATUS
+
+### G1 V3 Result
+
+| Metric | Value |
+|---|---|
+| N | 35,920 |
+| Frequency | ~13,781/year |
+| Net Mean | -1.79 bps |
+| Net Median | -1.98 bps |
+| Conditional Delta | +0.78 bps (TREATMENT SUPERIOR) |
+| Validity | ALL 9 GATES PASS |
+| Cross-Market Integrity | PASS |
+
+### Classification
+
+> STATE OBSERVATION (weak conditional delta)
+
+### Post-Closure Filter (EXPLORATORY)
+
+Gold UP + move >20 bps: 52.8% WR, +1.32 bps. Weak exploratory improvement. Not a qualified filter.
+
+---
+
+## 9. CAND-078
+
+> CLOSED — ECONOMICALLY NEGATIVE / COUNTERFACTUAL INFERIORITY
+
+Delta: -0.25 bps (counterfactual superior). No inverse hypothesis authorized.
+
+---
+
+## 10. EXTERNAL STATISTICAL RESEARCH PRIORS
+
+A custom-bot statistical analysis (Aug 7–29, 2026) covering 40+ log files across three bots.
+
+Classification: **PROVISIONAL EXTERNAL RESEARCH INPUT — NOT VALIDATED QUANTFORGE EVIDENCE**
+
+Key observations retained as research priors:
+1. Static regime labels may fail to reflect intraday behavior
+2. Dynamic regime drift may be more informative
+3. Volatility development may differ from already-expanded volatility
+4. ADX appears potentially non-monotonic (extreme = possible exhaustion)
+5. R-velocity after entry may provide trade-health information
+6. Volume/spread/rollover conditions may define execution-quality states
+7. Session × regime interactions may matter
+
+No thresholds or bot rules were imported. All V26 definitions are independent.
+
+---
+
+## 11. FORWARD RUNTIME ARCHITECTURE
+
+One unified manual launcher: `run_quantforge_forward.bat`
+One Python runner: `quantforge_forward_supervisor.py`
+One shared MT5 read-only connection
+Independent observers: CAND-015, CAND-024, CAND-035
+
+Forward environment:
+- Logical: `USATECHIDXUSD`
+- Broker: `Exness Technologies Ltd`
+- Server: `Exness-MT5Trial15`
+- Symbol: `USTECm`
+- Mapping: `MAPPING:USATECHIDXUSD->EXNESS:USTECM:1.0`
+
+Forward runtime: **ACTIVE / PROTECTED**
+
+Do NOT:
+- Inspect performance
+- Stop/restart runner
+- Change runner/launcher/contracts
+- Inspect ledgers
+
+---
+
+## 12. CAND-015
+
+> ACTIVE / PROTECTED / EXTERNAL
+
+Adapter-based integration via `cand015_adapter.py`. External engine preserved (dictionary-based identity, pandas/ATR, process_tick). BTCUSD data buffered but not used in current signal evaluation. Cold start: accumulates M1 bars over time (30-day ATR warmup).
+
+**Deferred UI note:** When next forward candidate is added, update CAND-015 status presentation to show State: WATCHING / Results: PROTECTED. Do NOT add false counter unless CAND-015's own protocol supports it.
+
+---
+
+## 13. CAND-024
+
+> RARE-EVENT QUALIFICATION ACTIVE / PROTECTED
+
+Canonical: `CAND-024:CANONICAL:925495a8`
+Historical: ~+40.59 bps net/event, ~4.55/year
+Current target: 5 events, minimum 3
+
+---
+
+## 14. CAND-035
+
+> RARE-EVENT QUALIFICATION ACTIVE / PROTECTED
+
+Canonical: `CAND-035:CANONICAL:ddc5d0e9`
+Historical: ~+62.36 bps net/event, ~4.09/year
+Current target: 5 events, minimum 3
+
+---
+
+## 15. CLOSED RESEARCH LINES
+
+All permanently closed:
+- V19, V20, V21, V22, V23, V24, V25, V26
+- CAND-071 through CAND-079 (except CAND-077 STATE REVIEW ELIGIBLE)
+- DISC-021 through DISC-028
+- Mean Reversion line (DISC-021)
+- TSMOM 12/1 line (DISC-022)
+- H01 Equity Track A (DISC-023)
+
+No automatic reopening permitted.
+
+---
+
+## 16. RESCUE FIREWALL
+
+> NEW FRAMEWORK ≠ RETROACTIVE RESCUE
+> FILTER OBSERVATION ≠ VALIDATED CANDIDATE
+> CONDITIONAL INFORMATION ≠ QUALIFIED STATE
+> POSITIVE WIN RATE ≠ PROFITABLE STRATEGY
+> POSITIVE MEAN ≠ ROBUST ECONOMIC EDGE
+> LARGE N ≠ ECONOMIC VALUE
+> SMALL N + LARGE RETURN ≠ PROOF
+
+---
+
+## 17. SYSTEM ASSEMBLY
+
+> NOT EXECUTED
+
+No system assembly may occur merely because several useful artifacts exist.
+
+---
+
+## 18. IMMEDIATE DECISION POINT
+
+Two paths are available:
+
+### PATH A: CAND-077 STATE GOVERNANCE REVIEW
+
+Determine whether the post-closure filter observation deserves conversion into a formally registered future State hypothesis. Requires owner decision before any formal State interaction study.
+
+**If pursued:** The next study MUST NOT simply select "breakout >15 bps" because it had the best observed result. Instead, formulate a new independently governed hypothesis with pre-registered threshold, exact treatment, exact counterfactual, and proper holdout testing.
+
+### PATH B: V27 G0 DISCOVERY
+
+Begin a new discovery cycle while preserving CAND-077 as STATE REVIEW ELIGIBLE.
+
+---
+
+## 19. PERMITTED NEXT TASKS
+
+- Owner decision on CAND-077 state status
+- V27 G0 candidate generation (if owner chooses Path B)
+- CAND-024/CAND-035 forward observation (continue, do not inspect)
+- CAND-015 forward observation (continue, do not inspect)
+
+---
+
+## 20. FORBIDDEN NEXT TASKS
+
+- Rerun V26
+- Run G2 for any V26 candidate
+- Optimize CAND-077 filters
+- Automatically promote CAND-077 to STATE-ARTIFACT
+- Create new Alpha from CAND-077
+- Modify forward runner
+- Inspect CAND-015/024/035 performance
+- Perform System Assembly
+- Rescue closed candidates
+- Treat exploratory filter observations as validated
+
+---
+
+## 21. RESEARCH DOCTRINE
+
+> Frequency is not value.
+> Win rate is not expectancy.
+> R is a measurement unit, not a target.
+> bps is a measurement unit, not a universal qualification law.
+> Information is not automatically monetizable.
+> A state is not a strategy.
+> A counterfactual advantage is not automatically absolute Alpha.
+> A plausible mechanism is not a proven mechanism.
+> A promising sample is not validated evidence.
+
+---
+
+## 22. DATA LIMITATION
+
+Volume data unavailable / zero for both USATECHIDXUSD and XAUUSD M1 data. Do not claim volume confirmation where no actual volume exists.
+
+---
+
+## 23. RESTART INSTRUCTIONS
+
+1. Read this document completely
+2. Read the G1 V3 ratification artifact
+3. Read the V26 closure artifact
+4. Read the candidate register (RESEARCH_DISCOVERY_DATABASE.md)
+5. Determine which task the owner wants
+6. Execute only the authorized task
+7. Do NOT reconstruct project history from conversation
+
+---
+
+## 24. AUTHORITATIVE ARTIFACT INDEX
+
+| Artifact | Path |
+|---|---|
+| G1 V3 Ratification | `output/research_discovery/QUANTFORGE_G1_ECONOMIC_QUALIFICATION_FRAMEWORK_V3_RATIFICATION_V1.md` |
+| G1 Hard Gates vs Evidence | `output/research_discovery/QUANTFORGE_G1_HARD_GATES_VS_EVIDENCE_ADJUDICATION_V1.md` |
+| G1 V3 Proposal | `output/research_discovery/QUANTFORGE_G1_ECONOMIC_QUALIFICATION_FRAMEWORK_V3_PROPOSAL.md` |
+| G1 Criteria Audit | `output/research_discovery/QUANTFORGE_G1_ECONOMIC_QUALIFICATION_CRITERIA_AUDIT_V1.md` |
+| Historical Reclassification Audit | `output/research_discovery/QUANTFORGE_HISTORICAL_CANDIDATE_V3_RECLASSIFICATION_AUDIT_V1.md` |
+| V24 Closure + Meta-Review | `output/research_discovery/QUANTFORGE_V24_CLOSURE_AND_FACTORY_META_REVIEW_V1.md` |
+| V25 G0 Screening | `output/research_discovery/TRADEABLE_EDGE_DISCOVERY_SCREENING_V25.md` |
+| V25 G1 Screen | `output/research_discovery/RESEARCH_FACTORY_V2_G1_SCREEN_20260829_V25.md` |
+| V26 G0 Screening | `output/research_discovery/TRADEABLE_EDGE_DISCOVERY_SCREENING_V26.md` |
+| V26 G1 Screen | `output/research_discovery/RESEARCH_FACTORY_V2_G1_SCREEN_20260830_V26.md` |
+| V26 Closure + Knowledge | `output/research_discovery/QUANTFORGE_V26_CLOSURE_DYNAMIC_STATE_KNOWLEDGE_V1.md` |
+| Candidate Register | `research/knowledge/RESEARCH_DISCOVERY_DATABASE.md` |
+| Research Timeline | `research/knowledge/RESEARCH_TIMELINE.md` |
+| V26 G1 Summary (HTML) | `output/research_discovery/V26_G1_SUMMARY.html` |
+| Operator Runtime Correction | `output/research_discovery/QUANTFORGE_OPERATOR_RUNTIME_CORRECTION_V1.md` |
+
+---
+
+*Authoritative for next session. Updated 2026-08-30 after V26 closure and post-closure CAND-077 filter observations.*
