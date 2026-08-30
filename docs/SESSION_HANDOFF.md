@@ -2,7 +2,7 @@
 
 **Purpose:** Authoritative restart point for the next QuantForge session. Do not reconstruct project history from conversational memory; start from this document and the referenced artifacts.
 
-**Last consolidated:** 2026-08-30 (V26 closure + post-closure filter observations)
+**Last consolidated:** 2026-08-30 (CAND-077 state governance review complete)
 
 ---
 
@@ -37,11 +37,10 @@ Next session must NOT:
 
 ### Current milestone
 
-> **STATE GOVERNANCE REVIEW REQUIRED (CAND-077 state status)**
-> **OR**
-> **V27 G0 DISCOVERY**
+> **CAND-077 STATE GOVERNANCE REVIEW COMPLETE**
+> **V27 G0 READY**
 
-Both paths are possible. Owner decision required.
+CAND-077 remains STATE REVIEW ELIGIBLE. V27 G0 may proceed independently.
 
 ---
 
@@ -385,28 +384,68 @@ No system assembly may occur merely because several useful artifacts exist.
 
 ---
 
-## 18. IMMEDIATE DECISION POINT
+## 18. CAND-077 STATE GOVERNANCE REVIEW (COMPLETE)
 
-Two paths are available:
+### Review Result
 
-### PATH A: CAND-077 STATE GOVERNANCE REVIEW
+> STATE REVIEW ELIGIBLE — PRESERVED
 
-Determine whether the post-closure filter observation deserves conversion into a formally registered future State hypothesis. Requires owner decision before any formal State interaction study.
+The post-closure exploratory filter findings STRENGTHEN the case for State Review Eligibility but do NOT:
+- Promote CAND-077 to STATE-ARTIFACT
+- Authorize an interaction study
+- Ratify any specific numerical threshold
+- Validate the >15 bps breakout filter
 
-**If pursued:** The next study MUST NOT simply select "breakout >15 bps" because it had the best observed result. Instead, formulate a new independently governed hypothesis with pre-registered threshold, exact treatment, exact counterfactual, and proper holdout testing.
+### Exploratory Findings (NOT VALIDATED)
 
-### PATH B: V27 G0 DISCOVERY
+| Filter | N | Win Rate | Gross Mean | Gross Median |
+|---|---|---|---|---|
+| Baseline | 2,084 | 54.5% | +1.15 bps | +0.86 bps |
+| Breakout > 15 bps | 219 | 64.8% | +8.41 bps | +6.97 bps |
+| Breakout > 20 bps | 133 | 64.7% | +8.45 bps | +10.14 bps |
 
-Begin a new discovery cycle while preserving CAND-077 as STATE REVIEW ELIGIBLE.
+### State Concept
+
+> Expansion magnitude after compression contains incremental information about downstream outcome distribution.
+
+### Future Path
+
+```
+Observed CAND-077 transition + filter observation
+        ↓
+Formal State hypothesis (NEW, independently governed)
+        ↓
+Qualified downstream Alpha required
+        ↓
+Interaction study (separately authorized)
+        ↓
+State qualification
+```
+
+### Critical Governance Rule
+
+> NO NUMERICAL FILTER THRESHOLD IS RATIFIED.
+> The observed >15 bps result remains EXPLORATORY EVIDENCE ONLY.
+> Any future threshold must be frozen BEFORE confirmatory testing.
+
+### Artifact
+
+`output/research_discovery/QUANTFORGE_CAND077_STATE_GOVERNANCE_REVIEW_V1.md`
+
+### V27 Readiness
+
+> V27 G0 MAY PROCEED
+
+CAND-077 state review status is clarified. It does not block V27 G0. The two paths are independent.
 
 ---
 
 ## 19. PERMITTED NEXT TASKS
 
-- Owner decision on CAND-077 state status
-- V27 G0 candidate generation (if owner chooses Path B)
+- V27 G0 candidate generation
 - CAND-024/CAND-035 forward observation (continue, do not inspect)
 - CAND-015 forward observation (continue, do not inspect)
+- Formal State hypothesis registration for CAND-077 (if owner authorizes)
 
 ---
 
@@ -417,6 +456,7 @@ Begin a new discovery cycle while preserving CAND-077 as STATE REVIEW ELIGIBLE.
 - Optimize CAND-077 filters
 - Automatically promote CAND-077 to STATE-ARTIFACT
 - Create new Alpha from CAND-077
+- Select >15 bps as the threshold for any future hypothesis
 - Modify forward runner
 - Inspect CAND-015/024/035 performance
 - Perform System Assembly

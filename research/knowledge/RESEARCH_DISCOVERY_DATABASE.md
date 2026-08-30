@@ -1377,3 +1377,21 @@ All three have negative absolute economics. Volume data unavailable (all zeros) 
 V26 formally closed. CAND-077 classified as STATE REVIEW ELIGIBLE — OWNER REVIEW REQUIRED (+1.67 bps conditional delta, largest in RF history). CAND-078 closed as ECONOMICALLY NEGATIVE. CAND-079 classified as STATE OBSERVATION (+0.78 bps delta, weak). Dynamic state-transition approach shows more conditional information than static conditions. CAND-077 requires owner review before any State interaction study.
 
 **Status:** V26 CLOSED. STATE GOVERNANCE REVIEW REQUIRED.
+
+---
+
+## CAND-077 State Governance Review (2026-08-30)
+
+Formal governance review of CAND-077 post-closure exploratory filter findings. Original CAND-077: N=2084, Net=-0.85 bps, CF delta=+1.67 bps (TREATMENT SUPERIOR), all 9 validity gates pass. Post-closure exploratory analysis found monotonic breakout-magnitude relationship: >15 bps breakout = 64.8% WR, +8.41 bps mean, +6.97 bps median, ~77/year.
+
+**Decision:** STATE REVIEW ELIGIBLE preserved. Classification: supporting evidence for state review, NOT validated strategy. No numerical threshold ratified. The breakout-size observation strengthens the case for formal State hypothesis registration but does NOT validate any specific filter.
+
+**State concept:** Expansion magnitude after compression contains incremental information about downstream outcome distribution.
+
+**Future path:** Formal State hypothesis → qualified downstream Alpha required → interaction study → State qualification.
+
+**V27 readiness:** READY. CAND-077 state review does not block V27 G0.
+
+Artifact: `output/research_discovery/QUANTFORGE_CAND077_STATE_GOVERNANCE_REVIEW_V1.md`
+
+**Status:** CAND-077 STATE GOVERNANCE REVIEW COMPLETE. STATE REVIEW ELIGIBLE PRESERVED. V27 G0 READY.
