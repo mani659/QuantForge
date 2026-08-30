@@ -2,7 +2,7 @@
 
 **Purpose:** Authoritative restart point for the next QuantForge session. Do not reconstruct project history from conversational memory; start from this document and the referenced artifacts.
 
-**Last consolidated:** 2026-08-30 (V27 G0 complete — 3 candidates generated)
+**Last consolidated:** 2026-08-30 (V27 G1 complete — 0 G2 promotions, CAND-081 STATE REVIEW ELIGIBLE)
 
 ---
 
@@ -37,10 +37,11 @@ Next session must NOT:
 
 ### Current milestone
 
-> **V27 G0 COMPLETE — 3 CANDIDATES GENERATED**
-> **G1 PENDING**
+> **V27 G1 COMPLETE — 0 G2 PROMOTIONS**
+> **CAND-081 STATE REVIEW ELIGIBLE**
+> **V28 G0 READY**
 
-CAND-077 remains STATE REVIEW ELIGIBLE. V27 G0 complete with 3 distinct dynamic state-transition candidates.
+CAND-077 remains STATE REVIEW ELIGIBLE. CAND-081 added to State Library.
 
 ---
 
@@ -148,11 +149,14 @@ V26 closure: `output/research_discovery/QUANTFORGE_V26_CLOSURE_DYNAMIC_STATE_KNO
 ### V27
 
 Candidates: CAND-080 (Vol Regime Quality Transition), CAND-081 (Structural Level Failure Trap), CAND-082 (Post-Expansion Retracement Quality State)
-Result: G0 complete. G1 pending.
+Result: 0 G2 promotions. CAND-081 shows +1.23 bps conditional delta (second-strongest in RF history).
 
-All three are genuinely distinct from V26 candidates and from each other. Three different mechanism families: Volatility Development, Post-Event State Transition, State Transition + Event Interaction.
+- CAND-080: INSUFFICIENT (counterfactual failed — zero events)
+- CAND-081: INFORMATIONALLY INTERESTING — STATE REVIEW ELIGIBLE (+1.23 bps delta)
+- CAND-082: INFORMATIONALLY INTERESTING (outlier-dependent, State hypothesis contradicted)
 
 V27 G0: `output/research_discovery/TRADEABLE_EDGE_DISCOVERY_SCREENING_V27.md`
+V27 G1: `output/research_discovery/RESEARCH_FACTORY_V2_G1_SCREEN_20260830_V27.md`
 
 ---
 
@@ -174,6 +178,7 @@ V27 G0: `output/research_discovery/TRADEABLE_EDGE_DISCOVERY_SCREENING_V27.md`
 | CAND-065 | Deep Sweep > Shallow Sweep | STATE OBSERVATION |
 | CAND-069 | Mid-session > Morning | STATE OBSERVATION |
 | **CAND-077** | **Vol compression → expansion** | **STATE REVIEW ELIGIBLE — OWNER REVIEW REQUIRED** |
+| **CAND-081** | **Structural level failure trap** | **STATE REVIEW ELIGIBLE** |
 | CAND-079 | Gold vol transition → Tech | STATE OBSERVATION |
 
 ### Registered Components
@@ -451,19 +456,21 @@ CAND-077 state review status is clarified. It does not block V27 G0. The two pat
 
 ## 19. PERMITTED NEXT TASKS
 
-- V27 G1 economic plausibility screen for CAND-080, CAND-081, CAND-082
+- V28 G0 candidate generation
 - CAND-024/CAND-035 forward observation (continue, do not inspect)
 - CAND-015 forward observation (continue, do not inspect)
 - Formal State hypothesis registration for CAND-077 (if owner authorizes)
+- Formal State hypothesis registration for CAND-081 (if owner authorizes)
 
 ---
 
 ## 20. FORBIDDEN NEXT TASKS
 
-- Rerun V26
-- Run G2 for any V26 candidate
+- Run G2 for any V27 candidate
+- Optimize CAND-080, CAND-081, or CAND-082
+- Rescue CAND-080 (INSUFFICIENT)
 - Optimize CAND-077 filters
-- Automatically promote CAND-077 to STATE-ARTIFACT
+- Automatically promote CAND-077 or CAND-081 to STATE-ARTIFACT
 - Create new Alpha from CAND-077
 - Select >15 bps as the threshold for any future hypothesis
 - Modify forward runner

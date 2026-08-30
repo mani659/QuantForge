@@ -1411,3 +1411,19 @@ All three are NEW (no overlap with V19-V26 or historical candidates). All three 
 Artifact: `output/research_discovery/TRADEABLE_EDGE_DISCOVERY_SCREENING_V27.md`
 
 **Status:** V27 G0 COMPLETE. 3 CANDIDATES GENERATED. G1 PENDING.
+
+---
+
+## V27 G1 Economic Plausibility Screen (2026-08-30)
+
+All three V27 candidates evaluated under G1 V3 evidence-based adjudication:
+
+- **CAND-080** (Vol Regime Quality Transition): N=3893, Net=-1.75 bps. Counterfactual FAILED (zero events for already-choppy condition). **INSUFFICIENT** — closed.
+- **CAND-081** (Structural Level Failure Trap): N=3887, Net=-0.78 bps, CF delta=+1.23 bps TREATMENT SUPERIOR (second-strongest conditional delta in RF history). All 9 validity gates PASS. **INFORMATIONALLY INTERESTING** — STATE REVIEW ELIGIBLE.
+- **CAND-082** (Post-Expansion Retracement Quality): N=97, Net=-0.33 bps, CF delta=+0.96 bps mean / -1.63 bps median (MIXED, outlier-dependent). State hypothesis contradicted (quality retracements worse than poor on median). **INFORMATIONALLY INTERESTING** — closed.
+
+No G2 promotions. CAND-081 added to State Library as STATE REVIEW ELIGIBLE.
+
+Artifact: `output/research_discovery/RESEARCH_FACTORY_V2_G1_SCREEN_20260830_V27.md`
+
+**Status:** V27 G1 COMPLETE. NO G2 PROMOTIONS. CAND-081 STATE REVIEW ELIGIBLE.
