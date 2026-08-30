@@ -2,7 +2,7 @@
 
 **Purpose:** Authoritative restart point for the next QuantForge session. Do not reconstruct project history from conversational memory; start from this document and the referenced artifacts.
 
-**Last consolidated:** 2026-08-30 (CAND-077 + CAND-081 State Governance Review complete — V28 G0 READY)
+**Last consolidated:** 2026-08-30 (V28 G0 complete — 3 new discovery candidates)
 
 ---
 
@@ -37,10 +37,10 @@ Next session must NOT:
 
 ### Current milestone
 
-> **CAND-077 + CAND-081 STATE GOVERNANCE REVIEW COMPLETE**
-> **V28 G0 READY**
+> **V28 G0 COMPLETE — 3 CANDIDATES GENERATED**
+> **G1 PENDING**
 
-Both CAND-077 and CAND-081 are STATE REVIEW ELIGIBLE. Both are independent, distinct State concepts. V28 G0 may begin from a clean State library.
+Three genuinely new candidates spanning three distinct mechanism families. State library preserved. CAND-077 and CAND-081 remain STATE REVIEW ELIGIBLE.
 
 ---
 
@@ -451,7 +451,7 @@ The two mechanisms are genuinely independent:
 
 ## 19. PERMITTED NEXT TASKS
 
-- V28 G0 candidate generation
+- V28 G1 economic plausibility screen for CAND-083, CAND-084, CAND-085
 - CAND-024/CAND-035 forward observation (continue, do not inspect)
 - CAND-015 forward observation (continue, do not inspect)
 - Formal State hypothesis registration for CAND-077 (if owner authorizes)
@@ -461,9 +461,8 @@ The two mechanisms are genuinely independent:
 
 ## 20. FORBIDDEN NEXT TASKS
 
-- Run G2 for any V27 candidate
-- Optimize CAND-080, CAND-081, or CAND-082
-- Rescue CAND-080 (INSUFFICIENT)
+- Run G2 for any V28 candidate
+- Optimize CAND-083, CAND-084, or CAND-085
 - Optimize CAND-077 filters
 - Automatically promote CAND-077 or CAND-081 to STATE-ARTIFACT
 - Create new Alpha from CAND-077
@@ -475,6 +474,7 @@ The two mechanisms are genuinely independent:
 - Treat exploratory filter observations as validated
 - Reopen CAND-077, CAND-078, or CAND-079
 - Retroactively designate CAND-024/CAND-035 as downstream Alphas for CAND-077/CAND-081
+- Create variants of CAND-077 or CAND-081
 
 ---
 

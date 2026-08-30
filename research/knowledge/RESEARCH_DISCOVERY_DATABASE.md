@@ -1445,3 +1445,19 @@ Formal State Governance Review of both State Review Eligible objects following V
 Artifact: `output/research_discovery/QUANTFORGE_CAND077_CAND081_STATE_GOVERNANCE_REVIEW_V1.md`
 
 **Status:** STATE GOVERNANCE REVIEW COMPLETE. V28 G0 READY.
+
+---
+
+## V28 G0 New Discovery (2026-08-30)
+
+Generated 3 V28 G0 candidates spanning three distinct economic mechanism families:
+
+- **CAND-083** (Cumulative Rejection Pressure Sweep) — Rejection cascade after multiple failed breakouts. Fade entry after breakout failure with 3+ prior rejections. Mechanism: Failed Information / Expectation Reset — Rejection Cascade.
+- **CAND-084** (Intraday Range Compression → Expansion Asymmetry) — Range dynamics and trapped participants. Continuation entry after compression → expansion. Mechanism: Market Microstructure / Execution Condition — Range Dynamics.
+- **CAND-085** (Approach Velocity → Breakout Continuation) — How price reaches a level determines post-breakout dynamics. Continuation entry after high-velocity approach breakout. Mechanism: Event Sequence / Path Dependence — Approach Dynamics.
+
+All three are NEW (no overlap with V19-V27 or historical candidates). All three use USATECHIDXUSD M1 data. No volume required.
+
+Artifact: `output/research_discovery/TRADEABLE_EDGE_DISCOVERY_SCREENING_V28.md`
+
+**Status:** V28 G0 COMPLETE. 3 CANDIDATES GENERATED. G1 PENDING.
