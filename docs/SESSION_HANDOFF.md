@@ -2,7 +2,7 @@
 
 **Purpose:** Authoritative restart point for the next QuantForge session. Do not reconstruct project history from conversational memory; start from this document and the referenced artifacts.
 
-**Last consolidated:** 2026-08-30 (V28 G1 complete — CAND-083 STATE REVIEW ELIGIBLE, CAND-084 REDUNDANT, CAND-085 INSUFFICIENT)
+**Last consolidated:** 2026-08-30 (CAND-083 State Governance Review complete — 3 STATE REVIEW ELIGIBLE objects, V29 G0 READY)
 
 ---
 
@@ -37,12 +37,11 @@ Next session must NOT:
 
 ### Current milestone
 
-> **V28 G1 COMPLETE — 0 G2 PROMOTIONS**
-> **CAND-083 STATE REVIEW ELIGIBLE** (+4.60 bps conditional delta)
-> **CAND-084 EXTENSION / REDUNDANT** (identical to CAND-077)
-> **CAND-085 INSUFFICIENT** (counterfactual invalid)
+> **CAND-083 STATE GOVERNANCE REVIEW COMPLETE**
+> **3 STATE REVIEW ELIGIBLE objects: CAND-077, CAND-081, CAND-083**
+> **V29 G0 READY**
 
-Three State Review Eligible objects now exist: CAND-077, CAND-081, CAND-083.
+CAND-083 governance review confirmed: genuinely distinct State concept from CAND-077 and CAND-081. No thresholds ratified. No interaction studies authorized.
 
 ---
 
@@ -180,7 +179,7 @@ V27 G1: `output/research_discovery/RESEARCH_FACTORY_V2_G1_SCREEN_20260830_V27.md
 | CAND-069 | Mid-session > Morning | STATE OBSERVATION |
 | **CAND-077** | **Vol compression → expansion** | **STATE REVIEW ELIGIBLE — OWNER REVIEW REQUIRED** |
 | **CAND-081** | **Structural level failure trap** | **STATE REVIEW ELIGIBLE** |
-| **CAND-083** | **Cumulative rejection pressure** | **STATE REVIEW ELIGIBLE** |
+| **CAND-083** | **Cumulative rejection pressure at structural level** | **STATE REVIEW ELIGIBLE — GOVERNANCE COMPLETE** |
 | CAND-079 | Gold vol transition → Tech | STATE OBSERVATION |
 
 ### Registered Components
@@ -400,12 +399,17 @@ No system assembly may occur merely because several useful artifacts exist.
 
 ---
 
-## 18. CAND-077 + CAND-081 STATE GOVERNANCE REVIEW (COMPLETE)
+## 18. STATE GOVERNANCE REVIEWS (COMPLETE)
 
-### Review Result
+### CAND-077 + CAND-081 Review Result
 
 > BOTH STATE REVIEW ELIGIBLE — PRESERVED
 > V28 G0 READY
+
+### CAND-083 Review Result
+
+> STATE REVIEW ELIGIBLE — PRESERVED
+> V29 G0 READY
 
 ### CAND-077
 
@@ -452,15 +456,38 @@ The two mechanisms are genuinely independent:
 
 ---
 
+### CAND-083 Governance Review Result
+
+> STATE REVIEW ELIGIBLE — PRESERVED
+> DISTINCT STATE CONCEPT FROM CAND-077 AND CAND-081
+> V29 G0 READY
+
+**State concept:** Repeated unsuccessful attempts to establish price acceptance at a structural area may progressively increase the population of participants whose positions become vulnerable to forced exit, creating a distinct market condition when the structure ultimately fails.
+
+**G1 Evidence:** N=2,318, +4.60 bps conditional delta (largest in RF history), all 9 validity gates pass, counterfactual valid and discriminating (N=316).
+
+**Absolute economics:** Net mean=-2.33 bps. NOT a standalone Alpha.
+
+**Independence from CAND-077:** INDEPENDENT. Different observables (rejection count vs ATR percentile). Different participant populations (rejected breakout participants vs trend followers in compressed state).
+
+**Independence from CAND-081:** INDEPENDENT BUT POTENTIALLY RELATED. CAND-083 captures pre-failure accumulation; CAND-081 captures post-failure trapped state. Different temporal phases of structural failure.
+
+**Threshold governance:** NO NUMERICAL REJECTION-COUNT THRESHOLD IS RATIFIED.
+
+**Future path:** Formal State hypothesis registration → qualified downstream Alpha → interaction study → State qualification.
+
+**Artifact:** `output/research_discovery/QUANTFORGE_CAND083_STATE_GOVERNANCE_REVIEW_V1.md`
+
+---
+
 ## 19. PERMITTED NEXT TASKS
 
 - V29 G0 candidate generation
-- CAND-083 State Governance Review (if owner authorizes)
-- CAND-024/CAND-035 forward observation (continue, do not inspect)
-- CAND-015 forward observation (continue, do not inspect)
 - Formal State hypothesis registration for CAND-077 (if owner authorizes)
 - Formal State hypothesis registration for CAND-081 (if owner authorizes)
 - Formal State hypothesis registration for CAND-083 (if owner authorizes)
+- CAND-024/CAND-035 forward observation (continue, do not inspect)
+- CAND-015 forward observation (continue, do not inspect)
 
 ---
 
@@ -474,6 +501,7 @@ The two mechanisms are genuinely independent:
 - Automatically promote CAND-077, CAND-081, or CAND-083 to STATE-ARTIFACT
 - Create new Alpha from CAND-077
 - Select >15 bps as the threshold for any future hypothesis
+- Select any rejection-count threshold for CAND-083
 - Modify forward runner
 - Inspect CAND-015/024/035 performance
 - Perform System Assembly
@@ -481,7 +509,7 @@ The two mechanisms are genuinely independent:
 - Treat exploratory filter observations as validated
 - Reopen CAND-077, CAND-078, or CAND-079
 - Retroactively designate CAND-024/CAND-035 as downstream Alphas for CAND-077/CAND-081/CAND-083
-- Create variants of CAND-077 or CAND-081
+- Create variants of CAND-077, CAND-081, or CAND-083
 
 ---
 
@@ -539,4 +567,4 @@ Volume data unavailable / zero for both USATECHIDXUSD and XAUUSD M1 data. Do not
 
 ---
 
-*Authoritative for next session. Updated 2026-08-30 after V26 closure and post-closure CAND-077 filter observations.*
+*Authoritative for next session. Updated 2026-08-30 after CAND-083 State Governance Review. Three STATE REVIEW ELIGIBLE objects governed: CAND-077, CAND-081, CAND-083. V29 G0 READY.*

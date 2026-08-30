@@ -1477,3 +1477,13 @@ No G2 promotions. CAND-083 added to State Library as STATE REVIEW ELIGIBLE. CAND
 Artifact: `output/research_discovery/RESEARCH_FACTORY_V2_G1_SCREEN_20260830_V28.md`
 
 **Status:** V28 G1 COMPLETE. NO G2 PROMOTIONS. CAND-083 STATE REVIEW ELIGIBLE.
+
+---
+
+## DISC-035 — CAND-083 State Governance Review Complete (2026-08-30)
+
+- **CAND-083** (Cumulative Rejection Pressure Sweep) — Formal governance review following V28 G1. Decision: STATE REVIEW ELIGIBLE — PRESERVED. Distinct State concept from CAND-077 and CAND-081. Mechanism: accumulated rejection pressure at structural level creates distinct market condition. G1 evidence: N=2318, Net=-2.33 bps, CF delta=+4.60 bps (TREATMENT SUPERIOR). All 9 gates PASS. Counterfactual valid (N=316). Independence audit: CAND-083 INDEPENDENT from CAND-077 (different observables) and INDEPENDENT but POTENTIALLY RELATED to CAND-081 (pre-failure vs post-failure). No numerical threshold ratified. Absolute economics negative — NOT standalone Alpha.
+
+Artifact: `output/research_discovery/QUANTFORGE_CAND083_STATE_GOVERNANCE_REVIEW_V1.md`
+
+**Status:** CAND-083 STATE GOVERNANCE REVIEW COMPLETE. STATE REVIEW ELIGIBLE PRESERVED. V29 G0 READY.
