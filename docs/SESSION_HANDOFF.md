@@ -2,7 +2,7 @@
 
 **Purpose:** Authoritative restart point for the next QuantForge session. Do not reconstruct project history from conversational memory; start from this document and the referenced artifacts.
 
-**Last consolidated:** 2026-08-30 (CAND-083 State Governance Review complete — 3 STATE REVIEW ELIGIBLE objects, V29 G0 READY)
+**Last consolidated:** 2026-08-30 (V29 G0 complete — CAND-086/087/088 generated, G1 PENDING)
 
 ---
 
@@ -37,11 +37,13 @@ Next session must NOT:
 
 ### Current milestone
 
-> **CAND-083 STATE GOVERNANCE REVIEW COMPLETE**
-> **3 STATE REVIEW ELIGIBLE objects: CAND-077, CAND-081, CAND-083**
-> **V29 G0 READY**
+> **V29 G0 COMPLETE — 3 NEW CANDIDATES GENERATED**
+> **CAND-086 Information Absorption Failure Cascade**
+> **CAND-087 Recovery Quality Differential**
+> **CAND-088 Session Sequence Asymmetry**
+> **G1 PENDING**
 
-CAND-083 governance review confirmed: genuinely distinct State concept from CAND-077 and CAND-081. No thresholds ratified. No interaction studies authorized.
+V29 G0 produced three genuinely new candidates from distinct mechanism families. All independent of the State library. CAND-077/081/083 preserved and untouched.
 
 ---
 
@@ -482,7 +484,7 @@ The two mechanisms are genuinely independent:
 
 ## 19. PERMITTED NEXT TASKS
 
-- V29 G0 candidate generation
+- V29 G1 — Economic Plausibility Screen for CAND-086/087/088
 - Formal State hypothesis registration for CAND-077 (if owner authorizes)
 - Formal State hypothesis registration for CAND-081 (if owner authorizes)
 - Formal State hypothesis registration for CAND-083 (if owner authorizes)
@@ -493,8 +495,8 @@ The two mechanisms are genuinely independent:
 
 ## 20. FORBIDDEN NEXT TASKS
 
-- Run G2 for any V28 candidate
-- Optimize CAND-083, CAND-084, or CAND-085
+- Run G2 for any V29 candidate
+- Optimize CAND-086, CAND-087, or CAND-088
 - Rescue CAND-084 (EXTENSION / REDUNDANT)
 - Rescue CAND-085 (INSUFFICIENT)
 - Optimize CAND-077 filters
@@ -567,4 +569,4 @@ Volume data unavailable / zero for both USATECHIDXUSD and XAUUSD M1 data. Do not
 
 ---
 
-*Authoritative for next session. Updated 2026-08-30 after CAND-083 State Governance Review. Three STATE REVIEW ELIGIBLE objects governed: CAND-077, CAND-081, CAND-083. V29 G0 READY.*
+*Authoritative for next session. Updated 2026-08-30 after V29 G0. Three new candidates: CAND-086/087/088. G1 PENDING. State library preserved.*

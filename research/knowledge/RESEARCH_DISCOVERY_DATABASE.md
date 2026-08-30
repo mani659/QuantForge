@@ -1487,3 +1487,17 @@ Artifact: `output/research_discovery/RESEARCH_FACTORY_V2_G1_SCREEN_20260830_V28.
 Artifact: `output/research_discovery/QUANTFORGE_CAND083_STATE_GOVERNANCE_REVIEW_V1.md`
 
 **Status:** CAND-083 STATE GOVERNANCE REVIEW COMPLETE. STATE REVIEW ELIGIBLE PRESERVED. V29 G0 READY.
+
+---
+
+## DISC-036 — V29 G0 New Discovery Complete (2026-08-30)
+
+- **CAND-086** (Information Absorption Failure Cascade): Repeated failed directional moves (>1.5× ATR that reverse >50% within 5 bars) create trapped-participant state. When count ≥3 in 20-bar lookback, next sustained directional move has larger continuation. Mechanism: Information Absorption / Failure family. Artifact class: Alpha/Event (provisional). Prior-art: NEW.
+- **CAND-087** (Recovery Quality Differential): Post-disturbance recovery quality (>2× ATR move, recovery measured over 10 bars) reveals participant constraint. Weak recovery (<25% recovered) indicates trapped participants remain; strong recovery (>75%) indicates resolution. Mechanism: Recovery / Failure of Recovery family. Artifact class: Alpha/Event (provisional). Prior-art: NEW.
+- **CAND-088** (Session Sequence Asymmetry): Opening directional bias (first 30 bars) followed by opposite-direction structural break (20-bar rolling high/low) traps opening-bias participants. Path-dependent mechanism. Mechanism: Path Dependence / Event Sequence family. Artifact class: Alpha/Event (provisional). Prior-art: NEW.
+
+All three genuinely distinct from V19-V28 and from each other. CAND-077/CAND-081/CAND-083 preserved and untouched.
+
+Artifact: `output/research_discovery/TRADEABLE_EDGE_DISCOVERY_SCREENING_V29.md`
+
+**Status:** V29 G0 COMPLETE. 3 CANDIDATES GENERATED. G1 PENDING.
