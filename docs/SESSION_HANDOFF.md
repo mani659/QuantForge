@@ -2,7 +2,7 @@
 
 **Purpose:** Authoritative restart point for the next QuantForge session. Do not reconstruct project history from conversational memory; start from this document and the referenced artifacts.
 
-**Last consolidated:** 2026-08-30 (V27 G1 complete — 0 G2 promotions, CAND-081 STATE REVIEW ELIGIBLE)
+**Last consolidated:** 2026-08-30 (CAND-077 + CAND-081 State Governance Review complete — V28 G0 READY)
 
 ---
 
@@ -37,11 +37,10 @@ Next session must NOT:
 
 ### Current milestone
 
-> **V27 G1 COMPLETE — 0 G2 PROMOTIONS**
-> **CAND-081 STATE REVIEW ELIGIBLE**
+> **CAND-077 + CAND-081 STATE GOVERNANCE REVIEW COMPLETE**
 > **V28 G0 READY**
 
-CAND-077 remains STATE REVIEW ELIGIBLE. CAND-081 added to State Library.
+Both CAND-077 and CAND-081 are STATE REVIEW ELIGIBLE. Both are independent, distinct State concepts. V28 G0 may begin from a clean State library.
 
 ---
 
@@ -398,59 +397,55 @@ No system assembly may occur merely because several useful artifacts exist.
 
 ---
 
-## 18. CAND-077 STATE GOVERNANCE REVIEW (COMPLETE)
+## 18. CAND-077 + CAND-081 STATE GOVERNANCE REVIEW (COMPLETE)
 
 ### Review Result
 
+> BOTH STATE REVIEW ELIGIBLE — PRESERVED
+> V28 G0 READY
+
+### CAND-077
+
 > STATE REVIEW ELIGIBLE — PRESERVED
 
-The post-closure exploratory filter findings STRENGTHEN the case for State Review Eligibility but do NOT:
-- Promote CAND-077 to STATE-ARTIFACT
-- Authorize an interaction study
-- Ratify any specific numerical threshold
-- Validate the >15 bps breakout filter
+**State concept:** A transition in volatility character from compressed/smooth to expanded/active creates a specific market condition that may modify the economics of downstream events.
 
-### Exploratory Findings (NOT VALIDATED)
+**Evidence:** N=2,084, +1.67 bps conditional delta (largest in RF history), all 9 validity gates pass.
 
-| Filter | N | Win Rate | Gross Mean | Gross Median |
-|---|---|---|---|---|
-| Baseline | 2,084 | 54.5% | +1.15 bps | +0.86 bps |
-| Breakout > 15 bps | 219 | 64.8% | +8.41 bps | +6.97 bps |
-| Breakout > 20 bps | 133 | 64.7% | +8.45 bps | +10.14 bps |
+**Exploratory findings:** Breakout magnitude relationship (>15 bps = 64.8% WR, +8.41 bps) remains EXPLORATORY EVIDENCE ONLY. No numerical threshold ratified.
 
-### State Concept
+**Future path:** Formal State hypothesis registration → qualified downstream Alpha → interaction study → State qualification.
 
-> Expansion magnitude after compression contains incremental information about downstream outcome distribution.
+### CAND-081
 
-### Future Path
+> STATE REVIEW ELIGIBLE — PRESERVED
 
-```
-Observed CAND-077 transition + filter observation
-        ↓
-Formal State hypothesis (NEW, independently governed)
-        ↓
-Qualified downstream Alpha required
-        ↓
-Interaction study (separately authorized)
-        ↓
-State qualification
-```
+**State concept:** The presence of a trapped participant population following a failed structural break creates a specific market condition that may modify the economics of subsequent events.
 
-### Critical Governance Rule
+**Evidence:** N=3,887, +1.23 bps conditional delta (second-strongest in RF history), all 9 validity gates pass, counterfactual valid and discriminating (3,364 events).
+
+**Absolute economics:** Net mean=-0.78 bps. NOT a standalone Alpha.
+
+**Future path:** Formal State hypothesis registration → qualified downstream Alpha → interaction study → State qualification.
+
+### Independence
+
+The two mechanisms are genuinely independent:
+- Different observables (ATR percentile vs price level)
+- Different participant populations (trend followers vs breakout traders)
+- Different timeframes (regime-level vs event-level)
+- Can coexist in the same market
+
+### Critical Governance Rules
 
 > NO NUMERICAL FILTER THRESHOLD IS RATIFIED.
-> The observed >15 bps result remains EXPLORATORY EVIDENCE ONLY.
-> Any future threshold must be frozen BEFORE confirmatory testing.
+> CAND-077 and CAND-081 are NOT standalone Alphas.
+> Both require formally frozen State hypotheses before qualification.
+> CAND-024/CAND-035 must NOT be retroactively designated as downstream Alphas.
 
 ### Artifact
 
-`output/research_discovery/QUANTFORGE_CAND077_STATE_GOVERNANCE_REVIEW_V1.md`
-
-### V27 Readiness
-
-> V27 G0 MAY PROCEED
-
-CAND-077 state review status is clarified. It does not block V27 G0. The two paths are independent.
+`output/research_discovery/QUANTFORGE_CAND077_CAND081_STATE_GOVERNANCE_REVIEW_V1.md`
 
 ---
 
@@ -479,6 +474,7 @@ CAND-077 state review status is clarified. It does not block V27 G0. The two pat
 - Rescue closed candidates
 - Treat exploratory filter observations as validated
 - Reopen CAND-077, CAND-078, or CAND-079
+- Retroactively designate CAND-024/CAND-035 as downstream Alphas for CAND-077/CAND-081
 
 ---
 

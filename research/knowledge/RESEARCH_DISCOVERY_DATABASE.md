@@ -1427,3 +1427,21 @@ No G2 promotions. CAND-081 added to State Library as STATE REVIEW ELIGIBLE.
 Artifact: `output/research_discovery/RESEARCH_FACTORY_V2_G1_SCREEN_20260830_V27.md`
 
 **Status:** V27 G1 COMPLETE. NO G2 PROMOTIONS. CAND-081 STATE REVIEW ELIGIBLE.
+
+---
+
+## CAND-077 + CAND-081 State Governance Review (2026-08-30)
+
+Formal State Governance Review of both State Review Eligible objects following V27 G1.
+
+**CAND-077:** STATE REVIEW ELIGIBLE — PRESERVED. Volatility character transition is a genuine State concept. +1.67 bps conditional delta established. Post-closure filter observations remain EXPLORATORY EVIDENCE ONLY — no threshold ratified.
+
+**CAND-081:** STATE REVIEW ELIGIBLE — PRESERVED. Structural level failure trap is a genuine State concept distinct from CAND-077. +1.23 bps conditional delta established. Absolute economics negative (-0.78 bps).
+
+**Independence:** The two mechanisms are genuinely independent (different observables, different participant populations, different timeframes). They can coexist.
+
+**V28 readiness:** READY.
+
+Artifact: `output/research_discovery/QUANTFORGE_CAND077_CAND081_STATE_GOVERNANCE_REVIEW_V1.md`
+
+**Status:** STATE GOVERNANCE REVIEW COMPLETE. V28 G0 READY.
