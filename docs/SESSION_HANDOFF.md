@@ -2,7 +2,7 @@
 
 **Purpose:** Authoritative restart point for the next QuantForge session. Do not reconstruct project history from conversational memory; start from this document and the referenced artifacts.
 
-**Last consolidated:** 2026-08-30 (V28 G0 complete — 3 new discovery candidates)
+**Last consolidated:** 2026-08-30 (V28 G1 complete — CAND-083 STATE REVIEW ELIGIBLE, CAND-084 REDUNDANT, CAND-085 INSUFFICIENT)
 
 ---
 
@@ -37,10 +37,12 @@ Next session must NOT:
 
 ### Current milestone
 
-> **V28 G0 COMPLETE — 3 CANDIDATES GENERATED**
-> **G1 PENDING**
+> **V28 G1 COMPLETE — 0 G2 PROMOTIONS**
+> **CAND-083 STATE REVIEW ELIGIBLE** (+4.60 bps conditional delta)
+> **CAND-084 EXTENSION / REDUNDANT** (identical to CAND-077)
+> **CAND-085 INSUFFICIENT** (counterfactual invalid)
 
-Three genuinely new candidates spanning three distinct mechanism families. State library preserved. CAND-077 and CAND-081 remain STATE REVIEW ELIGIBLE.
+Three State Review Eligible objects now exist: CAND-077, CAND-081, CAND-083.
 
 ---
 
@@ -178,6 +180,7 @@ V27 G1: `output/research_discovery/RESEARCH_FACTORY_V2_G1_SCREEN_20260830_V27.md
 | CAND-069 | Mid-session > Morning | STATE OBSERVATION |
 | **CAND-077** | **Vol compression → expansion** | **STATE REVIEW ELIGIBLE — OWNER REVIEW REQUIRED** |
 | **CAND-081** | **Structural level failure trap** | **STATE REVIEW ELIGIBLE** |
+| **CAND-083** | **Cumulative rejection pressure** | **STATE REVIEW ELIGIBLE** |
 | CAND-079 | Gold vol transition → Tech | STATE OBSERVATION |
 
 ### Registered Components
@@ -451,11 +454,13 @@ The two mechanisms are genuinely independent:
 
 ## 19. PERMITTED NEXT TASKS
 
-- V28 G1 economic plausibility screen for CAND-083, CAND-084, CAND-085
+- V29 G0 candidate generation
+- CAND-083 State Governance Review (if owner authorizes)
 - CAND-024/CAND-035 forward observation (continue, do not inspect)
 - CAND-015 forward observation (continue, do not inspect)
 - Formal State hypothesis registration for CAND-077 (if owner authorizes)
 - Formal State hypothesis registration for CAND-081 (if owner authorizes)
+- Formal State hypothesis registration for CAND-083 (if owner authorizes)
 
 ---
 
@@ -463,8 +468,10 @@ The two mechanisms are genuinely independent:
 
 - Run G2 for any V28 candidate
 - Optimize CAND-083, CAND-084, or CAND-085
+- Rescue CAND-084 (EXTENSION / REDUNDANT)
+- Rescue CAND-085 (INSUFFICIENT)
 - Optimize CAND-077 filters
-- Automatically promote CAND-077 or CAND-081 to STATE-ARTIFACT
+- Automatically promote CAND-077, CAND-081, or CAND-083 to STATE-ARTIFACT
 - Create new Alpha from CAND-077
 - Select >15 bps as the threshold for any future hypothesis
 - Modify forward runner
@@ -473,7 +480,7 @@ The two mechanisms are genuinely independent:
 - Rescue closed candidates
 - Treat exploratory filter observations as validated
 - Reopen CAND-077, CAND-078, or CAND-079
-- Retroactively designate CAND-024/CAND-035 as downstream Alphas for CAND-077/CAND-081
+- Retroactively designate CAND-024/CAND-035 as downstream Alphas for CAND-077/CAND-081/CAND-083
 - Create variants of CAND-077 or CAND-081
 
 ---

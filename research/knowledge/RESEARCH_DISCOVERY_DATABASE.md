@@ -1461,3 +1461,19 @@ All three are NEW (no overlap with V19-V27 or historical candidates). All three 
 Artifact: `output/research_discovery/TRADEABLE_EDGE_DISCOVERY_SCREENING_V28.md`
 
 **Status:** V28 G0 COMPLETE. 3 CANDIDATES GENERATED. G1 PENDING.
+
+---
+
+## V28 G1 Economic Plausibility Screen (2026-08-30)
+
+All three V28 candidates evaluated under G1 V3:
+
+- **CAND-083** (Cumulative Rejection Pressure): N=2318, Net=-2.33 bps, CF delta=+4.60 bps TREATMENT SUPERIOR (largest conditional delta in RF history). All 9 gates PASS. **INFORMATIONALLY INTERESTING** — STATE REVIEW ELIGIBLE.
+- **CAND-084** (Range Compression -> Expansion): N=1910, Net=-1.42 bps, CF delta=+0.14 bps (negligible). Mechanism IDENTICAL to CAND-077. **INFORMATIONALLY INTERESTING** — EXTENSION / REDUNDANT.
+- **CAND-085** (Approach Velocity): N=8201, Net=-2.13 bps, CF INVALID (zero low-velocity events). **INSUFFICIENT**.
+
+No G2 promotions. CAND-083 added to State Library as STATE REVIEW ELIGIBLE. CAND-084 classified as extension of CAND-077.
+
+Artifact: `output/research_discovery/RESEARCH_FACTORY_V2_G1_SCREEN_20260830_V28.md`
+
+**Status:** V28 G1 COMPLETE. NO G2 PROMOTIONS. CAND-083 STATE REVIEW ELIGIBLE.
