@@ -1369,3 +1369,11 @@ All three V26 candidates evaluated under G1 V3 evidence-based adjudication:
 All three have negative absolute economics. Volume data unavailable (all zeros) for both instruments — noted as data limitation. Dynamic state-transition approach shows more promise than static conditions.
 
 **Status:** V26 G1 COMPLETE. NO G2 PROMOTIONS.
+
+---
+
+## V26 Closure + Dynamic-State Knowledge (2026-08-30)
+
+V26 formally closed. CAND-077 classified as STATE REVIEW ELIGIBLE — OWNER REVIEW REQUIRED (+1.67 bps conditional delta, largest in RF history). CAND-078 closed as ECONOMICALLY NEGATIVE. CAND-079 classified as STATE OBSERVATION (+0.78 bps delta, weak). Dynamic state-transition approach shows more conditional information than static conditions. CAND-077 requires owner review before any State interaction study.
+
+**Status:** V26 CLOSED. STATE GOVERNANCE REVIEW REQUIRED.
