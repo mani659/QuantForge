@@ -2,7 +2,7 @@
 
 **Purpose:** Authoritative restart point for the next QuantForge session. Do not reconstruct project history from conversational memory; start from this document and the referenced artifacts.
 
-**Last consolidated:** 2026-08-30 (V29 G1 complete — 0 G2 promotions, all V29 candidates closed, V30 G0 READY)
+**Last consolidated:** 2026-08-30 (Relational Research Framework established — V30 G0 READY)
 
 ---
 
@@ -37,13 +37,12 @@ Next session must NOT:
 
 ### Current milestone
 
-> **V29 G1 COMPLETE — 0 G2 PROMOTIONS**
-> **CAND-086 ECONOMICALLY NEGATIVE — CLOSED**
-> **CAND-087 INFORMATIONALLY INTERESTING (weak) — CLOSED**
-> **CAND-088 ECONOMICALLY NEGATIVE / COUNTERFACTUAL SUPERIOR — CLOSED**
+> **RELATIONAL RESEARCH FRAMEWORK ESTABLISHED**
+> **3 STATE REVIEW ELIGIBLE objects: CAND-077, CAND-081, CAND-083**
+> **Relational research GOVERNED but not yet EXECUTING**
 > **V30 G0 READY**
 
-V29 G1 evaluated all three candidates. No State Review Eligible. No Alpha promotion. Notable finding: aligned-direction structural breaks (CAND-088 CF) produce +4.07 bps net mean with 58.3% WR.
+Relational research framework established with admission rules, counterfactual framework, multiple testing controls, and promotion pathway. V30 G0 is the next permitted milestone. Relational execution authorized after governance questions resolved.
 
 ---
 
@@ -484,10 +483,11 @@ The two mechanisms are genuinely independent:
 
 ## 19. PERMITTED NEXT TASKS
 
-- V30 G0 — New discovery
+- V30 G0 — New discovery (NEXT PERMITTED MILESTONE)
 - Formal State hypothesis registration for CAND-077 (if owner authorizes)
 - Formal State hypothesis registration for CAND-081 (if owner authorizes)
 - Formal State hypothesis registration for CAND-083 (if owner authorizes)
+- Relational research governance question resolution (if owner authorizes)
 - CAND-024/CAND-035 forward observation (continue, do not inspect)
 - CAND-015 forward observation (continue, do not inspect)
 
@@ -569,4 +569,4 @@ Volume data unavailable / zero for both USATECHIDXUSD and XAUUSD M1 data. Do not
 
 ---
 
-*Authoritative for next session. Updated 2026-08-30 after V29 G1. All V29 candidates closed. 0 G2 promotions. V30 G0 READY. State library preserved.*
+*Authoritative for next session. Updated 2026-08-30 after Relational Research Framework establishment. V30 G0 READY. Relational research GOVERNED. State library preserved. Forward runtime protected.*

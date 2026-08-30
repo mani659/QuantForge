@@ -1517,3 +1517,13 @@ No G2 promotions. No State Review Eligible. All three CLOSED.
 Artifact: `output/research_discovery/RESEARCH_FACTORY_V2_G1_SCREEN_20260830_V29.md`
 
 **Status:** V29 G1 COMPLETE. NO G2 PROMOTIONS. ALL CANDIDATES CLOSED. V30 G0 READY.
+
+---
+
+## DISC-038 — Relational Research Framework Governance Established (2026-08-30)
+
+- Relational research governance framework established for QuantForge. Defines admission rules (STATE REVIEW ELIGIBLE, STATE OBSERVATION, STATE-ARTIFACT admissible; closed candidates NOT admissible as positive inputs; protected forward candidates permanently excluded), hypothesis schema, counterfactual framework, incremental information framework, multiple testing controls, discovery/confirmation separation, relational lifecycle, promotion rules, State relationship governance, unexpected observation governance (CAND-088 aligned-break classified as EXPLORATORY OBSERVATION requiring new G0), closed-line firewall, forward runtime firewall. Framework GOVERNED but not yet EXECUTING. V30 G0 is next milestone.
+
+Artifact: `output/research_discovery/QUANTFORGE_RELATIONAL_RESEARCH_FRAMEWORK_GOVERNANCE_V1.md`
+
+**Status:** RELATIONAL RESEARCH FRAMEWORK ESTABLISHED. V30 G0 READY.
