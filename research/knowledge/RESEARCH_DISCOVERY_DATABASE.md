@@ -1501,3 +1501,19 @@ All three genuinely distinct from V19-V28 and from each other. CAND-077/CAND-081
 Artifact: `output/research_discovery/TRADEABLE_EDGE_DISCOVERY_SCREENING_V29.md`
 
 **Status:** V29 G0 COMPLETE. 3 CANDIDATES GENERATED. G1 PENDING.
+
+---
+
+## DISC-037 — V29 G1 Economic Plausibility Screen Complete (2026-08-30)
+
+- **CAND-086** (Information Absorption Failure Cascade): N=10198, Net=-2.06 bps, CF delta=+0.07 bps mean / -0.03 bps median (MIXED, negligible). ECONOMICALLY NEGATIVE — CLOSED. All 9 gates PASS. Conditional delta negligible.
+- **CAND-087** (Recovery Quality Differential): N=9930, Net=-1.91 bps, CF delta=+0.23 bps mean / -0.03 bps median (MIXED, weak). INFORMATIONALLY INTERESTING — CLOSED. All 9 gates PASS. Too weak for State classification.
+- **CAND-088** (Session Sequence Asymmetry): N=222, Net=-15.51 bps, CF delta=-19.59 bps (COUNTERFACTUAL SUPERIOR). ECONOMICALLY NEGATIVE — CLOSED. All 9 gates PASS. Hypothesis contradicted: aligned breaks outperform opposite breaks.
+
+Notable: Aligned-direction structural breaks (CF) produce +4.07 bps net mean, 58.3% WR. Genuine positive finding not part of hypothesis.
+
+No G2 promotions. No State Review Eligible. All three CLOSED.
+
+Artifact: `output/research_discovery/RESEARCH_FACTORY_V2_G1_SCREEN_20260830_V29.md`
+
+**Status:** V29 G1 COMPLETE. NO G2 PROMOTIONS. ALL CANDIDATES CLOSED. V30 G0 READY.

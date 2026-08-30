@@ -2,7 +2,7 @@
 
 **Purpose:** Authoritative restart point for the next QuantForge session. Do not reconstruct project history from conversational memory; start from this document and the referenced artifacts.
 
-**Last consolidated:** 2026-08-30 (V29 G0 complete — CAND-086/087/088 generated, G1 PENDING)
+**Last consolidated:** 2026-08-30 (V29 G1 complete — 0 G2 promotions, all V29 candidates closed, V30 G0 READY)
 
 ---
 
@@ -37,13 +37,13 @@ Next session must NOT:
 
 ### Current milestone
 
-> **V29 G0 COMPLETE — 3 NEW CANDIDATES GENERATED**
-> **CAND-086 Information Absorption Failure Cascade**
-> **CAND-087 Recovery Quality Differential**
-> **CAND-088 Session Sequence Asymmetry**
-> **G1 PENDING**
+> **V29 G1 COMPLETE — 0 G2 PROMOTIONS**
+> **CAND-086 ECONOMICALLY NEGATIVE — CLOSED**
+> **CAND-087 INFORMATIONALLY INTERESTING (weak) — CLOSED**
+> **CAND-088 ECONOMICALLY NEGATIVE / COUNTERFACTUAL SUPERIOR — CLOSED**
+> **V30 G0 READY**
 
-V29 G0 produced three genuinely new candidates from distinct mechanism families. All independent of the State library. CAND-077/081/083 preserved and untouched.
+V29 G1 evaluated all three candidates. No State Review Eligible. No Alpha promotion. Notable finding: aligned-direction structural breaks (CAND-088 CF) produce +4.07 bps net mean with 58.3% WR.
 
 ---
 
@@ -484,7 +484,7 @@ The two mechanisms are genuinely independent:
 
 ## 19. PERMITTED NEXT TASKS
 
-- V29 G1 — Economic Plausibility Screen for CAND-086/087/088
+- V30 G0 — New discovery
 - Formal State hypothesis registration for CAND-077 (if owner authorizes)
 - Formal State hypothesis registration for CAND-081 (if owner authorizes)
 - Formal State hypothesis registration for CAND-083 (if owner authorizes)
@@ -496,7 +496,7 @@ The two mechanisms are genuinely independent:
 ## 20. FORBIDDEN NEXT TASKS
 
 - Run G2 for any V29 candidate
-- Optimize CAND-086, CAND-087, or CAND-088
+- Rescue CAND-086, CAND-087, or CAND-088
 - Rescue CAND-084 (EXTENSION / REDUNDANT)
 - Rescue CAND-085 (INSUFFICIENT)
 - Optimize CAND-077 filters
@@ -569,4 +569,4 @@ Volume data unavailable / zero for both USATECHIDXUSD and XAUUSD M1 data. Do not
 
 ---
 
-*Authoritative for next session. Updated 2026-08-30 after V29 G0. Three new candidates: CAND-086/087/088. G1 PENDING. State library preserved.*
+*Authoritative for next session. Updated 2026-08-30 after V29 G1. All V29 candidates closed. 0 G2 promotions. V30 G0 READY. State library preserved.*
