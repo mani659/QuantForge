@@ -53,13 +53,14 @@ Next session must NOT:
 
 ### Current milestone
 
-> **V30 G0 INTEGRITY AUDIT COMPLETE — CAND-090 REDUNDANT WITH CAND-087**
-> **V30 ELIGIBLE CANDIDATES: CAND-089, CAND-091 (2 of 3)**
+> **V30 G1 COMPLETE — BOTH CANDIDATES CLOSED**
+> **CAND-089: CLOSED — NO INCREMENTAL INFORMATION**
+> **CAND-091: CLOSED — HYPOTHESIS CONTRADICTED**
 > **3 STATE REVIEW ELIGIBLE objects: CAND-077, CAND-081, CAND-083 (PRESERVED)**
 > **SEED-002: TESTED NEGATIVE — NO INCREMENTAL INFORMATION**
-> **G1 LIMITED — 2 ELIGIBLE CANDIDATES**
+> **V30: 0 G2 promotions. 0 State classifications. 2 candidates tested, 2 closed.**
 
-Today's session completed: V26 G0/G1, V27 G0/G1, V28 G0/G1, V29 G0/G1, CAND-077/CAND-081/CAND-083 governance reviews, relational research framework, unified knowledge ledger. 14 commits total. 33 candidates reconciled. 6 behavioural knowledge records. 7 State objects. No G2 promotions. Forward runtime untouched.
+Today's session completed: V30 G0, V30 G0 integrity audit, V30 G1 economic plausibility screen. Both V30 candidates closed at G1. CAND-089 (Acceptance Velocity Decay): no incremental information. CAND-091 (Cumulative Directional Exhaustion): hypothesis contradicted — exhaustion worsens economics. State objects preserved. Forward runtime untouched.
 
 ---
 
@@ -500,8 +501,7 @@ The two mechanisms are genuinely independent:
 
 ## 19. PERMITTED NEXT TASKS
 
-- **V30 G1 — Economic plausibility screen for CAND-089 and CAND-091 (NEXT PERMITTED MILESTONE)**
-- V30 G0 correction / replacement for CAND-090 (if owner authorizes — separate task)
+- **V31 G0 — Fresh discovery (if owner authorizes)**
 - Formal State hypothesis registration for CAND-077 (if owner authorizes)
 - Formal State hypothesis registration for CAND-081 (if owner authorizes)
 - Formal State hypothesis registration for CAND-083 (if owner authorizes)
@@ -513,10 +513,10 @@ The two mechanisms are genuinely independent:
 
 ## 20. FORBIDDEN NEXT TASKS
 
-- Run G2 for any V30 candidate before G1
-- Rescue CAND-086, CAND-087, or CAND-088
+- Rescue CAND-086, CAND-087, CAND-088, CAND-089, or CAND-091
 - Rescue CAND-084 (EXTENSION / REDUNDANT)
 - Rescue CAND-085 (INSUFFICIENT)
+- Rescue CAND-090 (REDUNDANT WITH CAND-087)
 - Optimize CAND-077 filters
 - Automatically promote CAND-077, CAND-081, or CAND-083 to STATE-ARTIFACT
 - Create new Alpha from CAND-077
@@ -728,4 +728,25 @@ Volume data unavailable / zero for both USATECHIDXUSD and XAUUSD M1 data. Do not
 
 ---
 
-*Authoritative for next session. Updated 2026-08-31. V30 G0 integrity audit complete. CAND-090 REDUNDANT with CAND-087 — rejected. V30 G1 eligible: CAND-089, CAND-091 (2 candidates). SEED-002 negative. State objects preserved. Forward runtime protected.*
+## 29. V30 G1 — ECONOMIC PLAUSIBILITY SCREEN
+
+**Status:** COMPLETE — BOTH CANDIDATES CLOSED
+| Candidate | Decision | Rationale |
+|---|---|---|
+| CAND-089 (Acceptance Velocity Decay) | **CLOSED — NO INCREMENTAL INFORMATION** | Mean delta +0.26 bps, median delta -0.22 bps, WR delta -1.2%. Distributions indistinguishable. Mechanism ambiguous. |
+| CAND-091 (Cumulative Directional Exhaustion) | **CLOSED — HYPOTHESIS CONTRADICTED** | Mean delta -0.67 bps (control superior), median delta -0.39 bps. Exhaustion adds dispersion (49.79 vs 29.78 bps std) without return. Worst tail much worse (-45 vs -31 bps P10). |
+
+**Key evidence:**
+- CAND-089: N=4,152 (treatment) / 4,269 (control). Net Mean: -2.20 / -2.46 bps. Near-zero conditional delta.
+- CAND-091: N=3,886 (treatment) / 4,535 (control). Net Mean: -2.69 / -2.02 bps. Treatment WORSE than control.
+- Both candidates pass all 9 hard validity gates. Failures are in economic evidence, not measurement.
+- Mechanism quality: CAND-089 ambiguous, CAND-091 contradicted.
+- State potential: NOT JUSTIFIED for either.
+
+**Artifacts:**
+- V30 G1 Screen: `output/research_discovery/RESEARCH_FACTORY_V2_G1_SCREEN_20260831_V30.md`
+- Script: `research/v30_g1_experiment.py`
+
+---
+
+*Authoritative for next session. Updated 2026-08-31. V30 G1 complete. Both CAND-089 and CAND-091 closed at G1 — no incremental information / hypothesis contradicted. V30 total: 0 G2 promotions. State objects preserved (CAND-077/081/083 STATE REVIEW ELIGIBLE). SEED-002 negative. Forward runtime protected. Next authorized: V31 G0 fresh discovery (if owner authorizes).*

@@ -1614,3 +1614,18 @@ Audit completed. CAND-090 (Recovery Quality Differential) found REDUNDANT with V
 Artifact: `output/research_discovery/QUANTFORGE_V30_G0_INTEGRITY_AUDIT_V1.md`
 
 **Status:** V30 G0 AUDIT COMPLETE — CAND-090 REDUNDANT — 2 ELIGIBLE CANDIDATES. G1 LIMITED.
+
+### V30 G1 — Economic Plausibility Screen (2026-08-31)
+
+G1 V3 completed for CAND-089 and CAND-091.
+
+**CAND-089 — Acceptance Velocity Decay:** CLOSED — NO INCREMENTAL INFORMATION. Treatment N=4,152, Net Mean=-2.20 bps, Median=-2.98 bps, WR=43.7%. Control N=4,269, Net Mean=-2.46 bps, Median=-2.77 bps, WR=44.9%. Mean delta=+0.26 bps, Median delta=-0.22 bps. Distributions indistinguishable. Mechanism ambiguous. 9/9 hard gates PASS.
+
+**CAND-091 — Cumulative Directional Exhaustion:** CLOSED — HYPOTHESIS CONTRADICTED. Treatment N=3,886, Net Mean=-2.69 bps, Median=-3.13 bps, WR=45.1%. Control N=4,535, Net Mean=-2.02 bps, Median=-2.75 bps, WR=43.6%. Mean delta=-0.67 bps (control superior). Exhaustion adds dispersion (49.79 vs 29.78 bps std) and downside tail risk (P10: -45 vs -31 bps) without compensating return. 9/9 hard gates PASS.
+
+**V30 total:** 0 G2 promotions. 0 State classifications. 2 candidates tested, 2 closed.
+
+Artifact: `output/research_discovery/RESEARCH_FACTORY_V2_G1_SCREEN_20260831_V30.md`
+Script: `research/v30_g1_experiment.py`
+
+**Status:** V30 G1 COMPLETE — BOTH CANDIDATES CLOSED. V30 COMPLETE.
