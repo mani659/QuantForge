@@ -170,22 +170,25 @@ The conditional evidence is contradictory (mean negative, median trivially posit
 
 ### 5.17 Economic Adjudication
 
-> **ECONOMICALLY NEGATIVE / MIXED EVIDENCE**
+> **ECONOMICALLY NEGATIVE**
+> **Evidence profile:** MIXED / METRIC DISCORDANCE
 
 **Rationale:**
 - Net mean is -3.42 bps (negative absolute economics)
 - Mean delta is -2.11 bps (control superior — contradicts hypothesis)
 - Median delta is +0.21 bps (trivially positive)
 - WR delta is +3.3% (treatment better)
-- The contradictory evidence across metrics prevents a clean classification
-- The wide dispersion in the treatment group suggests the mechanism adds volatility, not consistent return
-- No meaningful incremental information demonstrated
+- The primary economic measure (mean net) shows treatment is worse than control
+- The favorable median and win rate are distributional evidence that do not override the negative central tendency
+- The wide dispersion in the treatment group (46.26 vs 27.47 bps std) suggests the mechanism adds risk, not consistent return
+- No credible path to monetization
 
 ### 5.18 Governance Decision
 
-> **CLOSED — MIXED EVIDENCE / NO MEANINGFUL INCREMENTAL INFORMATION**
+> **CLOSED — ECONOMICALLY NEGATIVE**
+> **Evidence profile:** MIXED / METRIC DISCORDANCE
 
-CAND-092 does not survive G1. The event-information decay mechanism produces contradictory evidence: the treatment group has worse mean but better median and win rate. The wider dispersion suggests the mechanism adds risk without consistent directional benefit.
+CAND-092 does not survive G1. Under the ratified G1 V3 framework, the negative mean net after friction and the mean delta favoring the control establish ECONOMICALLY NEGATIVE. The slightly favorable median and win rate are distributional evidence that do not constitute economic qualification.
 
 ---
 
@@ -324,21 +327,24 @@ The conditional evidence is contradictory. The median supports the mechanism but
 
 ### 6.17 Economic Adjudication
 
-> **ECONOMICALLY NEGATIVE / MIXED EVIDENCE**
+> **ECONOMICALLY NEGATIVE**
+> **Evidence profile:** MIXED / METRIC DISCORDANCE
 
 **Rationale:**
 - Net mean is -2.67 bps (negative absolute economics)
 - Mean delta is -1.00 bps (control superior)
 - Median delta is +0.77 bps (treatment better)
 - Win rate delta is +0.6% (nearly identical)
-- The contradictory evidence prevents a clean classification
-- The mechanism may exist but does not produce consistent economic information
+- The primary economic measure (mean net) shows treatment is worse than control
+- The favorable median does not override the negative central tendency when absolute economics are also negative
+- No credible path to monetization
 
 ### 6.18 Governance Decision
 
-> **CLOSED — MIXED EVIDENCE / NO MEANINGFUL INCREMENTAL INFORMATION**
+> **CLOSED — ECONOMICALLY NEGATIVE**
+> **Evidence profile:** MIXED / METRIC DISCORDANCE
 
-CAND-093 does not survive G1. The price-discovery friction mechanism produces contradictory evidence: the treatment group has better median but worse mean. The economic information is not consistently positive across metrics.
+CAND-093 does not survive G1. Under the ratified G1 V3 framework, the negative mean net after friction and the mean delta favoring the control establish ECONOMICALLY NEGATIVE. The favorable median is distributional evidence that does not constitute economic qualification.
 
 ---
 
@@ -430,15 +436,17 @@ Neither candidate warrants confirmation. Both are closed at G1.
 
 ### CAND-092
 
-> **CLOSED — ECONOMICALLY NEGATIVE / MIXED EVIDENCE**
+> **CLOSED — ECONOMICALLY NEGATIVE**
+> **Evidence profile:** MIXED / METRIC DISCORDANCE
 
-Event-information decay produces contradictory evidence: worse mean but better median and win rate. The wider dispersion in the treatment group suggests the mechanism adds risk without consistent directional benefit. No meaningful incremental information demonstrated.
+Event-information decay: negative mean net after friction, mean delta favoring control. Favorable median and win rate are distributional evidence that do not override negative central tendency. Wider dispersion in treatment suggests mechanism adds risk.
 
 ### CAND-093
 
-> **CLOSED — ECONOMICALLY NEGATIVE / MIXED EVIDENCE**
+> **CLOSED — ECONOMICALLY NEGATIVE**
+> **Evidence profile:** MIXED / METRIC DISCORDANCE
 
-Price-discovery friction produces contradictory evidence: better median but worse mean. Win rate nearly identical. The mechanism may exist but does not produce consistent economic information under the frozen definitions.
+Price-discovery friction: negative mean net after friction, mean delta favoring control. Favorable median is distributional evidence that does not override negative central tendency. Win rate nearly identical.
 
 ## 22. Integrity Verification
 

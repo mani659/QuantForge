@@ -53,15 +53,15 @@ Next session must NOT:
 
 ### Current milestone
 
-> **V31 G1 COMPLETE — BOTH CANDIDATES CLOSED**
-> **CAND-092: CLOSED — MIXED EVIDENCE / NO MEANINGFUL INCREMENTAL INFORMATION**
-> **CAND-093: CLOSED — MIXED EVIDENCE / NO MEANINGFUL INCREMENTAL INFORMATION**
-> **V30: PERMANENTLY CLOSED / VERIFIED**
+> **V31 G1 ADJUDICATION AUDIT COMPLETE — VERIFIED WITH DOCUMENTATION CORRECTIONS**
+> **V31: PERMANENTLY CLOSED / VERIFIED**
+> **CAND-092: CLOSED — ECONOMICALLY NEGATIVE (evidence profile: MIXED / METRIC DISCORDANCE)**
+> **CAND-093: CLOSED — ECONOMICALLY NEGATIVE (evidence profile: MIXED / METRIC DISCORDANCE)**
 > **3 STATE REVIEW ELIGIBLE objects: CAND-077, CAND-081, CAND-083 (PRESERVED)**
 > **SEED-002: TESTED NEGATIVE — NO INCREMENTAL INFORMATION**
-> **V31: 0 G2 promotions. 0 State classifications. 2 candidates tested, 2 closed.**
+> **V31: 0 G2 promotions. 0 State classifications. 2 candidates tested, 2 closed. V31 PERMANENTLY CLOSED.**
 
-Today's session completed: V31 G1 economic plausibility screen. Both V31 candidates closed at G1 with mixed evidence. CAND-092 (Event-Information Decay): contradictory — worse mean (-2.11 bps) but better median (+0.21 bps) and WR (+3.3%). CAND-093 (Price-Discovery Friction): contradictory — worse mean (-1.00 bps) but better median (+0.77 bps). Both pass all 9 hard gates. Failures are in economic evidence. State objects preserved. Forward runtime untouched.
+Today's session completed: V31 G1 adjudication integrity audit. Governance terminology corrected: "MIXED EVIDENCE" reclassified from governance class to evidence descriptor. Both CAND-092 and CAND-093 correctly classified as ECONOMICALLY NEGATIVE under ratified G1 V3 framework. Evidence profile: MIXED / METRIC DISCORDANCE (mean favors control, median slightly favors treatment). V31 permanently closed. V32 G0 authorized.
 
 ---
 
@@ -777,12 +777,12 @@ Volume data unavailable / zero for both USATECHIDXUSD and XAUUSD M1 data. Do not
 **Status:** COMPLETE — BOTH CANDIDATES CLOSED
 | Candidate | Decision | Rationale |
 |---|---|---|
-| CAND-092 (Event-Information Decay) | **CLOSED — MIXED EVIDENCE** | Mean delta -2.11 bps (control superior), median delta +0.21 bps (trivially positive), WR delta +3.3%. Contradictory across metrics. Wider dispersion in treatment group (46.26 vs 27.47 bps std). |
-| CAND-093 (Price-Discovery Friction) | **CLOSED — MIXED EVIDENCE** | Mean delta -1.00 bps (control superior), median delta +0.77 bps (treatment better), WR delta +0.6%. Contradictory across metrics. |
+| CAND-092 (Event-Information Decay) | **CLOSED — ECONOMICALLY NEGATIVE** | Evidence profile: MIXED / METRIC DISCORDANCE. Mean delta -2.11 bps (control superior). Median delta +0.21 bps (trivially positive). WR delta +3.3%. Negative central tendency dominates. |
+| CAND-093 (Price-Discovery Friction) | **CLOSED — ECONOMICALLY NEGATIVE** | Evidence profile: MIXED / METRIC DISCORDANCE. Mean delta -1.00 bps (control superior). Median delta +0.77 bps (treatment better). WR delta +0.6%. Negative central tendency dominates. |
 
 **Key evidence:**
-- CAND-092: N=3,195 (treatment) / 3,324 (control). Net Mean: -3.42 / -1.31 bps. Contradictory conditional evidence.
-- CAND-093: N=5,601 (treatment) / 2,820 (control). Net Mean: -2.67 / -1.66 bps. Contradictory conditional evidence.
+- CAND-092: N=3,195 (treatment) / 3,324 (control). Net Mean: -3.42 / -1.31 bps. ECONOMICALLY NEGATIVE. Evidence profile: MIXED / METRIC DISCORDANCE.
+- CAND-093: N=5,601 (treatment) / 2,820 (control). Net Mean: -2.67 / -1.66 bps. ECONOMICALLY NEGATIVE. Evidence profile: MIXED / METRIC DISCORDANCE.
 - Both candidates pass all 9 hard validity gates. Failures are in economic evidence, not measurement.
 - State potential: NOT JUSTIFIED for either.
 

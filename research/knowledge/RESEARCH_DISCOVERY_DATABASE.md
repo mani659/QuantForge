@@ -1666,9 +1666,9 @@ Artifact: `output/research_discovery/QUANTFORGE_V31_G0_INTEGRITY_AUDIT_V1.md`
 
 G1 V3 completed for CAND-092 and CAND-093.
 
-**CAND-092 — Event-Information Decay:** CLOSED — MIXED EVIDENCE. Treatment N=3,195, Net Mean=-3.42 bps, Median=-2.51 bps, WR=46.3%. Control N=3,324, Net Mean=-1.31 bps, Median=-2.71 bps, WR=42.9%. Mean delta=-2.11 bps (control superior), Median delta=+0.21 bps (trivially positive), WR delta=+3.3%. Contradictory evidence. Wider dispersion in treatment (46.26 vs 27.47 bps std). 9/9 hard gates PASS.
+**CAND-092 — Event-Information Decay:** CLOSED — ECONOMICALLY NEGATIVE. Evidence profile: MIXED / METRIC DISCORDANCE. Treatment N=3,195, Net Mean=-3.42 bps, Median=-2.51 bps, WR=46.3%. Control N=3,324, Net Mean=-1.31 bps, Median=-2.71 bps, WR=42.9%. Mean delta=-2.11 bps (control superior). Primary measure contradicts hypothesis. 9/9 hard gates PASS.
 
-**CAND-093 — Price-Discovery Friction Gradient:** CLOSED — MIXED EVIDENCE. Treatment N=5,601, Net Mean=-2.67 bps, Median=-2.61 bps, WR=44.5%. Control N=2,820, Net Mean=-1.66 bps, Median=-3.39 bps, WR=43.9%. Mean delta=-1.00 bps (control superior), Median delta=+0.77 bps (treatment better), WR delta=+0.6%. Contradictory evidence. 9/9 hard gates PASS.
+**CAND-093 — Price-Discovery Friction Gradient:** CLOSED — ECONOMICALLY NEGATIVE. Evidence profile: MIXED / METRIC DISCORDANCE. Treatment N=5,601, Net Mean=-2.67 bps, Median=-2.61 bps, WR=44.5%. Control N=2,820, Net Mean=-1.66 bps, Median=-3.39 bps, WR=43.9%. Mean delta=-1.00 bps (control superior). Primary measure contradicts hypothesis. 9/9 hard gates PASS.
 
 **V31 total:** 0 G2 promotions. 0 State classifications. 2 candidates tested, 2 closed.
 
@@ -1676,3 +1676,11 @@ Artifact: `output/research_discovery/RESEARCH_FACTORY_V2_G1_SCREEN_20260831_V31.
 Script: `research/v31_g1_experiment.py`
 
 **Status:** V31 G1 COMPLETE — BOTH CANDIDATES CLOSED. V31 COMPLETE.
+
+### V31 G1 Adjudication Integrity Audit (2026-08-31)
+
+Audit completed. Governance terminology corrected: "MIXED EVIDENCE" reclassified from governance class to evidence descriptor. Both CAND-092 and CAND-093 correctly classified as ECONOMICALLY NEGATIVE under ratified G1 V3 framework. V31 closure: VALID. V32 G0: AUTHORIZED.
+
+Artifact: `output/research_discovery/QUANTFORGE_V31_G1_ADJUDICATION_INTEGRITY_AUDIT_V1.md`
+
+**Status:** V31 G1 ADJUDICATION AUDIT COMPLETE — VERIFIED. V31 PERMANENTLY CLOSED.
