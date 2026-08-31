@@ -655,4 +655,34 @@ Volume data unavailable / zero for both USATECHIDXUSD and XAUUSD M1 data. Do not
 
 ---
 
-*Authoritative for next session. Updated 2026-08-31. Cross-research integration V1 complete. 64 objects integrated. V30 G0 READY. State library preserved. Forward runtime protected.*
+## 27. RELATIONAL RESEARCH V1 — SEED-002 REGISTRATION
+
+**Status:** GOVERNANCE COMPLETE — SEED-002 REGISTERED
+
+**Governance questions resolved:**
+1. Minimum sample: Evidence-quality-dependent (no universal N ratified)
+2. Confirmation: Temporal separation required
+3. Incremental info: A+B vs max(A-alone, B-alone) comparison structure
+4. Counterfactual: CAND-081 WITH CAND-083 vs CAND-081 WITHOUT CAND-083
+5. Multiple testing: Sufficient with registration + limited relationships
+6. Rare events: Governed by evidence-quality framework
+7. Temporal: A → structural failure → B → downstream
+8. Causal language: CONDITIONAL ASSOCIATION — NOT CAUSAL PROOF
+
+**SEED-002:** REGISTERED — NOT TESTED
+- Input A: CAND-083 (STATE REVIEW ELIGIBLE, +4.60 bps conditional delta)
+- Input B: CAND-081 (STATE REVIEW ELIGIBLE, +1.23 bps conditional delta)
+- Hypothesis: Does structural failure preceded by CAND-083 accumulated rejection produce different downstream economics when CAND-081 trapped-participant state occurs?
+- Counterfactual: CAND-081 events WITHOUT CAND-083 precondition
+
+**Experiment:** NOT EXECUTED
+**Confirmation:** NOT EXECUTED
+**G2:** NOT EXECUTED
+**V30:** NOT EXECUTED
+**System Assembly:** NOT EXECUTED
+**State library:** UNCHANGED (CAND-077/081/083 STATE REVIEW ELIGIBLE)
+**Forward runtime:** UNTOUCHED
+**CAND-088:** EXPLORATORY / PROVISIONAL — NEW G0 REQUIRED
+---
+
+*Authoritative for next session. Updated 2026-08-31. Relational Research V1 complete. SEED-002 registered. Governance questions resolved. V30 G0 READY. State library preserved. Forward runtime protected.*

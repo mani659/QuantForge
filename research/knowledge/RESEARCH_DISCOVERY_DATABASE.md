@@ -1561,3 +1561,13 @@ Artifacts:
 - `output/research_discovery/QUANTFORGE_CROSS_RESEARCH_KNOWLEDGE_INTEGRATION_V1.md`
 
 **Status:** CROSS-RESEARCH INTEGRATION V1 COMPLETE. V30 G0 READY.
+
+---
+
+## DISC-042 — Relational Research V1 — SEED-002 Registration (2026-08-31)
+
+- Completed relational governance questions. Formally registered SEED-002 — CAND-083 × CAND-081. Tests whether structural failure preceded by accumulated rejection pressure produces different downstream economics when trapped-participant state occurs. Both inputs STATE REVIEW ELIGIBLE. Counterfactual: CAND-081 WITHOUT CAND-083 precondition. No experiment executed. No thresholds optimized. Forward runtime untouched.
+
+Artifact: `output/research_discovery/QUANTFORGE_RELATIONAL_RESEARCH_V1_SEED002_REGISTRATION.md`
+
+**Status:** RELATIONAL RESEARCH V1 COMPLETE — SEED-002 REGISTERED. Next: CONTROLLED RELATIONAL DISCOVERY EXPERIMENT (requires owner authorization).
