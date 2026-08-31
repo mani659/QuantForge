@@ -1637,3 +1637,19 @@ Audit completed. Verdict: VERIFIED WITH DOCUMENTATION CORRECTIONS. CAND-089 rewr
 Artifact: `output/research_discovery/QUANTFORGE_V30_G1_INTEGRITY_AUDIT_V1.md`
 
 **Status:** V30 G1 INTEGRITY AUDIT COMPLETE — VERIFIED. V30 PERMANENTLY CLOSED.
+
+### V31 G0 — Cross-Research Knowledge-Led New Discovery (2026-08-31)
+
+V31 G0 completed. Three new candidates from under-explored mechanism space:
+
+| ID | Name | Mechanism Family | Expression Class | Prior-Art |
+|---|---|---|---|---|
+| CAND-092 | Event-Information Decay | Information Persistence Dynamics | STATE/CONDITION | NEW |
+| CAND-093 | Price-Discovery Friction Gradient | Microstructure Information Dynamics | STATE/CONDITION | NEW |
+| CAND-094 | Path-Dependent Event Severity | Event-Path Dynamics | STATE/CONDITION | NEW |
+
+Cross-research ledger used as knowledge map. No combination mining. No relational testing. No optimization. Forward runtime untouched.
+
+Artifact: `output/research_discovery/TRADEABLE_EDGE_DISCOVERY_SCREENING_V31.md`
+
+**Status:** V31 G0 COMPLETE — 3 NEW CANDIDATES. G1 NEXT.

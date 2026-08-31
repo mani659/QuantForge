@@ -53,15 +53,13 @@ Next session must NOT:
 
 ### Current milestone
 
-> **V30 G1 INTEGRITY AUDIT COMPLETE — VERIFIED WITH DOCUMENTATION CORRECTIONS**
-> **V30 CLOSURE: VALID**
-> **CAND-089: CLOSED — NO INCREMENTAL INFORMATION (verified, documentation corrected)**
-> **CAND-091: CLOSED — HYPOTHESIS CONTRADICTED (verified)**
+> **V31 G0 COMPLETE — 3 NEW CANDIDATES FROM DISTINCT MECHANISM FAMILIES**
+> **V30: PERMANENTLY CLOSED / VERIFIED**
 > **3 STATE REVIEW ELIGIBLE objects: CAND-077, CAND-081, CAND-083 (PRESERVED)**
 > **SEED-002: TESTED NEGATIVE — NO INCREMENTAL INFORMATION**
-> **V30: 0 G2 promotions. 0 State classifications. 2 candidates tested, 2 closed. V30 PERMANENTLY CLOSED.**
+> **V31: CAND-092 (Information Decay), CAND-093 (Price-Discovery Friction), CAND-094 (Path-Dependent Severity)**
 
-Today's session completed: V30 G1 integrity audit. Verdict: VERIFIED WITH DOCUMENTATION CORRECTIONS. CAND-089 rewrite traced — semantic drift in velocity measurement (absolute range slope vs level-relative convergence), but negative result is robust. Distribution wording corrected from "indistinguishable" to "no meaningful distributional separation demonstrated." CAND-091 fully verified. V30 may be permanently closed. V31 G0 authorized.
+Today's session completed: V31 G0 fresh discovery. Three new candidates from under-explored mechanism space: information persistence dynamics, microstructure information dynamics, event-path dynamics. All three are genuinely new — no overlap with V19–V30 closed candidates or existing State objects. Cross-research ledger used as knowledge map. No combination mining. No relational testing. Forward runtime untouched.
 
 ---
 
@@ -502,7 +500,7 @@ The two mechanisms are genuinely independent:
 
 ## 19. PERMITTED NEXT TASKS
 
-- **V31 G0 — Fresh discovery (AUTHORIZED — V30 integrity audit passed)**
+- **V31 G1 — Economic plausibility screen for CAND-092, CAND-093, CAND-094 (NEXT PERMITTED MILESTONE)**
 - Formal State hypothesis registration for CAND-077 (if owner authorizes)
 - Formal State hypothesis registration for CAND-081 (if owner authorizes)
 - Formal State hypothesis registration for CAND-083 (if owner authorizes)
@@ -514,10 +512,9 @@ The two mechanisms are genuinely independent:
 
 ## 20. FORBIDDEN NEXT TASKS
 
-- Rescue CAND-086, CAND-087, CAND-088, CAND-089, or CAND-091
+- Rescue CAND-086, CAND-087, CAND-088, CAND-089, CAND-090, or CAND-091
 - Rescue CAND-084 (EXTENSION / REDUNDANT)
 - Rescue CAND-085 (INSUFFICIENT)
-- Rescue CAND-090 (REDUNDANT WITH CAND-087)
 - Optimize CAND-077 filters
 - Automatically promote CAND-077, CAND-081, or CAND-083 to STATE-ARTIFACT
 - Create new Alpha from CAND-077
@@ -529,7 +526,7 @@ The two mechanisms are genuinely independent:
 - Rescue closed candidates
 - Treat exploratory filter observations as validated
 - Rescue SEED-002 (negative relational finding)
-- Test CAND-089/CAND-090/CAND-091 combinations
+- Test CAND-092/CAND-093/CAND-094 combinations
 - Reopen CAND-077, CAND-078, or CAND-079
 - Retroactively designate CAND-024/CAND-035 as downstream Alphas for CAND-077/CAND-081/CAND-083
 - Create variants of CAND-077, CAND-081, or CAND-083
