@@ -1549,3 +1549,15 @@ Artifacts:
 - `output/research_discovery/QUANTFORGE_UNIFIED_RESEARCH_HISTORY_CSV_LEDGER_V1.md`
 
 **Status:** UNIFIED RESEARCH HISTORY CSV LEDGER V1 ESTABLISHED. V30 G0 READY.
+
+---
+
+## DISC-041 — Cross-Research Knowledge Integration V1 (2026-08-31)
+
+- Extended QuantForge Unified Research Knowledge infrastructure by integrating APEX_CORE, SMC_STREAM, custom-bot observations, and APEX watchlist. Inspected full APEX repository. Reconstructed 64 cross-research objects. APEX has 6 validated scientific primitives but ZERO validated economic modules (M3=0, M4=0). SMC BOS+OB M4 FAILED; CHOCH M3 FAILED. QuantForge State library unchanged. No relational experiments. No V30. Forward runtime untouched.
+
+Artifacts:
+- `research/knowledge/unified_ledger/QUANTFORGE_CROSS_RESEARCH_OBJECT_LEDGER_V1.csv` (64 objects)
+- `output/research_discovery/QUANTFORGE_CROSS_RESEARCH_KNOWLEDGE_INTEGRATION_V1.md`
+
+**Status:** CROSS-RESEARCH INTEGRATION V1 COMPLETE. V30 G0 READY.

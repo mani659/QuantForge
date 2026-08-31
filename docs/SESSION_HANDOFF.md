@@ -594,6 +594,8 @@ Volume data unavailable / zero for both USATECHIDXUSD and XAUUSD M1 data. Do not
 | Unified Knowledge Ledger V1 | `output/research_discovery/QUANTFORGE_UNIFIED_RESEARCH_KNOWLEDGE_LEDGER_V1.md` |
 | Unified Research History CSV Ledger V1 | `research/knowledge/unified_ledger/` (7 CSV files + data dictionary + reconciliation exceptions) |
 | CSV Ledger Milestone Report | `output/research_discovery/QUANTFORGE_UNIFIED_RESEARCH_HISTORY_CSV_LEDGER_V1.md` |
+| Cross-Research Object Ledger V1 | `research/knowledge/unified_ledger/QUANTFORGE_CROSS_RESEARCH_OBJECT_LEDGER_V1.csv` (64 objects: QF + APEX + SMC + Bot + Watchlist) |
+| Cross-Research Integration Report | `output/research_discovery/QUANTFORGE_CROSS_RESEARCH_KNOWLEDGE_INTEGRATION_V1.md` |
 
 ---
 
@@ -632,4 +634,25 @@ Volume data unavailable / zero for both USATECHIDXUSD and XAUUSD M1 data. Do not
 
 ---
 
-*Authoritative for next session. Updated 2026-08-31. CSV ledger V1 established. V30 G0 READY. Relational research GOVERNED. Knowledge ledgers RECONCILED. State library preserved. Forward runtime protected.*
+## 26. CROSS-RESEARCH INTEGRATION V1
+
+**Status:** COMPLETE — RECONCILED
+
+**Streams integrated:**
+- QuantForge RF (V19–V29 + pre-V19): 20 objects
+- APEX_CORE (RC012–RC015, M17–M52): 29 objects
+- SMC_STREAM (R1–R11): 12 objects
+- CUSTOM_BOT_OBSERVED: 1 object (provisional)
+- APEX_WATCHLIST: 2 objects (untested)
+- **Total: 64 cross-research objects**
+
+**Key finding:** APEX has 6 validated scientific primitives (HIGH_VOL distribution/persistence/predictability, session-transition LNO distribution/scale, BTC transferability) but ZERO validated economic modules (M3=0, M4=0). SMC has validated event extraction but both BOS+OB (M4 FAILED) and CHOCH (M3 FAILED) failed economics.
+
+**State library:** UNCHANGED (CAND-077/081/083 STATE REVIEW ELIGIBLE)
+**Forward runtime:** UNTOUCHED
+**Relational experiments:** NOT EXECUTED
+**V30:** NOT EXECUTED
+
+---
+
+*Authoritative for next session. Updated 2026-08-31. Cross-research integration V1 complete. 64 objects integrated. V30 G0 READY. State library preserved. Forward runtime protected.*
