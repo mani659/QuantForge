@@ -1653,3 +1653,11 @@ Cross-research ledger used as knowledge map. No combination mining. No relationa
 Artifact: `output/research_discovery/TRADEABLE_EDGE_DISCOVERY_SCREENING_V31.md`
 
 **Status:** V31 G0 COMPLETE — 3 NEW CANDIDATES. G1 NEXT.
+
+### V31 G0 Integrity Audit (2026-08-31)
+
+Audit completed. CAND-094 (Path-Dependent Event Severity) found REDUNDANT with CAND-093 (Price-Discovery Friction Gradient) — both measure approach quality to structural levels. CAND-094 REJECTED. CAND-092 confirmed NEW. CAND-093 confirmed NEW — distinct from CAND-085. V31 eligible candidates: CAND-092, CAND-093 (2 of 3).
+
+Artifact: `output/research_discovery/QUANTFORGE_V31_G0_INTEGRITY_AUDIT_V1.md`
+
+**Status:** V31 G0 AUDIT COMPLETE — CAND-094 REDUNDANT — 2 ELIGIBLE CANDIDATES. G1 LIMITED.

@@ -53,13 +53,14 @@ Next session must NOT:
 
 ### Current milestone
 
-> **V31 G0 COMPLETE — 3 NEW CANDIDATES FROM DISTINCT MECHANISM FAMILIES**
+> **V31 G0 INTEGRITY AUDIT COMPLETE — CAND-094 REDUNDANT WITH CAND-093**
+> **V31 ELIGIBLE CANDIDATES: CAND-092, CAND-093 (2 of 3)**
 > **V30: PERMANENTLY CLOSED / VERIFIED**
 > **3 STATE REVIEW ELIGIBLE objects: CAND-077, CAND-081, CAND-083 (PRESERVED)**
 > **SEED-002: TESTED NEGATIVE — NO INCREMENTAL INFORMATION**
-> **V31: CAND-092 (Information Decay), CAND-093 (Price-Discovery Friction), CAND-094 (Path-Dependent Severity)**
+> **G1 LIMITED — 2 ELIGIBLE CANDIDATES**
 
-Today's session completed: V31 G0 fresh discovery. Three new candidates from under-explored mechanism space: information persistence dynamics, microstructure information dynamics, event-path dynamics. All three are genuinely new — no overlap with V19–V30 closed candidates or existing State objects. Cross-research ledger used as knowledge map. No combination mining. No relational testing. Forward runtime untouched.
+Today's session completed: V31 G0 integrity audit. CAND-094 (Path-Dependent Event Severity) found REDUNDANT with CAND-093 (Price-Discovery Friction Gradient) — both measure approach quality to structural levels, same economic mechanism. CAND-094 REJECTED. CAND-092 (Event-Information Decay) confirmed NEW. CAND-093 (Price-Discovery Friction) confirmed NEW — distinct from CAND-085 (speed vs smoothness). V31 now contains 2 eligible candidates. Forward runtime untouched.
 
 ---
 
@@ -500,7 +501,8 @@ The two mechanisms are genuinely independent:
 
 ## 19. PERMITTED NEXT TASKS
 
-- **V31 G1 — Economic plausibility screen for CAND-092, CAND-093, CAND-094 (NEXT PERMITTED MILESTONE)**
+- **V31 G1 — Economic plausibility screen for CAND-092 and CAND-093 (NEXT PERMITTED MILESTONE)**
+- V31 G0 correction / replacement for CAND-094 (if owner authorizes — separate task)
 - Formal State hypothesis registration for CAND-077 (if owner authorizes)
 - Formal State hypothesis registration for CAND-081 (if owner authorizes)
 - Formal State hypothesis registration for CAND-083 (if owner authorizes)
