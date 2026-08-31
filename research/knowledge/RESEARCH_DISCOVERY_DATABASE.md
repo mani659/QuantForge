@@ -1579,4 +1579,30 @@ Executed SEED-002 discovery experiment. USATECHIDXUSD M1, 906,815 bars. CAND-081
 Artifact: `output/research_discovery/QUANTFORGE_RELATIONAL_SEED002_DISCOVERY_RESULTS_V1.md`
 Script: `research/seed002_relational_experiment.py`
 
-**Status:** SEED-002 DISCOVERY COMPLETE — NO INCREMENTAL INFORMATION. V30 G0 NEXT.
+**Status:** SEED-002 DISCOVERY COMPLETE — NO INCREMENTAL INFORMATION.
+
+### V30 G0 — Fresh Mechanism Discovery (2026-08-31)
+
+V30 G0 completed. Three genuinely new candidates from distinct mechanism families:
+
+**CAND-089 — Acceptance Velocity Decay**
+- Mechanism Family: Information Processing Dynamics
+- Concept: Declining rate of information acceptance at structural levels creates trapped participants whose forced exits amplify directional breaks
+- Artifact Type: STANDALONE ALPHA / STATE
+- Prior-Art: NEW
+
+**CAND-090 — Recovery Quality Differential**
+- Mechanism Family: Response Quality Dynamics
+- Concept: Quality of initial recovery after structural events contains information about participant urgency; high-quality recoveries produce retracement continuation
+- Artifact Type: STANDALONE ALPHA / STATE
+- Prior-Art: NEW (requires CAND-087 overlap check)
+
+**CAND-091 — Cumulative Directional Exhaustion**
+- Mechanism Family: Directional Exhaustion Dynamics
+- Concept: Sustained directional movement depletes marginal participants; exhausted markets produce larger counter-trend moves
+- Artifact Type: STATE / CONDITION
+- Prior-Art: NEW
+
+Artifact: `output/research_discovery/TRADEABLE_EDGE_DISCOVERY_SCREENING_V30.md`
+
+**Status:** V30 G0 COMPLETE — 3 NEW CANDIDATES. G1 NEXT.

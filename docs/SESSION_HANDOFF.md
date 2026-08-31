@@ -2,7 +2,7 @@
 
 **Purpose:** Authoritative restart point for the next QuantForge session. Do not reconstruct project history from conversational memory; start from this document and the referenced artifacts.
 
-**Last consolidated:** 2026-08-31 (SEED-002 relational experiment complete — NO INCREMENTAL INFORMATION)
+**Last consolidated:** 2026-08-31 (V30 G0 complete — 3 new candidates from distinct mechanism families)
 
 **Today's commits (2026-08-30):**
 1. `615552a` — V26 G0 dynamic state transition discovery
@@ -53,10 +53,10 @@ Next session must NOT:
 
 ### Current milestone
 
-> **SEED-002 RELATIONAL DISCOVERY COMPLETE — NO INCREMENTAL INFORMATION**
+> **V30 G0 COMPLETE — 3 NEW CANDIDATES: CAND-089, CAND-090, CAND-091**
 > **3 STATE REVIEW ELIGIBLE objects: CAND-077, CAND-081, CAND-083 (PRESERVED)**
-> **Relational research GOVERNED and first experiment EXECUTED**
-> **V30 G0 READY**
+> **SEED-002: TESTED NEGATIVE — NO INCREMENTAL INFORMATION**
+> **G1 READY**
 
 Today's session completed: V26 G0/G1, V27 G0/G1, V28 G0/G1, V29 G0/G1, CAND-077/CAND-081/CAND-083 governance reviews, relational research framework, unified knowledge ledger. 14 commits total. 33 candidates reconciled. 6 behavioural knowledge records. 7 State objects. No G2 promotions. Forward runtime untouched.
 
@@ -499,7 +499,7 @@ The two mechanisms are genuinely independent:
 
 ## 19. PERMITTED NEXT TASKS
 
-- V30 G0 — New discovery (NEXT PERMITTED MILESTONE)
+- **V30 G1 — Economic plausibility screen (NEXT PERMITTED MILESTONE)**
 - Formal State hypothesis registration for CAND-077 (if owner authorizes)
 - Formal State hypothesis registration for CAND-081 (if owner authorizes)
 - Formal State hypothesis registration for CAND-083 (if owner authorizes)
@@ -511,7 +511,7 @@ The two mechanisms are genuinely independent:
 
 ## 20. FORBIDDEN NEXT TASKS
 
-- Run G2 for any V29 candidate
+- Run G2 for any V30 candidate before G1
 - Rescue CAND-086, CAND-087, or CAND-088
 - Rescue CAND-084 (EXTENSION / REDUNDANT)
 - Rescue CAND-085 (INSUFFICIENT)
@@ -525,6 +525,8 @@ The two mechanisms are genuinely independent:
 - Perform System Assembly
 - Rescue closed candidates
 - Treat exploratory filter observations as validated
+- Rescue SEED-002 (negative relational finding)
+- Test CAND-089/CAND-090/CAND-091 combinations
 - Reopen CAND-077, CAND-078, or CAND-079
 - Retroactively designate CAND-024/CAND-035 as downstream Alphas for CAND-077/CAND-081/CAND-083
 - Create variants of CAND-077, CAND-081, or CAND-083
@@ -693,4 +695,29 @@ Volume data unavailable / zero for both USATECHIDXUSD and XAUUSD M1 data. Do not
 
 ---
 
-*Authoritative for next session. Updated 2026-08-31. SEED-002 relational experiment complete: NO INCREMENTAL INFORMATION. State objects preserved. Forward runtime protected. V30 G0 NEXT.*
+## 28. V30 G0 — FRESH MECHANISM DISCOVERY
+
+**Status:** COMPLETE — 3 NEW CANDIDATES
+
+**Candidates:**
+
+| ID | Name | Artifact Type | Mechanism Family | Prior-Art |
+|---|---|---|---|---|
+| CAND-089 | Acceptance Velocity Decay | STANDALONE ALPHA / STATE | Information Processing Dynamics | NEW |
+| CAND-090 | Recovery Quality Differential | STANDALONE ALPHA / STATE | Response Quality Dynamics | NEW (requires CAND-087 check) |
+| CAND-091 | Cumulative Directional Exhaustion | STATE / CONDITION | Directional Exhaustion Dynamics | NEW |
+
+**SEED-002 lesson applied:** Not all conceptually plausible combinations produce positive information. V30 focuses on mechanism-quality rather than condition-quantity.
+
+**Cross-research ledger:** Used as knowledge map only. No relational testing.
+
+**State library:** UNCHANGED (CAND-077/081/083 STATE REVIEW ELIGIBLE)
+**Forward runtime:** UNTOUCHED
+**CAND-088:** EXPLORATORY / PROVISIONAL — NEW G0 REQUIRED
+**SEED-002:** TESTED NEGATIVE — NO INCREMENTAL INFORMATION
+
+**Artifact:** `output/research_discovery/TRADEABLE_EDGE_DISCOVERY_SCREENING_V30.md`
+
+---
+
+*Authoritative for next session. Updated 2026-08-31. V30 G0 complete: 3 new candidates (CAND-089/090/091). SEED-002 negative. State objects preserved. Forward runtime protected. G1 NEXT.*
