@@ -46,6 +46,7 @@ Same economic hypothesis as V29 CAND-087. Same mechanism, same observable concep
 - **Holding period:** 60 bars (60 min)
 - **Cost model:** 2 bps friction
 - **Direction:** WITH the break (long if up break, short if down break)
+- **Note:** The G1 implementation measures absolute range slope before breaks rather than the G0-registered level-relative convergence velocity. The negative economic result is considered robust to this measurement difference. See V30 G1 Integrity Audit for full analysis.
 
 ### 5.2 Data and Coverage
 
@@ -96,7 +97,7 @@ Same economic hypothesis as V29 CAND-087. Same mechanism, same observable concep
 | P75 | +12.75 bps | +12.33 bps |
 | P90 | +34.23 bps | +33.52 bps |
 
-**Distribution assessment:** Nearly identical distributions across all percentiles. No separation between treatment and control. The distributions are effectively indistinguishable.
+**Distribution assessment:** No meaningful distributional separation demonstrated in the reported descriptive metrics. Percentiles differ by less than 1 bps at all quantiles. No formal statistical test was conducted.
 
 **Top 10% contribution:**
 - Decaying: +27,294.6 bps of -9,134.7 bps total (298.8% share)

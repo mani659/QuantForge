@@ -1619,7 +1619,7 @@ Artifact: `output/research_discovery/QUANTFORGE_V30_G0_INTEGRITY_AUDIT_V1.md`
 
 G1 V3 completed for CAND-089 and CAND-091.
 
-**CAND-089 — Acceptance Velocity Decay:** CLOSED — NO INCREMENTAL INFORMATION. Treatment N=4,152, Net Mean=-2.20 bps, Median=-2.98 bps, WR=43.7%. Control N=4,269, Net Mean=-2.46 bps, Median=-2.77 bps, WR=44.9%. Mean delta=+0.26 bps, Median delta=-0.22 bps. Distributions indistinguishable. Mechanism ambiguous. 9/9 hard gates PASS.
+**CAND-089 — Acceptance Velocity Decay:** CLOSED — NO INCREMENTAL INFORMATION. Treatment N=4,152, Net Mean=-2.20 bps, Median=-2.98 bps, WR=43.7%. Control N=4,269, Net Mean=-2.46 bps, Median=-2.77 bps, WR=44.9%. Mean delta=+0.26 bps, Median delta=-0.22 bps. No meaningful distributional separation. Mechanism ambiguous. 9/9 hard gates PASS.
 
 **CAND-091 — Cumulative Directional Exhaustion:** CLOSED — HYPOTHESIS CONTRADICTED. Treatment N=3,886, Net Mean=-2.69 bps, Median=-3.13 bps, WR=45.1%. Control N=4,535, Net Mean=-2.02 bps, Median=-2.75 bps, WR=43.6%. Mean delta=-0.67 bps (control superior). Exhaustion adds dispersion (49.79 vs 29.78 bps std) and downside tail risk (P10: -45 vs -31 bps) without compensating return. 9/9 hard gates PASS.
 
@@ -1629,3 +1629,11 @@ Artifact: `output/research_discovery/RESEARCH_FACTORY_V2_G1_SCREEN_20260831_V30.
 Script: `research/v30_g1_experiment.py`
 
 **Status:** V30 G1 COMPLETE — BOTH CANDIDATES CLOSED. V30 COMPLETE.
+
+### V30 G1 Integrity Audit (2026-08-31)
+
+Audit completed. Verdict: VERIFIED WITH DOCUMENTATION CORRECTIONS. CAND-089 rewrite traced — semantic drift in velocity measurement (absolute range slope vs level-relative convergence), but negative result is robust. CAND-091 fully verified. Distribution wording corrected. All 9 hard gates verified. V30 closure: VALID. V31 G0: AUTHORIZED.
+
+Artifact: `output/research_discovery/QUANTFORGE_V30_G1_INTEGRITY_AUDIT_V1.md`
+
+**Status:** V30 G1 INTEGRITY AUDIT COMPLETE — VERIFIED. V30 PERMANENTLY CLOSED.

@@ -53,14 +53,15 @@ Next session must NOT:
 
 ### Current milestone
 
-> **V30 G1 COMPLETE — BOTH CANDIDATES CLOSED**
-> **CAND-089: CLOSED — NO INCREMENTAL INFORMATION**
-> **CAND-091: CLOSED — HYPOTHESIS CONTRADICTED**
+> **V30 G1 INTEGRITY AUDIT COMPLETE — VERIFIED WITH DOCUMENTATION CORRECTIONS**
+> **V30 CLOSURE: VALID**
+> **CAND-089: CLOSED — NO INCREMENTAL INFORMATION (verified, documentation corrected)**
+> **CAND-091: CLOSED — HYPOTHESIS CONTRADICTED (verified)**
 > **3 STATE REVIEW ELIGIBLE objects: CAND-077, CAND-081, CAND-083 (PRESERVED)**
 > **SEED-002: TESTED NEGATIVE — NO INCREMENTAL INFORMATION**
-> **V30: 0 G2 promotions. 0 State classifications. 2 candidates tested, 2 closed.**
+> **V30: 0 G2 promotions. 0 State classifications. 2 candidates tested, 2 closed. V30 PERMANENTLY CLOSED.**
 
-Today's session completed: V30 G0, V30 G0 integrity audit, V30 G1 economic plausibility screen. Both V30 candidates closed at G1. CAND-089 (Acceptance Velocity Decay): no incremental information. CAND-091 (Cumulative Directional Exhaustion): hypothesis contradicted — exhaustion worsens economics. State objects preserved. Forward runtime untouched.
+Today's session completed: V30 G1 integrity audit. Verdict: VERIFIED WITH DOCUMENTATION CORRECTIONS. CAND-089 rewrite traced — semantic drift in velocity measurement (absolute range slope vs level-relative convergence), but negative result is robust. Distribution wording corrected from "indistinguishable" to "no meaningful distributional separation demonstrated." CAND-091 fully verified. V30 may be permanently closed. V31 G0 authorized.
 
 ---
 
@@ -501,7 +502,7 @@ The two mechanisms are genuinely independent:
 
 ## 19. PERMITTED NEXT TASKS
 
-- **V31 G0 — Fresh discovery (if owner authorizes)**
+- **V31 G0 — Fresh discovery (AUTHORIZED — V30 integrity audit passed)**
 - Formal State hypothesis registration for CAND-077 (if owner authorizes)
 - Formal State hypothesis registration for CAND-081 (if owner authorizes)
 - Formal State hypothesis registration for CAND-083 (if owner authorizes)
@@ -733,7 +734,7 @@ Volume data unavailable / zero for both USATECHIDXUSD and XAUUSD M1 data. Do not
 **Status:** COMPLETE — BOTH CANDIDATES CLOSED
 | Candidate | Decision | Rationale |
 |---|---|---|
-| CAND-089 (Acceptance Velocity Decay) | **CLOSED — NO INCREMENTAL INFORMATION** | Mean delta +0.26 bps, median delta -0.22 bps, WR delta -1.2%. Distributions indistinguishable. Mechanism ambiguous. |
+| CAND-089 (Acceptance Velocity Decay) | **CLOSED — NO INCREMENTAL INFORMATION** | Mean delta +0.26 bps, median delta -0.22 bps, WR delta -1.2%. No meaningful distributional separation. Mechanism ambiguous. |
 | CAND-091 (Cumulative Directional Exhaustion) | **CLOSED — HYPOTHESIS CONTRADICTED** | Mean delta -0.67 bps (control superior), median delta -0.39 bps. Exhaustion adds dispersion (49.79 vs 29.78 bps std) without return. Worst tail much worse (-45 vs -31 bps P10). |
 
 **Key evidence:**
@@ -749,4 +750,26 @@ Volume data unavailable / zero for both USATECHIDXUSD and XAUUSD M1 data. Do not
 
 ---
 
-*Authoritative for next session. Updated 2026-08-31. V30 G1 complete. Both CAND-089 and CAND-091 closed at G1 — no incremental information / hypothesis contradicted. V30 total: 0 G2 promotions. State objects preserved (CAND-077/081/083 STATE REVIEW ELIGIBLE). SEED-002 negative. Forward runtime protected. Next authorized: V31 G0 fresh discovery (if owner authorizes).*
+## 30. V30 G1 INTEGRITY AUDIT
+
+**Status:** COMPLETE — VERIFIED WITH DOCUMENTATION CORRECTIONS
+
+**Verdict:** VERIFIED WITH DOCUMENTATION CORRECTIONS
+
+**Key findings:**
+- CAND-089 rewrite traced: changed from per-test velocity to per-break velocity (SEMANTIC DRIFT). Negative result is robust to this difference.
+- CAND-091: fully verified, implementation matches G0 hypothesis.
+- Distribution wording corrected: "indistinguishable" → "no meaningful distributional separation demonstrated."
+- All 9 hard gates verified for both candidates.
+- No look-ahead, no treatment contamination, valid counterfactuals.
+- V30 closure: VALID.
+
+**Corrections applied:**
+1. Distribution wording in G1 artifact (Section 5.7)
+2. Velocity measurement note added to G1 artifact (Section 5.1)
+
+**Artifact:** `output/research_discovery/QUANTFORGE_V30_G1_INTEGRITY_AUDIT_V1.md`
+
+---
+
+*Authoritative for next session. Updated 2026-08-31. V30 G1 integrity audit complete. Verdict: VERIFIED WITH DOCUMENTATION CORRECTIONS. V30 PERMANENTLY CLOSED. Both CAND-089 and CAND-091 verified as correctly tested negative results. Documentation corrections applied (distribution wording, velocity measurement note). State objects preserved. SEED-002 negative. Forward runtime protected. V31 G0 AUTHORIZED.*
