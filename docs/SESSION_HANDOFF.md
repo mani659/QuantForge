@@ -2,7 +2,7 @@
 
 **Purpose:** Authoritative restart point for the next QuantForge session. Do not reconstruct project history from conversational memory; start from this document and the referenced artifacts.
 
-**Last consolidated:** 2026-08-30 (End-of-day session close — 10 commits today, V30 G0 READY)
+**Last consolidated:** 2026-08-31 (SEED-002 relational experiment complete — NO INCREMENTAL INFORMATION)
 
 **Today's commits (2026-08-30):**
 1. `615552a` — V26 G0 dynamic state transition discovery
@@ -53,9 +53,9 @@ Next session must NOT:
 
 ### Current milestone
 
-> **UNIFIED RESEARCH KNOWLEDGE LEDGER V1 ESTABLISHED**
-> **3 STATE REVIEW ELIGIBLE objects: CAND-077, CAND-081, CAND-083**
-> **Relational research GOVERNED but not yet EXECUTING**
+> **SEED-002 RELATIONAL DISCOVERY COMPLETE — NO INCREMENTAL INFORMATION**
+> **3 STATE REVIEW ELIGIBLE objects: CAND-077, CAND-081, CAND-083 (PRESERVED)**
+> **Relational research GOVERNED and first experiment EXECUTED**
 > **V30 G0 READY**
 
 Today's session completed: V26 G0/G1, V27 G0/G1, V28 G0/G1, V29 G0/G1, CAND-077/CAND-081/CAND-083 governance reviews, relational research framework, unified knowledge ledger. 14 commits total. 33 candidates reconciled. 6 behavioural knowledge records. 7 State objects. No G2 promotions. Forward runtime untouched.
@@ -653,11 +653,9 @@ Volume data unavailable / zero for both USATECHIDXUSD and XAUUSD M1 data. Do not
 **Relational experiments:** NOT EXECUTED
 **V30:** NOT EXECUTED
 
----
+---## 27. RELATIONAL RESEARCH V1 — SEED-002 DISCOVERY
 
-## 27. RELATIONAL RESEARCH V1 — SEED-002 REGISTRATION
-
-**Status:** GOVERNANCE COMPLETE — SEED-002 REGISTERED
+**Status:** GOVERNANCE COMPLETE — SEED-002 REGISTERED AND TESTED
 
 **Governance questions resolved:**
 1. Minimum sample: Evidence-quality-dependent (no universal N ratified)
@@ -669,20 +667,30 @@ Volume data unavailable / zero for both USATECHIDXUSD and XAUUSD M1 data. Do not
 7. Temporal: A → structural failure → B → downstream
 8. Causal language: CONDITIONAL ASSOCIATION — NOT CAUSAL PROOF
 
-**SEED-002:** REGISTERED — NOT TESTED
+**SEED-002:** REGISTERED AND TESTED
 - Input A: CAND-083 (STATE REVIEW ELIGIBLE, +4.60 bps conditional delta)
 - Input B: CAND-081 (STATE REVIEW ELIGIBLE, +1.23 bps conditional delta)
 - Hypothesis: Does structural failure preceded by CAND-083 accumulated rejection produce different downstream economics when CAND-081 trapped-participant state occurs?
 - Counterfactual: CAND-081 events WITHOUT CAND-083 precondition
 
-**Experiment:** NOT EXECUTED
-**Confirmation:** NOT EXECUTED
+**Discovery result:** NO INCREMENTAL INFORMATION — CONTROL SUPERIOR
+- Treatment (CAND-081 WITH CAND-083): N=4,917, Net Mean=-1.96 bps, Median=-1.61 bps, WR=46.1%
+- Control (CAND-081 WITHOUT CAND-083): N=1,784, Net Mean=-0.19 bps, Median=-0.90 bps, WR=48.7%
+- Delta Mean: -1.78 bps, Delta Median: -0.72 bps
+- Classification: CONTROL SUPERIOR — CAND-083 precondition makes CAND-081 worse
+
+**Artifact:** `output/research_discovery/QUANTFORGE_RELATIONAL_SEED002_DISCOVERY_RESULTS_V1.md`
+**Script:** `research/seed002_relational_experiment.py`
+
+**Confirmation:** NOT EXECUTED (not warranted — result is negative)
 **G2:** NOT EXECUTED
 **V30:** NOT EXECUTED
-**System Assembly:** NOT EXECUTED
+**System Assembly:** NOT EXECUTED
+
 **State library:** UNCHANGED (CAND-077/081/083 STATE REVIEW ELIGIBLE)
 **Forward runtime:** UNTOUCHED
-**CAND-088:** EXPLORATORY / PROVISIONAL — NEW G0 REQUIRED
+**CAND-088:** EXPLORATORY / PROVISIONAL — NEW G0 REQUIRED
+
 ---
 
-*Authoritative for next session. Updated 2026-08-31. Relational Research V1 complete. SEED-002 registered. Governance questions resolved. V30 G0 READY. State library preserved. Forward runtime protected.*
+*Authoritative for next session. Updated 2026-08-31. SEED-002 relational experiment complete: NO INCREMENTAL INFORMATION. State objects preserved. Forward runtime protected. V30 G0 NEXT.*

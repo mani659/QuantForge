@@ -1570,4 +1570,13 @@ Artifacts:
 
 Artifact: `output/research_discovery/QUANTFORGE_RELATIONAL_RESEARCH_V1_SEED002_REGISTRATION.md`
 
-**Status:** RELATIONAL RESEARCH V1 COMPLETE — SEED-002 REGISTERED. Next: CONTROLLED RELATIONAL DISCOVERY EXPERIMENT (requires owner authorization).
+**Status:** SEED-002 REGISTERED.
+
+### SEED-002 Discovery Experiment (2026-08-31)
+
+Executed SEED-002 discovery experiment. USATECHIDXUSD M1, 906,815 bars. CAND-081 events: 6,701. Treatment (CAND-081 WITH CAND-083): N=4,917, Net Mean=-1.96 bps, Median=-1.61 bps, WR=46.1%. Control (CAND-081 WITHOUT CAND-083): N=1,784, Net Mean=-0.19 bps, Median=-0.90 bps, WR=48.7%. Delta Mean: -1.78 bps, Delta Median: -0.72 bps. Classification: NO INCREMENTAL INFORMATION — CONTROL SUPERIOR.
+
+Artifact: `output/research_discovery/QUANTFORGE_RELATIONAL_SEED002_DISCOVERY_RESULTS_V1.md`
+Script: `research/seed002_relational_experiment.py`
+
+**Status:** SEED-002 DISCOVERY COMPLETE — NO INCREMENTAL INFORMATION. V30 G0 NEXT.
