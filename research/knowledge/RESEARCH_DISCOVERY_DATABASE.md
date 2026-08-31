@@ -1684,3 +1684,28 @@ Audit completed. Governance terminology corrected: "MIXED EVIDENCE" reclassified
 Artifact: `output/research_discovery/QUANTFORGE_V31_G1_ADJUDICATION_INTEGRITY_AUDIT_V1.md`
 
 **Status:** V31 G1 ADJUDICATION AUDIT COMPLETE — VERIFIED. V31 PERMANENTLY CLOSED.
+
+---
+
+## V32 G0 — Knowledge-Gap / Economic-Mechanism Discovery (2026-08-31)
+
+**Status:** V32 G0 COMPLETE — 3 NEW CANDIDATES FROM KNOWLEDGE-GAP ANALYSIS
+**Candidates:**
+
+| ID | Name | Expression Class | Mechanism Family | Prior-Art |
+|---|---|---|---|---|
+| CAND-095 | Shock-Magnitude Asymmetry | STATE / CONDITION | Directional Response Asymmetry | NEW |
+| CAND-096 | Volatility Acceleration Gradient | STATE / CONDITION | Volatility Dynamics | NEW |
+| CAND-097 | Post-Shock Overshoot Reversion | STANDALONE ALPHA / STATE | Mean-Reversion Dynamics | NEW |
+**Knowledge gaps identified:**
+1. Shock-magnitude asymmetry (direction-dependent response) → CAND-095
+2. Volatility acceleration (rate of change) → CAND-096
+3. Post-shock self-correction (overshoot/reversion) → CAND-097
+4. Execution stress (deferred)
+5. Event-cluster response decay (deferred)
+**Cross-research ledger:** Used as knowledge map only. 5 heavily explored families avoided. 5 under-explored gaps identified.
+**State library:** UNCHANGED (CAND-077/081/083 STATE REVIEW ELIGIBLE)
+**Forward runtime:** UNTOUCHED
+**SEED-002:** TESTED NEGATIVE — NO INCREMENTAL INFORMATION
+**APEX RB001–RB004:** DESIGNED / NOT EXECUTED
+**Next:** V32 G0 INTEGRITY / PRIOR-ART AUDIT
