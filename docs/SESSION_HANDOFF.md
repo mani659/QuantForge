@@ -53,15 +53,15 @@ Next session must NOT:
 
 ### Current milestone
 
-> **V32 G0 INTEGRITY AUDIT COMPLETE — CAND-097 REDUNDANT WITH DISC-021**
+> **V32 G1 COMPLETE — BOTH CANDIDATES CLOSED**
 > **V31: PERMANENTLY CLOSED / VERIFIED**
-> **CAND-092: CLOSED — ECONOMICALLY NEGATIVE (evidence profile: MIXED / METRIC DISCORDANCE)**
-> **CAND-093: CLOSED — ECONOMICALLY NEGATIVE (evidence profile: MIXED / METRIC DISCORDANCE)**
+> **CAND-095: CLOSED — ECONOMICALLY NEGATIVE**
+> **CAND-096: CLOSED — HYPOTHESIS CONTRADICTED (deceleration superior)**
 > **3 STATE REVIEW ELIGIBLE objects: CAND-077, CAND-081, CAND-083 (PRESERVED)**
 > **SEED-002: TESTED NEGATIVE — NO INCREMENTAL INFORMATION**
-> **V32 G0: 2 eligible candidates (CAND-095, CAND-096). CAND-097 rejected as REDUNDANT with DISC-021 Mean Reversion.**
+> **V32: 0 G2 promotions. 2 candidates tested, 2 closed. CAND-096 shows conditional information in opposite direction.**
 
-Today's session completed: V32 G0 integrity/prior-art audit. CAND-097 (Post-Shock Overshoot Reversion) rejected as REDUNDANT with DISC-021 Mean Reversion — same economic mechanism (price moves too far, then reverts). CAND-095 confirmed NEW (distinct from H01 — price continuation vs volatility response). CAND-096 confirmed NEW (distinct from CAND-077 — acceleration vs regime state, with overlap caveat). V32 now has 2 eligible candidates for G1. V32 G1 is authorized for CAND-095 and CAND-096.
+Today's session completed: V32 G1 economic plausibility screen. CAND-095 (Shock-Magnitude Asymmetry) closed as ECONOMICALLY NEGATIVE — DOWN shocks slightly outperform UP shocks on all metrics, contradicting hypothesis direction. CAND-096 (Volatility Acceleration Gradient) closed as HYPOTHESIS CONTRADICTED — decelerating volatility significantly outperforms accelerating volatility (-1.62 bps mean delta), opposite of predicted direction. CAND-096 shows genuine conditional information but in the wrong direction. CAND-096 semantic check against CAND-077 PASS — implementation genuinely measures acceleration (second derivative), not regime transition. V32 complete: 0 G2 promotions.
 
 ---
 

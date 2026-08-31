@@ -1705,3 +1705,22 @@ Artifact: `output/research_discovery/QUANTFORGE_V31_G1_ADJUDICATION_INTEGRITY_AU
 **SEED-002:** TESTED NEGATIVE — NO INCREMENTAL INFORMATION
 **APEX RB001–RB004:** DESIGNED / NOT EXECUTED
 **Next:** V32 G1 — ECONOMIC PLAUSIBILITY SCREEN (if owner authorizes)
+
+---
+
+## V32 G1 — Economic Plausibility Screen (2026-08-31)
+
+**Status:** V32 G1 COMPLETE — BOTH CANDIDATES CLOSED
+| Candidate | Decision | Rationale |
+|---|---|---|
+| CAND-095 (Shock-Magnitude Asymmetry) | **CLOSED — ECONOMICALLY NEGATIVE** | DOWN shocks slightly outperform UP shocks on all metrics, contradicting hypothesis direction. Mean delta=-0.28 bps, Median delta=-0.58 bps, WR delta=-2.2%. |
+| CAND-096 (Volatility Acceleration Gradient) | **CLOSED — HYPOTHESIS CONTRADICTED** | Decelerating volatility significantly outperforms accelerating volatility. Mean delta=-1.62 bps, Median delta=-1.48 bps, WR delta=-3.1%. Opposite of predicted direction. |
+**Key evidence:**
+- CAND-095: N=7,325 (treatment) / 7,524 (control). Net Mean: -1.42 / -1.14 bps. ECONOMICALLY NEGATIVE.
+- CAND-096: N=5,622 (treatment) / 897 (control). Net Mean: -1.23 / +0.40 bps. HYPOTHESIS CONTRADICTED.
+- Both candidates pass all 9 hard validity gates. Failures are in economic evidence, not measurement.
+- CAND-096 semantic check against CAND-077 PASS — implementation genuinely measures acceleration.
+- State potential: CAND-096 shows conditional information in opposite direction (STATE REVIEW ELIGIBLE).
+**Artifacts:**
+- V32 G1 Screen: `output/research_discovery/RESEARCH_FACTORY_V2_G1_SCREEN_20260831_V32.md`
+- Script: `research/v32_g1_experiment.py`
