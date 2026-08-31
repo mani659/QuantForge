@@ -1537,3 +1537,15 @@ Artifact: `output/research_discovery/QUANTFORGE_RELATIONAL_RESEARCH_FRAMEWORK_GO
 Artifact: `output/research_discovery/QUANTFORGE_UNIFIED_RESEARCH_KNOWLEDGE_LEDGER_V1.md`
 
 **Status:** UNIFIED KNOWLEDGE LEDGER V1 RECONCILED. V30 G0 READY.
+
+---
+
+## DISC-040 — Unified Research History CSV Ledger V1 Established (2026-08-31)
+
+- Machine-readable structured CSV ledger constructed covering the FULL QuantForge research history (Pre-Research Factory through V29). Reconstructed 73 candidates, 12 behavioural knowledge records, 21 structured evidence measurements, 7 State objects, 5 exploratory observations, 69 negative knowledge records, 10 conceptual relationships (ALL UNTESTED). Expanded scope from V19-V29 (covered by the Markdown ledger) to the complete available history. 8 reconciliation exceptions documented. Serves as durable structured research memory for future relational research and meta-analysis.
+
+Artifacts:
+- `research/knowledge/unified_ledger/` (7 CSV files + data dictionary + reconciliation exceptions)
+- `output/research_discovery/QUANTFORGE_UNIFIED_RESEARCH_HISTORY_CSV_LEDGER_V1.md`
+
+**Status:** UNIFIED RESEARCH HISTORY CSV LEDGER V1 ESTABLISHED. V30 G0 READY.

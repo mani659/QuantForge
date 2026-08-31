@@ -592,7 +592,44 @@ Volume data unavailable / zero for both USATECHIDXUSD and XAUUSD M1 data. Do not
 | V29 G1 Screen | `output/research_discovery/RESEARCH_FACTORY_V2_G1_SCREEN_20260830_V29.md` |
 | Relational Research Framework | `output/research_discovery/QUANTFORGE_RELATIONAL_RESEARCH_FRAMEWORK_GOVERNANCE_V1.md` |
 | Unified Knowledge Ledger V1 | `output/research_discovery/QUANTFORGE_UNIFIED_RESEARCH_KNOWLEDGE_LEDGER_V1.md` |
+| Unified Research History CSV Ledger V1 | `research/knowledge/unified_ledger/` (7 CSV files + data dictionary + reconciliation exceptions) |
+| CSV Ledger Milestone Report | `output/research_discovery/QUANTFORGE_UNIFIED_RESEARCH_HISTORY_CSV_LEDGER_V1.md` |
 
 ---
 
-*Authoritative for next session. Updated 2026-08-30 at session close. 14 commits today. V30 G0 READY. Relational research GOVERNED. Knowledge ledger RECONCILED. State library preserved. Forward runtime protected.*
+## 25. UNIFIED RESEARCH HISTORY CSV LEDGER V1
+
+**Status:** ESTABLISHED — RECONCILED
+
+**Scope:** Full QuantForge research history (Pre-Research Factory through V29)
+
+**Location:** `research/knowledge/unified_ledger/`
+
+**Contents:**
+- 73 candidates reconstructed (CAND-010 through CAND-088 + G1 Invalid batch)
+- 12 behavioural knowledge records
+- 21 structured evidence measurements
+- 7 State objects with full provenance
+- 5 exploratory observations
+- 69 negative knowledge records
+- 10 conceptual relationships (ALL UNTESTED)
+- 8 reconciliation exceptions documented
+
+**Key files:**
+- `QUANTFORGE_RESEARCH_CANDIDATE_LEDGER_V1.csv` — master candidate register
+- `QUANTFORGE_BEHAVIOURAL_KNOWLEDGE_LEDGER_V1.csv` — knowledge findings
+- `QUANTFORGE_RESEARCH_EVIDENCE_LEDGER_V1.csv` — structured measurements
+- `QUANTFORGE_STATE_LIBRARY_LEDGER_V1.csv` — State objects
+- `QUANTFORGE_EXPLORATORY_OBSERVATIONS_LEDGER_V1.csv` — exploratory findings
+- `QUANTFORGE_NEGATIVE_KNOWLEDGE_LEDGER_V1.csv` — closure/negative knowledge
+- `QUANTFORGE_RESEARCH_RELATIONSHIP_LEDGER_V1.csv` — conceptual relationships
+- `QUANTFORGE_UNIFIED_LEDGER_DATA_DICTIONARY_V1.md` — column definitions
+- `QUANTFORGE_UNIFIED_LEDGER_RECONCILIATION_EXCEPTIONS_V1.md` — discrepancies
+
+**Nature:** Knowledge infrastructure — NOT an experiment, NOT a relational test, NOT a promotion mechanism.
+
+**Future maintenance:** Every milestone closeout should update relevant ledger rows.
+
+---
+
+*Authoritative for next session. Updated 2026-08-31. CSV ledger V1 established. V30 G0 READY. Relational research GOVERNED. Knowledge ledgers RECONCILED. State library preserved. Forward runtime protected.*
