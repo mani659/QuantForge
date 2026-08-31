@@ -1687,25 +1687,21 @@ Artifact: `output/research_discovery/QUANTFORGE_V31_G1_ADJUDICATION_INTEGRITY_AU
 
 ---
 
-## V32 G0 — Knowledge-Gap / Economic-Mechanism Discovery (2026-08-31)
+## V32 G0 — Knowledge-Gap / Economic-Mechanism Discovery + Integrity Audit (2026-08-31)
 
-**Status:** V32 G0 COMPLETE — 3 NEW CANDIDATES FROM KNOWLEDGE-GAP ANALYSIS
-**Candidates:**
+**Status:** V32 G0 COMPLETE — INTEGRITY AUDIT COMPLETE — 1 CANDIDATE REDUNDANT
+**Candidates (after integrity audit):**
 
-| ID | Name | Expression Class | Mechanism Family | Prior-Art |
-|---|---|---|---|---|
-| CAND-095 | Shock-Magnitude Asymmetry | STATE / CONDITION | Directional Response Asymmetry | NEW |
-| CAND-096 | Volatility Acceleration Gradient | STATE / CONDITION | Volatility Dynamics | NEW |
-| CAND-097 | Post-Shock Overshoot Reversion | STANDALONE ALPHA / STATE | Mean-Reversion Dynamics | NEW |
-**Knowledge gaps identified:**
-1. Shock-magnitude asymmetry (direction-dependent response) → CAND-095
-2. Volatility acceleration (rate of change) → CAND-096
-3. Post-shock self-correction (overshoot/reversion) → CAND-097
-4. Execution stress (deferred)
-5. Event-cluster response decay (deferred)
+| ID | Name | Expression Class | Mechanism Family | Prior-Art | Audit Result |
+|---|---|---|---|---|---|
+| CAND-095 | Shock-Magnitude Asymmetry | STATE / CONDITION | Directional Response Asymmetry | NEW | **ELIGIBLE** |
+| CAND-096 | Volatility Acceleration Gradient | STATE / CONDITION | Volatility Dynamics | NEW | **ELIGIBLE** |
+| CAND-097 | Post-Shock Overshoot Reversion | STANDALONE ALPHA / STATE | Mean-Reversion Dynamics | **REDUNDANT (same as DISC-021)** | **REJECTED** |
+**CAND-097 rejection reason:** Identical economic hypothesis to DISC-021 Mean Reversion line. Both test: price moves too far → reverts. DISC-021 used z-score displacement; CAND-097 uses ATR-based shock magnitude. The economic mechanism (mean reversion after extreme movement) is the same. DISC-021 established this mechanism is statistically observable but economically non-viable.
+**V32 eligible candidates for G1:** CAND-095, CAND-096 (2 of 3)
 **Cross-research ledger:** Used as knowledge map only. 5 heavily explored families avoided. 5 under-explored gaps identified.
 **State library:** UNCHANGED (CAND-077/081/083 STATE REVIEW ELIGIBLE)
 **Forward runtime:** UNTOUCHED
 **SEED-002:** TESTED NEGATIVE — NO INCREMENTAL INFORMATION
 **APEX RB001–RB004:** DESIGNED / NOT EXECUTED
-**Next:** V32 G0 INTEGRITY / PRIOR-ART AUDIT
+**Next:** V32 G1 — ECONOMIC PLAUSIBILITY SCREEN (if owner authorizes)

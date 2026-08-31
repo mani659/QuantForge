@@ -2,7 +2,7 @@
 
 **Purpose:** Authoritative restart point for the next QuantForge session. Do not reconstruct project history from conversational memory; start from this document and the referenced artifacts.
 
-**Last consolidated:** 2026-08-31 (V32 G0 complete — 3 new candidates from knowledge-gap analysis)
+**Last consolidated:** 2026-08-31 (V32 G0 integrity audit — CAND-097 rejected, 2 eligible candidates)
 
 **Today's commits (2026-08-30):**
 1. `615552a` — V26 G0 dynamic state transition discovery
@@ -53,15 +53,15 @@ Next session must NOT:
 
 ### Current milestone
 
-> **V32 G0 COMPLETE — 3 NEW CANDIDATES FROM KNOWLEDGE-GAP ANALYSIS**
+> **V32 G0 INTEGRITY AUDIT COMPLETE — CAND-097 REDUNDANT WITH DISC-021**
 > **V31: PERMANENTLY CLOSED / VERIFIED**
 > **CAND-092: CLOSED — ECONOMICALLY NEGATIVE (evidence profile: MIXED / METRIC DISCORDANCE)**
 > **CAND-093: CLOSED — ECONOMICALLY NEGATIVE (evidence profile: MIXED / METRIC DISCORDANCE)**
 > **3 STATE REVIEW ELIGIBLE objects: CAND-077, CAND-081, CAND-083 (PRESERVED)**
 > **SEED-002: TESTED NEGATIVE — NO INCREMENTAL INFORMATION**
-> **V32 G0: 3 candidates discovered from 5 identified knowledge gaps. Ready for G0 integrity audit.**
+> **V32 G0: 2 eligible candidates (CAND-095, CAND-096). CAND-097 rejected as REDUNDANT with DISC-021 Mean Reversion.**
 
-Today's session completed: V32 G0 knowledge-gap discovery. Five knowledge gaps identified from cross-research ledger analysis. Three genuinely new candidates generated: CAND-095 (Shock-Magnitude Asymmetry), CAND-096 (Volatility Acceleration Gradient), CAND-097 (Post-Shock Overshoot Reversion). All three from distinct mechanism families. V32 G0 integrity/prior-art audit is next authorized milestone.
+Today's session completed: V32 G0 integrity/prior-art audit. CAND-097 (Post-Shock Overshoot Reversion) rejected as REDUNDANT with DISC-021 Mean Reversion — same economic mechanism (price moves too far, then reverts). CAND-095 confirmed NEW (distinct from H01 — price continuation vs volatility response). CAND-096 confirmed NEW (distinct from CAND-077 — acceleration vs regime state, with overlap caveat). V32 now has 2 eligible candidates for G1. V32 G1 is authorized for CAND-095 and CAND-096.
 
 ---
 
@@ -502,7 +502,8 @@ The two mechanisms are genuinely independent:
 
 ## 19. PERMITTED NEXT TASKS
 
-- **V32 G0 INTEGRITY / PRIOR-ART AUDIT — next authorized milestone**
+- **V32 G1 — Economic plausibility screen for CAND-095 and CAND-096 (if owner authorizes)**
+- V32 G0 correction / replacement for CAND-097 (if owner authorizes)
 - Formal State hypothesis registration for CAND-077 (if owner authorizes)
 - Formal State hypothesis registration for CAND-081 (if owner authorizes)
 - Formal State hypothesis registration for CAND-083 (if owner authorizes)
@@ -514,10 +515,10 @@ The two mechanisms are genuinely independent:
 
 ## 20. FORBIDDEN NEXT TASKS
 
-- Rescue CAND-086, CAND-087, CAND-088, CAND-089, CAND-090, CAND-091, CAND-092, CAND-093, or CAND-094
+- Rescue CAND-086, CAND-087, CAND-088, CAND-089, CAND-090, CAND-091, CAND-092, CAND-093, CAND-094, or CAND-097
 - Rescue CAND-084 (EXTENSION / REDUNDANT)
 - Rescue CAND-085 (INSUFFICIENT)
-- Skip V32 G0 integrity audit (G1 requires prior-art audit first)
+- Generate V32 replacement for CAND-097 without owner authorization
 - Optimize CAND-077 filters
 - Automatically promote CAND-077, CAND-081, or CAND-083 to STATE-ARTIFACT
 - Create new Alpha from CAND-077
@@ -792,22 +793,18 @@ Volume data unavailable / zero for both USATECHIDXUSD and XAUUSD M1 data. Do not
 
 ---
 
-## 32. V32 G0 — KNOWLEDGE-GAP / ECONOMIC-MECHANISM DISCOVERY
+## 32. V32 G0 — KNOWLEDGE-GAP / ECONOMIC-MECHANISM DISCOVERY + INTEGRITY AUDIT
 
-**Status:** G0 COMPLETE — 3 NEW CANDIDATES FROM KNOWLEDGE-GAP ANALYSIS
-**Candidates:**
+**Status:** G0 COMPLETE — INTEGRITY AUDIT COMPLETE — 1 CANDIDATE REDUNDANT
+**Candidates (after integrity audit):**
 
-| ID | Name | Expression Class | Mechanism Family | Prior-Art |
-|---|---|---|---|---|
-| CAND-095 | Shock-Magnitude Asymmetry | STATE / CONDITION | Directional Response Asymmetry | NEW |
-| CAND-096 | Volatility Acceleration Gradient | STATE / CONDITION | Volatility Dynamics | NEW |
-| CAND-097 | Post-Shock Overshoot Reversion | STANDALONE ALPHA / STATE | Mean-Reversion Dynamics | NEW |
-**Knowledge gaps identified:**
-1. Shock-magnitude asymmetry (direction-dependent response)
-2. Volatility acceleration (rate of change)
-3. Post-shock self-correction (overshoot/reversion)
-4. Execution stress (deferred)
-5. Event-cluster response decay (deferred)
+| ID | Name | Expression Class | Mechanism Family | Prior-Art | Audit Result |
+|---|---|---|---|---|---|
+| CAND-095 | Shock-Magnitude Asymmetry | STATE / CONDITION | Directional Response Asymmetry | NEW | **ELIGIBLE** |
+| CAND-096 | Volatility Acceleration Gradient | STATE / CONDITION | Volatility Dynamics | NEW | **ELIGIBLE** |
+| CAND-097 | Post-Shock Overshoot Reversion | STANDALONE ALPHA / STATE | Mean-Reversion Dynamics | **REDUNDANT (same as DISC-021)** | **REJECTED** |
+**CAND-097 rejection reason:** Identical economic hypothesis to DISC-021 Mean Reversion line. Both test: price moves too far → reverts. DISC-021 used z-score displacement; CAND-097 uses ATR-based shock magnitude. The economic mechanism (mean reversion after extreme movement) is the same. DISC-021 established this mechanism is statistically observable but economically non-viable (costs consume the effect).
+**V32 eligible candidates for G1:** CAND-095, CAND-096 (2 of 3)
 **V30/V31 lessons applied:**
 - No velocity/exhaustion/recovery variants
 - No time-since-event as primary variable
@@ -818,7 +815,9 @@ Volume data unavailable / zero for both USATECHIDXUSD and XAUUSD M1 data. Do not
 **Forward runtime:** UNTOUCHED
 **SEED-002:** TESTED NEGATIVE — NO INCREMENTAL INFORMATION
 **APEX RB001–RB004:** DESIGNED / NOT EXECUTED
-**Artifact:** `output/research_discovery/TRADEABLE_EDGE_DISCOVERY_SCREENING_V32.md`
+**Artifacts:**
+- V32 G0: `output/research_discovery/TRADEABLE_EDGE_DISCOVERY_SCREENING_V32.md`
+- Integrity Audit: `output/research_discovery/QUANTFORGE_V32_G0_INTEGRITY_AUDIT_V1.md`
 ---
 
-*Authoritative for next session. Updated 2026-08-31. V32 G0 complete — 3 new candidates (CAND-095 Shock-Magnitude Asymmetry, CAND-096 Volatility Acceleration Gradient, CAND-097 Post-Shock Overshoot Reversion) from knowledge-gap analysis. V31 permanently closed / verified. State objects preserved (CAND-077/081/083 STATE REVIEW ELIGIBLE). SEED-002 negative. Forward runtime protected. Next authorized: V32 G0 integrity / prior-art audit.*
+*Authoritative for next session. Updated 2026-08-31. V32 G0 integrity audit complete. CAND-097 rejected as REDUNDANT with DISC-021 Mean Reversion (same economic mechanism). CAND-095 confirmed NEW (distinct from H01). CAND-096 confirmed NEW (distinct from CAND-077, with overlap caveat). V32 now has 2 eligible candidates. V31 permanently closed / verified. State objects preserved (CAND-077/081/083 STATE REVIEW ELIGIBLE). SEED-002 negative. Forward runtime protected. Next authorized: V32 G1 economic plausibility screen.*
