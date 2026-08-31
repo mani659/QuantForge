@@ -53,10 +53,11 @@ Next session must NOT:
 
 ### Current milestone
 
-> **V30 G0 COMPLETE — 3 NEW CANDIDATES: CAND-089, CAND-090, CAND-091**
+> **V30 G0 INTEGRITY AUDIT COMPLETE — CAND-090 REDUNDANT WITH CAND-087**
+> **V30 ELIGIBLE CANDIDATES: CAND-089, CAND-091 (2 of 3)**
 > **3 STATE REVIEW ELIGIBLE objects: CAND-077, CAND-081, CAND-083 (PRESERVED)**
 > **SEED-002: TESTED NEGATIVE — NO INCREMENTAL INFORMATION**
-> **G1 READY**
+> **G1 LIMITED — 2 ELIGIBLE CANDIDATES**
 
 Today's session completed: V26 G0/G1, V27 G0/G1, V28 G0/G1, V29 G0/G1, CAND-077/CAND-081/CAND-083 governance reviews, relational research framework, unified knowledge ledger. 14 commits total. 33 candidates reconciled. 6 behavioural knowledge records. 7 State objects. No G2 promotions. Forward runtime untouched.
 
@@ -499,7 +500,8 @@ The two mechanisms are genuinely independent:
 
 ## 19. PERMITTED NEXT TASKS
 
-- **V30 G1 — Economic plausibility screen (NEXT PERMITTED MILESTONE)**
+- **V30 G1 — Economic plausibility screen for CAND-089 and CAND-091 (NEXT PERMITTED MILESTONE)**
+- V30 G0 correction / replacement for CAND-090 (if owner authorizes — separate task)
 - Formal State hypothesis registration for CAND-077 (if owner authorizes)
 - Formal State hypothesis registration for CAND-081 (if owner authorizes)
 - Formal State hypothesis registration for CAND-083 (if owner authorizes)
@@ -695,17 +697,21 @@ Volume data unavailable / zero for both USATECHIDXUSD and XAUUSD M1 data. Do not
 
 ---
 
-## 28. V30 G0 — FRESH MECHANISM DISCOVERY
+## 28. V30 G0 — FRESH MECHANISM DISCOVERY + INTEGRITY AUDIT
 
-**Status:** COMPLETE — 3 NEW CANDIDATES
+**Status:** G0 COMPLETE — AUDIT COMPLETE — 1 CANDIDATE REDUNDANT
 
-**Candidates:**
+**Candidates (original V30 G0):**
 
-| ID | Name | Artifact Type | Mechanism Family | Prior-Art |
-|---|---|---|---|---|
-| CAND-089 | Acceptance Velocity Decay | STANDALONE ALPHA / STATE | Information Processing Dynamics | NEW |
-| CAND-090 | Recovery Quality Differential | STANDALONE ALPHA / STATE | Response Quality Dynamics | NEW (requires CAND-087 check) |
-| CAND-091 | Cumulative Directional Exhaustion | STATE / CONDITION | Directional Exhaustion Dynamics | NEW |
+| ID | Name | Artifact Type | Mechanism Family | Prior-Art | Audit Result |
+|---|---|---|---|---|---|
+| CAND-089 | Acceptance Velocity Decay | STANDALONE ALPHA / STATE | Information Processing Dynamics | NEW | **ELIGIBLE** |
+| CAND-090 | Recovery Quality Differential | STANDALONE ALPHA / STATE | Response Quality Dynamics | **REDUNDANT (same as CAND-087)** | **REJECTED** |
+| CAND-091 | Cumulative Directional Exhaustion | STATE / CONDITION | Directional Exhaustion Dynamics | NEW | **ELIGIBLE** |
+
+**CAND-090 rejection reason:** Identical economic hypothesis to V29 CAND-087 (Recovery Quality Differential). Same research question, same mechanism, same observable concept, same counterfactual structure, same economic prediction. Parameter differences (10 vs 30 bars, 20 vs 60 holding) are implementation choices, not mechanism distinctions.
+
+**V30 eligible candidates for G1:** CAND-089, CAND-091 (2 of 3)
 
 **SEED-002 lesson applied:** Not all conceptually plausible combinations produce positive information. V30 focuses on mechanism-quality rather than condition-quantity.
 
@@ -716,8 +722,10 @@ Volume data unavailable / zero for both USATECHIDXUSD and XAUUSD M1 data. Do not
 **CAND-088:** EXPLORATORY / PROVISIONAL — NEW G0 REQUIRED
 **SEED-002:** TESTED NEGATIVE — NO INCREMENTAL INFORMATION
 
-**Artifact:** `output/research_discovery/TRADEABLE_EDGE_DISCOVERY_SCREENING_V30.md`
+**Artifacts:**
+- V30 G0: `output/research_discovery/TRADEABLE_EDGE_DISCOVERY_SCREENING_V30.md`
+- Integrity Audit: `output/research_discovery/QUANTFORGE_V30_G0_INTEGRITY_AUDIT_V1.md`
 
 ---
 
-*Authoritative for next session. Updated 2026-08-31. V30 G0 complete: 3 new candidates (CAND-089/090/091). SEED-002 negative. State objects preserved. Forward runtime protected. G1 NEXT.*
+*Authoritative for next session. Updated 2026-08-31. V30 G0 integrity audit complete. CAND-090 REDUNDANT with CAND-087 — rejected. V30 G1 eligible: CAND-089, CAND-091 (2 candidates). SEED-002 negative. State objects preserved. Forward runtime protected.*

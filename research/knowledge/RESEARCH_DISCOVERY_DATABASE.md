@@ -1605,4 +1605,12 @@ V30 G0 completed. Three genuinely new candidates from distinct mechanism familie
 
 Artifact: `output/research_discovery/TRADEABLE_EDGE_DISCOVERY_SCREENING_V30.md`
 
-**Status:** V30 G0 COMPLETE — 3 NEW CANDIDATES. G1 NEXT.
+**Status:** V30 G0 COMPLETE.
+
+### V30 G0 Integrity Audit (2026-08-31)
+
+Audit completed. CAND-090 (Recovery Quality Differential) found REDUNDANT with V29 CAND-087 — same economic hypothesis, mechanism, observable concept, and counterfactual structure. CAND-090 REJECTED. CAND-089 confirmed NEW. CAND-091 confirmed NEW. V30 eligible candidates: CAND-089, CAND-091 (2 of 3).
+
+Artifact: `output/research_discovery/QUANTFORGE_V30_G0_INTEGRITY_AUDIT_V1.md`
+
+**Status:** V30 G0 AUDIT COMPLETE — CAND-090 REDUNDANT — 2 ELIGIBLE CANDIDATES. G1 LIMITED.
