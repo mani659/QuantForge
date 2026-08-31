@@ -2,9 +2,9 @@
 
 **Purpose:** Authoritative restart point for the next QuantForge session. Do not reconstruct project history from conversational memory; start from this document and the referenced artifacts.
 
-**Last consolidated:** 2026-08-31 (V32 G0 integrity audit — CAND-097 rejected, 2 eligible candidates)
+**Last consolidated:** 2026-08-31 (V32 G1 — both candidates closed, V32 complete)
 
-**Today's commits (2026-08-30):**
+**Today's commits (2026-08-31 — session summary):**
 1. `615552a` — V26 G0 dynamic state transition discovery
 2. `2faa099` — V26 G1 economic plausibility screen
 3. `9323bb8` — V26 closure and dynamic-state knowledge
@@ -19,6 +19,20 @@
 12. `02f312e` — V29 G1 economic plausibility screen
 13. `74933bb` — Relational research governance framework
 14. `2ea4884` — Unified research knowledge ledger v1
+15. `d372f11` — SEED-002 relational discovery
+16. `52bd4a4` — Cross-research knowledge ledger integration
+17. `5e15fd3` — Unified research history csv ledger
+18. `502baed` — V30 G0 new discovery
+19. `755f7d7` — V30 G0 integrity audit
+20. `09ce762` — V30 G1 economic plausibility screen
+21. `25cee70` — V30 G1 integrity audit
+22. `923b822` — V31 G0 new discovery
+23. `3b268de` — V31 G0 integrity audit
+24. `75a3576` — V31 G1 economic plausibility screen
+25. `7ce4049` — V31 G1 adjudication integrity audit
+26. `bb3b940` — V32 G0 knowledge-gap discovery
+27. `a4756c7` — V32 G0 integrity audit
+28. `4a2cdce` — V32 G1 economic plausibility screen
 
 ---
 
@@ -34,34 +48,40 @@
 
 1. `docs/SESSION_HANDOFF.md` (this document)
 2. `output/research_discovery/QUANTFORGE_G1_ECONOMIC_QUALIFICATION_FRAMEWORK_V3_RATIFICATION_V1.md` (G1 V3 framework)
-3. `output/research_discovery/QUANTFORGE_V26_CLOSURE_DYNAMIC_STATE_KNOWLEDGE_V1.md` (latest closure)
-4. `research/knowledge/RESEARCH_DISCOVERY_DATABASE.md` (candidate register)
+3. `research/knowledge/RESEARCH_DISCOVERY_DATABASE.md` (candidate register)
+4. `research/knowledge/RESEARCH_TIMELINE.md` (research timeline)
 
 ### Explicit prohibitions
 
 Next session must NOT:
 
-- Rescue CAND-074 through CAND-079;
-- Rescue V19–V25 closed candidates;
-- Reopen V24, V25, or V26;
+- Rescue CAND-086, CAND-087, CAND-088, CAND-089, CAND-090, CAND-091, CAND-092, CAND-093, CAND-094, CAND-095, CAND-096, CAND-097, or any closed V19–V32 candidate;
+- Rescue CAND-084 (EXTENSION / REDUNDANT);
+- Rescue CAND-085 (INSUFFICIENT);
+- Generate V32 replacement for CAND-097 without owner authorization;
+- Reopen V30, V31, or V32;
 - Rerun G1 screens;
 - Optimize CAND-077 filters;
 - Inspect CAND-015/024/035 forward performance;
 - Modify forward runner;
 - Perform System Assembly;
-- Treat exploratory filter observations as validated strategies.
+- Treat exploratory filter observations as validated strategies;
+- Execute relational testing without governance authorization;
+- Execute APEX RB001–RB004 without authorization.
 
 ### Current milestone
 
-> **V32 G1 COMPLETE — BOTH CANDIDATES CLOSED**
-> **V31: PERMANENTLY CLOSED / VERIFIED**
+> **V32: CLOSED / VERIFIED**
+> **V31: CLOSED / VERIFIED**
+> **V30: CLOSED / VERIFIED**
 > **CAND-095: CLOSED — ECONOMICALLY NEGATIVE**
-> **CAND-096: CLOSED — HYPOTHESIS CONTRADICTED (deceleration superior)**
+> **CAND-096: CLOSED — HYPOTHESIS CONTRADICTED (INFORMATIONALLY INTERESTING, STATE REVIEW ELIGIBLE — opposite direction)**
+> **CAND-097: CLOSED — REDUNDANT WITH DISC-021**
 > **3 STATE REVIEW ELIGIBLE objects: CAND-077, CAND-081, CAND-083 (PRESERVED)**
 > **SEED-002: TESTED NEGATIVE — NO INCREMENTAL INFORMATION**
-> **V32: 0 G2 promotions. 2 candidates tested, 2 closed. CAND-096 shows conditional information in opposite direction.**
+> **V32: 0 G2 promotions. 2 candidates tested, 2 closed. CAND-096 shows genuine conditional information in opposite direction.**
 
-Today's session completed: V32 G1 economic plausibility screen. CAND-095 (Shock-Magnitude Asymmetry) closed as ECONOMICALLY NEGATIVE — DOWN shocks slightly outperform UP shocks on all metrics, contradicting hypothesis direction. CAND-096 (Volatility Acceleration Gradient) closed as HYPOTHESIS CONTRADICTED — decelerating volatility significantly outperforms accelerating volatility (-1.62 bps mean delta), opposite of predicted direction. CAND-096 shows genuine conditional information but in the wrong direction. CAND-096 semantic check against CAND-077 PASS — implementation genuinely measures acceleration (second derivative), not regime transition. V32 complete: 0 G2 promotions.
+Today's session (2026-08-31) completed: V32 G0 (knowledge-gap discovery, 3 candidates), V32 G0 integrity audit (CAND-097 rejected as REDUNDANT with DISC-021, 2 eligible), V32 G1 economic plausibility screen (CAND-095 ECONOMICALLY NEGATIVE, CAND-096 HYPOTHESIS CONTRADICTED / INFORMATIONALLY INTERESTING). CAND-096 semantic check against CAND-077 PASS — acceleration is distinct from regime transition. V32 permanently closed. Session-close reconciliation and GitHub push completed.
 
 ---
 
@@ -81,9 +101,9 @@ The system may ultimately consist of one exceptional strategy or multiple indepe
 
 ## 2. CURRENT REPOSITORY STATE
 
-- **HEAD:** `9323bb8` — `docs: close V26 and record dynamic-state research knowledge`
+- **HEAD:** `4a2cdce` — `research: complete V32 G1 economic plausibility screen`
 - **Branch:** `main` (linear history)
-- **Uncommitted:** runtime/forward data (CAND-015 health, event ledgers), research scripts — correctly excluded from governance commits
+- **Uncommitted:** runtime/forward data (CAND-015 health, event ledgers), research scripts, scratch files — correctly excluded from governance commits
 - **No source code, tests, or contracts modified by research tasks**
 
 ---
@@ -388,8 +408,9 @@ Current target: 5 events, minimum 3
 ## 15. CLOSED RESEARCH LINES
 
 All permanently closed:
-- V19, V20, V21, V22, V23, V24, V25, V26
+- V19, V20, V21, V22, V23, V24, V25, V26, V27, V28, V29, V30, V31, V32
 - CAND-071 through CAND-079 (except CAND-077 STATE REVIEW ELIGIBLE)
+- CAND-087 through CAND-097 (all closed — various reasons)
 - DISC-021 through DISC-028
 - Mean Reversion line (DISC-021)
 - TSMOM 12/1 line (DISC-022)
@@ -502,8 +523,7 @@ The two mechanisms are genuinely independent:
 
 ## 19. PERMITTED NEXT TASKS
 
-- **V32 G1 — Economic plausibility screen for CAND-095 and CAND-096 (if owner authorizes)**
-- V32 G0 correction / replacement for CAND-097 (if owner authorizes)
+- **V33 G0 — NEW DISCOVERY (if owner authorizes)**
 - Formal State hypothesis registration for CAND-077 (if owner authorizes)
 - Formal State hypothesis registration for CAND-081 (if owner authorizes)
 - Formal State hypothesis registration for CAND-083 (if owner authorizes)
@@ -515,7 +535,7 @@ The two mechanisms are genuinely independent:
 
 ## 20. FORBIDDEN NEXT TASKS
 
-- Rescue CAND-086, CAND-087, CAND-088, CAND-089, CAND-090, CAND-091, CAND-092, CAND-093, CAND-094, or CAND-097
+- Rescue CAND-086, CAND-087, CAND-088, CAND-089, CAND-090, CAND-091, CAND-092, CAND-093, CAND-094, CAND-095, CAND-096, CAND-097, or any closed V19–V32 candidate
 - Rescue CAND-084 (EXTENSION / REDUNDANT)
 - Rescue CAND-085 (INSUFFICIENT)
 - Generate V32 replacement for CAND-097 without owner authorization
@@ -602,6 +622,16 @@ Volume data unavailable / zero for both USATECHIDXUSD and XAUUSD M1 data. Do not
 | CSV Ledger Milestone Report | `output/research_discovery/QUANTFORGE_UNIFIED_RESEARCH_HISTORY_CSV_LEDGER_V1.md` |
 | Cross-Research Object Ledger V1 | `research/knowledge/unified_ledger/QUANTFORGE_CROSS_RESEARCH_OBJECT_LEDGER_V1.csv` (64 objects: QF + APEX + SMC + Bot + Watchlist) |
 | Cross-Research Integration Report | `output/research_discovery/QUANTFORGE_CROSS_RESEARCH_KNOWLEDGE_INTEGRATION_V1.md` |
+| V30 G0 Screening | `output/research_discovery/TRADEABLE_EDGE_DISCOVERY_SCREENING_V30.md` |
+| V30 G1 Screen | `output/research_discovery/RESEARCH_FACTORY_V2_G1_SCREEN_20260831_V30.md` |
+| V30 G1 Integrity Audit | `output/research_discovery/QUANTFORGE_V30_G1_INTEGRITY_AUDIT_V1.md` |
+| V31 G0 Screening | `output/research_discovery/TRADEABLE_EDGE_DISCOVERY_SCREENING_V31.md` |
+| V31 G0 Integrity Audit | `output/research_discovery/QUANTFORGE_V31_G0_INTEGRITY_AUDIT_V1.md` |
+| V31 G1 Screen | `output/research_discovery/RESEARCH_FACTORY_V2_G1_SCREEN_20260831_V31.md` |
+| V31 G1 Adjudication Audit | `output/research_discovery/QUANTFORGE_V31_G1_ADJUDICATION_INTEGRITY_AUDIT_V1.md` |
+| V32 G0 Screening | `output/research_discovery/TRADEABLE_EDGE_DISCOVERY_SCREENING_V32.md` |
+| V32 G0 Integrity Audit | `output/research_discovery/QUANTFORGE_V32_G0_INTEGRITY_AUDIT_V1.md` |
+| V32 G1 Screen | `output/research_discovery/RESEARCH_FACTORY_V2_G1_SCREEN_20260831_V32.md` |
 
 ---
 
@@ -789,11 +819,12 @@ Volume data unavailable / zero for both USATECHIDXUSD and XAUUSD M1 data. Do not
 
 **Artifacts:**
 - V31 G1 Screen: `output/research_discovery/RESEARCH_FACTORY_V2_G1_SCREEN_20260831_V31.md`
+- V31 G1 Adjudication Audit: `output/research_discovery/QUANTFORGE_V31_G1_ADJUDICATION_INTEGRITY_AUDIT_V1.md`
 - Script: `research/v31_g1_experiment.py`
 
 ---
 
-## 32. V32 G0 — KNOWLEDGE-GAP / ECONOMIC-MECHANISM DISCOVERY + INTEGRITY AUDIT
+## 32. V32 G0 — KNOWLEDGE-GAP / ECONOMIC-MECHANISM DISCOVERY
 
 **Status:** G0 COMPLETE — INTEGRITY AUDIT COMPLETE — 1 CANDIDATE REDUNDANT
 **Candidates (after integrity audit):**
@@ -805,6 +836,8 @@ Volume data unavailable / zero for both USATECHIDXUSD and XAUUSD M1 data. Do not
 | CAND-097 | Post-Shock Overshoot Reversion | STANDALONE ALPHA / STATE | Mean-Reversion Dynamics | **REDUNDANT (same as DISC-021)** | **REJECTED** |
 **CAND-097 rejection reason:** Identical economic hypothesis to DISC-021 Mean Reversion line. Both test: price moves too far → reverts. DISC-021 used z-score displacement; CAND-097 uses ATR-based shock magnitude. The economic mechanism (mean reversion after extreme movement) is the same. DISC-021 established this mechanism is statistically observable but economically non-viable (costs consume the effect).
 **V32 eligible candidates for G1:** CAND-095, CAND-096 (2 of 3)
+
+**V32 G1 result:** COMPLETE — Both candidates closed. CAND-095 ECONOMICALLY NEGATIVE. CAND-096 HYPOTHESIS CONTRADICTED / INFORMATIONALLY INTERESTING. V32 permanently closed. See section 33.
 **V30/V31 lessons applied:**
 - No velocity/exhaustion/recovery variants
 - No time-since-event as primary variable
@@ -814,10 +847,50 @@ Volume data unavailable / zero for both USATECHIDXUSD and XAUUSD M1 data. Do not
 **State library:** UNCHANGED (CAND-077/081/083 STATE REVIEW ELIGIBLE)
 **Forward runtime:** UNTOUCHED
 **SEED-002:** TESTED NEGATIVE — NO INCREMENTAL INFORMATION
-**APEX RB001–RB004:** DESIGNED / NOT EXECUTED
-**Artifacts:**
+**APEX RB001–RB004:** DESIGNED / NOT EXECUTED**Artifacts:**
 - V32 G0: `output/research_discovery/TRADEABLE_EDGE_DISCOVERY_SCREENING_V32.md`
 - Integrity Audit: `output/research_discovery/QUANTFORGE_V32_G0_INTEGRITY_AUDIT_V1.md`
----
 
-*Authoritative for next session. Updated 2026-08-31. V32 G0 integrity audit complete. CAND-097 rejected as REDUNDANT with DISC-021 Mean Reversion (same economic mechanism). CAND-095 confirmed NEW (distinct from H01). CAND-096 confirmed NEW (distinct from CAND-077, with overlap caveat). V32 now has 2 eligible candidates. V31 permanently closed / verified. State objects preserved (CAND-077/081/083 STATE REVIEW ELIGIBLE). SEED-002 negative. Forward runtime protected. Next authorized: V32 G1 economic plausibility screen.*
+---
+
+## 33. V32 G1 — ECONOMIC PLAUSIBILITY SCREEN
+
+**Status:** COMPLETE — BOTH CANDIDATES CLOSED — V32 CLOSED / VERIFIED
+
+| Candidate | Decision | Rationale |
+|---|---|---|
+| CAND-095 (Shock-Magnitude Asymmetry) | **CLOSED — ECONOMICALLY NEGATIVE** | Mean delta -0.28 bps (control superior), median delta -0.58 bps (control superior), WR delta -2.2% (control superior). All metrics favor control. Mechanism ambiguous. |
+| CAND-096 (Volatility Acceleration Gradient) | **CLOSED — HYPOTHESIS CONTRADICTED** | Mean delta -1.62 bps (control superior), median delta -1.48 bps (control superior), WR delta -3.1% (control superior). Decelerating volatility significantly outperforms accelerating. Information is real but hypothesis direction is wrong. Economic adjudication: INFORMATIONALLY INTERESTING. STATE REVIEW ELIGIBLE (opposite direction). |
+
+**Key evidence:**
+- CAND-095: N=7,325 (treatment) / 7,524 (control). Net Mean: -1.42 / -1.14 bps. All metrics favor control. ECONOMICALLY NEGATIVE.
+- CAND-096: N=5,622 (treatment) / 897 (control). Net Mean: -1.23 / +0.40 bps. Decelerating volatility is superior. HYPOTHESIS CONTRADICTED but INFORMATIONALLY INTERESTING.
+- Both candidates pass all 9 hard validity gates. Failures are in economic evidence, not measurement.
+- CAND-096 semantic check against CAND-077: PASS — implementation genuinely measures acceleration (second derivative), not regime transition.
+- CAND-095: State potential NOT JUSTIFIED.
+- CAND-096: State potential — INFORMATIONALLY INTERESTING in opposite direction. Hypothesis direction contradicted but conditional information real.
+
+**Artifacts:**
+- V32 G1 Screen: `output/research_discovery/RESEARCH_FACTORY_V2_G1_SCREEN_20260831_V32.md`
+- Script: `research/v32_g1_experiment.py`
+
+---
+
+## 34. V32 CLOSURE
+
+**Status:** V32 CLOSED / VERIFIED
+
+V32 complete: 0 G2 promotions. 3 original candidates discovered, 1 rejected at G0 (CAND-097 = REDUNDANT WITH DISC-021), 2 tested at G1, 2 closed.
+
+- CAND-095: CLOSED / ECONOMICALLY NEGATIVE
+- CAND-096: CLOSED / HYPOTHESIS CONTRADICTED (INFORMATIONALLY INTERESTING, STATE REVIEW ELIGIBLE — opposite direction)
+- CAND-097: CLOSED / REDUNDANT WITH DISC-021
+
+Key negative knowledge:
+- Shock-magnitude asymmetry does not produce directional downstream advantage (DOWN slightly better than UP, contradicting hypothesis).
+- Volatility deceleration produces better economics than acceleration — the opposite of the hypothesized mechanism. This is genuine conditional information but in the wrong direction.
+- CAND-096 implementation genuinely measures acceleration, not regime transition — confirms CAND-077 distinctness.
+
+---
+
+*Authoritative for next session. Updated 2026-08-31 (session close). V32 G1 complete and verified. V32 CLOSED. V31 CLOSED / VERIFIED. V30 CLOSED / VERIFIED. State objects preserved (CAND-077/081/083 STATE REVIEW ELIGIBLE). SEED-002 negative. Forward runtime protected. Next authorized: V33 G0 — NEW DISCOVERY (if owner authorizes).*
