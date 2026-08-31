@@ -1661,3 +1661,18 @@ Audit completed. CAND-094 (Path-Dependent Event Severity) found REDUNDANT with C
 Artifact: `output/research_discovery/QUANTFORGE_V31_G0_INTEGRITY_AUDIT_V1.md`
 
 **Status:** V31 G0 AUDIT COMPLETE — CAND-094 REDUNDANT — 2 ELIGIBLE CANDIDATES. G1 LIMITED.
+
+### V31 G1 — Economic Plausibility Screen (2026-08-31)
+
+G1 V3 completed for CAND-092 and CAND-093.
+
+**CAND-092 — Event-Information Decay:** CLOSED — MIXED EVIDENCE. Treatment N=3,195, Net Mean=-3.42 bps, Median=-2.51 bps, WR=46.3%. Control N=3,324, Net Mean=-1.31 bps, Median=-2.71 bps, WR=42.9%. Mean delta=-2.11 bps (control superior), Median delta=+0.21 bps (trivially positive), WR delta=+3.3%. Contradictory evidence. Wider dispersion in treatment (46.26 vs 27.47 bps std). 9/9 hard gates PASS.
+
+**CAND-093 — Price-Discovery Friction Gradient:** CLOSED — MIXED EVIDENCE. Treatment N=5,601, Net Mean=-2.67 bps, Median=-2.61 bps, WR=44.5%. Control N=2,820, Net Mean=-1.66 bps, Median=-3.39 bps, WR=43.9%. Mean delta=-1.00 bps (control superior), Median delta=+0.77 bps (treatment better), WR delta=+0.6%. Contradictory evidence. 9/9 hard gates PASS.
+
+**V31 total:** 0 G2 promotions. 0 State classifications. 2 candidates tested, 2 closed.
+
+Artifact: `output/research_discovery/RESEARCH_FACTORY_V2_G1_SCREEN_20260831_V31.md`
+Script: `research/v31_g1_experiment.py`
+
+**Status:** V31 G1 COMPLETE — BOTH CANDIDATES CLOSED. V31 COMPLETE.

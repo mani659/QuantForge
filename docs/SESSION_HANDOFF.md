@@ -53,14 +53,15 @@ Next session must NOT:
 
 ### Current milestone
 
-> **V31 G0 INTEGRITY AUDIT COMPLETE — CAND-094 REDUNDANT WITH CAND-093**
-> **V31 ELIGIBLE CANDIDATES: CAND-092, CAND-093 (2 of 3)**
+> **V31 G1 COMPLETE — BOTH CANDIDATES CLOSED**
+> **CAND-092: CLOSED — MIXED EVIDENCE / NO MEANINGFUL INCREMENTAL INFORMATION**
+> **CAND-093: CLOSED — MIXED EVIDENCE / NO MEANINGFUL INCREMENTAL INFORMATION**
 > **V30: PERMANENTLY CLOSED / VERIFIED**
 > **3 STATE REVIEW ELIGIBLE objects: CAND-077, CAND-081, CAND-083 (PRESERVED)**
 > **SEED-002: TESTED NEGATIVE — NO INCREMENTAL INFORMATION**
-> **G1 LIMITED — 2 ELIGIBLE CANDIDATES**
+> **V31: 0 G2 promotions. 0 State classifications. 2 candidates tested, 2 closed.**
 
-Today's session completed: V31 G0 integrity audit. CAND-094 (Path-Dependent Event Severity) found REDUNDANT with CAND-093 (Price-Discovery Friction Gradient) — both measure approach quality to structural levels, same economic mechanism. CAND-094 REJECTED. CAND-092 (Event-Information Decay) confirmed NEW. CAND-093 (Price-Discovery Friction) confirmed NEW — distinct from CAND-085 (speed vs smoothness). V31 now contains 2 eligible candidates. Forward runtime untouched.
+Today's session completed: V31 G1 economic plausibility screen. Both V31 candidates closed at G1 with mixed evidence. CAND-092 (Event-Information Decay): contradictory — worse mean (-2.11 bps) but better median (+0.21 bps) and WR (+3.3%). CAND-093 (Price-Discovery Friction): contradictory — worse mean (-1.00 bps) but better median (+0.77 bps). Both pass all 9 hard gates. Failures are in economic evidence. State objects preserved. Forward runtime untouched.
 
 ---
 
@@ -501,8 +502,7 @@ The two mechanisms are genuinely independent:
 
 ## 19. PERMITTED NEXT TASKS
 
-- **V31 G1 — Economic plausibility screen for CAND-092 and CAND-093 (NEXT PERMITTED MILESTONE)**
-- V31 G0 correction / replacement for CAND-094 (if owner authorizes — separate task)
+- **V32 G0 — Fresh discovery (if owner authorizes)**
 - Formal State hypothesis registration for CAND-077 (if owner authorizes)
 - Formal State hypothesis registration for CAND-081 (if owner authorizes)
 - Formal State hypothesis registration for CAND-083 (if owner authorizes)
@@ -514,9 +514,10 @@ The two mechanisms are genuinely independent:
 
 ## 20. FORBIDDEN NEXT TASKS
 
-- Rescue CAND-086, CAND-087, CAND-088, CAND-089, CAND-090, or CAND-091
+- Rescue CAND-086, CAND-087, CAND-088, CAND-089, CAND-090, CAND-091, CAND-092, or CAND-093
 - Rescue CAND-084 (EXTENSION / REDUNDANT)
 - Rescue CAND-085 (INSUFFICIENT)
+- Rescue CAND-094 (REDUNDANT WITH CAND-093)
 - Optimize CAND-077 filters
 - Automatically promote CAND-077, CAND-081, or CAND-083 to STATE-ARTIFACT
 - Create new Alpha from CAND-077
@@ -771,4 +772,24 @@ Volume data unavailable / zero for both USATECHIDXUSD and XAUUSD M1 data. Do not
 
 ---
 
-*Authoritative for next session. Updated 2026-08-31. V30 G1 integrity audit complete. Verdict: VERIFIED WITH DOCUMENTATION CORRECTIONS. V30 PERMANENTLY CLOSED. Both CAND-089 and CAND-091 verified as correctly tested negative results. Documentation corrections applied (distribution wording, velocity measurement note). State objects preserved. SEED-002 negative. Forward runtime protected. V31 G0 AUTHORIZED.*
+## 31. V31 G1 — ECONOMIC PLAUSIBILITY SCREEN
+
+**Status:** COMPLETE — BOTH CANDIDATES CLOSED
+| Candidate | Decision | Rationale |
+|---|---|---|
+| CAND-092 (Event-Information Decay) | **CLOSED — MIXED EVIDENCE** | Mean delta -2.11 bps (control superior), median delta +0.21 bps (trivially positive), WR delta +3.3%. Contradictory across metrics. Wider dispersion in treatment group (46.26 vs 27.47 bps std). |
+| CAND-093 (Price-Discovery Friction) | **CLOSED — MIXED EVIDENCE** | Mean delta -1.00 bps (control superior), median delta +0.77 bps (treatment better), WR delta +0.6%. Contradictory across metrics. |
+
+**Key evidence:**
+- CAND-092: N=3,195 (treatment) / 3,324 (control). Net Mean: -3.42 / -1.31 bps. Contradictory conditional evidence.
+- CAND-093: N=5,601 (treatment) / 2,820 (control). Net Mean: -2.67 / -1.66 bps. Contradictory conditional evidence.
+- Both candidates pass all 9 hard validity gates. Failures are in economic evidence, not measurement.
+- State potential: NOT JUSTIFIED for either.
+
+**Artifacts:**
+- V31 G1 Screen: `output/research_discovery/RESEARCH_FACTORY_V2_G1_SCREEN_20260831_V31.md`
+- Script: `research/v31_g1_experiment.py`
+
+---
+
+*Authoritative for next session. Updated 2026-08-31. V31 G1 complete. Both CAND-092 and CAND-093 closed at G1 — mixed evidence / no meaningful incremental information. V31 total: 0 G2 promotions. State objects preserved (CAND-077/081/083 STATE REVIEW ELIGIBLE). SEED-002 negative. Forward runtime protected. Next authorized: V32 G0 fresh discovery (if owner authorizes).*
