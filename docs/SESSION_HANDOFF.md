@@ -39,6 +39,7 @@
 32. `0a34f32` — V33 G1 economic plausibility screen
 33. `3a53f40` — V33 G1 economic plausibility screen (final)
 34. `3e63905` — G0 process refinement (Mechanism-Observable Challenge)
+35. `e159ac3` — V34 G0 discovery (first cycle under refined G0 process)
 
 ---
 
