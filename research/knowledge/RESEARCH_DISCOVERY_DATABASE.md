@@ -1857,3 +1857,22 @@ Artifact: `output/research_discovery/QUANTFORGE_V31_G1_ADJUDICATION_INTEGRITY_AU
 
 **Next:** V34 G0 INTEGRITY / PRIOR-ART AUDIT (if owner authorizes).
 
+---
+
+## V34 G0 Integrity / Prior-Art Audit (2026-09-02)
+
+**Status:** AUDIT COMPLETE — BOTH CANDIDATES G1-ELIGIBLE
+
+| Candidate | Mechanism Novelty | Observable Novelty | Mechanism Confidence | Proxy Confidence | Final Disposition |
+|---|---|---|---|---|---|
+| CAND-101 | MATERIALLY DISTINCT BUT ADJACENT | CLEARLY NOVEL | MODERATE | MODERATE | **G1 ELIGIBLE** |
+| CAND-102 | MATERIALLY DISTINCT BUT ADJACENT | MATERIALLY DISTINCT | MODERATE | MODERATE | **G1 ELIGIBLE** |
+
+**CAND-101:** Adjacent to CAND-088 (session-level path dependence) but tests EVENT-LEVEL sequence structure. Event ORDER never tested before.
+
+**CAND-102:** Adjacent to CAND-091 (exhaustion) — tests OPPOSITE hypothesis (persistence). Mechanism distinct: active participant capitulation. **Caveat:** trend confound risk — G1 must test trend control.
+
+**Artifact:** `output/research_discovery/QUANTFORGE_V34_G0_INTEGRITY_AUDIT_V1.md`
+
+**Next:** V34 G1 — ECONOMIC PLAUSIBILITY SCREEN (if owner authorizes).
+

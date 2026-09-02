@@ -91,9 +91,9 @@ Next session must NOT:
 > **V33 G0 INTEGRITY AUDIT: CAND-098 G1 ELIGIBLE, CAND-099 G1 ELIGIBLE, CAND-100 DATA INFEASIBLE (bid-ask spread unavailable)**
 > **V33 G1: CAND-098 CLOSED — ECONOMICALLY NEGATIVE (hypothesis supported on distribution width but economically insufficient). CAND-099 CLOSED — HYPOTHESIS CONTRADICTED / INFORMATIONALLY INTERESTING (sharp transitions massively outperform smooth, opposite of hypothesized direction).**
 > **G0 PROCESS REFINEMENT: Mechanism-Observable Challenge introduced (8 adversarial questions + proxy confidence). NOT a hard gate. Effective V34 G0 onward.**
-> **V34 G0: 2 NEW CANDIDATES — CAND-101 (Path-Dependent Sequence Asymmetry), CAND-102 (Directional Momentum Persistence). BOTH G1 ELIGIBLE.**
+> **V34 G0 INTEGRITY AUDIT: CAND-101 G1 ELIGIBLE, CAND-102 G1 ELIGIBLE (with trend-control caveat).**
 
-Today's session (2026-09-02) completed: V34 G0 (2 candidates, first cycle under refined G0 process). CAND-101 G1 ELIGIBLE (Path-Dependent Sequence Asymmetry, MODERATE proxy/mechanism, MODERATE observable potential). CAND-102 G1 ELIGIBLE (Directional Momentum Persistence, MODERATE proxy/mechanism, HIGH observable potential). Both candidates address genuine knowledge gaps: event order (CAND-101) and directional persistence (CAND-102).
+Today's session (2026-09-02) completed: V34 G0 (2 candidates) and V34 G0 integrity audit. CAND-101 MATERIALLY DISTINCT BUT ADJACENT — event ORDER never tested, 14 Event Sequence candidates tested detection/count only. CAND-102 MATERIALLY DISTINCT BUT ADJACENT — tests persistence (opposite of CAND-091 exhaustion), with trend-control caveat. V34 G1 AUTHORIZED.
 
 ---
 
@@ -536,7 +536,7 @@ The two mechanisms are genuinely independent:
 
 ## 19. PERMITTED NEXT TASKS
 
-- **V34 G0 INTEGRITY / PRIOR-ART AUDIT for CAND-101 and CAND-102 (if owner authorizes)**
+- **V34 G1 — ECONOMIC PLAUSIBILITY SCREEN for CAND-101 and CAND-102 (if owner authorizes)**
 - Formal State hypothesis registration for CAND-077 (if owner authorizes)
 - Formal State hypothesis registration for CAND-081 (if owner authorizes)
 - Formal State hypothesis registration for CAND-083 (if owner authorizes)
@@ -573,10 +573,11 @@ The two mechanisms are genuinely independent:
 - Skip the Mechanism-Observable Challenge in V34+ G0 discovery
 - Treat Proxy Confidence as an automatic rejection criterion
 - Use the Mechanism-Observable Challenge to retroactively score V19–V33 candidates
-- Skip the V34 G0 integrity/prior-art audit and go directly to G1
+- Skip the V34 G0 integrity/prior-art audit and go directly to G1 (COMPLETED)
 - Rescue CAND-098, CAND-099, or CAND-100
 - Invert CAND-099 hypothesis into a new candidate
 - Generate replacement candidates for CAND-100
+- Skip V34 G1 and jump to G2
 
 ---
 
@@ -1041,6 +1042,8 @@ No V19–V33 candidate is retroactively scored against this framework.
 ### Artifact
 
 `output/research_discovery/QUANTFORGE_G0_MECHANISM_OBSERVABLE_CHALLENGE_V1.md`
+| V34 G0 Screening | `output/research_discovery/TRADEABLE_EDGE_DISCOVERY_SCREENING_V34.md` |
+| V34 G0 Integrity Audit | `output/research_discovery/QUANTFORGE_V34_G0_INTEGRITY_AUDIT_V1.md` |
 
 ---
 
@@ -1066,8 +1069,27 @@ No V19–V33 candidate is retroactively scored against this framework.
 
 **Artifact:** `output/research_discovery/TRADEABLE_EDGE_DISCOVERY_SCREENING_V34.md`
 
-**Next:** V34 G0 INTEGRITY / PRIOR-ART AUDIT (if owner authorizes).
+**Next:** V34 G0 INTEGRITY / PRIOR-ART AUDIT → COMPLETE. V34 G1 AUTHORIZED.
 
 ---
 
-*Authoritative for next session. Updated 2026-09-02 (V34 G0). V34 G0 complete: CAND-101 Path-Dependent Sequence Asymmetry G1 ELIGIBLE, CAND-102 Directional Momentum Persistence G1 ELIGIBLE. V33 CLOSED. V32 CLOSED / VERIFIED. V31 CLOSED / VERIFIED. V30 CLOSED / VERIFIED. State objects preserved (CAND-077/081/083 STATE REVIEW ELIGIBLE). SEED-002 negative. Forward runtime protected. G0 process refinement active: Mechanism-Observable Challenge effective V34 G0 onward. Next authorized: V34 G0 INTEGRITY / PRIOR-ART AUDIT (if owner authorizes).*
+## 38. V34 G0 INTEGRITY / PRIOR-ART AUDIT
+
+**Status:** AUDIT COMPLETE — BOTH CANDIDATES G1-ELIGIBLE
+
+| Candidate | Mechanism Novelty | Observable Novelty | Mechanism Confidence | Proxy Confidence | Final Disposition |
+|---|---|---|---|---|---|
+| CAND-101 | MATERIALLY DISTINCT BUT ADJACENT | CLEARLY NOVEL | MODERATE | MODERATE | **G1 ELIGIBLE** |
+| CAND-102 | MATERIALLY DISTINCT BUT ADJACENT | MATERIALLY DISTINCT | MODERATE | MODERATE | **G1 ELIGIBLE** |
+
+**CAND-101:** Adjacent to CAND-088 (session-level path dependence) but tests EVENT-LEVEL sequence structure. Event ORDER never tested before. 14 Event Sequence candidates tested detection/count, never sequence structure.
+
+**CAND-102:** Adjacent to CAND-091 (exhaustion) — tests OPPOSITE hypothesis (persistence). Mechanism is distinct: active participant capitulation, not just absence of exhaustion. **Caveat:** trend confound risk — G1 must test whether effect survives trend control.
+
+**Artifact:** `output/research_discovery/QUANTFORGE_V34_G0_INTEGRITY_AUDIT_V1.md`
+
+**Next:** V34 G1 — ECONOMIC PLAUSIBILITY SCREEN (if owner authorizes).
+
+---
+
+*Authoritative for next session. Updated 2026-09-02 (V34 G0 integrity audit). V34 G0 integrity audit complete: CAND-101 G1 ELIGIBLE, CAND-102 G1 ELIGIBLE (with trend-control caveat). V34 G1 AUTHORIZED. V33 CLOSED. V32 CLOSED / VERIFIED. V31 CLOSED / VERIFIED. V30 CLOSED / VERIFIED. State objects preserved (CAND-077/081/083 STATE REVIEW ELIGIBLE). SEED-002 negative. Forward runtime protected. Next authorized: V34 G1 — ECONOMIC PLAUSIBILITY SCREEN (if owner authorizes).*
