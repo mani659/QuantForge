@@ -45,6 +45,7 @@
 38. `a29f707` — V35 G0 discovery
 39. `4ca1d3e` — V35 G0 integrity audit
 40. `34f90a2` — V35 G1 economic plausibility screen
+41. `fdf8fdb` — V36 G0 search-space diversification
 
 ---
 
