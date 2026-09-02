@@ -90,8 +90,9 @@ Next session must NOT:
 > **V33 G0 INTEGRITY AUDIT: CAND-098 G1 ELIGIBLE, CAND-099 G1 ELIGIBLE, CAND-100 DATA INFEASIBLE (bid-ask spread unavailable)**
 > **V33 G1: CAND-098 CLOSED — ECONOMICALLY NEGATIVE (hypothesis supported on distribution width but economically insufficient). CAND-099 CLOSED — HYPOTHESIS CONTRADICTED / INFORMATIONALLY INTERESTING (sharp transitions massively outperform smooth, opposite of hypothesized direction).**
 > **G0 PROCESS REFINEMENT: Mechanism-Observable Challenge introduced (8 adversarial questions + proxy confidence). NOT a hard gate. Effective V34 G0 onward.**
+> **V34 G0: 2 NEW CANDIDATES — CAND-101 (Path-Dependent Sequence Asymmetry), CAND-102 (Directional Momentum Persistence). BOTH G1 ELIGIBLE.**
 
-Today's session (2026-09-01) completed: V33 G0 (3 candidates), V33 G0 integrity audit (CAND-100 DATA INFEASIBLE, 2 eligible), V33 G1 (CAND-098 ECONOMICALLY NEGATIVE, CAND-099 HYPOTHESIS CONTRADICTED / INFORMATIONALLY INTERESTING). V29–V33 Research Factory Meta-Audit completed. G0 process refinement introduced: Mechanism-Observable Challenge. V33 permanently closed.
+Today's session (2026-09-02) completed: V34 G0 (2 candidates, first cycle under refined G0 process). CAND-101 G1 ELIGIBLE (Path-Dependent Sequence Asymmetry, MODERATE proxy/mechanism, MODERATE observable potential). CAND-102 G1 ELIGIBLE (Directional Momentum Persistence, MODERATE proxy/mechanism, HIGH observable potential). Both candidates address genuine knowledge gaps: event order (CAND-101) and directional persistence (CAND-102).
 
 ---
 
@@ -534,7 +535,7 @@ The two mechanisms are genuinely independent:
 
 ## 19. PERMITTED NEXT TASKS
 
-- **V34 G0 — NEW DISCOVERY under refined G0 process (if owner authorizes)**
+- **V34 G0 INTEGRITY / PRIOR-ART AUDIT for CAND-101 and CAND-102 (if owner authorizes)**
 - Formal State hypothesis registration for CAND-077 (if owner authorizes)
 - Formal State hypothesis registration for CAND-081 (if owner authorizes)
 - Formal State hypothesis registration for CAND-083 (if owner authorizes)
@@ -571,6 +572,10 @@ The two mechanisms are genuinely independent:
 - Skip the Mechanism-Observable Challenge in V34+ G0 discovery
 - Treat Proxy Confidence as an automatic rejection criterion
 - Use the Mechanism-Observable Challenge to retroactively score V19–V33 candidates
+- Skip the V34 G0 integrity/prior-art audit and go directly to G1
+- Rescue CAND-098, CAND-099, or CAND-100
+- Invert CAND-099 hypothesis into a new candidate
+- Generate replacement candidates for CAND-100
 
 ---
 
@@ -1038,4 +1043,30 @@ No V19–V33 candidate is retroactively scored against this framework.
 
 ---
 
-*Authoritative for next session. Updated 2026-09-01 (V33 G1 + G0 process refinement). V33 G1 complete: CAND-098 ECONOMICALLY NEGATIVE, CAND-099 HYPOTHESIS CONTRADICTED / INFORMATIONALLY INTERESTING. V33 CLOSED. V32 CLOSED / VERIFIED. V31 CLOSED / VERIFIED. V30 CLOSED / VERIFIED. State objects preserved (CAND-077/081/083 STATE REVIEW ELIGIBLE). SEED-002 negative. Forward runtime protected. G0 process refinement introduced: Mechanism-Observable Challenge effective V34 G0 onward. No hard mechanism gate. Next authorized: V34 G0 — NEW DISCOVERY under refined G0 process (if owner authorizes).*
+## 37. V34 G0 — NEW DISCOVERY UNDER REFINED G0 PROCESS
+
+**Status:** G0 COMPLETE — 2 NEW CANDIDATES G1-ELIGIBLE
+**First cycle operating under Mechanism-Observable Challenge.**
+
+**Candidates:**
+
+| ID | Name | Type | Mechanism Family | Mechanism Confidence | Proxy Confidence | Observable Information Potential | G1 Status |
+|---|---|---|---|---|---|---|---|
+| CAND-101 | Path-Dependent Sequence Asymmetry | STATE / CONDITION | Path-Dependent Sequencing | MODERATE | MODERATE | MODERATE | G1 ELIGIBLE |
+| CAND-102 | Directional Momentum Persistence | STATE / CONDITION | Directional Dynamics | MODERATE | MODERATE | HIGH | G1 ELIGIBLE |
+
+**Knowledge gaps addressed:**
+1. Event order as conditioning variable (CAND-101) — 14 Event Sequence candidates tested detection/count, never sequence structure
+2. Directional persistence vs exhaustion (CAND-102) — CAND-091 tested exhaustion (contradicted), persistence never tested
+
+**Mechanism-Observable Challenge applied:** Yes — first cycle under refined G0 process.
+
+**Key finding:** Both candidates have genuinely distinct mechanisms, clean observables from M1 OHLC, and explicit falsification conditions. The Mechanism-Observable Challenge appears to have improved candidate quality relative to V29–V33 pattern.
+
+**Artifact:** `output/research_discovery/TRADEABLE_EDGE_DISCOVERY_SCREENING_V34.md`
+
+**Next:** V34 G0 INTEGRITY / PRIOR-ART AUDIT (if owner authorizes).
+
+---
+
+*Authoritative for next session. Updated 2026-09-02 (V34 G0). V34 G0 complete: CAND-101 Path-Dependent Sequence Asymmetry G1 ELIGIBLE, CAND-102 Directional Momentum Persistence G1 ELIGIBLE. V33 CLOSED. V32 CLOSED / VERIFIED. V31 CLOSED / VERIFIED. V30 CLOSED / VERIFIED. State objects preserved (CAND-077/081/083 STATE REVIEW ELIGIBLE). SEED-002 negative. Forward runtime protected. G0 process refinement active: Mechanism-Observable Challenge effective V34 G0 onward. Next authorized: V34 G0 INTEGRITY / PRIOR-ART AUDIT (if owner authorizes).*

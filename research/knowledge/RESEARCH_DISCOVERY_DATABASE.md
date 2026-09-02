@@ -1817,3 +1817,43 @@ Artifact: `output/research_discovery/QUANTFORGE_V31_G1_ADJUDICATION_INTEGRITY_AU
 
 **Next:** V34 G0 — NEW DISCOVERY under refined G0 process (if owner authorizes).
 
+---
+
+## V34 G0 — New Economic Mechanism Discovery (2026-09-02)
+
+**Status:** G0 COMPLETE — 2 NEW CANDIDATES FROM KNOWLEDGE-GAP ANALYSIS
+
+**Candidates (V34 G0):**
+
+| ID | Name | Expression Class | Mechanism Family | Prior-Art | G0 Disposition |
+|---|---|---|---|---|---|
+| CAND-101 | Path-Dependent Sequence Asymmetry | STATE / CONDITION | Path-Dependent Sequencing | NEW | **G1 ELIGIBLE** |
+| CAND-102 | Directional Momentum Persistence | STATE / CONDITION | Directional Dynamics | NEW | **G1 ELIGIBLE** |
+
+**Knowledge gaps addressed:**
+1. Event order as conditioning variable (CAND-101)
+2. Directional persistence vs exhaustion (CAND-102)
+
+**Mechanism-Observable Challenge applied:** Yes — first cycle under refined G0 process.
+- CAND-101: Proxy MODERATE, Mechanism MODERATE, Observable Potential MODERATE
+- CAND-102: Proxy MODERATE, Mechanism MODERATE, Observable Potential HIGH
+
+**Cross-research ledger:** Used as knowledge map only. 5 heavily explored families avoided. 3 under-explored gaps identified, 2 addressed.
+
+**V33 lessons applied:**
+- No velocity/exhaustion/recovery variants
+- No time-since-event as primary variable
+- No condition accumulation
+- No mean-reversion variants
+- No transition-quality formulations
+- No event-cluster density formulations
+
+**State library:** UNCHANGED (CAND-077/081/083 STATE REVIEW ELIGIBLE)
+**Forward runtime:** UNTOUCHED
+**SEED-002:** TESTED NEGATIVE — NO INCREMENTAL INFORMATION
+**APEX RB001–RB004:** DESIGNED / NOT EXECUTED
+
+**Artifact:** `output/research_discovery/TRADEABLE_EDGE_DISCOVERY_SCREENING_V34.md`
+
+**Next:** V34 G0 INTEGRITY / PRIOR-ART AUDIT (if owner authorizes).
+
