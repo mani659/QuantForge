@@ -1899,3 +1899,33 @@ Artifact: `output/research_discovery/QUANTFORGE_V31_G1_ADJUDICATION_INTEGRITY_AU
 
 **Next:** V35 G0 — NEW DISCOVERY (if owner authorizes).
 
+---
+
+## V35 G0 — New Economic Mechanism Discovery (2026-09-02)
+
+**Status:** G0 COMPLETE — 2 NEW CANDIDATES FROM KNOWLEDGE-GAP ANALYSIS
+
+**Candidates (V35 G0):**
+
+| ID | Name | Expression Class | Mechanism Family | Prior-Art | G0 Disposition |
+|---|---|---|---|---|---|
+| CAND-103 | Multi-Timeframe Break Coordination | STATE / CONDITION | Multi-Timeframe Interaction | NEW | **G1 ELIGIBLE** |
+| CAND-104 | Post-Magnitude Directional Drift | STATE / CONDITION | Directional Dynamics | NEW | **G1 ELIGIBLE** |
+
+**Knowledge gaps addressed:**
+1. Multi-timeframe break coordination (CAND-103)
+2. Volatility-adjusted magnitude drift (CAND-104)
+
+**Mechanism-Observable Challenge applied:** Yes.
+- CAND-103: Proxy MODERATE, Mechanism MODERATE, Observable Potential MODERATE
+- CAND-104: Proxy MODERATE, Mechanism MODERATE, Observable Potential MODERATE
+
+**State library:** UNCHANGED (CAND-077/081/083 STATE REVIEW ELIGIBLE)
+**Forward runtime:** UNTOUCHED
+**SEED-002:** TESTED NEGATIVE — NO INCREMENTAL INFORMATION
+**APEX RB001–RB004:** DESIGNED / NOT EXECUTED
+
+**Artifact:** `output/research_discovery/TRADEABLE_EDGE_DISCOVERY_SCREENING_V35.md`
+
+**Next:** V35 G0 INTEGRITY / PRIOR-ART AUDIT (if owner authorizes).
+

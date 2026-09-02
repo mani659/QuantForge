@@ -93,9 +93,9 @@ Next session must NOT:
 > **V33 G0 INTEGRITY AUDIT: CAND-098 G1 ELIGIBLE, CAND-099 G1 ELIGIBLE, CAND-100 DATA INFEASIBLE (bid-ask spread unavailable)**
 > **V33 G1: CAND-098 CLOSED — ECONOMICALLY NEGATIVE (hypothesis supported on distribution width but economically insufficient). CAND-099 CLOSED — HYPOTHESIS CONTRADICTED / INFORMATIONALLY INTERESTING (sharp transitions massively outperform smooth, opposite of hypothesized direction).**
 > **G0 PROCESS REFINEMENT: Mechanism-Observable Challenge introduced (8 adversarial questions + proxy confidence). NOT a hard gate. Effective V34 G0 onward.**
-> **V34 G1: CAND-101 CLOSED — ECONOMICALLY NEGATIVE (mean delta -0.02 bps). CAND-102 CLOSED — HYPOTHESIS CONTRADICTED (non-monotonic run-length pattern).**
+> **V35 G0: 2 NEW CANDIDATES — CAND-103 (Multi-Timeframe Break Coordination), CAND-104 (Post-Magnitude Directional Drift). BOTH G1 ELIGIBLE.**
 
-Today's session (2026-09-02) completed: V34 G0, V34 G0 integrity audit, V34 G1. CAND-101 sequence order produces virtually no economic separation. CAND-102 shows no monotonic persistence pattern. V34 permanently closed. 0 G2 promotions across all cycles.
+Today's session (2026-09-02) completed: V35 G0 (2 candidates). CAND-103 G1 ELIGIBLE (Multi-Timeframe Break Coordination, MODERATE proxy/mechanism, MODERATE observable potential). CAND-104 G1 ELIGIBLE (Post-Magnitude Directional Drift, MODERATE proxy/mechanism, MODERATE observable potential). Both address genuine knowledge gaps: multi-timeframe coordination (CAND-103) and volatility-adjusted magnitude (CAND-104).
 
 ---
 
@@ -538,7 +538,7 @@ The two mechanisms are genuinely independent:
 
 ## 19. PERMITTED NEXT TASKS
 
-- **V35 G0 — NEW DISCOVERY (if owner authorizes)**
+- **V35 G0 INTEGRITY / PRIOR-ART AUDIT for CAND-103 and CAND-104 (if owner authorizes)**
 - Formal State hypothesis registration for CAND-077 (if owner authorizes)
 - Formal State hypothesis registration for CAND-081 (if owner authorizes)
 - Formal State hypothesis registration for CAND-083 (if owner authorizes)
@@ -1117,4 +1117,25 @@ No V19–V33 candidate is retroactively scored against this framework.
 
 ---
 
-*Authoritative for next session. Updated 2026-09-02 (V34 G1). V34 G1 complete: CAND-101 ECONOMICALLY NEGATIVE, CAND-102 HYPOTHESIS CONTRADICTED. V34 CLOSED. V33 CLOSED. V32 CLOSED / VERIFIED. V31 CLOSED / VERIFIED. V30 CLOSED / VERIFIED. State objects preserved (CAND-077/081/083 STATE REVIEW ELIGIBLE). SEED-002 negative. Forward runtime protected. 0 G2 promotions across all cycles. Next authorized: V35 G0 — NEW DISCOVERY (if owner authorizes).*
+## 40. V35 G0 — NEW DISCOVERY UNDER REFINED G0 PROCESS
+
+**Status:** G0 COMPLETE — 2 NEW CANDIDATES G1-ELIGIBLE
+
+| ID | Name | Type | Mechanism Family | Mechanism Confidence | Proxy Confidence | Observable Information Potential | G1 Status |
+|---|---|---|---|---|---|---|---|
+| CAND-103 | Multi-Timeframe Break Coordination | STATE / CONDITION | Multi-Timeframe Interaction | MODERATE | MODERATE | MODERATE | G1 ELIGIBLE |
+| CAND-104 | Post-Magnitude Directional Drift | STATE / CONDITION | Directional Dynamics | MODERATE | MODERATE | MODERATE | G1 ELIGIBLE |
+
+**Knowledge gaps addressed:**
+1. Multi-timeframe break coordination (CAND-103) — no prior candidate has tested cross-timeframe break coordination
+2. Volatility-adjusted magnitude drift (CAND-104) — CAND-095 tested direction, not magnitude
+
+**Mechanism-Observable Challenge applied:** Yes.
+
+**Artifact:** `output/research_discovery/TRADEABLE_EDGE_DISCOVERY_SCREENING_V35.md`
+
+**Next:** V35 G0 INTEGRITY / PRIOR-ART AUDIT (if owner authorizes).
+
+---
+
+*Authoritative for next session. Updated 2026-09-02 (V35 G0). V35 G0 complete: CAND-103 Multi-Timeframe Break Coordination G1 ELIGIBLE, CAND-104 Post-Magnitude Directional Drift G1 ELIGIBLE. V34 CLOSED. V33 CLOSED. V32 CLOSED / VERIFIED. V31 CLOSED / VERIFIED. V30 CLOSED / VERIFIED. State objects preserved (CAND-077/081/083 STATE REVIEW ELIGIBLE). SEED-002 negative. Forward runtime protected. 0 G2 promotions across all cycles. Next authorized: V35 G0 INTEGRITY / PRIOR-ART AUDIT (if owner authorizes).*
