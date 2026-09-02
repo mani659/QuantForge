@@ -2,7 +2,7 @@
 
 **Purpose:** Authoritative restart point for the next QuantForge session. Do not reconstruct project history from conversational memory; start from this document and the referenced artifacts.
 
-**Last consolidated:** 2026-08-31 (V32 G1 — both candidates closed, V32 complete)
+**Last consolidated:** 2026-09-01 (V33 G1 complete + G0 process refinement introduced)
 
 **Today's commits (2026-08-31 — session summary):**
 1. `615552a` — V26 G0 dynamic state transition discovery
@@ -37,6 +37,8 @@
 30. `a77384d` — V33 G0 knowledge-gap discovery
 31. `b7edfca` — V33 G0 integrity audit
 32. `0a34f32` — V33 G1 economic plausibility screen
+33. `3a53f40` — V33 G1 economic plausibility screen (final)
+34. `pending` — G0 process refinement (Mechanism-Observable Challenge)
 
 ---
 
@@ -87,8 +89,9 @@ Next session must NOT:
 > **V33 G0: 3 NEW CANDIDATES — CAND-098 (Event-Cluster Response Degradation), CAND-099 (Volatility Regime Transition Quality), CAND-100 (Spread-Conditioned Execution Stress)**
 > **V33 G0 INTEGRITY AUDIT: CAND-098 G1 ELIGIBLE, CAND-099 G1 ELIGIBLE, CAND-100 DATA INFEASIBLE (bid-ask spread unavailable)**
 > **V33 G1: CAND-098 CLOSED — ECONOMICALLY NEGATIVE (hypothesis supported on distribution width but economically insufficient). CAND-099 CLOSED — HYPOTHESIS CONTRADICTED / INFORMATIONALLY INTERESTING (sharp transitions massively outperform smooth, opposite of hypothesized direction).**
+> **G0 PROCESS REFINEMENT: Mechanism-Observable Challenge introduced (8 adversarial questions + proxy confidence). NOT a hard gate. Effective V34 G0 onward.**
 
-Today's session (2026-08-31) completed: V32 G0 (knowledge-gap discovery, 3 candidates), V32 G0 integrity audit (CAND-097 rejected as REDUNDANT with DISC-021, 2 eligible), V32 G1 economic plausibility screen (CAND-095 ECONOMICALLY NEGATIVE, CAND-096 HYPOTHESIS CONTRADICTED / INFORMATIONALLY INTERESTING). CAND-096 semantic check against CAND-077 PASS — acceleration is distinct from regime transition. V32 permanently closed. Session-close reconciliation and GitHub push completed.
+Today's session (2026-09-01) completed: V33 G0 (3 candidates), V33 G0 integrity audit (CAND-100 DATA INFEASIBLE, 2 eligible), V33 G1 (CAND-098 ECONOMICALLY NEGATIVE, CAND-099 HYPOTHESIS CONTRADICTED / INFORMATIONALLY INTERESTING). V29–V33 Research Factory Meta-Audit completed. G0 process refinement introduced: Mechanism-Observable Challenge. V33 permanently closed.
 
 ---
 
@@ -531,7 +534,7 @@ The two mechanisms are genuinely independent:
 
 ## 19. PERMITTED NEXT TASKS
 
-- **V34 G0 — NEW DISCOVERY (if owner authorizes)**
+- **V34 G0 — NEW DISCOVERY under refined G0 process (if owner authorizes)**
 - Formal State hypothesis registration for CAND-077 (if owner authorizes)
 - Formal State hypothesis registration for CAND-081 (if owner authorizes)
 - Formal State hypothesis registration for CAND-083 (if owner authorizes)
@@ -565,6 +568,9 @@ The two mechanisms are genuinely independent:
 - Reopen CAND-077, CAND-078, or CAND-079
 - Retroactively designate CAND-024/CAND-035 as downstream Alphas for CAND-077/CAND-081/CAND-083
 - Create variants of CAND-077, CAND-081, or CAND-083
+- Skip the Mechanism-Observable Challenge in V34+ G0 discovery
+- Treat Proxy Confidence as an automatic rejection criterion
+- Use the Mechanism-Observable Challenge to retroactively score V19–V33 candidates
 
 ---
 
@@ -643,6 +649,10 @@ Volume data unavailable / zero for both USATECHIDXUSD and XAUUSD M1 data. Do not
 | V32 G0 Screening | `output/research_discovery/TRADEABLE_EDGE_DISCOVERY_SCREENING_V32.md` |
 | V32 G0 Integrity Audit | `output/research_discovery/QUANTFORGE_V32_G0_INTEGRITY_AUDIT_V1.md` |
 | V32 G1 Screen | `output/research_discovery/RESEARCH_FACTORY_V2_G1_SCREEN_20260831_V32.md` |
+| V33 G0 Screening | `output/research_discovery/TRADEABLE_EDGE_DISCOVERY_SCREENING_V33.md` |
+| V33 G0 Integrity Audit | `output/research_discovery/QUANTFORGE_V33_G0_INTEGRITY_AUDIT_V1.md` |
+| V33 G1 Screen | `output/research_discovery/RESEARCH_FACTORY_V2_G1_SCREEN_20260901_V33.md` |
+| G0 Process Refinement | `output/research_discovery/QUANTFORGE_G0_MECHANISM_OBSERVABLE_CHALLENGE_V1.md` |
 
 ---
 
@@ -977,4 +987,55 @@ Key negative knowledge:
 
 ---
 
-*Authoritative for next session. Updated 2026-09-01 (V33 G1). V33 G1 complete: CAND-098 ECONOMICALLY NEGATIVE, CAND-099 HYPOTHESIS CONTRADICTED / INFORMATIONALLY INTERESTING. V33 CLOSED. V32 CLOSED / VERIFIED. V31 CLOSED / VERIFIED. V30 CLOSED / VERIFIED. State objects preserved (CAND-077/081/083 STATE REVIEW ELIGIBLE). SEED-002 negative. Forward runtime protected. Next authorized: V34 G0 — NEW DISCOVERY (if owner authorizes).*
+## 36. G0 PROCESS REFINEMENT — MECHANISM-OBSERVABLE CHALLENGE
+
+**Status:** RATIFIED — PROSPECTIVE GOVERNANCE REFINEMENT
+
+**Effective:** V34 G0 onward
+
+**Basis:** V29–V33 Research Factory Meta-Audit (completed 2026-09-01)
+
+### What Changed
+
+Beginning with V34 G0, every candidate must answer eight mandatory Mechanism-Observable Challenge questions:
+
+A. **Mechanism Independence** — What market phenomenon exists independently of the proposed feature?
+B. **Proxy Challenge** — How could the observable be generated without the claimed mechanism?
+C. **Alternative Explanation** — What competing market state could create the same observable?
+D. **Observable Fidelity** — Why is the observable a reasonable measurement of the claimed mechanism?
+E. **Expected-Effect Bridge** — Why should this observable alter the outcome distribution?
+F. **Falsification** — What result would clearly contradict the mechanism?
+G. **Tradeability Challenge** — What would make the effect disappear after realistic costs?
+H. **Base-Rate Challenge** — Why does this candidate deserve G1 testing given the historical base rate?
+
+Each candidate receives a **Proxy Confidence** assessment: STRONG / MODERATE / WEAK.
+
+The G0 artifact must separately record **Mechanism Confidence** and **Observable Information Potential**.
+
+### What Did NOT Change
+
+- No hard mechanism-quality gate introduced
+- No automatic rejection system
+- No numeric scoring
+- G1 V3 framework unchanged
+- G0 integrity audit unchanged
+- Prior-art process unchanged
+- State library unchanged
+- Closed-line firewalls unchanged
+- Relational governance unchanged
+- Forward runtime unchanged
+
+### Why NOT a Hard Gate
+
+CAND-099 demonstrated that mechanism falsification does not imply observable invalidity. A hard gate might have rejected CAND-099 before G1, losing the genuinely informative transition-quality finding. The challenge surfaces weaknesses; it does not automatically reject.
+### Historical State
+
+No V19–V33 candidate is retroactively scored against this framework.
+
+### Artifact
+
+`output/research_discovery/QUANTFORGE_G0_MECHANISM_OBSERVABLE_CHALLENGE_V1.md`
+
+---
+
+*Authoritative for next session. Updated 2026-09-01 (V33 G1 + G0 process refinement). V33 G1 complete: CAND-098 ECONOMICALLY NEGATIVE, CAND-099 HYPOTHESIS CONTRADICTED / INFORMATIONALLY INTERESTING. V33 CLOSED. V32 CLOSED / VERIFIED. V31 CLOSED / VERIFIED. V30 CLOSED / VERIFIED. State objects preserved (CAND-077/081/083 STATE REVIEW ELIGIBLE). SEED-002 negative. Forward runtime protected. G0 process refinement introduced: Mechanism-Observable Challenge effective V34 G0 onward. No hard mechanism gate. Next authorized: V34 G0 — NEW DISCOVERY under refined G0 process (if owner authorizes).*

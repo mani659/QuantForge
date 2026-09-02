@@ -1795,5 +1795,25 @@ Artifact: `output/research_discovery/QUANTFORGE_V31_G1_ADJUDICATION_INTEGRITY_AU
 - V33 G1 Screen: `output/research_discovery/RESEARCH_FACTORY_V2_G1_SCREEN_20260901_V33.md`
 - Script: `research/v33_g1_experiment.py`
 
-**Next:** V34 G0 — NEW DISCOVERY (if owner authorizes).
+**Next:** V34 G0 — NEW DISCOVERY under refined G0 process (if owner authorizes).
+
+---
+
+## G0 Process Refinement — Mechanism-Observable Challenge (2026-09-01)
+
+**Status:** RATIFIED — PROSPECTIVE GOVERNANCE REFINEMENT
+
+**Effective:** V34 G0 onward
+
+**Basis:** V29–V33 Research Factory Meta-Audit
+
+**Change:** Mandatory Mechanism-Observable Challenge (8 adversarial questions + proxy confidence) added to G0 candidate evaluation.
+
+**Not changed:** No hard mechanism gate. No automatic rejection. G1 V3 framework unchanged.
+
+**Key lesson:** CAND-099 demonstrated that mechanism falsification does not imply observable invalidity. The challenge surfaces weaknesses; it does not automatically reject.
+
+**Artifact:** `output/research_discovery/QUANTFORGE_G0_MECHANISM_OBSERVABLE_CHALLENGE_V1.md`
+
+**Next:** V34 G0 — NEW DISCOVERY under refined G0 process (if owner authorizes).
 
