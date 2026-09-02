@@ -34,6 +34,7 @@
 27. `a4756c7` — V32 G0 integrity audit
 28. `4a2cdce` — V32 G1 economic plausibility screen
 29. `1a06b93` — session-close documentation reconciliation
+30. `a77384d` — V33 G0 knowledge-gap discovery
 
 ---
 
@@ -81,6 +82,8 @@ Next session must NOT:
 > **3 STATE REVIEW ELIGIBLE objects: CAND-077, CAND-081, CAND-083 (PRESERVED)**
 > **SEED-002: TESTED NEGATIVE — NO INCREMENTAL INFORMATION**
 > **V32: 0 G2 promotions. 2 candidates tested, 2 closed. CAND-096 shows genuine conditional information in opposite direction.**
+> **V33 G0: 3 NEW CANDIDATES — CAND-098 (Event-Cluster Response Degradation), CAND-099 (Volatility Regime Transition Quality), CAND-100 (Spread-Conditioned Execution Stress)**
+> **V33 G1: NOT EXECUTED**
 
 Today's session (2026-08-31) completed: V32 G0 (knowledge-gap discovery, 3 candidates), V32 G0 integrity audit (CAND-097 rejected as REDUNDANT with DISC-021, 2 eligible), V32 G1 economic plausibility screen (CAND-095 ECONOMICALLY NEGATIVE, CAND-096 HYPOTHESIS CONTRADICTED / INFORMATIONALLY INTERESTING). CAND-096 semantic check against CAND-077 PASS — acceleration is distinct from regime transition. V32 permanently closed. Session-close reconciliation and GitHub push completed.
 
@@ -525,7 +528,8 @@ The two mechanisms are genuinely independent:
 
 ## 19. PERMITTED NEXT TASKS
 
-- **V33 G0 — NEW DISCOVERY (if owner authorizes)**
+- **V33 G0 INTEGRITY / PRIOR-ART AUDIT (next governed step)**
+- V33 G1 — ECONOMIC PLAUSIBILITY SCREEN (after G0 integrity audit passes)
 - Formal State hypothesis registration for CAND-077 (if owner authorizes)
 - Formal State hypothesis registration for CAND-081 (if owner authorizes)
 - Formal State hypothesis registration for CAND-083 (if owner authorizes)
@@ -878,7 +882,40 @@ Volume data unavailable / zero for both USATECHIDXUSD and XAUUSD M1 data. Do not
 
 ---
 
-## 34. V32 CLOSURE
+## 34. V33 G0 — KNOWLEDGE-GAP / ECONOMIC-MECHANISM DISCOVERY
+
+**Status:** G0 COMPLETE — 3 NEW CANDIDATES FROM KNOWLEDGE-GAP ANALYSIS
+
+**Candidates:**
+
+| ID | Name | Expression Class | Mechanism Family | Prior-Art |
+|---|---|---|---|---|
+| CAND-098 | Event-Cluster Response Degradation | STATE / CONDITION | Event-Cluster Dynamics | NEW |
+| CAND-099 | Volatility Regime Transition Quality | STATE / CONDITION | Volatility Dynamics | NEW |
+| CAND-100 | Spread-Conditioned Execution Stress | STATE / CONDITION | Market Microstructure | NEW |
+
+**Knowledge gaps addressed:**
+1. Event-cluster response decay (CAND-098)
+2. Volatility regime transition quality (CAND-099)
+3. Execution stress and spread dynamics (CAND-100)
+**Cross-research ledger:** Used as knowledge map only. 5 heavily explored families avoided. 5 under-explored gaps identified, 3 addressed.
+
+**V32 lessons applied:**
+- No velocity/exhaustion/recovery variants
+- No time-since-event as primary variable
+- No condition accumulation
+- No mean-reversion variants
+
+**State library:** UNCHANGED (CAND-077/081/083 STATE REVIEW ELIGIBLE)
+**Forward runtime:** UNTOUCHED
+**SEED-002:** TESTED NEGATIVE — NO INCREMENTAL INFORMATION
+**APEX RB001–RB004:** DESIGNED / NOT EXECUTED
+
+**Artifact:** `output/research_discovery/TRADEABLE_EDGE_DISCOVERY_SCREENING_V33.md`
+
+---
+
+## 35. V32 CLOSURE
 
 **Status:** V32 CLOSED / VERIFIED
 
@@ -895,4 +932,4 @@ Key negative knowledge:
 
 ---
 
-*Authoritative for next session. Updated 2026-08-31 (session close). V32 G1 complete and verified. V32 CLOSED. V31 CLOSED / VERIFIED. V30 CLOSED / VERIFIED. State objects preserved (CAND-077/081/083 STATE REVIEW ELIGIBLE). SEED-002 negative. Forward runtime protected. Next authorized: V33 G0 — NEW DISCOVERY (if owner authorizes).*
+*Authoritative for next session. Updated 2026-09-01 (V33 G0). V33 G0 complete: 3 new candidates from knowledge-gap analysis (CAND-098/099/100). V32 CLOSED / VERIFIED. V31 CLOSED / VERIFIED. V30 CLOSED / VERIFIED. State objects preserved (CAND-077/081/083 STATE REVIEW ELIGIBLE). SEED-002 negative. Forward runtime protected. Next authorized: V33 G0 INTEGRITY / PRIOR-ART AUDIT.*

@@ -1704,7 +1704,7 @@ Artifact: `output/research_discovery/QUANTFORGE_V31_G1_ADJUDICATION_INTEGRITY_AU
 **Forward runtime:** UNTOUCHED
 **SEED-002:** TESTED NEGATIVE — NO INCREMENTAL INFORMATION
 **APEX RB001–RB004:** DESIGNED / NOT EXECUTED
-**Next:** V33 G0 — NEW DISCOVERY (if owner authorizes). V32 G1 COMPLETE and CLOSED.
+**Next:** V33 G0 INTEGRITY / PRIOR-ART AUDIT. V33 G0 COMPLETE — 3 NEW CANDIDATES.
 
 ---
 
@@ -1722,5 +1722,34 @@ Artifact: `output/research_discovery/QUANTFORGE_V31_G1_ADJUDICATION_INTEGRITY_AU
 - CAND-096 semantic check against CAND-077 PASS — implementation genuinely measures acceleration.
 - State potential: CAND-096 shows conditional information in opposite direction (STATE REVIEW ELIGIBLE).
 **Artifacts:**
-- V32 G1 Screen: `output/research_discovery/RESEARCH_FACTORY_V2_G1_SCREEN_20260831_V32.md`
-- Script: `research/v32_g1_experiment.py`
+- V32 G1 Screen: `output/research_discovery/RESEARCH_FACTORY_V2_G1_SCREEN_20260831_V32.md`- Script: `research/v32_g1_experiment.py`
+
+---
+
+## V33 G0 — Knowledge-Gap / Economic-Mechanism Discovery (2026-09-01)
+
+**Status:** V33 G0 COMPLETE — 3 NEW CANDIDATES
+
+**Candidates:**
+
+| ID | Name | Expression Class | Mechanism Family | Prior-Art |
+|---|---|---|---|---|
+| CAND-098 | Event-Cluster Response Degradation | STATE / CONDITION | Event-Cluster Dynamics | NEW |
+| CAND-099 | Volatility Regime Transition Quality | STATE / CONDITION | Volatility Dynamics | NEW |
+| CAND-100 | Spread-Conditioned Execution Stress | STATE / CONDITION | Market Microstructure | NEW |
+
+**Knowledge gaps addressed:**
+1. Event-cluster response decay (CAND-098)
+2. Volatility regime transition quality (CAND-099)
+3. Execution stress and spread dynamics (CAND-100)
+
+**V32 lessons applied:** No velocity/exhaustion/recovery variants. No time-since-event as primary variable. No condition accumulation. No mean-reversion variants.
+
+**State library:** UNCHANGED (CAND-077/081/083 STATE REVIEW ELIGIBLE)
+**Forward runtime:** UNTOUCHED
+**SEED-002:** TESTED NEGATIVE
+**APEX RB001–RB004:** DESIGNED / NOT EXECUTED
+
+**Artifact:** `output/research_discovery/TRADEABLE_EDGE_DISCOVERY_SCREENING_V33.md`
+
+**Next:** V33 G0 INTEGRITY / PRIOR-ART AUDIT.
