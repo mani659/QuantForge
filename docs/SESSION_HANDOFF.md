@@ -119,7 +119,7 @@ The system may ultimately consist of one exceptional strategy or multiple indepe
 
 ## 2. CURRENT REPOSITORY STATE
 
-- **HEAD:** `1a06b93` — `docs: close 2026-08-31 research session`
+- **HEAD:** `3b94733` — `docs: audit V36 G0 candidate novelty — first cross-asset dimension`
 - **V32 G1 commit:** `4a2cdce` — `research: complete V32 G1 economic plausibility screen`
 - **Branch:** `main` (linear history)
 - **Uncommitted:** runtime/forward data (CAND-015 health, event ledgers), research scripts, scratch files — correctly excluded from governance commits
@@ -542,7 +542,7 @@ The two mechanisms are genuinely independent:
 
 ## 19. PERMITTED NEXT TASKS
 
-- **V36 G1 — ECONOMIC PLAUSIBILITY SCREEN for CAND-105, CAND-106, and CAND-107 (if owner authorizes)**
+- **V36 G1 — ECONOMIC PLAUSIBILITY SCREEN for CAND-105 and CAND-106 (if owner authorizes)**
 - Formal State hypothesis registration for CAND-077 (if owner authorizes)
 - Formal State hypothesis registration for CAND-081 (if owner authorizes)
 - Formal State hypothesis registration for CAND-083 (if owner authorizes)
@@ -666,6 +666,14 @@ Volume data unavailable / zero for both USATECHIDXUSD and XAUUSD M1 data. Do not
 | V33 G0 Integrity Audit | `output/research_discovery/QUANTFORGE_V33_G0_INTEGRITY_AUDIT_V1.md` |
 | V33 G1 Screen | `output/research_discovery/RESEARCH_FACTORY_V2_G1_SCREEN_20260901_V33.md` |
 | G0 Process Refinement | `output/research_discovery/QUANTFORGE_G0_MECHANISM_OBSERVABLE_CHALLENGE_V1.md` |
+| V34 G0 Screening | `output/research_discovery/TRADEABLE_EDGE_DISCOVERY_SCREENING_V34.md` |
+| V34 G0 Integrity Audit | `output/research_discovery/QUANTFORGE_V34_G0_INTEGRITY_AUDIT_V1.md` |
+| V34 G1 Screen | `output/research_discovery/QUANTFORGE_V34_G1_ECONOMIC_SCREEN_V1.md` |
+| V35 G0 Screening | `output/research_discovery/TRADEABLE_EDGE_DISCOVERY_SCREENING_V35.md` |
+| V35 G0 Integrity Audit | `output/research_discovery/QUANTFORGE_V35_G0_INTEGRITY_AUDIT_V1.md` |
+| V35 G1 Screen | `output/research_discovery/QUANTFORGE_V35_G1_ECONOMIC_SCREEN_V1.md` |
+| V36 G0 Screening | `output/research_discovery/TRADEABLE_EDGE_DISCOVERY_SCREENING_V36.md` |
+| V36 G0 Integrity Audit | `output/research_discovery/QUANTFORGE_V36_G0_INTEGRITY_AUDIT_V1.md` |
 
 ---
 
@@ -1208,26 +1216,26 @@ No V19–V33 candidate is retroactively scored against this framework.
 
 ## 44. V36 G0 INTEGRITY / PRIOR-ART AUDIT
 
-**Status:** AUDIT COMPLETE — ALL THREE CANDIDATES G1-ELIGIBLE
+**Status:** AUDIT COMPLETE — 2 G1-ELIGIBLE, 1 REDUNDANT
 
 | Candidate | New Dimension | Mechanism Novelty | Observable Novelty | Mechanism Confidence | Proxy Confidence | Final Disposition |
 |---|---|---|---|---|---|---|
 | CAND-105 | Cross-asset returns | CLEARLY NOVEL | CLEARLY NOVEL | MODERATE | MODERATE | **G1 ELIGIBLE** |
 | CAND-106 | Bar-internal structure | CLEARLY NOVEL | CLEARLY NOVEL | MODERATE | MODERATE | **G1 ELIGIBLE** |
-| CAND-107 | Cross-asset vol correlation | CLEARLY NOVEL | CLEARLY NOVEL | MODERATE | MODERATE | **G1 ELIGIBLE** |
+| CAND-107 | Cross-asset vol correlation | REDUNDANT | REDUNDANT | — | — | **REDUNDANT WITH VOL REGIME RESEARCH** |
 
 **CAND-105:** Cross-asset dimension genuinely new. Caveat: observable measures co-movement, not lead-lag direction. G1-implementation concern.
 
 **CAND-106:** Bar-internal distribution genuinely new. Caveat: mechanism (conviction) is inferred; may reflect volatility or trend. G1-implementation concern.
 
-**CAND-107:** Cross-asset vol co-movement genuinely new. Caveat: may reflect common factor exposure. G1-implementation concern.
+**CAND-107:** FAIL — cross-asset vol co-movement collapses into existing vol regime research (CAND-077/096/099). Redundant.
 
 **Cross-asset data validated:** XAUUSD M1 (1,768,123 bars) and USATECHIDXUSD M1 (906,815 bars) with overlap 2023-09-01 to 2026-04-10.
 
 **Artifact:** `output/research_discovery/QUANTFORGE_V36_G0_INTEGRITY_AUDIT_V1.md`
 
-**Next:** V36 G1 — ECONOMIC PLAUSIBILITY SCREEN (if owner authorizes).
+**Next:** V36 G1 — ECONOMIC PLAUSIBILITY SCREEN for CAND-105 + CAND-106 (if owner authorizes).
 
 ---
 
-*Authoritative for next session. Updated 2026-09-02 (V36 G0 integrity audit). V36 G0 integrity audit complete: CAND-105 G1 ELIGIBLE, CAND-106 G1 ELIGIBLE, CAND-107 G1 ELIGIBLE. V36 G1 AUTHORIZED. V35 CLOSED. V34 CLOSED. V33 CLOSED. V32 CLOSED / VERIFIED. V31 CLOSED / VERIFIED. V30 CLOSED / VERIFIED. State objects preserved. SEED-002 negative. Forward runtime protected. 0 G2 promotions across all cycles. Cross-asset data validated. Next authorized: V36 G1 — ECONOMIC PLAUSIBILITY SCREEN (if owner authorizes).*
+*Authoritative for next session. Updated 2026-09-02 (V36 G0 integrity audit). V36 G0 integrity audit complete: CAND-105 G1 ELIGIBLE, CAND-106 G1 ELIGIBLE, CAND-107 REDUNDANT (vol regime). V36 G1 AUTHORIZED for CAND-105 + CAND-106. V35 CLOSED. V34 CLOSED. V33 CLOSED. V32 CLOSED / VERIFIED. V31 CLOSED / VERIFIED. V30 CLOSED / VERIFIED. State objects preserved. SEED-002 negative. Forward runtime protected. 0 G2 promotions across all cycles. Cross-asset data validated. Next authorized: V36 G1 — ECONOMIC PLAUSIBILITY SCREEN (if owner authorizes).*
