@@ -1929,3 +1929,22 @@ Artifact: `output/research_discovery/QUANTFORGE_V31_G1_ADJUDICATION_INTEGRITY_AU
 
 **Next:** V35 G0 INTEGRITY / PRIOR-ART AUDIT (if owner authorizes).
 
+---
+
+## V35 G0 Integrity / Prior-Art Audit (2026-09-02)
+
+**Status:** AUDIT COMPLETE — BOTH CANDIDATES G1-ELIGIBLE
+
+| Candidate | Mechanism Novelty | Observable Novelty | Mechanism Confidence | Proxy Confidence | Final Disposition |
+|---|---|---|---|---|---|
+| CAND-103 | CLEARLY NOVEL | CLEARLY NOVEL | MODERATE | MODERATE | **G1 ELIGIBLE** |
+| CAND-104 | MATERIALLY DISTINCT BUT ADJACENT | CLEARLY NOVEL | MODERATE | MODERATE | **G1 ELIGIBLE** |
+
+**CAND-103:** Cross-timeframe break coordination is genuinely novel. Observable distinct from all prior work.
+
+**CAND-104:** Volatility-adjusted magnitude distinct from CAND-095 (direction) and standard momentum.
+
+**Artifact:** `output/research_discovery/QUANTFORGE_V35_G0_INTEGRITY_AUDIT_V1.md`
+
+**Next:** V35 G1 — ECONOMIC PLAUSIBILITY SCREEN (if owner authorizes).
+

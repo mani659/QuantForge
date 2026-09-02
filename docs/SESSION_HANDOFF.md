@@ -94,9 +94,9 @@ Next session must NOT:
 > **V33 G0 INTEGRITY AUDIT: CAND-098 G1 ELIGIBLE, CAND-099 G1 ELIGIBLE, CAND-100 DATA INFEASIBLE (bid-ask spread unavailable)**
 > **V33 G1: CAND-098 CLOSED — ECONOMICALLY NEGATIVE (hypothesis supported on distribution width but economically insufficient). CAND-099 CLOSED — HYPOTHESIS CONTRADICTED / INFORMATIONALLY INTERESTING (sharp transitions massively outperform smooth, opposite of hypothesized direction).**
 > **G0 PROCESS REFINEMENT: Mechanism-Observable Challenge introduced (8 adversarial questions + proxy confidence). NOT a hard gate. Effective V34 G0 onward.**
-> **V35 G0: 2 NEW CANDIDATES — CAND-103 (Multi-Timeframe Break Coordination), CAND-104 (Post-Magnitude Directional Drift). BOTH G1 ELIGIBLE.**
+> **V35 G0 INTEGRITY AUDIT: CAND-103 G1 ELIGIBLE, CAND-104 G1 ELIGIBLE.**
 
-Today's session (2026-09-02) completed: V35 G0 (2 candidates). CAND-103 G1 ELIGIBLE (Multi-Timeframe Break Coordination, MODERATE proxy/mechanism, MODERATE observable potential). CAND-104 G1 ELIGIBLE (Post-Magnitude Directional Drift, MODERATE proxy/mechanism, MODERATE observable potential). Both address genuine knowledge gaps: multi-timeframe coordination (CAND-103) and volatility-adjusted magnitude (CAND-104).
+Today's session (2026-09-02) completed: V35 G0 (2 candidates) and V35 G0 integrity audit. CAND-103 CLEARLY NOVEL — cross-timeframe break coordination is genuinely distinct from all prior work. CAND-104 MATERIALLY DISTINCT BUT ADJACENT — volatility-adjusted magnitude is distinct from CAND-095 (direction) and standard momentum. V35 G1 AUTHORIZED.
 
 ---
 
@@ -539,7 +539,7 @@ The two mechanisms are genuinely independent:
 
 ## 19. PERMITTED NEXT TASKS
 
-- **V35 G0 INTEGRITY / PRIOR-ART AUDIT for CAND-103 and CAND-104 (if owner authorizes)**
+- **V35 G1 — ECONOMIC PLAUSIBILITY SCREEN for CAND-103 and CAND-104 (if owner authorizes)**
 - Formal State hypothesis registration for CAND-077 (if owner authorizes)
 - Formal State hypothesis registration for CAND-081 (if owner authorizes)
 - Formal State hypothesis registration for CAND-083 (if owner authorizes)
@@ -1135,8 +1135,27 @@ No V19–V33 candidate is retroactively scored against this framework.
 
 **Artifact:** `output/research_discovery/TRADEABLE_EDGE_DISCOVERY_SCREENING_V35.md`
 
-**Next:** V35 G0 INTEGRITY / PRIOR-ART AUDIT (if owner authorizes).
+**Next:** V35 G0 INTEGRITY AUDIT → COMPLETE. V35 G1 AUTHORIZED.
 
 ---
 
-*Authoritative for next session. Updated 2026-09-02 (V35 G0). V35 G0 complete: CAND-103 Multi-Timeframe Break Coordination G1 ELIGIBLE, CAND-104 Post-Magnitude Directional Drift G1 ELIGIBLE. V34 CLOSED. V33 CLOSED. V32 CLOSED / VERIFIED. V31 CLOSED / VERIFIED. V30 CLOSED / VERIFIED. State objects preserved (CAND-077/081/083 STATE REVIEW ELIGIBLE). SEED-002 negative. Forward runtime protected. 0 G2 promotions across all cycles. Next authorized: V35 G0 INTEGRITY / PRIOR-ART AUDIT (if owner authorizes).*
+## 41. V35 G0 INTEGRITY / PRIOR-ART AUDIT
+
+**Status:** AUDIT COMPLETE — BOTH CANDIDATES G1-ELIGIBLE
+
+| Candidate | Mechanism Novelty | Observable Novelty | Mechanism Confidence | Proxy Confidence | Final Disposition |
+|---|---|---|---|---|---|
+| CAND-103 | CLEARLY NOVEL | CLEARLY NOVEL | MODERATE | MODERATE | **G1 ELIGIBLE** |
+| CAND-104 | MATERIALLY DISTINCT BUT ADJACENT | CLEARLY NOVEL | MODERATE | MODERATE | **G1 ELIGIBLE** |
+
+**CAND-103:** Cross-timeframe break coordination is genuinely novel. Observable (number of timeframe levels broken) is distinct from all prior work. Trend-confound risk noted but observable is genuinely distinct.
+
+**CAND-104:** Volatility-adjusted magnitude is distinct from CAND-095 (direction) and standard momentum (return-based). Mechanism (forced repositioning) is plausible but inferred. Momentum-confound risk noted.
+
+**Artifact:** `output/research_discovery/QUANTFORGE_V35_G0_INTEGRITY_AUDIT_V1.md`
+
+**Next:** V35 G1 — ECONOMIC PLAUSIBILITY SCREEN (if owner authorizes).
+
+---
+
+*Authoritative for next session. Updated 2026-09-02 (V35 G0 integrity audit). V35 G0 integrity audit complete: CAND-103 G1 ELIGIBLE, CAND-104 G1 ELIGIBLE. V35 G1 AUTHORIZED. V34 CLOSED. V33 CLOSED. V32 CLOSED / VERIFIED. V31 CLOSED / VERIFIED. V30 CLOSED / VERIFIED. State objects preserved. SEED-002 negative. Forward runtime protected. 0 G2 promotions across all cycles. Next authorized: V35 G1 — ECONOMIC PLAUSIBILITY SCREEN (if owner authorizes).*
