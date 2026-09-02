@@ -92,9 +92,9 @@ Next session must NOT:
 > **V33 G0 INTEGRITY AUDIT: CAND-098 G1 ELIGIBLE, CAND-099 G1 ELIGIBLE, CAND-100 DATA INFEASIBLE (bid-ask spread unavailable)**
 > **V33 G1: CAND-098 CLOSED — ECONOMICALLY NEGATIVE (hypothesis supported on distribution width but economically insufficient). CAND-099 CLOSED — HYPOTHESIS CONTRADICTED / INFORMATIONALLY INTERESTING (sharp transitions massively outperform smooth, opposite of hypothesized direction).**
 > **G0 PROCESS REFINEMENT: Mechanism-Observable Challenge introduced (8 adversarial questions + proxy confidence). NOT a hard gate. Effective V34 G0 onward.**
-> **V34 G0 INTEGRITY AUDIT: CAND-101 G1 ELIGIBLE, CAND-102 G1 ELIGIBLE (with trend-control caveat).**
+> **V34 G1: CAND-101 CLOSED — ECONOMICALLY NEGATIVE (mean delta -0.02 bps). CAND-102 CLOSED — HYPOTHESIS CONTRADICTED (non-monotonic run-length pattern).**
 
-Today's session (2026-09-02) completed: V34 G0 (2 candidates) and V34 G0 integrity audit. CAND-101 MATERIALLY DISTINCT BUT ADJACENT — event ORDER never tested, 14 Event Sequence candidates tested detection/count only. CAND-102 MATERIALLY DISTINCT BUT ADJACENT — tests persistence (opposite of CAND-091 exhaustion), with trend-control caveat. V34 G1 AUTHORIZED.
+Today's session (2026-09-02) completed: V34 G0, V34 G0 integrity audit, V34 G1. CAND-101 sequence order produces virtually no economic separation. CAND-102 shows no monotonic persistence pattern. V34 permanently closed. 0 G2 promotions across all cycles.
 
 ---
 
@@ -537,7 +537,7 @@ The two mechanisms are genuinely independent:
 
 ## 19. PERMITTED NEXT TASKS
 
-- **V34 G1 — ECONOMIC PLAUSIBILITY SCREEN for CAND-101 and CAND-102 (if owner authorizes)**
+- **V35 G0 — NEW DISCOVERY (if owner authorizes)**
 - Formal State hypothesis registration for CAND-077 (if owner authorizes)
 - Formal State hypothesis registration for CAND-081 (if owner authorizes)
 - Formal State hypothesis registration for CAND-083 (if owner authorizes)
@@ -1093,4 +1093,27 @@ No V19–V33 candidate is retroactively scored against this framework.
 
 ---
 
-*Authoritative for next session. Updated 2026-09-02 (V34 G0 integrity audit). V34 G0 integrity audit complete: CAND-101 G1 ELIGIBLE, CAND-102 G1 ELIGIBLE (with trend-control caveat). V34 G1 AUTHORIZED. V33 CLOSED. V32 CLOSED / VERIFIED. V31 CLOSED / VERIFIED. V30 CLOSED / VERIFIED. State objects preserved (CAND-077/081/083 STATE REVIEW ELIGIBLE). SEED-002 negative. Forward runtime protected. Next authorized: V34 G1 — ECONOMIC PLAUSIBILITY SCREEN (if owner authorizes).*
+## 39. V34 G1 — ECONOMIC PLAUSIBILITY SCREEN
+
+**Status:** COMPLETE — BOTH CANDIDATES CLOSED
+
+| Candidate | Decision | Rationale |
+|---|---|---|
+| CAND-101 (Path-Dependent Sequence Asymmetry) | **CLOSED — ECONOMICALLY NEGATIVE** | Mean delta -0.02 bps (essentially zero). Sequence order produces virtually no economic separation. Distribution width difference (B->R tighter) consistent with hypothesis but does not translate to economics. Massive sample imbalance (62:1). |
+| CAND-102 (Directional Momentum Persistence) | **CLOSED — HYPOTHESIS CONTRADICTED** | No monotonic relationship between run length and forward returns. Returns peak at run length 5 (+3.21 bps) but decline afterward. Non-monotonic pattern inconsistent with persistence hypothesis. Cannot isolate from ordinary trend dynamics. |
+
+**Key evidence:**
+- CAND-101: B->R N=556, Net Mean=-1.42 bps. R->B N=34,635, Net Mean=-1.40 bps. Mean delta=-0.02 bps. 9/9 hard gates PASS.
+- CAND-102: Run lengths 3-10 tested. No monotonic pattern. Run length 5: N=1,969, Gross Mean=+3.21 bps. Run length 6: N=1,048, Gross Mean=-0.62 bps. 9/9 hard gates PASS.
+- Both candidates pass all 9 hard validity gates. Failures are in economic evidence, not measurement.
+- V34 permanently closed. 0 G2 promotions.
+
+**Artifacts:**
+- V34 G1 Screen: `output/research_discovery/QUANTFORGE_V34_G1_ECONOMIC_SCREEN_V1.md`
+- Script: `research/v34_g1_experiment.py`
+
+**Next:** V35 G0 — NEW DISCOVERY (if owner authorizes).
+
+---
+
+*Authoritative for next session. Updated 2026-09-02 (V34 G1). V34 G1 complete: CAND-101 ECONOMICALLY NEGATIVE, CAND-102 HYPOTHESIS CONTRADICTED. V34 CLOSED. V33 CLOSED. V32 CLOSED / VERIFIED. V31 CLOSED / VERIFIED. V30 CLOSED / VERIFIED. State objects preserved (CAND-077/081/083 STATE REVIEW ELIGIBLE). SEED-002 negative. Forward runtime protected. 0 G2 promotions across all cycles. Next authorized: V35 G0 — NEW DISCOVERY (if owner authorizes).*

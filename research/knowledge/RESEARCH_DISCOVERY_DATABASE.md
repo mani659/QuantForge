@@ -1876,3 +1876,26 @@ Artifact: `output/research_discovery/QUANTFORGE_V31_G1_ADJUDICATION_INTEGRITY_AU
 
 **Next:** V34 G1 — ECONOMIC PLAUSIBILITY SCREEN (if owner authorizes).
 
+---
+
+## V34 G1 — Economic Plausibility Screen (2026-09-02)
+
+**Status:** COMPLETE — BOTH CANDIDATES CLOSED — V34 CLOSED / VERIFIED
+
+| Candidate | Decision | Rationale |
+|---|---|---|
+| CAND-101 (Path-Dependent Sequence Asymmetry) | **CLOSED — ECONOMICALLY NEGATIVE** | Mean delta -0.02 bps (essentially zero). Sequence order produces virtually no economic separation. Distribution width difference consistent with hypothesis but does not translate to economics. |
+| CAND-102 (Directional Momentum Persistence) | **CLOSED — HYPOTHESIS CONTRADICTED** | No monotonic relationship between run length and forward returns. Non-monotonic pattern inconsistent with persistence hypothesis. Cannot isolate from ordinary trend dynamics. |
+
+**Key evidence:**
+- CAND-101: B->R N=556, Net Mean=-1.42 bps. R->B N=34,635, Net Mean=-1.40 bps. Mean delta=-0.02 bps. 9/9 hard gates PASS.
+- CAND-102: Run lengths 3-10 tested. No monotonic pattern. Run length 5: N=1,969, Gross Mean=+3.21 bps. Run length 6: N=1,048, Gross Mean=-0.62 bps. 9/9 hard gates PASS.
+- Both candidates pass all 9 hard validity gates. Failures are in economic evidence, not measurement.
+- V34 permanently closed. 0 G2 promotions.
+
+**Artifacts:**
+- V34 G1 Screen: `output/research_discovery/QUANTFORGE_V34_G1_ECONOMIC_SCREEN_V1.md`
+- Script: `research/v34_g1_experiment.py`
+
+**Next:** V35 G0 — NEW DISCOVERY (if owner authorizes).
+
