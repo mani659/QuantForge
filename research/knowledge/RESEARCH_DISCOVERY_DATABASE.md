@@ -1970,3 +1970,33 @@ Artifact: `output/research_discovery/QUANTFORGE_V31_G1_ADJUDICATION_INTEGRITY_AU
 
 **Next:** V36 G0 — NEW DISCOVERY (if owner authorizes).
 
+---
+
+## V36 G0 — Search-Space Diversification / New Mechanism Discovery (2026-09-02)
+
+**Status:** G0 COMPLETE — 3 NEW CANDIDATES FROM NEW INFORMATION DIMENSIONS
+
+**Candidates (V36 G0):**
+
+| ID | Name | Expression Class | Mechanism Family | New Dimension | G0 Disposition |
+|---|---|---|---|---|---|
+| CAND-105 | Cross-Asset Lead-Lag Asymmetry | STATE / CONDITION | Cross-Asset Information Flow | Cross-sectional info flow | **G1 ELIGIBLE** |
+| CAND-106 | Intra-Bar Price Distribution Quality | STATE / CONDITION | Bar-Internal Structure | Bar-internal distribution | **G1 ELIGIBLE** |
+| CAND-107 | Cross-Asset Volatility Co-movement Regime | STATE / CONDITION | Cross-Asset Volatility Dynamics | Cross-asset vol correlation | **G1 ELIGIBLE** |
+
+**Key: V36 deliberately broke the V19-V35 structural-OHLC search pattern.** All three candidates test genuinely new information dimensions using cross-asset data and bar-internal structure.
+
+**Mechanism-Observable Challenge applied:** Yes.
+- CAND-105: Proxy MODERATE, Mechanism MODERATE, Observable Potential MODERATE
+- CAND-106: Proxy MODERATE, Mechanism MODERATE, Observable Potential MODERATE
+- CAND-107: Proxy MODERATE, Mechanism MODERATE, Observable Potential MODERATE
+
+**State library:** UNCHANGED (CAND-077/081/083 STATE REVIEW ELIGIBLE)
+**Forward runtime:** UNTOUCHED
+**SEED-002:** TESTED NEGATIVE — NO INCREMENTAL INFORMATION
+**APEX RB001–RB004:** DESIGNED / NOT EXECUTED
+
+**Artifact:** `output/research_discovery/TRADEABLE_EDGE_DISCOVERY_SCREENING_V36.md`
+
+**Next:** V36 G0 INTEGRITY / PRIOR-ART AUDIT (if owner authorizes).
+

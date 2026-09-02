@@ -94,3 +94,6 @@ CAND-101,Path-Dependent Sequence Asymmetry,STATE/CONDITION,Path-Dependent Sequen
 CAND-102,Directional Momentum Persistence,STATE/CONDITION,Directional Dynamics,V34 G0,NEW — G1 ELIGIBLE,MODERATE,MODERATE,HIGH,V34 G0 Discovery,2026-09-02
 CAND-103,Multi-Timeframe Break Coordination,STATE/CONDITION,Multi-Timeframe Interaction,V35 G0,NEW - G1 ELIGIBLE,MODERATE,MODERATE,MODERATE,V35 G0 Discovery,2026-09-02
 CAND-104,Post-Magnitude Directional Drift,STATE/CONDITION,Directional Dynamics,V35 G0,NEW - G1 ELIGIBLE,MODERATE,MODERATE,MODERATE,V35 G0 Discovery,2026-09-02
+CAND-105,Cross-Asset Lead-Lag Asymmetry,STATE/CONDITION,Cross-Asset Information Flow,V36 G0,NEW - G1 ELIGIBLE,MODERATE,MODERATE,MODERATE,V36 G0 Discovery,2026-09-02
+CAND-106,Intra-Bar Price Distribution Quality,STATE/CONDITION,Bar-Internal Structure,V36 G0,NEW - G1 ELIGIBLE,MODERATE,MODERATE,MODERATE,V36 G0 Discovery,2026-09-02
+CAND-107,Cross-Asset Volatility Co-movement Regime,STATE/CONDITION,Cross-Asset Volatility Dynamics,V36 G0,NEW - G1 ELIGIBLE,MODERATE,MODERATE,MODERATE,V36 G0 Discovery,2026-09-02

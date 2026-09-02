@@ -96,9 +96,9 @@ Next session must NOT:
 > **V33 G0 INTEGRITY AUDIT: CAND-098 G1 ELIGIBLE, CAND-099 G1 ELIGIBLE, CAND-100 DATA INFEASIBLE (bid-ask spread unavailable)**
 > **V33 G1: CAND-098 CLOSED — ECONOMICALLY NEGATIVE (hypothesis supported on distribution width but economically insufficient). CAND-099 CLOSED — HYPOTHESIS CONTRADICTED / INFORMATIONALLY INTERESTING (sharp transitions massively outperform smooth, opposite of hypothesized direction).**
 > **G0 PROCESS REFINEMENT: Mechanism-Observable Challenge introduced (8 adversarial questions + proxy confidence). NOT a hard gate. Effective V34 G0 onward.**
-> **V35 G1: CAND-103 CLOSED — ECONOMICALLY NEGATIVE (mean delta -0.13 bps). CAND-104 CLOSED — HYPOTHESIS CONTRADICTED (large moves followed by mean reversion).**
+> **V36 G0: 3 NEW CANDIDATES FROM NEW DIMENSIONS — CAND-105 (Cross-Asset Lead-Lag), CAND-106 (Intra-Bar Distribution), CAND-107 (Cross-Asset Vol Co-movement). ALL G1 ELIGIBLE.**
 
-Today's session (2026-09-02) completed: V35 G0, V35 G0 integrity audit, V35 G1. CAND-103 multi-timeframe breaks produce virtually no economic separation. CAND-104 large moves followed by mean reversion at 2x-3x ATR. V35 permanently closed. 0 G2 promotions across all cycles.
+Today's session (2026-09-02) completed: V36 G0 (3 candidates from new information dimensions). V36 deliberately broke the V19-V35 structural-OHLC pattern. First cycle using cross-asset data (XAUUSD + USATECHIDXUSD). All three test genuinely new dimensions: cross-asset info flow, bar-internal structure, cross-asset vol co-movement.
 
 ---
 
@@ -541,7 +541,7 @@ The two mechanisms are genuinely independent:
 
 ## 19. PERMITTED NEXT TASKS
 
-- **V36 G0 — NEW DISCOVERY (if owner authorizes)**
+- **V36 G0 INTEGRITY / PRIOR-ART AUDIT for CAND-105, CAND-106, and CAND-107 (if owner authorizes)**
 - Formal State hypothesis registration for CAND-077 (if owner authorizes)
 - Formal State hypothesis registration for CAND-081 (if owner authorizes)
 - Formal State hypothesis registration for CAND-083 (if owner authorizes)
@@ -1183,4 +1183,26 @@ No V19–V33 candidate is retroactively scored against this framework.
 
 ---
 
-*Authoritative for next session. Updated 2026-09-02 (V35 G1). V35 G1 complete: CAND-103 ECONOMICALLY NEGATIVE, CAND-104 HYPOTHESIS CONTRADICTED. V35 CLOSED. V34 CLOSED. V33 CLOSED. V32 CLOSED / VERIFIED. V31 CLOSED / VERIFIED. V30 CLOSED / VERIFIED. State objects preserved. SEED-002 negative. Forward runtime protected. 0 G2 promotions across all cycles. Next authorized: V36 G0 — NEW DISCOVERY (if owner authorizes).*
+## 43. V36 G0 — SEARCH-SPACE DIVERSIFICATION / NEW MECHANISM DISCOVERY
+
+**Status:** G0 COMPLETE — 3 NEW CANDIDATES FROM NEW INFORMATION DIMENSIONS
+
+**V36 deliberately broke the V19-V35 structural-OHLC search pattern.**
+
+| ID | Name | New Dimension | Type | Mechanism Confidence | Proxy Confidence | Observable Information Potential | G1 Status |
+|---|---|---|---|---|---|---|---|
+| CAND-105 | Cross-Asset Lead-Lag Asymmetry | Cross-sectional info flow | STATE / CONDITION | MODERATE | MODERATE | MODERATE | G1 ELIGIBLE |
+| CAND-106 | Intra-Bar Price Distribution Quality | Bar-internal structure | STATE / CONDITION | MODERATE | MODERATE | MODERATE | G1 ELIGIBLE |
+| CAND-107 | Cross-Asset Volatility Co-movement Regime | Cross-asset vol correlation | STATE / CONDITION | MODERATE | MODERATE | MODERATE | G1 ELIGIBLE |
+
+**Key: All three candidates test genuinely new information dimensions using cross-asset data (XAUUSD + USATECHIDXUSD) and bar-internal structure that have never been explored in V19-V35.**
+
+**Mechanism-Observable Challenge applied:** Yes.
+
+**Artifact:** `output/research_discovery/TRADEABLE_EDGE_DISCOVERY_SCREENING_V36.md`
+
+**Next:** V36 G0 INTEGRITY / PRIOR-ART AUDIT (if owner authorizes).
+
+---
+
+*Authoritative for next session. Updated 2026-09-02 (V36 G0). V36 G0 complete: CAND-105 Cross-Asset Lead-Lag Asymmetry G1 ELIGIBLE, CAND-106 Intra-Bar Price Distribution Quality G1 ELIGIBLE, CAND-107 Cross-Asset Volatility Co-movement Regime G1 ELIGIBLE. V35 CLOSED. V34 CLOSED. V33 CLOSED. V32 CLOSED / VERIFIED. V31 CLOSED / VERIFIED. V30 CLOSED / VERIFIED. State objects preserved. SEED-002 negative. Forward runtime protected. 0 G2 promotions across all cycles. First cycle using cross-asset data. Next authorized: V36 G0 INTEGRITY / PRIOR-ART AUDIT (if owner authorizes).*
