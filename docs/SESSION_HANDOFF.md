@@ -38,7 +38,7 @@
 31. `b7edfca` — V33 G0 integrity audit
 32. `0a34f32` — V33 G1 economic plausibility screen
 33. `3a53f40` — V33 G1 economic plausibility screen (final)
-34. `pending` — G0 process refinement (Mechanism-Observable Challenge)
+34. `3e63905` — G0 process refinement (Mechanism-Observable Challenge)
 
 ---
 
