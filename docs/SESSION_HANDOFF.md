@@ -33,6 +33,7 @@
 26. `bb3b940` — V32 G0 knowledge-gap discovery
 27. `a4756c7` — V32 G0 integrity audit
 28. `4a2cdce` — V32 G1 economic plausibility screen
+29. `1a06b93` — session-close documentation reconciliation
 
 ---
 
@@ -101,7 +102,8 @@ The system may ultimately consist of one exceptional strategy or multiple indepe
 
 ## 2. CURRENT REPOSITORY STATE
 
-- **HEAD:** `4a2cdce` — `research: complete V32 G1 economic plausibility screen`
+- **HEAD:** `1a06b93` — `docs: close 2026-08-31 research session`
+- **V32 G1 commit:** `4a2cdce` — `research: complete V32 G1 economic plausibility screen`
 - **Branch:** `main` (linear history)
 - **Uncommitted:** runtime/forward data (CAND-015 health, event ledgers), research scripts, scratch files — correctly excluded from governance commits
 - **No source code, tests, or contracts modified by research tasks**
