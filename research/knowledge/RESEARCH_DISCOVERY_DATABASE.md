@@ -1753,3 +1753,25 @@ Artifact: `output/research_discovery/QUANTFORGE_V31_G1_ADJUDICATION_INTEGRITY_AU
 **Artifact:** `output/research_discovery/TRADEABLE_EDGE_DISCOVERY_SCREENING_V33.md`
 
 **Next:** V33 G0 INTEGRITY / PRIOR-ART AUDIT.
+
+---
+
+## V33 G0 Integrity / Prior-Art Audit (2026-09-01)
+
+**Status:** V33 G0 INTEGRITY AUDIT COMPLETE — 2 G1-ELIGIBLE, 1 DATA-INFEASIBLE
+
+| Candidate | Disposition | Rationale |
+|---|---|---|
+| CAND-098 | **G1 ELIGIBLE** | Clearly novel — multi-event cumulative load vs single-event temporal decay |
+| CAND-099 | **G1 ELIGIBLE** | Materially distinct from CAND-077/096 — transition quality vs regime state vs acceleration |
+| CAND-100 | **DATA INFEASIBLE** | Core observable (bid-ask spread) unavailable. OHLC proxy conflates with volatility research. |
+
+**CAND-100 closure reason:** Bid-ask spread data is not available in the governed dataset. OHLC proxy (high-low range) is a volatility measure, not a spread measure.
+
+**V33 G1 authorized for:** CAND-098, CAND-099 only.
+**Candidate count:** 2 G1-eligible.
+
+**Artifact:** `output/research_discovery/QUANTFORGE_V33_G0_INTEGRITY_AUDIT_V1.md`
+
+**Next:** V33 G1 — ECONOMIC PLAUSIBILITY SCREEN for CAND-098 and CAND-099.
+

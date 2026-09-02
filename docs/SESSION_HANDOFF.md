@@ -35,6 +35,7 @@
 28. `4a2cdce` — V32 G1 economic plausibility screen
 29. `1a06b93` — session-close documentation reconciliation
 30. `a77384d` — V33 G0 knowledge-gap discovery
+31. `b7edfca` — V33 G0 integrity audit
 
 ---
 
@@ -84,6 +85,7 @@ Next session must NOT:
 > **V32: 0 G2 promotions. 2 candidates tested, 2 closed. CAND-096 shows genuine conditional information in opposite direction.**
 > **V33 G0: 3 NEW CANDIDATES — CAND-098 (Event-Cluster Response Degradation), CAND-099 (Volatility Regime Transition Quality), CAND-100 (Spread-Conditioned Execution Stress)**
 > **V33 G1: NOT EXECUTED**
+> **V33 G0 INTEGRITY AUDIT: CAND-098 G1 ELIGIBLE, CAND-099 G1 ELIGIBLE, CAND-100 DATA INFEASIBLE (bid-ask spread unavailable)**
 
 Today's session (2026-08-31) completed: V32 G0 (knowledge-gap discovery, 3 candidates), V32 G0 integrity audit (CAND-097 rejected as REDUNDANT with DISC-021, 2 eligible), V32 G1 economic plausibility screen (CAND-095 ECONOMICALLY NEGATIVE, CAND-096 HYPOTHESIS CONTRADICTED / INFORMATIONALLY INTERESTING). CAND-096 semantic check against CAND-077 PASS — acceleration is distinct from regime transition. V32 permanently closed. Session-close reconciliation and GitHub push completed.
 
@@ -528,8 +530,8 @@ The two mechanisms are genuinely independent:
 
 ## 19. PERMITTED NEXT TASKS
 
-- **V33 G0 INTEGRITY / PRIOR-ART AUDIT (next governed step)**
-- V33 G1 — ECONOMIC PLAUSIBILITY SCREEN (after G0 integrity audit passes)
+- **V33 G1 — ECONOMIC PLAUSIBILITY SCREEN for CAND-098 and CAND-099 (authorized)**
+- V34 G0 — NEW DISCOVERY (if owner authorizes after V33 G1)
 - Formal State hypothesis registration for CAND-077 (if owner authorizes)
 - Formal State hypothesis registration for CAND-081 (if owner authorizes)
 - Formal State hypothesis registration for CAND-083 (if owner authorizes)
@@ -882,7 +884,26 @@ Volume data unavailable / zero for both USATECHIDXUSD and XAUUSD M1 data. Do not
 
 ---
 
-## 34. V33 G0 — KNOWLEDGE-GAP / ECONOMIC-MECHANISM DISCOVERY
+## 34. V33 G0 INTEGRITY / PRIOR-ART AUDIT
+
+**Status:** AUDIT COMPLETE — 2 G1-ELIGIBLE, 1 DATA-INFEASIBLE
+
+| Candidate | Disposition | Rationale |
+|---|---|---|
+| CAND-098 | **G1 ELIGIBLE** | Clearly novel — multi-event cumulative load vs single-event temporal decay |
+| CAND-099 | **G1 ELIGIBLE** | Materially distinct from CAND-077/096 — transition quality vs regime state vs acceleration |
+| CAND-100 | **DATA INFEASIBLE** | Core observable (bid-ask spread) unavailable. OHLC proxy conflates with volatility research. |
+
+**CAND-100 closure reason:** Bid-ask spread data is not available in the governed dataset (confirmed in data_feed.py: `"spread": "unavailable"`). The proposed OHLC proxy (high-low range) is a volatility measure, not a spread measure, and would collapse the hypothesis into existing CAND-077/CAND-096 research. The mechanism (forced positioning, liquidity stress) requires actual spread information.
+
+**V33 G1 authorized for:** CAND-098, CAND-099 only.
+**Candidate count:** 2 G1-eligible (within 2-4 target range). No replacement generated.
+
+**Artifact:** `output/research_discovery/QUANTFORGE_V33_G0_INTEGRITY_AUDIT_V1.md`
+
+---
+
+## 35. V33 G0 — KNOWLEDGE-GAP / ECONOMIC-MECHANISM DISCOVERY
 
 **Status:** G0 COMPLETE — 3 NEW CANDIDATES FROM KNOWLEDGE-GAP ANALYSIS
 
@@ -932,4 +953,4 @@ Key negative knowledge:
 
 ---
 
-*Authoritative for next session. Updated 2026-09-01 (V33 G0). V33 G0 complete: 3 new candidates from knowledge-gap analysis (CAND-098/099/100). V32 CLOSED / VERIFIED. V31 CLOSED / VERIFIED. V30 CLOSED / VERIFIED. State objects preserved (CAND-077/081/083 STATE REVIEW ELIGIBLE). SEED-002 negative. Forward runtime protected. Next authorized: V33 G0 INTEGRITY / PRIOR-ART AUDIT.*
+*Authoritative for next session. Updated 2026-09-01 (V33 G0 integrity audit). V33 G0 integrity audit complete: CAND-098 G1 ELIGIBLE, CAND-099 G1 ELIGIBLE, CAND-100 DATA INFEASIBLE. V32 CLOSED / VERIFIED. V31 CLOSED / VERIFIED. V30 CLOSED / VERIFIED. State objects preserved (CAND-077/081/083 STATE REVIEW ELIGIBLE). SEED-002 negative. Forward runtime protected. Next authorized: V33 G1 for CAND-098 and CAND-099.*
