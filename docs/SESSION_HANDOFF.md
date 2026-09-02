@@ -119,7 +119,7 @@ The system may ultimately consist of one exceptional strategy or multiple indepe
 
 ## 2. CURRENT REPOSITORY STATE
 
-- **HEAD:** `3b94733` — `docs: audit V36 G0 candidate novelty — first cross-asset dimension`
+- **HEAD:** `1d7e900` — `docs: update SESSION_HANDOFF with V36 G0 integrity audit result (CAND-107 REDUNDANT)`
 - **V32 G1 commit:** `4a2cdce` — `research: complete V32 G1 economic plausibility screen`
 - **Branch:** `main` (linear history)
 - **Uncommitted:** runtime/forward data (CAND-015 health, event ledgers), research scripts, scratch files — correctly excluded from governance commits
