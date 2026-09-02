@@ -43,6 +43,7 @@
 36. `e9c3688` — V34 G0 integrity audit
 37. `7e345f0` — V34 G1 economic plausibility screen
 38. `a29f707` — V35 G0 discovery
+39. `4ca1d3e` — V35 G0 integrity audit
 
 ---
 
