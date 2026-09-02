@@ -2000,3 +2000,21 @@ Artifact: `output/research_discovery/QUANTFORGE_V31_G1_ADJUDICATION_INTEGRITY_AU
 
 **Next:** V36 G0 INTEGRITY / PRIOR-ART AUDIT (if owner authorizes).
 
+---
+
+## V36 G0 Integrity / Prior-Art Audit (2026-09-02)
+
+**Status:** AUDIT COMPLETE — ALL THREE CANDIDATES G1-ELIGIBLE
+
+| Candidate | New Dimension | Mechanism Novelty | Observable Novelty | Final Disposition |
+|---|---|---|---|---|
+| CAND-105 | Cross-asset returns | CLEARLY NOVEL | CLEARLY NOVEL | **G1 ELIGIBLE** |
+| CAND-106 | Bar-internal structure | CLEARLY NOVEL | CLEARLY NOVEL | **G1 ELIGIBLE** |
+| CAND-107 | Cross-asset vol correlation | CLEARLY NOVEL | CLEARLY NOVEL | **G1 ELIGIBLE** |
+
+**Cross-asset data validated:** XAUUSD M1 + USATECHIDXUSD M1 with overlap 2023-09-01 to 2026-04-10.
+
+**Artifact:** `output/research_discovery/QUANTFORGE_V36_G0_INTEGRITY_AUDIT_V1.md`
+
+**Next:** V36 G1 — ECONOMIC PLAUSIBILITY SCREEN (if owner authorizes).
+
