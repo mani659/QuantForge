@@ -36,6 +36,7 @@
 29. `1a06b93` — session-close documentation reconciliation
 30. `a77384d` — V33 G0 knowledge-gap discovery
 31. `b7edfca` — V33 G0 integrity audit
+32. `0a34f32` — V33 G1 economic plausibility screen
 
 ---
 
@@ -84,8 +85,8 @@ Next session must NOT:
 > **SEED-002: TESTED NEGATIVE — NO INCREMENTAL INFORMATION**
 > **V32: 0 G2 promotions. 2 candidates tested, 2 closed. CAND-096 shows genuine conditional information in opposite direction.**
 > **V33 G0: 3 NEW CANDIDATES — CAND-098 (Event-Cluster Response Degradation), CAND-099 (Volatility Regime Transition Quality), CAND-100 (Spread-Conditioned Execution Stress)**
-> **V33 G1: NOT EXECUTED**
 > **V33 G0 INTEGRITY AUDIT: CAND-098 G1 ELIGIBLE, CAND-099 G1 ELIGIBLE, CAND-100 DATA INFEASIBLE (bid-ask spread unavailable)**
+> **V33 G1: CAND-098 CLOSED — ECONOMICALLY NEGATIVE (hypothesis supported on distribution width but economically insufficient). CAND-099 CLOSED — HYPOTHESIS CONTRADICTED / INFORMATIONALLY INTERESTING (sharp transitions massively outperform smooth, opposite of hypothesized direction).**
 
 Today's session (2026-08-31) completed: V32 G0 (knowledge-gap discovery, 3 candidates), V32 G0 integrity audit (CAND-097 rejected as REDUNDANT with DISC-021, 2 eligible), V32 G1 economic plausibility screen (CAND-095 ECONOMICALLY NEGATIVE, CAND-096 HYPOTHESIS CONTRADICTED / INFORMATIONALLY INTERESTING). CAND-096 semantic check against CAND-077 PASS — acceleration is distinct from regime transition. V32 permanently closed. Session-close reconciliation and GitHub push completed.
 
@@ -530,8 +531,10 @@ The two mechanisms are genuinely independent:
 
 ## 19. PERMITTED NEXT TASKS
 
-- **V33 G1 — ECONOMIC PLAUSIBILITY SCREEN for CAND-098 and CAND-099 (authorized)**
-- V34 G0 — NEW DISCOVERY (if owner authorizes after V33 G1)
+- **V34 G0 — NEW DISCOVERY (if owner authorizes)**
+- Formal State hypothesis registration for CAND-077 (if owner authorizes)
+- Formal State hypothesis registration for CAND-081 (if owner authorizes)
+- Formal State hypothesis registration for CAND-083 (if owner authorizes)
 - Formal State hypothesis registration for CAND-077 (if owner authorizes)
 - Formal State hypothesis registration for CAND-081 (if owner authorizes)
 - Formal State hypothesis registration for CAND-083 (if owner authorizes)
@@ -884,7 +887,28 @@ Volume data unavailable / zero for both USATECHIDXUSD and XAUUSD M1 data. Do not
 
 ---
 
-## 34. V33 G0 INTEGRITY / PRIOR-ART AUDIT
+## 34. V33 G1 — ECONOMIC PLAUSIBILITY SCREEN
+
+**Status:** V33 G1 COMPLETE — BOTH CANDIDATES CLOSED
+
+| Candidate | Decision | Rationale |
+|---|---|---|
+| CAND-098 (Event-Cluster Response Degradation) | **CLOSED — ECONOMICALLY NEGATIVE** | Hypothesis supported on distribution width (clustered events produce wider distributions), but absolute economics negative and conditional delta insufficient for State qualification. Mean delta=-1.11 bps, Median delta=-0.30 bps, WR delta=-1.2%. |
+| CAND-099 (Volatility Regime Transition Quality) | **CLOSED — HYPOTHESIS CONTRADICTED / INFORMATIONALLY INTERESTING** | Sharp transitions massively outperform smooth transitions. Mean delta=-18.08 bps (control superior), Median delta=-30.52 bps, WR delta=-59.0% (99% vs 40%). Hypothesis direction WRONG. N=100 per group (marginal). |
+
+**Key evidence:**
+- CAND-098: Treatment N=8,392, Control N=1,017. Clustered events produce wider distributions (std 32.69 vs 24.93 bps) but worse economics. 9/9 hard gates PASS.
+- CAND-099: Treatment N=100, Control N=100. Sharp transitions produce +16.39 bps net mean with 99% WR. Smooth transitions produce -1.69 bps net mean with 40% WR. 9/9 hard gates PASS (marginal on sample adequacy).
+- CAND-099 semantic check against CAND-077/096 PASS — implementation measures transition quality, not regime state or acceleration.
+- State potential: NOT JUSTIFIED for either candidate.
+
+**Artifacts:**
+- V33 G1 Screen: `output/research_discovery/RESEARCH_FACTORY_V2_G1_SCREEN_20260901_V33.md`
+- Script: `research/v33_g1_experiment.py`
+
+---
+
+## 35. V33 G0 INTEGRITY / PRIOR-ART AUDIT
 
 **Status:** AUDIT COMPLETE — 2 G1-ELIGIBLE, 1 DATA-INFEASIBLE
 
@@ -953,4 +977,4 @@ Key negative knowledge:
 
 ---
 
-*Authoritative for next session. Updated 2026-09-01 (V33 G0 integrity audit). V33 G0 integrity audit complete: CAND-098 G1 ELIGIBLE, CAND-099 G1 ELIGIBLE, CAND-100 DATA INFEASIBLE. V32 CLOSED / VERIFIED. V31 CLOSED / VERIFIED. V30 CLOSED / VERIFIED. State objects preserved (CAND-077/081/083 STATE REVIEW ELIGIBLE). SEED-002 negative. Forward runtime protected. Next authorized: V33 G1 for CAND-098 and CAND-099.*
+*Authoritative for next session. Updated 2026-09-01 (V33 G1). V33 G1 complete: CAND-098 ECONOMICALLY NEGATIVE, CAND-099 HYPOTHESIS CONTRADICTED / INFORMATIONALLY INTERESTING. V33 CLOSED. V32 CLOSED / VERIFIED. V31 CLOSED / VERIFIED. V30 CLOSED / VERIFIED. State objects preserved (CAND-077/081/083 STATE REVIEW ELIGIBLE). SEED-002 negative. Forward runtime protected. Next authorized: V34 G0 — NEW DISCOVERY (if owner authorizes).*

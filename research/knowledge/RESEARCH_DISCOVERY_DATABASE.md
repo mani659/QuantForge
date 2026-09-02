@@ -1775,3 +1775,25 @@ Artifact: `output/research_discovery/QUANTFORGE_V31_G1_ADJUDICATION_INTEGRITY_AU
 
 **Next:** V33 G1 — ECONOMIC PLAUSIBILITY SCREEN for CAND-098 and CAND-099.
 
+---
+
+## V33 G1 — Economic Plausibility Screen (2026-09-01)
+
+**Status:** V33 G1 COMPLETE — BOTH CANDIDATES CLOSED
+
+| Candidate | Decision | Rationale |
+|---|---|---|
+| CAND-098 (Event-Cluster Response Degradation) | **CLOSED — ECONOMICALLY NEGATIVE** | Hypothesis supported on distribution width (treatment wider) but economically insufficient. Mean delta=-1.11 bps, Median delta=-0.30 bps, WR delta=-1.2%. |
+| CAND-099 (Volatility Regime Transition Quality) | **CLOSED — HYPOTHESIS CONTRADICTED / INFORMATIONALLY INTERESTING** | Sharp transitions outperform smooth by +18.08 bps mean, 99% vs 40% WR. Hypothesis direction WRONG. N=100 per group. |
+
+**Key evidence:**
+- CAND-098: Treatment N=8,392, Control N=1,017. Distribution width: treatment wider (std 32.69 vs 24.93). 9/9 hard gates PASS.
+- CAND-099: Treatment N=100, Control N=100. Sharp transitions: +16.39 bps net, 99% WR. Smooth: -1.69 bps net, 40% WR. 9/9 hard gates PASS.
+- CAND-100: DATA INFEASIBLE, not tested.
+
+**Artifacts:**
+- V33 G1 Screen: `output/research_discovery/RESEARCH_FACTORY_V2_G1_SCREEN_20260901_V33.md`
+- Script: `research/v33_g1_experiment.py`
+
+**Next:** V34 G0 — NEW DISCOVERY (if owner authorizes).
+
