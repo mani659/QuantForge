@@ -95,9 +95,9 @@ Next session must NOT:
 > **V33 G0 INTEGRITY AUDIT: CAND-098 G1 ELIGIBLE, CAND-099 G1 ELIGIBLE, CAND-100 DATA INFEASIBLE (bid-ask spread unavailable)**
 > **V33 G1: CAND-098 CLOSED — ECONOMICALLY NEGATIVE (hypothesis supported on distribution width but economically insufficient). CAND-099 CLOSED — HYPOTHESIS CONTRADICTED / INFORMATIONALLY INTERESTING (sharp transitions massively outperform smooth, opposite of hypothesized direction).**
 > **G0 PROCESS REFINEMENT: Mechanism-Observable Challenge introduced (8 adversarial questions + proxy confidence). NOT a hard gate. Effective V34 G0 onward.**
-> **V35 G0 INTEGRITY AUDIT: CAND-103 G1 ELIGIBLE, CAND-104 G1 ELIGIBLE.**
+> **V35 G1: CAND-103 CLOSED — ECONOMICALLY NEGATIVE (mean delta -0.13 bps). CAND-104 CLOSED — HYPOTHESIS CONTRADICTED (large moves followed by mean reversion).**
 
-Today's session (2026-09-02) completed: V35 G0 (2 candidates) and V35 G0 integrity audit. CAND-103 CLEARLY NOVEL — cross-timeframe break coordination is genuinely distinct from all prior work. CAND-104 MATERIALLY DISTINCT BUT ADJACENT — volatility-adjusted magnitude is distinct from CAND-095 (direction) and standard momentum. V35 G1 AUTHORIZED.
+Today's session (2026-09-02) completed: V35 G0, V35 G0 integrity audit, V35 G1. CAND-103 multi-timeframe breaks produce virtually no economic separation. CAND-104 large moves followed by mean reversion at 2x-3x ATR. V35 permanently closed. 0 G2 promotions across all cycles.
 
 ---
 
@@ -540,7 +540,7 @@ The two mechanisms are genuinely independent:
 
 ## 19. PERMITTED NEXT TASKS
 
-- **V35 G1 — ECONOMIC PLAUSIBILITY SCREEN for CAND-103 and CAND-104 (if owner authorizes)**
+- **V36 G0 — NEW DISCOVERY (if owner authorizes)**
 - Formal State hypothesis registration for CAND-077 (if owner authorizes)
 - Formal State hypothesis registration for CAND-081 (if owner authorizes)
 - Formal State hypothesis registration for CAND-083 (if owner authorizes)
@@ -1159,4 +1159,27 @@ No V19–V33 candidate is retroactively scored against this framework.
 
 ---
 
-*Authoritative for next session. Updated 2026-09-02 (V35 G0 integrity audit). V35 G0 integrity audit complete: CAND-103 G1 ELIGIBLE, CAND-104 G1 ELIGIBLE. V35 G1 AUTHORIZED. V34 CLOSED. V33 CLOSED. V32 CLOSED / VERIFIED. V31 CLOSED / VERIFIED. V30 CLOSED / VERIFIED. State objects preserved. SEED-002 negative. Forward runtime protected. 0 G2 promotions across all cycles. Next authorized: V35 G1 — ECONOMIC PLAUSIBILITY SCREEN (if owner authorizes).*
+## 42. V35 G1 — ECONOMIC PLAUSIBILITY SCREEN
+
+**Status:** COMPLETE — BOTH CANDIDATES CLOSED
+
+| Candidate | Decision | Rationale |
+|---|---|---|
+| CAND-103 (Multi-Timeframe Break Coordination) | **CLOSED — ECONOMICALLY NEGATIVE** | Mean delta -0.13 bps (essentially zero). Multi-timeframe breaks produce virtually no economic separation from single-timeframe breaks. Distribution width similar (28.02 vs 28.80 bps). Hypothesis contradicted. |
+| CAND-104 (Post-Magnitude Directional Drift) | **CLOSED — HYPOTHESIS CONTRADICTED** | At 2x ATR: mean delta -5.41 bps (control superior). At 3x ATR: mean delta -5.14 bps (control superior). Large moves followed by mean reversion, not continuation. 4x ATR N=17 too small. |
+
+**Key evidence:**
+- CAND-103: Treatment N=5,049, Control N=9,128. Mean delta=-0.13 bps. 9/9 hard gates PASS.
+- CAND-104: At 2x ATR, Treatment N=265, Control N=14,846. Mean delta=-5.41 bps. 9/9 hard gates PASS.
+- Both candidates pass all 9 hard validity gates. Failures in economic evidence.
+- V35 permanently closed. 0 G2 promotions.
+
+**Artifacts:**
+- V35 G1 Screen: `output/research_discovery/QUANTFORGE_V35_G1_ECONOMIC_SCREEN_V1.md`
+- Script: `research/v35_g1_experiment.py`
+
+**Next:** V36 G0 — NEW DISCOVERY (if owner authorizes).
+
+---
+
+*Authoritative for next session. Updated 2026-09-02 (V35 G1). V35 G1 complete: CAND-103 ECONOMICALLY NEGATIVE, CAND-104 HYPOTHESIS CONTRADICTED. V35 CLOSED. V34 CLOSED. V33 CLOSED. V32 CLOSED / VERIFIED. V31 CLOSED / VERIFIED. V30 CLOSED / VERIFIED. State objects preserved. SEED-002 negative. Forward runtime protected. 0 G2 promotions across all cycles. Next authorized: V36 G0 — NEW DISCOVERY (if owner authorizes).*

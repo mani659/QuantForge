@@ -1948,3 +1948,25 @@ Artifact: `output/research_discovery/QUANTFORGE_V31_G1_ADJUDICATION_INTEGRITY_AU
 
 **Next:** V35 G1 — ECONOMIC PLAUSIBILITY SCREEN (if owner authorizes).
 
+---
+
+## V35 G1 — Economic Plausibility Screen (2026-09-02)
+
+**Status:** COMPLETE — BOTH CANDIDATES CLOSED — V35 CLOSED / VERIFIED
+
+| Candidate | Decision | Rationale |
+|---|---|---|
+| CAND-103 (Multi-Timeframe Break Coordination) | **CLOSED — ECONOMICALLY NEGATIVE** | Mean delta -0.13 bps (essentially zero). Multi-timeframe breaks produce virtually no economic separation. Distribution width similar. Hypothesis contradicted. |
+| CAND-104 (Post-Magnitude Directional Drift) | **CLOSED — HYPOTHESIS CONTRADICTED** | At 2x ATR: mean delta -5.41 bps (control superior). Large moves followed by mean reversion. 4x ATR N=17 too small. |
+
+**Key evidence:**
+- CAND-103: Treatment N=5,049, Control N=9,128. Mean delta=-0.13 bps. 9/9 hard gates PASS.
+- CAND-104: At 2x ATR, Treatment N=265, Control N=14,846. Mean delta=-5.41 bps. 9/9 hard gates PASS.
+- V35 permanently closed. 0 G2 promotions.
+
+**Artifacts:**
+- V35 G1 Screen: `output/research_discovery/QUANTFORGE_V35_G1_ECONOMIC_SCREEN_V1.md`
+- Script: `research/v35_g1_experiment.py`
+
+**Next:** V36 G0 — NEW DISCOVERY (if owner authorizes).
+
