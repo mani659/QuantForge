@@ -55,6 +55,7 @@
 48. `f192f3d` — V37A replication provenance freeze + execution manifest
 49. `bb73d06` — V37A adjudication (CAND-077 XAUUSD replication INCONCLUSIVE / ECONOMICALLY NEGATIVE)
 50. `c42c3c3` — V38 doctrine ratification (assembled-decision / relational qualification)
+51. `4da500b` — V38A base validation pathway ratification (BV1–BV13)
 
 ---
 
@@ -90,7 +91,7 @@ Next session must NOT:
 - Treat exploratory filter observations as validated strategies;
 - Execute relational testing, relational experiments, or any V38-doctrine experiment without a Base registry entry and owner authorization;
 - Create a Base or register any Base-registry entry outside a prospective validation study under the ratified V38A pathway (BV1–BV13);
-- Select, nominate, or create a Base hypothesis before the BASE HYPOTHESIS SELECTION / VALIDATION DESIGN milestone;
+- Select, nominate, or create a Base hypothesis except through the ratified BS1–BS13 selection pathway in a future BASE HYPOTHESIS SELECTION milestone (pathway ratified 2026-09-03; no hypothesis selected; registry EMPTY);
 - Use any closed artifact, H01 cell, ORD finding, or CAND-077/081/083/099 as a Base or positive relational input (retroactive Base creation prohibited);
 - Run exhaustive combination/permutation searches or rescue-framed (State × State) tests;
 - Reopen H01, ORD, CAND-077/081/083/099;
@@ -118,6 +119,7 @@ Next session must NOT:
 > **V37A REPLICATION (CAND-077 → XAUUSD M1): EXECUTED + ADJUDICATED — SCIENTIFIC: INCONCLUSIVE. ECONOMIC: ECONOMICALLY NEGATIVE. Primary net mean delta +0.67 bps (T −0.19 vs C −0.86; N 2,309 / 559 matched); median delta −1.37 bps; WR delta −2.9 pp; full-history net delta +0.06 bps. Cross-market line PAUSED. CAND-077 SRE unchanged (original USATECHIDXUSD evidence intact). State implication UNRESOLVED. No candidate generated. 0 G2.**
 > **V38 DOCTRINE (ASSEMBLED-DECISION / RELATIONAL QUALIFICATION): RATIFIED 2026-09-03 — HYBRID BASE + CONDITIONAL. BASE REGISTRY EMPTY. Conditional components need no standalone expectancy but qualify only by increment over a validated Base. No-Rescue rule; depth Level 1 default / Level 2 earned / Level 3+ separate governance; predeclared pairings only. H01 stays CLOSED; no retroactive Base from any closed artifact; CAND-077/081/083 SRE unchanged. G1 V3 intact. No experiment executed. No Base created. Next: V38A BASE VALIDATION PATHWAY DESIGN.**
 > **V38A BASE VALIDATION PATHWAY (BV1–BV13): RATIFIED 2026-09-03 — Base = registered deterministic decision process (never observation/state/hypothesis/Conditional/Alpha). No sign/magnitude/threshold of net expectancy determines Base eligibility; economics are evidence in holistic adjudication; no Alpha-lite; Motivation ≠ Validation; six stages; frozen opportunity population; one frozen cost model (not a profitability gate); structural No-Rescue. BASE REGISTRY EMPTY — no Base exists. No Base hypothesis authorized. Next: BASE HYPOTHESIS SELECTION / VALIDATION DESIGN.**
+> **BASE HYPOTHESIS SELECTION / VALIDATION DESIGN (BS1–BS13): RATIFIED 2026-09-03 — Selection is a governance act, not a performance contest. Object-type gate first; historical outcome ranking prohibited as a selection mechanism; three-role historical-result separation (blocker / priority / sealed-validation); closed research motivates, never promotes; prospective selection freeze precedes V38A registration; sign-inversion test for modern scope; anti-rescue (no weak process selected because a Conditional might fix it); SELECTED HYPOTHESIS ≠ VALIDATED BASE. BASE REGISTRY EMPTY — no Base exists — no Base hypothesis selected. Next: BASE HYPOTHESIS SELECTION (owner-authorized; first milestone where a hypothesis may actually be selected).**
 
 Today's session (2026-09-02) completed: V36 G0 (3 candidates from new dimensions), V36 G0 integrity audit (CAND-107 REDUNDANT), and V36 G1 (CAND-105/106 both CLOSED — ECONOMICALLY NEGATIVE). Cross-asset data validated (XAUUSD + USATECHIDXUSD M1, 827,517 aligned bars verified). V37 G0 is next authorized milestone.
 
@@ -562,7 +564,7 @@ The two mechanisms are genuinely independent:
 
 ## 19. PERMITTED NEXT TASKS
 
-- **BASE HYPOTHESIS SELECTION / VALIDATION DESIGN (next milestone, per V38A pathway ratification; if owner authorizes)**
+- **BASE HYPOTHESIS SELECTION (next milestone, per ratified BS1–BS13 selection pathway; the first milestone in which an actual Base hypothesis may be selected, owner-authorized, under V38A registration; if owner authorizes)**
 - **SRE-pool owner decision (still open, per V37A adjudication): CAND-077/081/083 State registration / Alpha-source question (if owner authorizes)**
 - Prospective Base-validation study registration under the ratified V38A pathway (BV1–BV13; only after Base Hypothesis Selection / Validation Design; if owner authorizes)
 - Relational / Base × Conditional experiments under V38 doctrine (only after ≥1 Base registry entry; if owner authorizes)
@@ -608,6 +610,9 @@ The two mechanisms are genuinely independent:
 - Invert CAND-099 hypothesis into a new candidate
 - Generate replacement candidates for CAND-100
 - Skip V34 G1 and jump to G2
+- Select a Base hypothesis by historical performance ranking (prohibited by ratified BS1–BS13: BS4/BS5)
+- Select, nominate, or create any Base hypothesis outside the ratified BS1–BS13 pathway or before the BASE HYPOTHESIS SELECTION milestone
+- Frame Base selection as rescue of a weak/losing process by a future Conditional (BS13)
 
 ---
 
@@ -708,6 +713,8 @@ Volume data unavailable / zero for both USATECHIDXUSD and XAUUSD M1 data. Do not
 | Pre-V38 Doctrine Proposal (SUPERSEDED BY V38, preserved unmodified) | `output/research_discovery/QUANTFORGE_STATE_ASSEMBLY_QUALIFICATION_DOCTRINE_PROPOSAL_V1.md` |
 | V38A Pathway Design (V1-r2) | `output/research_discovery/QUANTFORGE_V38A_BASE_VALIDATION_PATHWAY_DESIGN_V1.md` |
 | V38A Pathway Ratification | `output/research_discovery/QUANTFORGE_V38A_BASE_VALIDATION_PATHWAY_RATIFICATION_V1.md` |
+| Base Hypothesis Selection / Validation Design | `output/research_discovery/QUANTFORGE_BASE_HYPOTHESIS_SELECTION_VALIDATION_DESIGN_V1.md` |
+| Base Hypothesis Selection / Validation Ratification | `output/research_discovery/QUANTFORGE_BASE_HYPOTHESIS_SELECTION_VALIDATION_RATIFICATION_V1.md` |
 
 ---
 
@@ -1354,8 +1361,22 @@ No V19–V33 candidate is retroactively scored against this framework.
 
 **Prohibited:** Base selection/creation/hypothesis; registry implementation; Base validation execution; assembled or conditional testing; admission of any Conditional component; SMC/liquidity operationalization.
 
-**Next:** BASE HYPOTHESIS SELECTION / VALIDATION DESIGN (if owner authorizes). No experiment was executed. No Base was created. 0 G2.
+**Next:** BASE HYPOTHESIS SELECTION (ratified BS1–BS13 selection pathway; owner-authorized). No experiment was executed. No Base was created. 0 G2.
 
 ---
 
-*Authoritative for next session. Updated 2026-09-03 (V38A pathway ratification). V38A BASE VALIDATION PATHWAY RATIFIED (BV1–BV13) — BASE REGISTRY EMPTY — no Base exists — no Base validation — no experiment — 0 G2. V38 DOCTRINE RATIFIED — HYBRID BASE + CONDITIONAL. V37A EXECUTED — SCIENTIFIC: INCONCLUSIVE — ECONOMIC: ECONOMICALLY NEGATIVE — cross-market line PAUSED — CAND-077 SRE unchanged. V36 CLOSED / VERIFIED. V35 CLOSED. V34 CLOSED. V33 CLOSED. V32 CLOSED / VERIFIED. V31 CLOSED / VERIFIED. V30 CLOSED / VERIFIED. State objects preserved (CAND-077/081/083). SEED-002 negative. H01/ORD CLOSED (not Bases). Forward runtime protected. Next authorized: BASE HYPOTHESIS SELECTION / VALIDATION DESIGN (if owner authorizes); SRE-pool owner decision remains open.*
+## 49. BASE HYPOTHESIS SELECTION / VALIDATION DESIGN (RATIFIED 2026-09-03)
+
+**Status:** RATIFIED — Base Hypothesis Selection / Validation pathway (BS1–BS13) under the V38 + V38A doctrine. BASE REGISTRY EMPTY. No Base exists. No Base hypothesis has been selected. No validation has occurred.
+
+**Design:** `QUANTFORGE_BASE_HYPOTHESIS_SELECTION_VALIDATION_DESIGN_V1.md` (SHA `a17b30f2…`). Ratification record: `QUANTFORGE_BASE_HYPOTHESIS_SELECTION_VALIDATION_RATIFICATION_V1.md`.
+
+**Core rules:** Selection is a governance act, not a performance contest — historical outcome ranking is prohibited as a selection mechanism. Object-type gate first: a Base candidate is a complete deterministic decision process; CAND-077/081/083/099 remain observations. Historical-result three-role separation (eligibility blocker / research-priority evidence / sealed validation evidence). Closed research motivates, never promotes (H01 and ORD remain CLOSED). Prospective selection freeze precedes V38A registration. Modern scope must pass the sign-inversion test. Family redundancy control; Conditional firewall; no post-validation tournament; owner authorization selects for V38A entry only — SELECTED HYPOTHESIS ≠ VALIDATED BASE. Anti-rescue: no weak/losing process may be selected because a Conditional might fix it (BS13). No universal numeric selection gates.
+
+**Prohibited:** any Base hypothesis selection outside the ratified BS1–BS13 pathway or before the BASE HYPOTHESIS SELECTION milestone; outcome-ranked selection; rescue-framed selection; registry implementation; Base validation execution; assembled or conditional testing; admission of any Conditional component.
+
+**Next:** BASE HYPOTHESIS SELECTION (if owner authorizes) — the first milestone in which an actual Base hypothesis may be selected under BS1–BS13; a selected hypothesis then enters a separate V38A registration/validation design. No experiment was executed. No Base was created. 0 G2.
+
+---
+
+*Authoritative for next session. Updated 2026-09-03 (Base Hypothesis Selection / Validation Design ratification). BASE HYPOTHESIS SELECTION / VALIDATION DESIGN RATIFIED (BS1–BS13) — BASE REGISTRY EMPTY — no Base exists — no Base hypothesis selected — no Base validation — no experiment — 0 G2. V38A BASE VALIDATION PATHWAY RATIFIED (BV1–BV13). V38 DOCTRINE RATIFIED — HYBRID BASE + CONDITIONAL. V37A EXECUTED — SCIENTIFIC: INCONCLUSIVE — ECONOMIC: ECONOMICALLY NEGATIVE — cross-market line PAUSED — CAND-077 SRE unchanged. V36 CLOSED / VERIFIED. V35 CLOSED. V34 CLOSED. V33 CLOSED. V32 CLOSED / VERIFIED. V31 CLOSED / VERIFIED. V30 CLOSED / VERIFIED. State objects preserved (CAND-077/081/083). SEED-002 negative. H01/ORD CLOSED (not Bases). Forward runtime protected. Next authorized: BASE HYPOTHESIS SELECTION (if owner authorizes); SRE-pool owner decision remains open.*
