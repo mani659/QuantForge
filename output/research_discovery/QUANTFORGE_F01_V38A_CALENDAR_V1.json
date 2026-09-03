@@ -1,0 +1,52 @@
+{
+  "artifact": "F-01 V38A exchange calendar (session eligibility)",
+  "version": "V1",
+  "frozen": "2026-09-03",
+  "purpose": "Deterministic session calendar for the F-01 Session-Partition Reference Process V38A registration",
+  "timezone": "America/New_York",
+  "regular_open": "09:30",
+  "regular_close": "16:00",
+  "early_close": "13:00",
+  "dst_rule": "Session boundaries are wall-clock in America/New_York. Feed bar timestamps are translated to America/New_York via UTC before boundary comparison, per the registered normalization rule (dynamic UTC translation handles DST shifts).",
+  "weekend": "Saturday and Sunday are non-trading days; no session, no decision, no population entry.",
+  "source": "Official NYSE/Nasdaq published trading calendar (public record), encoded for 2026-2027. Stage-2 calendar-integrity check reconciles this artifact against the official published schedule; any outcome-independent discrepancy is corrected, re-hashed, and recorded as a mechanical completion before Stage-2 execution.",
+  "study_horizon": "Validation-eligible sessions begin at the registration freeze (2026-09-03) and extend through the confirmation segment (approximately 2027-02-26). The full 2026-2027 calendar is encoded for infrastructure completeness; dates outside the horizon do not affect the study.",
+  "full_closures_2026": [
+    {"date": "2026-01-01", "name": "New Year's Day"},
+    {"date": "2026-01-19", "name": "Martin Luther King Jr. Day"},
+    {"date": "2026-02-16", "name": "Washington's Birthday"},
+    {"date": "2026-04-03", "name": "Good Friday"},
+    {"date": "2026-05-25", "name": "Memorial Day"},
+    {"date": "2026-06-19", "name": "Juneteenth"},
+    {"date": "2026-07-03", "name": "Independence Day (observed; July 4 is Saturday)"},
+    {"date": "2026-09-07", "name": "Labor Day"},
+    {"date": "2026-11-26", "name": "Thanksgiving Day"},
+    {"date": "2026-12-25", "name": "Christmas Day"}
+  ],
+  "early_closes_2026": [
+    {"date": "2026-11-27", "name": "Day after Thanksgiving", "close": "13:00"},
+    {"date": "2026-12-24", "name": "Christmas Eve", "close": "13:00"}
+  ],
+  "full_closures_2027": [
+    {"date": "2027-01-01", "name": "New Year's Day"},
+    {"date": "2027-01-18", "name": "Martin Luther King Jr. Day"},
+    {"date": "2027-02-15", "name": "Washington's Birthday"},
+    {"date": "2027-03-26", "name": "Good Friday"},
+    {"date": "2027-05-31", "name": "Memorial Day"},
+    {"date": "2027-06-18", "name": "Juneteenth (observed; June 19 is Saturday)"},
+    {"date": "2027-07-05", "name": "Independence Day (observed; July 4 is Sunday)"},
+    {"date": "2027-09-06", "name": "Labor Day"},
+    {"date": "2027-11-25", "name": "Thanksgiving Day"},
+    {"date": "2027-12-24", "name": "Christmas Day (observed; December 25 is Saturday)"}
+  ],
+  "early_closes_2027": [
+    {"date": "2027-11-26", "name": "Day after Thanksgiving", "close": "13:00"},
+    {"date": "2027-12-23", "name": "Last full trading day before Christmas holiday (NYSE half-day convention)", "close": "13:00", "reconciliation_flag": "Confirm against official published 2027 schedule at Stage 2"}
+  ],
+  "extraordinary_closure_policy": "Unexpected closures (exchange-declared market closures not listed above) are recorded by the Stage-2 pipeline as no-session days with a documented reason; they do not create decisions or population entries. No discretionary closures are recognized.",
+  "notes": [
+    "Early-close sessions use 13:00 ET as the session-close boundary for the F-01 rule.",
+    "The calendar is infrastructure, not a tuning variable; no calendar version was selected to favor any observation set.",
+    "The 2026-07-11 through 2026-09-02 window is outside both the sealed baseline archive and the study horizon; it exists only in protected forward artifacts and is excluded entirely."
+  ]
+}

@@ -16,6 +16,7 @@ except ImportError:
 from market_data import MT5MarketFeed
 from module_registry import get_registry
 from supervisor_health import SupervisorHealthMonitor
+from f01_observation_recorder import F01ObservationRecorder
 
 HISTORICAL_START = "2026-08-27T09:44:58Z"
 MIGRATION_TIME = datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ")
@@ -103,6 +104,7 @@ class Supervisor:
 
         self.feed = MT5MarketFeed()
         self.modules = get_registry(base_runtime_dir, self.feed)
+        self.f01_recorder = F01ObservationRecorder(feed=self.feed)
         self.startup_time = time.time()
         self.uptime_seconds = 0
         self.reconnect_count = 0
@@ -279,6 +281,7 @@ class Supervisor:
                 print(f"  {m.candidate_id}: ACTIVE / PROTECTED")
             else:
                 print(f"  {m.candidate_id}: ACTIVE")
+        print(f"  F-01 RECORDER: RAW CAPTURE (NO TRADING)")
         print()
         print("Runner:")
         print("LIVE AND RUNNING")
@@ -336,6 +339,7 @@ class Supervisor:
         print("------------------------------------------------------------")
         print()
         print(f"Feed: {feed_status}")
+        print(f"F-01 Recorder: ACTIVE (RAW CAPTURE)")
         print(f"Last Scan: {ts}")
         print(f"Runner: LIVE")
         print("============================================================")
@@ -526,6 +530,9 @@ class Supervisor:
                     "age": quote_res.get('age', 0)
                 }
                 module.process_quote(mod_quote, f"supervisor_pid_{os.getpid()}")
+
+            # F-01 observation recorder: raw M1 capture sidecar (exception-safe)
+            self.f01_recorder.on_tick(quote_res)
 
             # Heartbeat every ~60 seconds
             if int(current_time) % 60 == 0 and current_time - self.last_heartbeat >= 60:

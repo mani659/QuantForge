@@ -105,6 +105,10 @@ class MT5MarketFeed:
             return {"status": "DATA_INDETERMINATE"}
             
         bar = rates[0]
+        try:
+            volume = int(bar['tick_volume'])
+        except Exception:
+            volume = 0
         return {
             "status": "DATA_FRESH",
             "symbol": symbol,
@@ -112,7 +116,8 @@ class MT5MarketFeed:
             "open": bar['open'],
             "high": bar['high'],
             "low": bar['low'],
-            "close": bar['close']
+            "close": bar['close'],
+            "volume": volume
         }
 
     def shutdown(self):
