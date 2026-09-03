@@ -46,6 +46,11 @@
 39. `4ca1d3e` — V35 G0 integrity audit
 40. `34f90a2` — V35 G1 economic plausibility screen
 41. `fdf8fdb` — V36 G0 search-space diversification
+42. `17cf997` — V36 G0 session-handoff SHA note
+43. `3b94733` — V36 G0 integrity audit (CAND-107 REDUNDANT)
+44. `1d7e900` — V36 G0 audit disposition in session-handoff
+45. `98246eb` — session-handoff HEAD note
+46. `c88580a` — session-handoff HEAD correction
 
 ---
 
@@ -97,9 +102,10 @@ Next session must NOT:
 > **V33 G0 INTEGRITY AUDIT: CAND-098 G1 ELIGIBLE, CAND-099 G1 ELIGIBLE, CAND-100 DATA INFEASIBLE (bid-ask spread unavailable)**
 > **V33 G1: CAND-098 CLOSED — ECONOMICALLY NEGATIVE (hypothesis supported on distribution width but economically insufficient). CAND-099 CLOSED — HYPOTHESIS CONTRADICTED / INFORMATIONALLY INTERESTING (sharp transitions massively outperform smooth, opposite of hypothesized direction).**
 > **G0 PROCESS REFINEMENT: Mechanism-Observable Challenge introduced (8 adversarial questions + proxy confidence). NOT a hard gate. Effective V34 G0 onward.**
-> **V36 G0 INTEGRITY AUDIT: CAND-105 G1 ELIGIBLE, CAND-106 G1 ELIGIBLE, CAND-107 G1 ELIGIBLE.**
+> **V36 G0 INTEGRITY AUDIT: CAND-105 G1 ELIGIBLE, CAND-106 G1 ELIGIBLE, CAND-107 REDUNDANT (vol regime research).**
+> **V36 G1: CAND-105 CLOSED — ECONOMICALLY NEGATIVE. CAND-106 CLOSED — ECONOMICALLY NEGATIVE. 9/9 hard gates PASS both. 0 G2 promotions. V36 PERMANENTLY CLOSED.**
 
-Today's session (2026-09-02) completed: V36 G0 (3 candidates from new dimensions) and V36 G0 integrity audit. All three candidates CLEARLY NOVEL. Cross-asset data validated (XAUUSD + USATECHIDXUSD M1). V36 G1 AUTHORIZED.
+Today's session (2026-09-02) completed: V36 G0 (3 candidates from new dimensions), V36 G0 integrity audit (CAND-107 REDUNDANT), and V36 G1 (CAND-105/106 both CLOSED — ECONOMICALLY NEGATIVE). Cross-asset data validated (XAUUSD + USATECHIDXUSD M1, 827,517 aligned bars verified). V37 G0 is next authorized milestone.
 
 ---
 
@@ -542,7 +548,7 @@ The two mechanisms are genuinely independent:
 
 ## 19. PERMITTED NEXT TASKS
 
-- **V36 G1 — ECONOMIC PLAUSIBILITY SCREEN for CAND-105 and CAND-106 (if owner authorizes)**
+- **V37 G0 — NEW DISCOVERY (if owner authorizes)**
 - Formal State hypothesis registration for CAND-077 (if owner authorizes)
 - Formal State hypothesis registration for CAND-081 (if owner authorizes)
 - Formal State hypothesis registration for CAND-083 (if owner authorizes)
@@ -674,6 +680,7 @@ Volume data unavailable / zero for both USATECHIDXUSD and XAUUSD M1 data. Do not
 | V35 G1 Screen | `output/research_discovery/QUANTFORGE_V35_G1_ECONOMIC_SCREEN_V1.md` |
 | V36 G0 Screening | `output/research_discovery/TRADEABLE_EDGE_DISCOVERY_SCREENING_V36.md` |
 | V36 G0 Integrity Audit | `output/research_discovery/QUANTFORGE_V36_G0_INTEGRITY_AUDIT_V1.md` |
+| V36 G1 Screen | `output/research_discovery/QUANTFORGE_V36_G1_ECONOMIC_SCREEN_V1.md` |
 
 ---
 
@@ -1234,8 +1241,32 @@ No V19–V33 candidate is retroactively scored against this framework.
 
 **Artifact:** `output/research_discovery/QUANTFORGE_V36_G0_INTEGRITY_AUDIT_V1.md`
 
-**Next:** V36 G1 — ECONOMIC PLAUSIBILITY SCREEN for CAND-105 + CAND-106 (if owner authorizes).
+**Next:** V36 G1 — ECONOMIC PLAUSIBILITY SCREEN for CAND-105 + CAND-106 (COMPLETED 2026-09-02).
 
 ---
 
-*Authoritative for next session. Updated 2026-09-02 (V36 G0 integrity audit). V36 G0 integrity audit complete: CAND-105 G1 ELIGIBLE, CAND-106 G1 ELIGIBLE, CAND-107 REDUNDANT (vol regime). V36 G1 AUTHORIZED for CAND-105 + CAND-106. V35 CLOSED. V34 CLOSED. V33 CLOSED. V32 CLOSED / VERIFIED. V31 CLOSED / VERIFIED. V30 CLOSED / VERIFIED. State objects preserved. SEED-002 negative. Forward runtime protected. 0 G2 promotions across all cycles. Cross-asset data validated. Next authorized: V36 G1 — ECONOMIC PLAUSIBILITY SCREEN (if owner authorizes).*
+## 45. V36 G1 — ECONOMIC PLAUSIBILITY SCREEN
+
+**Status:** COMPLETE — BOTH CANDIDATES CLOSED — V36 PERMANENTLY CLOSED
+
+| Candidate | Decision | Rationale |
+|---|---|---|
+| CAND-105 (Cross-Asset Lead-Lag Asymmetry) | **CLOSED — ECONOMICALLY NEGATIVE** | Gold-lead vs tech-lead M1 regimes produce essentially identical downstream tech economics. Mean delta +0.35 bps, median delta +0.35 bps, WR delta +1.1%, Welch t=0.61 (not significant). Co-movement (lag-0) corr nearly identical across regimes (0.118/0.123). Net means -1.67 / -2.01 bps. 9/9 hard gates PASS. |
+| CAND-106 (Intra-Bar Price Distribution Quality) | **CLOSED — ECONOMICALLY NEGATIVE** | High-conviction (body>=0.70) vs indecision (body<=0.30) bars produce identical downstream economics. Mean delta -0.01 bps, t=-0.02. Direction decomposition flat. Net means -1.51 / -1.51 bps. 9/9 hard gates PASS. |
+
+**Key evidence:**
+- CAND-105: directional lead measure at frozen lag 1 min / 240-min window, tercile regime split. Treatment N=5,236 (gold-lead), Control N=5,263 (tech-lead). Alignment independently verified: 827,517 exact-timestamp aligned 1-min-return bars, 899 contiguous runs, 643,416 bars computable.
+- CAND-106: body fraction |C-O|/(H-L) frozen observable, fixed thresholds 0.70/0.30. Treatment N=14,412, Control N=14,529.
+- Both candidates measurement-valid (9/9 gates); failures are economic, not measurement.
+- First V36 cycle outside the V19-V35 structural-OHLC pattern: novelty genuine, economics null.
+- V36 permanently closed. 0 G2 promotions. CAND-107 remains REDUNDANT.
+
+**Artifacts:**
+- V36 G1 Screen: `output/research_discovery/QUANTFORGE_V36_G1_ECONOMIC_SCREEN_V1.md`
+- Script: `research/v36_g1_experiment.py`
+
+**Next:** V37 G0 — NEW DISCOVERY (if owner authorizes).
+
+---
+
+*Authoritative for next session. Updated 2026-09-02 (V36 G1). V36 G1 complete: CAND-105 CLOSED — ECONOMICALLY NEGATIVE; CAND-106 CLOSED — ECONOMICALLY NEGATIVE. 9/9 hard gates PASS both. 0 G2 promotions. V36 PERMANENTLY CLOSED. V35 CLOSED. V34 CLOSED. V33 CLOSED. V32 CLOSED / VERIFIED. V31 CLOSED / VERIFIED. V30 CLOSED / VERIFIED. State objects preserved (CAND-077/081/083). SEED-002 negative. Forward runtime protected. CAND-107 REDUNDANT. Cross-asset alignment verified (827,517 bars). Next authorized: V37 G0 — NEW DISCOVERY (if owner authorizes).*

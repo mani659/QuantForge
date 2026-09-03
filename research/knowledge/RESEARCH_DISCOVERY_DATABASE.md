@@ -2018,3 +2018,29 @@ Artifact: `output/research_discovery/QUANTFORGE_V31_G1_ADJUDICATION_INTEGRITY_AU
 
 **Next:** V36 G1 — ECONOMIC PLAUSIBILITY SCREEN (if owner authorizes).
 
+---
+
+## V36 G1 — Economic Plausibility Screen (2026-09-02)
+
+**Status:** COMPLETE — BOTH CANDIDATES CLOSED — V36 PERMANENTLY CLOSED
+
+**Scope:** CAND-105 and CAND-106 only (CAND-107 REDUNDANT per V36 G0 integrity audit, not tested).
+
+| Candidate | Decision | Rationale |
+|---|---|---|
+| CAND-105 (Cross-Asset Lead-Lag Asymmetry) | **CLOSED — ECONOMICALLY NEGATIVE** | Mean delta +0.35 bps, median delta +0.35 bps, WR delta +1.1%, Welch t=0.61 (not significant). Gold-lead vs tech-lead M1 regimes produce essentially identical downstream tech economics. Co-movement level near-identical across regimes (0.118/0.123) — regime is not a co-movement proxy. Net means both negative (-1.67/-2.01 bps). Far below State-review precedent deltas (CAND-077 +1.67, CAND-083 +4.60). |
+| CAND-106 (Intra-Bar Price Distribution Quality) | **CLOSED — ECONOMICALLY NEGATIVE** | Mean delta -0.01 bps, median delta +0.07 bps, t=-0.02. High-conviction (body>=0.70) and indecision (body<=0.30) bars produce identical downstream economics (net means -1.51/-1.51 bps). Direction decomposition flat. No incremental information beyond bar structure. |
+
+**Key evidence:**
+- CAND-105: Treatment N=5,236, Control N=5,263. 9/9 hard gates PASS. Alignment verified: 827,517 exact-timestamp aligned 1-min-return bars (899 contiguous runs), 643,416 bars with computable lead_asym + forward window.
+- CAND-106: Treatment N=14,412, Control N=14,529. 9/9 hard gates PASS.
+- Both candidates measurement-valid (9/9 gates); failures are economic, not measurement.
+- First V36 cycle outside V19-V35 structural-OHLC pattern: novelty real, economics null.
+- V36 permanently closed. 0 G2 promotions.
+
+**Artifacts:**
+- V36 G1 Screen: `output/research_discovery/QUANTFORGE_V36_G1_ECONOMIC_SCREEN_V1.md`
+- Script: `research/v36_g1_experiment.py`
+
+**Next:** V37 G0 — NEW DISCOVERY (if owner authorizes).
+
