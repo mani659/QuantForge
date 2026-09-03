@@ -51,6 +51,8 @@
 44. `1d7e900` — V36 G0 audit disposition in session-handoff
 45. `98246eb` — session-handoff HEAD note
 46. `c88580a` — session-handoff HEAD correction
+47. `bbb1c26` — V36 G1 economic plausibility screen (CAND-105/106 closed)
+48. `f192f3d` — V37A replication provenance freeze + execution manifest
 
 ---
 
@@ -104,6 +106,7 @@ Next session must NOT:
 > **G0 PROCESS REFINEMENT: Mechanism-Observable Challenge introduced (8 adversarial questions + proxy confidence). NOT a hard gate. Effective V34 G0 onward.**
 > **V36 G0 INTEGRITY AUDIT: CAND-105 G1 ELIGIBLE, CAND-106 G1 ELIGIBLE, CAND-107 REDUNDANT (vol regime research).**
 > **V36 G1: CAND-105 CLOSED — ECONOMICALLY NEGATIVE. CAND-106 CLOSED — ECONOMICALLY NEGATIVE. 9/9 hard gates PASS both. 0 G2 promotions. V36 PERMANENTLY CLOSED.**
+> **V37A REPLICATION (CAND-077 → XAUUSD M1): EXECUTED + ADJUDICATED — SCIENTIFIC: INCONCLUSIVE. ECONOMIC: ECONOMICALLY NEGATIVE. Primary net mean delta +0.67 bps (T −0.19 vs C −0.86; N 2,309 / 559 matched); median delta −1.37 bps; WR delta −2.9 pp; full-history net delta +0.06 bps. Cross-market line PAUSED. CAND-077 SRE unchanged (original USATECHIDXUSD evidence intact). State implication UNRESOLVED. No candidate generated. 0 G2.**
 
 Today's session (2026-09-02) completed: V36 G0 (3 candidates from new dimensions), V36 G0 integrity audit (CAND-107 REDUNDANT), and V36 G1 (CAND-105/106 both CLOSED — ECONOMICALLY NEGATIVE). Cross-asset data validated (XAUUSD + USATECHIDXUSD M1, 827,517 aligned bars verified). V37 G0 is next authorized milestone.
 
@@ -548,13 +551,10 @@ The two mechanisms are genuinely independent:
 
 ## 19. PERMITTED NEXT TASKS
 
-- **V37 G0 — NEW DISCOVERY (if owner authorizes)**
-- Formal State hypothesis registration for CAND-077 (if owner authorizes)
-- Formal State hypothesis registration for CAND-081 (if owner authorizes)
-- Formal State hypothesis registration for CAND-083 (if owner authorizes)
-- Formal State hypothesis registration for CAND-077 (if owner authorizes)
-- Formal State hypothesis registration for CAND-081 (if owner authorizes)
-- Formal State hypothesis registration for CAND-083 (if owner authorizes)
+- **GOVERNANCE DECISION (next, per V37A adjudication): SRE-pool owner decision (CAND-077/081/083 State registration / Alpha-source question) and program expression-horizon decision (if owner authorizes)**
+- V37 G0 — NEW DISCOVERY (only after the governance decision; if owner authorizes)
+- CAND-081/083 structural-failure/rejection family replication on XAUUSD (only if owner resolves governance toward continuing cross-market replication; per V37A adjudication)
+- Formal State hypothesis registration for CAND-077 / CAND-081 / CAND-083 (deduplicated; if owner authorizes)
 - Relational research governance question resolution (if owner authorizes)
 - CAND-024/CAND-035 forward observation (continue, do not inspect)
 - CAND-015 forward observation (continue, do not inspect)
@@ -583,6 +583,11 @@ The two mechanisms are genuinely independent:
 - Retroactively designate CAND-024/CAND-035 as downstream Alphas for CAND-077/CAND-081/CAND-083
 - Create variants of CAND-077, CAND-081, or CAND-083
 - Skip the Mechanism-Observable Challenge in V34+ G0 discovery
+- Automatically proceed to a second CAND-077 market replication (cross-market line PAUSED per V37A adjudication)
+- Treat the V37A +0.67 bps primary delta as standalone Alpha or State-qualifying evidence
+- Mine thresholds/subsets (session, time-of-day, regime, tail) from V37A event-level data
+- Formalize the V37A right-tail distributional pattern as a hypothesis without a new governed G0
+- Reopen CAND-099 via the V37A distributional pattern
 - Treat Proxy Confidence as an automatic rejection criterion
 - Use the Mechanism-Observable Challenge to retroactively score V19–V33 candidates
 - Skip the V34 G0 integrity/prior-art audit and go directly to G1 (COMPLETED)
@@ -681,6 +686,10 @@ Volume data unavailable / zero for both USATECHIDXUSD and XAUUSD M1 data. Do not
 | V36 G0 Screening | `output/research_discovery/TRADEABLE_EDGE_DISCOVERY_SCREENING_V36.md` |
 | V36 G0 Integrity Audit | `output/research_discovery/QUANTFORGE_V36_G0_INTEGRITY_AUDIT_V1.md` |
 | V36 G1 Screen | `output/research_discovery/QUANTFORGE_V36_G1_ECONOMIC_SCREEN_V1.md` |
+| V37A Replication Registration | `output/research_discovery/QUANTFORGE_V37A_REPL077_XAUUSD_REGISTRATION_V1.md` |
+| V37A Execution Manifest | `output/research_discovery/QUANTFORGE_V37A_REPL077_XAUUSD_EXECUTION_MANIFEST_V1.md` |
+| V37A Archival Implementation | `research/archive/v26/CAND-077/v26_g1_screen.py` |
+| V37A Phase A/B Outputs | `output/research_discovery/V37A_REPL077_XAUUSD_PHASEA/` |
 
 ---
 
@@ -1269,4 +1278,36 @@ No V19–V33 candidate is retroactively scored against this framework.
 
 ---
 
-*Authoritative for next session. Updated 2026-09-02 (V36 G1). V36 G1 complete: CAND-105 CLOSED — ECONOMICALLY NEGATIVE; CAND-106 CLOSED — ECONOMICALLY NEGATIVE. 9/9 hard gates PASS both. 0 G2 promotions. V36 PERMANENTLY CLOSED. V35 CLOSED. V34 CLOSED. V33 CLOSED. V32 CLOSED / VERIFIED. V31 CLOSED / VERIFIED. V30 CLOSED / VERIFIED. State objects preserved (CAND-077/081/083). SEED-002 negative. Forward runtime protected. CAND-107 REDUNDANT. Cross-asset alignment verified (827,517 bars). Next authorized: V37 G0 — NEW DISCOVERY (if owner authorizes).*
+## 46. V37A — CAND-077 REPLICATION ON XAUUSD M1 (ADJUDICATED 2026-09-03)
+
+**Status:** EXECUTED (Phase A + Phase B) — ADJUDICATED — NO NEW CANDIDATE GENERATED
+
+**Registration:** `V37A-REPL-077-XAUUSD-M1` (frozen spec + manifest; commits `f192f3d`). Replication of CAND-077 (USATECHIDXUSD volatility compression→expansion) on XAUUSD M1 — instrument the only experimental change; 30 M1 bars; 2.0 bps round-trip; frozen V26 implementation (`b320c42d…`).
+
+**Primary window (2023-09-01 → 2026-04-10) results:**
+- Treatment N=2,309 — gross mean +1.81 bps, net mean −0.19 bps, net median −1.43 bps, WR 52.2%
+- Matched control N=559 (226 unique events, 333 reused references, 1,750 unmatched treatments) — gross mean +1.14 bps, net mean −0.86 bps, net median −0.06 bps, WR 55.1%
+- **Primary net mean delta = +0.67 bps**; exclude-best delta +0.89 bps; median delta −1.37 bps; WR delta −2.9 pp
+- Exclude-best net means: T −0.33 / C −1.22 bps
+
+**Secondary full-history consistency check (2021-04-12 → 2026-04-10):** T N=4,402 net −1.44 bps; C N=934 net −1.50 bps; net mean delta +0.06 bps; median delta +0.30 bps; WR delta +0.8 pp.
+
+**Adjudication:**
+- Scientific: **INCONCLUSIVE** — event portable (Level 1 YES); primary-window mean separation positive (Level 2 YES, +0.67); distributional replication NOT observed (Level 3 NO — median/WR favor control); temporal consistency NOT observed (Level 4 NO — full-history +0.06). Conflicting across levels/windows.
+- Economic: **ECONOMICALLY NEGATIVE** — both arms net-negative standalone; +0.67 bps sits at the top of the historical null band; median/WR contradict; full-history collapses. No economically meaningful incremental information established on XAUUSD.
+- Distributional pattern (mean-positive / median-WR-negative) recorded as **OBSERVED DISTRIBUTIONAL PATTERN — UNRESOLVED** (possible right-tail conditioning clue; formalization requires a new governed G0 — NOT AUTHORIZED here).
+- CAND-077 lifecycle: **UNCHANGED — STATE REVIEW ELIGIBLE — OWNER REVIEW REQUIRED** (original USATECHIDXUSD evidence intact; not erased by a weak gold replication; not upgraded).
+- Cross-market replication line (CAND-077): **PAUSED.** One inconclusive replication does not justify market-by-market fishing. Reopen requires a new governed, pre-registered rationale + owner authorization.
+- State implication: **UNRESOLVED** (original state-information evidence intact; conversion evidence still absent; V37A adds negative/neutral generalization knowledge).
+- Research-capital allocation: **PAUSE / GOVERNANCE DECISION** — SRE-pool owner decision (pending since V26–V28), Alpha-source/conversion question, and expression-horizon decision bind before further experiments. If governance resolves toward continuing replication, priority = CAND-081/083 family replication on XAUUSD.
+
+**Artifacts:**
+- Registration: `output/research_discovery/QUANTFORGE_V37A_REPL077_XAUUSD_REGISTRATION_V1.md`
+- Manifest: `output/research_discovery/QUANTFORGE_V37A_REPL077_XAUUSD_EXECUTION_MANIFEST_V1.md`
+- Outputs: `output/research_discovery/V37A_REPL077_XAUUSD_PHASEA/` (phase_a_report.*, phase_b_report.*, event-level CSVs, drivers)
+
+**Next:** GOVERNANCE DECISION (SRE pool / expression-horizon) — owner authorized. No automatic Stage 2; no automatic replication; no State qualification.
+
+---
+
+*Authoritative for next session. Updated 2026-09-03 (V37A adjudication). V37A (CAND-077 → XAUUSD M1) EXECUTED — SCIENTIFIC: INCONCLUSIVE — ECONOMIC: ECONOMICALLY NEGATIVE — cross-market line PAUSED — CAND-077 SRE unchanged — no candidate generated. V36 CLOSED / VERIFIED. V35 CLOSED. V34 CLOSED. V33 CLOSED. V32 CLOSED / VERIFIED. V31 CLOSED / VERIFIED. V30 CLOSED / VERIFIED. State objects preserved (CAND-077/081/083). SEED-002 negative. Forward runtime protected. Next authorized: GOVERNANCE DECISION (SRE pool / expression-horizon) before any further research cycle (if owner authorizes).*

@@ -2044,3 +2044,26 @@ Artifact: `output/research_discovery/QUANTFORGE_V31_G1_ADJUDICATION_INTEGRITY_AU
 
 **Next:** V37 G0 — NEW DISCOVERY (if owner authorizes).
 
+---
+
+## V37A — CAND-077 XAUUSD M1 Controlled Replication (2026-09-03)
+
+**Status:** EXECUTED (Phase A + Phase B) — ADJUDICATED — REPLICATION LINKED TO CAND-077 (NOT a new candidate)
+
+**Registration:** V37A-REPL-077-XAUUSD-M1 (frozen spec; commits `f192f3d`). Replication of the V26 CAND-077 volatility compression→expansion transition on XAUUSD M1 under the frozen V26 implementation (SHA `b320c42d…`); instrument = only experimental change; 30 M1 bars; 2.0 bps round-trip; primary window 2023-09-01 → 2026-04-10.
+
+**Primary window results:** Treatment N=2,309, gross mean +1.81 bps, net mean −0.19 bps, net median −1.43 bps, WR 52.2%. Matched control N=559 (226 unique events; 333 reused references), gross mean +1.14 bps, net mean −0.86 bps, net median −0.06 bps, WR 55.1%. **Net mean delta = +0.67 bps**; exclude-best delta +0.89 bps; median delta −1.37 bps; WR delta −2.9 pp. 1,750 treatments unmatched (in treatment stats per frozen method).
+
+**Secondary full-history check (2021-04-12 → 2026-04-10):** T N=4,402 net −1.44 bps; C N=934 net −1.50 bps; net mean delta +0.06 bps; median delta +0.30 bps; WR delta +0.8 pp.
+
+**Scientific classification:** INCONCLUSIVE — event portable (YES); primary-window mean separation positive (+0.67 bps) but inside/near the historical null band; median delta (−1.37) and WR delta (−2.9 pp) favor control; full-history delta (+0.06 bps) at the null. Not coherent across diagnostics/windows.
+
+**Economic classification:** ECONOMICALLY NEGATIVE — both arms net-negative standalone; no economically meaningful incremental conditional information established on XAUUSD.
+
+**Adjudication decisions:** CAND-077 lifecycle UNCHANGED (STATE REVIEW ELIGIBLE — OWNER REVIEW REQUIRED; original USATECHIDXUSD evidence intact). CAND-077 cross-market replication line PAUSED (no market-by-market fishing without new governed rationale). State implication UNRESOLVED (state-information evidence intact on the original market; conversion evidence still absent; negative/neutral generalization knowledge added). Research-capital: PAUSE / GOVERNANCE DECISION (SRE pool + Alpha-source + expression-horizon). OBSERVED DISTRIBUTIONAL PATTERN (mean vs median/WR divergence) recorded as unresolved — formalization requires a new governed G0.
+
+**Negative knowledge added:** CAND-077 conditional delta did not robustly generalize to XAUUSD M1 under the frozen definition.
+
+**Artifacts:** `output/research_discovery/QUANTFORGE_V37A_REPL077_XAUUSD_REGISTRATION_V1.md`; `QUANTFORGE_V37A_REPL077_XAUUSD_EXECUTION_MANIFEST_V1.md`; `output/research_discovery/V37A_REPL077_XAUUSD_PHASEA/`.
+
+**Next:** GOVERNANCE DECISION (SRE pool / expression-horizon) before any further research cycle (if owner authorizes). No automatic Stage 2, replication, or State qualification.
