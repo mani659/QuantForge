@@ -56,6 +56,7 @@
 49. `bb73d06` — V37A adjudication (CAND-077 XAUUSD replication INCONCLUSIVE / ECONOMICALLY NEGATIVE)
 50. `c42c3c3` — V38 doctrine ratification (assembled-decision / relational qualification)
 51. `4da500b` — V38A base validation pathway ratification (BV1–BV13)
+52. `9a2492f` — Base Hypothesis Selection / Validation Design ratification (BS1–BS13)
 
 ---
 
@@ -91,7 +92,9 @@ Next session must NOT:
 - Treat exploratory filter observations as validated strategies;
 - Execute relational testing, relational experiments, or any V38-doctrine experiment without a Base registry entry and owner authorization;
 - Create a Base or register any Base-registry entry outside a prospective validation study under the ratified V38A pathway (BV1–BV13);
-- Select, nominate, or create a Base hypothesis except through the ratified BS1–BS13 selection pathway in a future BASE HYPOTHESIS SELECTION milestone (pathway ratified 2026-09-03; no hypothesis selected; registry EMPTY);
+- Select, nominate, or create a Base hypothesis except through the ratified BS1–BS13 selection pathway in a future BASE HYPOTHESIS SELECTION milestone (pathway ratified 2026-09-03; first review concluded NO BASE HYPOTHESIS SELECTED — BH-01 withdrawn; registry EMPTY);
+- Formulate any decision-process hypothesis outside the ratified BF1–BF13 formulation pathway or before the OUTCOME-BLIND BASE FORMULATION CYCLE milestone (pathway ratified 2026-09-03);
+- Formulate a hypothesis chosen, parameterized, or scoped by historical performance ranking or favorable outcomes (BF2/BF3);
 - Use any closed artifact, H01 cell, ORD finding, or CAND-077/081/083/099 as a Base or positive relational input (retroactive Base creation prohibited);
 - Run exhaustive combination/permutation searches or rescue-framed (State × State) tests;
 - Reopen H01, ORD, CAND-077/081/083/099;
@@ -120,6 +123,8 @@ Next session must NOT:
 > **V38 DOCTRINE (ASSEMBLED-DECISION / RELATIONAL QUALIFICATION): RATIFIED 2026-09-03 — HYBRID BASE + CONDITIONAL. BASE REGISTRY EMPTY. Conditional components need no standalone expectancy but qualify only by increment over a validated Base. No-Rescue rule; depth Level 1 default / Level 2 earned / Level 3+ separate governance; predeclared pairings only. H01 stays CLOSED; no retroactive Base from any closed artifact; CAND-077/081/083 SRE unchanged. G1 V3 intact. No experiment executed. No Base created. Next: V38A BASE VALIDATION PATHWAY DESIGN.**
 > **V38A BASE VALIDATION PATHWAY (BV1–BV13): RATIFIED 2026-09-03 — Base = registered deterministic decision process (never observation/state/hypothesis/Conditional/Alpha). No sign/magnitude/threshold of net expectancy determines Base eligibility; economics are evidence in holistic adjudication; no Alpha-lite; Motivation ≠ Validation; six stages; frozen opportunity population; one frozen cost model (not a profitability gate); structural No-Rescue. BASE REGISTRY EMPTY — no Base exists. No Base hypothesis authorized. Next: BASE HYPOTHESIS SELECTION / VALIDATION DESIGN.**
 > **BASE HYPOTHESIS SELECTION / VALIDATION DESIGN (BS1–BS13): RATIFIED 2026-09-03 — Selection is a governance act, not a performance contest. Object-type gate first; historical outcome ranking prohibited as a selection mechanism; three-role historical-result separation (blocker / priority / sealed-validation); closed research motivates, never promotes; prospective selection freeze precedes V38A registration; sign-inversion test for modern scope; anti-rescue (no weak process selected because a Conditional might fix it); SELECTED HYPOTHESIS ≠ VALIDATED BASE. BASE REGISTRY EMPTY — no Base exists — no Base hypothesis selected. Next: BASE HYPOTHESIS SELECTION (owner-authorized; first milestone where a hypothesis may actually be selected).**
+> **FIRST BASE SELECTION REVIEW (2026-09-03): NO BASE HYPOTHESIS SHOULD YET BE SELECTED — BH-01 WITHDRAWN (outcome-descended trigger failed the BS6 sign-inversion test; no archive decision process has outcome-independent justification). H01/ORD stay CLOSED; registry EMPTY. Next: outcome-blind formulation pathway.**
+> **OUTCOME-BLIND BASE DECISION-PROCESS FORMULATION PATHWAY (BF1–BF13): RATIFIED 2026-09-03 — Decision architecture first, outcome second. Complete decision processes only (eleven-question standard); historical outcomes constrain but never select (firewall); mechanism→observable→decision traceability (MOC as challenge dimensions); state ≠ decision process (CAND-077/081/083/099 unchanged); HTF→LTF only fully specified as one process; liquidity = conceptual source only; no-rescue at formulation; distinctiveness vs exhausted families; owner-authorized cycles with NO FORMULATION SHOULD PROCEED lawful. BASE REGISTRY EMPTY — no Base — no Base hypothesis formulated or selected. Next: OUTCOME-BLIND BASE FORMULATION CYCLE.**
 
 Today's session (2026-09-02) completed: V36 G0 (3 candidates from new dimensions), V36 G0 integrity audit (CAND-107 REDUNDANT), and V36 G1 (CAND-105/106 both CLOSED — ECONOMICALLY NEGATIVE). Cross-asset data validated (XAUUSD + USATECHIDXUSD M1, 827,517 aligned bars verified). V37 G0 is next authorized milestone.
 
@@ -564,7 +569,8 @@ The two mechanisms are genuinely independent:
 
 ## 19. PERMITTED NEXT TASKS
 
-- **BASE HYPOTHESIS SELECTION (next milestone, per ratified BS1–BS13 selection pathway; the first milestone in which an actual Base hypothesis may be selected, owner-authorized, under V38A registration; if owner authorizes)**
+- **OUTCOME-BLIND BASE FORMULATION CYCLE (next milestone, per ratified BF1–BF13 formulation pathway; first milestone authorized to formulate the actual small set of new decision-process hypotheses; owner-authorized; if owner authorizes)**
+- **BASE HYPOTHESIS SELECTION (first review COMPLETED 2026-09-03: NO BASE HYPOTHESIS SELECTED — BH-01 withdrawn per BS6 sign-inversion; future selection of any formulated hypothesis under BS1–BS13; if owner authorizes)**
 - **SRE-pool owner decision (still open, per V37A adjudication): CAND-077/081/083 State registration / Alpha-source question (if owner authorizes)**
 - Prospective Base-validation study registration under the ratified V38A pathway (BV1–BV13; only after Base Hypothesis Selection / Validation Design; if owner authorizes)
 - Relational / Base × Conditional experiments under V38 doctrine (only after ≥1 Base registry entry; if owner authorizes)
@@ -613,6 +619,8 @@ The two mechanisms are genuinely independent:
 - Select a Base hypothesis by historical performance ranking (prohibited by ratified BS1–BS13: BS4/BS5)
 - Select, nominate, or create any Base hypothesis outside the ratified BS1–BS13 pathway or before the BASE HYPOTHESIS SELECTION milestone
 - Frame Base selection as rescue of a weak/losing process by a future Conditional (BS13)
+- Formulate a decision-process hypothesis outside the ratified BF1–BF13 pathway or before the OUTCOME-BLIND BASE FORMULATION CYCLE milestone (BF12)
+- Choose, parameterize, or scope a formulation by historical performance ranking or favorable outcomes (BF2/BF3)
 
 ---
 
@@ -715,6 +723,9 @@ Volume data unavailable / zero for both USATECHIDXUSD and XAUUSD M1 data. Do not
 | V38A Pathway Ratification | `output/research_discovery/QUANTFORGE_V38A_BASE_VALIDATION_PATHWAY_RATIFICATION_V1.md` |
 | Base Hypothesis Selection / Validation Design | `output/research_discovery/QUANTFORGE_BASE_HYPOTHESIS_SELECTION_VALIDATION_DESIGN_V1.md` |
 | Base Hypothesis Selection / Validation Ratification | `output/research_discovery/QUANTFORGE_BASE_HYPOTHESIS_SELECTION_VALIDATION_RATIFICATION_V1.md` |
+| First Base Selection Review (V1-r2) | `output/research_discovery/QUANTFORGE_BASE_HYPOTHESIS_SELECTION_RECOMMENDATION_V1.md` |
+| Outcome-Blind Formulation Design | `output/research_discovery/QUANTFORGE_OUTCOME_BLIND_BASE_DECISION_PROCESS_FORMULATION_DESIGN_V1.md` |
+| Outcome-Blind Formulation Ratification | `output/research_discovery/QUANTFORGE_OUTCOME_BLIND_BASE_DECISION_PROCESS_FORMULATION_RATIFICATION_V1.md` |
 
 ---
 
@@ -1375,8 +1386,26 @@ No V19–V33 candidate is retroactively scored against this framework.
 
 **Prohibited:** any Base hypothesis selection outside the ratified BS1–BS13 pathway or before the BASE HYPOTHESIS SELECTION milestone; outcome-ranked selection; rescue-framed selection; registry implementation; Base validation execution; assembled or conditional testing; admission of any Conditional component.
 
-**Next:** BASE HYPOTHESIS SELECTION (if owner authorizes) — the first milestone in which an actual Base hypothesis may be selected under BS1–BS13; a selected hypothesis then enters a separate V38A registration/validation design. No experiment was executed. No Base was created. 0 G2.
+**Next (superseded by outcome):** the declared next milestone, BASE HYPOTHESIS SELECTION, ran 2026-09-03 and concluded **NO BASE HYPOTHESIS SHOULD YET BE SELECTED** — BH-01 withdrawn (BS6 sign-inversion failure). See §50 for the current path.
 
 ---
 
-*Authoritative for next session. Updated 2026-09-03 (Base Hypothesis Selection / Validation Design ratification). BASE HYPOTHESIS SELECTION / VALIDATION DESIGN RATIFIED (BS1–BS13) — BASE REGISTRY EMPTY — no Base exists — no Base hypothesis selected — no Base validation — no experiment — 0 G2. V38A BASE VALIDATION PATHWAY RATIFIED (BV1–BV13). V38 DOCTRINE RATIFIED — HYBRID BASE + CONDITIONAL. V37A EXECUTED — SCIENTIFIC: INCONCLUSIVE — ECONOMIC: ECONOMICALLY NEGATIVE — cross-market line PAUSED — CAND-077 SRE unchanged. V36 CLOSED / VERIFIED. V35 CLOSED. V34 CLOSED. V33 CLOSED. V32 CLOSED / VERIFIED. V31 CLOSED / VERIFIED. V30 CLOSED / VERIFIED. State objects preserved (CAND-077/081/083). SEED-002 negative. H01/ORD CLOSED (not Bases). Forward runtime protected. Next authorized: BASE HYPOTHESIS SELECTION (if owner authorizes); SRE-pool owner decision remains open.*
+## 50. OUTCOME-BLIND BASE DECISION-PROCESS FORMULATION PATHWAY (RATIFIED 2026-09-03)
+
+**Status:** RATIFIED — Outcome-Blind Base Formulation pathway (BF1–BF13) under V38 + V38A + BS1–BS13. BASE REGISTRY EMPTY. No Base exists. No Base hypothesis has been formulated or selected.
+
+**Design:** `QUANTFORGE_OUTCOME_BLIND_BASE_DECISION_PROCESS_FORMULATION_DESIGN_V1.md` (SHA `12b87401…`). Ratification record: `QUANTFORGE_OUTCOME_BLIND_BASE_DECISION_PROCESS_FORMULATION_RATIFICATION_V1.md`.
+
+**Why this pathway exists:** the first Base selection review (2026-09-03) concluded NO BASE HYPOTHESIS SHOULD YET BE SELECTED — BH-01 was withdrawn because its trigger was outcome-descended (failed the BS6 sign-inversion test), and no archive decision process has outcome-independent justification. The outcome-blind formulation pathway is the governed, contamination-free route to a future first Base.
+
+**Core rules:** Decision architecture first, outcome second. Formulations are complete decision processes only (eleven-question standard: context, participation, direction, entry, exit, risk/invalidation, execution, scope, outcome, cost model, opportunity population). Historical outcomes constrain (negative knowledge, redundancy, execution limits) but never select, parameterize, or scope a formulation. Mechanism→observable→decision traceability with V34 MOC challenge dimensions (not gates). State ≠ decision process (CAND-077/081/083/099 unchanged). HTF→LTF permitted only fully specified as one deterministic process; no hidden "confirmation later" Conditional. Liquidity = conceptual source only, never operationalized. No-rescue at formulation (independently worthy with no Conditional ever created). Distinctiveness vs exhausted families (V27–V36, ORD, H01). Owner-authorized cycles; small number of genuinely distinct architectures; NO FORMULATION SHOULD PROCEED is a lawful cycle outcome. Every formulation ends FORMULATED HYPOTHESIS — NOT SELECTED; BS1–BS13 selection applies unchanged.
+
+**Existing research:** BH-01 WITHDRAWN (not a candidate); H01 and ORD remain CLOSED; TRADEABLE_EDGE under existing family governance; CAND-077/081/083/099 remain observations; CAND-015/024/035 protected-forward and excluded.
+
+**Prohibited:** any formulation outside the ratified BF1–BF13 pathway or before the OUTCOME-BLIND BASE FORMULATION CYCLE milestone; outcome-ranked or outcome-selected formulation (BF2/BF3); rescue-motivated formulation (BF10); formulation of BH-01 or any H01-descended trigger as a Base; reopening H01/ORD/TRADEABLE_EDGE; promoting CAND-077/081/083/099; registry implementation; Base validation execution; assembled/conditional testing.
+
+**Next:** OUTCOME-BLIND BASE FORMULATION CYCLE (if owner authorizes) — the first milestone authorized to formulate the actual small set of new decision-process hypotheses under BF1–BF13; each formulated hypothesis must then pass BS1–BS13 selection and V38A validation before any Base status. No experiment was executed. No Base was created. 0 G2.
+
+---
+
+*Authoritative for next session. Updated 2026-09-03 (Outcome-Blind Base Formulation Pathway ratification). OUTCOME-BLIND BASE FORMULATION PATHWAY RATIFIED (BF1–BF13) — BASE REGISTRY EMPTY — no Base exists — no Base hypothesis formulated or selected — no Base validation — no experiment — 0 G2. First Base selection review: NO BASE HYPOTHESIS SELECTED — BH-01 WITHDRAWN (BS6 sign-inversion). BASE HYPOTHESIS SELECTION / VALIDATION DESIGN RATIFIED (BS1–BS13). V38A BASE VALIDATION PATHWAY RATIFIED (BV1–BV13). V38 DOCTRINE RATIFIED — HYBRID BASE + CONDITIONAL. V37A EXECUTED — SCIENTIFIC: INCONCLUSIVE — ECONOMIC: ECONOMICALLY NEGATIVE — cross-market line PAUSED — CAND-077 SRE unchanged. V36 CLOSED / VERIFIED. V35 CLOSED. V34 CLOSED. V33 CLOSED. V32 CLOSED / VERIFIED. V31 CLOSED / VERIFIED. V30 CLOSED / VERIFIED. State objects preserved (CAND-077/081/083). SEED-002 negative. H01/ORD CLOSED (not Bases). Forward runtime protected. Next authorized: OUTCOME-BLIND BASE FORMULATION CYCLE (if owner authorizes); SRE-pool owner decision remains open.*
