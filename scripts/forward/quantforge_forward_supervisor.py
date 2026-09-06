@@ -423,6 +423,12 @@ class Supervisor:
             if not mt5_running:
                 return False, "FORWARD START BLOCKED\nReason: MT5 feed unavailable"
 
+        # Start the MT5 timeout worker before initializing the feed.
+        # The manager was created in __init__ but the worker process
+        # must be explicitly started before any MT5 operations.
+        if not self._mt5_manager.start():
+            return False, "FORWARD START BLOCKED\nReason: MT5 timeout worker failed to start"
+
         if not self.feed.initialize():
             return False, "FORWARD START BLOCKED\nReason: MT5 initialization failed"
 
