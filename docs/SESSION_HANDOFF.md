@@ -1474,4 +1474,36 @@ No V19–V33 candidate is retroactively scored against this framework.
 
 ---
 
-*Authoritative for next session. Updated 2026-09-03 (F-01 V38A forward-observation infrastructure finalized), 2026-09-06 (F-01 V38A operational closure — prospective validation paused; NOT ECONOMICALLY ADJUDICATED; next research study released under its own governance), 2026-09-06 (FB-001 ORB V38A registration frozen V1-r1; Stage 2 PASS; Stage 3 BLOCKED — no post-freeze data; V1 superseded by V1-r1; Base Registry EMPTY; F-01 unchanged; no economics evaluated; no optimization performed), and 2026-09-06 (FB-001 ORB live observation integration COMPLETE — FB-001 attached additively to Unified Runner using shared MT5MarketFeed; FB-001 passive/non-trading; F-01 unchanged; tests 27/27 PASS; F-01 isolation 16/16 PASS). F-01 V38A — REGISTRATION FROZEN → STAGE 2 STRUCTURALLY VALID → STAGE 3 NOT REACHED → PROSPECTIVE VALIDATION PAUSED — NOT ECONOMICALLY ADJUDICATED — operational closure recorded. FB-001 ORB — LIVE INTEGRATION COMPLETE — PROSPECTIVE ACCRUAL ACTIVE — STAGE 3 ECONOMIC VALIDATION PENDING — NOT YET A BASE — Base Registry EMPTY. OUTCOME-BLIND BASE FORMULATION PATHWAY RATIFIED (BF1–BF13) — BASE REGISTRY EMPTY — no Base exists — no Base hypothesis formulated or selected — no Base validation — no experiment — 0 G2. First Base selection review: NO BASE HYPOTHESIS SELECTED — BH-01 WITHDRAWN (BS6 sign-inversion). BASE HYPOTHESIS SELECTION / VALIDATION DESIGN RATIFIED (BS1–BS13). V38A BASE VALIDATION PATHWAY RATIFIED (BV1–BV13). V38 DOCTRINE RATIFIED — HYBRID BASE + CONDITIONAL. V37A EXECUTED — SCIENTIFIC: INCONCLUSIVE — ECONOMIC: ECONOMICALLY NEGATIVE — cross-market line PAUSED — CAND-077 SRE unchanged. V36 CLOSED / VERIFIED. V35 CLOSED. V34 CLOSED. V33 CLOSED. V32 CLOSED / VERIFIED. V31 CLOSED / VERIFIED. V30 CLOSED / VERIFIED. State objects preserved (CAND-077/081/083). SEED-002 negative. H01/ORD CLOSED (not Bases). Forward runtime protected. Next authorized: FB-001 ORB prospective accrual active; re-execute V38A Stage 3 Economic Validation for FB-001 using V1-r1 only once ≥1 post-freeze session accrues; F-01 infrastructure repair is a separate engineering backlog item — do NOT continue looping on F-01 runner recovery during research execution.*
+## 54. SESSION CLOSE — 2026-09-06
+
+**Status:** SESSION CLOSED — FB-001 ORB PROSPECTIVE ACCRUAL ACTIVE — STAGE 3 PENDING
+
+**Completed work this session:**
+
+1. FB-001 ORB V38A registration frozen as `FB-001-ORB-V38A-REG-V1-r1` (SHA `04e9f804cca93d64`).
+2. Stage 2 Structural Validation: PASS. 26/26 tests. Independent reproducibility confirmed.
+3. Stage 3 Economic Validation: BLOCKED — no post-freeze economic observations existed. Correctly halted.
+4. FB-001 live observer integrated additively into Unified Runner (`scripts/forward/fb001_orb_observer.py`). Passive/non-trading. Shared `MT5TimeoutMarketFeed` reused. 27/27 structural tests pass. F-01 isolation verified (16/16).
+5. MT5 hard-timeout worker production initialization defect diagnosed and fixed (`quantforge_forward_supervisor.py:428`). Root cause: `MT5TimeoutManager` was instantiated but `manager.start()` was never called. One-line startup activation added. Hard-timeout protection now operational. 13/13 timeout tests pass. Commit `7cde81b`.
+6. Integration report: `output/research_discovery/QUANTFORGE_FB001_ORB_LIVE_INTEGRATION_V1.md`. SHA256: `830df883c5f6af8952ec11f1a96c339f52816f064bfa32d80c5f8b46ec0780d7`.
+
+**Governed states confirmed at close:**
+
+- FB-001 Stage 3: NOT EXECUTED
+- FB-001 Base status: NOT A BASE
+- Base Registry: EMPTY
+- F-01: UNCHANGED
+- Protected-forward economics: NOT INSPECTED
+- Historical FB-001 economics: NOT USED
+- Optimization: NOT PERFORMED
+- Conditional: NOT INTRODUCED
+- No economic validation performed
+- No optimization performed
+
+**Next authorized task:** Read-only operational continuity audit after sufficient runner runtime. Verify: runner continuity, MT5 health, timeout-worker health, FB-001 observer health, F-01 health, expected prospective records, absence of FB-001 broker orders, absence of runner stalls/crashes. Only after sufficient post-freeze FB-001 data exists should Stage 3 Economic Validation be re-executed.
+
+**Push status:** BLOCKED — historical files (`G6_CAND015_FORWARD_002/connection_events.jsonl` 160MB, `heartbeat.jsonl` 160MB) exceed GitHub 100MB limit. All local commits preserved.
+
+---
+
+*Authoritative for next session. Updated 2026-09-03 (F-01 V38A forward-observation infrastructure finalized), 2026-09-06 (F-01 V38A operational closure — prospective validation paused; NOT ECONOMICALLY ADJUDICATED; next research study released under its own governance), 2026-09-06 (FB-001 ORB V38A registration frozen V1-r1; Stage 2 PASS; Stage 3 BLOCKED — no post-freeze data; V1 superseded by V1-r1; Base Registry EMPTY; F-01 unchanged; no economics evaluated; no optimization performed), 2026-09-06 (FB-001 ORB live observation integration COMPLETE — FB-001 attached additively to Unified Runner using shared MT5MarketFeed; FB-001 passive/non-trading; F-01 unchanged; tests 27/27 PASS; F-01 isolation 16/16 PASS), and 2026-09-06 (MT5 hard-timeout worker initialization defect fixed — manager.start() added; hard-timeout protection operational; 13/13 timeout tests PASS; verify-feed mode confirmed; session closed). F-01 V38A — REGISTRATION FROZEN → STAGE 2 STRUCTURALLY VALID → STAGE 3 NOT REACHED → PROSPECTIVE VALIDATION PAUSED — NOT ECONOMICALLY ADJUDICATED — operational closure recorded. FB-001 ORB — LIVE INTEGRATION COMPLETE — PROSPECTIVE ACCRUAL ACTIVE — STAGE 3 ECONOMIC VALIDATION PENDING — NOT YET A BASE — Base Registry EMPTY. MT5 HARD-TIMEOUT — INITIALIZATION DEFECT FIXED — HARD-TIMEOUT PROTECTION OPERATIONAL — UNIFIED RUNNER PROTECTED. OUTCOME-BLIND BASE FORMULATION PATHWAY RATIFIED (BF1–BF13) — BASE REGISTRY EMPTY — no Base exists — no Base hypothesis formulated or selected — no Base validation — no experiment — 0 G2. First Base selection review: NO BASE HYPOTHESIS SELECTED — BH-01 WITHDRAWN (BS6 sign-inversion). BASE HYPOTHESIS SELECTION / VALIDATION DESIGN RATIFIED (BS1–BS13). V38A BASE VALIDATION PATHWAY RATIFIED (BV1–BV13). V38 DOCTRINE RATIFIED — HYBRID BASE + CONDITIONAL. V37A EXECUTED — SCIENTIFIC: INCONCLUSIVE — ECONOMIC: ECONOMICALLY NEGATIVE — cross-market line PAUSED — CAND-077 SRE unchanged. V36 CLOSED / VERIFIED. V35 CLOSED. V34 CLOSED. V33 CLOSED. V32 CLOSED / VERIFIED. V31 CLOSED / VERIFIED. V30 CLOSED / VERIFIED. State objects preserved (CAND-077/081/083). SEED-002 negative. H01/ORD CLOSED (not Bases). Forward runtime protected. Next authorized: Read-only operational continuity audit; then re-execute V38A Stage 3 Economic Validation for FB-001 using V1-r1 only once ≥1 post-freeze session accrues; F-01 infrastructure repair is a separate engineering backlog item — do NOT continue looping on F-01 runner recovery during research execution.*
