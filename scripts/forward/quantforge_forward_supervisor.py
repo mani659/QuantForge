@@ -18,6 +18,7 @@ from mt5_timeout_manager import MT5TimeoutManager
 from module_registry import get_registry
 from supervisor_health import SupervisorHealthMonitor
 from f01_observation_recorder import F01ObservationRecorder
+from fb001_orb_observer import FB001ORBObserver
 
 HISTORICAL_START = "2026-08-27T09:44:58Z"
 MIGRATION_TIME = datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ")
@@ -112,6 +113,7 @@ class Supervisor:
         self.feed = MT5TimeoutMarketFeed(self._mt5_manager)
         self.modules = get_registry(base_runtime_dir, self.feed)
         self.f01_recorder = F01ObservationRecorder(feed=self.feed)
+        self.fb001_observer = FB001ORBObserver(feed=self.feed)
         self.startup_time = time.time()
         self.uptime_seconds = 0
         self.reconnect_count = 0
@@ -292,6 +294,7 @@ class Supervisor:
             else:
                 print(f"  {m.candidate_id}: ACTIVE")
         print(f"  F-01 RECORDER: RAW CAPTURE (NO TRADING)")
+        print(f"  FB-001 ORB: PROSPECTIVE ACCRUAL (NO TRADING)")
         print()
         print("Runner:")
         print("LIVE AND RUNNING")
@@ -350,6 +353,7 @@ class Supervisor:
         print()
         print(f"Feed: {feed_status}")
         print(f"F-01 Recorder: ACTIVE (RAW CAPTURE)")
+        print(f"FB-001 ORB: ACTIVE (PROSPECTIVE ACCRUAL)")
         print(f"Last Scan: {ts}")
         print(f"Runner: LIVE")
         print("============================================================")
@@ -541,6 +545,9 @@ class Supervisor:
 
             # F-01 observation recorder: raw M1 capture sidecar (exception-safe)
             self.f01_recorder.on_tick(quote_res)
+
+            # FB-001 ORB observer: prospective accrual sidecar (exception-safe)
+            self.fb001_observer.on_tick(quote_res)
 
             # Heartbeat every ~60 seconds
             if int(current_time) % 60 == 0 and current_time - self.last_heartbeat >= 60:
