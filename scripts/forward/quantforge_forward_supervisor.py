@@ -13,7 +13,8 @@ try:
 except ImportError:
     msvcrt = None
 
-from market_data import MT5MarketFeed
+from market_data import MT5TimeoutMarketFeed, MT5MarketFeed
+from mt5_timeout_manager import MT5TimeoutManager
 from module_registry import get_registry
 from supervisor_health import SupervisorHealthMonitor
 from f01_observation_recorder import F01ObservationRecorder
@@ -102,7 +103,13 @@ class Supervisor:
         self.status_file = os.path.join(self.supervisor_dir, "status.json")
         self.health_ledger = SupervisorHealthMonitor(os.path.join(self.supervisor_dir, "supervisor_health.jsonl"))
 
-        self.feed = MT5MarketFeed()
+        # Create MT5 timeout manager and timeout-protected feed
+        self._mt5_manager = MT5TimeoutManager(
+            request_timeout=5.0,
+            startup_timeout=10.0,
+            max_consecutive_failures=5,
+        )
+        self.feed = MT5TimeoutMarketFeed(self._mt5_manager)
         self.modules = get_registry(base_runtime_dir, self.feed)
         self.f01_recorder = F01ObservationRecorder(feed=self.feed)
         self.startup_time = time.time()
@@ -210,6 +217,9 @@ class Supervisor:
         self.save_status(state="STOPPING")
         if self.feed:
             self.feed.shutdown()
+        # Shutdown the MT5 timeout manager
+        if self._mt5_manager:
+            self._mt5_manager.shutdown()
         try:
             os.remove(self.shutdown_req_path)
         except Exception:
@@ -422,12 +432,10 @@ class Supervisor:
                 f"Actual: {actual_server}"
             )
 
-        mt5 = self.feed._get_mt5()
-        if mt5:
-            mt5.symbol_select("USTECm", True)
-            tick = mt5.symbol_info_tick("USTECm")
-            if tick is None:
-                return False, "FORWARD START BLOCKED\nReason: USTECm unavailable"
+        # Verify USTECm symbol is available via timeout-protected feed
+        quote = self.feed.latest_quote("USTECm")
+        if quote.get("status") not in ("DATA_FRESH", "DATA_STALE"):
+            return False, "FORWARD START BLOCKED\nReason: USTECm unavailable"
 
         return True, None
 

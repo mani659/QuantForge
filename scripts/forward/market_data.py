@@ -2,6 +2,115 @@ import time
 import os
 from typing import Dict, Any, Optional
 
+
+class MT5TimeoutMarketFeed:
+    """MT5 feed that routes all calls through a timeout-protected worker.
+
+    This class provides the same interface as MT5MarketFeed but routes
+    every MT5-bound call through a separate process via the timeout manager.
+    This ensures a hung MT5 native call cannot freeze the supervisor.
+
+    HARD TIMEOUT GUARANTEE:
+      Every MT5 operation is dispatched with a deadline. If the worker
+      does not respond within the deadline, the worker is terminated
+      and replaced. The supervisor never waits indefinitely.
+
+    F-01 FIREWALL:
+      This class does NOT access F-01 data or modify any archives.
+    """
+
+    def __init__(self, timeout_manager):
+        """Initialize with an existing MT5TimeoutManager.
+
+        Args:
+            timeout_manager: MT5TimeoutManager instance (must be started).
+        """
+        self._manager = timeout_manager
+        self._connected = False
+        self._initialized = False
+
+    def initialize(self) -> bool:
+        """Initialize MT5 via the timeout-protected worker."""
+        terminal_path = os.getenv("QF_MT5_TERMINAL_PATH")
+        result = self._manager.execute(
+            "initialize",
+            terminal_path=terminal_path,
+            timeout=self._manager.startup_timeout,
+        )
+        if result["success"] and result["result"].get("initialized"):
+            self._connected = True
+            self._initialized = True
+            return True
+        self._connected = False
+        return False
+
+    def connection_state(self) -> str:
+        """Check MT5 connection state via timeout-protected worker."""
+        if not self._connected:
+            return "DISCONNECTED"
+        result = self._manager.execute("connection_state")
+        if result["success"]:
+            state = result["result"].get("state", "DISCONNECTED")
+            if state == "DISCONNECTED":
+                self._connected = False
+            return state
+        # Timeout or error — treat as disconnected
+        self._connected = False
+        return "DISCONNECTED"
+
+    def terminal_info(self) -> Dict[str, Any]:
+        """Get terminal info via timeout-protected worker."""
+        if not self._connected:
+            return {"broker": "UNKNOWN", "server": "UNKNOWN"}
+        result = self._manager.execute("terminal_info")
+        if result["success"]:
+            return {
+                "broker": result["result"].get("broker", "UNKNOWN"),
+                "server": result["result"].get("server", "UNKNOWN"),
+            }
+        return {"broker": "UNKNOWN", "server": "UNKNOWN"}
+
+    def latest_quote(self, symbol: str) -> Optional[Dict[str, Any]]:
+        """Get latest quote via timeout-protected worker."""
+        if not self._connected:
+            return {"status": "FEED_UNAVAILABLE"}
+        result = self._manager.execute("latest_quote", symbol=symbol)
+        if result["success"]:
+            return result["result"]
+        if result["timeout"]:
+            return {"status": "FEED_UNAVAILABLE"}
+        return {"status": "DATA_INDETERMINATE"}
+
+    def latest_completed_bar(self, symbol: str, timeframe: str) -> Optional[Dict[str, Any]]:
+        """Get latest completed bar via timeout-protected worker."""
+        if not self._connected:
+            return {"status": "FEED_UNAVAILABLE"}
+        result = self._manager.execute(
+            "latest_completed_bar", symbol=symbol, timeframe=timeframe
+        )
+        if result["success"]:
+            return result["result"]
+        if result["timeout"]:
+            return {"status": "FEED_UNAVAILABLE"}
+        return {"status": "DATA_INDETERMINATE"}
+
+    def shutdown(self):
+        """Shutdown MT5 via timeout-protected worker."""
+        if self._connected:
+            self._manager.execute("shutdown")
+            self._connected = False
+
+    @property
+    def health_state(self):
+        """Delegate health state to timeout manager."""
+        return self._manager.health_state
+
+    @property
+    def stats(self):
+        """Delegate stats to timeout manager."""
+        return self._manager.stats
+
+
 class MT5MarketFeed:
     def __init__(self, mt5_module=None):
         self._mt5 = mt5_module
