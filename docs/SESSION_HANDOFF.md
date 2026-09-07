@@ -554,3 +554,55 @@
 **Artifact:** `output/research_discovery/QUANTFORGE_V38A_MECHANISM_NOVELTY_GATED_DISCOVERY_V1.md`
 
 **Next governed step:** The novelty-gated discovery cycle is complete with zero survivors. The M1 OHLCV single-market mechanism space appears exhaustively explored. Future mechanism discovery may require: (a) different data (order flow, tick data, cross-asset), (b) different timeframes, or (c) genuinely different market microstructure hypotheses that are independently observable.
+
+---
+
+## 78. TICK-DATA CAPABILITY & MICROSTRUCTURE READINESS AUDIT (2026-09-07)
+
+**Status:** AUDIT COMPLETE — PARTIALLY READY — PREREQUISITE DATA/INFRASTRUCTURE WORK REQUIRED
+
+**Completed work:**
+
+1. Read all authoritative sources: SESSION_HANDOFF (through §77), tick validator, tick-to-M1 converter, tick parquet converter, RF-001 recorder, F-01 recorder, validation reports for 5 symbols, test fixture parquet, M1 derived data.
+2. Inspected actual tick data files on disk (5 CSV files, ~40 GB total, ~930M rows).
+3. Verified field semantics from actual records (not from field names).
+4. Audited timestamp fidelity, event ordering, completeness.
+5. Assessed reconstruction capability and research readiness.
+
+**Critical findings:**
+
+- **4 symbols have true tick data** (USATECHIDXUSD, XAUUSD, XAGUSD, BTCUSD): 6 columns (date, time, bid, ask, last, volume), second resolution, 1,043–1,825 days coverage, validation PASS.
+- **EURUSD "tick" data is mislabelled.** File contains M1 OHLCV (7 columns, OHLCV structure, minute resolution), not tick data.
+- **`last` field equals `bid` for all observations.** No independent trade-price evidence. Trade/quote separation NOT possible.
+- **`volume` field is zero for all tick data.** Real trade volume NOT available. Tick count IS available.
+- **No order-book depth.** Top-of-book only (best bid/ask).
+- **No trade/quote event-type flag.** Cannot distinguish quote updates from trades.
+- **No prospective tick capture.** Live recorder captures M1 bars, not ticks.
+- **Parquet infrastructure exists but has not been executed** on full datasets.
+
+**Newly observable research classes (with current data):**
+- Spread dynamics and spread-state transitions
+- Event intensity transitions (ticks per second)
+- Quote update frequency and churn
+- Microstructure volatility transitions
+- Intraday spread-return dynamics
+- Bid/ask independence dynamics
+
+**NOT observable with current data:**
+- True order flow (aggressor classification)
+- Real trade volume
+- Order-book depth and liquidity replenishment
+- Trade events (separate from quote updates)
+- Institutional positioning
+
+**Governed states confirmed:**
+- RF-001: UNCHANGED — Stage 3 blocked, accrual continues
+- RF-002: DEFERRED
+- RF-003: DEFERRED
+- FB-001: UNCHANGED
+- F-01: UNCHANGED
+- Base Registry: BASE-001 CLOSED / NOT BASE-ELIGIBLE
+
+**Artifact:** `output/research_discovery/QUANTFORGE_TICK_DATA_MICROSTRUCTURE_READINESS_AUDIT_V1.md`
+
+**Next governed step:** Tick-level mechanism discovery is PARTIALLY AUTHORIZED. The data supports research in spread dynamics, event intensity, and quote-level microstructure. Trade-flow, volume-based, and depth-based research remain blocked. Prospective tick capture would require building a new recorder using MT5's `copy_ticks_from()` API.
