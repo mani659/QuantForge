@@ -606,3 +606,47 @@
 **Artifact:** `output/research_discovery/QUANTFORGE_TICK_DATA_MICROSTRUCTURE_READINESS_AUDIT_V1.md`
 
 **Next governed step:** Tick-level mechanism discovery is PARTIALLY AUTHORIZED. The data supports research in spread dynamics, event intensity, and quote-level microstructure. Trade-flow, volume-based, and depth-based research remain blocked. Prospective tick capture would require building a new recorder using MT5's `copy_ticks_from()` API.
+
+---
+
+## 79. CANONICAL TICK DATA INFRASTRUCTURE — READY FOR QUOTE-LEVEL MICROSTRUCTURE DISCOVERY (2026-09-07)
+
+**Status:** CANONICAL TICK DATA SUBSTRATE COMPLETE — READY FOR QUOTE-LEVEL MICROSTRUCTURE DISCOVERY
+
+**Completed work:**
+
+1. Built canonical tick data canonicalizer (`scripts/data/tick_canonicalizer.py`). Streaming, bounded-memory, chunked processing. 9-column schema (source_row_ordinal, date, time, bid, ask, last, vol, mid, spread).
+2. Wrote 16 validation tests (`tests/test_tick_canonicalizer.py`). All 16 PASS.
+3. Canonicalized all 4 validated tick datasets:
+   - XAGUSD: 146,389,821 rows → 61 partitions, 0 rejected
+   - USATECHIDXUSD: 173,457,022 rows → 35 partitions, 0 rejected
+   - XAUUSD: 281,514,283 rows → 61 partitions, 0 rejected
+   - BTCUSD: 299,204,931 rows → 61 partitions, 0 rejected
+   - **Total: 900,566,057 rows canonicalized, 0 rejected.**
+4. Generated provenance manifests for all 4 symbols (SHA-256 checksums, column hashes, partition inventories, quality statistics).
+5. Wrote canonical tick data specification (`QUANTFORGE_CANONICAL_TICK_DATA_SPECIFICATION_V1.md`).
+6. Wrote migration report (`QUANTFORGE_CANONICAL_TICK_DATA_MIGRATION_REPORT_V1.md`).
+
+**Critical findings:**
+- Zero rejected rows across 900M+ rows — raw source data is structurally clean.
+- 70.1% of rows have duplicate timestamps (multiple quote updates per second). All preserved.
+- Canonical Parquet: 14.8 GB total (63% compression from ~40 GB raw CSV).
+- 218 monthly partitions across 4 symbols.
+
+**Governed states confirmed:**
+- RF-001: UNCHANGED — Stage 3 blocked, accrual continues
+- RF-002: DEFERRED
+- RF-003: DEFERRED
+- FB-001: UNCHANGED
+- F-01: UNCHANGED
+- Base Registry: BASE-001 CLOSED / NOT BASE-ELIGIBLE
+
+**Artifacts:**
+- Specification: `output/research_discovery/QUANTFORGE_CANONICAL_TICK_DATA_SPECIFICATION_V1.md`
+- Migration report: `output/research_discovery/QUANTFORGE_CANONICAL_TICK_DATA_MIGRATION_REPORT_V1.md`
+- Canonicalization code: `scripts/data/tick_canonicalizer.py`
+- Validation tests: `tests/test_tick_canonicalizer.py`
+- Canonical data: `data/tick_canonical/<SYMBOL>/<YYYYMM>.parquet`
+- Manifests: `data/tick_canonical/<SYMBOL>/manifest.json`
+
+**Next governed step:** Quote-level microstructure mechanism discovery is AUTHORIZED for the 7 supported research domains (spread dynamics, event intensity, quote churn, micro-volatility, spread-return dynamics, bid/ask independence, intrabar path). Trade-flow, volume-based, and depth-based research remain blocked. Prospective tick capture would require a new recorder using MT5's `copy_ticks_from()` API.
