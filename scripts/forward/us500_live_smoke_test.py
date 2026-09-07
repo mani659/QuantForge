@@ -85,15 +85,21 @@ def run_live_smoke():
     print()
 
     # 6. Verify RF-001 recorder captures US500m
-    print("6. Verifying RF-001 recorder captures US500m...")
+    print("6. Verifying RF-001 recorder captures both markets...")
     import tempfile
     with tempfile.TemporaryDirectory(prefix="rf001_smoke_") as td:
         rec = RF001ObservationRecorder(feed=feed, raw_dir=td)
         rec.on_tick({})
-        if rec.stats["total_captured"] > 0:
-            print(f"   PASS: RF-001 recorder captured {rec.stats['total_captured']} bar(s)")
+        matched = rec.stats.get("matched_captures", 0)
+        prim_only = rec.stats.get("primary_only_events", 0)
+        conf_only = rec.stats.get("confirmation_only_events", 0)
+        misaligned = rec.stats.get("misaligned_events", 0)
+        total = matched + prim_only + conf_only + misaligned
+        if total > 0:
+            print(f"   PASS: RF-001 recorder captured {total} observation(s)")
+            print(f"   MATCHED: {matched}, PRIMARY_ONLY: {prim_only}, CONFIRMATION_ONLY: {conf_only}, MISALIGNED: {misaligned}")
         else:
-            print(f"   INFO: No bar captured (may be between ticks)")
+            print(f"   INFO: No observations (may be between ticks)")
             print(f"   Stats: {rec.stats}")
     print()
 
