@@ -1628,8 +1628,36 @@ No V19–V33 candidate is retroactively scored against this framework.
 - No owner selection performed
 - V38A registration not performed
 
-**Next authorized task:** Owner governance decision on formulation selection and structural parameters. After decision, proceed to V38A registration with frozen parameters.
+**Next authorized task:** V38A Stage 1 Registration for RF-001.
 
 ---
 
-*Authoritative for next session. Updated 2026-09-03 (F-01 V38A forward-observation infrastructure finalized), 2026-09-06 (F-01 V38A operational closure — prospective validation paused; NOT ECONOMICALLY ADJUDICATED; next research study released under its own governance), 2026-09-06 (FB-001 ORB V38A registration frozen V1-r1; Stage 2 PASS; Stage 3 BLOCKED — no post-freeze data; V1 superseded by V1-r1; Base Registry EMPTY; F-01 unchanged; no economics evaluated; no optimization performed), 2026-09-06 (FB-001 ORB live observation integration COMPLETE — FB-001 attached additively to Unified Runner using shared MT5MarketFeed; FB-001 passive/non-trading; F-01 unchanged; tests 27/27 PASS; F-01 isolation 16/16 PASS), and 2026-09-06 (MT5 hard-timeout worker initialization defect fixed — manager.start() added; hard-timeout protection operational; 13/13 timeout tests PASS; verify-feed mode confirmed; session closed), and 2026-09-07 (relational mechanism discovery + outcome-blind formulation cycle complete — RF-001/RF-002/RF-003 formulated; parameter adjudication complete; owner decision packet prepared; final selection comparison complete; mandatory owner decision matrix complete — 9 governance choices, ~6 independent decisions, exact alternatives documented; no economics; no registration; no owner selection; Base Registry EMPTY). F-01 V38A — REGISTRATION FROZEN → STAGE 2 STRUCTURALLY VALID → STAGE 3 NOT REACHED → PROSPECTIVE VALIDATION PAUSED — NOT ECONOMICALLY ADJUDICATED — operational closure recorded. FB-001 ORB — LIVE INTEGRATION COMPLETE — PROSPECTIVE ACCRUAL ACTIVE — STAGE 3 ECONOMIC VALIDATION PENDING — NOT YET A BASE — Base Registry EMPTY. MT5 HARD-TIMEOUT — INITIALIZATION DEFECT FIXED — HARD-TIMEOUT PROTECTION OPERATIONAL — UNIFIED RUNNER PROTECTED. OUTCOME-BLIND BASE FORMULATION PATHWAY RATIFIED (BF1–BF13) — BASE REGISTRY EMPTY — no Base exists — no Base hypothesis formulated or selected — no Base validation — no experiment — 0 G2. First Base selection review: NO BASE HYPOTHESIS SELECTED — BH-01 WITHDRAWN (BS6 sign-inversion). BASE HYPOTHESIS SELECTION / VALIDATION DESIGN RATIFIED (BS1–BS13). V38A BASE VALIDATION PATHWAY RATIFIED (BV1–BV13). V38 DOCTRINE RATIFIED — HYBRID BASE + CONDITIONAL. V37A EXECUTED — SCIENTIFIC: INCONCLUSIVE — ECONOMIC: ECONOMICALLY NEGATIVE — cross-market line PAUSED — CAND-077 SRE unchanged. V36 CLOSED / VERIFIED. V35 CLOSED. V34 CLOSED. V33 CLOSED. V32 CLOSED / VERIFIED. V31 CLOSED / VERIFIED. V30 CLOSED / VERIFIED. State objects preserved (CAND-077/081/083). SEED-002 negative. H01/ORD CLOSED (not Bases). Forward runtime protected. Next authorized: Read-only operational continuity audit; then re-execute V38A Stage 3 Economic Validation for FB-001 using V1-r1 only once ≥1 post-freeze session accrues; F-01 infrastructure repair is a separate engineering backlog item — do NOT continue looping on F-01 runner recovery during research execution.*
+## 60. RF-001 OWNER SELECTION & PROSPECTIVE FREEZE (2026-09-07)
+
+**Status:** OWNER SELECTION FROZEN — SELECTED FOR V38A REGISTRATION
+
+**Completed work:**
+
+1. Owner selection of RF-001 — Cross-Market Confirmation Failure Process frozen (`QUANTFORGE_RF001_OWNER_SELECTION_FREEZE_V1.md`, SHA256 `pending`).
+2. Governance choices frozen: N=30 completed M1 bars, M=15 completed M1 bars, confirmation market=US500.
+3. Decision semantics explicitly mapped: bullish primary event + failed confirmation → SHORT US500; bearish primary event + failed confirmation → LONG US500.
+4. Entry: open of bar M+2 (bar 17). Exit: session close. Invalidation: primary reverses before entry. Cost: 2 bps.
+5. Mechanism preservation verified: confirmation failure mechanism unchanged. Distinctness verified against all prior work. Outcome-blind certified. No economics used. No optimization. Selection owner-directed.
+6. RF-002 and RF-003: DEFERRED (not rejected).
+
+**Governed states confirmed:**
+
+- RF-001: SELECTED FOR V38A REGISTRATION
+- RF-002: DEFERRED
+- RF-003: DEFERRED
+- FB-001 Stage 3: NOT EXECUTED
+- FB-001 Base status: NOT A BASE
+- Base Registry: EMPTY
+- F-01: UNCHANGED
+- V38A registration: NOT YET EXECUTED
+
+**Next authorized task:** V38A Stage 1 Registration for RF-001.
+
+---
+
+*Authoritative for next session. Updated 2026-09-03 (F-01 V38A forward-observation infrastructure finalized), 2026-09-06 (F-01 V38A operational closure — prospective validation paused; NOT ECONOMICALLY ADJUDICATED; next research study released under its own governance), 2026-09-06 (FB-001 ORB V38A registration frozen V1-r1; Stage 2 PASS; Stage 3 BLOCKED — no post-freeze data; V1 superseded by V1-r1; Base Registry EMPTY; F-01 unchanged; no economics evaluated; no optimization performed), 2026-09-06 (FB-001 ORB live observation integration COMPLETE — FB-001 attached additively to Unified Runner using shared MT5MarketFeed; FB-001 passive/non-trading; F-01 unchanged; tests 27/27 PASS; F-01 isolation 16/16 PASS), and 2026-09-06 (MT5 hard-timeout worker initialization defect fixed — manager.start() added; hard-timeout protection operational; 13/13 timeout tests PASS; verify-feed mode confirmed; session closed), and 2026-09-07 (relational mechanism discovery + outcome-blind formulation cycle complete — RF-001/RF-002/RF-003 formulated; parameter adjudication complete; owner decision packet prepared; final selection comparison complete; mandatory owner decision matrix complete; RF-001 OWNER SELECTED AND FROZEN for V38A registration — N=30, M=15, confirmation market=US500; RF-002/RF-003 DEFERRED; no economics; no registration; no optimization; Base Registry EMPTY). F-01 V38A — REGISTRATION FROZEN → STAGE 2 STRUCTURALLY VALID → STAGE 3 NOT REACHED → PROSPECTIVE VALIDATION PAUSED — NOT ECONOMICALLY ADJUDICATED — operational closure recorded. FB-001 ORB — LIVE INTEGRATION COMPLETE — PROSPECTIVE ACCRUAL ACTIVE — STAGE 3 ECONOMIC VALIDATION PENDING — NOT YET A BASE — Base Registry EMPTY. MT5 HARD-TIMEOUT — INITIALIZATION DEFECT FIXED — HARD-TIMEOUT PROTECTION OPERATIONAL — UNIFIED RUNNER PROTECTED. OUTCOME-BLIND BASE FORMULATION PATHWAY RATIFIED (BF1–BF13) — BASE REGISTRY EMPTY — no Base exists — no Base hypothesis formulated or selected — no Base validation — no experiment — 0 G2. First Base selection review: NO BASE HYPOTHESIS SELECTED — BH-01 WITHDRAWN (BS6 sign-inversion). BASE HYPOTHESIS SELECTION / VALIDATION DESIGN RATIFIED (BS1–BS13). V38A BASE VALIDATION PATHWAY RATIFIED (BV1–BV13). V38 DOCTRINE RATIFIED — HYBRID BASE + CONDITIONAL. V37A EXECUTED — SCIENTIFIC: INCONCLUSIVE — ECONOMIC: ECONOMICALLY NEGATIVE — cross-market line PAUSED — CAND-077 SRE unchanged. V36 CLOSED / VERIFIED. V35 CLOSED. V34 CLOSED. V33 CLOSED. V32 CLOSED / VERIFIED. V31 CLOSED / VERIFIED. V30 CLOSED / VERIFIED. State objects preserved (CAND-077/081/083). SEED-002 negative. H01/ORD CLOSED (not Bases). Forward runtime protected. Next authorized: Read-only operational continuity audit; then re-execute V38A Stage 3 Economic Validation for FB-001 using V1-r1 only once ≥1 post-freeze session accrues; F-01 infrastructure repair is a separate engineering backlog item — do NOT continue looping on F-01 runner recovery during research execution.*
