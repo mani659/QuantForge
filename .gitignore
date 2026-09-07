@@ -45,6 +45,7 @@ venv.bak/
 
 # Data Files & Research Outputs (Pickles, Parquet, CSVs, Tick Data)
 *.csv
+*.csv.gz
 *.parquet
 *.pkl
 *.bin
@@ -52,6 +53,7 @@ venv.bak/
 *.hst
 *.zip
 *.rar
+*.jsonl
 
 # IDEs and OS Temporary Files
 .vscode/
@@ -71,6 +73,7 @@ desktop.ini
 *.npy
 
 # Generated research outputs
+output/
 test_outputs/
 .build_cache/
 
