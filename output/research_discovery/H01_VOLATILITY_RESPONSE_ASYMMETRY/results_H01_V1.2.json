@@ -1,0 +1,4928 @@
+{
+  "protocol_version": "1.2.0",
+  "protocol_sha256": "9d3edb69b7628956efbc8135b08c78c322d1ffee8af2a35e35dedc246d87c68f",
+  "executed_at": "2026-08-16T10:21:15.871866Z",
+  "elapsed_seconds": 1907.6,
+  "software": {
+    "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+    "numpy": "2.4.4",
+    "pandas": "3.0.2",
+    "scipy": "1.17.1"
+  },
+  "frozen_params": {
+    "protocol_version": "1.2.0",
+    "shock": "daily log return r_t",
+    "response": "dlnRV = ln(RV_fwd5) - ln(RV_back5); RV = sum of squared daily log returns",
+    "strata": "within-market terciles of ln(RV_back5) over the market full eligible series",
+    "matching": "within-(market,stratum) nearest-neighbour caliper on |r|, caliper 0.25*SD(|r|), greedy one-to-one, stable tie-break (|r| asc, timestamp asc), r_t=0 excluded, reference pool = smaller of NEG/POS (equal -> POS)",
+    "caliper_ratio": 0.25,
+    "statistic": "d_(m,s)=mean[pairs](dlnRV_neg - dlnRV_pos); d_m=mean(3 strata); D_class=mean(evaluable markets)",
+    "evaluability": {
+      "min_pairs_per_stratum": 30,
+      "min_evaluable_markets_per_class": 2
+    },
+    "family": {
+      "n": 11,
+      "correction": "Holm step-down",
+      "alpha": 0.05
+    },
+    "bootstrap": {
+      "L": 11,
+      "B": 10000,
+      "seed": 20260813,
+      "type": "synchronized circular calendar blocks over class union calendar",
+      "length_rule": "nblocks = ceil(T/L) whole blocks, no truncation, no padding",
+      "p": "p = (1 + count)/(B + 1), count = #{b : |D*_null,b| >= |D_obs|} (null-test, v1.2.0)",
+      "ci": "percentile (2.5%, 97.5%) of the ordinary sampling draws D*"
+    },
+    "null_construction": {
+      "form": "data-level, authoritative (protocol \u00a79A.2)",
+      "constant": "c_(m,s) = mean(d_i) over the frozen observed matched pairs in (m,s)",
+      "transformation": "shock-response level: dlnRV(neg) - c_(m,s)/2; dlnRV(pos) + c_(m,s)/2 (any equivalent sign-split producing d_i - c_(m,s))",
+      "pivot": "D*_null = D* - D_obs only where exactly equivalent (all 3 strata present); never silently substituted",
+      "mc_convention": "(1 + count)/(B + 1), count = #{b : |D*_null,b| >= |D_obs|}"
+    },
+    "common_window_sensitivity": [
+      "1987-01-13",
+      "2002-08-30"
+    ]
+  },
+  "fingerprints": {
+    "front_ad": true,
+    "front_bp": true,
+    "front_c": true,
+    "front_cd": true,
+    "front_cl": true,
+    "front_cr": true,
+    "front_ct": true,
+    "front_dx": true,
+    "front_ed": true,
+    "front_fc": true,
+    "front_gc": true,
+    "front_hg": true,
+    "front_jo": true,
+    "front_jy": true,
+    "front_lh": true,
+    "front_o": true,
+    "front_s": true,
+    "front_sf": true,
+    "front_si": true,
+    "front_sp": true,
+    "front_us": true,
+    "front_w": true,
+    "manifest_HPD_MANIFEST.csv": true,
+    "manifest_HPD_CONTRACT_HASHES.csv": true,
+    "manifest_FINAL_CLASSIFICATION.csv": true,
+    "manifest_PER_MARKET_VALIDATION.csv": true,
+    "XAUUSD_m1": true,
+    "XAGUSD_m1": true,
+    "EURUSD_m1": true,
+    "BTCUSD_m1": true,
+    "USATECHIDXUSD_m1": true,
+    "protocol_sha256": "9d3edb69b7628956efbc8135b08c78c322d1ffee8af2a35e35dedc246d87c68f"
+  },
+  "layerA": {
+    "markets": [
+      "ad",
+      "bp",
+      "c",
+      "cd",
+      "cl",
+      "cr",
+      "ct",
+      "dx",
+      "ed",
+      "fc",
+      "gc",
+      "hg",
+      "jo",
+      "jy",
+      "lh",
+      "o",
+      "s",
+      "sf",
+      "si",
+      "sp",
+      "us",
+      "w"
+    ],
+    "daily_rows": {
+      "ad": 3963,
+      "bp": 6957,
+      "c": 10896,
+      "cd": 6483,
+      "cl": 4890,
+      "cr": 4078,
+      "ct": 11240,
+      "dx": 4269,
+      "ed": 5215,
+      "fc": 7333,
+      "gc": 6972,
+      "hg": 10825,
+      "jo": 8918,
+      "jy": 6599,
+      "lh": 8388,
+      "o": 10895,
+      "s": 10894,
+      "sf": 6954,
+      "si": 9833,
+      "sp": 5163,
+      "us": 6328,
+      "w": 10896
+    },
+    "roll_days": {
+      "ad": 62,
+      "bp": 108,
+      "c": 218,
+      "cd": 102,
+      "cl": 233,
+      "cr": 91,
+      "ct": 233,
+      "dx": 69,
+      "ed": 119,
+      "fc": 224,
+      "gc": 211,
+      "hg": 322,
+      "jo": 217,
+      "jy": 103,
+      "lh": 227,
+      "o": 215,
+      "s": 300,
+      "sf": 107,
+      "si": 276,
+      "sp": 82,
+      "us": 111,
+      "w": 215
+    },
+    "eligibility": {
+      "ad": {
+        "n": 3216,
+        "exclusions": {
+          "roll_day": 62,
+          "roll_window": 620,
+          "incomplete_window": 10,
+          "zero_rv": 0,
+          "zero_return": 54
+        }
+      },
+      "bp": {
+        "n": 5581,
+        "exclusions": {
+          "roll_day": 108,
+          "roll_window": 1080,
+          "incomplete_window": 10,
+          "zero_rv": 2,
+          "zero_return": 175
+        }
+      },
+      "c": {
+        "n": 8058,
+        "exclusions": {
+          "roll_day": 218,
+          "roll_window": 2161,
+          "incomplete_window": 10,
+          "zero_rv": 0,
+          "zero_return": 448
+        }
+      },
+      "cd": {
+        "n": 5159,
+        "exclusions": {
+          "roll_day": 102,
+          "roll_window": 1019,
+          "incomplete_window": 10,
+          "zero_rv": 0,
+          "zero_return": 192
+        }
+      },
+      "cl": {
+        "n": 2291,
+        "exclusions": {
+          "roll_day": 233,
+          "roll_window": 2326,
+          "incomplete_window": 10,
+          "zero_rv": 0,
+          "zero_return": 29
+        }
+      },
+      "cr": {
+        "n": 3054,
+        "exclusions": {
+          "roll_day": 91,
+          "roll_window": 866,
+          "incomplete_window": 10,
+          "zero_rv": 0,
+          "zero_return": 56
+        }
+      },
+      "ct": {
+        "n": 8292,
+        "exclusions": {
+          "roll_day": 233,
+          "roll_window": 2252,
+          "incomplete_window": 7,
+          "zero_rv": 101,
+          "zero_return": 354
+        }
+      },
+      "dx": {
+        "n": 3474,
+        "exclusions": {
+          "roll_day": 69,
+          "roll_window": 676,
+          "incomplete_window": 10,
+          "zero_rv": 4,
+          "zero_return": 35
+        }
+      },
+      "ed": {
+        "n": 3157,
+        "exclusions": {
+          "roll_day": 119,
+          "roll_window": 1175,
+          "incomplete_window": 10,
+          "zero_rv": 40,
+          "zero_return": 713
+        }
+      },
+      "fc": {
+        "n": 4736,
+        "exclusions": {
+          "roll_day": 224,
+          "roll_window": 2195,
+          "incomplete_window": 10,
+          "zero_rv": 0,
+          "zero_return": 167
+        }
+      },
+      "gc": {
+        "n": 4557,
+        "exclusions": {
+          "roll_day": 211,
+          "roll_window": 2103,
+          "incomplete_window": 9,
+          "zero_rv": 0,
+          "zero_return": 91
+        }
+      },
+      "hg": {
+        "n": 7080,
+        "exclusions": {
+          "roll_day": 322,
+          "roll_window": 3176,
+          "incomplete_window": 9,
+          "zero_rv": 1,
+          "zero_return": 236
+        }
+      },
+      "jo": {
+        "n": 6372,
+        "exclusions": {
+          "roll_day": 217,
+          "roll_window": 2118,
+          "incomplete_window": 10,
+          "zero_rv": 5,
+          "zero_return": 195
+        }
+      },
+      "jy": {
+        "n": 5296,
+        "exclusions": {
+          "roll_day": 103,
+          "roll_window": 1030,
+          "incomplete_window": 10,
+          "zero_rv": 16,
+          "zero_return": 143
+        }
+      },
+      "lh": {
+        "n": 5719,
+        "exclusions": {
+          "roll_day": 227,
+          "roll_window": 2270,
+          "incomplete_window": 10,
+          "zero_rv": 0,
+          "zero_return": 161
+        }
+      },
+      "o": {
+        "n": 7899,
+        "exclusions": {
+          "roll_day": 215,
+          "roll_window": 2150,
+          "incomplete_window": 10,
+          "zero_rv": 0,
+          "zero_return": 620
+        }
+      },
+      "s": {
+        "n": 7392,
+        "exclusions": {
+          "roll_day": 300,
+          "roll_window": 3000,
+          "incomplete_window": 10,
+          "zero_rv": 0,
+          "zero_return": 191
+        }
+      },
+      "sf": {
+        "n": 5662,
+        "exclusions": {
+          "roll_day": 107,
+          "roll_window": 1070,
+          "incomplete_window": 10,
+          "zero_rv": 0,
+          "zero_return": 104
+        }
+      },
+      "si": {
+        "n": 6348,
+        "exclusions": {
+          "roll_day": 276,
+          "roll_window": 2707,
+          "incomplete_window": 9,
+          "zero_rv": 152,
+          "zero_return": 340
+        }
+      },
+      "sp": {
+        "n": 4203,
+        "exclusions": {
+          "roll_day": 82,
+          "roll_window": 817,
+          "incomplete_window": 10,
+          "zero_rv": 1,
+          "zero_return": 49
+        }
+      },
+      "us": {
+        "n": 5006,
+        "exclusions": {
+          "roll_day": 111,
+          "roll_window": 1053,
+          "incomplete_window": 10,
+          "zero_rv": 0,
+          "zero_return": 147
+        }
+      },
+      "w": {
+        "n": 8262,
+        "exclusions": {
+          "roll_day": 215,
+          "roll_window": 2150,
+          "incomplete_window": 10,
+          "zero_rv": 0,
+          "zero_return": 258
+        }
+      }
+    },
+    "per_market": {
+      "ad": {
+        "layer": "A",
+        "market": "ad",
+        "d_m": 0.11586678659545435,
+        "evaluable": true,
+        "pairs_per_stratum": {
+          "0": 459,
+          "1": 471,
+          "2": 481
+        },
+        "c_stratum": {
+          "0": 0.1042630892585545,
+          "1": 0.10394757941004583,
+          "2": 0.13938969111776275
+        },
+        "n_pairs_total": 1411,
+        "eligible": 3216,
+        "exclusions": {
+          "roll_day": 62,
+          "roll_window": 620,
+          "incomplete_window": 10,
+          "zero_rv": 0,
+          "zero_return": 54
+        },
+        "strata": {
+          "0": {
+            "npairs": 459,
+            "d_ms": 0.1042630892585545,
+            "unmatched_neg": 12,
+            "unmatched_pos": 142,
+            "balance": {
+              "mean_absr_neg": 0.004066960018452957,
+              "mean_absr_pos": 0.0037071541931086847,
+              "sd_absr_neg": 0.003953529208578418,
+              "sd_absr_pos": 0.0031853273410716964,
+              "smd": 0.10022348508285382
+            },
+            "caliper": 0.0008865453492103749
+          },
+          "1": {
+            "npairs": 471,
+            "d_ms": 0.10394757941004583,
+            "unmatched_neg": 40,
+            "unmatched_pos": 90,
+            "balance": {
+              "mean_absr_neg": 0.004799959800868395,
+              "mean_absr_pos": 0.004210404528243384,
+              "sd_absr_neg": 0.0044186342015766775,
+              "sd_absr_pos": 0.004058283851009374,
+              "smd": 0.13897109947077377
+            },
+            "caliper": 0.001060532765254659
+          },
+          "2": {
+            "npairs": 481,
+            "d_ms": 0.13938969111776275,
+            "unmatched_neg": 34,
+            "unmatched_pos": 76,
+            "balance": {
+              "mean_absr_neg": 0.005833913045339366,
+              "mean_absr_pos": 0.004984117208695321,
+              "sd_absr_neg": 0.005265146739197085,
+              "sd_absr_pos": 0.004109114605706015,
+              "smd": 0.17994097524497538
+            },
+            "caliper": 0.001179258560386629
+          }
+        },
+        "terciles": {
+          "q1": -9.363949982966245,
+          "q2": -8.58190453105823
+        },
+        "roll_count": 62
+      },
+      "bp": {
+        "layer": "A",
+        "market": "bp",
+        "d_m": -0.007618259038234221,
+        "evaluable": true,
+        "pairs_per_stratum": {
+          "0": 882,
+          "1": 895,
+          "2": 885
+        },
+        "c_stratum": {
+          "0": -0.031372401929369194,
+          "1": -0.022950914177589953,
+          "2": 0.03146853899225648
+        },
+        "n_pairs_total": 2662,
+        "eligible": 5581,
+        "exclusions": {
+          "roll_day": 108,
+          "roll_window": 1080,
+          "incomplete_window": 10,
+          "zero_rv": 2,
+          "zero_return": 175
+        },
+        "strata": {
+          "0": {
+            "npairs": 882,
+            "d_ms": -0.031372401929369194,
+            "unmatched_neg": 25,
+            "unmatched_pos": 71,
+            "balance": {
+              "mean_absr_neg": 0.003870812323137059,
+              "mean_absr_pos": 0.0035251381435903195,
+              "sd_absr_neg": 0.004039583367194423,
+              "sd_absr_pos": 0.0033297035146306556,
+              "smd": 0.09338255951769267
+            },
+            "caliper": 0.000923997975059684
+          },
+          "1": {
+            "npairs": 895,
+            "d_ms": -0.022950914177589953,
+            "unmatched_neg": 13,
+            "unmatched_pos": 57,
+            "balance": {
+              "mean_absr_neg": 0.00462502582950779,
+              "mean_absr_pos": 0.004630083731743218,
+              "sd_absr_neg": 0.004308537875345954,
+              "sd_absr_pos": 0.003978807215119603,
+              "smd": -0.0012196677063293381
+            },
+            "caliper": 0.0010354835823499007
+          },
+          "2": {
+            "npairs": 885,
+            "d_ms": 0.03146853899225648,
+            "unmatched_neg": 71,
+            "unmatched_pos": 20,
+            "balance": {
+              "mean_absr_neg": 0.005876661714564164,
+              "mean_absr_pos": 0.005972182995255825,
+              "sd_absr_neg": 0.005307325650857495,
+              "sd_absr_pos": 0.00552054276899711,
+              "smd": -0.017640178641196994
+            },
+            "caliper": 0.0013527036286234367
+          }
+        },
+        "terciles": {
+          "q1": -9.395362590206298,
+          "q2": -8.472305450268651
+        },
+        "roll_count": 108
+      },
+      "c": {
+        "layer": "A",
+        "market": "c",
+        "d_m": 0.02228458718206887,
+        "evaluable": true,
+        "pairs_per_stratum": {
+          "0": 1282,
+          "1": 1273,
+          "2": 1313
+        },
+        "c_stratum": {
+          "0": 0.028499367371404398,
+          "1": 0.057505388957497086,
+          "2": -0.019150994782694872
+        },
+        "n_pairs_total": 3868,
+        "eligible": 8058,
+        "exclusions": {
+          "roll_day": 218,
+          "roll_window": 2161,
+          "incomplete_window": 10,
+          "zero_rv": 0,
+          "zero_return": 448
+        },
+        "strata": {
+          "0": {
+            "npairs": 1282,
+            "d_ms": 0.028499367371404398,
+            "unmatched_neg": 70,
+            "unmatched_pos": 52,
+            "balance": {
+              "mean_absr_neg": 0.005326024299728073,
+              "mean_absr_pos": 0.005565063393395668,
+              "sd_absr_neg": 0.004663854742737424,
+              "sd_absr_pos": 0.004865867413553094,
+              "smd": -0.05015579683226454
+            },
+            "caliper": 0.001191466544166258
+          },
+          "1": {
+            "npairs": 1273,
+            "d_ms": 0.057505388957497086,
+            "unmatched_neg": 105,
+            "unmatched_pos": 35,
+            "balance": {
+              "mean_absr_neg": 0.00785208741571291,
+              "mean_absr_pos": 0.008070957685320079,
+              "sd_absr_neg": 0.006669731787506123,
+              "sd_absr_pos": 0.007012539366218015,
+              "smd": -0.0319832287973144
+            },
+            "caliper": 0.0017096034829793996
+          },
+          "2": {
+            "npairs": 1313,
+            "d_ms": -0.019150994782694872,
+            "unmatched_neg": 22,
+            "unmatched_pos": 38,
+            "balance": {
+              "mean_absr_neg": 0.012915738470412096,
+              "mean_absr_pos": 0.013045884945005665,
+              "sd_absr_neg": 0.010654987085591733,
+              "sd_absr_pos": 0.010738079348804679,
+              "smd": -0.012167072290143605
+            },
+            "caliper": 0.002673766861455749
+          }
+        },
+        "terciles": {
+          "q1": -8.503533950723357,
+          "q2": -7.430528420773861
+        },
+        "roll_count": 218
+      },
+      "cd": {
+        "layer": "A",
+        "market": "cd",
+        "d_m": 0.1362964844424536,
+        "evaluable": true,
+        "pairs_per_stratum": {
+          "0": 829,
+          "1": 841,
+          "2": 817
+        },
+        "c_stratum": {
+          "0": 0.22017295764986639,
+          "1": 0.10929154245304161,
+          "2": 0.07942495322445282
+        },
+        "n_pairs_total": 2487,
+        "eligible": 5159,
+        "exclusions": {
+          "roll_day": 102,
+          "roll_window": 1019,
+          "incomplete_window": 10,
+          "zero_rv": 0,
+          "zero_return": 192
+        },
+        "strata": {
+          "0": {
+            "npairs": 829,
+            "d_ms": 0.22017295764986639,
+            "unmatched_neg": 48,
+            "unmatched_pos": 14,
+            "balance": {
+              "mean_absr_neg": 0.0017314725104028738,
+              "mean_absr_pos": 0.0016558440341648583,
+              "sd_absr_neg": 0.001664522811273965,
+              "sd_absr_pos": 0.0013984447190768705,
+              "smd": 0.049197207128417665
+            },
+            "caliper": 0.00038497217322902935
+          },
+          "1": {
+            "npairs": 841,
+            "d_ms": 0.10929154245304161,
+            "unmatched_neg": 36,
+            "unmatched_pos": 1,
+            "balance": {
+              "mean_absr_neg": 0.0022393635364291883,
+              "mean_absr_pos": 0.0021200513952201426,
+              "sd_absr_neg": 0.0019504822061787996,
+              "sd_absr_pos": 0.0018172345494352786,
+              "smd": 0.06329435325341895
+            },
+            "caliper": 0.00047169681452091514
+          },
+          "2": {
+            "npairs": 817,
+            "d_ms": 0.07942495322445282,
+            "unmatched_neg": 47,
+            "unmatched_pos": 39,
+            "balance": {
+              "mean_absr_neg": 0.0028218803792254186,
+              "mean_absr_pos": 0.0029119617121720356,
+              "sd_absr_neg": 0.0024415204785037284,
+              "sd_absr_pos": 0.002439156800481061,
+              "smd": -0.03691345165174693
+            },
+            "caliper": 0.0006100126199077252
+          }
+        },
+        "terciles": {
+          "q1": -10.909682573661312,
+          "q2": -10.036351434801704
+        },
+        "roll_count": 102
+      },
+      "cl": {
+        "layer": "A",
+        "market": "cl",
+        "d_m": 0.08138470857083525,
+        "evaluable": true,
+        "pairs_per_stratum": {
+          "0": 361,
+          "1": 370,
+          "2": 367
+        },
+        "c_stratum": {
+          "0": 0.05597592473843509,
+          "1": 0.10187560134574875,
+          "2": 0.0863025996283219
+        },
+        "n_pairs_total": 1098,
+        "eligible": 2291,
+        "exclusions": {
+          "roll_day": 233,
+          "roll_window": 2326,
+          "incomplete_window": 10,
+          "zero_rv": 0,
+          "zero_return": 29
+        },
+        "strata": {
+          "0": {
+            "npairs": 361,
+            "d_ms": 0.05597592473843509,
+            "unmatched_neg": 7,
+            "unmatched_pos": 35,
+            "balance": {
+              "mean_absr_neg": 0.008301762184651906,
+              "mean_absr_pos": 0.008621117453290817,
+              "sd_absr_neg": 0.008116011316761047,
+              "sd_absr_pos": 0.0078012709742136255,
+              "smd": -0.04011901636891233
+            },
+            "caliper": 0.00198770062440657
+          },
+          "1": {
+            "npairs": 370,
+            "d_ms": 0.10187560134574875,
+            "unmatched_neg": 7,
+            "unmatched_pos": 16,
+            "balance": {
+              "mean_absr_neg": 0.013861231579567647,
+              "mean_absr_pos": 0.015577620174293245,
+              "sd_absr_neg": 0.011957135462327406,
+              "sd_absr_pos": 0.012744826536586061,
+              "smd": -0.13889719535812348
+            },
+            "caliper": 0.003095901704213902
+          },
+          "2": {
+            "npairs": 367,
+            "d_ms": 0.0863025996283219,
+            "unmatched_neg": 8,
+            "unmatched_pos": 22,
+            "balance": {
+              "mean_absr_neg": 0.02124026763754628,
+              "mean_absr_pos": 0.022030134243506253,
+              "sd_absr_neg": 0.021234128170991195,
+              "sd_absr_pos": 0.022223488531860854,
+              "smd": -0.03634170731684366
+            },
+            "caliper": 0.005433215441318526
+          }
+        },
+        "terciles": {
+          "q1": -7.402176918062661,
+          "q2": -6.2952054027685564
+        },
+        "roll_count": 233
+      },
+      "cr": {
+        "layer": "A",
+        "market": "cr",
+        "d_m": -0.015849832571667746,
+        "evaluable": true,
+        "pairs_per_stratum": {
+          "0": 490,
+          "1": 460,
+          "2": 468
+        },
+        "c_stratum": {
+          "0": -0.018975776260892054,
+          "1": 0.027549067454651452,
+          "2": -0.05612278890876263
+        },
+        "n_pairs_total": 1418,
+        "eligible": 3054,
+        "exclusions": {
+          "roll_day": 91,
+          "roll_window": 866,
+          "incomplete_window": 10,
+          "zero_rv": 0,
+          "zero_return": 56
+        },
+        "strata": {
+          "0": {
+            "npairs": 490,
+            "d_ms": -0.018975776260892054,
+            "unmatched_neg": 28,
+            "unmatched_pos": 10,
+            "balance": {
+              "mean_absr_neg": 0.0038512839736261637,
+              "mean_absr_pos": 0.0038952974279499626,
+              "sd_absr_neg": 0.0030770999657659575,
+              "sd_absr_pos": 0.002936575186559445,
+              "smd": -0.014633794322157648
+            },
+            "caliper": 0.0007518758763468248
+          },
+          "1": {
+            "npairs": 460,
+            "d_ms": 0.027549067454651452,
+            "unmatched_neg": 18,
+            "unmatched_pos": 80,
+            "balance": {
+              "mean_absr_neg": 0.004417361287096546,
+              "mean_absr_pos": 0.003943118524204985,
+              "sd_absr_neg": 0.0036315082974606953,
+              "sd_absr_pos": 0.0033191959461732036,
+              "smd": 0.1363213680533599
+            },
+            "caliper": 0.0008689239181551752
+          },
+          "2": {
+            "npairs": 468,
+            "d_ms": -0.05612278890876263,
+            "unmatched_neg": 40,
+            "unmatched_pos": 42,
+            "balance": {
+              "mean_absr_neg": 0.005578556214304057,
+              "mean_absr_pos": 0.005104724072838715,
+              "sd_absr_neg": 0.0050046010039729435,
+              "sd_absr_pos": 0.00476380717208504,
+              "smd": 0.0969837131888822
+            },
+            "caliper": 0.001222199487518044
+          }
+        },
+        "terciles": {
+          "q1": -9.42753813451776,
+          "q2": -8.694079174206166
+        },
+        "roll_count": 91
+      },
+      "ct": {
+        "layer": "A",
+        "market": "ct",
+        "d_m": 0.03935354110867966,
+        "evaluable": true,
+        "pairs_per_stratum": {
+          "0": 1345,
+          "1": 1336,
+          "2": 1362
+        },
+        "c_stratum": {
+          "0": 0.05161161452055278,
+          "1": 0.013183770856811562,
+          "2": 0.05326523794867463
+        },
+        "n_pairs_total": 4043,
+        "eligible": 8292,
+        "exclusions": {
+          "roll_day": 233,
+          "roll_window": 2252,
+          "incomplete_window": 7,
+          "zero_rv": 101,
+          "zero_return": 354
+        },
+        "strata": {
+          "0": {
+            "npairs": 1345,
+            "d_ms": 0.05161161452055278,
+            "unmatched_neg": 50,
+            "unmatched_pos": 24,
+            "balance": {
+              "mean_absr_neg": 0.005406868500629143,
+              "mean_absr_pos": 0.005594391993125473,
+              "sd_absr_neg": 0.006424438473762194,
+              "sd_absr_pos": 0.007974943589932277,
+              "smd": -0.025896349958782084
+            },
+            "caliper": 0.0018083372373202005
+          },
+          "1": {
+            "npairs": 1336,
+            "d_ms": 0.013183770856811562,
+            "unmatched_neg": 61,
+            "unmatched_pos": 31,
+            "balance": {
+              "mean_absr_neg": 0.009496304124916326,
+              "mean_absr_pos": 0.009373452195098072,
+              "sd_absr_neg": 0.008892263094841417,
+              "sd_absr_pos": 0.008433374541592558,
+              "smd": 0.01417654737031225
+            },
+            "caliper": 0.002166749172215093
+          },
+          "2": {
+            "npairs": 1362,
+            "d_ms": 0.05326523794867463,
+            "unmatched_neg": 11,
+            "unmatched_pos": 29,
+            "balance": {
+              "mean_absr_neg": 0.01363616428875071,
+              "mean_absr_pos": 0.014012172372045455,
+              "sd_absr_neg": 0.011779352262289882,
+              "sd_absr_pos": 0.012002786845308264,
+              "smd": -0.03161965272482768
+            },
+            "caliper": 0.0029729142000727974
+          }
+        },
+        "terciles": {
+          "q1": -8.17302768404874,
+          "q2": -7.005624360431746
+        },
+        "roll_count": 233
+      },
+      "dx": {
+        "layer": "A",
+        "market": "dx",
+        "d_m": 0.04738004774312097,
+        "evaluable": true,
+        "pairs_per_stratum": {
+          "0": 558,
+          "1": 541,
+          "2": 551
+        },
+        "c_stratum": {
+          "0": 0.06161912706768874,
+          "1": 0.006072296990658307,
+          "2": 0.07444871917101586
+        },
+        "n_pairs_total": 1650,
+        "eligible": 3474,
+        "exclusions": {
+          "roll_day": 69,
+          "roll_window": 676,
+          "incomplete_window": 10,
+          "zero_rv": 4,
+          "zero_return": 35
+        },
+        "strata": {
+          "0": {
+            "npairs": 558,
+            "d_ms": 0.06161912706768874,
+            "unmatched_neg": 20,
+            "unmatched_pos": 22,
+            "balance": {
+              "mean_absr_neg": 0.0038893620766334057,
+              "mean_absr_pos": 0.003704391919609876,
+              "sd_absr_neg": 0.0035823191463882475,
+              "sd_absr_pos": 0.0033644734005344196,
+              "smd": 0.053227233466186435
+            },
+            "caliper": 0.0008686613662719361
+          },
+          "1": {
+            "npairs": 541,
+            "d_ms": 0.006072296990658307,
+            "unmatched_neg": 18,
+            "unmatched_pos": 58,
+            "balance": {
+              "mean_absr_neg": 0.004333451791773245,
+              "mean_absr_pos": 0.004095757203059101,
+              "sd_absr_neg": 0.0037451237772721468,
+              "sd_absr_pos": 0.0035608225719466944,
+              "smd": 0.0650481083977294
+            },
+            "caliper": 0.0009128255702295844
+          },
+          "2": {
+            "npairs": 551,
+            "d_ms": 0.07444871917101586,
+            "unmatched_neg": 43,
+            "unmatched_pos": 13,
+            "balance": {
+              "mean_absr_neg": 0.004884380890805336,
+              "mean_absr_pos": 0.004950707810213426,
+              "sd_absr_neg": 0.004355676360126696,
+              "sd_absr_pos": 0.0042775362836628885,
+              "smd": -0.015364894965665168
+            },
+            "caliper": 0.0010790144967779414
+          }
+        },
+        "terciles": {
+          "q1": -9.441388098315175,
+          "q2": -8.672628483086477
+        },
+        "roll_count": 69
+      },
+      "ed": {
+        "layer": "A",
+        "market": "ed",
+        "d_m": -0.028148586748666674,
+        "evaluable": true,
+        "pairs_per_stratum": {
+          "0": 499,
+          "1": 485,
+          "2": 478
+        },
+        "c_stratum": {
+          "0": 0.04018897906959321,
+          "1": -0.11703393421662021,
+          "2": -0.007600805098973028
+        },
+        "n_pairs_total": 1462,
+        "eligible": 3157,
+        "exclusions": {
+          "roll_day": 119,
+          "roll_window": 1175,
+          "incomplete_window": 10,
+          "zero_rv": 40,
+          "zero_return": 713
+        },
+        "strata": {
+          "0": {
+            "npairs": 499,
+            "d_ms": 0.04018897906959321,
+            "unmatched_neg": 8,
+            "unmatched_pos": 46,
+            "balance": {
+              "mean_absr_neg": 0.00030268656129879925,
+              "mean_absr_pos": 0.00032476022025207537,
+              "sd_absr_neg": 0.0003160732122912419,
+              "sd_absr_pos": 0.000335800639628305,
+              "smd": -0.06769272303666342
+            },
+            "caliper": 8.161849063396418e-05
+          },
+          "1": {
+            "npairs": 485,
+            "d_ms": -0.11703393421662021,
+            "unmatched_neg": 20,
+            "unmatched_pos": 62,
+            "balance": {
+              "mean_absr_neg": 0.0005652607154347847,
+              "mean_absr_pos": 0.0005686264105033449,
+              "sd_absr_neg": 0.000505518445104825,
+              "sd_absr_pos": 0.0005695777398629339,
+              "smd": -0.0062501128748323935
+            },
+            "caliper": 0.00013488116422043702
+          },
+          "2": {
+            "npairs": 478,
+            "d_ms": -0.007600805098973028,
+            "unmatched_neg": 1,
+            "unmatched_pos": 96,
+            "balance": {
+              "mean_absr_neg": 0.0009179181492446057,
+              "mean_absr_pos": 0.0011809718569774999,
+              "sd_absr_neg": 0.0009154902303715305,
+              "sd_absr_pos": 0.0014406702479630297,
+              "smd": -0.21794178412629672
+            },
+            "caliper": 0.0003090801010482097
+          }
+        },
+        "terciles": {
+          "q1": -14.257712138036883,
+          "q2": -12.691502940443579
+        },
+        "roll_count": 119
+      },
+      "fc": {
+        "layer": "A",
+        "market": "fc",
+        "d_m": 0.14133567707152303,
+        "evaluable": true,
+        "pairs_per_stratum": {
+          "0": 730,
+          "1": 760,
+          "2": 768
+        },
+        "c_stratum": {
+          "0": 0.17034364185862397,
+          "1": 0.09069388727419432,
+          "2": 0.16296950208175073
+        },
+        "n_pairs_total": 2258,
+        "eligible": 4736,
+        "exclusions": {
+          "roll_day": 224,
+          "roll_window": 2195,
+          "incomplete_window": 10,
+          "zero_rv": 0,
+          "zero_return": 167
+        },
+        "strata": {
+          "0": {
+            "npairs": 730,
+            "d_ms": 0.17034364185862397,
+            "unmatched_neg": 84,
+            "unmatched_pos": 35,
+            "balance": {
+              "mean_absr_neg": 0.004422728143549109,
+              "mean_absr_pos": 0.0044720369974995955,
+              "sd_absr_neg": 0.004190486628061521,
+              "sd_absr_pos": 0.003805652960826398,
+              "smd": -0.012318906293508446
+            },
+            "caliper": 0.0010018675424763744
+          },
+          "1": {
+            "npairs": 760,
+            "d_ms": 0.09069388727419432,
+            "unmatched_neg": 15,
+            "unmatched_pos": 43,
+            "balance": {
+              "mean_absr_neg": 0.006831568345214584,
+              "mean_absr_pos": 0.006714168809615613,
+              "sd_absr_neg": 0.0058510153700413155,
+              "sd_absr_pos": 0.005533441324236484,
+              "smd": 0.020616510379003014
+            },
+            "caliper": 0.0014225299904267403
+          },
+          "2": {
+            "npairs": 768,
+            "d_ms": 0.16296950208175073,
+            "unmatched_neg": 5,
+            "unmatched_pos": 38,
+            "balance": {
+              "mean_absr_neg": 0.010679831820521152,
+              "mean_absr_pos": 0.011289608998235515,
+              "sd_absr_neg": 0.008417277673855528,
+              "sd_absr_pos": 0.007958157577635867,
+              "smd": -0.0744453680346962
+            },
+            "caliper": 0.002047304065904725
+          }
+        },
+        "terciles": {
+          "q1": -8.723126448327692,
+          "q2": -7.592797878431802
+        },
+        "roll_count": 224
+      },
+      "gc": {
+        "layer": "A",
+        "market": "gc",
+        "d_m": -0.0008606965030481103,
+        "evaluable": true,
+        "pairs_per_stratum": {
+          "0": 706,
+          "1": 708,
+          "2": 723
+        },
+        "c_stratum": {
+          "0": 0.006509072760291611,
+          "1": -0.01607697547058152,
+          "2": 0.0069858132011455755
+        },
+        "n_pairs_total": 2137,
+        "eligible": 4557,
+        "exclusions": {
+          "roll_day": 211,
+          "roll_window": 2103,
+          "incomplete_window": 9,
+          "zero_rv": 0,
+          "zero_return": 91
+        },
+        "strata": {
+          "0": {
+            "npairs": 706,
+            "d_ms": 0.006509072760291611,
+            "unmatched_neg": 56,
+            "unmatched_pos": 51,
+            "balance": {
+              "mean_absr_neg": 0.005062223932757055,
+              "mean_absr_pos": 0.005549457239120306,
+              "sd_absr_neg": 0.005809998239039449,
+              "sd_absr_pos": 0.006121938632909615,
+              "smd": -0.08164087549201464
+            },
+            "caliper": 0.0014926256347000217
+          },
+          "1": {
+            "npairs": 708,
+            "d_ms": -0.01607697547058152,
+            "unmatched_neg": 66,
+            "unmatched_pos": 37,
+            "balance": {
+              "mean_absr_neg": 0.007278536942290007,
+              "mean_absr_pos": 0.007471272847126595,
+              "sd_absr_neg": 0.007631009450220426,
+              "sd_absr_pos": 0.007383068310128582,
+              "smd": -0.02567052507049518
+            },
+            "caliper": 0.0018771440145346975
+          },
+          "2": {
+            "npairs": 723,
+            "d_ms": 0.0069858132011455755,
+            "unmatched_neg": 35,
+            "unmatched_pos": 38,
+            "balance": {
+              "mean_absr_neg": 0.01323689738407349,
+              "mean_absr_pos": 0.012758615300997627,
+              "sd_absr_neg": 0.013284036336972609,
+              "sd_absr_pos": 0.013037583232901608,
+              "smd": 0.03633979421807403
+            },
+            "caliper": 0.0032897454564189857
+          }
+        },
+        "terciles": {
+          "q1": -8.553880001124586,
+          "q2": -7.379910232620124
+        },
+        "roll_count": 211
+      },
+      "hg": {
+        "layer": "A",
+        "market": "hg",
+        "d_m": 0.010738590766225244,
+        "evaluable": true,
+        "pairs_per_stratum": {
+          "0": 1131,
+          "1": 1132,
+          "2": 1114
+        },
+        "c_stratum": {
+          "0": 0.011989404402614685,
+          "1": 0.025262156555980065,
+          "2": -0.005035788659919015
+        },
+        "n_pairs_total": 3377,
+        "eligible": 7080,
+        "exclusions": {
+          "roll_day": 322,
+          "roll_window": 3176,
+          "incomplete_window": 9,
+          "zero_rv": 1,
+          "zero_return": 236
+        },
+        "strata": {
+          "0": {
+            "npairs": 1131,
+            "d_ms": 0.011989404402614685,
+            "unmatched_neg": 6,
+            "unmatched_pos": 92,
+            "balance": {
+              "mean_absr_neg": 0.007840860139211118,
+              "mean_absr_pos": 0.00800817337594269,
+              "sd_absr_neg": 0.007527684578863249,
+              "sd_absr_pos": 0.0075942147581744305,
+              "smd": -0.022128386617928895
+            },
+            "caliper": 0.001890273833986281
+          },
+          "1": {
+            "npairs": 1132,
+            "d_ms": 0.025262156555980065,
+            "unmatched_neg": 59,
+            "unmatched_pos": 37,
+            "balance": {
+              "mean_absr_neg": 0.010695097478888036,
+              "mean_absr_pos": 0.010658606283099215,
+              "sd_absr_neg": 0.009641314560977865,
+              "sd_absr_pos": 0.008659563525244648,
+              "smd": 0.003982191641439523
+            },
+            "caliper": 0.002291560737229525
+          },
+          "2": {
+            "npairs": 1114,
+            "d_ms": -0.005035788659919015,
+            "unmatched_neg": 13,
+            "unmatched_pos": 119,
+            "balance": {
+              "mean_absr_neg": 0.01644104127134215,
+              "mean_absr_pos": 0.01635141266285193,
+              "sd_absr_neg": 0.014274261928045075,
+              "sd_absr_pos": 0.013224968547900836,
+              "smd": 0.006513886371891684
+            },
+            "caliper": 0.0034332986773584514
+          }
+        },
+        "terciles": {
+          "q1": -7.6902223815486135,
+          "q2": -6.753118853296821
+        },
+        "roll_count": 322
+      },
+      "jo": {
+        "layer": "A",
+        "market": "jo",
+        "d_m": -0.02483642661557389,
+        "evaluable": true,
+        "pairs_per_stratum": {
+          "0": 999,
+          "1": 977,
+          "2": 985
+        },
+        "c_stratum": {
+          "0": -0.04731472884452086,
+          "1": -0.03289226513184206,
+          "2": 0.0056977141296412565
+        },
+        "n_pairs_total": 2961,
+        "eligible": 6372,
+        "exclusions": {
+          "roll_day": 217,
+          "roll_window": 2118,
+          "incomplete_window": 10,
+          "zero_rv": 5,
+          "zero_return": 195
+        },
+        "strata": {
+          "0": {
+            "npairs": 999,
+            "d_ms": -0.04731472884452086,
+            "unmatched_neg": 11,
+            "unmatched_pos": 115,
+            "balance": {
+              "mean_absr_neg": 0.009145201664031901,
+              "mean_absr_pos": 0.008704556547336548,
+              "sd_absr_neg": 0.010644645496864247,
+              "sd_absr_pos": 0.008728152867847658,
+              "smd": 0.0452701369391933
+            },
+            "caliper": 0.002421763178366283
+          },
+          "1": {
+            "npairs": 977,
+            "d_ms": -0.03289226513184206,
+            "unmatched_neg": 62,
+            "unmatched_pos": 108,
+            "balance": {
+              "mean_absr_neg": 0.012243610913180705,
+              "mean_absr_pos": 0.010864206900987178,
+              "sd_absr_neg": 0.011458362800367872,
+              "sd_absr_pos": 0.010651672500731037,
+              "smd": 0.1246933164705805
+            },
+            "caliper": 0.002768132487063696
+          },
+          "2": {
+            "npairs": 985,
+            "d_ms": 0.0056977141296412565,
+            "unmatched_neg": 53,
+            "unmatched_pos": 101,
+            "balance": {
+              "mean_absr_neg": 0.016839883362333486,
+              "mean_absr_pos": 0.0160956024078762,
+              "sd_absr_neg": 0.015608060272392026,
+              "sd_absr_pos": 0.019228961293795352,
+              "smd": 0.04250035779351651
+            },
+            "caliper": 0.0043882105759884115
+          }
+        },
+        "terciles": {
+          "q1": -7.706991848352684,
+          "q2": -6.611394280971353
+        },
+        "roll_count": 217
+      },
+      "jy": {
+        "layer": "A",
+        "market": "jy",
+        "d_m": -0.08938574267430816,
+        "evaluable": true,
+        "pairs_per_stratum": {
+          "0": 848,
+          "1": 814,
+          "2": 841
+        },
+        "c_stratum": {
+          "0": -0.09939584758564159,
+          "1": -0.07663154741630447,
+          "2": -0.09212983302097841
+        },
+        "n_pairs_total": 2503,
+        "eligible": 5296,
+        "exclusions": {
+          "roll_day": 103,
+          "roll_window": 1030,
+          "incomplete_window": 10,
+          "zero_rv": 16,
+          "zero_return": 143
+        },
+        "strata": {
+          "0": {
+            "npairs": 848,
+            "d_ms": -0.09939584758564159,
+            "unmatched_neg": 58,
+            "unmatched_pos": 11,
+            "balance": {
+              "mean_absr_neg": 0.0043662241417362505,
+              "mean_absr_pos": 0.004353540055532479,
+              "sd_absr_neg": 0.0038720123374424045,
+              "sd_absr_pos": 0.004611574013900266,
+              "smd": 0.0029789670946621183
+            },
+            "caliper": 0.001061712234599386
+          },
+          "1": {
+            "npairs": 814,
+            "d_ms": -0.07663154741630447,
+            "unmatched_neg": 117,
+            "unmatched_pos": 20,
+            "balance": {
+              "mean_absr_neg": 0.005056386465484275,
+              "mean_absr_pos": 0.0054304137315710835,
+              "sd_absr_neg": 0.004503191371250036,
+              "sd_absr_pos": 0.004765344821393604,
+              "smd": -0.0806767622212639
+            },
+            "caliper": 0.0011578406732693557
+          },
+          "2": {
+            "npairs": 841,
+            "d_ms": -0.09212983302097841,
+            "unmatched_neg": 48,
+            "unmatched_pos": 36,
+            "balance": {
+              "mean_absr_neg": 0.005998411377168042,
+              "mean_absr_pos": 0.006482684346714364,
+              "sd_absr_neg": 0.005153836813704181,
+              "sd_absr_pos": 0.006272677525264411,
+              "smd": -0.08435958917182913
+            },
+            "caliper": 0.0014350694310974134
+          }
+        },
+        "terciles": {
+          "q1": -9.112531755361836,
+          "q2": -8.278823005551311
+        },
+        "roll_count": 103
+      },
+      "lh": {
+        "layer": "A",
+        "market": "lh",
+        "d_m": 0.07085838567829776,
+        "evaluable": true,
+        "pairs_per_stratum": {
+          "0": 902,
+          "1": 867,
+          "2": 908
+        },
+        "c_stratum": {
+          "0": 0.07878342050403128,
+          "1": 0.033463652981378926,
+          "2": 0.10032808354948305
+        },
+        "n_pairs_total": 2677,
+        "eligible": 5719,
+        "exclusions": {
+          "roll_day": 227,
+          "roll_window": 2270,
+          "incomplete_window": 10,
+          "zero_rv": 0,
+          "zero_return": 161
+        },
+        "strata": {
+          "0": {
+            "npairs": 902,
+            "d_ms": 0.07878342050403128,
+            "unmatched_neg": 5,
+            "unmatched_pos": 97,
+            "balance": {
+              "mean_absr_neg": 0.008988397983912648,
+              "mean_absr_pos": 0.009569211842959929,
+              "sd_absr_neg": 0.007309481061937565,
+              "sd_absr_pos": 0.007279735381252881,
+              "smd": -0.079622185890565
+            },
+            "caliper": 0.0018244400276847233
+          },
+          "1": {
+            "npairs": 867,
+            "d_ms": 0.033463652981378926,
+            "unmatched_neg": 1,
+            "unmatched_pos": 171,
+            "balance": {
+              "mean_absr_neg": 0.010101229085719015,
+              "mean_absr_pos": 0.011121031204399934,
+              "sd_absr_neg": 0.008373598490146189,
+              "sd_absr_pos": 0.008595502253575953,
+              "smd": -0.12018491127561666
+            },
+            "caliper": 0.0021270312498694725
+          },
+          "2": {
+            "npairs": 908,
+            "d_ms": 0.10032808354948305,
+            "unmatched_neg": 37,
+            "unmatched_pos": 54,
+            "balance": {
+              "mean_absr_neg": 0.014323917151392163,
+              "mean_absr_pos": 0.014024348501068961,
+              "sd_absr_neg": 0.012183498692920763,
+              "sd_absr_pos": 0.011054137626526569,
+              "smd": 0.025752660869447462
+            },
+            "caliper": 0.0029063531041934594
+          }
+        },
+        "terciles": {
+          "q1": -7.578385982224791,
+          "q2": -6.800409901961059
+        },
+        "roll_count": 227
+      },
+      "o": {
+        "layer": "A",
+        "market": "o",
+        "d_m": 0.04143678826163568,
+        "evaluable": true,
+        "pairs_per_stratum": {
+          "0": 1250,
+          "1": 1280,
+          "2": 1214
+        },
+        "c_stratum": {
+          "0": 0.03245554201852465,
+          "1": 0.03884231935563,
+          "2": 0.053012503410752386
+        },
+        "n_pairs_total": 3744,
+        "eligible": 7899,
+        "exclusions": {
+          "roll_day": 215,
+          "roll_window": 2150,
+          "incomplete_window": 10,
+          "zero_rv": 0,
+          "zero_return": 620
+        },
+        "strata": {
+          "0": {
+            "npairs": 1250,
+            "d_ms": 0.03245554201852465,
+            "unmatched_neg": 15,
+            "unmatched_pos": 118,
+            "balance": {
+              "mean_absr_neg": 0.008386024022738893,
+              "mean_absr_pos": 0.008222649046990025,
+              "sd_absr_neg": 0.007322762138110785,
+              "sd_absr_pos": 0.006860603227225669,
+              "smd": 0.02302532699340551
+            },
+            "caliper": 0.0017713807778078805
+          },
+          "1": {
+            "npairs": 1280,
+            "d_ms": 0.03884231935563,
+            "unmatched_neg": 58,
+            "unmatched_pos": 15,
+            "balance": {
+              "mean_absr_neg": 0.011950947453735246,
+              "mean_absr_pos": 0.01178982753268737,
+              "sd_absr_neg": 0.009879451155272771,
+              "sd_absr_pos": 0.009678517953746121,
+              "smd": 0.016475270797789408
+            },
+            "caliper": 0.002444903984955736
+          },
+          "2": {
+            "npairs": 1214,
+            "d_ms": 0.053012503410752386,
+            "unmatched_neg": 10,
+            "unmatched_pos": 195,
+            "balance": {
+              "mean_absr_neg": 0.018527983378230486,
+              "mean_absr_pos": 0.018144737785542465,
+              "sd_absr_neg": 0.015113626863741323,
+              "sd_absr_pos": 0.013948640468089506,
+              "smd": 0.026352936925358054
+            },
+            "caliper": 0.0036250814905162444
+          }
+        },
+        "terciles": {
+          "q1": -7.717213813246405,
+          "q2": -6.630579939623881
+        },
+        "roll_count": 215
+      },
+      "s": {
+        "layer": "A",
+        "market": "s",
+        "d_m": -0.017774959008324542,
+        "evaluable": true,
+        "pairs_per_stratum": {
+          "0": 1162,
+          "1": 1200,
+          "2": 1142
+        },
+        "c_stratum": {
+          "0": -0.07716322793229091,
+          "1": -0.009924984643139458,
+          "2": 0.03376333555045674
+        },
+        "n_pairs_total": 3504,
+        "eligible": 7392,
+        "exclusions": {
+          "roll_day": 300,
+          "roll_window": 3000,
+          "incomplete_window": 10,
+          "zero_rv": 0,
+          "zero_return": 191
+        },
+        "strata": {
+          "0": {
+            "npairs": 1162,
+            "d_ms": -0.07716322793229091,
+            "unmatched_neg": 15,
+            "unmatched_pos": 125,
+            "balance": {
+              "mean_absr_neg": 0.0053885523742371365,
+              "mean_absr_pos": 0.005386527787747551,
+              "sd_absr_neg": 0.005428610543361098,
+              "sd_absr_pos": 0.005185788946034835,
+              "smd": 0.00038137945083186495
+            },
+            "caliper": 0.0013255214592602965
+          },
+          "1": {
+            "npairs": 1200,
+            "d_ms": -0.009924984643139458,
+            "unmatched_neg": 4,
+            "unmatched_pos": 60,
+            "balance": {
+              "mean_absr_neg": 0.00835038296877673,
+              "mean_absr_pos": 0.008558115959753225,
+              "sd_absr_neg": 0.006907474664875415,
+              "sd_absr_pos": 0.007342575862992886,
+              "smd": -0.029141823077754276
+            },
+            "caliper": 0.00178314951795596
+          },
+          "2": {
+            "npairs": 1142,
+            "d_ms": 0.03376333555045674,
+            "unmatched_neg": 31,
+            "unmatched_pos": 149,
+            "balance": {
+              "mean_absr_neg": 0.015116466468842746,
+              "mean_absr_pos": 0.014371582106093758,
+              "sd_absr_neg": 0.013822171959032003,
+              "sd_absr_pos": 0.012493013919245892,
+              "smd": 0.056540433720557164
+            },
+            "caliper": 0.0032862786846999197
+          }
+        },
+        "terciles": {
+          "q1": -8.326560282938262,
+          "q2": -7.246731433823342
+        },
+        "roll_count": 300
+      },
+      "sf": {
+        "layer": "A",
+        "market": "sf",
+        "d_m": -0.027426214516191785,
+        "evaluable": true,
+        "pairs_per_stratum": {
+          "0": 881,
+          "1": 862,
+          "2": 896
+        },
+        "c_stratum": {
+          "0": -0.05924928080110273,
+          "1": -0.0349913105171856,
+          "2": 0.01196194776971298
+        },
+        "n_pairs_total": 2639,
+        "eligible": 5662,
+        "exclusions": {
+          "roll_day": 107,
+          "roll_window": 1070,
+          "incomplete_window": 10,
+          "zero_rv": 0,
+          "zero_return": 104
+        },
+        "strata": {
+          "0": {
+            "npairs": 881,
+            "d_ms": -0.05924928080110273,
+            "unmatched_neg": 92,
+            "unmatched_pos": 33,
+            "balance": {
+              "mean_absr_neg": 0.004538502088512717,
+              "mean_absr_pos": 0.005015509306483948,
+              "sd_absr_neg": 0.004041884459411787,
+              "sd_absr_pos": 0.004722303219698791,
+              "smd": -0.1085271441941404
+            },
+            "caliper": 0.0010974922717581815
+          },
+          "1": {
+            "npairs": 862,
+            "d_ms": -0.0349913105171856,
+            "unmatched_neg": 161,
+            "unmatched_pos": 2,
+            "balance": {
+              "mean_absr_neg": 0.005904036146776318,
+              "mean_absr_pos": 0.005598796847729702,
+              "sd_absr_neg": 0.0047936532332566685,
+              "sd_absr_pos": 0.004738188505382821,
+              "smd": 0.06404515306216267
+            },
+            "caliper": 0.001192375567624755
+          },
+          "2": {
+            "npairs": 896,
+            "d_ms": 0.01196194776971298,
+            "unmatched_neg": 32,
+            "unmatched_pos": 64,
+            "balance": {
+              "mean_absr_neg": 0.006872182369201117,
+              "mean_absr_pos": 0.006724201254557448,
+              "sd_absr_neg": 0.0057060159312338635,
+              "sd_absr_pos": 0.00587871938727949,
+              "smd": 0.025544765480919294
+            },
+            "caliper": 0.0014483532808889444
+          }
+        },
+        "terciles": {
+          "q1": -8.868044353072385,
+          "q2": -8.121117329933313
+        },
+        "roll_count": 107
+      },
+      "si": {
+        "layer": "A",
+        "market": "si",
+        "d_m": -0.05606445382572552,
+        "evaluable": true,
+        "pairs_per_stratum": {
+          "0": 1010,
+          "1": 1009,
+          "2": 1000
+        },
+        "c_stratum": {
+          "0": -0.09818903917312029,
+          "1": -0.050274070490089334,
+          "2": -0.01973025181396693
+        },
+        "n_pairs_total": 3019,
+        "eligible": 6348,
+        "exclusions": {
+          "roll_day": 276,
+          "roll_window": 2707,
+          "incomplete_window": 9,
+          "zero_rv": 152,
+          "zero_return": 340
+        },
+        "strata": {
+          "0": {
+            "npairs": 1010,
+            "d_ms": -0.09818903917312029,
+            "unmatched_neg": 69,
+            "unmatched_pos": 27,
+            "balance": {
+              "mean_absr_neg": 0.007587049648289302,
+              "mean_absr_pos": 0.007412839394089865,
+              "sd_absr_neg": 0.008277578175895093,
+              "sd_absr_pos": 0.007834146235586646,
+              "smd": 0.021617091630211076
+            },
+            "caliper": 0.002015469737726818
+          },
+          "1": {
+            "npairs": 1009,
+            "d_ms": -0.050274070490089334,
+            "unmatched_neg": 21,
+            "unmatched_pos": 77,
+            "balance": {
+              "mean_absr_neg": 0.011227191002577745,
+              "mean_absr_pos": 0.01096485187882959,
+              "sd_absr_neg": 0.01076547333940323,
+              "sd_absr_pos": 0.010201905619864155,
+              "smd": 0.025014515449525397
+            },
+            "caliper": 0.002619588576548287
+          },
+          "2": {
+            "npairs": 1000,
+            "d_ms": -0.01973025181396693,
+            "unmatched_neg": 26,
+            "unmatched_pos": 90,
+            "balance": {
+              "mean_absr_neg": 0.01994483654823788,
+              "mean_absr_pos": 0.018625441018691485,
+              "sd_absr_neg": 0.020630380341315514,
+              "sd_absr_pos": 0.01754486770497667,
+              "smd": 0.06889840970774426
+            },
+            "caliper": 0.00477753165187492
+          }
+        },
+        "terciles": {
+          "q1": -7.708909225172497,
+          "q2": -6.584567635827496
+        },
+        "roll_count": 276
+      },
+      "sp": {
+        "layer": "A",
+        "market": "sp",
+        "d_m": 0.14977636977949313,
+        "evaluable": true,
+        "pairs_per_stratum": {
+          "0": 651,
+          "1": 642,
+          "2": 663
+        },
+        "c_stratum": {
+          "0": 0.1417643885749474,
+          "1": 0.0783948622393087,
+          "2": 0.22916985852422328
+        },
+        "n_pairs_total": 1956,
+        "eligible": 4203,
+        "exclusions": {
+          "roll_day": 82,
+          "roll_window": 817,
+          "incomplete_window": 10,
+          "zero_rv": 1,
+          "zero_return": 49
+        },
+        "strata": {
+          "0": {
+            "npairs": 651,
+            "d_ms": 0.1417643885749474,
+            "unmatched_neg": 16,
+            "unmatched_pos": 83,
+            "balance": {
+              "mean_absr_neg": 0.006023971623464537,
+              "mean_absr_pos": 0.005654577759835716,
+              "sd_absr_neg": 0.006831983870640028,
+              "sd_absr_pos": 0.004991601959052662,
+              "smd": 0.06174078438587146
+            },
+            "caliper": 0.0014850053422393735
+          },
+          "1": {
+            "npairs": 642,
+            "d_ms": 0.0783948622393087,
+            "unmatched_neg": 21,
+            "unmatched_pos": 96,
+            "balance": {
+              "mean_absr_neg": 0.007749734128383246,
+              "mean_absr_pos": 0.0070260283675284505,
+              "sd_absr_neg": 0.007125092376408993,
+              "sd_absr_pos": 0.006075228769899195,
+              "smd": 0.10930456076141394
+            },
+            "caliper": 0.0016501099411194097
+          },
+          "2": {
+            "npairs": 663,
+            "d_ms": 0.22916985852422328,
+            "unmatched_neg": 5,
+            "unmatched_pos": 70,
+            "balance": {
+              "mean_absr_neg": 0.01066615131025379,
+              "mean_absr_pos": 0.011085236562090026,
+              "sd_absr_neg": 0.01647252118259067,
+              "sd_absr_pos": 0.011775143959462936,
+              "smd": -0.02927025612332554
+            },
+            "caliper": 0.0035515498340885853
+          }
+        },
+        "terciles": {
+          "q1": -8.43717799209353,
+          "q2": -7.4820743850837275
+        },
+        "roll_count": 82
+      },
+      "us": {
+        "layer": "A",
+        "market": "us",
+        "d_m": 0.03491135214483979,
+        "evaluable": true,
+        "pairs_per_stratum": {
+          "0": 810,
+          "1": 775,
+          "2": 805
+        },
+        "c_stratum": {
+          "0": 0.10900677671119867,
+          "1": -0.016219956853393894,
+          "2": 0.011947236576714588
+        },
+        "n_pairs_total": 2390,
+        "eligible": 5006,
+        "exclusions": {
+          "roll_day": 111,
+          "roll_window": 1053,
+          "incomplete_window": 10,
+          "zero_rv": 0,
+          "zero_return": 147
+        },
+        "strata": {
+          "0": {
+            "npairs": 810,
+            "d_ms": 0.10900677671119867,
+            "unmatched_neg": 5,
+            "unmatched_pos": 44,
+            "balance": {
+              "mean_absr_neg": 0.003745886601298996,
+              "mean_absr_pos": 0.004054426977876659,
+              "sd_absr_neg": 0.003386346086140055,
+              "sd_absr_pos": 0.003327755032776933,
+              "smd": -0.09190467157130586
+            },
+            "caliper": 0.000839757826712553
+          },
+          "1": {
+            "npairs": 775,
+            "d_ms": -0.016219956853393894,
+            "unmatched_neg": 25,
+            "unmatched_pos": 93,
+            "balance": {
+              "mean_absr_neg": 0.005255518224833582,
+              "mean_absr_pos": 0.0050473286319540215,
+              "sd_absr_neg": 0.0046168460247100595,
+              "sd_absr_pos": 0.004256640875098529,
+              "smd": 0.04688535112974177
+            },
+            "caliper": 0.001108234369596987
+          },
+          "2": {
+            "npairs": 805,
+            "d_ms": 0.011947236576714588,
+            "unmatched_neg": 18,
+            "unmatched_pos": 41,
+            "balance": {
+              "mean_absr_neg": 0.007086747835160104,
+              "mean_absr_pos": 0.007321032717692035,
+              "sd_absr_neg": 0.006203566396327786,
+              "sd_absr_pos": 0.0063555732454966775,
+              "smd": -0.037306333229658276
+            },
+            "caliper": 0.001570072039905654
+          }
+        },
+        "terciles": {
+          "q1": -9.19098146119455,
+          "q2": -8.308723748152419
+        },
+        "roll_count": 111
+      },
+      "w": {
+        "layer": "A",
+        "market": "w",
+        "d_m": 0.0023076315690309713,
+        "evaluable": true,
+        "pairs_per_stratum": {
+          "0": 1328,
+          "1": 1341,
+          "2": 1334
+        },
+        "c_stratum": {
+          "0": -0.001050704229984419,
+          "1": 0.032061820070701276,
+          "2": -0.02408822113362394
+        },
+        "n_pairs_total": 4003,
+        "eligible": 8262,
+        "exclusions": {
+          "roll_day": 215,
+          "roll_window": 2150,
+          "incomplete_window": 10,
+          "zero_rv": 0,
+          "zero_return": 258
+        },
+        "strata": {
+          "0": {
+            "npairs": 1328,
+            "d_ms": -0.001050704229984419,
+            "unmatched_neg": 43,
+            "unmatched_pos": 55,
+            "balance": {
+              "mean_absr_neg": 0.006733560503005971,
+              "mean_absr_pos": 0.0065879623119337715,
+              "sd_absr_neg": 0.006181577241351703,
+              "sd_absr_pos": 0.006149167170976802,
+              "smd": 0.02361539308194047
+            },
+            "caliper": 0.0015411582509879214
+          },
+          "1": {
+            "npairs": 1341,
+            "d_ms": 0.032061820070701276,
+            "unmatched_neg": 35,
+            "unmatched_pos": 37,
+            "balance": {
+              "mean_absr_neg": 0.009767295767897914,
+              "mean_absr_pos": 0.009715218194288368,
+              "sd_absr_neg": 0.007871175963727585,
+              "sd_absr_pos": 0.007849598984420602,
+              "smd": 0.0066253126489851585
+            },
+            "caliper": 0.0019647506139752724
+          },
+          "2": {
+            "npairs": 1334,
+            "d_ms": -0.02408822113362394,
+            "unmatched_neg": 26,
+            "unmatched_pos": 60,
+            "balance": {
+              "mean_absr_neg": 0.013822742188839807,
+              "mean_absr_pos": 0.01391982680964802,
+              "sd_absr_neg": 0.011713567134543081,
+              "sd_absr_pos": 0.011808479358344653,
+              "smd": -0.008254709513152304
+            },
+            "caliper": 0.002939917281971776
+          }
+        },
+        "terciles": {
+          "q1": -8.005149355013579,
+          "q2": -7.085627561751686
+        },
+        "roll_count": 215
+      }
+    }
+  },
+  "layerB": {
+    "markets": [
+      "XAUUSD",
+      "XAGUSD",
+      "EURUSD",
+      "BTCUSD",
+      "USATECHIDXUSD"
+    ],
+    "m1_stats": {
+      "XAUUSD": {
+        "rows": 1768123,
+        "dup_timestamps": 0,
+        "dup_raw": 0,
+        "bad_close": 0,
+        "n_days": 1555,
+        "first": "2021-04-12",
+        "last": "2026-04-10",
+        "spot_verified": true
+      },
+      "XAGUSD": {
+        "rows": 1729136,
+        "dup_timestamps": 0,
+        "dup_raw": 0,
+        "bad_close": 0,
+        "n_days": 1548,
+        "first": "2021-07-13",
+        "last": "2026-07-12",
+        "spot_verified": true
+      },
+      "EURUSD": {
+        "rows": 2041613,
+        "dup_timestamps": 0,
+        "dup_raw": 0,
+        "bad_close": 0,
+        "n_days": 1427,
+        "first": "2021-01-04",
+        "last": "2026-06-30",
+        "spot_verified": true
+      },
+      "BTCUSD": {
+        "rows": 2539807,
+        "dup_timestamps": 0,
+        "dup_raw": 0,
+        "bad_close": 0,
+        "n_days": 1825,
+        "first": "2021-05-23",
+        "last": "2026-05-22",
+        "spot_verified": true
+      },
+      "USATECHIDXUSD": {
+        "rows": 906815,
+        "dup_timestamps": 0,
+        "dup_raw": 0,
+        "bad_close": 0,
+        "n_days": 871,
+        "first": "2023-09-01",
+        "last": "2026-07-10",
+        "spot_verified": true
+      }
+    },
+    "eligibility": {
+      "XAUUSD": {
+        "n": 1543,
+        "exclusions": {
+          "roll_day": 0,
+          "roll_window": 0,
+          "incomplete_window": 10,
+          "zero_rv": 0,
+          "zero_return": 1
+        }
+      },
+      "XAGUSD": {
+        "n": 1536,
+        "exclusions": {
+          "roll_day": 0,
+          "roll_window": 0,
+          "incomplete_window": 10,
+          "zero_rv": 0,
+          "zero_return": 1
+        }
+      },
+      "EURUSD": {
+        "n": 1412,
+        "exclusions": {
+          "roll_day": 0,
+          "roll_window": 0,
+          "incomplete_window": 10,
+          "zero_rv": 0,
+          "zero_return": 4
+        }
+      },
+      "BTCUSD": {
+        "n": 1814,
+        "exclusions": {
+          "roll_day": 0,
+          "roll_window": 0,
+          "incomplete_window": 10,
+          "zero_rv": 0,
+          "zero_return": 0
+        }
+      },
+      "USATECHIDXUSD": {
+        "n": 860,
+        "exclusions": {
+          "roll_day": 0,
+          "roll_window": 0,
+          "incomplete_window": 10,
+          "zero_rv": 0,
+          "zero_return": 0
+        }
+      }
+    },
+    "per_market": {
+      "XAUUSD": {
+        "layer": "B",
+        "market": "XAUUSD",
+        "d_m": 0.03650617389038083,
+        "evaluable": true,
+        "pairs_per_stratum": {
+          "0": 237,
+          "1": 233,
+          "2": 230
+        },
+        "c_stratum": {
+          "0": -0.016526052353674835,
+          "1": 0.13133379056473574,
+          "2": -0.005289216539918422
+        },
+        "n_pairs_total": 700,
+        "eligible": 1543,
+        "exclusions": {
+          "roll_day": 0,
+          "roll_window": 0,
+          "incomplete_window": 10,
+          "zero_rv": 0,
+          "zero_return": 1
+        },
+        "strata": {
+          "0": {
+            "npairs": 237,
+            "d_ms": -0.016526052353674835,
+            "unmatched_neg": 1,
+            "unmatched_pos": 39,
+            "balance": {
+              "mean_absr_neg": 0.0050520141950672805,
+              "mean_absr_pos": 0.005532860043172136,
+              "sd_absr_neg": 0.004885855173011909,
+              "sd_absr_pos": 0.004863288007244579,
+              "smd": -0.09864345019429346
+            },
+            "caliper": 0.0012187264720735693
+          },
+          "1": {
+            "npairs": 233,
+            "d_ms": 0.13133379056473574,
+            "unmatched_neg": 2,
+            "unmatched_pos": 46,
+            "balance": {
+              "mean_absr_neg": 0.005623945077703863,
+              "mean_absr_pos": 0.006451903915598387,
+              "sd_absr_neg": 0.006211342699953402,
+              "sd_absr_pos": 0.0060687738102093575,
+              "smd": -0.1348363501678955
+            },
+            "caliper": 0.001535563218121406
+          },
+          "2": {
+            "npairs": 230,
+            "d_ms": -0.005289216539918422,
+            "unmatched_neg": 8,
+            "unmatched_pos": 47,
+            "balance": {
+              "mean_absr_neg": 0.008987817217677394,
+              "mean_absr_pos": 0.008265189681592545,
+              "sd_absr_neg": 0.011591130695941306,
+              "sd_absr_pos": 0.008967725917875575,
+              "smd": 0.06973298049307931
+            },
+            "caliper": 0.0025649341429129103
+          }
+        },
+        "terciles": {
+          "q1": -8.685119842068033,
+          "q2": -7.824814738911548
+        },
+        "roll_count": 0
+      },
+      "XAGUSD": {
+        "layer": "B",
+        "market": "XAGUSD",
+        "d_m": -0.008958039212843577,
+        "evaluable": true,
+        "pairs_per_stratum": {
+          "0": 241,
+          "1": 233,
+          "2": 235
+        },
+        "c_stratum": {
+          "0": 0.15069810655775495,
+          "1": -0.07119800646939903,
+          "2": -0.10637421772688666
+        },
+        "n_pairs_total": 709,
+        "eligible": 1536,
+        "exclusions": {
+          "roll_day": 0,
+          "roll_window": 0,
+          "incomplete_window": 10,
+          "zero_rv": 0,
+          "zero_return": 1
+        },
+        "strata": {
+          "0": {
+            "npairs": 241,
+            "d_ms": 0.15069810655775495,
+            "unmatched_neg": 12,
+            "unmatched_pos": 18,
+            "balance": {
+              "mean_absr_neg": 0.011718714734363818,
+              "mean_absr_pos": 0.011318363415229139,
+              "sd_absr_neg": 0.011310728585070411,
+              "sd_absr_pos": 0.010429117970125816,
+              "smd": 0.03680086053662221
+            },
+            "caliper": 0.00271621933671962
+          },
+          "1": {
+            "npairs": 233,
+            "d_ms": -0.07119800646939903,
+            "unmatched_neg": 6,
+            "unmatched_pos": 40,
+            "balance": {
+              "mean_absr_neg": 0.011465284572839624,
+              "mean_absr_pos": 0.011850288786484984,
+              "sd_absr_neg": 0.012258065408852869,
+              "sd_absr_pos": 0.01244034672253873,
+              "smd": -0.031175585434790445
+            },
+            "caliper": 0.003086254622530403
+          },
+          "2": {
+            "npairs": 235,
+            "d_ms": -0.10637421772688666,
+            "unmatched_neg": 5,
+            "unmatched_pos": 37,
+            "balance": {
+              "mean_absr_neg": 0.01837032159238979,
+              "mean_absr_pos": 0.017812941246769198,
+              "sd_absr_neg": 0.03498317610838873,
+              "sd_absr_pos": 0.019323942068596597,
+              "smd": 0.01972340624656621
+            },
+            "caliper": 0.00693949783450499
+          }
+        },
+        "terciles": {
+          "q1": -7.315123397642394,
+          "q2": -6.450914784224834
+        },
+        "roll_count": 0
+      },
+      "EURUSD": {
+        "layer": "B",
+        "market": "EURUSD",
+        "d_m": 0.060991113798335723,
+        "evaluable": true,
+        "pairs_per_stratum": {
+          "0": 208,
+          "1": 208,
+          "2": 214
+        },
+        "c_stratum": {
+          "0": 0.14118346733863996,
+          "1": 0.03516980164941361,
+          "2": 0.006620072406953619
+        },
+        "n_pairs_total": 630,
+        "eligible": 1412,
+        "exclusions": {
+          "roll_day": 0,
+          "roll_window": 0,
+          "incomplete_window": 10,
+          "zero_rv": 0,
+          "zero_return": 4
+        },
+        "strata": {
+          "0": {
+            "npairs": 208,
+            "d_ms": 0.14118346733863996,
+            "unmatched_neg": 45,
+            "unmatched_pos": 10,
+            "balance": {
+              "mean_absr_neg": 0.0029301197749761984,
+              "mean_absr_pos": 0.002832723972057295,
+              "sd_absr_neg": 0.0025872972142313134,
+              "sd_absr_pos": 0.0023362421460872283,
+              "smd": 0.03951199524260858
+            },
+            "caliper": 0.0006180375677708574
+          },
+          "1": {
+            "npairs": 208,
+            "d_ms": 0.03516980164941361,
+            "unmatched_neg": 36,
+            "unmatched_pos": 18,
+            "balance": {
+              "mean_absr_neg": 0.00323877612008602,
+              "mean_absr_pos": 0.003518827789274134,
+              "sd_absr_neg": 0.002639401359131237,
+              "sd_absr_pos": 0.0028489049150423715,
+              "smd": -0.10197967766655121
+            },
+            "caliper": 0.0006856942280288507
+          },
+          "2": {
+            "npairs": 214,
+            "d_ms": 0.006620072406953619,
+            "unmatched_neg": 18,
+            "unmatched_pos": 25,
+            "balance": {
+              "mean_absr_neg": 0.004224093048402418,
+              "mean_absr_pos": 0.004323305531537074,
+              "sd_absr_neg": 0.003406361634975307,
+              "sd_absr_pos": 0.004071347011058612,
+              "smd": -0.02643122240285604
+            },
+            "caliper": 0.0009387192213260215
+          }
+        },
+        "terciles": {
+          "q1": -9.914689935421256,
+          "q2": -9.144557920974162
+        },
+        "roll_count": 0
+      },
+      "BTCUSD": {
+        "layer": "B",
+        "market": "BTCUSD",
+        "d_m": 0.025594245220832656,
+        "evaluable": true,
+        "pairs_per_stratum": {
+          "0": 279,
+          "1": 278,
+          "2": 288
+        },
+        "c_stratum": {
+          "0": -0.1893112818609356,
+          "1": 0.1555117479504978,
+          "2": 0.11058226957293577
+        },
+        "n_pairs_total": 845,
+        "eligible": 1814,
+        "exclusions": {
+          "roll_day": 0,
+          "roll_window": 0,
+          "incomplete_window": 10,
+          "zero_rv": 0,
+          "zero_return": 0
+        },
+        "strata": {
+          "0": {
+            "npairs": 279,
+            "d_ms": -0.1893112818609356,
+            "unmatched_neg": 15,
+            "unmatched_pos": 32,
+            "balance": {
+              "mean_absr_neg": 0.016570904531390113,
+              "mean_absr_pos": 0.01621148902282362,
+              "sd_absr_neg": 0.017422783143575912,
+              "sd_absr_pos": 0.01630799220002765,
+              "smd": 0.021299206690229888
+            },
+            "caliper": 0.0042114701425708155
+          },
+          "1": {
+            "npairs": 278,
+            "d_ms": 0.1555117479504978,
+            "unmatched_neg": 31,
+            "unmatched_pos": 17,
+            "balance": {
+              "mean_absr_neg": 0.01821236578497012,
+              "mean_absr_pos": 0.019247070969211418,
+              "sd_absr_neg": 0.018779409174905337,
+              "sd_absr_pos": 0.019453748054466403,
+              "smd": -0.05411764851400615
+            },
+            "caliper": 0.0047757178060502566
+          },
+          "2": {
+            "npairs": 288,
+            "d_ms": 0.11058226957293577,
+            "unmatched_neg": 7,
+            "unmatched_pos": 22,
+            "balance": {
+              "mean_absr_neg": 0.023744598740486504,
+              "mean_absr_pos": 0.02438828950056455,
+              "sd_absr_neg": 0.025475767395815026,
+              "sd_absr_pos": 0.023259497335970783,
+              "smd": -0.026388538378871243
+            },
+            "caliper": 0.0060868036430714225
+          }
+        },
+        "terciles": {
+          "q1": -6.516405353737079,
+          "q2": -5.566293798274164
+        },
+        "roll_count": 0
+      },
+      "USATECHIDXUSD": {
+        "layer": "B",
+        "market": "USATECHIDXUSD",
+        "d_m": 0.42195701989534246,
+        "evaluable": true,
+        "pairs_per_stratum": {
+          "0": 116,
+          "1": 120,
+          "2": 120
+        },
+        "c_stratum": {
+          "0": 0.4408067635244302,
+          "1": 0.3882017627716661,
+          "2": 0.436862533389931
+        },
+        "n_pairs_total": 356,
+        "eligible": 860,
+        "exclusions": {
+          "roll_day": 0,
+          "roll_window": 0,
+          "incomplete_window": 10,
+          "zero_rv": 0,
+          "zero_return": 0
+        },
+        "strata": {
+          "0": {
+            "npairs": 116,
+            "d_ms": 0.4408067635244302,
+            "unmatched_neg": 5,
+            "unmatched_pos": 50,
+            "balance": {
+              "mean_absr_neg": 0.007529801221247455,
+              "mean_absr_pos": 0.006524147883207773,
+              "sd_absr_neg": 0.00798695189818132,
+              "sd_absr_pos": 0.005441239828954214,
+              "smd": 0.1471612155248598
+            },
+            "caliper": 0.0016600850459685176
+          },
+          "1": {
+            "npairs": 120,
+            "d_ms": 0.3882017627716661,
+            "unmatched_neg": 3,
+            "unmatched_pos": 43,
+            "balance": {
+              "mean_absr_neg": 0.007588308206450155,
+              "mean_absr_pos": 0.006687484931673581,
+              "sd_absr_neg": 0.007425512082660145,
+              "sd_absr_pos": 0.006347468622944948,
+              "smd": 0.1304113373014534
+            },
+            "caliper": 0.0017085176238850397
+          },
+          "2": {
+            "npairs": 120,
+            "d_ms": 0.436862533389931,
+            "unmatched_neg": 3,
+            "unmatched_pos": 44,
+            "balance": {
+              "mean_absr_neg": 0.01078500416124092,
+              "mean_absr_pos": 0.010154212448430703,
+              "sd_absr_neg": 0.011255969056851936,
+              "sd_absr_pos": 0.011291160782492607,
+              "smd": 0.05595310347385225
+            },
+            "caliper": 0.00281518041628467
+          }
+        },
+        "terciles": {
+          "q1": -8.237031989305015,
+          "q2": -7.404760671956276
+        },
+        "roll_count": 0
+      }
+    }
+  },
+  "class_stats": {
+    "L1_COMMODITIES_OTHER": {
+      "class": "COMMODITIES_OTHER",
+      "layer": "A",
+      "markets": [
+        "c",
+        "o",
+        "s",
+        "w",
+        "ct",
+        "jo",
+        "fc",
+        "lh",
+        "hg"
+      ],
+      "evaluable_markets": [
+        "c",
+        "o",
+        "s",
+        "w",
+        "ct",
+        "jo",
+        "fc",
+        "lh",
+        "hg"
+      ],
+      "n_evaluable": 9,
+      "D_obs": 0.03174486844595142,
+      "per_market_dm": {
+        "c": 0.02228458718206887,
+        "o": 0.04143678826163568,
+        "s": -0.017774959008324542,
+        "w": 0.0023076315690309713,
+        "ct": 0.03935354110867966,
+        "jo": -0.02483642661557389,
+        "fc": 0.14133567707152303,
+        "lh": 0.07085838567829776,
+        "hg": 0.010738590766225244
+      }
+    },
+    "L2_CRYPTO": {
+      "class": "CRYPTO",
+      "layer": "B",
+      "markets": [
+        "BTCUSD"
+      ],
+      "evaluable_markets": [
+        "BTCUSD"
+      ],
+      "n_evaluable": 1,
+      "D_obs": 0.025594245220832656,
+      "per_market_dm": {
+        "BTCUSD": 0.025594245220832656
+      }
+    },
+    "L1_ENERGY_CRUDE": {
+      "class": "ENERGY_CRUDE",
+      "layer": "A",
+      "markets": [
+        "cl"
+      ],
+      "evaluable_markets": [
+        "cl"
+      ],
+      "n_evaluable": 1,
+      "D_obs": 0.08138470857083525,
+      "per_market_dm": {
+        "cl": 0.08138470857083525
+      }
+    },
+    "L1_EQUITY_INDICES": {
+      "class": "EQUITY_INDICES",
+      "layer": "A",
+      "markets": [
+        "sp"
+      ],
+      "evaluable_markets": [
+        "sp"
+      ],
+      "n_evaluable": 1,
+      "D_obs": 0.14977636977949313,
+      "per_market_dm": {
+        "sp": 0.14977636977949313
+      }
+    },
+    "L2_EQUITY_INDICES": {
+      "class": "EQUITY_INDICES",
+      "layer": "B",
+      "markets": [
+        "USATECHIDXUSD"
+      ],
+      "evaluable_markets": [
+        "USATECHIDXUSD"
+      ],
+      "n_evaluable": 1,
+      "D_obs": 0.42195701989534246,
+      "per_market_dm": {
+        "USATECHIDXUSD": 0.42195701989534246
+      }
+    },
+    "L1_FX": {
+      "class": "FX",
+      "layer": "A",
+      "markets": [
+        "ad",
+        "bp",
+        "cd",
+        "dx",
+        "jy",
+        "sf"
+      ],
+      "evaluable_markets": [
+        "ad",
+        "bp",
+        "cd",
+        "dx",
+        "jy",
+        "sf"
+      ],
+      "n_evaluable": 6,
+      "D_obs": 0.029185517092049126,
+      "per_market_dm": {
+        "ad": 0.11586678659545435,
+        "bp": -0.007618259038234221,
+        "cd": 0.1362964844424536,
+        "dx": 0.04738004774312097,
+        "jy": -0.08938574267430816,
+        "sf": -0.027426214516191785
+      }
+    },
+    "L2_FX": {
+      "class": "FX",
+      "layer": "B",
+      "markets": [
+        "EURUSD"
+      ],
+      "evaluable_markets": [
+        "EURUSD"
+      ],
+      "n_evaluable": 1,
+      "D_obs": 0.060991113798335723,
+      "per_market_dm": {
+        "EURUSD": 0.060991113798335723
+      }
+    },
+    "L1_INDEX_COMMODITY": {
+      "class": "INDEX_COMMODITY",
+      "layer": "A",
+      "markets": [
+        "cr"
+      ],
+      "evaluable_markets": [
+        "cr"
+      ],
+      "n_evaluable": 1,
+      "D_obs": -0.015849832571667746,
+      "per_market_dm": {
+        "cr": -0.015849832571667746
+      }
+    },
+    "L1_PRECIOUS_METALS": {
+      "class": "PRECIOUS_METALS",
+      "layer": "A",
+      "markets": [
+        "gc",
+        "si"
+      ],
+      "evaluable_markets": [
+        "gc",
+        "si"
+      ],
+      "n_evaluable": 2,
+      "D_obs": -0.028462575164386817,
+      "per_market_dm": {
+        "gc": -0.0008606965030481103,
+        "si": -0.05606445382572552
+      }
+    },
+    "L2_PRECIOUS_METALS": {
+      "class": "PRECIOUS_METALS",
+      "layer": "B",
+      "markets": [
+        "XAUUSD",
+        "XAGUSD"
+      ],
+      "evaluable_markets": [
+        "XAUUSD",
+        "XAGUSD"
+      ],
+      "n_evaluable": 2,
+      "D_obs": 0.013774067338768625,
+      "per_market_dm": {
+        "XAUUSD": 0.03650617389038083,
+        "XAGUSD": -0.008958039212843577
+      }
+    },
+    "L1_RATES": {
+      "class": "RATES",
+      "layer": "A",
+      "markets": [
+        "ed",
+        "us"
+      ],
+      "evaluable_markets": [
+        "ed",
+        "us"
+      ],
+      "n_evaluable": 2,
+      "D_obs": 0.0033813826980865595,
+      "per_market_dm": {
+        "ed": -0.028148586748666674,
+        "us": 0.03491135214483979
+      }
+    }
+  },
+  "bootstrap": {
+    "L1_COMMODITIES_OTHER": {
+      "T": 11106,
+      "nblocks": 1010,
+      "p_null": 0.0005999400059994001,
+      "ci95": [
+        0.014310392240575336,
+        0.049853229754819026
+      ],
+      "n_draws": 10000,
+      "null_mean": 0.0002417875630764752,
+      "sampling_mean": 0.031986656009027885
+    },
+    "L2_CRYPTO": {
+      "T": 1814,
+      "nblocks": 165,
+      "p_null": 0.6746325367463254,
+      "ci95": [
+        -0.10538304908753472,
+        0.11306796534426308
+      ],
+      "n_draws": 10000,
+      "null_mean": -0.02151247905150298,
+      "sampling_mean": 0.004081766169329676
+    },
+    "L1_ENERGY_CRUDE": {
+      "T": 2291,
+      "nblocks": 209,
+      "p_null": 0.10518948105189481,
+      "ci95": [
+        -0.002170116967648477,
+        0.19131150058377283
+      ],
+      "n_draws": 10000,
+      "null_mean": 0.011792286332312113,
+      "sampling_mean": 0.09317699490314735
+    },
+    "L1_EQUITY_INDICES": {
+      "T": 4203,
+      "nblocks": 383,
+      "p_null": 9.999000099990002e-05,
+      "ci95": [
+        0.07986515932089702,
+        0.1930264703985456
+      ],
+      "n_draws": 10000,
+      "null_mean": -0.013518119052305875,
+      "sampling_mean": 0.13625825072718725
+    },
+    "L2_EQUITY_INDICES": {
+      "T": 860,
+      "nblocks": 79,
+      "p_null": 9.999000099990002e-05,
+      "ci95": [
+        0.2685227465615184,
+        0.5765906573215325
+      ],
+      "n_draws": 10000,
+      "null_mean": -0.0012301263886409317,
+      "sampling_mean": 0.4207268935067015
+    },
+    "L1_FX": {
+      "T": 5985,
+      "nblocks": 545,
+      "p_null": 0.013298670132986702,
+      "ci95": [
+        0.0064136818785946095,
+        0.05253823364114963
+      ],
+      "n_draws": 10000,
+      "null_mean": 0.00035013168399179067,
+      "sampling_mean": 0.02953564877604092
+    },
+    "L2_FX": {
+      "T": 1412,
+      "nblocks": 129,
+      "p_null": 0.2512748725127487,
+      "ci95": [
+        -0.04597613183968113,
+        0.1610612979735842
+      ],
+      "n_draws": 10000,
+      "null_mean": -0.0054305233258404445,
+      "sampling_mean": 0.05556059047249528
+    },
+    "L1_INDEX_COMMODITY": {
+      "T": 3054,
+      "nblocks": 278,
+      "p_null": 0.6380361963803619,
+      "ci95": [
+        -0.08682282321940862,
+        0.04883644974223955
+      ],
+      "n_draws": 10000,
+      "null_mean": -0.00311925355122881,
+      "sampling_mean": -0.018969086122896557
+    },
+    "L1_PRECIOUS_METALS": {
+      "T": 7491,
+      "nblocks": 681,
+      "p_null": 0.22927707229277072,
+      "ci95": [
+        -0.07676938565605725,
+        0.014559419378834522
+      ],
+      "n_draws": 10000,
+      "null_mean": -0.002593851428097444,
+      "sampling_mean": -0.031056426592484258
+    },
+    "L2_PRECIOUS_METALS": {
+      "T": 1623,
+      "nblocks": 148,
+      "p_null": 0.7654234576542346,
+      "ci95": [
+        -0.07880367849541714,
+        0.10440565677115048
+      ],
+      "n_draws": 10000,
+      "null_mean": -0.0007274831055825917,
+      "sampling_mean": 0.01304658423318603
+    },
+    "L1_RATES": {
+      "T": 5325,
+      "nblocks": 485,
+      "p_null": 0.9136086391360864,
+      "ci95": [
+        -0.05918492755928968,
+        0.06324812625508383
+      ],
+      "n_draws": 10000,
+      "null_mean": -0.001422573908840767,
+      "sampling_mean": 0.0019588087892457883
+    }
+  },
+  "multiplicity": {
+    "family_order": [
+      "L1_COMMODITIES_OTHER",
+      "L1_ENERGY_CRUDE",
+      "L1_EQUITY_INDICES",
+      "L1_FX",
+      "L1_INDEX_COMMODITY",
+      "L1_PRECIOUS_METALS",
+      "L1_RATES",
+      "L2_CRYPTO",
+      "L2_EQUITY_INDICES",
+      "L2_FX",
+      "L2_PRECIOUS_METALS"
+    ],
+    "raw_p": {
+      "L1_COMMODITIES_OTHER": 0.0005999400059994001,
+      "L1_ENERGY_CRUDE": 0.10518948105189481,
+      "L1_EQUITY_INDICES": 9.999000099990002e-05,
+      "L1_FX": 0.013298670132986702,
+      "L1_INDEX_COMMODITY": 0.6380361963803619,
+      "L1_PRECIOUS_METALS": 0.22927707229277072,
+      "L1_RATES": 0.9136086391360864,
+      "L2_CRYPTO": 0.6746325367463254,
+      "L2_EQUITY_INDICES": 9.999000099990002e-05,
+      "L2_FX": 0.2512748725127487,
+      "L2_PRECIOUS_METALS": 0.7654234576542346
+    },
+    "holm_p": {
+      "L1_COMMODITIES_OTHER": 0.0053994600539946005,
+      "L1_ENERGY_CRUDE": 0.7363263673632636,
+      "L1_EQUITY_INDICES": 0.0010998900109989002,
+      "L1_FX": 0.10638936106389361,
+      "L1_INDEX_COMMODITY": 1.0,
+      "L1_PRECIOUS_METALS": 1.0,
+      "L1_RATES": 1.0,
+      "L2_CRYPTO": 1.0,
+      "L2_EQUITY_INDICES": 0.0010998900109989002,
+      "L2_FX": 1.0,
+      "L2_PRECIOUS_METALS": 1.0
+    }
+  },
+  "verdicts": {
+    "L1_COMMODITIES_OTHER": {
+      "class": "COMMODITIES_OTHER",
+      "layer": "A",
+      "D_obs": 0.03174486844595142,
+      "p_raw": 0.0005999400059994001,
+      "p_holm": 0.0053994600539946005,
+      "ci95": [
+        0.014310392240575336,
+        0.049853229754819026
+      ],
+      "n_evaluable_markets": 9,
+      "evaluable_markets": [
+        "c",
+        "o",
+        "s",
+        "w",
+        "ct",
+        "jo",
+        "fc",
+        "lh",
+        "hg"
+      ],
+      "consistency_frac": 0.7778,
+      "verdict": "CONTRADICTION"
+    },
+    "L2_CRYPTO": {
+      "class": "CRYPTO",
+      "layer": "B",
+      "D_obs": 0.025594245220832656,
+      "p_raw": 0.6746325367463254,
+      "p_holm": 1.0,
+      "ci95": [
+        -0.10538304908753472,
+        0.11306796534426308
+      ],
+      "n_evaluable_markets": 1,
+      "evaluable_markets": [
+        "BTCUSD"
+      ],
+      "consistency_frac": 1.0,
+      "verdict": "EVIDENCE-LIMITED/DESCRIPTIVE"
+    },
+    "L1_ENERGY_CRUDE": {
+      "class": "ENERGY_CRUDE",
+      "layer": "A",
+      "D_obs": 0.08138470857083525,
+      "p_raw": 0.10518948105189481,
+      "p_holm": 0.7363263673632636,
+      "ci95": [
+        -0.002170116967648477,
+        0.19131150058377283
+      ],
+      "n_evaluable_markets": 1,
+      "evaluable_markets": [
+        "cl"
+      ],
+      "consistency_frac": 1.0,
+      "verdict": "EVIDENCE-LIMITED/DESCRIPTIVE"
+    },
+    "L1_EQUITY_INDICES": {
+      "class": "EQUITY_INDICES",
+      "layer": "A",
+      "D_obs": 0.14977636977949313,
+      "p_raw": 9.999000099990002e-05,
+      "p_holm": 0.0010998900109989002,
+      "ci95": [
+        0.07986515932089702,
+        0.1930264703985456
+      ],
+      "n_evaluable_markets": 1,
+      "evaluable_markets": [
+        "sp"
+      ],
+      "consistency_frac": 1.0,
+      "verdict": "EVIDENCE-LIMITED/DESCRIPTIVE"
+    },
+    "L2_EQUITY_INDICES": {
+      "class": "EQUITY_INDICES",
+      "layer": "B",
+      "D_obs": 0.42195701989534246,
+      "p_raw": 9.999000099990002e-05,
+      "p_holm": 0.0010998900109989002,
+      "ci95": [
+        0.2685227465615184,
+        0.5765906573215325
+      ],
+      "n_evaluable_markets": 1,
+      "evaluable_markets": [
+        "USATECHIDXUSD"
+      ],
+      "consistency_frac": 1.0,
+      "verdict": "EVIDENCE-LIMITED/DESCRIPTIVE"
+    },
+    "L1_FX": {
+      "class": "FX",
+      "layer": "A",
+      "D_obs": 0.029185517092049126,
+      "p_raw": 0.013298670132986702,
+      "p_holm": 0.10638936106389361,
+      "ci95": [
+        0.0064136818785946095,
+        0.05253823364114963
+      ],
+      "n_evaluable_markets": 6,
+      "evaluable_markets": [
+        "ad",
+        "bp",
+        "cd",
+        "dx",
+        "jy",
+        "sf"
+      ],
+      "consistency_frac": 0.5,
+      "verdict": "INCONCLUSIVE"
+    },
+    "L2_FX": {
+      "class": "FX",
+      "layer": "B",
+      "D_obs": 0.060991113798335723,
+      "p_raw": 0.2512748725127487,
+      "p_holm": 1.0,
+      "ci95": [
+        -0.04597613183968113,
+        0.1610612979735842
+      ],
+      "n_evaluable_markets": 1,
+      "evaluable_markets": [
+        "EURUSD"
+      ],
+      "consistency_frac": 1.0,
+      "verdict": "EVIDENCE-LIMITED/DESCRIPTIVE"
+    },
+    "L1_INDEX_COMMODITY": {
+      "class": "INDEX_COMMODITY",
+      "layer": "A",
+      "D_obs": -0.015849832571667746,
+      "p_raw": 0.6380361963803619,
+      "p_holm": 1.0,
+      "ci95": [
+        -0.08682282321940862,
+        0.04883644974223955
+      ],
+      "n_evaluable_markets": 1,
+      "evaluable_markets": [
+        "cr"
+      ],
+      "consistency_frac": 1.0,
+      "verdict": "EVIDENCE-LIMITED/DESCRIPTIVE"
+    },
+    "L1_PRECIOUS_METALS": {
+      "class": "PRECIOUS_METALS",
+      "layer": "A",
+      "D_obs": -0.028462575164386817,
+      "p_raw": 0.22927707229277072,
+      "p_holm": 1.0,
+      "ci95": [
+        -0.07676938565605725,
+        0.014559419378834522
+      ],
+      "n_evaluable_markets": 2,
+      "evaluable_markets": [
+        "gc",
+        "si"
+      ],
+      "consistency_frac": 1.0,
+      "verdict": "INCONCLUSIVE"
+    },
+    "L2_PRECIOUS_METALS": {
+      "class": "PRECIOUS_METALS",
+      "layer": "B",
+      "D_obs": 0.013774067338768625,
+      "p_raw": 0.7654234576542346,
+      "p_holm": 1.0,
+      "ci95": [
+        -0.07880367849541714,
+        0.10440565677115048
+      ],
+      "n_evaluable_markets": 2,
+      "evaluable_markets": [
+        "XAUUSD",
+        "XAGUSD"
+      ],
+      "consistency_frac": 0.5,
+      "verdict": "INCONCLUSIVE"
+    },
+    "L1_RATES": {
+      "class": "RATES",
+      "layer": "A",
+      "D_obs": 0.0033813826980865595,
+      "p_raw": 0.9136086391360864,
+      "p_holm": 1.0,
+      "ci95": [
+        -0.05918492755928968,
+        0.06324812625508383
+      ],
+      "n_evaluable_markets": 2,
+      "evaluable_markets": [
+        "ed",
+        "us"
+      ],
+      "consistency_frac": 0.5,
+      "verdict": "INCONCLUSIVE"
+    }
+  },
+  "secondary": {
+    "horizon_1d": {
+      "class_D": {
+        "L1_COMMODITIES_OTHER": {
+          "D": 0.035300182960536726,
+          "n_markets": 9
+        },
+        "L2_CRYPTO": {
+          "D": 0.15644357739689138,
+          "n_markets": 1
+        },
+        "L1_ENERGY_CRUDE": {
+          "D": 0.03641568314590187,
+          "n_markets": 1
+        },
+        "L1_EQUITY_INDICES": {
+          "D": 0.37979851876874865,
+          "n_markets": 1
+        },
+        "L2_EQUITY_INDICES": {
+          "D": 0.6216246716126782,
+          "n_markets": 1
+        },
+        "L1_FX": {
+          "D": 0.025753242221855734,
+          "n_markets": 6
+        },
+        "L2_FX": {
+          "D": -0.1326285483908225,
+          "n_markets": 1
+        },
+        "L1_INDEX_COMMODITY": {
+          "D": -0.24006618057664653,
+          "n_markets": 1
+        },
+        "L1_PRECIOUS_METALS": {
+          "D": -0.026391551663855747,
+          "n_markets": 2
+        },
+        "L2_PRECIOUS_METALS": {
+          "D": -0.021843934776166727,
+          "n_markets": 2
+        },
+        "L1_RATES": {
+          "D": -0.09713295971914401,
+          "n_markets": 2
+        }
+      }
+    },
+    "horizon_21d": {
+      "class_D": {
+        "L1_COMMODITIES_OTHER": {
+          "D": -0.10325492396858188,
+          "n_markets": 9
+        },
+        "L2_CRYPTO": {
+          "D": 0.017210026318887958,
+          "n_markets": 1
+        },
+        "L1_ENERGY_CRUDE": {
+          "D": null,
+          "n_markets": 0
+        },
+        "L1_EQUITY_INDICES": {
+          "D": -0.06660224692569792,
+          "n_markets": 1
+        },
+        "L2_EQUITY_INDICES": {
+          "D": 0.17532506245146273,
+          "n_markets": 1
+        },
+        "L1_FX": {
+          "D": 0.02709651230925637,
+          "n_markets": 6
+        },
+        "L2_FX": {
+          "D": 0.0045501920869081,
+          "n_markets": 1
+        },
+        "L1_INDEX_COMMODITY": {
+          "D": 0.046550786869546806,
+          "n_markets": 1
+        },
+        "L1_PRECIOUS_METALS": {
+          "D": 0.028782936100057967,
+          "n_markets": 1
+        },
+        "L2_PRECIOUS_METALS": {
+          "D": -0.08137616458826621,
+          "n_markets": 2
+        },
+        "L1_RATES": {
+          "D": -0.008385405922443979,
+          "n_markets": 2
+        }
+      }
+    },
+    "standardized_shock": {
+      "class_D": {
+        "L1_COMMODITIES_OTHER": {
+          "D": 0.033053261304273274,
+          "n_markets": 9
+        },
+        "L2_CRYPTO": {
+          "D": 0.008998657244339478,
+          "n_markets": 1
+        },
+        "L1_ENERGY_CRUDE": {
+          "D": 0.05800107202144259,
+          "n_markets": 1
+        },
+        "L1_EQUITY_INDICES": {
+          "D": 0.15469189783891898,
+          "n_markets": 1
+        },
+        "L2_EQUITY_INDICES": {
+          "D": 0.4866188990768922,
+          "n_markets": 1
+        },
+        "L1_FX": {
+          "D": 0.02943496483845444,
+          "n_markets": 6
+        },
+        "L2_FX": {
+          "D": 0.035342180812649344,
+          "n_markets": 1
+        },
+        "L1_INDEX_COMMODITY": {
+          "D": -0.018657814791119623,
+          "n_markets": 1
+        },
+        "L1_PRECIOUS_METALS": {
+          "D": -0.023304226542906033,
+          "n_markets": 2
+        },
+        "L2_PRECIOUS_METALS": {
+          "D": 0.009763642139893452,
+          "n_markets": 2
+        },
+        "L1_RATES": {
+          "D": 0.005436525580422248,
+          "n_markets": 2
+        }
+      },
+      "per_market": {
+        "ad": {
+          "d_m": 0.1299941036088241
+        },
+        "bp": {
+          "d_m": -0.0011336972665474774
+        },
+        "c": {
+          "d_m": 0.009414574060909663
+        },
+        "cd": {
+          "d_m": 0.12267963554577437
+        },
+        "cl": {
+          "d_m": 0.05800107202144259
+        },
+        "cr": {
+          "d_m": -0.018657814791119623
+        },
+        "ct": {
+          "d_m": 0.0381878106777428
+        },
+        "dx": {
+          "d_m": 0.05808773511670723
+        },
+        "ed": {
+          "d_m": -0.020852024840314672
+        },
+        "fc": {
+          "d_m": 0.13690705248276192
+        },
+        "gc": {
+          "d_m": -0.009122818932171317
+        },
+        "hg": {
+          "d_m": 0.0064607456176259655
+        },
+        "jo": {
+          "d_m": -0.0028700202132348404
+        },
+        "jy": {
+          "d_m": -0.09012232072095583
+        },
+        "lh": {
+          "d_m": 0.0700119113794267
+        },
+        "o": {
+          "d_m": 0.04393268307402302
+        },
+        "s": {
+          "d_m": -0.004405838457304942
+        },
+        "sf": {
+          "d_m": -0.04289566725307578
+        },
+        "si": {
+          "d_m": -0.03748563415364075
+        },
+        "sp": {
+          "d_m": 0.15469189783891898
+        },
+        "us": {
+          "d_m": 0.03172507600115917
+        },
+        "w": {
+          "d_m": -0.00015956688349077577
+        },
+        "XAUUSD": {
+          "d_m": 0.019328945380625222
+        },
+        "XAGUSD": {
+          "d_m": 0.0001983388991616819
+        },
+        "EURUSD": {
+          "d_m": 0.035342180812649344
+        },
+        "BTCUSD": {
+          "d_m": 0.008998657244339478
+        },
+        "USATECHIDXUSD": {
+          "d_m": 0.4866188990768922
+        }
+      }
+    },
+    "abs_return_response": {
+      "class_D": {
+        "L1_COMMODITIES_OTHER": {
+          "D": 8.533257091102591e-05,
+          "n_markets": 9
+        },
+        "L2_CRYPTO": {
+          "D": 0.0007766650247004423,
+          "n_markets": 1
+        },
+        "L1_ENERGY_CRUDE": {
+          "D": -2.62556148742774e-05,
+          "n_markets": 1
+        },
+        "L1_EQUITY_INDICES": {
+          "D": 0.0007273631343108494,
+          "n_markets": 1
+        },
+        "L2_EQUITY_INDICES": {
+          "D": 0.0013227350509390154,
+          "n_markets": 1
+        },
+        "L1_FX": {
+          "D": 1.783179539045837e-05,
+          "n_markets": 6
+        },
+        "L2_FX": {
+          "D": 6.774283452343786e-05,
+          "n_markets": 1
+        },
+        "L1_INDEX_COMMODITY": {
+          "D": -0.00010631878636989456,
+          "n_markets": 1
+        },
+        "L1_PRECIOUS_METALS": {
+          "D": -0.00023524441732715245,
+          "n_markets": 2
+        },
+        "L2_PRECIOUS_METALS": {
+          "D": -0.0007023153991560739,
+          "n_markets": 2
+        },
+        "L1_RATES": {
+          "D": 4.5659998413082655e-05,
+          "n_markets": 2
+        }
+      }
+    },
+    "intraday_layerB": {
+      "class_D": {
+        "L2_CRYPTO": {
+          "D": 0.047206701811919306,
+          "n_markets": 1
+        },
+        "L2_EQUITY_INDICES": {
+          "D": 0.2248196880870397,
+          "n_markets": 1
+        },
+        "L2_FX": {
+          "D": 0.002193310784019137,
+          "n_markets": 1
+        },
+        "L2_PRECIOUS_METALS": {
+          "D": -0.025625088668273035,
+          "n_markets": 2
+        }
+      }
+    },
+    "garch": {
+      "ad": {
+        "gjr": {
+          "omega": 2.4224305656079742e-05,
+          "alpha": 0.01997210341842028,
+          "beta": 0.5703928274591871,
+          "gamma": -0.05630268826469953,
+          "se_gamma": 0.015379483711330482,
+          "nll": -2172.9730448842406,
+          "converged": false,
+          "gamma_at_bound": false,
+          "engle_ng": {
+            "sign_bias": {
+              "coef": 0.24323663481488478,
+              "t": 2.589804873496708,
+              "n": 3899
+            },
+            "negative_size_bias": {
+              "coef": 140.30693457086426,
+              "t": 11.94089484869024,
+              "n": 3899
+            },
+            "positive_size_bias": {
+              "coef": -13.14248803461531,
+              "t": -0.9953139240930676,
+              "n": 3899
+            }
+          }
+        },
+        "egarch": {
+          "omega": -1.0769480068883874,
+          "alpha": 0.0011938123506508116,
+          "beta": 0.042712925840639376,
+          "gamma": 0.1950000060745548,
+          "se_gamma": 0.00012581971666473715,
+          "nll": -5738531.93275205,
+          "converged": false,
+          "gamma_at_bound": false
+        }
+      },
+      "bp": {
+        "gjr": {
+          "omega": 0.0003165671560719733,
+          "alpha": 0.0003353501304664781,
+          "beta": 0.00033673908228636437,
+          "gamma": -0.1708568729644903,
+          "se_gamma": 0.007264929007613057,
+          "nll": -7522.10922793926,
+          "converged": true,
+          "gamma_at_bound": false,
+          "engle_ng": {
+            "sign_bias": {
+              "coef": 2328544.0621154583,
+              "t": 1.0416193413206885,
+              "n": 6847
+            },
+            "negative_size_bias": {
+              "coef": 2878163130.520554,
+              "t": 10.544329080120031,
+              "n": 6847
+            },
+            "positive_size_bias": {
+              "coef": -164126944.70803338,
+              "t": -0.5828221116441483,
+              "n": 6847
+            }
+          }
+        },
+        "egarch": {
+          "omega": -1.5086758292263904,
+          "alpha": 0.00030648341605787573,
+          "beta": 0.004346140966508688,
+          "gamma": -0.2466787505609624,
+          "se_gamma": 5.2467303508731376e-05,
+          "nll": -3725677.445419045,
+          "converged": false,
+          "gamma_at_bound": false
+        }
+      },
+      "c": {
+        "gjr": {
+          "omega": 0.0001765095008918907,
+          "alpha": 0.0003353501304664781,
+          "beta": 0.9996646498695336,
+          "gamma": -0.3,
+          "se_gamma": 0.004128839562193336,
+          "nll": -40290.77919819393,
+          "converged": true,
+          "gamma_at_bound": true,
+          "engle_ng": {
+            "sign_bias": {
+              "coef": -5.9739796546899564e-05,
+              "t": -0.6630354888578817,
+              "n": 10676
+            },
+            "negative_size_bias": {
+              "coef": 0.013262036486241484,
+              "t": 2.1853641287404546,
+              "n": 10676
+            },
+            "positive_size_bias": {
+              "coef": 0.03695275789192407,
+              "t": 6.783954607015592,
+              "n": 10676
+            }
+          }
+        },
+        "egarch": {
+          "omega": 0.8387533847112547,
+          "alpha": 4.539889921686465e-05,
+          "beta": 0.5806233076443726,
+          "gamma": -0.3,
+          "se_gamma": 0.0016157341583061843,
+          "nll": -1857780.5322776749,
+          "converged": false,
+          "gamma_at_bound": true
+        }
+      },
+      "cd": {
+        "gjr": {
+          "omega": 9.620459189686225e-06,
+          "alpha": 0.0003353501304664781,
+          "beta": 0.9996646498695336,
+          "gamma": -0.3,
+          "se_gamma": 0.0053589171369149355,
+          "nll": -23194.673047094842,
+          "converged": true,
+          "gamma_at_bound": true,
+          "engle_ng": {
+            "sign_bias": {
+              "coef": 0.00039923034480593303,
+              "t": 2.6166538612706858,
+              "n": 6379
+            },
+            "negative_size_bias": {
+              "coef": 0.19717693518206225,
+              "t": 4.709938188209146,
+              "n": 6379
+            },
+            "positive_size_bias": {
+              "coef": -0.01326885359771526,
+              "t": -0.30538237725612605,
+              "n": 6379
+            }
+          }
+        },
+        "egarch": {
+          "omega": -0.2134832744028811,
+          "alpha": 0.003833147353439977,
+          "beta": 0.7372513962470703,
+          "gamma": 0.15750001546130035,
+          "se_gamma": 1.1295367213952901e-05,
+          "nll": -6041768.853199238,
+          "converged": false,
+          "gamma_at_bound": false
+        }
+      },
+      "cl": {
+        "gjr": {
+          "omega": 0.00015629376301885876,
+          "alpha": 0.016794362285466415,
+          "beta": 0.7684270440007253,
+          "gamma": -0.021074135015075733,
+          "se_gamma": 0.0005972155675992035,
+          "nll": -2393.417240346661,
+          "converged": false,
+          "gamma_at_bound": false,
+          "engle_ng": {
+            "sign_bias": {
+              "coef": 0.030552378331296114,
+              "t": 0.2954822642064203,
+              "n": 4655
+            },
+            "negative_size_bias": {
+              "coef": 46.771351598578846,
+              "t": 13.969562846697276,
+              "n": 4655
+            },
+            "positive_size_bias": {
+              "coef": 29.877474249871344,
+              "t": 7.886080245977479,
+              "n": 4655
+            }
+          }
+        },
+        "egarch": {
+          "omega": 0.0006707002609327439,
+          "alpha": 4.539889921686465e-05,
+          "beta": 0.9996646498695336,
+          "gamma": 0.3,
+          "se_gamma": 0.008936522280195393,
+          "nll": -9051.297186824435,
+          "converged": true,
+          "gamma_at_bound": true
+        }
+      },
+      "cr": {
+        "gjr": {
+          "omega": 3.2914723588065846e-05,
+          "alpha": 0.0158376145677277,
+          "beta": 0.45192766383945193,
+          "gamma": -0.07031647797302627,
+          "se_gamma": 0.001873851627297315,
+          "nll": -2322.034555998948,
+          "converged": false,
+          "gamma_at_bound": false,
+          "engle_ng": {
+            "sign_bias": {
+              "coef": 0.09652136526775312,
+              "t": 1.089897217090916,
+              "n": 3985
+            },
+            "negative_size_bias": {
+              "coef": 165.81498361257133,
+              "t": 14.235255958522632,
+              "n": 3985
+            },
+            "positive_size_bias": {
+              "coef": 26.943035882997112,
+              "t": 2.1629342341677367,
+              "n": 3985
+            }
+          }
+        },
+        "egarch": {
+          "omega": 0.0006707002609327439,
+          "alpha": 4.539889921686465e-05,
+          "beta": 0.9996646498695336,
+          "gamma": -0.3,
+          "se_gamma": 0.006956120183503525,
+          "nll": -7529.019366605618,
+          "converged": true,
+          "gamma_at_bound": true
+        }
+      },
+      "ct": {
+        "gjr": {
+          "omega": 6.220316640012828e-05,
+          "alpha": 0.016361574788124153,
+          "beta": 0.7570544407093677,
+          "gamma": -0.033297900228075585,
+          "se_gamma": 0.00026995658406570315,
+          "nll": -5911.911877540025,
+          "converged": false,
+          "gamma_at_bound": false,
+          "engle_ng": {
+            "sign_bias": {
+              "coef": 0.22162073193048218,
+              "t": 2.7819364084610845,
+              "n": 11005
+            },
+            "negative_size_bias": {
+              "coef": 81.0894397582935,
+              "t": 17.83223721084255,
+              "n": 11005
+            },
+            "positive_size_bias": {
+              "coef": 20.280533422741357,
+              "t": 4.292445415930326,
+              "n": 11005
+            }
+          }
+        },
+        "egarch": {
+          "omega": 0.08418921818309211,
+          "alpha": 4.539889921686465e-05,
+          "beta": 0.9549263759073185,
+          "gamma": -0.3,
+          "se_gamma": 1.999997110585929e-10,
+          "nll": -2850247.542250257,
+          "converged": false,
+          "gamma_at_bound": true
+        }
+      },
+      "dx": {
+        "gjr": {
+          "omega": 3.664671250449496e-05,
+          "alpha": 0.0003353501304664781,
+          "beta": 0.9996646498695336,
+          "gamma": -0.3,
+          "se_gamma": 0.006636764705227573,
+          "nll": -14606.94452229172,
+          "converged": true,
+          "gamma_at_bound": true,
+          "engle_ng": {
+            "sign_bias": {
+              "coef": 0.00019590166707717814,
+              "t": 0.6625582911868004,
+              "n": 4198
+            },
+            "negative_size_bias": {
+              "coef": 0.044554191513406484,
+              "t": 1.056479714277006,
+              "n": 4198
+            },
+            "positive_size_bias": {
+              "coef": 0.040450759689627705,
+              "t": 0.9382055095314284,
+              "n": 4198
+            }
+          }
+        },
+        "egarch": {
+          "omega": -0.002689769815703992,
+          "alpha": 0.0008408691031928815,
+          "beta": 0.9977954805236862,
+          "gamma": 0.21836389237878437,
+          "se_gamma": 0.00013353244029263092,
+          "nll": -155686.61387068965,
+          "converged": false,
+          "gamma_at_bound": false
+        }
+      },
+      "ed": {
+        "gjr": {
+          "omega": 3.2297870114561857e-07,
+          "alpha": 0.015342248374105619,
+          "beta": 0.7283290095200529,
+          "gamma": -0.029207411397766093,
+          "se_gamma": 0.004737542407446848,
+          "nll": -2577.3596002554614,
+          "converged": false,
+          "gamma_at_bound": false,
+          "engle_ng": {
+            "sign_bias": {
+              "coef": 0.006426738420031902,
+              "t": 0.06039393771526115,
+              "n": 5094
+            },
+            "negative_size_bias": {
+              "coef": 515.6968856935986,
+              "t": 5.2498087178412485,
+              "n": 5094
+            },
+            "positive_size_bias": {
+              "coef": 799.5606640561566,
+              "t": 10.648875545381486,
+              "n": 5094
+            }
+          }
+        },
+        "egarch": {
+          "omega": 0.5844212314168782,
+          "alpha": 4.539889921686465e-05,
+          "beta": 0.7077893842915609,
+          "gamma": -0.3,
+          "se_gamma": 0.00011572031840224699,
+          "nll": -68061.04961388015,
+          "converged": false,
+          "gamma_at_bound": true
+        }
+      },
+      "fc": {
+        "gjr": {
+          "omega": 0.00010154004965091052,
+          "alpha": 0.0003353501304664781,
+          "beta": 0.9996646498695336,
+          "gamma": -0.3,
+          "se_gamma": 0.005094544029645147,
+          "nll": -25652.098100704505,
+          "converged": true,
+          "gamma_at_bound": true,
+          "engle_ng": {
+            "sign_bias": {
+              "coef": 0.0007620403454045635,
+              "t": 1.9685020595650828,
+              "n": 7107
+            },
+            "negative_size_bias": {
+              "coef": 0.49710685786539077,
+              "t": 15.254067572620615,
+              "n": 7107
+            },
+            "positive_size_bias": {
+              "coef": 0.2590080995236854,
+              "t": 7.848870864427123,
+              "n": 7107
+            }
+          }
+        },
+        "egarch": {
+          "omega": 0.2528488600957539,
+          "alpha": 4.539889921686465e-05,
+          "beta": 0.873575569952123,
+          "gamma": 0.3,
+          "se_gamma": 0.0034587799096985937,
+          "nll": -81012.95336527044,
+          "converged": false,
+          "gamma_at_bound": true
+        }
+      },
+      "gc": {
+        "gjr": {
+          "omega": 0.0001746926891675397,
+          "alpha": 0.0003353501304664781,
+          "beta": 0.9996646498695336,
+          "gamma": -0.3,
+          "se_gamma": 0.005209679938715219,
+          "nll": -24451.09333202476,
+          "converged": true,
+          "gamma_at_bound": true,
+          "engle_ng": {
+            "sign_bias": {
+              "coef": 0.00012016948367060065,
+              "t": 0.438252652746347,
+              "n": 6759
+            },
+            "negative_size_bias": {
+              "coef": 0.09546215943212484,
+              "t": 5.537361105173495,
+              "n": 6759
+            },
+            "positive_size_bias": {
+              "coef": 0.07367032222705011,
+              "t": 4.243919370949525,
+              "n": 6759
+            }
+          }
+        },
+        "egarch": {
+          "omega": 0.011890863190143097,
+          "alpha": 4.539889921686465e-05,
+          "beta": 0.9940545684049285,
+          "gamma": 0.3,
+          "se_gamma": 0.00011693225335214488,
+          "nll": -1251685.2146074153,
+          "converged": false,
+          "gamma_at_bound": true
+        }
+      },
+      "hg": {
+        "gjr": {
+          "omega": 0.00028188281540706154,
+          "alpha": 0.0003353501304664781,
+          "beta": 0.9996646498695336,
+          "gamma": -0.3,
+          "se_gamma": 0.0041647209803714535,
+          "nll": -39465.5761317565,
+          "converged": true,
+          "gamma_at_bound": true,
+          "engle_ng": {
+            "sign_bias": {
+              "coef": 5.983936114837795e-05,
+              "t": 0.5030758012355993,
+              "n": 10501
+            },
+            "negative_size_bias": {
+              "coef": 0.01564189857642379,
+              "t": 2.573834295428926,
+              "n": 10501
+            },
+            "positive_size_bias": {
+              "coef": 0.013195767192021632,
+              "t": 2.1605006231810315,
+              "n": 10501
+            }
+          }
+        },
+        "egarch": {
+          "omega": 0.0006707002609327439,
+          "alpha": 4.539889921686465e-05,
+          "beta": 0.9996646498695336,
+          "gamma": 0.3,
+          "se_gamma": 0.0038743090430806786,
+          "nll": -22686.954476275037,
+          "converged": true,
+          "gamma_at_bound": true
+        }
+      },
+      "jo": {
+        "gjr": {
+          "omega": 0.00013006594173528164,
+          "alpha": 0.027215247223553406,
+          "beta": 0.7155652215334469,
+          "gamma": -0.03750008039689124,
+          "se_gamma": 0.0046501123181225575,
+          "nll": -4490.524962580666,
+          "converged": false,
+          "gamma_at_bound": false,
+          "engle_ng": {
+            "sign_bias": {
+              "coef": -0.014535048110995152,
+              "t": -0.14756279762614527,
+              "n": 8699
+            },
+            "negative_size_bias": {
+              "coef": 12.93629716235248,
+              "t": 2.941517296023514,
+              "n": 8699
+            },
+            "positive_size_bias": {
+              "coef": 14.871367087583572,
+              "t": 3.896028522841471,
+              "n": 8699
+            }
+          }
+        },
+        "egarch": {
+          "omega": -0.8159865266936965,
+          "alpha": 0.0020633456798830685,
+          "beta": 0.12968417933786486,
+          "gamma": -0.130012031461939,
+          "se_gamma": 0.0010270353104186506,
+          "nll": -9727.892358097095,
+          "converged": false,
+          "gamma_at_bound": false
+        }
+      },
+      "jy": {
+        "gjr": {
+          "omega": 3.7373904774630606e-05,
+          "alpha": 0.018498106579374528,
+          "beta": 0.531403786244793,
+          "gamma": -0.0609414017340299,
+          "se_gamma": 0.0006953440443019872,
+          "nll": -3541.269023637071,
+          "converged": false,
+          "gamma_at_bound": false,
+          "engle_ng": {
+            "sign_bias": {
+              "coef": -0.05545507015362209,
+              "t": -1.1637313372368783,
+              "n": 6494
+            },
+            "negative_size_bias": {
+              "coef": 39.36004699025207,
+              "t": 6.869273421147364,
+              "n": 6494
+            },
+            "positive_size_bias": {
+              "coef": 39.445798423460424,
+              "t": 7.712476090174358,
+              "n": 6494
+            }
+          }
+        },
+        "egarch": {
+          "omega": -1.5102439276775015,
+          "alpha": 0.00025629733919253024,
+          "beta": 0.005293982002229606,
+          "gamma": 0.2325594357018599,
+          "se_gamma": 0.0013124116610586452,
+          "nll": -3312624.64375196,
+          "converged": false,
+          "gamma_at_bound": false
+        }
+      },
+      "lh": {
+        "gjr": {
+          "omega": 0.00023934263522670137,
+          "alpha": 0.0003353501304664781,
+          "beta": 0.9996646498695336,
+          "gamma": -0.3,
+          "se_gamma": 0.004730265026380743,
+          "nll": -30201.706734973806,
+          "converged": true,
+          "gamma_at_bound": true,
+          "engle_ng": {
+            "sign_bias": {
+              "coef": 2.618782251196508e-05,
+              "t": 0.3001402633842108,
+              "n": 8159
+            },
+            "negative_size_bias": {
+              "coef": 0.014915027011386493,
+              "t": 3.0181470933206342,
+              "n": 8159
+            },
+            "positive_size_bias": {
+              "coef": 0.004355180119611813,
+              "t": 0.8782634584853697,
+              "n": 8159
+            }
+          }
+        },
+        "egarch": {
+          "omega": 0.0006707002609327439,
+          "alpha": 4.539889921686465e-05,
+          "beta": 0.9996646498695336,
+          "gamma": 0.3,
+          "se_gamma": 0.004263123306563477,
+          "nll": -20034.23530944052,
+          "converged": true,
+          "gamma_at_bound": true
+        }
+      },
+      "o": {
+        "gjr": {
+          "omega": 0.00013668834899476697,
+          "alpha": 0.013530834930162428,
+          "beta": 0.6646279923679985,
+          "gamma": -0.012904064530766271,
+          "se_gamma": 0.0011563314259289857,
+          "nll": -5742.445527463246,
+          "converged": false,
+          "gamma_at_bound": false,
+          "engle_ng": {
+            "sign_bias": {
+              "coef": 0.05321054028403808,
+              "t": 1.5401109671262747,
+              "n": 10678
+            },
+            "negative_size_bias": {
+              "coef": 19.055431870333187,
+              "t": 11.802604799976713,
+              "n": 10678
+            },
+            "positive_size_bias": {
+              "coef": 20.368493255029847,
+              "t": 12.258052511313627,
+              "n": 10678
+            }
+          }
+        },
+        "egarch": {
+          "omega": 0.0006707002609327439,
+          "alpha": 4.539889921686465e-05,
+          "beta": 0.9996646498695336,
+          "gamma": 0.3,
+          "se_gamma": 0.003909288125998976,
+          "nll": -17589.11923259164,
+          "converged": true,
+          "gamma_at_bound": true
+        }
+      },
+      "s": {
+        "gjr": {
+          "omega": 9.428498261616788e-05,
+          "alpha": 0.013319186809835237,
+          "beta": 0.6562418529570384,
+          "gamma": -0.014140391847649713,
+          "se_gamma": 0.0009731407047775092,
+          "nll": -5834.5365138382585,
+          "converged": false,
+          "gamma_at_bound": false,
+          "engle_ng": {
+            "sign_bias": {
+              "coef": 0.05860312849926039,
+              "t": 1.6341019610859502,
+              "n": 10592
+            },
+            "negative_size_bias": {
+              "coef": 44.674419067110584,
+              "t": 22.307468941219724,
+              "n": 10592
+            },
+            "positive_size_bias": {
+              "coef": 31.945748500177945,
+              "t": 15.273073050977418,
+              "n": 10592
+            }
+          }
+        },
+        "egarch": {
+          "omega": 0.19328671836660472,
+          "alpha": 4.539889921686465e-05,
+          "beta": 0.9033566408166976,
+          "gamma": -0.3,
+          "se_gamma": 3.542673336407493e-05,
+          "nll": -232294.5144645437,
+          "converged": false,
+          "gamma_at_bound": true
+        }
+      },
+      "sf": {
+        "gjr": {
+          "omega": 6.439096087258881e-05,
+          "alpha": 0.0003353501304664781,
+          "beta": 0.9996646498695336,
+          "gamma": -0.3,
+          "se_gamma": 0.005170076343770556,
+          "nll": -25001.879434066104,
+          "converged": true,
+          "gamma_at_bound": true,
+          "engle_ng": {
+            "sign_bias": {
+              "coef": -9.570264308515869e-05,
+              "t": -0.6701708924917799,
+              "n": 6845
+            },
+            "negative_size_bias": {
+              "coef": 0.018920775682686495,
+              "t": 1.1976380219383829,
+              "n": 6845
+            },
+            "positive_size_bias": {
+              "coef": 0.016051120437642716,
+              "t": 1.048858364149274,
+              "n": 6845
+            }
+          }
+        },
+        "egarch": {
+          "omega": -1.3877423691248627,
+          "alpha": 0.00048459293640051604,
+          "beta": 0.008014486528869847,
+          "gamma": -0.23388496961974792,
+          "se_gamma": 5.114533385407345e-05,
+          "nll": -3751266.785573889,
+          "converged": false,
+          "gamma_at_bound": false
+        }
+      },
+      "si": {
+        "gjr": {
+          "omega": 6.131722769140945e-05,
+          "alpha": 0.03604539957626202,
+          "beta": 0.818727651240458,
+          "gamma": -0.020284156871106053,
+          "se_gamma": 0.0013782512088948951,
+          "nll": -4770.583082145979,
+          "converged": false,
+          "gamma_at_bound": false,
+          "engle_ng": {
+            "sign_bias": {
+              "coef": 0.10369647072917325,
+              "t": 2.242704446430251,
+              "n": 9555
+            },
+            "negative_size_bias": {
+              "coef": 30.86197181996503,
+              "t": 16.648546913101054,
+              "n": 9555
+            },
+            "positive_size_bias": {
+              "coef": 20.71742085124056,
+              "t": 10.083102726157586,
+              "n": 9555
+            }
+          }
+        },
+        "egarch": {
+          "omega": 0.3056735930643013,
+          "alpha": 4.539889921686465e-05,
+          "beta": 0.8471632034678493,
+          "gamma": 0.3,
+          "se_gamma": 4.5188241532707905e-05,
+          "nll": -2124327.8042434044,
+          "converged": false,
+          "gamma_at_bound": true
+        }
+      },
+      "sp": {
+        "gjr": {
+          "omega": 6.665338785240253e-05,
+          "alpha": 0.013994810517644176,
+          "beta": 0.6822189018971941,
+          "gamma": -0.010259210320159445,
+          "se_gamma": 0.0009343103442783333,
+          "nll": -2569.2490855764013,
+          "converged": false,
+          "gamma_at_bound": false,
+          "engle_ng": {
+            "sign_bias": {
+              "coef": 0.3375824819388427,
+              "t": 1.6567760968520817,
+              "n": 5079
+            },
+            "negative_size_bias": {
+              "coef": 99.50177007370688,
+              "t": 8.27238852061562,
+              "n": 5079
+            },
+            "positive_size_bias": {
+              "coef": 11.021123131434958,
+              "t": 0.7745062732172919,
+              "n": 5079
+            }
+          }
+        },
+        "egarch": {
+          "omega": -0.5503185067831406,
+          "alpha": 0.004839126029125343,
+          "beta": 0.26624728054617686,
+          "gamma": 0.1500006488059535,
+          "se_gamma": 1.1301662675291735e-05,
+          "nll": -7367840.17412243,
+          "converged": false,
+          "gamma_at_bound": false
+        }
+      },
+      "us": {
+        "gjr": {
+          "omega": 5.857219294235284e-05,
+          "alpha": 0.0003353501304664781,
+          "beta": 0.9996646498695336,
+          "gamma": -0.3,
+          "se_gamma": 0.005429593684114511,
+          "nll": -22433.95882334483,
+          "converged": true,
+          "gamma_at_bound": true,
+          "engle_ng": {
+            "sign_bias": {
+              "coef": 2.9145708958124933e-05,
+              "t": 0.4149225899272642,
+              "n": 6215
+            },
+            "negative_size_bias": {
+              "coef": 0.07049373696955057,
+              "t": 8.927649714101587,
+              "n": 6215
+            },
+            "positive_size_bias": {
+              "coef": 0.05760706923707267,
+              "t": 7.305900644905235,
+              "n": 6215
+            }
+          }
+        },
+        "egarch": {
+          "omega": 1.999329299739067,
+          "alpha": 4.539889921686465e-05,
+          "beta": 0.0003353501304664781,
+          "gamma": -0.3,
+          "se_gamma": 0.0894927598977251,
+          "nll": -6636.885181154174,
+          "converged": true,
+          "gamma_at_bound": true
+        }
+      },
+      "w": {
+        "gjr": {
+          "omega": 0.0002137891245446897,
+          "alpha": 0.0003353501304664781,
+          "beta": 0.9996646498695336,
+          "gamma": -0.3,
+          "se_gamma": 0.004127909738508551,
+          "nll": -40262.82136458262,
+          "converged": true,
+          "gamma_at_bound": true,
+          "engle_ng": {
+            "sign_bias": {
+              "coef": -3.7452494731337704e-05,
+              "t": -1.412643563413087,
+              "n": 10679
+            },
+            "negative_size_bias": {
+              "coef": 0.010232072688314336,
+              "t": 6.4483112582035815,
+              "n": 10679
+            },
+            "positive_size_bias": {
+              "coef": 0.017052560323527772,
+              "t": 11.149151512239335,
+              "n": 10679
+            }
+          }
+        },
+        "egarch": {
+          "omega": 0.3925264104472235,
+          "alpha": 4.539889921686465e-05,
+          "beta": 0.8037367947763883,
+          "gamma": -0.3,
+          "se_gamma": 0.005021246417991267,
+          "nll": -15212.4556161605,
+          "converged": false,
+          "gamma_at_bound": true
+        }
+      },
+      "XAUUSD": {
+        "gjr": {
+          "omega": 7.678969194119119e-06,
+          "alpha": 0.040000000000000015,
+          "beta": 0.8999999999999999,
+          "gamma": -0.03,
+          "se_gamma": 0.007540504064887246,
+          "nll": -793.5175526515288,
+          "converged": false,
+          "gamma_at_bound": false,
+          "engle_ng": {
+            "sign_bias": {
+              "coef": -0.01209615830806854,
+              "t": -0.11532870176005225,
+              "n": 1553
+            },
+            "negative_size_bias": {
+              "coef": 20.350619432987962,
+              "t": 2.5380825684255215,
+              "n": 1553
+            },
+            "positive_size_bias": {
+              "coef": 24.447854645022634,
+              "t": 2.888097687954988,
+              "n": 1553
+            }
+          }
+        },
+        "egarch": {
+          "omega": -0.0006707002609327439,
+          "alpha": 4.539889921686465e-05,
+          "beta": 0.9996646498695336,
+          "gamma": -0.2883876290493086,
+          "se_gamma": 0.00041866977617957264,
+          "nll": -177966.3255744172,
+          "converged": true,
+          "gamma_at_bound": false
+        }
+      },
+      "XAGUSD": {
+        "gjr": {
+          "omega": 0.0002760057279622423,
+          "alpha": 0.013059508119883403,
+          "beta": 0.6456332694721474,
+          "gamma": -0.015684038657637414,
+          "se_gamma": 0.0013957563748311834,
+          "nll": -822.6980496512368,
+          "converged": false,
+          "gamma_at_bound": false,
+          "engle_ng": {
+            "sign_bias": {
+              "coef": -0.37606432402099244,
+              "t": -1.3399425455979124,
+              "n": 1546
+            },
+            "negative_size_bias": {
+              "coef": 26.93775887375079,
+              "t": 3.2618215503461525,
+              "n": 1546
+            },
+            "positive_size_bias": {
+              "coef": 37.70239243063178,
+              "t": 3.4378309866916124,
+              "n": 1546
+            }
+          }
+        },
+        "egarch": {
+          "omega": -0.0006838659492973687,
+          "alpha": 5.093851446988121e-05,
+          "beta": 0.9996580670253513,
+          "gamma": -0.02580736635982348,
+          "se_gamma": 1.9994078549409353e-10,
+          "nll": -388898002.3863577,
+          "converged": false,
+          "gamma_at_bound": false
+        }
+      },
+      "EURUSD": {
+        "gjr": {
+          "omega": 2.409903960245915e-05,
+          "alpha": 0.0003353501304664781,
+          "beta": 0.9996646498695336,
+          "gamma": -0.3,
+          "se_gamma": 0.01156775248042081,
+          "nll": -4375.056402865646,
+          "converged": true,
+          "gamma_at_bound": true,
+          "engle_ng": {
+            "sign_bias": {
+              "coef": 0.0002895207826721617,
+              "t": 0.5934935978179191,
+              "n": 1425
+            },
+            "negative_size_bias": {
+              "coef": 0.07597272373746937,
+              "t": 0.8467515512209824,
+              "n": 1425
+            },
+            "positive_size_bias": {
+              "coef": 0.01771067623100091,
+              "t": 0.208699787759637,
+              "n": 1425
+            }
+          }
+        },
+        "egarch": {
+          "omega": 0.0006707002609327439,
+          "alpha": 4.539889921686465e-05,
+          "beta": 0.9996646498695336,
+          "gamma": -0.3,
+          "se_gamma": 0.011561678801626533,
+          "nll": -2508.132653639431,
+          "converged": true,
+          "gamma_at_bound": true
+        }
+      },
+      "BTCUSD": {
+        "gjr": {
+          "omega": 6.14555399833143e-05,
+          "alpha": 0.040000000000000015,
+          "beta": 0.8999999999999999,
+          "gamma": -0.03,
+          "se_gamma": 0.0050040499203945115,
+          "nll": -1091.5381533759592,
+          "converged": false,
+          "gamma_at_bound": false,
+          "engle_ng": {
+            "sign_bias": {
+              "coef": 0.19666626839505777,
+              "t": 1.8028952293386549,
+              "n": 1823
+            },
+            "negative_size_bias": {
+              "coef": 20.660143982158996,
+              "t": 6.801171716182987,
+              "n": 1823
+            },
+            "positive_size_bias": {
+              "coef": -0.6818596829592221,
+              "t": -0.21961097322266593,
+              "n": 1823
+            }
+          }
+        },
+        "egarch": {
+          "omega": -0.0066957711636513725,
+          "alpha": 0.018335292288454673,
+          "beta": 0.9824524559631125,
+          "gamma": 0.2533841005909904,
+          "se_gamma": 1.9999962378054262e-10,
+          "nll": -3757590.370355468,
+          "converged": false,
+          "gamma_at_bound": false
+        }
+      },
+      "USATECHIDXUSD": {
+        "gjr": {
+          "omega": 0.0007287596356886725,
+          "alpha": 0.0003353501307092204,
+          "beta": 0.4246624261390882,
+          "gamma": -0.29999999996742827,
+          "se_gamma": 0.001030764201018966,
+          "nll": -1452.791583283076,
+          "converged": false,
+          "gamma_at_bound": true,
+          "engle_ng": {
+            "sign_bias": {
+              "coef": 2.555856530862757,
+              "t": 1.265306884481452,
+              "n": 869
+            },
+            "negative_size_bias": {
+              "coef": 1144.4370143466779,
+              "t": 8.746491536897127,
+              "n": 869
+            },
+            "positive_size_bias": {
+              "coef": -86.2103134464332,
+              "t": -0.6308611912905632,
+              "n": 869
+            }
+          }
+        },
+        "egarch": {
+          "omega": -0.02416328924353172,
+          "alpha": 4.539889921686465e-05,
+          "beta": 0.9777393416458532,
+          "gamma": 0.3,
+          "se_gamma": 0.0028990525996888507,
+          "nll": -30166.248856623683,
+          "converged": false,
+          "gamma_at_bound": true
+        }
+      }
+    },
+    "winsorization": {
+      "class_D": {
+        "L1_COMMODITIES_OTHER": {
+          "D": 0.03215879325060936,
+          "n_markets": 9
+        },
+        "L2_CRYPTO": {
+          "D": 0.027745157711964757,
+          "n_markets": 1
+        },
+        "L1_ENERGY_CRUDE": {
+          "D": 0.08753897190944433,
+          "n_markets": 1
+        },
+        "L1_EQUITY_INDICES": {
+          "D": 0.15485602722571176,
+          "n_markets": 1
+        },
+        "L2_EQUITY_INDICES": {
+          "D": 0.4195531625969466,
+          "n_markets": 1
+        },
+        "L1_FX": {
+          "D": 0.028689272098382294,
+          "n_markets": 6
+        },
+        "L2_FX": {
+          "D": 0.07118024386428855,
+          "n_markets": 1
+        },
+        "L1_INDEX_COMMODITY": {
+          "D": -0.008827444804355654,
+          "n_markets": 1
+        },
+        "L1_PRECIOUS_METALS": {
+          "D": -0.024453570722895113,
+          "n_markets": 2
+        },
+        "L2_PRECIOUS_METALS": {
+          "D": 0.009573246035362198,
+          "n_markets": 2
+        },
+        "L1_RATES": {
+          "D": 0.0013131975981177796,
+          "n_markets": 2
+        }
+      },
+      "per_market": {
+        "ad": {
+          "d_m": 0.12034357014942014,
+          "cap": 0.012453555039884481
+        },
+        "bp": {
+          "d_m": -0.0069013941017630025,
+          "cap": 0.013539858686410708
+        },
+        "c": {
+          "d_m": 0.022336673020927816,
+          "cap": 0.026524556226526982
+        },
+        "cd": {
+          "d_m": 0.13412703322769318,
+          "cap": 0.0062290579150775256
+        },
+        "cl": {
+          "d_m": 0.08753897190944433,
+          "cap": 0.04441623513033356
+        },
+        "cr": {
+          "d_m": -0.008827444804355654,
+          "cap": 0.011514301739897908
+        },
+        "ct": {
+          "d_m": 0.04064946956339443,
+          "cap": 0.028456887939085566
+        },
+        "dx": {
+          "d_m": 0.03785361597573212,
+          "cap": 0.011888228571718869
+        },
+        "ed": {
+          "d_m": -0.039358334973351526,
+          "cap": 0.0021072953504759724
+        },
+        "fc": {
+          "d_m": 0.13957878118836076,
+          "cap": 0.020978495470490743
+        },
+        "gc": {
+          "d_m": 0.001933902192012037,
+          "cap": 0.027759463570206977
+        },
+        "hg": {
+          "d_m": 0.01512101338294526,
+          "cap": 0.03363964677478854
+        },
+        "jo": {
+          "d_m": -0.027374471589653088,
+          "cap": 0.03698343159835862
+        },
+        "jy": {
+          "d_m": -0.08753726703465003,
+          "cap": 0.014593589790366492
+        },
+        "lh": {
+          "d_m": 0.06577157546479599,
+          "cap": 0.030448652179209522
+        },
+        "o": {
+          "d_m": 0.040762075784400616,
+          "cap": 0.03637648394988617
+        },
+        "s": {
+          "d_m": -0.014091063602978321,
+          "cap": 0.029864902518804068
+        },
+        "sf": {
+          "d_m": -0.02574992562613862,
+          "cap": 0.015446743942845665
+        },
+        "si": {
+          "d_m": -0.050841043637802265,
+          "cap": 0.03923574316884795
+        },
+        "sp": {
+          "d_m": 0.15485602722571176,
+          "cap": 0.02258571331295324
+        },
+        "us": {
+          "d_m": 0.041984730169587085,
+          "cap": 0.01565156404093565
+        },
+        "w": {
+          "d_m": 0.006675086043290745,
+          "cap": 0.029201941782378754
+        },
+        "XAUUSD": {
+          "d_m": 0.027916393485942614,
+          "cap": 0.01948897909340611
+        },
+        "XAGUSD": {
+          "d_m": -0.008769901415218218,
+          "cap": 0.04253468169039576
+        },
+        "EURUSD": {
+          "d_m": 0.07118024386428855,
+          "cap": 0.009439353521404412
+        },
+        "BTCUSD": {
+          "d_m": 0.027745157711964757,
+          "cap": 0.059639798036985
+        },
+        "USATECHIDXUSD": {
+          "d_m": 0.4195531625969466,
+          "cap": 0.02360145136938673
+        }
+      }
+    },
+    "common_window": {
+      "class_D": {
+        "L1_COMMODITIES_OTHER": {
+          "D": 0.011183650806055363,
+          "n_evaluable": 9,
+          "per_market_dm": {
+            "c": -0.04170632741375863,
+            "o": -0.04322264259155048,
+            "s": -0.025589431336980915,
+            "w": 0.011780958857218991,
+            "ct": 0.10000353270930629,
+            "jo": -0.028875299138839544,
+            "fc": 0.1277584659238623,
+            "lh": 0.040784693142700654,
+            "hg": -0.04028109289746043
+          }
+        },
+        "L1_ENERGY_CRUDE": {
+          "D": 0.002537210597208406,
+          "n_evaluable": 1,
+          "per_market_dm": {
+            "cl": 0.002537210597208406
+          }
+        },
+        "L1_EQUITY_INDICES": {
+          "D": 0.17012316481964374,
+          "n_evaluable": 1,
+          "per_market_dm": {
+            "sp": 0.17012316481964374
+          }
+        },
+        "L1_FX": {
+          "D": 0.022879586365387426,
+          "n_evaluable": 6,
+          "per_market_dm": {
+            "ad": 0.11739492140038206,
+            "bp": 0.00572758167250649,
+            "cd": 0.10487938687222974,
+            "dx": 0.049495624175516534,
+            "jy": -0.09421185243395065,
+            "sf": -0.04600814349435963
+          }
+        },
+        "L1_INDEX_COMMODITY": {
+          "D": -0.012975406524234923,
+          "n_evaluable": 1,
+          "per_market_dm": {
+            "cr": -0.012975406524234923
+          }
+        },
+        "L1_PRECIOUS_METALS": {
+          "D": -0.053454780652202105,
+          "n_evaluable": 2,
+          "per_market_dm": {
+            "gc": -0.05610064756138322,
+            "si": -0.05080891374302098
+          }
+        },
+        "L1_RATES": {
+          "D": 0.024116869373966378,
+          "n_evaluable": 2,
+          "per_market_dm": {
+            "ed": -0.002248378906347985,
+            "us": 0.05048211765428074
+          }
+        }
+      },
+      "per_market": {
+        "ad": {
+          "d_m": 0.11739492140038206,
+          "evaluable": true,
+          "pairs_per_stratum": {
+            "0": 457,
+            "1": 468,
+            "2": 479
+          },
+          "n_eligible": 3206,
+          "n_rolls": 61
+        },
+        "bp": {
+          "d_m": 0.00572758167250649,
+          "evaluable": true,
+          "pairs_per_stratum": {
+            "0": 510,
+            "1": 489,
+            "2": 502
+          },
+          "n_eligible": 3191,
+          "n_rolls": 62
+        },
+        "c": {
+          "d_m": -0.04170632741375863,
+          "evaluable": true,
+          "pairs_per_stratum": {
+            "0": 438,
+            "1": 440,
+            "2": 457
+          },
+          "n_eligible": 2918,
+          "n_rolls": 80
+        },
+        "cd": {
+          "d_m": 0.10487938687222974,
+          "evaluable": true,
+          "pairs_per_stratum": {
+            "0": 470,
+            "1": 505,
+            "2": 480
+          },
+          "n_eligible": 3147,
+          "n_rolls": 62
+        },
+        "cl": {
+          "d_m": 0.002537210597208406,
+          "evaluable": true,
+          "pairs_per_stratum": {
+            "0": 293,
+            "1": 292,
+            "2": 295
+          },
+          "n_eligible": 1830,
+          "n_rolls": 188
+        },
+        "cr": {
+          "d_m": -0.012975406524234923,
+          "evaluable": true,
+          "pairs_per_stratum": {
+            "0": 470,
+            "1": 441,
+            "2": 486
+          },
+          "n_eligible": 2930,
+          "n_rolls": 89
+        },
+        "ct": {
+          "d_m": 0.10000353270930629,
+          "evaluable": true,
+          "pairs_per_stratum": {
+            "0": 479,
+            "1": 473,
+            "2": 469
+          },
+          "n_eligible": 3002,
+          "n_rolls": 81
+        },
+        "dx": {
+          "d_m": 0.049495624175516534,
+          "evaluable": true,
+          "pairs_per_stratum": {
+            "0": 519,
+            "1": 505,
+            "2": 505
+          },
+          "n_eligible": 3225,
+          "n_rolls": 64
+        },
+        "ed": {
+          "d_m": -0.002248378906347985,
+          "evaluable": true,
+          "pairs_per_stratum": {
+            "0": 341,
+            "1": 332,
+            "2": 356
+          },
+          "n_eligible": 2189,
+          "n_rolls": 98
+        },
+        "fc": {
+          "d_m": 0.1277584659238623,
+          "evaluable": true,
+          "pairs_per_stratum": {
+            "0": 383,
+            "1": 401,
+            "2": 408
+          },
+          "n_eligible": 2532,
+          "n_rolls": 120
+        },
+        "gc": {
+          "d_m": -0.05610064756138322,
+          "evaluable": true,
+          "pairs_per_stratum": {
+            "0": 389,
+            "1": 382,
+            "2": 367
+          },
+          "n_eligible": 2378,
+          "n_rolls": 136
+        },
+        "hg": {
+          "d_m": -0.04028109289746043,
+          "evaluable": true,
+          "pairs_per_stratum": {
+            "0": 361,
+            "1": 376,
+            "2": 354
+          },
+          "n_eligible": 2353,
+          "n_rolls": 138
+        },
+        "jo": {
+          "d_m": -0.028875299138839544,
+          "evaluable": true,
+          "pairs_per_stratum": {
+            "0": 444,
+            "1": 424,
+            "2": 457
+          },
+          "n_eligible": 2829,
+          "n_rolls": 97
+        },
+        "jy": {
+          "d_m": -0.09421185243395065,
+          "evaluable": true,
+          "pairs_per_stratum": {
+            "0": 500,
+            "1": 499,
+            "2": 511
+          },
+          "n_eligible": 3197,
+          "n_rolls": 62
+        },
+        "lh": {
+          "d_m": 0.040784693142700654,
+          "evaluable": true,
+          "pairs_per_stratum": {
+            "0": 439,
+            "1": 410,
+            "2": 407
+          },
+          "n_eligible": 2697,
+          "n_rolls": 108
+        },
+        "o": {
+          "d_m": -0.04322264259155048,
+          "evaluable": true,
+          "pairs_per_stratum": {
+            "0": 453,
+            "1": 454,
+            "2": 429
+          },
+          "n_eligible": 2845,
+          "n_rolls": 78
+        },
+        "s": {
+          "d_m": -0.025589431336980915,
+          "evaluable": true,
+          "pairs_per_stratum": {
+            "0": 418,
+            "1": 434,
+            "2": 416
+          },
+          "n_eligible": 2669,
+          "n_rolls": 110
+        },
+        "sf": {
+          "d_m": -0.04600814349435963,
+          "evaluable": true,
+          "pairs_per_stratum": {
+            "0": 501,
+            "1": 487,
+            "2": 485
+          },
+          "n_eligible": 3208,
+          "n_rolls": 60
+        },
+        "si": {
+          "d_m": -0.05080891374302098,
+          "evaluable": true,
+          "pairs_per_stratum": {
+            "0": 371,
+            "1": 394,
+            "2": 374
+          },
+          "n_eligible": 2429,
+          "n_rolls": 132
+        },
+        "sp": {
+          "d_m": 0.17012316481964374,
+          "evaluable": true,
+          "pairs_per_stratum": {
+            "0": 492,
+            "1": 487,
+            "2": 512
+          },
+          "n_eligible": 3219,
+          "n_rolls": 62
+        },
+        "us": {
+          "d_m": 0.05048211765428074,
+          "evaluable": true,
+          "pairs_per_stratum": {
+            "0": 488,
+            "1": 475,
+            "2": 493
+          },
+          "n_eligible": 3126,
+          "n_rolls": 64
+        },
+        "w": {
+          "d_m": 0.011780958857218991,
+          "evaluable": true,
+          "pairs_per_stratum": {
+            "0": 480,
+            "1": 473,
+            "2": 468
+          },
+          "n_eligible": 3006,
+          "n_rolls": 78
+        }
+      },
+      "yrange": [
+        "1987-01-13",
+        "2002-08-30"
+      ]
+    }
+  },
+  "notes": {
+    "replicate_length_rule": "nblocks = ceil(T/L) whole circular blocks; no truncation, no padding",
+    "matching_tiebreak": "stable sort by |r| on chronologically-ordered records implements (|r| asc, timestamp asc)",
+    "caliper_frozen": "caliper c = 0.25*SD(|r|) within (m,stratum) computed on original eligible records; frozen into replicates",
+    "terciles_frozen": "tercile bounds per market computed once on its full eligible series; frozen into replicates",
+    "ref_pool_equal": "equal NEG/POS size -> reference pool = POS (frozen)",
+    "scipy_used": "scipy.optimize (Nelder-Mead, fixed start) used only for GJR/EGARCH secondary diagnostics",
+    "garch_series": "Layer A fit on daily log returns with roll-day returns removed; Layer B on aggregated daily returns",
+    "intraday": "intraday Layer B RV = sum of squared 1-minute log returns of consecutive same-UTC-day bars; different-frequency object, Layer B only",
+    "v1.2_null_inference": "only the null-testing/p-value layer changed (protocol \u00a79A/\u00a716 v1.2.0); null draws D*_null from the data-level construction (pair difference - c_(m,s), mathematically identical to the registered shock-response \u00b1c_(m,s)/2 transformation); c_(m,s) frozen from the original matched pairs; p_null = (1+count)/(B+1), count = #{b : |D*_null,b| >= |D_obs|}; percentile CI from the ordinary sampling draws D*",
+    "v1.1_status": "H01 v1.1 execution remains CONFIRMATORY INFERENCE INVALID / SCIENTIFIC RESULT UNADJUDICATED; no v1.1 p-values are reused or mixed with v1.2 results"
+  }
+}

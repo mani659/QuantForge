@@ -1,0 +1,80 @@
+======================================================================
+SEED-002 RELATIONAL DISCOVERY EXPERIMENT
+CAND-083 × CAND-081
+======================================================================
+Loading data from: C:\Users\User10\Documents\MRV\yuvi\QuantForge\data\m1\USATECHIDXUSD_M1.csv
+Data shape: (906815, 6)
+Date range: 0 to 906814
+Columns: ['timestamp', 'open', 'high', 'low', 'close', 'volume']
+
+Detecting CAND-081 events (structural failure trap)...
+Raw CAND-081 events: 16559
+After deduplication: 4892
+
+Checking CAND-083 preconditions...
+CAND-081 WITH CAND-083 (treatment): 4420
+CAND-081 WITHOUT CAND-083 (control): 472
+Total classified: 4892
+
+Computing downstream returns...
+
+======================================================================
+RESULTS
+======================================================================
+
+--- POPULATION COUNTS ---
+CAND-081 Baseline (all events): 4892
+CAND-081 WITHOUT CAND-083 (control): 472
+CAND-081 WITH CAND-083 (treatment): 4420
+
+--- TREATMENT (CAND-081 WITH CAND-083) ---
+N: 4420
+Net Mean: -2.06 bps
+Net Median: -1.76 bps
+Win Rate: 46.5%
+Std: 35.45 bps
+Worst: -501.26 bps
+Best: 333.79 bps
+
+--- CONTROL (CAND-081 WITHOUT CAND-083) ---
+N: 472
+Net Mean: 4.97 bps
+Net Median: 3.18 bps
+Win Rate: 54.0%
+Std: 72.29 bps
+Worst: -202.86 bps
+Best: 1075.12 bps
+
+--- TREATMENT VS CONTROL DELTA ---
+Delta Mean: -7.03 bps
+Delta Median: -4.93 bps
+Classification: CONTROL SUPERIOR
+
+--- BASELINE (ALL CAND-081 EVENTS) ---
+N: 4892
+Net Mean: -1.38 bps
+Net Median: -1.47 bps
+Win Rate: 47.2%
+
+Treatment vs Baseline Delta Mean: -0.68 bps
+Treatment vs Baseline Delta Median: -0.29 bps
+
+--- DISTRIBUTION ASSESSMENT ---
+Treatment excluding best: Mean=-2.14 bps
+Control excluding best: Mean=2.70 bps
+
+--- REJECTION COUNT DISTRIBUTION (TREATMENT) ---
+Mean rejection count: 23.2
+Median rejection count: 22.0
+Min: 3, Max: 45
+
+======================================================================
+SEED-002 DISCOVERY SUMMARY
+======================================================================
+Hypothesis: Does CAND-083 add information to CAND-081?
+Treatment N: 4420
+Control N: 472
+Delta Mean: -7.03 bps
+Delta Median: -4.93 bps
+Treatment Mean: -2.06 bps
+Control Mean: 4.97 bps

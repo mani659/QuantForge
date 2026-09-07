@@ -72,8 +72,33 @@ desktop.ini
 *.db-shm
 *.npy
 
-# Generated research outputs
-output/
+# Generated research outputs — runtime/session directories only
+# Canonical governance/research artifacts under output/research_discovery/ remain trackable
+output/event_study_v1/
+output/event_study_v2/
+output/event_study_v3/
+output/M-ORD-ECO-04-CONV-02/
+output/stage0_preflight/
+output/stage0_preflight_xau/
+output/tsmom_v1/.build_cache/
+output/tsmom_v2/.build_cache/
+output/xagusd_cost_viability_v1/
+output/research_discovery/CAND015_G6_FORWARD_*/
+output/research_discovery/G6_CAND015_FORWARD_*/
+output/research_discovery/ORD/V1.1.0/EXECUTION_*/
+output/research_discovery/ORD_ECONOMIC/V1.1.0/EXECUTION_*/
+output/research_discovery/ORD_STAGE1_*/
+output/research_discovery/ORD_STAGE2_*/
+output/research_discovery/H01_ECONOMIC_TRANSLATION_V1_TEST_*/
+output/research_discovery/H01_ECONOMIC_V1_EXEC_*/
+output/research_discovery/H01_EQUITY_V1_3_0_EXECUTION/
+output/research_discovery/H01_EQUITY_V1_3_EXEC_*/
+output/research_discovery/H01_EQ_V1_3_EXEC_*/
+output/research_discovery/H01_VOLATILITY_RESPONSE_ASYMMETRY/.build_cache/
+output/research_discovery/H01_VOLATILITY_RESPONSE_ASYMMETRY/daily_series/
+output/research_discovery/H01_EQUITY_VOLATILITY_ASYMMETRY/daily_series/
+output/research_discovery/H01_EQ_V1_3_EXEC_*/daily_series/
+output/research_discovery/V37A_REPL077_XAUUSD_PHASEA/phase_b_event_level_*/
 test_outputs/
 .build_cache/
 

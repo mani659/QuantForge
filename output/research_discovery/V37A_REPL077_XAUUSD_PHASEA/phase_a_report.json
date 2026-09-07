@@ -1,0 +1,37 @@
+{
+  "execution": {
+    "registration": "V37A-REPL-077-XAUUSD-M1",
+    "phase": "A",
+    "archival_impl_sha256": "b320c42d67e909634ec5d1cde829b6d6bab975fb88119d82da2ba8c283cae80b"
+  },
+  "data": {
+    "n_bars_full": 1768123,
+    "first_shifted_ts": "2021-04-12 15:00:00",
+    "last_shifted_ts": "2026-04-11 00:59:00"
+  },
+  "integrity": {
+    "monotonic": true,
+    "duplicate_timestamps": 0,
+    "high_lt_low": 0,
+    "high_lt_max_oc": 0,
+    "low_gt_min_oc": 0,
+    "nonpositive_prices": 0,
+    "volume_all_zero": true,
+    "n_nan_atr_pct_full": 200
+  },
+  "populations": {
+    "treatment_events_full_file": 4402,
+    "control_events_full_file": 49119,
+    "treatment_events_primary_window": 2309,
+    "control_events_primary_window": 25034,
+    "matched_control_entries_produced_for_window_treatments": 559,
+    "unique_control_events_used_in_matching": 226,
+    "duplicate_control_reuse_in_matched_sample": 333,
+    "unmatched_window_treatments": 1750,
+    "window_treatment_first_entry_ts": "2023-09-01 00:00:00",
+    "window_treatment_last_entry_ts": "2026-04-09 22:04:00",
+    "window_control_first_entry_ts": "2023-09-01 00:59:00",
+    "window_control_last_entry_ts": "2026-04-10 14:25:00"
+  },
+  "timing_seconds": 46.6
+}

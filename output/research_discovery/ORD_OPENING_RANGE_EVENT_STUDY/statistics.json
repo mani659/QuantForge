@@ -1,0 +1,128 @@
+{
+  "XAUUSD": {
+    "halted": false,
+    "diag": {
+      "total_dates": 1288,
+      "invalid_days": 4,
+      "invalid_fraction": 0.003105590062111801
+    },
+    "n_treatment": 2184,
+    "n_control": 62,
+    "N_days": 1284,
+    "evaluable": true,
+    "deltaM_obs": 30.901704157243934,
+    "median_treatment": -0.12843904309117762,
+    "median_control": -31.03014320033511,
+    "B_valid": 10000,
+    "p_raw": 9.999000099990002e-05,
+    "ci_95": [
+      23.216857953960513,
+      36.5353289810984
+    ],
+    "p_holm": 0.00029997000299970003,
+    "classification": "SUPPORT",
+    "invalid_rate_treatment": 0.8891941391941391,
+    "mfe_median_treatment": 15.468463779156512,
+    "range_norm_median_treatment": -0.02236200252991575,
+    "half1_dm": 33.70118241915733,
+    "half2_dm": 28.05587749143095,
+    "year_dm": {
+      "2021": 33.992275491456624,
+      "2022": 33.63085115536209,
+      "2023": 19.123836317387482,
+      "2024": 26.471721231118988,
+      "2025": 31.059348783752746,
+      "2026": 34.62529586573193
+    },
+    "n_long_treatment": 1092,
+    "n_short_treatment": 1092,
+    "n_long_control": 28,
+    "n_short_control": 34
+  },
+  "XAGUSD": {
+    "halted": false,
+    "diag": {
+      "total_dates": 1282,
+      "invalid_days": 11,
+      "invalid_fraction": 0.00858034321372855
+    },
+    "n_treatment": 2177,
+    "n_control": 56,
+    "N_days": 1267,
+    "evaluable": true,
+    "deltaM_obs": 71.0428969879628,
+    "median_treatment": -1.752080595707988,
+    "median_control": -72.7949775836708,
+    "B_valid": 10000,
+    "p_raw": 9.999000099990002e-05,
+    "ci_95": [
+      57.840627740888365,
+      86.95092296030565
+    ],
+    "p_holm": 0.00029997000299970003,
+    "classification": "SUPPORT",
+    "invalid_rate_treatment": 0.9085898024804777,
+    "mfe_median_treatment": 30.66741990154165,
+    "range_norm_median_treatment": -11.106684891503035,
+    "half1_dm": 67.32300568694681,
+    "half2_dm": 73.98683077059532,
+    "year_dm": {
+      "2021": 72.75192046995092,
+      "2022": 80.40573973280566,
+      "2023": 48.6673139063394,
+      "2024": 69.09143711946221,
+      "2025": 85.98566107392331,
+      "2026": 82.35202801102447
+    },
+    "n_long_treatment": 1093,
+    "n_short_treatment": 1084,
+    "n_long_control": 28,
+    "n_short_control": 28
+  },
+  "BTCUSD": {
+    "halted": true,
+    "diag": {
+      "total_dates": 1825,
+      "invalid_days": 218,
+      "invalid_fraction": 0.11945205479452055
+    }
+  },
+  "USATECHIDXUSD": {
+    "halted": false,
+    "diag": {
+      "total_dates": 706,
+      "invalid_days": 27,
+      "invalid_fraction": 0.03824362606232295
+    },
+    "n_treatment": 839,
+    "n_control": 25,
+    "N_days": 660,
+    "evaluable": true,
+    "deltaM_obs": 49.51962303222475,
+    "median_treatment": 1.241798761359251,
+    "median_control": -48.2778242708655,
+    "B_valid": 10000,
+    "p_raw": 0.0004999500049995,
+    "ci_95": [
+      33.459428586263954,
+      79.01079869236179
+    ],
+    "p_holm": 0.0004999500049995,
+    "classification": "SUPPORT",
+    "invalid_rate_treatment": 0.8927294398092968,
+    "mfe_median_treatment": 26.231313225359507,
+    "range_norm_median_treatment": 0.016467553414418884,
+    "half1_dm": 36.80343550963096,
+    "half2_dm": 75.80348755451857,
+    "year_dm": {
+      "2023": 39.62704617437381,
+      "2024": 33.83569451961994,
+      "2025": 77.24381532408123,
+      "2026": 75.94426923199197
+    },
+    "n_long_treatment": 437,
+    "n_short_treatment": 402,
+    "n_long_control": 11,
+    "n_short_control": 14
+  }
+}

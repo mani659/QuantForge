@@ -1,0 +1,81 @@
+{
+  "execution": {
+    "registration": "V37A-REPL-077-XAUUSD-M1",
+    "phase": "B",
+    "archival_impl_sha256": "b320c42d67e909634ec5d1cde829b6d6bab975fb88119d82da2ba8c283cae80b",
+    "head": "f192f3d283779164d79a84fed212e2bc13ca9f0a"
+  },
+  "primary_window": {
+    "window": "2023-09-01 -> 2026-04-10",
+    "label": "PRIMARY WINDOW",
+    "treatment": {
+      "N": 2309,
+      "gross_mean": 1.81,
+      "gross_median": 0.57,
+      "net_mean": -0.19,
+      "net_median": -1.43,
+      "win_rate": 52.2,
+      "std_gross": 22.17,
+      "worst": -87.01,
+      "best": 329.98,
+      "exclude_best_net_mean": -0.33
+    },
+    "control": {
+      "N": 559,
+      "gross_mean": 1.14,
+      "gross_median": 1.94,
+      "net_mean": -0.86,
+      "net_median": -0.06,
+      "win_rate": 55.1,
+      "std_gross": 21.76,
+      "worst": -169.52,
+      "best": 66.54,
+      "exclude_best_net_mean": -1.22
+    },
+    "gross_mean_delta": 0.67,
+    "net_mean_delta": 0.67,
+    "median_delta": -1.37,
+    "win_rate_delta": -2.9,
+    "matched_control_observations": 559,
+    "unique_control_events": 226,
+    "reused_control_events": 153,
+    "unmatched_treatments": 1750
+  },
+  "secondary_full_history": {
+    "window": "2021-04-12 -> 2026-04-10",
+    "label": "SECONDARY CONSISTENCY CHECK (full history)",
+    "treatment": {
+      "N": 4402,
+      "gross_mean": 0.56,
+      "gross_median": -0.21,
+      "net_mean": -1.44,
+      "net_median": -2.21,
+      "win_rate": 49.3,
+      "std_gross": 18.84,
+      "worst": -155.85,
+      "best": 329.98,
+      "exclude_best_net_mean": -1.52
+    },
+    "control": {
+      "N": 934,
+      "gross_mean": 0.5,
+      "gross_median": -0.51,
+      "net_mean": -1.5,
+      "net_median": -2.51,
+      "win_rate": 48.5,
+      "std_gross": 19.63,
+      "worst": -169.52,
+      "best": 115.0,
+      "exclude_best_net_mean": -1.75
+    },
+    "gross_mean_delta": 0.06,
+    "net_mean_delta": 0.06,
+    "median_delta": 0.3,
+    "win_rate_delta": 0.8,
+    "matched_control_observations": 934,
+    "unique_control_events": 389,
+    "reused_control_events": 257,
+    "unmatched_treatments": 3468
+  },
+  "timing_seconds": 131.8
+}
