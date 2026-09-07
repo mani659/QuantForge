@@ -398,3 +398,49 @@
 - `scripts/forward/base001_stage3_validation.py` (validation script)
 
 **Next governed step:** Owner adjudication of Stage 3 findings. The Base remains registered but is not economically qualified. Any governance action must follow the separate governance process.
+
+---
+
+## 74. BASE-001 OWNER ECONOMIC ADJUDICATION (2026-09-07)
+
+**Status:** BASE-001 OWNER ADJUDICATION COMPLETE — BASE-001 NOT BASE-ELIGIBLE AND CLOSED
+
+**Owner decision:** NOT BASE-ELIGIBLE — CLOSE BASE-001
+
+**Primary evidence supporting decision:**
+- Net mean return: +0.0021% (statistically indistinguishable from zero, p=0.957)
+- 2 bps round-trip cost eliminates virtually all gross edge (0.0221% → 0.0021%)
+- Maximum drawdown: -40.91%
+- Return distribution pathological: top 10% of trades contribute 912% of total return
+- Temporal instability: 7 of 12 quarters negative
+- SHORT side destroys value: -0.0566% gross mean, 43.7% win rate
+- Any repair would constitute rescue (prohibited)
+
+**Lifecycle consequence:** BASE-001 transitions from REGISTERED to CLOSED / NOT BASE-ELIGIBLE.
+
+**Negative knowledge preserved:**
+- Mechanism was structurally valid (Stage 2 PASS)
+- Gross edge was marginal (0.0221%)
+- Cost eliminated edge
+- Mechanism not symmetrically valid (LONG positive, SHORT negative)
+- Return distribution fragile (concentration on tail events)
+- Mechanism not temporally stable
+- Risk profile severe (-40.91% drawdown)
+
+**Future research observations (UNVALIDATED):**
+- LONG-only structural validation may merit independent investigation (requires fresh discovery/formulation/selection/registration)
+- Cost sensitivity suggests future mechanisms should be larger-magnitude
+- Session/time concentration suggests potential for session-filtered variants
+
+**Governed states confirmed:**
+- RF-001: UNCHANGED — Stage 3 blocked, accrual continues
+- RF-002: DEFERRED
+- RF-003: DEFERRED
+- FB-001: UNCHANGED
+- F-01: UNCHANGED
+- Base Registry: BASE-001 CLOSED / NOT BASE-ELIGIBLE
+
+**Artifact:** `output/research_discovery/QUANTFORGE_BASE001_OWNER_ECONOMIC_ADJUDICATION_V1.md`
+**Adjudication record SHA256:** `c98f1255e223f0278cfad25fc6672cc12e2776a974050408be16601493cfabc8`
+
+**Next governed step:** Base research pipeline continues. BASE-001 is closed. Future mechanism research may investigate the recorded research observations through fresh outcome-blind governance cycles.
