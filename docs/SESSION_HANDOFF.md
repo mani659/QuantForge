@@ -353,3 +353,48 @@
 **Validation record SHA256:** `191a7a256fd67d2b625a485b009bf7c1c3936cdb5629a608ec0190cccbb0e1e6`
 
 **Next governed step:** V38A Stage 3 — Economic Validation for BASE-001.
+
+---
+
+## 73. BASE-001 V38A STAGE 3 ECONOMIC VALIDATION (2026-09-07)
+
+**Status:** STAGE 3 EXECUTED — BASE-001 ECONOMIC EVIDENCE INSUFFICIENT FOR QUALIFICATION
+
+**Completed work:**
+
+1. Read all authoritative V38/V38A doctrine and BASE-001 registration/Stage 2 artifacts.
+2. Audited USATECHIDXUSD M1 data: 906,815 bars, 2023-09-01 to 2026-07-10, zero data-quality exclusions.
+3. Constructed complete BASE-001 opportunity population from frozen definition: 838 opportunities.
+4. Calculated gross economics: 52.0% win rate, 0.0221% mean return, 1.06 profit factor.
+5. Applied 2 bps round-trip cost: net mean 0.0021%, net profit factor 1.01.
+6. Performed distribution analysis: extreme concentration (top 10% contribute 912% of return), max drawdown -40.91%.
+7. Performed temporal robustness: 7 of 12 quarters negative, 2025 negative overall.
+8. Performed directional analysis: LONG positive (0.0874% gross mean, 59% win rate), SHORT negative (-0.0566% gross mean, 43.7% win rate).
+9. Performed session/time analysis: 51.7% of trades at hour 00 UTC (near-zero economics).
+10. Performed statistical inference: p=0.957, not significantly different from zero, 95% CI [-0.076%, +0.080%].
+11. Issued holistic economic adjudication: evidence does not support qualification.
+
+**Key economic findings:**
+- 838 opportunities over 1043 days (0.80 trades/day)
+- Gross mean: 0.0221%, Net mean: 0.0021% (cost eliminates edge)
+- Win rate: 52.0% gross, 49.9% net
+- Max drawdown: -40.91%
+- Statistical significance: p=0.957 (NOT significant)
+- LONG side: positive (0.0874% gross, 59% win rate)
+- SHORT side: negative (-0.0566% gross, 43.7% win rate)
+- Return distribution: extreme concentration on少数 large winners
+
+**Governed states confirmed:**
+- RF-001: UNCHANGED — Stage 3 blocked, accrual continues
+- RF-002: DEFERRED
+- RF-003: DEFERRED
+- FB-001: UNCHANGED
+- F-01: UNCHANGED
+- Base Registry: BASE-001 registered (not economically qualified)
+
+**Artifacts:**
+- `output/research_discovery/QUANTFORGE_BASE001_V38A_STAGE3_ECONOMIC_VALIDATION_V1.md` (SHA `c6cc9a53`)
+- `output/base001_opportunity_table.csv` (838 opportunities)
+- `scripts/forward/base001_stage3_validation.py` (validation script)
+
+**Next governed step:** Owner adjudication of Stage 3 findings. The Base remains registered but is not economically qualified. Any governance action must follow the separate governance process.
