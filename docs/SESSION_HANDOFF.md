@@ -255,3 +255,59 @@
 **Formulation record SHA256:** `0a82d181219a7bf49c0f9e64a7d0240c666e06db9ad6d41089f7b5af96a5226c`
 
 **Next governed step:** Owner adjudication of this formulation, followed (if approved) by BS1–BS13 selection and V38A registration.
+
+---
+
+## 71. MECH-N01 V38A BASE REGISTRATION (2026-09-07)
+
+**Status:** V38A BASE REGISTRATION COMPLETE — MECH-N01 REGISTERED — STAGE 2 AUTHORIZED
+
+**Completed work:**
+
+1. Read all authoritative V38/V38A doctrine and MECH-N01 formulation/selection artifacts.
+2. Resolved all governance-selectable parameters with mechanism-consistent design reasoning:
+   - N = 60 M1 bars (1 hour lookback — structural granularity)
+   - K = 5 M1 bars (5 minutes validation — persistence threshold)
+   - Session scope: all eligible trading sessions (no filter — mechanism does not require restrictions)
+   - Session exit: 23:59 UTC daily (deterministic, no daylight-saving complexity)
+   - Max entry delay: REMOVED (inconsistent with minimal architecture; immediate entry at next bar open)
+   - Stop-loss: NOT INCLUDED (mechanism does not hypothesize post-entry invalidation)
+3. Froze all structural level semantics (rolling N-bar high/low, strict inequality, frozen at breakout).
+4. Froze all validation semantics (K consecutive closes strictly beyond frozen level, all-or-nothing, breakout bar not counted).
+5. Froze all direction semantics (follow validated break, no fade, no reversal without new event).
+6. Froze all opportunity population rules (single instrument M1, independent events, concurrent trades permitted).
+7. Froze all entry semantics (open of bar E+K+1, no delay, abandon if unavailable).
+8. Froze all exit semantics (session close at 23:59 UTC, no target, no stop, no trailing).
+9. Froze all risk/invalidation semantics (pre-entry rejection only; no post-entry stop).
+10. Froze execution model (M1 OHLCV, deterministic bar-completion semantics, missing/duplicate data handling).
+11. Froze outcome definition (entry-to-exit price difference, cost-adjusted).
+12. Performed independent determinism audit — PASS: two researchers would produce identical implementations.
+13. Confirmed Base Registry was EMPTY before registration.
+14. Assigned Base ID: **BASE-001**.
+15. Registered BASE-001 in the Base Registry.
+
+**Frozen parameters:**
+- N = 60 M1 bars
+- K = 5 M1 bars
+- Session scope: all sessions (no filter)
+- Session exit: 23:59 UTC daily
+- Entry: open of bar E+K+1 (no delay)
+- Exit: session close (no stop, no target)
+
+**Parameter governance notes:**
+- Max entry delay was REMOVED (inconsistent with minimal architecture)
+- Stop-loss was NOT INCLUDED (mechanism does not hypothesize post-entry invalidation)
+- No empirically tunable parameters exist
+
+**Governed states confirmed:**
+- RF-001: UNCHANGED — Stage 3 blocked, accrual continues
+- RF-002: DEFERRED
+- RF-003: DEFERRED
+- FB-001: UNCHANGED
+- F-01: UNCHANGED
+- Base Registry: **BASE-001 registered** (previously EMPTY)
+
+**Artifact:** `output/research_discovery/QUANTFORGE_MECH_N01_V38A_BASE_REGISTRATION_V1.md`
+**Registration record SHA256:** `6318e215296cac235f872135eb2997f2a10e1cb9d3334130fa979c0ccae6bbe2`
+
+**Next governed step:** V38A Stage 2 — Structural Validation for BASE-001.
