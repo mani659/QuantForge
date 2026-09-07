@@ -484,3 +484,36 @@
 **Artifact:** `output/research_discovery/QUANTFORGE_V38A_FRESH_INDEPENDENT_MECHANISM_DISCOVERY_V1.md`
 
 **Next governed step:** Owner review of discovery artifact to determine whether any mechanism warrants progression to the Outcome-Blind Base Formulation Cycle (BF1–BF13).
+
+---
+
+## 76. MECH-F DISTINCTNESS ADJUDICATION (2026-09-07)
+
+**Status:** DISTINCTNESS AUDIT COMPLETE — ONE OR MORE CANDIDATES REQUIRE EXCLUSION/REFORMULATION
+
+**Completed work:**
+
+1. Read all authoritative materials: SESSION_HANDOFF (through §75), fresh discovery artifact, CAND-081 governance review/independence audit/SEED-002 registration/results, BASE-001 formulation/registration/Stage 3/adjudication, MECH-N01 formulation, RF-003 formulation, liquidity sweep closure/adjudication, V36 strategic assessment.
+2. Deep audit of MECH-F01 vs CAND-081: Identical mechanism (breakout → failure → trapped participants → forced liquidation → reversal). Governance-level difference only (decision process vs. observation). Mechanism-level distinctness: NOT ACHIEVED.
+3. Audit of MECH-F02 vs prior shock/vol research: Forced-adjustment mechanism is plausible but not independently observable from M1 OHLCV. Trigger ("exceeds threshold") is empirical, not mechanistic. Overlaps with post-magnitude directional drift (exhausted). Mechanism-level distinctness: PARTIAL.
+4. Audit of MECH-F03 vs prior gap/opening research: Decision rule is functionally identical to gap-following momentum. Inventory-rebalancing mechanism is interpretive overlay, not independently observable. Overlaps with settlement/benchmark windows (exhausted). Mechanism-level distinctness: PARTIAL.
+5. Mechanism-level comparison: 8/8 dimensions same for F01 vs CAND-081. F02 vs post-magnitude drift: 1/8 same, 5/8 partial, 2/8 distinct. F03 vs gap momentum: 2/8 same, 5/8 partial, 0/8 distinct.
+6. All three candidates classified as PARTIALLY DISTINCT. No candidate achieves mechanism-level DISTINCT.
+
+**Critical findings:**
+
+- **MECH-F01 is the same mechanism as CAND-081.** The causal chain is identical. The difference is governance classification (decision process vs. observation), not mechanism.
+- **MECH-F02's mechanism is not independently observable.** Forced adjustments cannot be distinguished from normal trading using M1 OHLCV data.
+- **MECH-F03's decision rule is gap-following momentum.** The inventory-rebalancing story does not change the observable, timing, or direction.
+
+**Governed states confirmed:**
+- RF-001: UNCHANGED — Stage 3 blocked, accrual continues
+- RF-002: DEFERRED
+- RF-003: DEFERRED
+- FB-001: UNCHANGED
+- F-01: UNCHANGED
+- Base Registry: BASE-001 CLOSED / NOT BASE-ELIGIBLE
+
+**Artifact:** `output/research_discovery/QUANTFORGE_MECH_F_DISTINCTNESS_ADJUDICATION_V1.md`
+
+**Next governed step:** Owner review of distinctness findings. Owner selection is authorized for all three candidates with full disclosure of overlap findings. No candidate is excluded, but the owner must understand the mechanism-level overlaps before selecting any candidate for formulation.
