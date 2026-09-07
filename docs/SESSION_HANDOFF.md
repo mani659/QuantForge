@@ -517,3 +517,40 @@
 **Artifact:** `output/research_discovery/QUANTFORGE_MECH_F_DISTINCTNESS_ADJUDICATION_V1.md`
 
 **Next governed step:** Owner review of distinctness findings. Owner selection is authorized for all three candidates with full disclosure of overlap findings. No candidate is excluded, but the owner must understand the mechanism-level overlaps before selecting any candidate for formulation.
+
+---
+
+## 77. V38A MECHANISM NOVELTY-GATED FRESH DISCOVERY (2026-09-07)
+
+**Status:** NOVELTY-GATED DISCOVERY COMPLETE — NO MECHANISM PASSED THE NOVELTY GATE
+
+**Completed work:**
+
+1. Read all authoritative materials: SESSION_HANDOFF (through §76), V38/V38A doctrine, BASE-001 discovery through closure, MECH-N01/N02/N03, MECH-F01/F02/F03, distinctness adjudication, CAND-077/081/083/099 governance, V36 strategic assessment (21 exhausted dimensions), relational discovery/formulations, liquidity sweep closure.
+2. Built comprehensive exclusion set: 21 exhausted dimensions, 6 explicit rejection families (structural failure/trapped participant, gap-following, large-move continuation, volatility regime, momentum/trend, cross-market), 8 indicator/threshold patterns.
+3. Discovered 4 initial candidates through mechanism-first reasoning:
+   - MECH-X01 (Breakout Velocity Conviction): FAIL — same mechanism family as BASE-001
+   - MECH-X02 (Post-Extreme Directional Absorption): FAIL — same mechanism family as CAND-081
+   - MECH-X03 (Directional Conviction Decay): FAIL — same mechanism family as MECH-N03
+   - MECH-X04 (Information Absorption Asymmetry): FAIL — same mechanism family as MECH-F02
+4. Applied five-test novelty gate (causal distinctness, observable distinctness, economic-transmission distinctness, failure-mode distinctness, independent falsifiability). All four candidates FAIL.
+5. Rejected 8 additional candidates before five-test gate (data infeasibility or overlap with exhausted dimensions).
+6. Zero survivors. Owner-selection eligibility set is EMPTY.
+
+**Critical findings:**
+
+- The M1 OHLCV mechanism space has been exhaustively explored through 95+ candidates (V19–V36), plus MECH-N/F discovery cycles.
+- Remaining candidate concepts either duplicate existing mechanisms with different measurements/levels/interpretations, or require data not available in the governed dataset.
+- A zero-survivor cycle is scientifically acceptable and preferable to false novelty.
+
+**Governed states confirmed:**
+- RF-001: UNCHANGED — Stage 3 blocked, accrual continues
+- RF-002: DEFERRED
+- RF-003: DEFERRED
+- FB-001: UNCHANGED
+- F-01: UNCHANGED
+- Base Registry: BASE-001 CLOSED / NOT BASE-ELIGIBLE
+
+**Artifact:** `output/research_discovery/QUANTFORGE_V38A_MECHANISM_NOVELTY_GATED_DISCOVERY_V1.md`
+
+**Next governed step:** The novelty-gated discovery cycle is complete with zero survivors. The M1 OHLCV single-market mechanism space appears exhaustively explored. Future mechanism discovery may require: (a) different data (order flow, tick data, cross-asset), (b) different timeframes, or (c) genuinely different market microstructure hypotheses that are independently observable.
