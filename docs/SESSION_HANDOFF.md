@@ -151,3 +151,42 @@
 **Artifact:** `output/research_discovery/QUANTFORGE_V38A_NEW_BASE_MECHANISM_DISCOVERY_V1.md`
 
 **Next governed step:** Owner review of discovery artifact to determine whether any mechanism warrants progression to the Outcome-Blind Base Formulation Cycle (BF1–BF13).
+
+---
+
+## 69. MECH-N01 OWNER SELECTION FREEZE (2026-09-07)
+
+**Status:** OWNER SELECTION COMPLETE — MECH-N01 SELECTED FOR FORMULATION
+
+**Completed work:**
+
+1. Read all authoritative V38/V38A doctrine (BS1–BS13, BF1–BF13, BV1–BV13).
+2. Reviewed V38A New Base Mechanism Discovery artifact (MECH-N01/N02/N03).
+3. Verified distinctness: MECH-N01 survives audit against all 21 exhausted dimensions, all RF-001/002/003, all state observations (CAND-077/081/083/099), and all closed research.
+4. Owner selected MECH-N01 (Structural Level Validation Flow) for progression to Outcome-Blind Base Formulation Cycle (BF1–BF13).
+5. Selection frozen: mechanism identity locked, no formulation performed, no parameters assigned, no economics computed, no registration created.
+
+**Selection rationale:**
+- Highest mechanism clarity, participant plausibility, observable determinism, execution realism among all candidates
+- Single-market architecture (no cross-market complexity)
+- Deterministic observable (K-bar hold is binary)
+- Clearest falsification path (validated vs. invalidated breakouts)
+- Lowest threshold-mining risk (N and K frozen structurally)
+- Materially distinct from all exhausted dimensions, all RF-001/002/003, and all closed research
+
+**Deferred mechanisms:**
+- MECH-N02 (Cross-Asset Hedging Cascade): higher threshold-mining risk, less deterministic observable, may be better suited as Conditional
+- MECH-N03 (Session-Sequential Trend Quality): dual-direction logic more complex, path quality → resilience link inferential
+
+**Governed states confirmed:**
+- RF-001: UNCHANGED — Stage 3 blocked, accrual continues
+- RF-002: DEFERRED
+- RF-003: DEFERRED
+- FB-001: UNCHANGED
+- F-01: UNCHANGED
+- Base Registry: EMPTY
+
+**Artifact:** `output/research_discovery/QUANTFORGE_MECH_N01_OWNER_SELECTION_FREEZE_V1.md`
+**Selection record SHA256:** `1bab8a0c37d03c85552f39a68886f136835fbf19a85026f8a2e06143ab68262e`
+
+**Next governed step:** Outcome-Blind Base Formulation Cycle for MECH-N01 under BF1–BF13.
