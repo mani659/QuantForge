@@ -311,3 +311,45 @@
 **Registration record SHA256:** `6318e215296cac235f872135eb2997f2a10e1cb9d3334130fa979c0ccae6bbe2`
 
 **Next governed step:** V38A Stage 2 — Structural Validation for BASE-001.
+
+---
+
+## 72. BASE-001 V38A STAGE 2 STRUCTURAL VALIDATION (2026-09-07)
+
+**Status:** STAGE 2 STRUCTURAL VALIDATION PASS — BASE-001 STRUCTURALLY VALID — STAGE 3 AUTHORIZED
+
+**Completed work:**
+
+1. Read all authoritative V38/V38A doctrine and BASE-001 registration/formulation artifacts.
+2. Performed structural-level audit: rolling 60-bar level, strict inequality, frozen at breakout — all PASS.
+3. Performed breakout audit: first close beyond level, no intra-bar hindsight, deterministic event sequence — all PASS.
+4. Performed validation audit: K=5 consecutive closes beyond frozen level, all-or-nothing, breakout bar not counted — all PASS.
+5. Performed direction audit: upside → LONG, downside → SHORT, simultaneous impossible, no reversal — all PASS.
+6. Performed entry audit: open of bar E+K+1, no delay, missing bar = abandon — all PASS.
+7. Performed exit/session audit: 23:59 UTC daily, deterministic, no daylight-saving complexity — all PASS.
+8. Performed opportunity-population audit: single instrument M1, all sessions, independent events — all PASS.
+9. Performed missing-data audit: conservative treatment defined for all scenarios — PASS.
+10. Performed lookahead/leakage audit: no temporal leakage detected — PASS.
+11. Performed determinism/reproducibility audit: two researchers would produce identical implementations — PASS.
+12. Constructed 18 synthetic edge-case scenarios: all produce expected deterministic outcomes — PASS.
+13. Identified 4 non-blocking observations (out-of-order timestamps, malformed bars, incomplete bars, impossible OHLC — all implementation-level data-quality concerns).
+
+**Audit summary:**
+- All hard gates PASS
+- All structural criteria PASS
+- 18/18 synthetic edge cases PASS
+- 0 material findings
+- 4 non-blocking observations (data-quality concerns)
+
+**Governed states confirmed:**
+- RF-001: UNCHANGED — Stage 3 blocked, accrual continues
+- RF-002: DEFERRED
+- RF-003: DEFERRED
+- FB-001: UNCHANGED
+- F-01: UNCHANGED
+- Base Registry: BASE-001 registered
+
+**Artifact:** `output/research_discovery/QUANTFORGE_BASE001_V38A_STAGE2_STRUCTURAL_VALIDATION_V1.md`
+**Validation record SHA256:** `191a7a256fd67d2b625a485b009bf7c1c3936cdb5629a608ec0190cccbb0e1e6`
+
+**Next governed step:** V38A Stage 3 — Economic Validation for BASE-001.
