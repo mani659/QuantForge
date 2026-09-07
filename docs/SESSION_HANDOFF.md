@@ -114,3 +114,40 @@
 - Base Registry: EMPTY
 
 **Next authorized task:** RF-001 V38A Stage 3 re-evaluation (requires ≥1 eligible post-freeze MATCHED observation within US regular session 09:30–16:00 ET). Accrual continues.
+
+---
+
+## 68. V38A NEW BASE MECHANISM DISCOVERY (2026-09-07)
+
+**Status:** DISCOVERY COMPLETE — CANDIDATES READY FOR OWNER SELECTION
+
+**Completed work:**
+
+1. Read all authoritative V38/V38A doctrine (BF1-BF13, BS1-BS13, BV1-BV13).
+2. Compiled comprehensive exclusion set: 21 exhausted mechanism dimensions (V36), all closed/rejected research, all formulated/discovered mechanisms (REL-M01/M02/M03, RF-001/002/003, F-01/F-02/F-03), all state observations (CAND-077/081/083/099).
+3. Discovered 3 genuinely distinct mechanisms through mechanism-first reasoning:
+   - **MECH-N01:** Structural Level Validation Flow (single-market, breakout validation → participant behavior change → directional flow)
+   - **MECH-N02:** Cross-Asset Hedging Cascade (cross-market, large primary move → mechanical hedging flow → directional response)
+   - **MECH-N03:** Session-Sequential Trend Quality (single-market, trend path quality → participant composition → follow/fade decision)
+4. Verified distinctness: all 3 survive audit against all 21 exhausted dimensions, all RF-001/002/003, and all closed research.
+5. No economic testing, no parameter optimization, no threshold mining performed.
+
+**Exclusions/negative knowledge used:**
+- 21 exhausted mechanism dimensions from V36 strategic assessment
+- DISC-021 (mean reversion: non-viable), DISC-022 (TSMOM: not promotable), DISC-024 (session range: contradicted), DISC-025 (liquidity sweep: translation failure), DISC-026 (ORB: non-viable)
+- CAND-105 (lead-lag: negative), CAND-107 (vol co-movement: redundant)
+- SEED-002 (no-rescue doctrine)
+- H01 (economic translation failure)
+- 7 rejected mechanism concepts during discovery
+
+**Governed states confirmed:**
+- RF-001: UNCHANGED — Stage 3 blocked, accrual continues
+- RF-002: DEFERRED
+- RF-003: DEFERRED
+- FB-001: UNCHANGED
+- F-01: UNCHANGED
+- Base Registry: EMPTY
+
+**Artifact:** `output/research_discovery/QUANTFORGE_V38A_NEW_BASE_MECHANISM_DISCOVERY_V1.md`
+
+**Next governed step:** Owner review of discovery artifact to determine whether any mechanism warrants progression to the Outcome-Blind Base Formulation Cycle (BF1–BF13).
