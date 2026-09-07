@@ -190,3 +190,68 @@
 **Selection record SHA256:** `1bab8a0c37d03c85552f39a68886f136835fbf19a85026f8a2e06143ab68262e`
 
 **Next governed step:** Outcome-Blind Base Formulation Cycle for MECH-N01 under BF1–BF13.
+
+---
+
+## 70. MECH-N01 OUTCOME-BLIND BASE FORMULATION BF1–BF13 (2026-09-07)
+
+**Status:** BF1–BF13 FORMULATION COMPLETE — PROVISIONALLY SELECTED ARCHITECTURE READY FOR OWNER ADJUDICATION
+
+**Completed work:**
+
+1. Read all authoritative V38/V38A doctrine (BS1–BS13, BF1–BF13, BV1–BF13).
+2. Read MECH-N01 owner selection freeze artifact.
+3. Completed BF1–BF13 formulation sections:
+   - BF1: Mechanism preservation (structural level validation → participant behavior change → directional flow)
+   - BF2: Observable definition (N-bar high/low, close-based breakout, K-bar hold)
+   - BF3: Structural level (rolling N-bar high/low, frozen at breakout)
+   - BF4: Structural break (close beyond level, no wick penetration, close confirmation required)
+   - BF5: Validation/acceptance (K consecutive closes beyond level, all-or-nothing)
+   - BF6: Direction (validated bullish → LONG, validated bearish → SHORT, no fade)
+   - BF7: Opportunity population (single instrument, M1, no session filter, independent events)
+   - BF8: Entry (open of bar E+K+1, max 3-bar delay)
+   - BF9: Invalidation (rejection during K-bar window = no trade)
+   - BF10: Exit (session close)
+   - BF11: Execution model (M1 OHLCV, CFD on US equity index)
+   - BF12: Outcome definition (entry-to-exit price difference, cost-adjusted)
+   - BF13: Completeness audit (2 ambiguities identified, both delegated to governance)
+4. Classified parameters:
+   - N (lookback): GOVERNANCE-SELECTABLE (default: 60)
+   - K (hold period): GOVERNANCE-SELECTABLE (default: 5)
+   - Session scope: GOVERNANCE-SELECTABLE (default: no filter)
+   - Max entry delay: GOVERNANCE-SELECTABLE (default: 3 bars)
+   - No empirically tunable parameters
+5. Explored 4 formulation architectures:
+   - Architecture A (Minimal): SELECTED — highest mechanism fidelity, maximum determinism, minimum parameter burden
+   - Architecture B (Session-Filtered): REJECTED — adds complexity without mechanism necessity
+   - Architecture C (Retest Entry): REJECTED — inconsistent with mechanism, adds ambiguity
+   - Architecture D (Multi-Level Confluence): REJECTED — different mechanism entirely
+6. Identified remaining ambiguities:
+   - Session definition for exit timing (delegated to governance)
+   - Overlapping validation windows (resolved: concurrent trades permitted)
+   - Structural level persistence after breakout (resolved: frozen at breakout)
+
+**Governance compliance:** All BF1–BF13 clauses satisfied. All governance checks PASS.
+
+**Parameter summary:**
+- N (lookback period): GOVERNANCE-SELECTABLE, default 60
+- K (validation hold period): GOVERNANCE-SELECTABLE, default 5
+- Session scope: GOVERNANCE-SELECTABLE, default no filter
+- Max entry delay: GOVERNANCE-SELECTABLE, default 3 bars
+- No empirically tunable parameters
+
+**Unresolved ambiguities:**
+- Session definition for exit timing (delegated to governance at registration)
+
+**Governed states confirmed:**
+- RF-001: UNCHANGED — Stage 3 blocked, accrual continues
+- RF-002: DEFERRED
+- RF-003: DEFERRED
+- FB-001: UNCHANGED
+- F-01: UNCHANGED
+- Base Registry: EMPTY
+
+**Artifact:** `output/research_discovery/QUANTFORGE_MECH_N01_OUTCOME_BLIND_FORMULATION_V1.md`
+**Formulation record SHA256:** `0a82d181219a7bf49c0f9e64a7d0240c666e06db9ad6d41089f7b5af96a5226c`
+
+**Next governed step:** Owner adjudication of this formulation, followed (if approved) by BS1–BS13 selection and V38A registration.
