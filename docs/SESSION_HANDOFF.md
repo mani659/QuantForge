@@ -444,3 +444,43 @@
 **Adjudication record SHA256:** `c98f1255e223f0278cfad25fc6672cc12e2776a974050408be16601493cfabc8`
 
 **Next governed step:** Base research pipeline continues. BASE-001 is closed. Future mechanism research may investigate the recorded research observations through fresh outcome-blind governance cycles.
+
+---
+
+## 75. FRESH V38A INDEPENDENT BASE MECHANISM DISCOVERY (2026-09-07)
+
+**Status:** FRESH V38A MECHANISM DISCOVERY COMPLETE — CANDIDATES READY FOR OWNER SELECTION
+
+**Completed work:**
+
+1. Read all authoritative materials: SESSION_HANDOFF (through §74), V38/V38A doctrine, BASE-001 registration/Stage 2/Stage 3/adjudication, previous discovery (MECH-N01/N02/N03), relational discovery (REL-M01/M02/M03), V36 strategic assessment (21 exhausted dimensions), outcome-blind formulation doctrine (BF1–BF13), base hypothesis selection doctrine (BS1–BS13).
+2. Compiled comprehensive exclusion set: 21 exhausted mechanism dimensions (V36), BASE-001 and all variants (structural level validation, K-bar hold, Architecture A/B/C/D), all formulated/discovered mechanisms (MECH-N01/N02/N03, REL-M01/M02/M03, RF-001/002/003, F-01/02/03), all closed research lines (H01, ORD, SEED-002, all TRADEABLE_EDGE families), protected-forward candidates (CAND-015/024/035), all state observations (CAND-077/081/083/099).
+3. Discovered 3 genuinely distinct mechanisms through mechanism-first reasoning:
+   - **MECH-F01:** Failed Breakout Inventory Reversal (single-market, failed breakout → trapped participants → forced liquidation → reversal)
+   - **MECH-F02:** Shock-Induced Position Adjustment Cascade (single-market, large move → forced adjustments → self-reinforcing cascade → continuation)
+   - **MECH-F03:** Overnight Gap Inventory Rebalancing (single-market, overnight gap → inventory rebalancing → opening session flow → continuation)
+4. Verified distinctness: all 3 survive audit against all 21 exhausted dimensions, all RF-001/002/003, all MECH-N01/N02/N03, and all closed research.
+5. Different failure modes: F01 fades (reversal), F02 follows (forced adjustments), F03 follows (inventory rebalancing).
+6. All 3 are Base-potential: self-contained, self-triggering, no Conditional dependence required.
+7. No economic testing, no parameter optimization, no threshold mining performed.
+
+**Exclusions/negative knowledge used:**
+- 21 exhausted mechanism dimensions from V36 strategic assessment
+- BASE-001 closed/not-base-eligible (adjudication artifact)
+- DISC-021 (mean reversion: non-viable), DISC-022 (TSMOM: not promotable), DISC-024 (session range: contradicted), DISC-025 (liquidity sweep: translation failure)
+- CAND-105 (lead-lag: negative), CAND-106 (intra-bar: negative), CAND-107 (vol co-movement: redundant)
+- CAND-074/075 (settlement/benchmark: no directional value)
+- SEED-002 (no-rescue doctrine)
+- 12 rejected mechanism concepts during discovery
+
+**Governed states confirmed:**
+- RF-001: UNCHANGED — Stage 3 blocked, accrual continues
+- RF-002: DEFERRED
+- RF-003: DEFERRED
+- FB-001: UNCHANGED
+- F-01: UNCHANGED
+- Base Registry: BASE-001 CLOSED / NOT BASE-ELIGIBLE
+
+**Artifact:** `output/research_discovery/QUANTFORGE_V38A_FRESH_INDEPENDENT_MECHANISM_DISCOVERY_V1.md`
+
+**Next governed step:** Owner review of discovery artifact to determine whether any mechanism warrants progression to the Outcome-Blind Base Formulation Cycle (BF1–BF13).
