@@ -19,6 +19,7 @@ from module_registry import get_registry
 from supervisor_health import SupervisorHealthMonitor
 from f01_observation_recorder import F01ObservationRecorder
 from fb001_orb_observer import FB001ORBObserver
+from rf001_observation_recorder import RF001ObservationRecorder
 
 HISTORICAL_START = "2026-08-27T09:44:58Z"
 MIGRATION_TIME = datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ")
@@ -114,6 +115,7 @@ class Supervisor:
         self.modules = get_registry(base_runtime_dir, self.feed)
         self.f01_recorder = F01ObservationRecorder(feed=self.feed)
         self.fb001_observer = FB001ORBObserver(feed=self.feed)
+        self.rf001_recorder = RF001ObservationRecorder(feed=self.feed)
         self.startup_time = time.time()
         self.uptime_seconds = 0
         self.reconnect_count = 0
@@ -295,6 +297,7 @@ class Supervisor:
                 print(f"  {m.candidate_id}: ACTIVE")
         print(f"  F-01 RECORDER: RAW CAPTURE (NO TRADING)")
         print(f"  FB-001 ORB: PROSPECTIVE ACCRUAL (NO TRADING)")
+        print(f"  RF-001 RECORDER: US500m M1 CAPTURE (NO TRADING)")
         print()
         print("Runner:")
         print("LIVE AND RUNNING")
@@ -354,6 +357,7 @@ class Supervisor:
         print(f"Feed: {feed_status}")
         print(f"F-01 Recorder: ACTIVE (RAW CAPTURE)")
         print(f"FB-001 ORB: ACTIVE (PROSPECTIVE ACCRUAL)")
+        print(f"RF-001 Recorder: ACTIVE (US500m M1 CAPTURE)")
         print(f"Last Scan: {ts}")
         print(f"Runner: LIVE")
         print("============================================================")
@@ -554,6 +558,9 @@ class Supervisor:
 
             # FB-001 ORB observer: prospective accrual sidecar (exception-safe)
             self.fb001_observer.on_tick(quote_res)
+
+            # RF-001 observation recorder: US500 M1 capture sidecar (exception-safe)
+            self.rf001_recorder.on_tick(quote_res)
 
             # Heartbeat every ~60 seconds
             if int(current_time) % 60 == 0 and current_time - self.last_heartbeat >= 60:
