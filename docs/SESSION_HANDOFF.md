@@ -650,3 +650,41 @@
 - Manifests: `data/tick_canonical/<SYMBOL>/manifest.json`
 
 **Next governed step:** Quote-level microstructure mechanism discovery is AUTHORIZED for the 7 supported research domains (spread dynamics, event intensity, quote churn, micro-volatility, spread-return dynamics, bid/ask independence, intrabar path). Trade-flow, volume-based, and depth-based research remain blocked. Prospective tick capture would require a new recorder using MT5's `copy_ticks_from()` API.
+
+---
+
+## 80. QUOTE MICROSTRUCTURE NOVELTY DISCOVERY — THREE MECHANISMS SURVIVE (2026-09-07)
+
+**Status:** QUOTE-MICROSTRUCTURE NOVELTY DISCOVERY COMPLETE — THREE GENUINELY DISTINCT MECHANISMS READY FOR OWNER SELECTION
+
+**Completed work:**
+
+1. Read all authoritative materials: SESSION_HANDOFF (through §79), tick data audit, canonical spec, migration report, V36 exhausted dimensions, V38A novelty-gated discovery, prior mechanism definitions.
+2. Built comprehensive exclusion set: 21 exhausted dimensions, 7 explicit rejection families, 7 rejected tick-level concepts.
+3. Discovered 3 initial candidates through mechanism-first reasoning:
+   - MECH-T01 (One-Sided Quote Adjustment Asymmetry): PASS — 5/5 novelty tests
+   - MECH-T02 (Quote-Adjusted Spread Transition): PASS — 5/5 novelty tests
+   - MECH-T03 (Spread-Midpath Coupling): PASS — 5/5 novelty tests
+4. Applied five-test novelty gate (information novelty, causal distinctness, quote-layer economic pathway, independent falsifiability, prospective observability). All 3 candidates PASS all 5 tests.
+5. Applied M1 equivalence test and mechanism equivalence test. All 3 PASS.
+6. Rejected 7 candidates before five-test gate (overlap with exhausted dimensions).
+7. Zero rejected after five-test gate.
+
+**Critical findings:**
+
+- **3 candidates survive the novelty gate** — first tick-level discovery cycle produces survivors (previous M1 cycle produced zero).
+- **Bid/ask independence is a genuinely new information dimension.** XAGUSD has 35.5% one-sided quote adjustments; USATECHIDXUSD has 0.0%. This variation is completely hidden by M1 aggregation.
+- **The tick/quote layer provides genuinely new mechanisms** not available from M1 OHLCV.
+- Owner-selection eligibility set contains 3 candidates.
+
+**Governed states confirmed:**
+- RF-001: UNCHANGED — Stage 3 blocked, accrual continues
+- RF-002: DEFERRED
+- RF-003: DEFERRED
+- FB-001: UNCHANGED
+- F-01: UNCHANGED
+- Base Registry: BASE-001 CLOSED / NOT BASE-ELIGIBLE
+
+**Artifact:** `output/research_discovery/QUANTFORGE_V38A_QUOTE_MICROSTRUCTURE_NOVELTY_DISCOVERY_V1.md`
+
+**Next governed step:** Owner may select any of the 3 surviving candidates for outcome-blind formulation (BF1–BF13). No candidate is formulated or registered in this task.
