@@ -768,3 +768,86 @@ No formulation of T01/T02/T03. No owner selection. No Base registration. No Stag
 ### Artifact
 
 `output/research_discovery/QUANTFORGE_V38A_QUOTE_MICROSTRUCTURE_NOVELTY_DISCOVERY_V1.md` — updated with POST-AUDIT RECONCILIATION section (§19).
+
+---
+
+## 82. FRESH QUOTE-LEVEL MECHANISM DISCOVERY — ZERO SURVIVORS (2026-09-08)
+
+**Status:** FRESH QUOTE-LEVEL MECHANISM DISCOVERY COMPLETE — ZERO SURVIVORS
+
+**Purpose:** Fresh, independent, mechanism-first quote-level discovery sprint following the §81 reconciliation.
+
+### Discovery scope
+
+- 6 initial candidates generated through mechanism-first reasoning
+- All 6 rejected at prior-art separation gate
+- 0 candidates reached formal five-test novelty gate
+- 0 survivors
+
+### Candidate summary
+
+| Candidate | Name | Rejection reason |
+|-----------|------|-----------------|
+| Q01 | Quote-Update Burstiness Regime | Collapses to exhausted event clustering (CAND-098) |
+| Q02 | Quote-Update Persistence Regime | Collapses to exhausted volatility regime + event clustering |
+| Q03 | Quote-Side Sequential Dominance | Mechanism-equivalent to T01 |
+| Q04 | Spread-Adjustment Consistency | Mechanism-equivalent to T01/T02 |
+| Q05 | Spread-Path Directional Coupling | Mechanism-equivalent to T03 |
+| Q06 | Quote-Activity State Transition | Composite of exhausted dimensions + T01 |
+
+### Exhaustion pattern
+
+- Quote-activity temporal patterns (Q01, Q02) → exhausted event clustering / volatility regime
+- Quote-side counting patterns (Q03, Q04) → T01/T02 (information-novel, mechanism novelty unestablished)
+- Quote-price interaction patterns (Q05) → T03 (not genuinely distinct)
+- Composite patterns (Q06) → exhausted dimensions + T01
+
+### Negative knowledge
+
+1. The canonical tick substrate provides genuinely new information (bid/ask independence, quote-update timing, spread dynamics at tick resolution).
+2. The exhausted mechanism families cover all plausible market-generating processes constructible from this information.
+3. Feature novelty remains established. Mechanism novelty remains unestablished across two discovery cycles.
+4. A zero-survivor result is scientifically preferable to a feature disguised as a mechanism.
+
+### Preserved states
+
+- T01: INFORMATION-NOVEL / MECHANISM NOVELTY UNESTABLISHED (unchanged)
+- T02: MECHANISM-EQUIVALENT TO T01 (unchanged)
+- T03: NOT GENUINELY DISTINCT (unchanged)
+- Bid/ask independence: valid information-level research dimension (unchanged)
+
+### Economics
+
+**No economic testing was performed or authorized.**
+
+### Protected systems
+
+- BASE-001: UNCHANGED — CLOSED / NOT BASE-ELIGIBLE
+- RF-001: UNCHANGED — Stage 3 blocked, accrual continues
+- RF-002: UNCHANGED — DEFERRED
+- RF-003: UNCHANGED — DEFERRED
+- F-01: UNCHANGED
+- F-02: UNCHANGED
+- F-03: UNCHANGED
+- FB-001: UNCHANGED
+- Protected-forward states: UNCHANGED
+- Live runner: UNINTERRUPTED
+- Canonical tick data: UNCHANGED
+- Canonical tick specification: UNCHANGED
+
+### Artifact
+
+`output/research_discovery/QUANTFORGE_V38A_QUOTE_MICROSTRUCTURE_FRESH_MECHANISM_DISCOVERY_V1.md`
+
+### Next authorized governed step
+
+The quote-level mechanism space has been explored across two discovery cycles (T01/T02/T03 and Q01–Q06). Both cycles produced zero mechanism-level survivors. The bid/ask independence dimension remains valid information-level knowledge but has not yielded a distinct market-generating mechanism.
+
+Future research may consider:
+- Whether the exhausted mechanism families should be revisited with tick-level observables as alternative measurements (rather than new mechanisms)
+- Whether prospective tick data capture would enable mechanism discovery at a different resolution
+- Whether the exclusion set should be refined based on the two-cycle exhaustion pattern
+
+### Forbidden next steps
+
+No formulation. No owner selection. No Base registration. No Stage 2/3. No economics. No optimization. No rescue of rejected mechanisms. No threshold selection. No closed line reopening.
