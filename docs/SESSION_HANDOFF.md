@@ -688,3 +688,83 @@
 **Artifact:** `output/research_discovery/QUANTFORGE_V38A_QUOTE_MICROSTRUCTURE_NOVELTY_DISCOVERY_V1.md`
 
 **Next governed step:** Owner may select any of the 3 surviving candidates for outcome-blind formulation (BF1–BF13). No candidate is formulated or registered in this task.
+
+---
+
+## 81. QUOTE MICROSTRUCTURE RECONCILIATION — §80 OVERTURNED (2026-09-08)
+
+**Status:** §80 VERDICT OVERTURNED — NO OWNER-SELECTION ELIGIBLE MECHANISM
+
+**Purpose:** Controlled reconciliation of §80 following independent read-only scientific and governance audit.
+
+### Prior verdict (§80 — SUPERSEDED)
+
+§80 claimed three genuinely distinct mechanisms (MECH-T01, MECH-T02, MECH-T03) ready for owner selection, all passing 5/5 novelty tests.
+
+### Independent audit result
+
+An independent audit found:
+
+1. **All four headline empirical statistics were incorrect.** XAGUSD claimed 35.5% → actual 13.5%. XAUUSD claimed 22.5% → actual 48.2%. BTCUSD claimed 1.5% → actual 49.6%. USATECHIDXUSD claimed 0.0% → actual 0.7%. Corrected via canonical Parquet verification (all partitions, `source_row_ordinal`-ordered tick-to-tick comparison).
+2. **T01 has genuine information novelty** (bid/ask independence is real and unavailable from M1) **but mechanism novelty is unestablished** ("directional pressure from quote makers" is a participant hypothesis, not an observed mechanism).
+3. **T02 is mechanism-equivalent to T01** — same underlying bid/ask adjustment events, different target variable. Does not establish a different market-generating process.
+4. **T03 maps to exhausted dimensions** — removing the tick-specific component (spread-change) leaves an M1-available variable (mid-direction) combined with concepts covered by exhausted volatility/momentum research.
+5. **Causal-language overreach identified** — the discovery artifact attributes "signaling," "anchoring," "pressure," and "capitulation" to quote updates that cannot support such inferences. Quote data does not contain participant intent.
+6. **Five-test gate was applied conceptually, not empirically** — the artifact states PASS without verifying the supporting empirical claims.
+
+### Corrected candidate status
+
+| Candidate | Classification | Owner-selection eligible? |
+|-----------|---------------|--------------------------|
+| MECH-T01 (One-Sided Quote Adjustment Asymmetry) | INFORMATION-NOVEL / MECHANISM NOVELTY UNESTABLISHED | **NO** |
+| MECH-T02 (Quote-Adjusted Spread Transition) | MECHANISM-EQUIVALENT TO T01 / NOT DISTINCT | **NO** |
+| MECH-T03 (Spread-Midpath Coupling) | NOT GENUINELY DISTINCT / EXHAUSTED-DIMENSION INTERACTION | **NO** |
+
+### Owner selection
+
+**NONE**
+
+### Preserved positive knowledge
+
+Bid/ask independence is a genuinely new quote-level information dimension relative to M1 OHLCV. Cross-symbol variation is real: USATECHIDXUSD 0.7%, XAGUSD 13.5%, XAUUSD 48.2%, BTCUSD 49.6%. This information dimension remains available for future investigation.
+
+### Preserved negative knowledge
+
+1. Feature novelty does not imply mechanism novelty.
+2. A quote-level observable can be genuinely new without constituting a new market mechanism.
+3. Different target variables over the same quote events do not automatically create different mechanisms.
+4. Tick-derived interaction terms can collapse to exhausted M1 mechanisms when the tick-specific component is removed.
+5. Quote updates cannot be interpreted as trade aggression without transaction/order-flow evidence.
+6. Participant narratives must have observable discriminators.
+7. Incorrect descriptive statistics invalidate supporting evidence even when the conceptual research direction is legitimate.
+
+### Economics
+
+**No economic testing was performed or authorized.** No profitability, expectancy, cost, tradeability, or robustness assessment was conducted.
+
+### Protected systems
+
+- BASE-001: UNCHANGED — remains CLOSED / NOT BASE-ELIGIBLE
+- RF-001: UNCHANGED — Stage 3 blocked, accrual continues
+- RF-002: UNCHANGED — DEFERRED
+- RF-003: UNCHANGED — DEFERRED
+- F-01: UNCHANGED
+- F-02: UNCHANGED
+- F-03: UNCHANGED
+- FB-001: UNCHANGED
+- Protected-forward states: UNCHANGED
+- Live runner: UNINTERRUPTED
+- Canonical tick data: UNCHANGED
+- Canonical tick specification: UNCHANGED
+
+### Next authorized task
+
+Fresh quote-level mechanism discovery may be considered under the existing governance framework, using the newly established bid/ask independence information dimension as research substrate, but without assuming a mechanism or economic edge. The next discovery must be genuinely mechanism-oriented and independently screened.
+
+### Forbidden next task
+
+No formulation of T01/T02/T03. No owner selection. No Base registration. No Stage 2. No Stage 3. No economics. No optimization. No rescue of failed mechanisms. No threshold selection. No spread threshold mining. No event threshold mining. No holding-period search. No return testing. No profitability testing.
+
+### Artifact
+
+`output/research_discovery/QUANTFORGE_V38A_QUOTE_MICROSTRUCTURE_NOVELTY_DISCOVERY_V1.md` — updated with POST-AUDIT RECONCILIATION section (§19).

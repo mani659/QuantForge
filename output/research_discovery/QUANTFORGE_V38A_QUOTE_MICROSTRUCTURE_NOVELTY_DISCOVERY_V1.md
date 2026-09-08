@@ -496,7 +496,7 @@ All passed all five novelty tests. Owner may select any candidate for formulatio
 
 ---
 
-## 18. FINAL VERDICT
+## 18. ORIGINAL VERDICT (SUPERSEDED)
 
 **QUOTE-MICROSTRUCTURE NOVELTY DISCOVERY COMPLETE — THREE GENUINELY DISTINCT MECHANISMS READY FOR OWNER SELECTION**
 
@@ -506,6 +506,159 @@ Three candidates discovered, all pass the five-test novelty gate:
 - MECH-T03: Spread-Midpath Coupling (price-spread coupling)
 
 Zero survivors from previous M1 exhaustion cycle. Three survivors from first tick-level discovery cycle. The tick/quote layer provides genuinely new information unavailable from M1 OHLCV.
+
+**This verdict was OVERTURNED by independent audit. See §19.**
+
+---
+
+## 19. POST-AUDIT RECONCILIATION (2026-09-08)
+
+**Status:** ORIGINAL SURVIVOR VERDICT OVERTURNED — NO OWNER-SELECTION ELIGIBLE MECHANISM
+
+An independent read-only scientific and governance audit was conducted on this discovery artifact and the §80 session handoff record. The audit reconstructed the five-test novelty gate independently, verified empirical claims against the canonical Parquet data, performed mutual distinctness testing, and assessed causal language against data capability.
+
+### 19.1 Original Verdict Overturned
+
+The original §80 verdict — "three genuinely distinct mechanisms ready for owner selection" — is **OVERTURNED**. The corrected conclusion is:
+
+> **Bid/ask independence is a genuinely new observable information dimension relative to M1 OHLCV, but no genuinely distinct market mechanism has been established from the three proposed candidates.**
+
+### 19.2 Empirical Statistics Correction
+
+The original §80 reported four headline statistics that were all incorrect. Independent verification against the canonical Parquet data (all partitions, sorted by `source_row_ordinal`, tick-to-tick comparison) established:
+
+| Symbol | Previously reported | Corrected (audit) | Direction of error |
+|--------|-------------------|--------------------|--------------------|
+| XAGUSD one-sided | 35.5% | **13.5%** | Overestimated by 2.6x |
+| XAUUSD one-sided | 22.5% | **48.2%** | Underestimated by 2.1x |
+| BTCUSD one-sided | 1.5% | **49.6%** | Underestimated by 33x |
+| USATECHIDXUSD one-sided | 0.0% | **0.7%** | Underestimated (non-zero) |
+
+**Methodology:** For each symbol, all canonical Parquet partitions were read, rows sorted by `source_row_ordinal`, and each consecutive pair classified as: bid-only change, ask-only change, both-side change, or neither changed. The one-sided percentage is (bid-only + ask-only) / total comparisons.
+
+The corrected cross-symbol variation still exists (USATECHIDXUSD has the lowest one-sided rate at 0.7%; XAUUSD and BTCUSD have the highest at ~48-50%) but the specific magnitudes differ from the original claims.
+
+### 19.3 Candidate Disposition
+
+#### MECH-T01 — One-Sided Quote Adjustment Asymmetry
+
+**Corrected classification: INFORMATION-NOVEL / MECHANISM NOVELTY UNESTABLISHED**
+
+- Bid/ask independence is genuinely unavailable from ordinary M1 OHLCV. This satisfies information novelty.
+- The proposed directional/quote-maker pressure interpretation is a hypothesis, not an established mechanism.
+- Available data does not establish that participant mechanism.
+- Quote-side movement does not prove: buyer aggression, seller aggression, market-order execution, institutional positioning, liquidity consumption, or stop-loss execution.
+- Mechanism-level novelty therefore remains unestablished.
+- **Not owner-selection eligible.**
+
+#### MECH-T02 — Quote-Adjusted Spread Transition
+
+**Corrected classification: MECHANISM-EQUIVALENT TO T01 / NOT DISTINCT**
+
+- Uses the same underlying bid/ask adjustment events as T01.
+- Its different target representation (spread-change process vs. raw adjustment asymmetry) does not establish a different market-generating process.
+- Changing the target variable or aggregation does not create mechanism novelty.
+- T02 is not independently owner-selection eligible.
+- **Not owner-selection eligible.**
+
+#### MECH-T03 — Spread-Midpath Coupling
+
+**Corrected classification: NOT GENUINELY DISTINCT / INTERACTION OF QUOTE OBSERVABLES WITH EXHAUSTED PRICE-PATH DIMENSIONS**
+
+- Contains genuinely tick-specific information (spread-change component).
+- But the underlying price/spread relationship does not establish a new market-generating mechanism.
+- Removing the tick-specific component maps the candidate to previously explored/exhausted dimensions (volatility expansion/reversion, directional momentum).
+- Does not satisfy mechanism-level novelty.
+- **Not owner-selection eligible.**
+
+### 19.4 Causal-Language Correction
+
+The original discovery artifact attributed the following participant behaviors to quote updates. These claims cannot be treated as observed facts from this dataset:
+
+| Claim in artifact | Classification | Reason |
+|-------------------|---------------|--------|
+| "Quote makers may be signaling willingness to buy at higher prices" | **Unsupported inference** | Quote updates do not reveal intent |
+| "Quote makers may be signaling willingness to sell at lower prices" | **Unsupported inference** | Quote updates do not reveal intent |
+| "One-sided bid adjustments may reflect directional pressure from quote makers" | **Unsupported inference** | "Directional pressure" is not observable from quote data |
+| "The stationary side may be anchored" | **Unsupported inference** | Anchoring is not observable |
+| "The moving side is under pressure" | **Unsupported inference** | Pressure is not observable |
+| "The moving side may be capitulating" | **Unsupported inference** | Capitulation is not observable |
+| "Quote makers are adjusting toward a higher consensus price" | **Unsupported inference** | "Consensus price" is not observable from top-of-book quotes |
+| "Quote makers are adjusting toward a lower consensus price" | **Unsupported inference** | Same |
+
+The canonical tick data contains bid/ask prices and timestamps. It does not contain participant identity, intent, positioning, or behavior. Every causal claim that attributes specific participant behavior to quote updates is an unsupported inference beyond what the data can support.
+
+### 19.5 Five-Test Novelty Record (Corrected)
+
+The original artifact claimed all three candidates PASS 5/5. The independent audit found:
+
+#### T01
+
+| Test | Original | Audit corrected |
+|------|----------|-----------------|
+| Information novelty | PASS | **PASS** |
+| Causal distinctness | PASS | **PARTIAL** — "directional pressure from quote makers" is a participant hypothesis, not an observed mechanism |
+| Quote-layer economic pathway | PASS | **PARTIAL** — multiple competing explanations (inventory management, spread-width effects, random quoting) |
+| Independent falsifiability | PASS | **PASS** — clear criteria exist |
+| Prospective observability | PASS | **PASS** — observable in real time |
+| M1 equivalence | PASS | **PASS** — not constructible from M1 |
+| Mechanism equivalence | PASS | **PARTIAL** — mechanism has no independent identity without tick data |
+
+#### T02
+
+| Test | Original | Audit corrected |
+|------|----------|-----------------|
+| Information novelty | PASS | **PASS** (inherited from same quote layer) |
+| Causal distinctness | PASS | **FAIL** — same underlying events as T01, different target variable |
+| Mutual distinctness from T01 | PASS | **FAIL** — same mechanism, different encoding |
+| Mechanism equivalence | PASS | **FAIL** — without tick observable, maps to exhausted "spread dynamics" |
+
+#### T03
+
+| Test | Original | Audit corrected |
+|------|----------|-----------------|
+| Information novelty | PASS | **PARTIAL** — mid-direction is M1-available; only spread-change is tick-specific |
+| Causal distinctness | PASS | **FAIL** — "price discovery quality" is inferred, not observed |
+| Mechanism equivalence | PASS | **FAIL** — maps to exhausted dimensions without tick component |
+| Mutual distinctness | PASS | **FAIL** — subsumes T02's information, not a separate mechanism |
+
+### 19.6 Preserved Positive Knowledge
+
+**This is NOT a negative-only finding.** The following positive knowledge is preserved:
+
+1. **Bid/ask independence is observable at the canonical quote level** and contains information that ordinary M1 OHLCV aggregation does not preserve.
+2. The cross-symbol variation in one-sided adjustment rates is real: USATECHIDXUSD 0.7%, XAGUSD 13.5%, XAUUSD 48.2%, BTCUSD 49.6%.
+3. This information dimension is genuinely new relative to M1 OHLCV.
+4. Bid/ask independence remains an available research dimension for future investigation.
+
+### 19.7 Preserved Negative Knowledge
+
+1. Feature novelty does not imply mechanism novelty.
+2. A quote-level observable can be genuinely new without constituting a new market mechanism.
+3. Different target variables over the same quote events do not automatically create different mechanisms.
+4. Tick-derived interaction terms can collapse to exhausted M1 mechanisms when the tick-specific component is removed.
+5. Quote updates cannot be interpreted as trade aggression without transaction/order-flow evidence.
+6. Participant narratives must have observable discriminators.
+7. Incorrect descriptive statistics invalidate supporting evidence even when the conceptual research direction is legitimate.
+8. Bid/ask independence remains an available research dimension, but the first three mechanism formulations did not establish a survivor.
+
+### 19.8 Economics
+
+**No economic testing was performed or authorized.** No profitability, expectancy, cost, tradeability, or robustness assessment was conducted for T01, T02, or T03.
+
+### 19.9 Owner-Selection Status
+
+**NO QUOTE-MICROSTRUCTURE MECHANISM CURRENTLY OWNER-SELECTION ELIGIBLE**
+
+- T01 — not eligible (information-novel, mechanism novelty unestablished)
+- T02 — not eligible (mechanism-equivalent to T01)
+- T03 — not eligible (not genuinely distinct, maps to exhausted dimensions)
+
+### 19.10 Final Corrected Verdict
+
+**QUOTE-MICROSTRUCTURE NOVELTY DISCOVERY — NO MECHANISM SURVIVES INDEPENDENT AUDIT**
+
+One genuinely new information dimension established (bid/ask independence). Zero genuinely distinct market mechanisms established. The first tick-level discovery cycle produced information novelty but not mechanism novelty.
 
 ---
 
