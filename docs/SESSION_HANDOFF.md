@@ -805,7 +805,7 @@ No formulation of T01/T02/T03. No owner selection. No Base registration. No Stag
 ### Negative knowledge
 
 1. The canonical tick substrate provides genuinely new information (bid/ask independence, quote-update timing, spread dynamics at tick resolution).
-2. The exhausted mechanism families cover all plausible market-generating processes constructible from this information.
+2. Across the executed quote-level discovery cycles, no mechanism-level survivor was identified within the specifically searched and governed quote-level information space and exclusion set.
 3. Feature novelty remains established. Mechanism novelty remains unestablished across two discovery cycles.
 4. A zero-survivor result is scientifically preferable to a feature disguised as a mechanism.
 
@@ -844,10 +844,986 @@ No formulation of T01/T02/T03. No owner selection. No Base registration. No Stag
 The quote-level mechanism space has been explored across two discovery cycles (T01/T02/T03 and Q01–Q06). Both cycles produced zero mechanism-level survivors. The bid/ask independence dimension remains valid information-level knowledge but has not yielded a distinct market-generating mechanism.
 
 Future research may consider:
-- Whether the exhausted mechanism families should be revisited with tick-level observables as alternative measurements (rather than new mechanisms)
-- Whether prospective tick data capture would enable mechanism discovery at a different resolution
+- Whether the exhausted mechanism families should be revisited with tick-level observables as alternative measurements (rather than new mechanisms), subject to the normal reopening and research-registration requirements
+- Whether prospective tick data capture would enable mechanism discovery at a different resolution, if separately authorized
 - Whether the exclusion set should be refined based on the two-cycle exhaustion pattern
+
+These are opportunities, not authorizations. Any future research direction requires the normal governance and registration process.
 
 ### Forbidden next steps
 
 No formulation. No owner selection. No Base registration. No Stage 2/3. No economics. No optimization. No rescue of rejected mechanisms. No threshold selection. No closed line reopening.
+
+---
+
+## 83. RF-001 V38A STAGE 3 ECONOMIC VALIDATION (2026-09-08)
+
+**Status:** STAGE 3 EXECUTED — NO STRUCTURALLY QUALIFYING OPPORTUNITIES IN CURRENT ACCRUAL WINDOW
+
+**Purpose:** Execute frozen RF-001 V38A Stage 3 Economic Validation on naturally accrued eligible data.
+
+### Authorization basis
+
+A read-only current-state audit (2026-09-08) established that the previously blocking RF-001 eligibility condition has been naturally satisfied through continued forward data accrual. The canonical dataset contains 1,302 MATCHED observations, of which 210 fall within the frozen US regular session (09:30–16:00 ET) on 2026-09-07. The sole Stage 3 blocking condition — ≥1 eligible post-freeze MATCHED observation within the frozen session window — is cleared.
+
+### Frozen contracts applied
+
+- Primary: USATECHIDXUSD (USTECm), N=30
+- Confirmation: US500 (US500m), M=15
+- Session: US regular (09:30–16:00 ET)
+- Entry: open of bar E+17; Exit: session close (16:00 ET)
+- Cost: 2 bps round-trip
+- Direction: Bullish primary + failed confirmation → SHORT US500; Bearish primary + failed confirmation → LONG US500
+
+### Data integrity
+
+| Check | Result |
+|-------|--------|
+| Total rows | 1,302 (all MATCHED, all post-freeze) |
+| Timestamp ordering | PASS |
+| Duplicate timestamps | 0 |
+| Zero-price rows | 0 |
+| Malformed bars | 0 |
+| Session-eligible rows | 210 (2026-09-07 09:30–12:59 ET) |
+
+Data quality: CLEAN. No exclusions.
+
+### Eligibility funnel
+
+| Stage | Count |
+|-------|------:|
+| Raw post-freeze observations | 1,302 |
+| MATCHED observations | 1,302 |
+| Session-eligible observations | 210 |
+| Primary structural events (N=30 breakout) | 14 |
+| Events excluded (insufficient session time) | 0 |
+| Eligible primary events | 14 |
+| Confirmed by US500 (no opportunity) | 5 |
+| Invalidated (primary reversed before entry) | 9 |
+| Confirmation failures (potential opportunities) | 0 |
+| **Eligible RF-001 opportunities** | **0** |
+
+### Event outcomes
+
+- 5 of 14 events (35.7%) confirmed by US500 within 15-bar window
+- 9 of 14 events (64.3%) invalidated — primary market reversed before entry
+- 7 of 9 invalidations occurred within 1–3 bars (rapid reversal characteristic)
+- 0 confirmation failures with sustained primary
+
+### Economic results
+
+**No opportunities exist.** Gross and net economic computation is not applicable.
+
+### Statistical evidence
+
+**Not applicable.** No sample exists for testing.
+
+### Governance adjudication
+
+**STAGE 3 EXECUTED — NO STRUCTURALLY QUALIFYING RF-001 OPPORTUNITIES IN THE CURRENT ELIGIBLE ACCRUAL WINDOW. ECONOMIC EVIDENCE NOT YET AVAILABLE.**
+
+This is distinct from the former eligibility block. The authorization gate is satisfied while the resulting structural opportunity population is zero. The mechanism has not been validated or invalidated economically.
+
+### Negative knowledge
+
+1. Primary structural events occur frequently (14 in 3.5 hours)
+2. US500 confirmation is common (35.7% of events)
+3. Invalidation is the dominant outcome (64.3%)
+4. Rapid invalidation is characteristic (7 of 9 within 1–3 bars)
+5. No opportunities produced in this accrual window
+
+### Limitations
+
+- Single session day (2026-09-07 only)
+- Partial session coverage (09:30–12:59 ET, not full session)
+- Insufficient data for economic conclusions
+
+### Protected systems
+
+- RF-001 recorder: UNINTERRUPTED — still accruing
+- RF-002: DEFERRED
+- RF-003: DEFERRED
+- FB-001: UNCHANGED
+- F-01: UNCHANGED
+- BASE-001: CLOSED / NOT BASE-ELIGIBLE
+- T01: INFORMATION-NOVEL / MECHANISM NOVELTY UNESTABLISHED
+- T02: MECHANISM-EQUIVALENT TO T01
+- T03: NOT GENUINELY DISTINCT
+- Q01–Q06: ZERO SURVIVORS
+- Canonical tick data: UNCHANGED
+- Live runner: UNINTERRUPTED
+
+### Artifact
+
+`output/research_discovery/QUANTFORGE_RF001_V38A_STAGE3_ECONOMIC_VALIDATION_V1.md`
+
+### Next authorized task
+
+Continue RF-001 V38A natural data accrual. Re-evaluate Stage 3 only when sufficient additional eligible observations have accrued to produce a meaningful structural opportunity population.
+
+### Forbidden next tasks
+
+No parameter changes. No optimization. No threshold mining. No variant testing. No session expansion. No backfill. No event manufacture. No RF-001 recorder interruption. No research substitution. No alternative mechanism discovery. No closed line reopening.
+
+---
+
+## 84. MECH-N03 V38A BASE REGISTRATION (2026-09-08)
+
+**Status:** V38A BASE REGISTRATION COMPLETE — MECH-N03 REGISTERED — EXECUTION NOT AUTHORIZED
+
+**Completed work:**
+
+1. Read all authoritative V38/V38A doctrine and MECH-N03 formulation/selection artifacts.
+2. Resolved all governance-selectable parameters with mechanism-consistent design reasoning:
+   - D = 10 M1 bars (10 minutes — trend quality assessment window)
+   - Impulse threshold: noise < 0.30
+   - Grinding threshold: noise ≥ 0.50
+   - Intermediate: 0.30 ≤ noise < 0.50 → EXCLUDED
+   - Session: US regular 09:30–16:00 ET
+   - Consecutive sessions required
+   - Entry: open of first M1 bar in Session B (09:30 ET)
+   - Exit: close of last M1 bar in Session B (16:00 ET)
+   - Cost: 2 bps round-trip
+   - Minimum sample: 100/100/200/50 (impulse/grinding/historical/forward)
+   - Economic gate: Mean net decision return > 0
+3. Froze all observable semantics (path noise count, trend direction, classification thresholds).
+4. Froze all session semantics (US regular, consecutive, timezone handling).
+5. Froze all decision semantics (impulse follow, grind fade, intermediate no-trade).
+6. Froze all outcome semantics (Session B return, net of 2 bps).
+7. Froze all statistical semantics (bootstrap 95% CI, H₁/H₂ separate adjudication).
+8. Froze all robustness semantics (D sensitivity {5,10,15,20} exploratory, threshold sensitivity exploratory).
+9. Performed independent determinism audit — PASS: two researchers would produce identical implementations.
+10. Verified Base Registry state: BASE-001 CLOSED / NOT BASE-ELIGIBLE.
+11. Assigned Base ID: **BASE-002**.
+12. Registered BASE-002 in the Base Registry.
+
+**Frozen parameters:**
+- D = 10 M1 bars (trend window length)
+- Impulse: noise < 0.30
+- Grinding: noise ≥ 0.50
+- Session: US regular 09:30–16:00 ET
+- Consecutive sessions required
+- Entry: open of first M1 bar in Session B
+- Exit: close of last M1 bar in Session B
+- Cost: 2 bps round-trip
+- Minimum sample: 100/100/200/50
+- Economic gate: Mean net decision return > 0
+
+**Parameter governance notes:**
+- D resolved at registration following MECH-N01/BASE-001 precedent (N, K resolved at registration with mechanism-consistent design reasoning)
+- Minimum sample resolved at registration as governance decision
+- Economic gate resolved at registration as governance decision
+- D sensitivity {5,10,15,20} is EXPLORATORY only, not confirmatory
+- No empirically tunable parameters exist
+
+**Governed states confirmed:**
+- RF-001: UNCHANGED — Stage 3 blocked, accrual continues
+- RF-002: DEFERRED
+- RF-003: DEFERRED
+- FB-001: UNCHANGED
+- F-01: UNCHANGED
+- Base Registry: BASE-001 CLOSED / NOT BASE-ELIGIBLE, **BASE-002 registered** (MECH-N03)
+
+**Artifact:** `output/research_discovery/QUANTFORGE_MECH_N03_V38A_BASE_REGISTRATION_V1.md`
+**Registration record SHA256:** `5aa978d007ada2de4d7f15667d9c2c699c6fc173b7854c985b37f3a3d7a0e877`
+
+**Next governed step:** V38A Stage 2 — Structural Validation for BASE-002 (requires separate execution-authorization decision). Registration does NOT authorize Stage 2 or Stage 3 execution.
+
+---
+
+## 85. BASE-002 ECONOMIC GATE RECONCILIATION & REGISTRATION AMENDMENT (2026-09-08)
+
+**Status:** RECONCILIATION COMPLETE — BASE-002 AMENDED — AWAITING FINAL FREEZE AUDIT
+
+**Purpose:** Governed reconciliation of BASE-002 registration following the freeze audit (CONDITIONAL PASS). One material blocker and two non-blocking issues resolved.
+
+**Completed work:**
+
+1. Read all authoritative V38/V38A doctrine and BASE-002 registration/freeze audit artifacts.
+2. Applied owner decision: Primary economic gate = INCREMENTAL ECONOMIC VALUE (Δ net return > 0 vs. unconditional directional counterfactual).
+3. Amended §14 (Primary Economic Gate): Changed from "Mean net decision return > 0" (absolute) to "Δ net return > 0 vs. counterfactual" (incremental).
+4. Amended §13 (Minimum Sample): Resolved 100/100/200/50 ambiguity — 100 = impulse minimum, 100 = grinding minimum, 200 = derived (100+100), 50+50 = forward minimum.
+5. Amended §15 (Statistical Plan): Updated primary statistic to Δ net return; defined H₁/H₂ mixed-result rule (SUPPORTED / PARTIALLY SUPPORTED / CONTRADICTED / INCONCLUSIVE).
+6. Amended §16 (Counterfactual): Aligned with amended §14; primary gate = Δ > 0.
+7. Amended §29 (Economic Translation Audit): Updated to reflect incremental gate.
+8. Amended §35 (Final Verdict): Updated to reflect amended registration.
+9. Added Amendment Record to registration artifact.
+10. Computed amended registration SHA256: `eb41bfcd22cb7c7bfd439884d9e2e9cffa2dbb25ba4cb48257b6cf6c5e0102b6`
+
+**Amended frozen parameters:**
+- D = 10 M1 bars (UNCHANGED)
+- Impulse: noise < 0.30 (UNCHANGED)
+- Grinding: noise ≥ 0.50 (UNCHANGED)
+- Session: US regular 09:30–16:00 ET (UNCHANGED)
+- Consecutive sessions required (UNCHANGED)
+- Entry: open of first M1 bar in Session B (UNCHANGED)
+- Exit: close of last M1 bar in Session B (UNCHANGED)
+- Cost: 2 bps round-trip (UNCHANGED)
+- Minimum sample: 100/100/200/50 (CLARIFIED — 200 derived from 100+100)
+- **Economic gate: Δ net return > 0 vs. unconditional directional counterfactual (AMENDED)**
+- H₁/H₂: Both required for full promotion; partial support does not constitute full MECH-N03 promotion (DEFINED)
+
+**Governed states confirmed:**
+- RF-001: UNCHANGED — Stage 3 blocked, accrual continues
+- RF-002: DEFERRED
+- RF-003: DEFERRED
+- FB-001: UNCHANGED
+- F-01: UNCHANGED
+- Base Registry: BASE-001 CLOSED / NOT BASE-ELIGIBLE, **BASE-002 registered (AMENDED)** (MECH-N03)
+
+**Artifact:** `output/research_discovery/QUANTFORGE_MECH_N03_V38A_BASE_REGISTRATION_V1.md`
+**Original registration SHA256:** `5aa978d007ada2de4d7f15667d9c2c699c6fc173b7854c985b37f3a3d7a0e877`
+**Amended registration SHA256:** `eb41bfcd22cb7c7bfd439884d9e2e9cffa2dbb25ba4cb48257b6cf6c5e0102b6`
+
+**Next governed step:** FINAL BASE-002 REGISTRATION FREEZE AUDIT (confirms amended registration is internally consistent and execution-ready). Registration does NOT authorize Stage 2 or Stage 3 execution.
+
+---
+
+## 86. BASE-002 FINAL REGISTRATION FREEZE AUDIT (2026-09-08)
+
+**Status:** FINAL FREEZE PASS — BASE-002 REGISTERED / AMENDED / FROZEN — STAGE 2 AUTHORIZATION ELIGIBLE
+
+**Purpose:** Final independent freeze audit of amended BASE-002 registration following economic gate reconciliation (§85).
+
+**Audit result:** ALL 15 freeze criteria PASS.
+
+**Key findings:**
+
+1. **Economic gate:** Internally consistent. §14 defines Δ net return > 0 vs. counterfactual. §16 uses identical counterfactual. Same opportunity universe, identical cost treatment. Absolute profitability retained as secondary, non-decisional statistic. Prior blocker (§14/§16 mismatch) FULLY RESOLVED.
+2. **Counterfactual:** Explicit and executable. Unconditional directional exposure: enter at Session B open in Session A trend direction, exit at Session B close, regardless of path quality. Identical cost (2 bps) and opportunity universe for candidate and comparator.
+3. **Minimum sample:** Unambiguous. 100 = impulse minimum, 100 = grinding minimum, 200 = derived (100+100), 50+50 = forward minimum. No hidden sample requirements.
+4. **H₁/H₂ adjudication:** Deterministic. SUPPORTED (both succeed), PARTIALLY SUPPORTED (one succeeds, one fails — NOT promotable), CONTRADICTED (both fail), INCONCLUSIVE (insufficient evidence). Component rescue explicitly prohibited.
+5. **Core MECH-N03:** Unchanged. D=10, thresholds 0.30/0.50, session US regular 09:30–16:00 ET, entry Session B open, exit Session B close, cost 2 bps.
+6. **Hidden degrees of freedom:** NONE. All 18 material decisions frozen and classified.
+7. **Registration drift:** ZERO unauthorized changes. Only §13, §14, §15, §16, §29, §35 amended per authorized reconciliation.
+8. **SHA256 verified:** `eb41bfcd22cb7c7bfd439884d9e2e9cffa2dbb25ba4cb48257b6cf6c5e0102b6`
+9. **Stage 2 execution:** NOT PERFORMED. No source, test, config, data, or runtime changes.
+
+**Minor documentation carry-forward:** §17 (Cross-Era / Robustness) confirmatory table still references "mean net return > 0" instead of "Δ net return > 0 vs. counterfactual". This is a documentation inconsistency, not a material governance defect — §14 is the authoritative primary economic gate. Carry forward to Stage 3 planning.
+
+**Governed states confirmed:**
+- RF-001: UNCHANGED — Stage 3 blocked, accrual continues
+- RF-002: DEFERRED
+- RF-003: DEFERRED
+- FB-001: UNCHANGED
+- F-01: UNCHANGED
+- Base Registry: BASE-001 CLOSED / NOT BASE-ELIGIBLE, **BASE-002 registered (AMENDED / FROZEN)** (MECH-N03)
+
+**Artifact:** `output/research_discovery/QUANTFORGE_MECH_N03_V38A_BASE_REGISTRATION_V1.md`
+**Amended registration SHA256:** `eb41bfcd22cb7c7bfd439884d9e2e9cffa2dbb25ba4cb48257b6cf6c5e0102b6`
+
+**Next governed step:** BASE-002 Stage 2 Structural Validation Authorization Review (requires separate governed task). Registration does NOT authorize Stage 2 or Stage 3 execution.
+
+---
+
+## 87. BASE-002 STAGE 2 STRUCTURAL VALIDATION AUTHORIZATION (2026-09-08)
+
+**Status:** STAGE 2 AUTHORIZED — BASE-002 READY FOR STRUCTURAL VALIDATION EXECUTION
+
+**Authorization checks — ALL PASS:**
+
+1. **Freeze status:** Final Registration Freeze Audit = FINAL FREEZE PASS. BASE-002 remains frozen. Registration artifact SHA256 verified.
+2. **No intervening drift:** No source, test, config, data, runtime, or registration changes since final freeze audit.
+3. **Stage 2 boundary:** Structural Validation only. No parameter modification, optimization, or variant creation permitted.
+4. **Frozen protocol:** Stage 2 will execute exactly the registered BASE-002 specification. No rescue rules, threshold mining, session mining, holding-period mining, post-hoc exclusions, opportunity selection, closed-line reopening, or mechanism modification.
+5. **Authorization boundary:** Frozen registration is AUTHORIZED FOR STAGE 2 EXECUTION.
+
+**Governed states confirmed:**
+- RF-001: UNCHANGED — Stage 3 blocked, accrual continues
+- RF-002: DEFERRED
+- RF-003: DEFERRED
+- FB-001: UNCHANGED
+- F-01: UNCHANGED
+- Base Registry: BASE-001 CLOSED / NOT BASE-ELIGIBLE, **BASE-002 STAGE 2 AUTHORIZED** (MECH-N03)
+
+**Next permitted task:** Execute BASE-002 V38A Stage 2 Structural Validation.
+
+**Explicit prohibition:** Do NOT modify the frozen BASE-002 registration during Stage 2 execution. No parameter changes, no threshold changes, no session changes, no cost changes, no mechanism changes.
+
+---
+
+## 88. BASE-002 V38A STAGE 2 STRUCTURAL VALIDATION (2026-09-08)
+
+**Status:** STAGE 2 COMPLETE — STRUCTURAL EVIDENCE INCONCLUSIVE
+
+**Execution result:**
+
+| Component | N | Delta mean (bps) | 95% CI | Result |
+|-----------|---|------------------|--------|--------|
+| H₁ (impulse follow) | 125 | 0.0000 | [0.0000, 0.0000] | NOT SUPPORTED |
+| H₂ (grinding fade) | 155 | 0.1197 | [-0.1599, 0.3812] | NOT SUPPORTED |
+| Combined | 280 | 0.0662 | [-0.0863, 0.2162] | FAIL |
+
+**Sample gates:** ALL PASS (impulse 125 >= 100, grinding 155 >= 100, combined 280 >= 200).
+
+**Adjudication:** CONTRADICTED — Neither H₁ nor H₂ confirmed at the registered significance level.
+
+**Material structural finding:** H₁ delta is mechanically zero by construction. For impulse observations, MECH-N03 decision direction equals the unconditional counterfactual direction, producing delta = 0.0000 bps regardless of data. This is a registered-protocol structural issue, not an execution error.
+
+**Governed states confirmed:**
+- RF-001: UNCHANGED
+- FB-001: UNCHANGED
+- F-01: UNCHANGED
+- Base Registry: BASE-002 STAGE 2 COMPLETE (MECH-N03)
+
+**Artifact:** `scripts/forward/base002_stage2_structural_validation.py`
+**Report:** Stage 2 execution report produced in conversation.
+
+**Next governed step:** BASE-002 Stage 2 Result Adjudication / Owner Governance Decision required. The structural finding (H₁ mechanically zero) requires owner adjudication before any Stage 3 consideration.
+
+---
+
+## 89. BASE-002 PROTOCOL DEFECT & IDENTIFIABILITY RE-EXAMINATION (2026-09-08)
+
+**Status:** RE-EXAMINATION COMPLETE — PARTIAL DEFECT IDENTIFIED
+
+**Purpose:** Independent forensic audit of whether the H₁ identifiability defect was a pre-existing protocol/design defect or an execution error, and whether the Stage 2 result can legitimately be adjudicated as a scientific contradiction.
+
+**Key findings:**
+
+1. **H₁ is structurally non-identifiable.** The impulse-follow treatment (§10: "Follow the trend direction") and the unconditional directional counterfactual (§16: "enter at Session B open in the direction of the Session A trend") are mathematically identical for every eligible observation. ΔH₁ ≡ 0 by construction. This is a mathematical identity, not an empirical finding.
+2. **Pre-existing defect.** The identity was derivable from the frozen registration alone (§10 + §16) before any Stage 2 execution. This is a pre-existing protocol/design defect, not a post-execution discovery.
+3. **H₂ is independently identifiable.** The grinding-fade treatment direction (-trend_direction) differs from the counterfactual direction (+trend_direction). The +0.1197 bps observed result is a genuine empirical comparison. CI crosses zero → NOT SUPPORTED.
+4. **Combined gate is structurally dilated.** The combined statistic (+0.0662 bps) equals (155/280) × 0.1197 — a diluted H₂, not a test of the combined mechanism. It cannot legitimately serve as evidence for or against MECH-N03.
+5. **Stage 2 classification partially invalid.** H₁ classified as "NOT SUPPORTED" is invalid — H₁ was not testable. The correct classification is NON-IDENTIFIABLE. The §15 framework does not define this state (governance gap).
+6. **No amendment authorized.** Any future correction would constitute a prospective protocol amendment with post-result rescue risk. Not authorized by this re-examination.
+
+**Governed states confirmed:**
+- RF-001: UNCHANGED
+- FB-001: UNCHANGED
+- F-01: UNCHANGED
+- Base Registry: BASE-002 STAGE 2 COMPLETE — RE-EXAMINED (MECH-N03)
+
+**Artifact:** Protocol Defect & Identifiability Re-Examination report produced in conversation.
+
+---
+
+## 90. BASE-002 POST-STAGE-2 GOVERNANCE ADJUDICATION (2026-09-08)
+
+**Status:** ADJUDICATION COMPLETE — CLOSE AS NON-ADJUDICABLE
+
+**Disposition:** `CLOSE AS NON-ADJUDICABLE`
+
+**Rationale:**
+
+1. H₁ is structurally non-identifiable — the registered comparison was incapable of testing the impulse-follow hypothesis. ΔH₁ ≡ 0 by construction.
+2. H₂ is validly testable but does not demonstrate positive incremental evidence (CI crosses zero).
+3. The combined gate is structurally dilated and not scientifically interpretable.
+4. The §15 adjudication framework does not cover non-identifiable comparisons (governance gap).
+5. Closing as CONTRADICTED would conflate a protocol defect with a scientific finding.
+6. The only scientifically defensible closure is NON-ADJUDICABLE.
+
+**Knowledge accounting:**
+
+| Category | Finding |
+|----------|---------|
+| Established | H₂ does not demonstrate positive incremental value (valid test, CI crosses zero) |
+| Established | The registered H₁ counterfactual is degenerate (mathematical identity) |
+| Established | The combined gate cannot test MECH-N03 as a whole (structural dilution) |
+| Not established | Whether impulse trends continue (H₁ was not testable) |
+| Not established | Whether MECH-N03 adds incremental economic value (combined gate invalid) |
+| Negative knowledge | H₁ identifiability requires a counterfactual directionally distinct from the treatment |
+| Negative knowledge | The combined gate is invalid when one component is degenerate |
+| Negative knowledge | The §15 framework does not cover non-identifiable comparisons (governance gap) |
+
+**H₁:** Classified as NON-IDENTIFIABLE. The 0.0000 bps result is a mathematical identity, not an empirical contradiction.
+
+**H₂:** Classified as NOT SUPPORTED (valid empirical result). Preserved as genuine negative evidence.
+
+**Combined:** Classified as NOT SCIENTIFICALLY INTERPRETABLE. Preserved as a structural artifact.
+
+**Future correction:** May be legitimate in principle if it preserves the original scientific question (do clean trends continue?) using a counterfactual directionally distinct from the impulse-follow treatment. Would constitute NEW RESEARCH, not an amendment. Not authorized by this adjudication.
+
+**Governed states confirmed:**
+- RF-001: UNCHANGED
+- FB-001: UNCHANGED
+- F-01: UNCHANGED
+- Base Registry: **BASE-001 CLOSED / NOT BASE-ELIGIBLE, BASE-002 CLOSED AS NON-ADJUDICABLE** (MECH-N03)
+
+**Next permitted task:** No further BASE-002 work. Preserve negative knowledge. Future MECH-N03 research, if any, requires a new governed formulation/registration task — NOT AUTHORIZED.
+
+**Forbidden actions:**
+- No amendment to BASE-002
+- No rerun of Stage 2
+- No replacement counterfactual
+- No threshold/D/session/entry/exit changes
+- No optimization, parameter mining, or rescue
+- No closed-line reopening
+- No silent displacement of active research lines (RF-001, FB-001, F-01, CAND-015/024/035)
+
+## 91. R1/R2 STAGE 2 EXECUTION — FROZEN PROTOCOL (2026-09-09)
+
+**Status:** EXECUTION COMPLETE — BOTH HYPOTHESES NOT SUPPORTED
+
+**Disposition:** `R1 NOT SUPPORTED`, `R2 NOT SUPPORTED`
+
+### Protocol Summary
+
+**R1 — HTF Structural Context → LTF Breakout:**
+- HTF = D1, 20-day rolling high/low
+- ATR = EMA-based ATR(14), alpha=1/14
+- Proximity = 0.5 × ATR(14)
+- Entry = Open of bar E+1
+- Exit = 16:00 ET
+- Session = US regular (09:30–16:00 ET)
+- Cost = 2 bps round-trip
+
+**R2 — HTF Structural Event → LTF Confirmation:**
+- HTF = D1, 20-day rolling high/low
+- K = 5 consecutive M1 closes beyond same level
+- Entry = Open of bar after 5th confirmation
+- Exit = 16:00 ET
+- Late-session = exclude if < K+2 = 7 bars remain
+- Session = US regular (09:30–16:00 ET)
+- Cost = 2 bps round-trip
+
+### Execution Results
+
+| Metric | R1 | R2 |
+|--------|----|----|
+| Eligible observations (N) | 1,662 | 35,586 |
+| Treatment mean (net) | -9.92 bps | 1.71 bps |
+| Counterfactual mean | 1.18 bps | 1.18 bps |
+| Incremental Δ | -11.10 bps | 0.54 bps |
+| 95% CI | [-18.58, -3.81] bps | [-6.18, 7.43] bps |
+| CI excludes zero | YES (negative) | NO |
+| Economic gate | FAIL | FAIL |
+| Disposition | NOT SUPPORTED | NOT SUPPORTED |
+
+### R1 Interpretation
+
+R1 breakouts near daily structural levels produced significantly worse returns than unconditional session returns. The treatment mean was -9.92 bps versus a counterfactual of 1.18 bps, yielding a negative incremental Δ of -11.10 bps. The 95% bootstrap CI was [-18.58, -3.81] bps, entirely below zero. The registered economic gate (Δ > 0 AND CI excludes zero) was NOT satisfied.
+
+**Scientific interpretation:** Breakouts near daily structural levels do not carry positive incremental information relative to unconditional session returns. The proximity condition may capture noise or mean-reversion dynamics rather than persistence.
+
+### R2 Interpretation
+
+R2 confirmed events (daily close beyond 20-day level + 5 consecutive M1 closes) produced returns of 1.71 bps versus a counterfactual of 1.18 bps, yielding a small positive Δ of 0.54 bps. However, the 95% bootstrap CI was [-6.18, 7.43] bps, which includes zero. The registered economic gate was NOT satisfied.
+
+**Scientific interpretation:** The combination of HTF event and LTF confirmation does not demonstrate statistically significant incremental value over unconditional session returns. The evidence is inconclusive — the point estimate is positive but not statistically distinguishable from zero.
+
+### Execution Integrity
+
+- No protocol modification occurred during execution
+- Frozen parameters were used exactly as registered
+- Counterfactuals were distinguishable from treatment (no BASE-002 defect)
+- Bootstrap methodology was preregistered (10,000 resamples, seed=42)
+- Data: 906,815 M1 bars (2023-09-01 to 2026-07-10), USATECHIDXUSD
+
+### Governed States Confirmed
+
+- RF-001: UNCHANGED — remains sole strategic priority
+- FB-001: UNCHANGED
+- F-01: UNCHANGED
+- CAND-015/024/035: UNCHANGED
+- Base Registry: BASE-001 CLOSED, BASE-002 CLOSED AS NON-ADJUDICABLE
+
+### Knowledge Accounting
+
+| Category | Finding |
+|----------|---------|
+| Established | R1 breakouts near daily levels produce significantly negative incremental returns |
+| Established | R2 confirmed events produce small positive but statistically insignificant incremental returns |
+| Negative knowledge | Daily structural proximity does not carry positive breakout persistence information |
+| Negative knowledge | HTF event + LTF confirmation (K=5) does not demonstrate incremental value |
+
+### Next Permitted Task
+
+No further R1/R2 work. Preserve negative knowledge. Future research on HTF→LTF relational mechanisms requires a new governed formulation/registration task — NOT AUTHORIZED.
+
+**Forbidden actions:**
+- No amendment to R1 or R2
+- No rerun of Stage 2
+- No parameter modification (K, proximity, ATR, session, entry, exit)
+- No rescue, optimization, or parameter mining
+- No closed-line reopening
+- No new discovery cycle
+
+---
+
+## 92. SESSION CLOSURE CHECKPOINT (2026-09-13)
+
+**Status:** SESSION UPDATE / HANDOFF ONLY — NO NEW RESEARCH AUTHORIZED
+
+### A. R1 Closure (Confirmed)
+
+```
+R1 = CLOSED / NOT SUPPORTED
+N = 1,662
+Δ = -11.10 bps
+95% CI = [-18.58, -3.81] bps
+```
+
+R1 and R2 were independently adjudicated. Neither rescued the other. Both are closed. No follow-up variant was authorized. Evidence recorded at §91.
+
+### B. R2 Closure (Confirmed)
+
+```
+R2 = CLOSED / NOT SUPPORTED
+N = 35,586
+Δ = +0.54 bps
+95% CI = [-6.18, +7.43] bps
+```
+
+Point estimate positive but statistically inconclusive. Economic gate failed. Evidence recorded at §91.
+
+### C. FCR Reconnaissance (Recorded)
+
+The externally supplied First Candle Rule (FCR) strategy was subjected to a single raw historical reconnaissance run. This was NON-GOVERNED / NON-REGISTERED / NON-AUTHORIZED.
+
+```
+Market: USATECHIDXUSD
+Data: M1 (906,815 bars, 2023-09-01 to 2026-07-10)
+M5 derived: 181,104 bars
+Session days: 687
+
+Funnel:
+  Breakouts (momentum >= 0.6): 74,062
+  + FVG within 3 bars:         435 (0.59%)
+  + FVG retest:                 34 (7.8%)
+  + Engulfing:                   1 (2.9%)
+
+Trades: 1 (short, 2026-07-03)
+Wins: 0
+Net: -8.81 bps
+```
+
+**Primary observation:** The executed interpretation produced an extremely sparse strategy funnel, with the principal bottleneck at the breakout-to-FVG stage (0.59%).
+
+**Scientific limitation:** This result does NOT establish that the underlying FCR concept is contradicted. The source description contains material ambiguities and the implementation necessarily selected deterministic interpretations for those ambiguities. The assumption ledger documents all 13 ambiguity items.
+
+**Classification:** CLEARLY UNPROMISING UNDER THIS IMPLEMENTATION. Not CONTRADICTED, not ECONOMICALLY NON-VIABLE, not SCIENTIFICALLY DISPROVEN.
+
+### D. FCR Current Disposition
+
+```
+FCR = DEFERRED / NOT FORMALLY AUDITED
+```
+
+Reason: Raw reconnaissance clearly unpromising; source specification materially under-defined; reconnaissance insufficient for scientific adjudication; no formal FCR audit authorized; no FCR registration; no FCR candidate ID.
+
+### E. RF-001 Protection
+
+> **SUPERSEDED 2026-09-16:** RF-001 was subsequently CLOSED — ECONOMICALLY NOT SUPPORTED (§94, corrected final). The text below is preserved verbatim for chronology.
+
+```
+RF-001 = UNCHANGED
+RF-001 remains the current strategic research priority
+```
+
+[Historical, pre-§94] FCR reconnaissance does not replace, displace, or alter RF-001 in any way. RF-001 status, accrual state, protocol, governance, and strategic priority are all preserved.
+
+### F. Research-State Checkpoint
+
+| Category | Lines |
+|----------|-------|
+| Active research | RF-001 (sole strategic priority, V38A, forward accrual) |
+| Closed research | R1 (NOT SUPPORTED), R2 (NOT SUPPORTED), BASE-001 (NOT BASE-ELIGIBLE), BASE-002 (NON-ADJUDICABLE) |
+| Deferred | FCR (DEFERRED / NOT FORMALLY AUDITED), RF-002, RF-003 |
+| Unchanged | FB-001, F-01, CAND-015/024/035 |
+| Most recent completed branch | R1/R2 relational research → both closed/not supported |
+| Most recent exploratory work | FCR raw reconnaissance → clearly unpromising under one implementation |
+| Next governed decision point | Fresh research-capacity / branch-selection assessment (NOT to be performed here) |
+
+> **SUPERSEDED 2026-09-16:** the "Active research" row above predates the §94 RF-001 closure and the Phase 3 freeze. The authoritative current state is §94 (RF-001 CLOSED), §96 (Phase 2: ATR=C, Zone=E), §97 (Outcome C), and §99 (RESEARCH CAPACITY HOLD). No active research line exists as of 2026-09-16.
+
+### G. Next-Session Restart Point
+
+```
+AUTHORITATIVE START: docs/SESSION_HANDOFF.md
+
+MOST RECENT COMPLETED BRANCH: R1/R2 relational research → both closed/not supported (§91)
+
+MOST RECENT EXPLORATORY WORK: FCR raw reconnaissance → clearly unpromising under one implementation (§92)
+
+ACTIVE STRATEGIC LINE: RF-001 (V38A, forward accrual, sole priority)
+
+NEXT GOVERNED TASK: Fresh research-capacity / branch-selection assessment
+```
+
+> **SUPERSEDED 2026-09-16:** the ACTIVE STRATEGIC LINE and NEXT GOVERNED TASK lines above predate §94 and the Phase 3 freeze. Current authoritative start point: §94 (RF-001 CLOSED) → §96–§100 (Phase 2/3 complete, OUTCOME C, RESEARCH CAPACITY HOLD, next start point in §99.5).
+
+### H. Files for Next Session
+
+See Section 93 (this session's file manifest) for the exact list of files to share with the next ChatGPT session.
+
+---
+
+## 93. NEXT-SESSION FILE MANIFEST (2026-09-13)
+
+### REQUIRED (share with next session)
+
+| Path | Why Needed | Contains |
+|------|-----------|----------|
+| `docs/SESSION_HANDOFF.md` | Authoritative project control tower | All governance state, R1/R2 results at §91, FCR record at §92, research-line status, forbidden actions |
+| `docs/ARCHITECTURE.md` | Four-layer BOE architecture reference | Frozen architectural boundaries, information flow rules |
+| `docs/CHATGPT_ROLE_AND_RESEARCH_CONTINUITY.md` | Permanent reasoning/role contract | ChatGPT role definition, reasoning principles |
+| `output/r1_r2_stage2_results.json` | R1/R2 execution evidence | Exact N, treatment/counterfactual means, CIs, gate outcomes |
+| `output/fcr_recon_results.json` | FCR reconnaissance evidence | Exact funnel, trade list, dates, P&L |
+
+### STRONGLY RECOMMENDED (materially improves assessment)
+
+| Path | Why Useful | Supports |
+|------|-----------|----------|
+| `first_candle_rule_strategy.pdf` | Source document for FCR | Any future FCR formal audit; contains the original strategy description |
+| `output/research_discovery/QUANTFORGE_RELATIONAL_OUTCOME_BLIND_FORMULATIONS_V1.md` | RF-001/002/003 formulations | Understanding relational research framework conventions |
+| `output/research_discovery/QUANTFORGE_RELATIONAL_RESEARCH_FRAMEWORK_GOVERNANCE_V1.md` | Relational research governance | Understanding governance conventions for future research |
+| `output/research_discovery/QUANTFORGE_V38_DOCTRINE_RATIFICATION_V1.md` | V38 Doctrine | Understanding V38A frozen parameters and constraints |
+| `dna/market_dna.py` | Canonical ATR implementation | Reference for ATR convention (EMA-based, alpha=1/14) |
+
+### OPTIONAL / REFERENCE
+
+| Path | Purpose |
+|------|---------|
+| `scripts/forward/fcr_recon_v2.py` | FCR execution script (reproducibility) |
+| `scripts/forward/r1r2_final.py` | R1/R2 execution script (reproducibility) |
+| `scripts/forward/rf001_stage3_validation.py` | RF-001 validation reference (is_late_in_session, session conventions) |
+| `data/rf001/raw/recorder_status.json` | RF-001 live accrual status |
+| `data/rf001/raw/rf001_two_market_m1_raw.csv` | RF-001 prospective data (~2,802 rows) |
+
+### DO NOT SHARE INITIALLY
+
+| Path | Reason to Exclude |
+|------|-------------------|
+| `data/m1/USATECHIDXUSD_M1.csv` | 54 MB raw data; results already summarized in JSON artifacts |
+| `data/m1/BTCUSD_M1.csv` | 140 MB; not relevant to current research lines |
+| `data/m1/EURUSD_M1.csv` | 114 MB; not relevant to current research lines |
+| `data/m1/XAGUSD_M1.csv` | 87 MB; not relevant to current research lines |
+| `data/m1/XAUUSD_M1.csv` | 104 MB; not relevant to current research lines |
+| `data/tick/` | Massive tick data; not needed for governance restart |
+| `data/tick_canonical/` | Parquet tick archives; not needed for governance restart |
+| `output/research_discovery/*.md` (other than the 3 listed) | Historical discovery documents; not needed for restart |
+| `output/QUANTFORGE_GIT_*.md` | Git audit reports; operational, not research-critical |
+| `scripts/forward/r1_r2_stage2_execution.py` | Superseded by r1r2_final.py |
+| `scripts/forward/r1r2_exec.py` | Superseded by r1r2_final.py |
+| `scripts/forward/fcr_debug.py` | Debug script, not needed |
+| `scripts/forward/fcr_debug2.py` | Debug script, not needed |
+
+### MISSING / NOT VERIFIED
+
+| Expected Purpose | Referenced From | Why It Matters |
+|------------------|----------------|----------------|
+| (none) | — | All critical artifacts verified present |
+
+---
+
+## 94. RF-001 OWNER ECONOMIC ADJUDICATION & CLOSURE (2026-09-13)
+
+### §94.1 Authorization
+
+Stage 3 economic validation independently reconstructed using the frozen RF-001 V38A protocol. Two critical corrections applied:
+
+1. **Invalidation logic corrected:** Original implementation checked wrong levels (rh30 for bearish, rl30 for bullish). Corrected: bullish invalidated when primary drops below rh30; bearish invalidated when primary rises above rl30.
+
+2. **Duplicate suppression applied:** Frozen protocol rule — "Duplicate structural events (same direction, same session, no intervening reversal) do not create new opportunities" (Formulation §Opportunity population, line 145).
+
+### §94.2 Corrected Eligibility Funnel
+
+| Population Stage | Count |
+|------------------|------:|
+| Raw post-freeze observations | 2,841 |
+| MATCHED observations | 2,841 |
+| Session-eligible (09:30–16:00 ET) | 670 |
+| Primary structural events (N=30 breakout) | 66 |
+| Last M bars excluded (15:46–16:00 ET) | 1 |
+| Duplicate suppressed (same dir, no reversal) | 55 |
+| **Non-duplicate primary events** | **10** |
+| Confirmed by US500 (no opportunity) | 0 |
+| Invalidated (primary reverses before entry) | **10** |
+| Confirmation failures (potential opportunities) | 0 |
+| **Economically evaluable opportunities** | **0** |
+
+### §94.3 Invalidation Pattern
+
+All 10 non-duplicate events invalidated within 1–3 bars:
+
+| Event | Direction | Invalidation Bar |
+|-------|-----------|-----------------|
+| Sep 7 13:30 | bullish | E+2 |
+| Sep 7 14:59 | bearish | E+1 |
+| Sep 7 16:03 | bullish | E+1 |
+| Sep 8 13:32 | bearish | E+2 |
+| Sep 8 14:50 | bullish | E+1 |
+| Sep 8 16:09 | bearish | E+3 |
+| Sep 8 17:01 | bullish | E+1 |
+| Sep 8 17:41 | bearish | E+1 |
+| Sep 9 13:30 | bullish | E+1 |
+| Sep 9 14:21 | bearish | E+2 |
+
+**Meaning:** USATECHIDXUSD structural breakouts are overwhelmingly transient — the primary market reverses within minutes, eliminating the opportunity before entry.
+
+### §94.4 Superseded Results
+
+**34-opportunity result = SUPERSEDED / INVALID FOR ADJUDICATION**
+- Reason: Frozen duplicate structural-event suppression was not applied.
+- The 34-opportunity economic result must NOT be used as evidence for RF-001's final economic verdict.
+
+**1-opportunity result = SUPERSEDED / INVALID FOR ADJUDICATION**
+- Reason: Invalidation logic was backwards (checked rh30 for bearish, rl30 for bullish instead of the reverse).
+- The single LONG US500 trade at -20.97 bps is NOT a valid RF-001 output.
+
+**Corrected result: 0 eligible opportunities.** The previous Stage 3 finding (§83, 0 opportunities with 1,302 observations on Sep 7 only) is confirmed by the corrected analysis with 2,841 observations across 3 days.
+
+### §94.5 Owner Adjudication
+
+**RF-001 — ECONOMICALLY NOT SUPPORTED — CLOSED**
+
+The frozen RF-001 V38A protocol was tested as designed. With corrected invalidation logic and frozen duplicate suppression applied, the protocol produced ZERO economically evaluable opportunities across 2,841 MATCHED observations covering 3 trading days.
+
+The mechanism is not economically supported because:
+1. Confirmation failures do not survive the invalidation check — the primary market reverses before entry in every case.
+2. No economically evaluable opportunities exist from which to compute returns.
+3. N=0 (zero evaluable trades) provides no statistical power.
+
+### §94.6 Falsification Route
+
+The registered falsification route states: "If confirmation failures are random — i.e., the non-confirming market's subsequent session performance is statistically identical regardless of whether confirmation occurred — the mechanism is falsified."
+
+With 0 eligible opportunities, this route cannot be fully tested. However, the structural finding — that USATECHIDXUSD breakouts universally reverse before entry — is itself evidence that the mechanism does not produce actionable opportunities under its registered protocol.
+
+### §94.7 Lifecycle Consequence
+
+RF-001 moves to **CLOSED**. This frozen RF-001 experiment is economically not supported under its registered protocol. It does NOT mean the broad market hypothesis has been universally disproven — only that this specific protocol does not produce evaluable opportunities.
+
+### §94.8 No-Rescue Boundary
+
+The following are PROHIBITED:
+- Removing or weakening duplicate suppression
+- Changing confirmation logic
+- Changing N, M, session, entry timing, exit timing, direction, or cost
+- Creating LONG-only or SHORT-only variants
+- Backfilling or data manufacture
+- Reopening RF-001
+- Searching for a more favorable implementation
+
+Any such changes constitute a NEW research question and require governed discovery.
+
+### §94.9 Research-State Update
+
+| Research Line | Status |
+|---------------|--------|
+| RF-001 | **CLOSED** — ECONOMICALLY NOT SUPPORTED |
+| R1 | CLOSED — NOT SUPPORTED (§91) |
+| R2 | CLOSED — NOT SUPPORTED (§91) |
+| BASE-001 | CLOSED — NOT BASE-ELIGIBLE (§74) |
+| BASE-002 | CLOSED — NON-ADJUDICABLE (§90) |
+| FCR | DEFERRED — NOT FORMALLY AUDITED (§92) |
+| RF-002 | DEFERRED |
+| RF-003 | DEFERRED |
+| ATR Breakout | FUTURE TODO — not authorized |
+| Zone Recovery | FUTURE TODO — not authorized |
+
+### §94.10 Next Governed Decision Point
+
+RF-001 CLOSED. NO AUTOMATIC NEW BRANCH AUTHORIZED.
+
+The next research decision must be made separately under QuantForge governance.
+
+---
+
+## 95. NEXT-SESSION FILE MANIFEST (UPDATE — 2026-09-13)
+
+### REQUIRED (share with next session)
+
+| Path | Why Needed | Contains |
+|------|-----------|----------|
+| `docs/SESSION_HANDOFF.md` | Authoritative project control tower | All governance state including §94 RF-001 closure |
+| `docs/ARCHITECTURE.md` | Four-layer BOE architecture reference | Frozen architectural boundaries |
+| `docs/CHATGPT_ROLE_AND_RESEARCH_CONTINUITY.md` | Permanent reasoning/role contract | ChatGPT role definition, reasoning principles |
+
+### STRONGLY RECOMMENDED
+
+| Path | Why Useful |
+|------|-----------|
+| `output/research_discovery/QUANTFORGE_RELATIONAL_OUTCOME_BLIND_FORMULATIONS_V1.md` | RF-001/002/003 formulations |
+| `output/research_discovery/QUANTFORGE_RELATIONAL_RESEARCH_FRAMEWORK_GOVERNANCE_V1.md` | Relational research governance |
+
+### RF-001 CLOSURE ARTIFACTS
+
+| Path | Content |
+|------|---------|
+| `data/rf001/raw/rf001_two_market_m1_raw.csv` | RF-001 prospective data (2,841 MATCHED rows) |
+| `data/rf001/raw/recorder_status.json` | RF-001 recorder status |
+| `output/research_discovery/QUANTFORGE_RF001_V38A_STAGE3_ECONOMIC_VALIDATION_V1.md` | Previous Stage 3 validation (superseded by §94) |
+
+---
+
+## 96. PHASE 2 — INDEPENDENT MECHANISM & PRIOR-ART AUDIT: ATR BREAKOUT / ZONE RECOVERY (2026-09-16)
+
+**Status:** COMPLETE — READ-ONLY MECHANISM AUDIT — NEITHER DIRECTION SURVIVED AS A NEW RESEARCH BRANCH
+
+**Mission context:** Following the Phase 1 authoritative-state recovery and the §94 RF-001 closure, the owner requested an independent mechanism/distinctness audit of two named future directions before any branch-selection decision. No repository state was modified.
+
+### §96.1 ATR Breakout
+
+**Classification: C — SAME MECHANISM / VARIATION.**
+
+- Residual market mechanism after stripping ATR stop/target/sizing/session/friction: `breakout → directional continuation`.
+- Materially overlaps existing QuantForge breakout/trend/momentum families, including closed work: DISC-022 (TSMOM — closed/not promotable), BASE-001 / MECH-N01 (structural level validation → follow — closed/not Base-eligible), R1 (HTF structural context → LTF breakout — closed/not supported), R2 (HTF structural event → LTF confirmation — closed/not supported), and the project's standing breakout/threshold-trigger dependence rejection.
+- ATR stop/target, volatility-proportional sizing, session window, news/rollover/spread filters, and universe choice are implementation / risk / execution layers, not a new market mechanism.
+- External prior art treats Donchian/ATR breakout as a well-established implementation family; no external evidence of a genuinely unusual mechanism was found.
+
+**Disposition: NOT AN ACTIVE RESEARCH BRANCH.** This is not a "deferred candidate" — it failed the current distinctness/mechanism gate. Re-opening it would require a genuinely new causal claim, not new parameters.
+
+### §96.2 Zone Recovery
+
+**Classification: E — NOT A MARKET MECHANISM.**
+
+- The proposal's distinctive content is recovery/basket/position-sizing architecture: initial directional trade, counter-position at the opposite zone boundary, progressive/geometric counter-position sizing, basket-level profitability condition, simultaneous basket closure, maximum recovery-cycle limit, no conventional per-position stop.
+- No independently specified market hypothesis survives once the lot multiplier and basket accounting are removed.
+- Direct overlap with prior QuantForge negative knowledge: DISC-015 (grid/basket mechanics introduce concentrated tail risk — 7,525 clusters, median cluster profitable but minimum −5,234.54, maximum lot 10.24 vs median 0.08), DISC-016 (extreme lot-size tails), DISC-018 (basket/grid forensics).
+- Structural risk analysis: directional breakout through the recovery structure produces escalating exposure; cycle limit contains leg count but not realized loss; margin/stop-out can precede basket recovery; multi-leg cost accumulation and execution sequencing can dominate basket arithmetic.
+- External prior art treats zone recovery as a popular retail hedging/recovery family (martingale-like, basket TP); vendor promotional claims are not evidence of edge.
+
+**Disposition: NOT AN ACTIVE RESEARCH BRANCH.** It failed the mechanism gate, not merely the economics gate.
+
+### §96.3 Governance effect
+
+- Neither direction was activated, formulated, registered, backtested, or optimized.
+- Neither may be treated as an available active branch in any subsequent session without a genuinely new mechanism claim.
+
+---
+
+## 97. PHASE 3 — RESEARCH-CAPACITY & BRANCH-SELECTION AUDIT (2026-09-16)
+
+**Status:** COMPLETE — READ-ONLY GOVERNED AUDIT — OUTCOME C
+
+**Outcome:**
+
+```text
+OUTCOME C — NO BRANCH CURRENTLY JUSTIFIED
+```
+
+**Current research state:**
+
+```text
+RESEARCH CAPACITY HOLD
+```
+
+**Basis (from the Phase 3 audit, preserving Phase 1 and Phase 2 as distinct inputs):**
+
+1. **Phase 1 (authoritative state recovery):** the current working tree is authoritative; HEAD is stale relative to it; RF-001 corrected closure is authoritative; no active Base economic-validation line exists; the project sits at a branch-selection point.
+2. **Phase 2 (mechanism archaeology):** ATR Breakout = C (same mechanism/variation); Zone Recovery = E (not a market mechanism). Neither is an available branch.
+3. **Phase 3 (capacity audit):** the remaining future/deferred portfolio was audited mechanism-first against distinctness, observability, falsifiability, prior-art burden, and governance readiness. No direction satisfied the research-capital requirements.
+
+**Key finding:** the preserved future/deferred portfolio contains no sufficiently mature, distinct, observable, falsifiable market mechanism that has earned the next active research allocation.
+
+**Explicit non-claim:** this is NOT a statement that no future research ideas exist. The future hypothesis library remains preserved (§98). It is also NOT a claim that the entire market mechanism space is exhausted — only that no surviving candidate was identified within the specifically searched and governed future-direction set at this time.
+
+**Next governed decision point (carried forward):** a fresh mechanism-distinctness / branch-selection decision may be initiated only when a genuinely distinct market mechanism has been identified and is sufficiently defined for the formulation gate (see §99.5).
+
+---
+
+## 98. PRESERVED FUTURE-DIRECTION LIBRARY — FUTURE CONCEPTS, NOT ACTIVE BRANCHES (2026-09-16)
+
+**Standing distinction (reinforced for all future sessions):**
+
+```text
+FUTURE TODO ≠ ACTIVE RESEARCH
+HYPOTHESIS ≠ CANDIDATE
+METHODOLOGY ≠ MARKET MECHANISM
+INFORMATION NOVELTY ≠ MECHANISM NOVELTY
+```
+
+No item below is authorized, registered, formulated, or executable. Each must pass the normal mechanism → distinctness → observability → falsifiability → formulation → registration → structural-validation → economic-validation gates if ever pursued.
+
+| Direction | Status | Non-active constraints |
+|-----------|--------|------------------------|
+| Outcome-blind relational structural-library research (encode structural characteristics of completed studies; identify non-redundant structural relationships and logical/temporal orderings; potentially generate future hypotheses) | **FUTURE METHODOLOGY — NOT ACTIVE** | Historical economic performance MUST NOT be used as the selecting input. No ranking by profitability, no reverse-engineering of profitable combinations, no mining historical expectancy, no using prior winners as labels, no reconstructing closed strategies. This methodology does not itself constitute a validated market mechanism and must not bypass any gate. |
+| SMC Institutional POI Validation Framework (POI models + refinement pillars) | **FUTURE CONCEPT / PATTERN-VALIDATION FRAMEWORK — NOT ACTIVE** | Currently understood as a pattern taxonomy / validation framework, not an established QuantForge market mechanism. No individual POI model is promoted. Converting any POI concept into research would require a specific outcome-blind falsifiable market hypothesis with counterfactual. |
+| Liquidity-Pool Movement Hypothesis (markets may move toward identifiable liquidity locations/pools) | **UNVALIDATED FUTURE HYPOTHESIS — NOT ACTIVE** | Requires precise ex-ante definition of "liquidity pool." Versions depending on actual order-book depth, resting liquidity, or aggressor flow are observability-blocked under current data (no true volume, no aggressor side, no depth). Must not collapse into ordinary level/attraction behavior already explored. |
+| Dynamic Regime / ADX Transition (static M15 regime labels may miss intraday state change; ADX percentile drift/transition as candidate observable) | **UNVALIDATED FUTURE HYPOTHESIS — NOT ACTIVE** | ADX is an observable/proxy, not an established mechanism. The ±15 ADX-percentile-per-H4-bar observation is an untested example — it is NOT a frozen parameter and must not be backtested or promoted. Risks becoming a regime filter for existing families rather than an independent hypothesis. |
+| Quote-Level Microstructure (bid/ask independence, spread dynamics, quote churn domains) | **INFORMATION-NOVEL ONLY — MECHANISM NOVELTY UNESTABLISHED** | §80–§82 established: T01/T02/T03 not owner-selection eligible; Q01–Q06 fresh cycle produced ZERO mechanism survivors. Quote-level information availability ≠ mechanism novelty. Two discovery cycles produced no distinct market-generating mechanism. |
+| Prospective tick capture (new recorder via MT5 `copy_ticks_from()`) | **INFRASTRUCTURE OPPORTUNITY — NOT AUTHORIZED** | Would require separate authorization; does not by itself create a mechanism. |
+| ORD / DISC-026 follow-on economics | **CLOSED — NOT REOPENED** | Scientific support stands; registered XAGUSD economic translation closed/non-viable; no revival authorized. |
+| F-01 / FB-001 | **UNCHANGED / PROSPECTIVE ONLY** | F-01: registration frozen, NOT economically validated, not an active economic research line. FB-001: prospective accrual only, not active Base economic validation. |
+
+---
+
+## 99. NEGATIVE-KNOWLEDGE FIREWALL & RESEARCH-CAPACITY HOLD (2026-09-16)
+
+### §99.1 Protected closed/rejected families
+
+The following families must not be re-researched via superficial renaming, timeframe change, indicator change, market change, session change, threshold change, stop/target change, sizing change, or execution change. Any genuinely new entry requires a new causal claim that survives the mechanism-distinctness gate from the frozen negative-knowledge state:
+
+- **Mean reversion** (DISC-021 — economically non-viable under observed costs);
+- **Fixed TSMOM / 12-1 trend continuation** (DISC-022 — not promotable; contemporary contradicted);
+- **Session range expansion** (DISC-024 — contradicted, wrong direction);
+- **Liquidity sweep/reversal minimal translation** (DISC-025 — economically non-viable, gross-negative);
+- **Structural breakout/follow** (BASE-001 / MECH-N01 — not Base-eligible);
+- **Session-sequential trend quality** (BASE-002 / MECH-N03 — non-adjudicable; H₁ non-identifiable defect stands);
+- **HTF→LTF relational structures** (R1/R2 — not supported);
+- **Grid/basket/recovery architectures** (DISC-015/016/018 tail-risk knowledge; Phase 2 Zone Recovery = E);
+- **ATR breakout as presently defined** (Phase 2 = C — same mechanism/variation);
+- **Zone Recovery as presently defined** (Phase 2 = E — not a market mechanism);
+- **Prior quote-level Q01–Q06 mechanism-search space** (zero mechanism survivors across two cycles);
+- **RF-001 cross-market confirmation-failure protocol as registered** (§94 — economically not supported; no-rescue boundary in §94.8 stands).
+
+### §99.2 Control-tower statement
+
+```text
+Current Research Capacity State:
+HOLD
+
+No active research branch is authorized at this point.
+
+The portfolio has reached a governed research-capacity hold because
+the currently preserved future directions have not established a
+sufficiently distinct, observable, falsifiable market mechanism that
+justifies consuming the next research allocation.
+
+This is not a claim that no future mechanisms exist.
+
+Future hypotheses and methodologies remain preserved (§98).
+
+No future hypothesis, TODO, methodology, implementation concept, or
+research observation constitutes authorization for active research.
+```
+
+### §99.3 Governance rules in force (retained, unchanged)
+
+- Single-active-line rule.
+- Separate formulation / registration / structural-validation / economic-validation gates.
+- No unauthorized code/config/test/data changes.
+- No rescue of closed research; no parameter/threshold/session mining; no event manufacture; no hindsight optimization.
+- No historical economic selection for outcome-blind relational research.
+- FUTURE TODO ≠ authorization; HYPOTHESIS ≠ candidate; METHODOLOGY ≠ market mechanism; INFORMATION NOVELTY ≠ mechanism novelty.
+- Independent audit before owner adjudication where required.
+- `docs/SESSION_HANDOFF.md` is the authoritative control-tower document.
+
+### §99.4 Standing prohibitions for the hold period
+
+No new mechanism discovery cycle, candidate formulation, candidate registration, economic validation, backtesting, parameter testing, data collection, or recorder deployment is authorized by this freeze. If a genuinely new research idea is identified, it must be recorded as an out-of-scope observation and brought to governance separately — not converted into a candidate.
+
+### §99.5 Next start point (restart condition)
+
+The next research session must NOT begin with "pick one of ATR Breakout, Zone Recovery, SMC POI, liquidity pools, or ADX."
+
+```text
+Next Start Point:
+A future governed mechanism-distinctness / branch-selection decision
+may be initiated only when a genuinely distinct market mechanism has
+been identified and is sufficiently defined for the formulation gate.
+```
+
+If governance later authorizes a new mechanism-discovery exercise, it must begin from the current frozen negative-knowledge state (§99.1) and the §98 future library, treating both as non-authorization constraints.
+
+---
+
+## 100. PHASE 1 → PHASE 2 → PHASE 3 LINEAGE SUMMARY (2026-09-16)
+
+```text
+Phase 1:
+Authoritative state recovered (working tree authoritative; HEAD stale;
+RF-001 corrected closure authoritative; no active Base economic line)
+
+Phase 2:
+ATR Breakout  = C — SAME MECHANISM / VARIATION  (not a branch)
+Zone Recovery = E — NOT A MARKET MECHANISM      (not a branch)
+
+Phase 3:
+OUTCOME C — NO BRANCH CURRENTLY JUSTIFIED
+RESEARCH CAPACITY HOLD
+```
+
+These three stages are distinct governed events and must not be collapsed into a generic "research completed" statement.
