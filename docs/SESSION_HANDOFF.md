@@ -1,4 +1,99 @@
 
+# QUANTFORGE — SESSION HANDOFF
+
+**Last session:** 2026-09-22
+**Task completed:** External Information MVC Phase III — implementation, independent audit, and formal freeze bookkeeping.
+**Status:** All infrastructure frozen. Research capacity on hold. Nothing authorized for next step.
+
+---
+
+## CURRENT PROJECT STATE (read this first)
+
+```text
+P0-Lite:                    FROZEN
+P0-F1:                      FROZEN
+P0-F2:                      FROZEN
+
+EXTERNAL INFORMATION MVC:
+  Phase I —                 FROZEN (§102)
+  Phase II —                FROZEN (§103)
+  Phase III —               FROZEN (§105)   ← just completed
+
+RESEARCH CAPACITY:          HOLD (§99)
+ACTIVE RESEARCH:            NONE
+NEW CANDIDATE:              NONE
+EXTERNAL DATA:              NONE ACQUIRED
+BACKTEST:                   NONE
+ECONOMIC VALIDATION:        NONE
+BOE:                        UNCHANGED
+GOVERNANCE:                 UNCHANGED
+PHASE IV:                   NOT AUTHORIZED
+```
+
+## WHAT JUST HAPPENED (this session)
+
+1. Phase III scope-definition audit confirmed §104 Classification B (owner authorization required).
+2. Owner authorized Phase III implementation.
+3. Phase III implemented: `artifact_store.py` (content-addressed local persistence), `grouping.py` (record batch semantics), updated `__init__.py`, 49 targeted tests.
+4. Full test suite: 1141/0 (was 1092). Zero regressions.
+5. Independent adversarial audit: 27 checks, all passed, zero blocking findings.
+6. Formal freeze bookkeeping appended as §105.
+
+## ROLE-CONTRACT UPDATE (2026-09-24) — REASONING UPDATE ONLY, NO STATE CHANGE
+
+Owner-authorized adoption of the Lane B role addendum into `docs/CHATGPT_ROLE_AND_RESEARCH_CONTINUITY.md` (§31, status ADOPTED 2026-09-24). This is a **ROLE-CONTRACT / REASONING UPDATE ONLY**:
+
+* Research Capacity HOLD remains unchanged;
+* Active Research remains NONE;
+* New Candidate remains NONE;
+* External Data remains NONE ACQUIRED;
+* Backtest remains NONE;
+* Economic Validation remains NONE;
+* Phase IV remains NOT DEFINED / NOT AUTHORIZED;
+* BOE remains unchanged;
+* existing prospective processes (supervisor, CAND-015/024/035, F-01/FB-001/RF-001 observers) remain protected;
+* no Lane B empirical evaluation was authorized by adoption itself (evaluation requires separate explicit owner authorization tied to a frozen prototype/specification with prototype-count and complexity budgets).
+
+## WHAT IS NOT AUTHORIZED
+
+- No external-data acquisition (HTTP/API/scraper/download)
+- No research activation
+- No candidate creation
+- No backtesting
+- No economic validation
+- No Phase IV
+- No reopening closed research (RF-001, Idea 1, Idea 2, Idea 3)
+- No new mechanism-discovery cycles
+- No rescue of closed mechanisms
+- No variant creation from closed lines
+
+## KEY CONSTRAINTS (unchanged)
+
+- §99: RESEARCH CAPACITY HOLD — OUTCOME C — NO BRANCH CURRENTLY JUSTIFIED
+- §98: Liquidity-pool hypothesis = UNVALIDATED FUTURE HYPOTHESIS (negative-knowledge firewall active)
+- §94: RF-001 CLOSED — ECONOMICALLY NOT SUPPORTED
+- FB-001 freeze boundary: 2026-09-06 08:00 ET
+- Dataset hash: 9fce00a4d04ae99c
+
+## KEY FILE LOCATIONS
+
+- `docs/SESSION_HANDOFF.md` — this file, authoritative project state (§65–§105)
+- `docs/CHATGPT_ROLE_AND_RESEARCH_CONTINUITY.md` — permanent reasoning/role contract
+- `research/external_information/` — External Information MVC (Phase I/II/III)
+- `tests/test_external_information_phase3.py` — Phase III tests (49 tests)
+- `data/rf001/` — RF-001 research data
+- `data/tick_canonical/XAUUSD/` — 61 monthly parquet files, 281.5M rows
+
+## GOVERNING RULES
+
+- Read `docs/CHATGPT_ROLE_AND_RESEARCH_CONTINUITY.md` before any work
+- Read `docs/SESSION_HANDOFF.md` (this file) for current state
+- No Git commits/pushes unless explicitly authorized
+- No strategy optimization, no parameter mining, no experiments
+- Every file change must be traceable to an explicit owner request
+
+---
+
 ## 65. GIT OVERSIZED FILE AUDIT & HISTORY REWRITE (2026-09-07)
 
 **Status:** COMPLETE
@@ -1827,3 +1922,470 @@ RESEARCH CAPACITY HOLD
 ```
 
 These three stages are distinct governed events and must not be collapsed into a generic "research completed" statement.
+
+---
+
+## 101. P0 INFRASTRUCTURE MILESTONES — P0-LITE / P0-F1 / P0-F2 FROZEN (2026-09-20)
+
+**Status:** COMPLETE — INFRASTRUCTURE BOOKKEEPING ONLY — RESEARCH STATE UNCHANGED
+
+This section records governed infrastructure milestones completed under the §99 research-capacity hold. It changes no research conclusion, no governance rule, no architecture decision, and no research priority. The §99.2 hold state stands unchanged.
+
+### §101.1 What was built (factual inventory)
+
+- **P0-Lite — point-in-time / provenance foundation** (`research/pointintime/`, 9 modules): `PointInTimeInput`, `ProvenanceStatus` (VERIFIED / EQUIVALENT_BY_CONSTRUCTION / UNVERIFIED), `Modality`, `RevisionState`, `KnowledgeBasisRule`/`KnowledgeBasisRegistry` (PRICE_BAR_CLOSED_V1, PRICE_TICK_OBSERVED_V1, DOCUMENT_PUBLICATION_V1, MACRO_ACTUAL_RELEASE_V1, POSITIONING_PUBLICATION_V1), `RevisionPolicy`, `AdmissionReason`/`AdmissionResult`, `ADMIT_INPUTS`, leakage property checks. Knowledge time is re-derived from named evidence; retrieval time is excluded from admission; identity is content-deterministic.
+- **P0-F1 — governed Parquet tick reader** (`research/staged_execution/tick_reader.py`): streaming `iter_batches`, duplicate-timestamp preservation, `source_row_ordinal` enforcement, `[start, end)` bounds, declared-timezone handling, opt-in SHA-256 integrity (fail-closed), quote-data-only semantics; minimal streaming change in `stage1.py`.
+- **Maintenance:** the pre-existing `run_stage1_prepare` function-local `import json` shadowing defect (`UnboundLocalError` on the force-rebuild archival path) was repaired by deleting the one shadowing line (suite 901/1 → 902/0).
+- **P0-F2 — minimal additive Dataset Foundation extension:** `PartitionName.PARTITIONED` + additive `partition_key` (keyed monthly partitions), additive `schema_id` with a closed registry (`research/dataset/schemas.py`), `ParquetPartitionReader` as a thin adapter over the frozen P0-F1 reader (`research/dataset/parquet_reader.py`), `DatasetManifest.fingerprint` semantics untouched.
+
+### §101.2 Independent audit lineage
+
+- **P0-Lite + P0-F1 freeze audit: PASS WITH MINOR FINDINGS — FREEZE MAY PROCEED** (adversarial reconstruction from code: boundary, scale, retrieval-time isolation, revision policy, hash opt-in, scope all verified).
+- **P0-F2 first freeze audit: BLOCKED** — B-1 (partition read scope = directory+window, not the declared `source_uri` file) + M-1 (schema registry lacked the canonical 9-column substrate fields `mid`/`spread`). Both reproduced at runtime.
+- **Remediation (scoped to B-1 + M-1 only):** partition-file isolation enforced inside F2 via exact `TickObservation.partition` provenance comparison — fail-closed, non-filtering, invariant under `verify_hashes=False/True`, without modifying F1; `mid`/`spread` added as raw optional quote fields; P0 artifacts 18/18 byte-identical through the remediation.
+- **P0-F2 re-audit: PASS WITH MINOR FINDINGS — P0-F2 MAY PROCEED TO FREEZE.** B-1 verified provenance-exact, fail-closed, partial-stream-safe (sibling, undeclared, and late-stream contamination all fail closed under both hash modes; clean directories unaffected). M-1 verified against the real canonical substrate at metadata level (construction succeeds; schema closure retained; undeclared fields such as `trade_size` still rejected). Fingerprint preservation re-proven from actual values against an independent 4 KiB-chunk reference. BOE boundary: zero `boe → research` imports.
+
+### §101.3 Verification state at freeze
+
+```text
+Full suite:                936 passed / 0 failures  (Python 3.11.9, verified 2026-09-20)
+P0-Lite frozen:            YES (independent audit passed)
+P0-F1 frozen:              YES (independent audit passed)
+P0-F2 frozen:              YES (remediation independently verified; re-audit PASS WITH MINOR FINDINGS)
+P0/F1 frozen artifacts:    18/18 byte-identical
+Fingerprint semantics:     PRESERVED (actual-value proof, legacy == independent reference)
+BOE boundary:              PRESERVED (0 boe→research imports; boe/ diff empty)
+Dataset Foundation:        additive only; existing CSV path and canonical fingerprint untouched
+Retained minors:           (1) mutable module-level schema registries; (2) raw IsADirectoryError
+                           for directory-valued source_uri — non-blocking, not scheduled
+Dataset/migration impact:  NONE — no dataset rewritten, no manifest rewritten, no fingerprints
+                           regenerated, no verdicts or strategy packages regenerated
+```
+
+### §101.4 Governance effect
+
+```text
+RESEARCH CAPACITY HOLD:      UNCHANGED (§99.2)
+NO ACTIVE RESEARCH BRANCH:   UNCHANGED
+NO CANDIDATE ACTIVATED:      UNCHANGED
+CLOSED LINES (§99.1):        NOT REOPENED
+§98 FUTURE LIBRARY:          UNCHANGED — no item promoted or demoted
+BOE:                         UNCHANGED
+```
+
+P0 is an infrastructure milestone only. Capability existence does not constitute research authorization; the §98/§99 constraints apply to any future use of the new infrastructure. The §99.5 restart condition stands: a governed branch-selection decision requires a genuinely distinct, sufficiently defined mechanism first.
+
+---
+
+## 102. EXTERNAL INFORMATION MVC PHASE I — FROZEN (2026-09-21)
+
+**Status:** COMPLETE — INFRASTRUCTURE FREEZE — RESEARCH STATE UNCHANGED
+
+This section records the formal freeze of External Information MVC Phase I (pure domain contracts) following its independent remediation re-audit (final result: PASS — PHASE I MAY PROCEED TO FREEZE). It is factual bookkeeping only. It changes no research conclusion, no governance rule, no architecture decision, and no research priority. The §99 research-capacity hold stands unchanged.
+
+### §102.1 Scope (factual inventory)
+
+Phase I implemented exactly five domain-contract modules plus their contract tests (tests/test_external_information_phase1.py):
+
+- `research/external_information/__init__.py` — package exports; zero logic.
+- `research/external_information/source_registry.py` — `SourceIdentity` + `SourceRegistry`: immutable source identities, closed source classes (RESEARCH / MACRO / POSITIONING), versioned registry snapshots, duplicate registration fails.
+- `research/external_information/artifact_reference.py` — `ArtifactReference` + byte-verification primitive: SHA-256 content identity via the frozen `research/staged_execution/_identity.py` implementation; reference contract only.
+- `research/external_information/evidence.py` — `EvidenceKind` (closed four-kind vocabulary) + `PublicationEvidence`: modality-specific publication-forensics evidence.
+- `research/external_information/instrument_mapping.py` — `InstrumentMapping` + versioned per-source mapping tables with the explicit `UNRESOLVED` state.
+
+Explicitly NOT part of Phase I (verified absent at freeze): no Phase II record construction; no `PointInTimeInput` construction; no `ADMIT_INPUTS` integration; no external-data acquisition; no artifact storage implementation; no network/API/scraper code; no grouping (Phase III); no BOE integration.
+
+### §102.2 Independent verification lineage
+
+Phase I implementation → independent freeze audit (PASS WITH MINOR FINDINGS: N-1 extras keyspace, N-2 nested `awareness_proxy`, N-3 record-level reserved keys) → targeted remediation of N-1/N-2/N-3 (suite 993 → 1022) → independent remediation re-audit (BLOCKED — M-9: `extras` stored by reference; a retained caller mapping could forge the governed basis value and inject prohibited keys after construction) → M-9 targeted remediation (owned deep-frozen `extras` snapshot; recursive sequence traversal; serialization precedence; suite 1022 → 1034) → independent M-9 freeze re-audit V2: **PASS — PHASE I MAY PROCEED TO FREEZE** (no blocker, no major finding). The prior O-10 sequence-traversal observation was closed by the M-9 remediation (runtime-verified prohibition across mapping/list/tuple/mixed container shapes).
+
+### §102.3 Verification state at freeze
+
+```text
+Full suite:                 1034 passed / 0 failures  (Python 3.11.9, verified 2026-09-21)
+Phase-I targeted suite:     98 passed / 0 failures
+Deprecation-warning runs:   clean (-W error::DeprecationWarning, two consecutive runs)
+P0-Lite:                    unchanged / frozen (anchor hashes re-verified)
+P0-F1:                      unchanged / frozen
+P0-F2:                      unchanged / frozen
+BOE:                        unchanged (boe/ diff empty)
+EnvironmentSnapshot:        unchanged (hash 1666bac504ddd2a1)
+boe → research imports:     0
+Dataset Foundation:         untouched; no dataset or fingerprint change
+```
+
+### §102.4 Contract-specific freeze facts
+
+- **Source identity:** immutable identities; closed source classes; versioned registry snapshots; historical versions remain representable; no source-quality, reliability, predictive, sentiment, or importance semantics.
+- **Artifact reference:** SHA-256 content identity (64-character lowercase hex, single frozen hashing implementation); immutable reference contract; integrity primitive performs no I/O; no storage implementation.
+- **Evidence:** live reuse of the frozen P0 knowledge-basis registry (no duplicated basis constants; DOCUMENT / POSITIONING → `publication_timestamp`, MACRO_RELEASE → `actual_release_timestamp`, verified against the live registry); fail-closed reserved-key protection ordered governed-shadow guard → specific prohibited-key guard → namespace validation → ownership freeze; namespaced extras (`evidence_` / `access_` / `x_`); recursive prohibited-key protection including mappings inside sequences; alias-free deep-frozen `extras` snapshot (caller mutation cannot alter governed evidence or inject prohibited keys); governed fields applied after extras in serialization (governed basis value appears exactly once); `collection_latency` derived-only; no `awareness_proxy` semantic field anywhere.
+- **Instrument mapping:** immutable, versioned, per-source mappings; explicit `UNRESOLVED`; duplicate source-native mapping detection; no universal instrument ontology.
+
+### §102.5 Retained non-blocking observations (not remediated, not elevated)
+
+```text
+BLOCKER:  none
+MAJOR:    none
+
+O-4  registry version is an explicit label
+O-5  registered_at is optional
+O-6  M007 accepted
+O-7  literal "UNRESOLVED" ambiguity
+O-8  negative collection latency
+O-12 transient non-reproducible warning artifact
+O-13 naive datetime permitted as ordinary extras payload
+O-14 nested collection_latency may exist as ordinary auxiliary payload
+O-15 access fields remain observational free text
+```
+
+These observations remain open, non-blocking, and are not scheduled; they do not affect the frozen contract guarantees above.
+
+### §102.6 Governance effect
+
+This freeze is an infrastructure milestone only.
+
+It does not:
+
+- activate research;
+- create a candidate;
+- authorize external-data acquisition;
+- authorize Phase II;
+- modify the research-capacity hold;
+- reopen any closed research line;
+- modify BOE governance;
+- modify architecture governance.
+
+The authoritative project state remains RESEARCH CAPACITY HOLD (§99). Capability existence does not constitute research authorization; the §98/§99 constraints apply to any future use of the External Information MVC infrastructure.
+
+### §102.7 Phase II / Phase III firewall
+
+```text
+Phase II:      NOT STARTED
+Phase III:     NOT STARTED
+
+No implementation authorization is granted by this freeze record.
+```
+
+---
+
+## 103. EXTERNAL INFORMATION MVC PHASE II — FROZEN (2026-09-21)
+
+**Status:** COMPLETE — INFRASTRUCTURE FREEZE — RESEARCH STATE UNCHANGED
+
+This section records the formal freeze of External Information MVC Phase II (record construction) following its independent B-1 remediation re-audit (final result: PASS WITH MINOR FINDINGS — PHASE II MAY PROCEED TO FREEZE). It is factual bookkeeping only. It changes no research conclusion, no governance rule, no architecture decision, and no research priority. The §99 research-capacity hold stands unchanged.
+
+### §103.1 Scope (factual inventory)
+
+Phase II implemented exactly one new module plus its contract tests (tests/test_external_information_phase2.py):
+
+- `research/external_information/record.py` — `ExternalInformationRecord` + `ExternalInformationRecordError`: the minimal immutable provenance wrapper containing exactly five fields — `input` (frozen P0 `PointInTimeInput`), `artifact` (frozen Phase-I `ArtifactReference`), `source_identity` (frozen Phase-I `SourceIdentity`), `mapping_version`, `source_native_id`.
+
+Explicitly NOT part of Phase II (verified absent at freeze): no external-data acquisition; no artifact storage; no network/API/scraper code; no grouping; no BOE integration; no Phase III implementation; no second modality/basis/revision taxonomy; no second record-identity algorithm.
+
+Phase II constructs frozen `PointInTimeInput` objects from validated Phase-I domain objects; `ADMIT_INPUTS` remains deferred to the future consumer (Design A — construction is separate from decision-boundary admission).
+
+### §103.2 Independent verification lineage
+
+Phase II implementation (suite 1034 → 1077) → independent freeze audit V1 (BLOCKED — B-1: direct dataclass construction bypassed record-level provenance invariants: snapshot laundering, source-class/modality falsification, source-identity mismatch, arbitrary lineage metadata) → targeted `__post_init__` remediation moving all record-level invariants into the type itself (suite 1077 → 1092) → independent B-1 re-audit V2: **PASS WITH MINOR FINDINGS — PHASE II MAY PROCEED TO FREEZE** (no blocker, no major finding; the direct-construction boundary is closed and adversarially re-proven on both construction paths).
+
+### §103.3 Verification state at freeze
+
+```text
+Full suite:                 1092 passed / 0 failures  (verified 2026-09-21)
+Phase-II targeted suite:    58 passed / 0 failures
+Deprecation-warning runs:   clean (-W error::DeprecationWarning, two consecutive runs)
+P0-Lite:                    unchanged / frozen
+P0-F1:                      unchanged / frozen
+P0-F2:                      unchanged / frozen
+Phase I:                    unchanged / frozen (frozen hashes re-verified)
+BOE:                        unchanged (boe/ diff empty)
+boe → research imports:     0
+pointintime/dataset/staged_execution → external_information imports: 0
+```
+
+### §103.4 Contract guarantees (independently verified)
+
+- The record contains only the approved five fields (pinned by test); no duplicated P0 facts; no redundant `source_registry_version` (registry lineage is carried by `source_identity.registry_version`).
+- P0 construction uses explicit named arguments only; the evidence mapping is never splatted into the constructor.
+- Knowledge time remains P0-derived/verified: a `knowledge_timestamp` differing from the basis-derived value fails construction; Phase II derives no timestamp of its own.
+- External modality is enforced: only DOCUMENT / MACRO_RELEASE / POSITIONING; price modalities cannot be wrapped into a record.
+- Snapshot references are forbidden: `input.snapshot_ref is None` on every valid record; enforced by the type on every construction path.
+- Source identity must match the P0 `source_id`; re-attribution by wrapping fails closed.
+- Source class/modality consistency is enforced (RESEARCH↔DOCUMENT, POSITIONING↔POSITIONING, MACRO↔MACRO_RELEASE) via the frozen Phase-I mapping.
+- Basis/status consistency is enforced against the live frozen P0 knowledge-basis registry; provenance status is never caller-assertable.
+- Evidence reserved-key protection is enforced at the record boundary: record-level fields masquerading as evidence cannot enter through any construction path (P0 itself accepts arbitrary evidence keys; the record type owns this invariant).
+- Revision/version semantics remain owned by P0 (version 1 = ORIGINAL; version > 1 ≠ ORIGINAL; invalid combinations fail on both construction paths).
+- `ADMIT_INPUTS` remains deferred to the future consumer: zero executable admission calls in record.py; a valid record's `input` flows unchanged into the frozen batch admission gate.
+- Record and component immutability are preserved (frozen dataclass; components own their immutability; no duplicated deep-freeze logic).
+- No storage, network, acquisition, or research semantics were added.
+
+### §103.5 Retained non-blocking observations (not remediated, not elevated)
+
+```text
+BLOCKER:  none
+MAJOR:    none
+MINOR:    none
+
+O-16  Direct construction can accept nested/sequence-wrapped reserved keys
+      in a hand-built P0 evidence payload. This shape is unreachable through
+      the sanctioned create() path because frozen Phase I blocks it at the
+      source; the record type's restatement is a flat top-level check.
+O-17  Direct construction aliases an input source_native_id tuple. The tuple
+      is immutable, so there is no mutation/integrity risk.
+```
+
+The independent re-audit classified both as non-blocking observations. They remain open and are not scheduled; they do not affect the frozen contract guarantees above.
+
+### §103.6 Governance effect
+
+This freeze is an infrastructure milestone only.
+
+It does not:
+
+- activate external-information research;
+- create a candidate;
+- authorize external-data acquisition;
+- authorize Phase III;
+- modify the Research Capacity Hold;
+- reopen closed research;
+- modify BOE governance;
+- modify architecture governance.
+
+The authoritative project state remains RESEARCH CAPACITY HOLD (§99).
+
+### §103.7 Phase III firewall
+
+```text
+PHASE III:                  NOT STARTED
+EXTERNAL DATA ACQUISITION:  NOT AUTHORIZED
+RESEARCH AUTHORIZATION:     UNCHANGED
+
+This record grants no Phase III implementation authorization.
+```
+
+---
+
+## 104. EXTERNAL INFORMATION MVC PHASE III — SCOPE-DEFINITION AUDIT RECORDED (2026-09-21)
+
+**Status:** AUDIT RECORD — BOUNDARY DEFINED, NOT AUTHORIZED — RESEARCH STATE UNCHANGED
+
+This section records the factual result of a read-only Phase III scope-definition / authorization-boundary audit performed on 2026-09-21 (baseline: HEAD bcdfbb7; suite 1092 passed / 0 failures; handoff ending at §103; zero Phase III implementation files; zero acquisition code in the frozen packages). It is factual bookkeeping only. It changes no research conclusion, no governance rule, no architecture decision, and no research priority. The §99 research-capacity hold stands unchanged.
+
+### §104.1 Audit result
+
+The audit's final classification was:
+
+```text
+B — PHASE III CAN BE DEFINED; OWNER AUTHORIZATION REQUIRED
+```
+
+Justification (as derived by the audit): both frozen MVC records name exactly what was deferred (§102.1 / §103.1: "no grouping (Phase III)", "no artifact storage"), and the remaining gap — governed artifact storage plus record grouping/batch semantics feeding the already-frozen P0 admission gate — is genuinely distinct from Phases I/II, constructional rather than acquiritional, fully synthetic-testable, and free of research semantics. Defining Phase III consumed no research authorization. The audit also verified: no hidden Phase III implementation exists under another name; the `data/fred` CSV directory is pre-existing, gitignored, ungoverned historical data with no connection to any frozen contract, and is not Phase III evidence; no closed negative-knowledge line (§99.1) is reopened or supported by the defined boundary.
+
+### §104.2 Minimum defensible boundary as defined (NOT implemented, NOT authorized)
+
+1. **Governed external-artifact store** — local, content-addressed persistence for bytes matching an existing frozen `ArtifactReference`; hash/size/media-type verified on ingest; reference-in/reference-out; zero network operations; fail closed on any mismatch or duplicate conflicting ingest.
+2. **Record grouping / batch semantics** — immutable, versioned grouping of already-constructed Phase-II `ExternalInformationRecord`s: revision chains linked by P0 `record_id`, provenance-preserving admission batches for handoff to the frozen `ADMIT_INPUTS` by a future consumer, and completeness assertions over a group. P0 `compute_record_id` remains the sole identity algorithm; no new identity, basis, modality, or revision taxonomy.
+
+Candidate modules only (would require authorization): `research/external_information/artifact_store.py`, `research/external_information/grouping.py`, plus contract tests. The boundary is fully validable with synthetic bytes, synthetic artifacts, and synthetic record fixtures — no real external data is required at any point.
+
+### §104.3 Explicit exclusions and firewalls (unchanged)
+
+The defined boundary excludes: any acquisition of external data (HTTP/API/scraper/download); source adapters, polling, or calendars; consensus/vintage/event-window semantics; dataset publication into the Dataset Foundation; research-consumer code; new admission reason codes; any BOE dependency in either direction; any `EnvironmentSnapshot` change; any weakening of the frozen modality separation (QUOTE_ACTIVITY_PROFILE ≠ TRADE_VOLUME_PROFILE ≠ TIME_AT_PRICE ≠ TRADE_DIRECTION_PROFILE ≠ ORDER_FLOW_PROFILE ≠ ORDER_BOOK_PROFILE). Information novelty is not mechanism novelty (§98); capability existence is not research authorization (§99). Real external-data acquisition and any research consumer each require separate, explicit owner authorization decisions.
+
+### §104.4 Authorization state (as of this record)
+
+```text
+PHASE III:                  DEFINABLE (CLASSIFICATION B) — OWNER AUTHORIZATION REQUIRED
+PHASE III IMPLEMENTATION:   NOT AUTHORIZED
+EXTERNAL DATA ACQUISITION:  NOT AUTHORIZED
+RESEARCH ACTIVATION:        NOT AUTHORIZED
+NEW CANDIDATE:              NONE
+ECONOMIC VALIDATION:        NONE
+BOE:                        UNCHANGED
+GOVERNANCE:                 UNCHANGED
+RESEARCH CAPACITY:          HOLD
+```
+
+---
+
+## 105. EXTERNAL INFORMATION MVC PHASE III — FROZEN (2026-09-22)
+
+**Status:** COMPLETE — INFRASTRUCTURE FREEZE — RESEARCH STATE UNCHANGED
+
+This section records the formal freeze of External Information MVC Phase III (governed artifact store + record grouping / batch semantics) following its independent implementation audit (final result: PASS — NO BLOCKING FINDINGS). It is factual bookkeeping only. It changes no research conclusion, no governance rule, no architecture decision, and no research priority. The §99 research-capacity hold stands unchanged.
+
+### §105.1 Scope (factual inventory)
+
+Phase III implemented exactly two new modules plus their contract tests and the package export update:
+
+- `research/external_information/artifact_store.py` — `ArtifactStore` + `ArtifactStoreEntry` + `ArtifactStoreError`: governed, local, content-addressed artifact persistence. Content hash (SHA-256 via the frozen Phase I `ArtifactReference`) is the sole identity. `storage_location` is recorded as provenance metadata only and is never used as a filesystem path. Ingest verifies hash and byte size before writing; retrieval verifies before returning; fail closed on any mismatch, missing artifact, or conflicting content. Idempotent on same-content duplicate. Zero network operations.
+
+- `research/external_information/grouping.py` — `RecordBatch` + `RecordBatchError`: immutable, versioned, governed record grouping / batch semantics for already-valid frozen Phase-II `ExternalInformationRecord` objects. Batch identity is deterministic (derived from sorted member `record_id:version` pairs via SHA-256). Membership is deduplicated by identity. Ordering is deterministic (sorted by frozen P0 `sort_key()`). Cross-modality batches are permitted. The batch encodes no research meaning — no same-event, same-market, same-signal, same-outcome, or same-strategy implication.
+
+- `research/external_information/__init__.py` — updated docstring and exports to include Phase III modules (`ArtifactStore`, `ArtifactStoreEntry`, `ArtifactStoreError`, `RecordBatch`, `RecordBatchError`).
+
+- `tests/test_external_information_phase3.py` — 49 targeted tests across 14 test classes covering artifact store (happy path, integrity, missing, duplicate, remove, path security, immutability, metadata, boundary) and record batch (happy path, empty, deduplication, ordering, cross-modality, immutability, serialization, invalid, boundary).
+
+Explicitly NOT part of Phase III (verified absent at freeze): no external-data acquisition; no HTTP/API client code; no web scraping; no source polling; no macro-release acquisition; no consensus acquisition; no positioning acquisition; no document discovery; no research datasets; no event-study infrastructure; no signal generation; no strategy logic; no candidate creation; no economic validation; no backtesting; no BOE changes; no P0 changes; no Phase I changes; no Phase II changes.
+
+### §105.2 Independent verification lineage
+
+Phase III implementation (suite 1092 → 1141) → independent read-only adversarial audit (27 adversarial checks: path traversal defense, content-hash identity, idempotent store, integrity verification, tampered-content rejection, wrong-payload rejection, missing-artifact fail-closed, conflicting-content rejection, remove correctness, has()-integrity, partial-write detection, no-acquisition-code, batch-identity determinism, different-batch-IDs, empty-batch, deduplication, version-preservation, immutability, batch_id-read-only, P0-sort-key ordering, cross-modality, as_dict-deterministic, no-research-semantics, no-knowledge-time-semantics, no-BOE-dependency, no-acquisition-code-in-grouping, non-record-rejection, invalid-batch-version-rejection, naive-created_at-rejection) → **PASS — NO BLOCKING FINDINGS** (no frozen-contract violation, no research-semantic leakage, no acquisition infrastructure, no BOE dependency, repository unchanged by audit).
+
+### §105.3 Verification state at freeze
+
+```text
+Phase III targeted suite:    49 passed / 0 failures   (verified 2026-09-22)
+Full suite:                 1141 passed / 0 failures  (verified 2026-09-22)
+Independent adversarial checks: 27 passed / 0 failures
+Blocking findings:          0
+Major findings:             0
+```
+
+### §105.4 Contract guarantees (independently verified)
+
+Artifact Store:
+
+- `content_hash` remains the governing artifact identity (frozen Phase I `ArtifactReference`).
+- `storage_location` is recorded as metadata only; it is never treated as a filesystem path authority.
+- Stored content is integrity-checked against the reference on both ingest and retrieval.
+- Tampered content is rejected on retrieval.
+- Wrong payload is rejected on ingest.
+- Missing artifact fails closed (raises `ArtifactStoreError`).
+- Conflicting content under the same hash is rejected.
+- Idempotent same-content storage is deterministic.
+- No acquisition code exists in the module.
+
+Record Batch:
+
+- Membership consists exclusively of valid frozen Phase-II `ExternalInformationRecord` objects.
+- Batch identity is deterministic (order-independent, derived from sorted member identities).
+- Ordering is deterministic (sorted by frozen P0 `sort_key()`).
+- Deduplication by `record_id:version` is explicit.
+- Different record versions remain distinct members.
+- Batch state is immutable (frozen dataclass).
+- Serialization (`as_dict()`) is deterministic and JSON-serializable.
+- No research meaning is encoded by grouping.
+
+Architectural:
+
+- No P0 construction by Phase III modules.
+- No mutation of frozen P0 / Phase I / Phase II objects.
+- No knowledge-time mutation.
+- No BOE dependency.
+- No `EnvironmentSnapshot` changes.
+- Modality separation remains intact (DOCUMENT / MACRO_RELEASE / POSITIONING).
+
+### §105.5 Retained non-blocking observations (not remediated, not elevated)
+
+```text
+BLOCKER:  none
+MAJOR:    none
+MINOR:    none
+
+O-Phase3-01  has() verifies artifact integrity by reading the entire artifact.
+              This is potentially I/O-heavy at scale but is not a
+              correctness or security defect.
+
+O-Phase3-02  remove() uses rmdir(), so unexpected residual files may
+              prevent directory removal. This is consistent with
+              fail-closed behavior and is not a correctness defect.
+
+O-Phase3-03  Batch identifiers use the first 16 hexadecimal characters of
+              SHA-256, giving a 64-bit identifier. Sufficient for expected
+              batch volume; non-security-critical.
+```
+
+All three are retained as observations only. None blocks the freeze. None is elevated into remediation. None changes the Phase III boundary.
+
+### §105.6 Governance effect
+
+This freeze is an infrastructure milestone only.
+
+It does NOT:
+
+- activate research;
+- create a candidate;
+- authorize external-data acquisition;
+- authorize Phase IV;
+- reopen closed research;
+- modify the Research Capacity Hold;
+- modify BOE governance;
+- modify P0 governance;
+- modify Phase I;
+- modify Phase II.
+
+The authoritative project state remains RESEARCH CAPACITY HOLD (§99). The existence of the frozen artifact store and batch infrastructure does not constitute permission to populate it with live external data.
+
+```text
+PHASE III:                  FROZEN
+RESEARCH CAPACITY:          HOLD
+ACTIVE RESEARCH:            NONE
+NEW CANDIDATE:              NONE
+EXTERNAL DATA:              NONE ACQUIRED
+BACKTEST:                   NONE
+ECONOMIC VALIDATION:        NONE
+BOE:                        UNCHANGED
+GOVERNANCE:                 UNCHANGED
+```
+
+### §105.7 Phase IV / future-work firewall
+
+```text
+PHASE III:                  FROZEN
+PHASE IV:                   NOT DEFINED / NOT AUTHORIZED
+```
+
+Any future extension requires a separate scope-definition and authorization process. In particular:
+
+- external-data acquisition remains separately governed;
+- research consumption remains separately governed;
+- research semantics remain separately governed.
+
+The existence of the frozen artifact store and batch infrastructure must not be treated as permission to populate it with live external data, conduct research, create candidates, run backtests, or begin Phase IV.
+
+---
+
+## 106. GOLD BANK FORENSIC AUDIT — READ-ONLY GOVERNANCE RECORD (2026-09-27)
+
+**Status:** Completed forensic / read-only audit. No research activation. No state change.
+
+**Source:** Owner-supplied Pine Script (`Price Action Concepts [GOLD BANK INDICATOR]`, short title `GOLD BANKINDICATOR-V1`, `@version=5`, `indicator()` object) provided in conversation; attachment transport unavailable. No repository Pine source exists for it; none was fabricated or stored. Full record: `docs/audits/GOLD_BANK_FORENSIC_AUDIT_2026-09-27.md`.
+
+**Research authorization:** none. **Candidate created:** none. **Experiment executed:** none.
+
+### §106.1 Principal technical findings (preserved)
+
+* Explicit HTF `request.security(..., lookahead = barmerge.lookahead_on)` for D/W/M/12M high-low references — material historical causal-timing risk.
+* Future-confirmed pivots with drawings anchored at the historical pivot location — historical visual-information timing mismatch.
+* Dynamic internal-lookback block misordered (`vv >= 1.5` branch captures all later thresholds; intended adaptive 10→5 mapping inoperative), with persistent `iLen` making behavior path-dependent.
+* "Volumetric order block" terminology overstates data semantics: TradingView `volume` plus bar-state counters only; no bid/ask volume, aggressor direction, order-book depth, or resting-liquidity data.
+* Order blocks are downstream of BOS/CHoCH structure — no independent mechanism established by displaying them as separate zones.
+* Advertised modules incomplete or effectively inert as supplied (FVG inputs, accumulation/distribution inputs, EQH/EQL display, candle/bar-color controls, alert scaffolding portions); implementation inconsistencies in the bearish `"Precise"` order-block branch and weak-low volume labels.
+* No complete executable strategy defined: no unique entry, execution price, stop, target, horizon, sizing, costs, overlap policy, control, or outcome.
+
+### §106.2 Disposition
+
+> GOLD BANK is preserved as an audited descriptive indicator artifact. No genuinely distinct mechanism survived the forensic distinctness review. No candidate, backtest, external-data acquisition, economic validation, or Phase IV activity is authorized or implied. Existing closed/preserved QuantForge lines remain unchanged.
+
+Overlap preserved without reopening: DISC-021 (no new standalone mechanism), DISC-022 (same broader continuation family), DISC-025 + SMC/liquidity-sweep family (overlap, no distinct mechanism), SMC Institutional POI / Idea 2 (conceptual overlap only).
+
+> Future sessions must not restart the GOLD BANK investigation merely by re-labeling, re-parameterizing, combining, or visually selecting BOS/CHoCH/OB/FVG/premium-discount/candlestick/MTF variants unless a separately governed and demonstrably distinct mechanism is established and authorized.
+
+Observation / interpretation / mechanism / opportunity / authorization / state remain distinct. The conclusion is scoped to the supplied indicator as audited — not proof about every possible use of any component.
+
+### §106.3 Governance effect
+
+None. This section is a read-only record:
+
+```text
+RESEARCH CAPACITY:          HOLD
+ACTIVE RESEARCH:            NONE
+NEW CANDIDATE:              NONE
+BACKTEST:                   NONE
+ECONOMIC VALIDATION:        NONE
+EXTERNAL RESEARCH DATA:     NONE
+PHASE IV:                   NOT AUTHORIZED
+BOE:                        UNCHANGED
+GOVERNANCE:                 UNCHANGED
+```
