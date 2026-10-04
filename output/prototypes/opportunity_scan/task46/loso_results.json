@@ -1,0 +1,362 @@
+{
+  "4": {
+    "XAUUSDm": {
+      "n_sym": 10,
+      "mean_bps": 3490.62,
+      "median_bps": 4912.42,
+      "std_bps": 54199.16,
+      "cumul_bps": 31877669.0,
+      "removed_symbol": "XAUUSDm"
+    },
+    "XAGUSDm": {
+      "n_sym": 10,
+      "mean_bps": 2116.82,
+      "median_bps": 4507.16,
+      "std_bps": 49591.64,
+      "cumul_bps": 3479918.9,
+      "removed_symbol": "XAGUSDm"
+    },
+    "USTECm": {
+      "n_sym": 10,
+      "mean_bps": 1952.12,
+      "median_bps": 2783.06,
+      "std_bps": 67086.76,
+      "cumul_bps": -472239.41,
+      "removed_symbol": "USTECm"
+    },
+    "EURUSDm": {
+      "n_sym": 10,
+      "mean_bps": 1933.28,
+      "median_bps": 4256.73,
+      "std_bps": 50507.1,
+      "cumul_bps": 1987670.92,
+      "removed_symbol": "EURUSDm"
+    },
+    "GBPUSDm": {
+      "n_sym": 10,
+      "mean_bps": 2185.03,
+      "median_bps": 4816.93,
+      "std_bps": 49590.38,
+      "cumul_bps": 4047158.11,
+      "removed_symbol": "GBPUSDm"
+    },
+    "USDJPYm": {
+      "n_sym": 10,
+      "mean_bps": 2116.82,
+      "median_bps": 4507.16,
+      "std_bps": 49591.64,
+      "cumul_bps": 3479918.9,
+      "removed_symbol": "USDJPYm"
+    },
+    "EURGBPm": {
+      "n_sym": 10,
+      "mean_bps": 2015.21,
+      "median_bps": 4244.95,
+      "std_bps": 48875.15,
+      "cumul_bps": 3001510.02,
+      "removed_symbol": "EURGBPm"
+    },
+    "AUDNZDm": {
+      "n_sym": 10,
+      "mean_bps": 2333.77,
+      "median_bps": 4591.15,
+      "std_bps": 49704.14,
+      "cumul_bps": 5484597.64,
+      "removed_symbol": "AUDNZDm"
+    },
+    "BTCUSDm": {
+      "n_sym": 10,
+      "mean_bps": 385.09,
+      "median_bps": 3027.15,
+      "std_bps": 44834.11,
+      "cumul_bps": -679688.13,
+      "removed_symbol": "BTCUSDm"
+    },
+    "ETHUSDm": {
+      "n_sym": 10,
+      "mean_bps": 2639.45,
+      "median_bps": 3677.24,
+      "std_bps": 40512.03,
+      "cumul_bps": 22744121.29,
+      "removed_symbol": "ETHUSDm"
+    },
+    "USOILm": {
+      "n_sym": 10,
+      "mean_bps": 2116.82,
+      "median_bps": 4507.16,
+      "std_bps": 49591.64,
+      "cumul_bps": 3479918.9,
+      "removed_symbol": "USOILm"
+    }
+  },
+  "8": {
+    "XAUUSDm": {
+      "n_sym": 10,
+      "mean_bps": 8466.38,
+      "median_bps": 8457.52,
+      "std_bps": 78245.8,
+      "cumul_bps": 11662797600.15,
+      "removed_symbol": "XAUUSDm"
+    },
+    "XAGUSDm": {
+      "n_sym": 10,
+      "mean_bps": 5825.58,
+      "median_bps": 6794.56,
+      "std_bps": 71275.44,
+      "cumul_bps": 286729271.23,
+      "removed_symbol": "XAGUSDm"
+    },
+    "USTECm": {
+      "n_sym": 10,
+      "mean_bps": 5830.09,
+      "median_bps": 5113.04,
+      "std_bps": 96835.07,
+      "cumul_bps": 5558901.44,
+      "removed_symbol": "USTECm"
+    },
+    "EURUSDm": {
+      "n_sym": 10,
+      "mean_bps": 5528.78,
+      "median_bps": 6763.57,
+      "std_bps": 72676.33,
+      "cumul_bps": 141414666.97,
+      "removed_symbol": "EURUSDm"
+    },
+    "GBPUSDm": {
+      "n_sym": 10,
+      "mean_bps": 5884.32,
+      "median_bps": 7054.64,
+      "std_bps": 71267.16,
+      "cumul_bps": 317910260.75,
+      "removed_symbol": "GBPUSDm"
+    },
+    "USDJPYm": {
+      "n_sym": 10,
+      "mean_bps": 5825.58,
+      "median_bps": 6794.56,
+      "std_bps": 71275.44,
+      "cumul_bps": 286729271.23,
+      "removed_symbol": "USDJPYm"
+    },
+    "EURGBPm": {
+      "n_sym": 10,
+      "mean_bps": 5605.2,
+      "median_bps": 6445.25,
+      "std_bps": 70273.59,
+      "cumul_bps": 222363229.09,
+      "removed_symbol": "EURGBPm"
+    },
+    "AUDNZDm": {
+      "n_sym": 10,
+      "mean_bps": 6284.02,
+      "median_bps": 6564.42,
+      "std_bps": 71266.88,
+      "cumul_bps": 640088942.14,
+      "removed_symbol": "AUDNZDm"
+    },
+    "BTCUSDm": {
+      "n_sym": 10,
+      "mean_bps": 3011.57,
+      "median_bps": 5567.7,
+      "std_bps": 65425.67,
+      "cumul_bps": 3468867.41,
+      "removed_symbol": "BTCUSDm"
+    },
+    "ETHUSDm": {
+      "n_sym": 10,
+      "mean_bps": 5994.29,
+      "median_bps": 8407.75,
+      "std_bps": 56956.84,
+      "cumul_bps": 1966727901.57,
+      "removed_symbol": "ETHUSDm"
+    },
+    "USOILm": {
+      "n_sym": 10,
+      "mean_bps": 5825.58,
+      "median_bps": 6794.56,
+      "std_bps": 71275.44,
+      "cumul_bps": 286729271.23,
+      "removed_symbol": "USOILm"
+    }
+  },
+  "13": {
+    "XAUUSDm": {
+      "n_sym": 10,
+      "mean_bps": 14170.89,
+      "median_bps": 9474.59,
+      "std_bps": 100468.34,
+      "cumul_bps": 7894616460176.16,
+      "removed_symbol": "XAUUSDm"
+    },
+    "XAGUSDm": {
+      "n_sym": 10,
+      "mean_bps": 10241.21,
+      "median_bps": 8703.22,
+      "std_bps": 90849.43,
+      "cumul_bps": 40502812296.97,
+      "removed_symbol": "XAGUSDm"
+    },
+    "USTECm": {
+      "n_sym": 10,
+      "mean_bps": 10643.87,
+      "median_bps": 6571.17,
+      "std_bps": 124255.45,
+      "cumul_bps": 176878731.4,
+      "removed_symbol": "USTECm"
+    },
+    "EURUSDm": {
+      "n_sym": 10,
+      "mean_bps": 9796.87,
+      "median_bps": 8283.34,
+      "std_bps": 92418.69,
+      "cumul_bps": 14485998210.55,
+      "removed_symbol": "EURUSDm"
+    },
+    "GBPUSDm": {
+      "n_sym": 10,
+      "mean_bps": 10379.82,
+      "median_bps": 9152.8,
+      "std_bps": 90849.1,
+      "cumul_bps": 51413674755.71,
+      "removed_symbol": "GBPUSDm"
+    },
+    "USDJPYm": {
+      "n_sym": 10,
+      "mean_bps": 10241.21,
+      "median_bps": 8703.22,
+      "std_bps": 90849.43,
+      "cumul_bps": 40502812296.97,
+      "removed_symbol": "USDJPYm"
+    },
+    "EURGBPm": {
+      "n_sym": 10,
+      "mean_bps": 9784.31,
+      "median_bps": 8234.41,
+      "std_bps": 89842.14,
+      "cumul_bps": 21612720692.4,
+      "removed_symbol": "EURGBPm"
+    },
+    "AUDNZDm": {
+      "n_sym": 10,
+      "mean_bps": 11003.84,
+      "median_bps": 9824.78,
+      "std_bps": 90782.32,
+      "cumul_bps": 153596781278.55,
+      "removed_symbol": "AUDNZDm"
+    },
+    "BTCUSDm": {
+      "n_sym": 10,
+      "mean_bps": 6328.45,
+      "median_bps": 6229.35,
+      "std_bps": 82245.95,
+      "cumul_bps": 178359357.84,
+      "removed_symbol": "BTCUSDm"
+    },
+    "ETHUSDm": {
+      "n_sym": 10,
+      "mean_bps": 9821.63,
+      "median_bps": 9735.01,
+      "std_bps": 73013.27,
+      "cumul_bps": 241279652273.78,
+      "removed_symbol": "ETHUSDm"
+    },
+    "USOILm": {
+      "n_sym": 10,
+      "mean_bps": 10241.21,
+      "median_bps": 8703.22,
+      "std_bps": 90849.43,
+      "cumul_bps": 40502812296.97,
+      "removed_symbol": "USOILm"
+    }
+  },
+  "26": {
+    "XAUUSDm": {
+      "n_sym": 10,
+      "mean_bps": 26867.36,
+      "median_bps": 21260.78,
+      "std_bps": 149043.37,
+      "cumul_bps": 6.992031923633047e+17,
+      "removed_symbol": "XAUUSDm"
+    },
+    "XAGUSDm": {
+      "n_sym": 10,
+      "mean_bps": 19141.06,
+      "median_bps": 19644.08,
+      "std_bps": 132918.68,
+      "cumul_bps": 51460293071293.45,
+      "removed_symbol": "XAGUSDm"
+    },
+    "USTECm": {
+      "n_sym": 10,
+      "mean_bps": 19493.6,
+      "median_bps": 13106.93,
+      "std_bps": 181792.6,
+      "cumul_bps": 211548783.67,
+      "removed_symbol": "USTECm"
+    },
+    "EURUSDm": {
+      "n_sym": 10,
+      "mean_bps": 18210.51,
+      "median_bps": 18933.63,
+      "std_bps": 134817.46,
+      "cumul_bps": 6331134357017.93,
+      "removed_symbol": "EURUSDm"
+    },
+    "GBPUSDm": {
+      "n_sym": 10,
+      "mean_bps": 19294.85,
+      "median_bps": 20203.85,
+      "std_bps": 132877.17,
+      "cumul_bps": 67366149516867.55,
+      "removed_symbol": "GBPUSDm"
+    },
+    "USDJPYm": {
+      "n_sym": 10,
+      "mean_bps": 19141.06,
+      "median_bps": 19644.08,
+      "std_bps": 132918.68,
+      "cumul_bps": 51460293071293.45,
+      "removed_symbol": "USDJPYm"
+    },
+    "EURGBPm": {
+      "n_sym": 10,
+      "mean_bps": 18359.85,
+      "median_bps": 20028.05,
+      "std_bps": 131997.43,
+      "cumul_bps": 17415883643571.82,
+      "removed_symbol": "EURGBPm"
+    },
+    "AUDNZDm": {
+      "n_sym": 10,
+      "mean_bps": 20699.01,
+      "median_bps": 20242.47,
+      "std_bps": 132625.72,
+      "cumul_bps": 797161605761216.1,
+      "removed_symbol": "AUDNZDm"
+    },
+    "BTCUSDm": {
+      "n_sym": 10,
+      "mean_bps": 10338.23,
+      "median_bps": 19701.71,
+      "std_bps": 115607.53,
+      "cumul_bps": 528887147.03,
+      "removed_symbol": "BTCUSDm"
+    },
+    "ETHUSDm": {
+      "n_sym": 10,
+      "mean_bps": 19865.02,
+      "median_bps": 20084.31,
+      "std_bps": 108105.86,
+      "cumul_bps": 2.8084246396486024e+16,
+      "removed_symbol": "ETHUSDm"
+    },
+    "USOILm": {
+      "n_sym": 10,
+      "mean_bps": 19141.06,
+      "median_bps": 19644.08,
+      "std_bps": 132918.68,
+      "cumul_bps": 51460293071293.45,
+      "removed_symbol": "USOILm"
+    }
+  }
+}

@@ -1,0 +1,178 @@
+{
+  "run02_windows": {
+    "4": {
+      "act_mean_bps": 2116.822229307712,
+      "act_median_bps": 4507.158798752816,
+      "act_std_bps": 49591.63772988472,
+      "cumul_ret_bps": 3479918.9033641415,
+      "ann_ret_bps": 32367.791896139363,
+      "mdd_bps": 6175569.992872812,
+      "n_wk": 1750,
+      "horizon_weeks": 4,
+      "n_weekly_dates": 1750,
+      "n_completed_loops": 1750,
+      "cost_tiers_bps": {
+        "10": {
+          "gross_bps": 3704438.9013,
+          "entry_exit_cost_bps": 122087.4266,
+          "net_bps": 3582351.4747,
+          "turnover_bps": 61043713.2774,
+          "n_orders": 1750
+        },
+        "5": {
+          "gross_bps": 3704438.9013,
+          "entry_exit_cost_bps": 61043.7133,
+          "net_bps": 3643395.188,
+          "turnover_bps": 61043713.2774,
+          "n_orders": 1750
+        },
+        "0": {
+          "gross_bps": 3704438.9013,
+          "entry_exit_cost_bps": 0.0,
+          "net_bps": 3704438.9013,
+          "turnover_bps": 61043713.2774,
+          "n_orders": 1750
+        }
+      }
+    },
+    "8": {
+      "act_mean_bps": 5825.5796430398805,
+      "act_median_bps": 6794.564026221509,
+      "act_std_bps": 71275.43917981842,
+      "cumul_ret_bps": 286729271.22757995,
+      "ann_ret_bps": 51056.21323328457,
+      "mdd_bps": 12325538.584143097,
+      "n_wk": 1744,
+      "horizon_weeks": 8,
+      "n_weekly_dates": 1744,
+      "n_completed_loops": 1744,
+      "cost_tiers_bps": {
+        "10": {
+          "gross_bps": 10159810.8975,
+          "entry_exit_cost_bps": 179104.442,
+          "net_bps": 9980706.4555,
+          "turnover_bps": 89552221.0212,
+          "n_orders": 1744
+        },
+        "5": {
+          "gross_bps": 10159810.8975,
+          "entry_exit_cost_bps": 89552.221,
+          "net_bps": 10070258.6765,
+          "turnover_bps": 89552221.0212,
+          "n_orders": 1744
+        },
+        "0": {
+          "gross_bps": 10159810.8975,
+          "entry_exit_cost_bps": 0.0,
+          "net_bps": 10159810.8975,
+          "turnover_bps": 89552221.0212,
+          "n_orders": 1744
+        }
+      }
+    },
+    "13": {
+      "act_mean_bps": 10241.209402721426,
+      "act_median_bps": 8703.216765148718,
+      "act_std_bps": 90849.43116679965,
+      "cumul_ret_bps": 40502812296.97107,
+      "ann_ret_bps": 62653.923668244846,
+      "mdd_bps": 20469414.07873906,
+      "n_wk": 1738,
+      "horizon_weeks": 13,
+      "n_weekly_dates": 1738,
+      "n_completed_loops": 1738,
+      "cost_tiers_bps": {
+        "10": {
+          "gross_bps": 17799221.9419,
+          "entry_exit_cost_bps": 231353.386,
+          "net_bps": 17567868.5559,
+          "turnover_bps": 115676692.9892,
+          "n_orders": 1738
+        },
+        "5": {
+          "gross_bps": 17799221.9419,
+          "entry_exit_cost_bps": 115676.693,
+          "net_bps": 17683545.2489,
+          "turnover_bps": 115676692.9892,
+          "n_orders": 1738
+        },
+        "0": {
+          "gross_bps": 17799221.9419,
+          "entry_exit_cost_bps": 0.0,
+          "net_bps": 17799221.9419,
+          "turnover_bps": 115676692.9892,
+          "n_orders": 1738
+        }
+      }
+    },
+    "26": {
+      "act_mean_bps": 19141.055219614416,
+      "act_median_bps": 19644.08411094261,
+      "act_std_bps": 132918.68287902675,
+      "cumul_ret_bps": 51460293071293.445,
+      "ann_ret_bps": 76548.24540624916,
+      "mdd_bps": 39055295.05651776,
+      "n_wk": 1720,
+      "horizon_weeks": 26,
+      "n_weekly_dates": 1720,
+      "n_completed_loops": 1720,
+      "cost_tiers_bps": {
+        "10": {
+          "gross_bps": 32922614.9777,
+          "entry_exit_cost_bps": 348253.9211,
+          "net_bps": 32574361.0566,
+          "turnover_bps": 174126960.574,
+          "n_orders": 1720
+        },
+        "5": {
+          "gross_bps": 32922614.9777,
+          "entry_exit_cost_bps": 174126.9606,
+          "net_bps": 32748488.0171,
+          "turnover_bps": 174126960.574,
+          "n_orders": 1720
+        },
+        "0": {
+          "gross_bps": 32922614.9777,
+          "entry_exit_cost_bps": 0.0,
+          "net_bps": 32922614.9777,
+          "turnover_bps": 174126960.574,
+          "n_orders": 1720
+        }
+      }
+    }
+  },
+  "null_control": {
+    "4": {
+      "observed_mean_bps": 2116.8222,
+      "null_mean_bps": -72.9605,
+      "null_std_bps": 2170.5879,
+      "z": 1.009,
+      "n_sims": 300,
+      "n_wk": 1750
+    },
+    "8": {
+      "observed_mean_bps": 5825.5796,
+      "null_mean_bps": -138.3047,
+      "null_std_bps": 4640.0071,
+      "z": 1.285,
+      "n_sims": 300,
+      "n_wk": 1744
+    },
+    "13": {
+      "observed_mean_bps": 10241.2094,
+      "null_mean_bps": -241.7147,
+      "null_std_bps": 7154.2446,
+      "z": 1.465,
+      "n_sims": 300,
+      "n_wk": 1738
+    },
+    "26": {
+      "observed_mean_bps": 19141.0552,
+      "null_mean_bps": -480.3401,
+      "null_std_bps": 14428.1034,
+      "z": 1.36,
+      "n_sims": 300,
+      "n_wk": 1720
+    }
+  }
+}
