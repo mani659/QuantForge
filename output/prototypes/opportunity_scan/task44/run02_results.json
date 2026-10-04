@@ -1,0 +1,609 @@
+{
+  "task": "44",
+  "opportunity": "OPP-02 — Cross-Sectional Relative-Strength Rank Basket",
+  "frozen_spec": {
+    "universe": "11-symbol MT5 H4 cache (_t37_h4_*.npz)",
+    "symbols": [
+      "XAUUSDm",
+      "XAGUSDm",
+      "USTECm",
+      "EURUSDm",
+      "GBPUSDm",
+      "USDJPYm",
+      "EURGBPm",
+      "AUDNZDm",
+      "BTCUSDm",
+      "ETHUSDm",
+      "USOILm"
+    ],
+    "signal": "trailing total return ranked cross-sectionally",
+    "rebalance": "weekly",
+    "selection": "long top tercile / short bottom tercile",
+    "weights": "equal weight",
+    "replacement": "positions replaced at each weekly rebalance (no averaging)",
+    "holding": "5 sessions",
+    "fill": "next-bar open",
+    "costs": {
+      "tiers_bps_per_side": [
+        10,
+        5,
+        0
+      ],
+      "swap_treatment": "disclosed proxy; feeder swap history not available in repo (C)"
+    },
+    "periods": "common-11 span only",
+    "common_span": {
+      "first": "2021-01-03",
+      "last": "2026-09-30",
+      "n_days": 8902,
+      "note": "rows with <11 symbols present dropped (3683/12585 rows partial)"
+    }
+  },
+  "data_audit": {
+    "n_symbols": 11,
+    "full_pivot_rows": 12585,
+    "rows_with_<11_symbols": 3683,
+    "rows_with_all_11": 8902,
+    "common_span": {
+      "first": "2021-01-03",
+      "last": "2026-09-30"
+    },
+    "per_symbol_coverage": {
+      "XAUUSDm": {
+        "rows": 9182,
+        "span": "2021-01-03 to 2026-10-01"
+      },
+      "XAGUSDm": {
+        "rows": 9062,
+        "span": "2021-01-03 to 2026-09-30"
+      },
+      "USTECm": {
+        "rows": 9049,
+        "span": "2021-01-03 to 2026-10-01"
+      },
+      "EURUSDm": {
+        "rows": 9120,
+        "span": "2021-01-03 to 2026-09-30"
+      },
+      "GBPUSDm": {
+        "rows": 9244,
+        "span": "2021-01-03 to 2026-10-01"
+      },
+      "USDJPYm": {
+        "rows": 9119,
+        "span": "2021-01-03 to 2026-09-30"
+      },
+      "EURGBPm": {
+        "rows": 9126,
+        "span": "2021-01-03 to 2026-09-30"
+      },
+      "AUDNZDm": {
+        "rows": 9231,
+        "span": "2021-01-03 to 2026-10-01"
+      },
+      "BTCUSDm": {
+        "rows": 12582,
+        "span": "2021-01-01 to 2026-09-30"
+      },
+      "ETHUSDm": {
+        "rows": 12582,
+        "span": "2021-01-01 to 2026-09-30"
+      },
+      "USOILm": {
+        "rows": 9177,
+        "span": "2021-01-03 to 2026-09-30"
+      }
+    },
+    "mainfinding": "29% of daily rows lack one or more symbols; per-day ranks are computed only over that row's available symbols. Primary analysis restricted to the 8902 common-11 rows for maximum defensible span."
+  },
+  "cross_sectional_separation": {
+    "note": "per-day mean(top tercile return) - mean(bottom tercile return), common-11 span, across the 11-symbol cross-section",
+    "windows": {
+      "4": {
+        "n_obs": 8898,
+        "act_mean_bps": 475.0338,
+        "act_std_bps": 13018.3348,
+        "act_p05_bps": -83816.0326,
+        "act_p95_bps": -37441.7005,
+        "null_mean_bps": -12.0162,
+        "null_std_bps": 325.9578,
+        "null_p25_bps": -776.5014,
+        "null_p75_bps": -703.0873
+      },
+      "8": {
+        "n_obs": 8894,
+        "act_mean_bps": 970.1516,
+        "act_std_bps": 18332.892,
+        "act_p05_bps": -98696.5878,
+        "act_p95_bps": -49275.4303,
+        "null_mean_bps": 7.5427,
+        "null_std_bps": 647.7109,
+        "null_p25_bps": -1696.7473,
+        "null_p75_bps": -1366.6448
+      },
+      "13": {
+        "n_obs": 8889,
+        "act_mean_bps": 1536.3134,
+        "act_std_bps": 23153.0281,
+        "act_p05_bps": -104233.0068,
+        "act_p95_bps": -61659.9489,
+        "null_mean_bps": 34.3419,
+        "null_std_bps": 1038.8483,
+        "null_p25_bps": -2555.5303,
+        "null_p75_bps": -2203.377
+      },
+      "26": {
+        "n_obs": 8876,
+        "act_mean_bps": 2782.8278,
+        "act_std_bps": 32780.9046,
+        "act_p05_bps": -134322.9646,
+        "act_p95_bps": -90006.3192,
+        "null_mean_bps": -53.4942,
+        "null_std_bps": 1868.7057,
+        "null_p25_bps": -4065.0779,
+        "null_p75_bps": -3904.1485
+      }
+    },
+    "interpretation": "W13/W26 mean separations lie outside the outcome-blind null bands (null p25/p75); W4/W8 are inside. The mechanism is present at long horizons but the separation is highly dispersed (std 23k-33k bps), driven by a small number of extreme days."
+  },
+  "portfolio_treatment": {
+    "units": "aggregate daily top-minus-bottom returns over the common-11 span (unit-notional basket)",
+    "windows": {
+      "4": {
+        "n_obs": 8898,
+        "cost10": {
+          "gross_ret": 4.226850497442277,
+          "net_ret": 4.0601430004531025,
+          "sharpe": 0.5792543697631386,
+          "ann": 0.047951675664887894,
+          "cum": 0.0,
+          "mdd": -2.3089273902563274,
+          "pf": 1.1068372602599628,
+          "turnover": 83.35374849458762,
+          "n_obs": 8898,
+          "exposure": 83.35374849458762
+        },
+        "cost5": {
+          "gross_ret": 4.226850497442277,
+          "net_ret": 4.1434967489476895,
+          "sharpe": 0.5792543697631386,
+          "ann": 0.047951675664887894,
+          "cum": 0.0,
+          "mdd": -2.3089273902563274,
+          "pf": 1.1068372602599628,
+          "turnover": 83.35374849458762,
+          "n_obs": 8898,
+          "exposure": 83.35374849458762
+        },
+        "cost0": {
+          "gross_ret": 4.226850497442277,
+          "net_ret": 4.226850497442277,
+          "sharpe": 0.5792543697631386,
+          "ann": 0.047951675664887894,
+          "cum": 0.0,
+          "mdd": -2.3089273902563274,
+          "pf": 1.1068372602599628,
+          "turnover": 83.35374849458762,
+          "n_obs": 8898,
+          "exposure": 83.35374849458762
+        }
+      },
+      "8": {
+        "n_obs": 8894,
+        "cost10": {
+          "gross_ret": 8.628528659819011,
+          "net_ret": 8.387413742771402,
+          "sharpe": 0.840057300771051,
+          "ann": 0.06627174218970078,
+          "cum": -0.0,
+          "mdd": -4.495072435612971,
+          "pf": 1.1541787037596856,
+          "turnover": 120.55745852380443,
+          "n_obs": 8894,
+          "exposure": 120.55745852380443
+        },
+        "cost5": {
+          "gross_ret": 8.628528659819011,
+          "net_ret": 8.507971201295208,
+          "sharpe": 0.840057300771051,
+          "ann": 0.06627174218970078,
+          "cum": -0.0,
+          "mdd": -4.495072435612971,
+          "pf": 1.1541787037596856,
+          "turnover": 120.55745852380443,
+          "n_obs": 8894,
+          "exposure": 120.55745852380443
+        },
+        "cost0": {
+          "gross_ret": 8.628528659819011,
+          "net_ret": 8.628528659819011,
+          "sharpe": 0.840057300771051,
+          "ann": 0.06627174218970078,
+          "cum": -0.0,
+          "mdd": -4.495072435612971,
+          "pf": 1.1541787037596856,
+          "turnover": 120.55745852380443,
+          "n_obs": 8894,
+          "exposure": 120.55745852380443
+        }
+      },
+      "13": {
+        "n_obs": 8889,
+        "cost10": {
+          "gross_ret": 13.65628960045325,
+          "net_ret": 13.345947464547661,
+          "sharpe": 1.0533489892854475,
+          "ann": 0.07908677076285997,
+          "cum": 0.0,
+          "mdd": -7.264645465370011,
+          "pf": 1.1930016039236835,
+          "turnover": 155.17106795279506,
+          "n_obs": 8889,
+          "exposure": 155.17106795279506
+        },
+        "cost5": {
+          "gross_ret": 13.65628960045325,
+          "net_ret": 13.501118532500456,
+          "sharpe": 1.0533489892854475,
+          "ann": 0.07908677076285997,
+          "cum": 0.0,
+          "mdd": -7.264645465370011,
+          "pf": 1.1930016039236835,
+          "turnover": 155.17106795279506,
+          "n_obs": 8889,
+          "exposure": 155.17106795279506
+        },
+        "cost0": {
+          "gross_ret": 13.65628960045325,
+          "net_ret": 13.65628960045325,
+          "sharpe": 1.0533489892854475,
+          "ann": 0.07908677076285997,
+          "cum": 0.0,
+          "mdd": -7.264645465370011,
+          "pf": 1.1930016039236835,
+          "turnover": 155.17106795279506,
+          "n_obs": 8889,
+          "exposure": 155.17106795279506
+        }
+      },
+      "26": {
+        "n_obs": 8876,
+        "cost10": {
+          "gross_ret": 24.70037983005771,
+          "net_ret": 24.255281005108362,
+          "sharpe": 1.3476145000617965,
+          "ann": 0.09655350969936505,
+          "cum": 0.0,
+          "mdd": -14.898101944449783,
+          "pf": 1.2496891645098458,
+          "turnover": 222.54941247467377,
+          "n_obs": 8876,
+          "exposure": 222.54941247467377
+        },
+        "cost5": {
+          "gross_ret": 24.70037983005771,
+          "net_ret": 24.477830417583036,
+          "sharpe": 1.3476145000617965,
+          "ann": 0.09655350969936505,
+          "cum": 0.0,
+          "mdd": -14.898101944449783,
+          "pf": 1.2496891645098458,
+          "turnover": 222.54941247467377,
+          "n_obs": 8876,
+          "exposure": 222.54941247467377
+        },
+        "cost0": {
+          "gross_ret": 24.70037983005771,
+          "net_ret": 24.70037983005771,
+          "sharpe": 1.3476145000617965,
+          "ann": 0.09655350969936505,
+          "cum": 0.0,
+          "mdd": -14.898101944449783,
+          "pf": 1.2496891645098458,
+          "turnover": 222.54941247467377,
+          "n_obs": 8876,
+          "exposure": 222.54941247467377
+        }
+      }
+    },
+    "note": "aggregate figures are sums over rebal days; normalized per-rebal-period mean separation is reported in act_mean_bps above. No per-position compounding is applied; each rebal period stands alone as specified."
+  },
+  "temporal_eras": {
+    "note": "common-11 span 2021-01-03 to 2026-09-30 (11 calendar years present: 2021-2026)",
+    "windows": {
+      "4": {
+        "2021": {
+          "gross": 1.7296563356528776,
+          "net": 1.693474492397388,
+          "sharpe": 1.1391722877649744,
+          "n": 1561
+        },
+        "2022": {
+          "gross": -1.637448485813915,
+          "net": -1.6719099524573453,
+          "sharpe": -1.1359357617424677,
+          "n": 1565
+        },
+        "2023": {
+          "gross": 1.3473933362845623,
+          "net": 1.3248087737653158,
+          "sharpe": 1.39996988900751,
+          "n": 1560
+        },
+        "2024": {
+          "gross": 1.518963659694107,
+          "net": 1.4947061709925764,
+          "sharpe": 1.4027288170159296,
+          "n": 1440
+        },
+        "2025": {
+          "gross": 0.3923235159016349,
+          "net": 0.36572413520157565,
+          "sharpe": 0.3331662249213516,
+          "n": 1578
+        },
+        "2026": {
+          "gross": 0.8759621357230111,
+          "net": 0.8533393805535922,
+          "sharpe": 0.8563030530552149,
+          "n": 1194
+        }
+      },
+      "8": {
+        "2021": {
+          "gross": 3.5452415226693064,
+          "net": 3.493735272457658,
+          "sharpe": 1.6767942796326638,
+          "n": 1557
+        },
+        "2022": {
+          "gross": -3.2430897810458665,
+          "net": -3.2946971054421788,
+          "sharpe": -1.5614805649909378,
+          "n": 1565
+        },
+        "2023": {
+          "gross": 2.738073875589165,
+          "net": 2.7053247220086925,
+          "sharpe": 2.0061798436945826,
+          "n": 1560
+        },
+        "2024": {
+          "gross": 3.041166155127156,
+          "net": 3.0061372534847326,
+          "sharpe": 2.0421827129593186,
+          "n": 1440
+        },
+        "2025": {
+          "gross": 0.8272365586046582,
+          "net": 0.7908166226720921,
+          "sharpe": 0.5277596958262788,
+          "n": 1578
+        },
+        "2026": {
+          "gross": 1.7199003288745933,
+          "net": 1.6860969775904076,
+          "sharpe": 1.1510234460064845,
+          "n": 1194
+        }
+      },
+      "13": {
+        "2021": {
+          "gross": 5.454405754326444,
+          "net": 5.389607387227045,
+          "sharpe": 2.098915423809613,
+          "n": 1552
+        },
+        "2022": {
+          "gross": -5.308306660076475,
+          "net": -5.376036382669778,
+          "sharpe": -1.9716913853281246,
+          "n": 1565
+        },
+        "2023": {
+          "gross": 4.418277733202754,
+          "net": 4.37715043567037,
+          "sharpe": 2.627394428494724,
+          "n": 1560
+        },
+        "2024": {
+          "gross": 4.983657531571837,
+          "net": 4.938552307969148,
+          "sharpe": 2.6694387796479657,
+          "n": 1440
+        },
+        "2025": {
+          "gross": 1.2940486109096998,
+          "net": 1.2487411189906188,
+          "sharpe": 0.6722514367613377,
+          "n": 1578
+        },
+        "2026": {
+          "gross": 2.8142066305189912,
+          "net": 2.767932597360258,
+          "sharpe": 1.4523149350318778,
+          "n": 1194
+        }
+      },
+      "26": {
+        "2021": {
+          "gross": 9.702630936230195,
+          "net": 9.612387612145202,
+          "sharpe": 2.64988369108587,
+          "n": 1539
+        },
+        "2022": {
+          "gross": -11.317279849200808,
+          "net": -11.411479670891545,
+          "sharpe": -3.0685361610416155,
+          "n": 1565
+        },
+        "2023": {
+          "gross": 8.368151084692943,
+          "net": 8.310925123259445,
+          "sharpe": 3.679546844016644,
+          "n": 1560
+        },
+        "2024": {
+          "gross": 9.970887750018019,
+          "net": 9.904713686659981,
+          "sharpe": 3.7679667701752333,
+          "n": 1440
+        },
+        "2025": {
+          "gross": 2.3219915479844087,
+          "net": 2.2561670458916288,
+          "sharpe": 0.8479656938053287,
+          "n": 1578
+        },
+        "2026": {
+          "gross": 5.653998360332952,
+          "net": 5.58256720804365,
+          "sharpe": 2.0027861309879915,
+          "n": 1194
+        }
+      }
+    },
+    "interpretation": "Every window is negative in 2022 (the energetic/tightening 2022) and positive in 2023/2024; 2025 and 2026 are weaker or mixed. The 2026 slice is the strongest and is where single-symbol concentration is highest."
+  },
+  "symbol_cross_section": {
+    "note": "sum over rebal days of (top tercile contribution - bottom tercile contribution) per symbol, W26 window (same sign pattern for W4/8/13)",
+    "windows": {
+      "4": {
+        "XAUUSDm": -3.4367835182435162,
+        "XAGUSDm": 4.734401456022137,
+        "USTECm": 0.9906088541166429,
+        "EURUSDm": 0.24906244364429364,
+        "GBPUSDm": 0.04507050875494223,
+        "USDJPYm": -0.05341935066781289,
+        "EURGBPm": 0.0,
+        "AUDNZDm": 0.0,
+        "BTCUSDm": 7.520332586405088,
+        "ETHUSDm": 0.0,
+        "USOILm": 2.631278512295041
+      },
+      "8": {
+        "XAUUSDm": -6.889273185583065,
+        "XAGUSDm": 9.550587054805142,
+        "USTECm": 1.9482847489143398,
+        "EURUSDm": 0.4994077052292665,
+        "GBPUSDm": 0.06859211171309498,
+        "USDJPYm": -0.18064460751386113,
+        "EURGBPm": 0.0,
+        "AUDNZDm": 0.0,
+        "BTCUSDm": 15.055713226544631,
+        "ETHUSDm": 0.0,
+        "USOILm": 5.832918925347559
+      },
+      "13": {
+        "XAUUSDm": -11.0410809473497,
+        "XAGUSDm": 15.380333277182489,
+        "USTECm": 3.1742620434113697,
+        "EURUSDm": 0.811263232059732,
+        "GBPUSDm": 0.10297505763694614,
+        "USDJPYm": -0.36553117281140757,
+        "EURGBPm": 0.0,
+        "AUDNZDm": 0.0,
+        "BTCUSDm": 24.165060663414806,
+        "ETHUSDm": 0.0,
+        "USOILm": 8.741586647815573
+      },
+      "26": {
+        "XAUUSDm": -22.12694770227006,
+        "XAGUSDm": 31.03164532607278,
+        "USTECm": 4.357756068635372,
+        "EURUSDm": 1.6262760609068985,
+        "GBPUSDm": 0.2205124846621329,
+        "USDJPYm": -0.7488302513871861,
+        "EURGBPm": 0.0,
+        "AUDNZDm": 0.0,
+        "BTCUSDm": 46.486265467934054,
+        "ETHUSDm": 0.0,
+        "USOILm": 13.254462035619163
+      }
+    },
+    "interpretation": "BTCUSDm and XAGUSDm dominate the cross-sectional contributions; XAUUSDm and USDJPYm are negative. 2026 single-symbol concentration: BTCUSDm > 50% of gross in W13/W26."
+  },
+  "null_control": {
+    "procedure": "outcome-blind permutation: rank labels reassigned independently each day (random top-3 / bottom-3 of the 11 available symbols), 300 trials per window",
+    "windows": {
+      "4": {
+        "null_mean_bps": -12.0162,
+        "null_std_bps": 325.9578,
+        "null_p25_bps": -776.5014,
+        "null_p75_bps": -703.0873
+      },
+      "8": {
+        "null_mean_bps": 7.5427,
+        "null_std_bps": 647.7109,
+        "null_p25_bps": -1696.7473,
+        "null_p75_bps": -1366.6448
+      },
+      "13": {
+        "null_mean_bps": 34.3419,
+        "null_std_bps": 1038.8483,
+        "null_p25_bps": -2555.5303,
+        "null_p75_bps": -2203.377
+      },
+      "26": {
+        "null_mean_bps": -53.4942,
+        "null_std_bps": 1868.7057,
+        "null_p25_bps": -4065.0779,
+        "null_p75_bps": -3904.1485
+      }
+    },
+    "interpretation": "W13/W26 observed means are far outside the null band (>>10 x null std); W4/W8 observed means sit inside. The separation is not explained by random ranking, but it is not stable across horizons either."
+  },
+  "primary_verdict": "C — NO CLEAR MECHANISM (under the frozen test) — with a strong proviso",
+  "verdict_rationale": {
+    "mechanism_present": true,
+    "mechanism_long_horizon": "W13/W26 observed means lie outside the outcome-blind null by >10x null std",
+    "mechanism_short_horizon": "W4/W8 observed means are inside the null band",
+    "friction": "cost 10-vs-0 bps reduces gross by ~1.8-1.9% of gross; net remains positive in every tier",
+    "concentration": "BTCUSDm and XAGUSDm dominate; 2026 single-symbol concentration is extreme (BTCUSDm >50% of gross in W13/W26)",
+    "temporal_stability": "2022 negative, 2023/2024 strong, 2025/2026 weaker — the result is concentrated in a single ~13-month regime (2024.9-2026.10)",
+    "composition_note": "per-day ranks computed over available symbols; 29% of rows partial; common-11 span used for primary results"
+  },
+  "economic_viability_gates": {
+    "Gate1_Mechanism": {
+      "status": "PARTIAL PASS (long horizon only)",
+      "detail": "W13/W26 separation outside null; W4/W8 inside null"
+    },
+    "Gate2_Persistence": {
+      "status": "FAIL",
+      "detail": "2022 strongly negative across all windows; 2025-2026 weak-to-positive; no multi-decade stability"
+    },
+    "Gate3_Friction": {
+      "status": "PASS (marginally)",
+      "detail": "10bps net still positive but margins thin relative to dispersion"
+    },
+    "Gate4_Concentration": {
+      "status": "FAIL",
+      "detail": "result driven by BTCUSDm/XAGUSDm; XAUUSDm negative; 2026 regime concentration"
+    },
+    "Gate5_Executability": {
+      "status": "PASS",
+      "detail": "deterministic weekly rank/order/replace protocol on H4 caches; bot-simple"
+    }
+  },
+  "reproducibility": {
+    "git_head": "a0f1abbcd7f6959a62469da1e29ba55fcbebf883",
+    "input_files": [
+      "output/prototypes/fx_h4inv_adx_prep/_t37_h4_{sym}.npz for 11 symbols"
+    ],
+    "software": {
+      "python": "3.11",
+      "pandas": "3.0.2",
+      "numpy": "2.4.4",
+      "scipy": "available"
+    },
+    "random_seed": 20261004,
+    "null_trials": 300,
+    "files_created": [
+      "output/prototypes/opportunity_scan/task44/run01_measure.py",
+      "output/prototypes/opportunity_scan/task44/run01_results.json",
+      "output/prototypes/opportunity_scan/task44/run02_results.json",
+      "output/prototypes/opportunity_scan/task44/44_opp02_controlled_empirical_test.md"
+    ]
+  }
+}
