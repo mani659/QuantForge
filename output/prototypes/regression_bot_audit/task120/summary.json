@@ -1,0 +1,51 @@
+{
+ "ci95": {
+  "net2": [
+   -6.564730537974575,
+   8.842688765823041
+  ],
+  "net3": [
+   -7.615262341771979,
+   7.9507892405063965
+  ]
+ },
+ "config": {
+  "atr_len": 14,
+  "boot_b": 10000,
+  "cost_primary": 2.0,
+  "cost_stress": 3.0,
+  "entry_open": "08:35",
+  "exit_open": "09:30",
+  "holm_alpha": 0.05,
+  "max_per_day": 1,
+  "rule": "V9 CAND-G0-025",
+  "seed": 20261013,
+  "signal_open": "08:30",
+  "tr_mult": 3.0,
+  "tz": "America/New_York"
+ },
+ "count_disposition": "contingency: full-set primary; verification-subset subclause UNEXECUTABLE (no G1 event list on any record)",
+ "holm_p": {
+  "net2": 0.7772,
+  "net3": 0.7772
+ },
+ "mean_net2": 1.1518164556963124,
+ "mean_net3": 0.1518164556963124,
+ "n": 158,
+ "skips": {
+  "incomplete": 0,
+  "no_atr": 0,
+  "zero_dir": 0
+ },
+ "t1_halves": [
+  0.022645569620607015,
+  2.280987341772018
+ ],
+ "t1_pass": true,
+ "t3_pass": false,
+ "t4": {
+  "continued": 84,
+  "denom": 158,
+  "flag": true
+ }
+}

@@ -1,0 +1,11 @@
+# TASK128 manifest
+
+| file | bytes | sha256 |
+|---|---:|---|
+| 128_closed_mechanism_distinction.md | 3212 | 69976a42a5dac5af3be5782f74dd995e5f107b0df983a5a25a7e46bdfbf5256c |
+| 128_direction_comparison.csv | 1379 | c70c629466c8afc01e6b3c513bb27eb041b99b97953f77929fad6722c8c6668f |
+| 128_owner_decision_proposal.md | 2775 | db052eaec89bb183dc4752686e50b80e317b7d14e8d0c1a000e45a0ab9fe3bcc |
+| 128_selected_experiment_preregistration_draft.md | 3664 | 50f322a6d02061c0361b870cc300e15172004a84cf5fa3dd112392a68b2cd618 |
+| 128_source_state_and_data_readiness.md | 1850 | 1bfdddf0ed917848e8ebe743147114a8493517521fdb8b26a72dec892501c19d |
+| 128_task_report.md | 1240 | 77abbf480c4ce5cefe9bbbb9a930acc6b292f2a7ccc214f645ed193e0aefeb23 |
+

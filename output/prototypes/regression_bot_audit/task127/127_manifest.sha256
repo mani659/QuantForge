@@ -1,0 +1,10 @@
+# TASK127 manifest
+
+| file | bytes | sha256 |
+|---|---:|---|
+| 127_data_gap_report.md | 2096 | 93811553215c3312930112d81fbb1e040649346dad623b4cae7b533f6583442e |
+| 127_dataset_inventory.md | 2752 | 92f1323e31c083caa8419d37d1766564a45229b084ae964f327b1433982c9c94 |
+| 127_decision_report.md | 1822 | 2e22cacff388c61e8daf54db3300de48a10344ce1ef5b591be707f283bb019bc |
+| 127_task_report.md | 1158 | 032bed5cdd1442c06aaba8e4fc26b750e746e185eef961ca7c0de51d7dae6661 |
+| 127_universe_feasibility_matrix.csv | 1499 | 79974329eae2068d735419e6e3ea90b2a7ec2f50841734725a295c126b59e717 |
+

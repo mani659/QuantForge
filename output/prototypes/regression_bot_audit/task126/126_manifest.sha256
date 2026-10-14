@@ -1,0 +1,12 @@
+# TASK126 manifest
+
+| file | bytes | sha256 |
+|---|---:|---|
+| 126_calibration_preregistration.md | 1969 | 9bcb714201d6b83a56ef974c94b517dffe3692f83fa4586cea77c78765e147ba |
+| 126_calibration_results.md | 1863 | bbd706e23c2746e2ba79f6a9269bf6d07e139c63ae9d527bcd734a9d6251346a |
+| 126_calibration_study.py | 5071 | afaa11946df905a349b0a3982a042a2b318c55ccb5a47e3447b30d02cad8b278 |
+| 126_decision_report.md | 2854 | debe33b964e0aa91d3a423598e034039692d01eafc400db059c0bf634dfd3001 |
+| 126_method_audit.md | 3790 | 1f38769f166ec8c7756e6ff6a91f3b6dad38c14e4b6a6610172284e7a141600f |
+| 126_task_report.md | 1461 | 0a8d047ec5fcf2376626a2f04d0dfb1d490ca2566da85418e2162d3d64754a31 |
+| results.json | 1177 | d1bc4c232de314ea3e9524607186329d05dd48c94adbac785fc2690436751647 |
+

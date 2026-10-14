@@ -1,0 +1,11 @@
+# TASK123 manifest
+
+| file | bytes | sha256 |
+|---|---:|---|
+| 123_discovery_protocol.md | 4841 | aff1ed8a921a0fd339352a59e1fbf55daa0325992a4191ffdd89ac1d25e7c4b4 |
+| 123_failure_classification.md | 3421 | 6e053eb10d829fb5694b3bc90998c478278e1151b5cbe6e473e25f1e62c2b260 |
+| 123_failure_population.csv | 31209 | 5e48d04644e7db12947afae8b901b3f05eeb25fa7f05eb9c63fbe4e500d76a91 |
+| 123_false_negative_audit.md | 5072 | e4129930c862cba0a1f6647c38315129bc5ef96de76474d959b75c3c657dd8a8 |
+| 123_next_experiment_proposal.md | 5513 | f7579a9eebc175295471ccffdeda067b0b486c8c8c8b8c30d147ba451c475da6 |
+| 123_task_report.md | 2486 | 683b9bd206d2f7181dfa0530aec7a38f1e8b30702f4e74df688951c11280c548 |
+

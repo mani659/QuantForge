@@ -1,0 +1,11 @@
+# TASK125 manifest
+
+| file | bytes | sha256 |
+|---|---:|---|
+| 125_decision_report.md | 2551 | 2a46d68097ecc1540ef90479e21aca868d21a2b475f4ddedf212dc9f2da547d7 |
+| 125_power_results.md | 2922 | cba5ef24360b005e71522820f3d05e2dba3c38d11164bada6d0c840041e5c743 |
+| 125_power_study.py | 5640 | 435f80b8369db2f6bd207ad7afe4602fb0f247bed202a5fcfc0c9095b7185e3c |
+| 125_preregistration.md | 4492 | 153b9accbcac2c85d9061079e4a16d996efa55c9d7c64bdb33c93a93784100af |
+| 125_task_report.md | 1552 | 4edd0865034e31c7493d8010b7d8dde5d548052f048b3b564a70d4ac1f73f8f2 |
+| results.json | 1204 | 87893ad29a2c57e51b07d65fa86179eb07c77d36cdea1b1ac9ddaf1fd697a48a |
+

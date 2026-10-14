@@ -1,0 +1,15 @@
+{
+ "data_sha256": "39f25619bd26d72f4fdaa300a5c40002e4f4d46805050526ba98ec1c0a54bfc6",
+ "event_count": 158,
+ "m5_bars": 181104,
+ "meta": {
+  "first": "2023-09-01 00:00:00+00:00",
+  "last": "2026-07-10 20:14:00+00:00",
+  "rows": 906815
+ },
+ "skips": {
+  "incomplete": 0,
+  "no_atr": 0,
+  "zero_dir": 0
+ }
+}

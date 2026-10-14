@@ -1,0 +1,65 @@
+{
+ "spread_mean_bps": 26.60867164572706,
+ "spread_std_bps": 370.6116249014772,
+ "seed_primary": 20261013,
+ "seed_sensitivity": 20261014,
+ "n_runs": 2000,
+ "n_months": 216,
+ "alpha": 0.05,
+ "effect_bps": [
+  0,
+  25,
+  50,
+  75,
+  100
+ ],
+ "cost_round_trip_bps": 30.0,
+ "primary": {
+  "0": {
+   "power": 0.2165,
+   "power_std": 0.00920944488012171
+  },
+  "25": {
+   "power": 0.0615,
+   "power_std": 0.005372045699731156
+  },
+  "50": {
+   "power": 0.129,
+   "power_std": 0.007495298526409739
+  },
+  "75": {
+   "power": 0.4395,
+   "power_std": 0.011098192420389907
+  },
+  "100": {
+   "power": 0.7885,
+   "power_std": 0.00913147715323211
+  }
+ },
+ "sensitivity": {
+  "0": {
+   "power": 0.233,
+   "power_std": 0.009452803816857726
+  },
+  "25": {
+   "power": 0.0565,
+   "power_std": 0.005162739098579358
+  },
+  "50": {
+   "power": 0.122,
+   "power_std": 0.007318333143551201
+  },
+  "75": {
+   "power": 0.4285,
+   "power_std": 0.011065436051055557
+  },
+  "100": {
+   "power": 0.783,
+   "power_std": 0.009217130790001842
+  }
+ },
+ "false_positive_rate": 0.2165,
+ "power_at_50bps": 0.129,
+ "power_at_100bps": 0.7885,
+ "classification": "B_LOW_POWER"
+}
