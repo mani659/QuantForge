@@ -1,0 +1,55 @@
+{
+  "authorization": "task168/168_s2_evaluation_authorization.md (owner 2026-10-15)",
+  "chronology": {
+    "first_entry": "1993-12-31",
+    "first_window_year": 1994,
+    "last_exit": "2026-01-08",
+    "last_window_year": 2026
+  },
+  "control_descriptive": {
+    "definition": "buy-and-hold identical span, same cost schedule once each",
+    "entry_px": 26.187614311218258,
+    "exit_px": 683.1399494323731,
+    "net": 25.086375845994088,
+    "strategy_cumulative_net": 0.10945834118532494
+  },
+  "data_sha256": "483919f897326b261a669bc595a37112b4de5222c4ad0ed84da08060f4b71231",
+  "impl_sha256": "2892c8b5f3f9c13fe1dd3317d45f5f33725437be1f3936501943699dcff97f7b",
+  "panel": {
+    "first": "1993-01-29",
+    "last": "2026-09-25",
+    "missing": 0,
+    "rows": 8472
+  },
+  "params": {
+    "boot_b": 10000,
+    "commission": 0.0,
+    "direction": "long 1.0",
+    "entry_mult": 1.0015,
+    "exit_mult": 0.9985,
+    "rule": "PROTO-S2-001 v1-frozen",
+    "seed": 20261015,
+    "window": "first-5 January row-dates (J1..J5)"
+  },
+  "primary": {
+    "bootstrap": {
+      "B": 10000,
+      "method": "i.i.d. resample of annual events",
+      "seed": 20261015
+    },
+    "ci95": [
+      -0.00430804883703697,
+      0.010285366121740204
+    ],
+    "endpoint": "mean annual net return",
+    "mean": 0.0033805397987862382,
+    "n": 33
+  },
+  "protocol": "PROTO-S2-001 v1-frozen",
+  "skips": {
+    "no_december": 1,
+    "short_january": 0
+  },
+  "spec_sha256": "5a318e7e47263c67dc308adf9e326122e56b285e5eaaf585274867525a47eb94",
+  "verdict": "INCONCLUSIVE"
+}

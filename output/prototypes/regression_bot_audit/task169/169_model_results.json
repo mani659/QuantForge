@@ -1,0 +1,100 @@
+{
+  "config": {
+    "rf": {
+      "class_weight": null,
+      "max_depth": 4,
+      "max_features": "sqrt",
+      "min_samples_leaf": 25,
+      "n_estimators": 500,
+      "n_jobs": 1,
+      "random_state": 20261015
+    },
+    "svm": {
+      "C": 1.0,
+      "class_weight": null,
+      "gamma": "scale",
+      "kernel": "rbf",
+      "pipeline": "StandardScaler(train)->SVC",
+      "probability": false,
+      "score": "decision_function"
+    }
+  },
+  "data_sha256": "e2fa81737f9264798baf0c4964084ccb73c7230751f58e43c1975e34f888dc97",
+  "environment": {
+    "numpy": "2.4.6",
+    "sklearn": "1.9.1"
+  },
+  "features": [
+    "adx_base",
+    "atr_base",
+    "spread_base_pips",
+    "dir"
+  ],
+  "inference": {
+    "bootstrap": {
+      "n": 2000,
+      "seed": 20261014
+    },
+    "dependence_caveat": "within-month basket correlation; row bootstrap precision may be overstated",
+    "exploratory_nonconfirmatory": true,
+    "multiplicity": "two predeclared comparisons; bonferroni alpha 0.025",
+    "permutation": {
+      "n": 1000,
+      "seed": 20261015
+    }
+  },
+  "logistic_reference": {
+    "ci95": [
+      0.466,
+      0.594
+    ],
+    "formal_difference_test": null,
+    "perm_p": 0.204,
+    "reason": "no saved TASK152 predictions",
+    "source": "TASK152 report",
+    "test_auc": 0.5278
+  },
+  "metrics": {
+    "rf": {
+      "avg_precision": 0.594521303404342,
+      "bonferroni_p": 1.0,
+      "bootstrap_discarded_redraws": 0,
+      "brier": 0.2512910188493768,
+      "ci95": [
+        0.424017764214206,
+        0.547754135554116
+      ],
+      "credible": false,
+      "materially_different": false,
+      "pattern_observed": false,
+      "perm_p": 0.659,
+      "test_auc": 0.48647332134292565
+    },
+    "svm": {
+      "avg_precision": 0.5752793879852425,
+      "bonferroni_p": 1.0,
+      "bootstrap_discarded_redraws": 0,
+      "brier": null,
+      "brier_omitted_reason": "decision scores are not probabilities",
+      "ci95": [
+        0.4177224416898359,
+        0.5426316946994737
+      ],
+      "credible": false,
+      "materially_different": false,
+      "pattern_observed": false,
+      "perm_p": 0.732,
+      "test_auc": 0.4801783573141487
+    }
+  },
+  "protocol_sha256": "159b84f19d609dbbf29c6474a5461c8ae66f5a05fb121b33944840d44aa72b05",
+  "samples": {
+    "excluded": 0,
+    "test_fails": 139,
+    "test_failure_prevalence": 0.4199395770392749,
+    "test_n": 331,
+    "total": 1031,
+    "train_fails": 241,
+    "train_n": 700
+  }
+}

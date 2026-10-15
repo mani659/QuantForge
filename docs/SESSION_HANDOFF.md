@@ -2389,3 +2389,40 @@ PHASE IV:                   NOT AUTHORIZED
 BOE:                        UNCHANGED
 GOVERNANCE:                 UNCHANGED
 ```
+
+## 108. RESEARCH-CYCLE CLOSURES RECONCILED THROUGH TASK171 (2026-10-15)
+
+**Status:** Checkpoint record. Reconciles the verified outcomes of the owner-directed TASK158–TASK170 chain into the authoritative state. Research Capacity **HOLD** and Active Research **NONE** are **UNCHANGED**. The single S2 evaluation was a narrowly scoped, owner-authorized exception (authorization source recorded in `output/prototypes/regression_bot_audit/task168/168_s2_evaluation_authorization.md`; owner instruction 2026-10-15) — not research reactivation. TASK171 performed no experiment and altered no verdict; it only verified, recorded, and published the completed chain.
+
+### §108.1 Verified dispositions
+
+| Line | Disposition | Source artifacts |
+|---|---|---|
+| S2 / `PROTO-S2-001` (first-5-January-session SPY long) | Owner selections recorded → spec frozen → minimal engine + 12/12 synthetic tests → one authorized evaluation completed: **INCONCLUSIVE** (N=33, mean annual net +0.34%, 95% bootstrap CI [−0.43%, +1.03%], B=10000, seed 20261015). Line **CLOSED** under the frozen protocol's own continuation rule (only PASS continues; no rescue, no variant). Not evidence for or against any other strategy. | `task166/166_s2_frozen_spec.md` (SHA `5a318e7e…`), `task167/167_s2_evaluation_authorization_package.md`, `task168/168_s2_evaluation_report.md`, `task168/168_s2_evaluation_results.json` |
+| NASDAQ fixed-time long (video-replication candidate) | Exact replication **CLOSED**; QuantForge adaptation **PARKED** — existing execution data insufficient (timestamp convention, slippage/commission values, missing-session bar remain owner-reserved). | `task162/162_final_decision.md`, `task163/163_nasdaq_execution_decision.md`, `task164/164_nasdaq_execution_decision_record.md`, `task165/165_existing_nasdaq_data_provenance_check.md` |
+| Basket-failure prediction (`_t39`; TASK152 + TASK169) | Logistic baseline lacked demonstrated predictive value (AUC 0.5278, CI [0.466, 0.594], p=0.204). Fixed Random Forest + RBF SVM comparison found **no nonlinear advantage** (AUC 0.4865 / 0.4802; exploratory, non-confirmatory). Tested branch **CLOSED** — no further estimator on this target. NOT a claim that ML or prediction is impossible in general. | `task152/152_logistic_diagnostic_report.md`, `task169/169_ml_comparison_report.md`, `task169/169_model_results.json` |
+| Post-displacement response-geometry proposition | **`REDUNDANT_WITH_PROTECTED_FAMILY`** — controlled by the prior G0 CAND-082 adjudication; closed without rescue. | `task170/170_post_displacement_geometry_viability.md` (SHA `29abf120…`), `output/research_discovery/GHOST_SNIPER_TRANSFERABILITY_G0.md` |
+| Quote-level Q01–Q06 / T01–T03 | Two-cycle negative finding preserved — **ZERO SURVIVORS**; no reopening without the required process. | `output/research_discovery/QUANTFORGE_V38A_QUOTE_MICROSTRUCTURE_FRESH_MECHANISM_DISCOVERY_V1.md` |
+| All §99.1 protected families and every prior closed verdict | **UNCHANGED.** | §99 of this document |
+
+### §108.2 Scope distinctions (explicit)
+
+- **INCONCLUSIVE (S2)** = the frozen study did not resolve its question under its own criterion; not proof of absence, and not a rescue opening — the protocol itself ends the line.
+- **Closed predictive branch** = these three estimators on this target in this window; not "all ML models disproven."
+- **One authorized evaluation ≠ reactivation**: budgets, HOLD, and Active Research NONE stand; no candidate was registered or promoted; no Phase IV; no data collection; no holdout beyond the authorized scope.
+- TASK158–TASK161 (S2 reconciliation and decision brief) and TASK166–TASK167 (freeze/build/authorization) are the provenance chain for the S2 row above.
+
+### §108.3 Chain manifest
+
+All under `output/prototypes/regression_bot_audit/`: `task158`–`task161` (S2 reconciliation, route assessment, decision brief), `task162`–`task165` (NASDAQ feasibility and park), `task166` (freeze + engine + synthetic tests), `task167` (evaluation authorization package), `task168` (single evaluation + machine-readable results), `task169` (RF/SVM diagnostic), `task170` (redundancy closure). Published by TASK171 as one focused checkpoint.
+
+```text
+S2 / PROTO-S2-001:           CLOSED — INCONCLUSIVE (one authorized evaluation)
+NASDAQ FIXED-TIME LONG:      REPLICATION CLOSED; ADAPTATION PARKED (data insufficient)
+T39 PREDICTIVE BRANCH:       CLOSED (logistic + RF + RBF SVM: no demonstrated advantage)
+RESPONSE-GEOMETRY PROPOSAL:  REDUNDANT WITH CAND-082 — CLOSED, NO RESCUE
+QUOTE-LEVEL Q01-Q06/T01-T03: ZERO SURVIVORS — PRESERVED, NO REOPENING
+RESEARCH CAPACITY:           HOLD (UNCHANGED)
+ACTIVE RESEARCH:             NONE (UNCHANGED)
+S2 EVALUATION:               SCOPED OWNER-AUTHORIZED EXCEPTION ONLY
+```
